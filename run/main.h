@@ -185,6 +185,7 @@ void gitupdate() {
 	sys "git add */*" _
 	sys "git commit -m untitled" _
 	sys "git status" _
+	sys "git log" _
 }
 #define gitupdate gitupdate();
 
