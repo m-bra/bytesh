@@ -180,6 +180,14 @@ void micro(char const *path)
 #define _ ) ;
 #define sys system (
 
+void gitupdate() {
+	sys "git add *" _
+	sys "git add */*" _
+	sys "git commit -m untitled" _
+	sys "git status" _
+}
+#define gitupdate gitupdate();
+
 void lines(int n) {
   for (
     int i = 0;
