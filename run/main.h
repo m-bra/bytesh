@@ -1,24 +1,163 @@
-#define MAIN_BEGIN
-#define MAIN_END
-#define ROOT "/data/data/com.termux/files/home/prj/c/bytesh/"
+#define MAIN_BEGIN runbatch();
+#define MAIN_END mvbatch(); statusprint(syssh);
+
+#define NBUF 512
+
+#define ROOT "/data/data/com.termux/files/home/prj/bytesh/"
 
 #include "stdlib.h"
 #include "unistd.h"
 #include "string.h"
 
-#define mainh system("micro /data/data/com.termux/files/home/prj/c/bytesh/run/main.h");
+#define ln ;printf("\n");
 
-#define syssh syssh();
+// ¦¦¦``¬¬~~+_)(*}{POI@:L?><MZZ1245567890--=#})~´¦
+
+char *concat(char *dst, int dstn, char *appendix)
+{
+	snprintf(dst, dstn, "%s%s", dst, appendix);
+	return dst;	
+}
+#define nbconcat(dst, appendix) concat(dst, NBUF, appendix)
+
+char *setemptystr(char *dst)
+{
+	dst[0] = 0;
+	return dst;
+}
+
+char *cpystr(char *dst, int dstn, char *src)
+{
+	concat(setemptystr(dst), dstn, src);
+	return dst;
+}
+#define nbcpystr(dst, src) cpystr(dst, NBUF, src)
+
+#define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
+#define mainh sys "micro /data/data/com.termux/files/home/prj/bytesh/run/main.h" _
+#define vncserver sys "vncserver -localhost" _
+#define prootdistro sys "proot-distro login archlinux" _
+#define tmux sys "tmux" _
+#define ls sys "ls" _
+
+char nbufarr[16][NBUF];
+
+#define batchnextpath nbconcat(nbcpystr(nbufarr[0], ROOT), \
+    "/run/batch.h.next")
+#define batchpath nbconcat(nbcpystr(nbufarr[1], ROOT), \
+    "/run/batch.h")
+void mvbatch()
+{
+    void cp(char *, char*);
+	//cp(batchnextpath, batchpath);
+	char cmd[NBUF];
+	snprintf(cmd, NBUF, "echo '' > %s", batchnextpath);
+	//system(cmd);
+}
+
+void runbatch()
+{
+    //#include "batch.h"
+    //system("mv batch.h batch.h.bak");
+    //system("touch batch.h");
+}
+
+void statusprint(int issyssh)
+{
+		char cwd[NBUF]; getcwd(cwd, NBUF);
+			char batch[NBUF];                                                     	void *batchfile;                                                      	fgets(batch, NBUF, batchfile = fopen(batchpath, "r"));            
+	int dobatch = strlen(batch);                                          	fclose(batchfile);
+	dobatch = 0;
+
+    if (!dobatch)
+    {
+    	printf("\n[%s]\n",  cwd);
+        printf("$ %s", issyssh ? "$ " : "");
+    }
+    else {
+
+    	printf("[batch]");
+    }
+
+
+
+}
+
+
+#define batch edit batchpath _
+
+void submain(int argc, char **argv)
+{
+	printf("Hello submain");
+}
+
+void mv(char *from, char *to)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "mv %s %s", from, to);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define mv mv (
+
+void cp(char *from, char *to)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "cp %s %s", from, to);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define cp cp (
+
+void cat(char *filename)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "cat %s", filename);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define cat cat (
+
+void touch(char *s)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "touch %s", s);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define touch touch (
+
+void diff(char *from, char *to)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "diff %s %s", from, to);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define diff diff (
+
+//#define syssh syssh();
 
 void editcompiler()
 {
-	system("micro /data/data/com.termux/files/home/prj/c/bytesh/main.c");
-    system("gcc   /data/data/com.termux/files/home/prj/c/bytesh/main.c \
-               -o /data/data/com.termux/files/home/prj/c/bytesh/a.out");
+	system("micro /data/data/com.termux/files/home/prj/bytesh/main.c");
+    system("gcc   /data/data/com.termux/files/home/prj/bytesh/main.c \
+               -o /data/data/com.termux/files/home/prj/bytesh/a.out");
 	exit(0);
 }
 
 #define editcompiler editcompiler();
+
+void printallascii(int from, int to)
+{
+	for (int i = from; i < to; ++i)
+	{
+		printf("- %c - ", i);
+		if (!(i % 24)) printf("\n");
+	}
+	printf("\n");
+}
+#define printallascii printallascii('1', '~');
 
 void testwrite(char *path)
 {
@@ -34,6 +173,7 @@ void micro(char const *path)
 	char buf[512];
 	snprintf(buf, 512, "micro %s", path);
 	system(buf);
+	// TODO: undefined escape rules in param strings
 }
 
 #define edit micro (
