@@ -163,12 +163,19 @@ void micro(char const *path)
 #define _ ) ;
 #define sys system (
 
+void echosys(char const *cmd)
+{
+	printf(" $ %s\n\n");
+	system(cmd);
+}
+#define echosys echosys (
+
 void gitupdate() {
-	sys "git add *" _
-	sys "git add */*" _
-	sys "git commit -m untitled" _
-	sys "git status" _
-	sys "git log" _
+	echosys "git add *" _
+	echosys "git add */*" _
+	echosys "git commit -m untitled" _
+	echosys "git status" _
+	echosys "git log" _
 }
 #define gitupdate gitupdate();
 
