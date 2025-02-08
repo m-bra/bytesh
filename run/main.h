@@ -165,7 +165,8 @@ void micro(char const *path)
 
 void echosys(char const *cmd)
 {
-	printf(" $ %s\n\n");
+    printf("[auto]\n");
+	printf("$ %s\n\n", cmd);
 	system(cmd);
 }
 #define echosys echosys (
