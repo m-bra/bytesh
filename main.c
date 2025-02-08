@@ -4,7 +4,8 @@
 #include <errno.h>
 #include "unistd.h"
 
-#define NBUF 512
+#define NBUF 1024
+#define loop (1)
 
 #define throwngerrno(x)                     \
     if (x < 0) {                            \
@@ -61,21 +62,41 @@ int main(int argc, char **argv) {
     int dobatch = strlen(batch);
     fclose(batchfile);
     dobatch = 0;
-
-    char *line;
-    char *linemem = 0; size_t linelen; ssize_t r;
+;
+    char linebuf[NBUF];
+    linebuf[0] = 0;
     if (!setemptyline)
     {
-    	r = getline(&linemem, &linelen, stdin);
-        line = linemem;
+        int displaynumber = 1;
+        while loop {
+    	    char *prtline = 0; size_t prtlinen = 0; ssize_t r;
+    	    r = getline(&prtline, &prtlinen, stdin);
+        	throwngerrno(r);
+
+        	if (strlen(linebuf) + strlen(prtline) < NBUF) {
+        		strcat(linebuf + strlen(linebuf), prtline);
+        	} else {
+        		printf("Buffer overflow.\n");
+        		exit(1);
+        	}
+    	
+		    free(prtline);
+
+		    if (strlen(prtline) < 2 
+		    || (prtline[strlen(prtline) - 2] != '\\'))
+		    	break;
+
+		    printf("%d ", ++displaynumber);
+        }
+        
+        printf("\n");
     }
     else {
-    	line = "\n";
-    	linelen = strlen(line);
-    	r = 0;
+    	linebuf[0] = '\n';
+    	linebuf[1] = 0;
     	setemptyline = 0;
     }
-  	throwngerrno(r);
+    char *line = linebuf;
 
   	if (dobatch && strlen(line) > 1)
   	{
@@ -108,7 +129,7 @@ int main(int argc, char **argv) {
 
 		for (unsigned long i = 0; i < strlen(line); ++i) {
 			if (line[i] == '\n')
-			    line[i] = ' ';
+			    ;//line[i] = ' ';
 		}
 
 		if (0 == strncmp(line, "cd ", 3)) {
@@ -140,7 +161,5 @@ int main(int argc, char **argv) {
 	
 		system(outfilename);	
     }
-
-  	if (linemem) free(linemem);
   } 
 }

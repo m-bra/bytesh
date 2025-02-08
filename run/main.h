@@ -4,34 +4,13 @@
 #define NBUF 512
 
 #define ROOT "/data/data/com.termux/files/home/prj/bytesh/"
+#define ROOTLEN strlen(ROOT)
 
 #include "stdlib.h"
 #include "unistd.h"
 #include "string.h"
 
 #define ln ;printf("\n");
-
-// ¦¦¦``¬¬~~+_)(*}{POI@:L?><MZZ1245567890--=#})~´¦
-
-char *concat(char *dst, int dstn, char *appendix)
-{
-	snprintf(dst, dstn, "%s%s", dst, appendix);
-	return dst;	
-}
-#define nbconcat(dst, appendix) concat(dst, NBUF, appendix)
-
-char *setemptystr(char *dst)
-{
-	dst[0] = 0;
-	return dst;
-}
-
-char *cpystr(char *dst, int dstn, char *src)
-{
-	concat(setemptystr(dst), dstn, src);
-	return dst;
-}
-#define nbcpystr(dst, src) cpystr(dst, NBUF, src)
 
 #define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 #define mainh sys "micro /data/data/com.termux/files/home/prj/bytesh/run/main.h" _
@@ -42,10 +21,14 @@ char *cpystr(char *dst, int dstn, char *src)
 
 char nbufarr[16][NBUF];
 
-#define batchnextpath nbconcat(nbcpystr(nbufarr[0], ROOT), \
-    "/run/batch.h.next")
-#define batchpath nbconcat(nbcpystr(nbufarr[1], ROOT), \
-    "/run/batch.h")
+#define in(a, f, b) f ( a , b )
+
+#define batchnextpath in(                 \
+    memcpy(nbufarr[0], ROOT, ROOTLEN),    \
+    (strcat), "/run/batch.h.next")
+#define batchpath     in(                 \
+    memcpy(nbufarr[1], ROOT, ROOTLEN),    \
+    (strcat), "/run/batch.h")
 void mvbatch()
 {
     void cp(char *, char*);
