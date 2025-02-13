@@ -1,28 +1,11 @@
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
 #include <sys/wait.h>
-
-#define NBUF 1024
-#define loop (1)
-
-#define throwngerrno(x)                     \
-    if (x < 0) {                            \
-        printf("Error at ");                \
-  	    printf("%s:", __FILE__);            \
-  		printf("%d\n", __LINE__);           \
-  		printf("%s\n", strerror(errno));    \
-  		exit(1);                            \
-  	}                                       \
-//
-
-char *escapecstr(char *s) 
-{
-	return s;
-}
-
+#include "run/main.h"
 
 void loadcwd(char *workdir)
 {
@@ -57,7 +40,7 @@ int main(int argc, char **argv) {
 
   int setemptyline = 1;
 
-  char lastline[NBUF];
+  char lastline[NBUF*4];
 
   while ( 1 ) {
     loadcwd(workdir);
@@ -67,13 +50,6 @@ int main(int argc, char **argv) {
 
     setemptyline = 0;
 
-    char batch[NBUF];
-    void *batchfile; 
-    fgets(batch, NBUF, batchfile = fopen(batchfilename, "r"));
-    int dobatch = strlen(batch);
-    fclose(batchfile);
-    dobatch = 0;
-;
     char linebuf[NBUF];
     linebuf[0] = 0;
     if (!setemptyline)
@@ -109,14 +85,6 @@ int main(int argc, char **argv) {
     }
     char *line = linebuf;
 
-  	if (dobatch && strlen(line) > 1)
-  	{
-  		printf("Error: Expected empty command expected after batch commands.");
-    	printf("\n");
-    	exit(1);  		
-  	}
-
-
     if (!syssh && 0 == strncmp(line, "#exit", 5)) {
     	exit(0);
     }
@@ -132,12 +100,13 @@ int main(int argc, char **argv) {
         	line += 2;
         }
 
-        char *ll = lastline;
         void *srcfile = fopen(srcfilename, "w");
 		fprintf(srcfile, "#include \"main.h\"\n");
 		fprintf(srcfile, "\n");
-		fprintf(srcfile, "#define lastcmd \"%s\"\n", escapecstr(ll));
-		fprintf(srcfile, "#define syssh %d\n", syssh);
+		fprintf(srcfile, "char *lastcmd = \"%s\";\n", 
+		        escapecstr(lastline, sizeof(lastline)));
+		fprintf(srcfile, "int syssh = %d;\n", syssh);
+		fprintf(srcfile, "char *workdir = \"%s\";", workdir);
 		fprintf(srcfile, "\n");
 		fprintf(srcfile, "int main(int argc, char **argv) {\n");
 		fprintf(srcfile,     "MAIN_BEGIN\n");
@@ -182,7 +151,7 @@ int main(int argc, char **argv) {
 			execl(outfilename, "a.out", (char *) NULL);
 		}
 
-		strcpy(linebuf, lastline);
+		strcpy(lastline, linebuf);
     }
   } 
 }

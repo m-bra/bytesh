@@ -1,3 +1,6 @@
+#ifndef RUN_MAIN_H_INCLUDED
+#define RUN_MAIN_H_INCLUDED
+
 #define MAIN_BEGIN runbatch();
 #define MAIN_END mvbatch(); statusprint(syssh);
 
@@ -39,3 +42,5 @@ void statusprint(int issyssh)
 void test()
 {
 }
+
+#endif

@@ -3,10 +3,12 @@
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
 
+#define pfs printf("%s",
 #define vncserver sys "vncserver -localhost" _
 #define prootdistro sys "proot-distro login archlinux" _
 #define tmux sys "tmux" _
 #define ls sys "ls -hAltr" _
+#define process edit "" _
 
 void micro(char const *path)
 {
