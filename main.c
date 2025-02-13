@@ -18,18 +18,11 @@
   	}                                       \
 //
 
-char *memcmov(char *dst, char *src, int c, size_t n)
-{
-	char tmp[n];
-	        memccpy(tmp, src, c, n);
-	return  memccpy(dst, tmp, c, n);
-}
-
-
-char *escapecstr(char *s)
+char *escapecstr(char *s) 
 {
 	return s;
 }
+
 
 void loadcwd(char *workdir)
 {

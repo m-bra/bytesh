@@ -29,36 +29,10 @@ char nbufarr[16][NBUF];
 
 #define in(a, f, b) f ( a , b )
 
-#define batchnextpath in(                 \
-    memcpy(nbufarr[0], ROOT, ROOTLEN),    \
-    (strcat), "/run/batch.h.next")
-#define batchpath     in(                 \
-    memcpy(nbufarr[1], ROOT, ROOTLEN),    \
-    (strcat), "/run/batch.h")
-void mvbatch()
-{
-    void cp(char *, char*);
-	//cp(batchnextpath, batchpath);
-	char cmd[NBUF];
-	snprintf(cmd, NBUF, "echo '' > %s", batchnextpath);
-	//system(cmd);
-}
-
-void runbatch()
-{
-    //#include "batch.h"
-    //system("mv batch.h batch.h.bak");
-    //system("touch batch.h");
-}
-
 void statusprint(int issyssh)
 {
-		char cwd[NBUF]; getcwd(cwd, NBUF);
-			char batch[NBUF];                                                     	void *batchfile;                                                      	fgets(batch, NBUF, batchfile = fopen(batchpath, "r"));            
-	int dobatch = strlen(batch);                                          	fclose(batchfile);
-	dobatch = 0;
-
-    if (!dobatch)
+	char cwd[NBUF]; getcwd(cwd, NBUF);
+    if (1)
     {
     	printf("\n[%s]\n",  cwd);
     	if (issyssh) {
@@ -67,13 +41,6 @@ void statusprint(int issyssh)
     		printf(".c (priv) $ ");
     	}
     }
-    else {
-
-    	printf("[batch]");
-    }
-
-
-
 }
 
 
@@ -84,14 +51,81 @@ void submain(int argc, char **argv)
 	printf("Hello submain");
 }
 
-/*void man(char *topic)
+char *memcmov(char *dst, char *src, int c, size_t n)
+{
+	char tmp[n];
+	        memccpy(tmp, src, c, n);
+	return  memccpy(dst, tmp, c, n);
+}
+
+char *strnmov(char *dst, char *src, size_t n)
+{
+	return memcmov(dst, src, 0, n);
+}
+
+char *strchrnul(char *s, int c)
+{
+	char *res = strchr(s, c);
+	if (!res)
+		return s + strlen(s);
+	return res;
+}
+
+char *fgetsclose(char *s, int n, FILE *f)
+{
+	char *result = s;
+	while ((n > 0) && fgets(s, n, f))
+	{
+		n-= strlen(s);
+		s+= strlen(s);
+	}
+	fclose(f);
+	return result;
+}
+
+#define breakpt ; {char c[8]; fgets(c, 8, stdin);};
+
+#define LOADBUFN 2048
+char *loads(char *filename)
+{
+	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
+}
+
+void test()
+{
+}
+
+char *escapeccstr(char *s, int buflen, int c, int r)
+{
+	if (buflen < (int)strlen(s) * 2)
+	{
+		printf("Error at %s:%d\n", __FILE__, __LINE__);
+		exit(1);	
+	}
+
+    char *p = s;
+    char *end = p + strlen(p);
+    while ((p = strchrnul(p, c)) != end)
+    {
+    	strnmov(p + 1, p, buflen);
+    	p[0] = '\\';
+    	p[1] = r;
+    	p+= 2;
+    	end = p + strlen(p);
+    }
+	return s;
+}
+
+
+
+void mkdir(char *path)
 {
 	char buf[NBUF];
-	snprintf(buf, NBUF, "man %s", topic);
+	snprintf(buf, NBUF, "mkdir %s", path);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define man man (*/
+#define mkdir mkdir (
 
 void mv(char *from, char *to)
 {
@@ -228,8 +262,8 @@ void man(char *topic) {
 		printf("indicate the error.\n");
 	
 	}
-
-	if (!strcmp(topic, "memcmov")) {
+	else if (!strcmp(topic, "memcmov")) 
+	{
 		printf("NAME\n");
 		printf("       memcmov - move memory area\n");
 		printf("\n");
@@ -257,6 +291,46 @@ void man(char *topic) {
 		printf("       NULL if `c` was not found in the first `n`\n");
 		printf("       characters of `src`.\n");
 		printf("\n");
+	}
+	if (!strcmp(topic, "fgets"))
+	{
+		printf("NAME\n");
+		printf("       fgets - input of strings\n");
+		printf("\n");
+		printf("LIBRARY\n");
+		printf("       Standard C library\n");
+		printf("\n");
+		printf("SYNOPSIS\n");
+		printf("       #include <stdio.h>\n");
+		printf("\n");
+		printf("       char *fgets(char s[.n], int n, FILE *f)\n");
+		printf("\n");
+		printf("DESCRIPTION\n");
+		printf("       fgets() reads in at most one less than\n");
+		printf("       `size` characters from `f` and stores them\n");
+		printf("       into the buffer pointed to by `s`. Reading\n");
+		printf("       stops after an EOF or a newline. If a new-\n");
+		printf("       line is read, it is stored into the buffer.\n");
+		printf("       A terminating null byte ('\\0') is stored\n");
+		printf("       after the last character in the buffer.\n");
+		printf("       \n");
+		printf("RETURN VALUE\n");
+		printf("       fgets() returns `s` on success, and NULL on\n");
+		printf("       error or when end of file occurs while no\n");
+		printf("       characters have been read.\n");
+		printf("       \n");
+		printf("       \n");
+		printf("       \n");
+		printf("       \n");
+		printf("       \n");
+
+
+	}
+	else
+	{
+		char cmd[NBUF];
+		snprintf(cmd, NBUF, "man %s", topic);
+		system(cmd);
 	}
 }
 #define man man (
@@ -309,4 +383,27 @@ void cycle() {
     );	
   }
 }
+
+#define batchnextpath in(                 \
+    memcpy(nbufarr[0], ROOT, ROOTLEN),    \
+    (strcat), "/run/batch.h.next")
+#define batchpath     in(                 \
+    memcpy(nbufarr[1], ROOT, ROOTLEN),    \
+    (strcat), "/run/batch.h")
+void mvbatch()
+{
+    //void cp(char *, char*);
+	//cp(batchnextpath, batchpath);
+	char cmd[NBUF];
+	snprintf(cmd, NBUF, "echo '' > %s", batchnextpath);
+	//system(cmd);
+}
+
+void runbatch()
+{
+    //#include "batch.h"
+    //system("mv batch.h batch.h.bak");
+    //system("touch batch.h");
+}
+
 
