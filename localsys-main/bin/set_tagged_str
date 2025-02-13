@@ -1,0 +1,14 @@
+#!/bin/bash
+
+file="${1}"
+tag="${2}"
+value="${3}"
+
+newfile="$(mktemp)"
+copyfile="$(mktemp)"
+
+cp "${file}" "${copyfile}"
+cat "${file}" | grep "\".*\"#${tag}" || exit 1
+sed -r             "s/\".*\"#${tag}/\"${value}\"#${tag}/g" "${copyfile}" > "${newfile}" || exit 1
+mv "${newfile}" "${file}"
+exit 0

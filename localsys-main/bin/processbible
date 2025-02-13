@@ -1,0 +1,24 @@
+sed -r 's/'"$1"'\s*(\d\d?):1\s+/'"\n\n$1 "'\1'"\n"'/g'
+
+'\n\nPhilipper $1\nPhilipper $1:1 '
+
+regular replacement 3:
+(format superscript)
+
+'Philipper\s*(\d\d?):(\d\d?)\s+'
+
+'$2'
+
+Hier die komplette "Ersetzungs-Tabelle"
+$ = rund-s (fur Wortende oder bei zusammengesetzten Worten am Ende eines Teilworts: z.B. Hausflur: Haus mit rund-s und Flur mit fl-Ligatur
+\  = langer gerader Gedankenstrich, da der Bindestrich in Fraktur ein schräggestelltes Gleichheitszeichen ist.
+# = et-cetera-Zeichen
+à = ch-Ligatur - auch für sch
+á = ck-Ligatur
+é = fi-Ligatur
+è = ff-Ligatur - macht Worte wie Sauerstoffflasche in Fraktur leichter lesbar! S  a  u  e  r  st  o  ff  fl  a  s  ch  e  in diesem Wort werden 4 Ligaturen verwendet.
+ò = fl - Ligator - das fl von der Flasche
+í = ft-Ligatur - z.B. in Luft - aber nicht in auftauen
+ß = ss-Ligatur - Ja "ss" nicht "sz" !!! - und zwar lang-s-rund-s - also vergesst die "Linksschreibreform" bei Worten wie Nassschleifmaschine...
+ù = st-Ligatur - z.B. in Austernpilz, nicht jedoch in Haustür.
+ú = tz-Ligatur - z.B. in Satzbau, nicht jedoch in Notzaun. (Wurde merkwürdigerweise allerdings auch in Worten verwandt, die eigendlich mit ts geschrieben werden)

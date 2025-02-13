@@ -1,0 +1,12 @@
+sed -r 's/s([^a-zA-ZüÜöÖäÄ])/$\1/g' \
+	| sed -r 's/s$/$/g' \
+    | sed -r 's/ch/à/g' \
+    | sed -r 's/ck/á/g' \
+    | sed -r 's/fi/é/g' \
+    | sed -r 's/ff/è/g' \
+    | sed -r 's/fl/ò/g' \
+    | sed -r 's/ft/í/g' \
+    | sed -r 's/ss/ß/g' \
+    | sed -r 's/st/ù/g' \
+    | sed -r 's/tz/ú/g' \
+    | sed -r 's/ss/ß/g'

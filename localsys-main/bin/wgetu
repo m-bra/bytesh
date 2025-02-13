@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget ‐‐execute robots=off ‐‐recursive ‐‐no-parent ‐‐continue ‐‐no-clobber ${@}
+

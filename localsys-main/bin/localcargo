@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cargo $@
+echo cargo $@ > ~/.local/var/localcargo.log

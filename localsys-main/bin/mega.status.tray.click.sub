@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "mega-sync:"
+mega-sync
+ask 'Press any key ...'

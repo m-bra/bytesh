@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WORKSPACE=$(cat ~/subsys/var/code.subtree/workspace)
+subtreepath=$(clipboard.out)
+realpath=$(realpath ${WORKSPACE}/${subtreepath})
+rm "${WORKSPACE}/${subtreepath}"
+test -f "${realpath}" && code "${realpath}"

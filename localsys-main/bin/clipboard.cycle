@@ -1,0 +1,27 @@
+#!/bin/bash
+
+root="${HOME}/subsys/"
+var="${root}/var/clipboard.cycle/"
+
+test "${1}" == "" || test "${2}" == "" && {
+	echo "Usage: $(basename ${0}) + <steps>"
+	echo "       $(basename ${0}) - <steps>"
+	exit
+}
+
+cycle_op="${1} ${2}"
+
+pushd "${var}" 
+{
+	index=$(cat "index")	
+	echo index $index
+	clipboard.out > "clipboard_${index}"
+
+	index=$((${index} ${cycle_op}))
+	test ${index} -gt 15 && index=0
+	
+	cat "clipboard_${index}" | clipboard.in
+
+	echo ${index} > "index"
+}
+popd

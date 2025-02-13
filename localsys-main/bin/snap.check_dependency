@@ -1,0 +1,4 @@
+#!/bin/bash
+
+snap connections "$1"
+find . -type f -name snap.yaml -exec egrep -il "$1" '{}' \; 2>/dev/null

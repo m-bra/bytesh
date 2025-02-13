@@ -1,0 +1,4 @@
+#!/bin/bash
+
+test -f "$1" && git rm    --cached "$1"
+test -d "$1" && git rm -r --cached "$1"

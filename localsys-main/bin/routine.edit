@@ -1,0 +1,9 @@
+#!/bin/bash
+
+path="$HOME/subsys/bin/"
+
+test -z "${2}" || {
+	path="${2}"
+}
+
+micro "$path/${1}"

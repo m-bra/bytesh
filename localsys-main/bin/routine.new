@@ -1,0 +1,15 @@
+#!/bin/bash
+
+file="${1}"
+cmd="${2}"
+path="${3}"
+shift
+shift
+shift
+
+test "${path}" == "" && path="${HOME}/subsys/bin/"
+
+echo "#!/bin/bash" > "${path}/${file}"
+chmod +x "${path}/${file}"
+
+echo "${cmd}" >> "${path}/${file}"

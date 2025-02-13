@@ -1,0 +1,3 @@
+#!/bin/bash
+filename=$(zenity --file-selection --file-filter="*.apk" --filename="$HOME/Downloads/*")
+adb install "${filename}"

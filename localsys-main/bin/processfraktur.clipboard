@@ -1,0 +1,2 @@
+#!/bin/bash
+clipboard.out | processfraktur | clipboard.in

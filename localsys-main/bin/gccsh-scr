@@ -1,0 +1,5 @@
+#!/bin/bash
+ 
+if   scratch .c
+then gccsh /tmp/scratch.c
+fi

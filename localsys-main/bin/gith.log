@@ -1,0 +1,2 @@
+#!/bin/bash
+git log --pretty='%Cred%d %Cgreen%an %Cblue%ar %Creset%s%N' --graph

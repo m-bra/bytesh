@@ -1,8 +1,8 @@
 #ifndef RUN_MAIN_H_INCLUDED
 #define RUN_MAIN_H_INCLUDED
 
-#define MAIN_BEGIN runbatch();
-#define MAIN_END mvbatch(); statusprint(syssh);
+#define MAIN_BEGIN
+#define MAIN_END statusprint(syssh);
 
 #define NBUF 512
 

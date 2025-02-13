@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo apt clean
+sudo apt autopurge
+
+pushd /var/log/journal
+popd 
+
+sudo snap list --all | while read snapname ver rev trk pub notes; do if [[ $notes = *disabled* ]]; then sudo snap remove "$snapname" --revision="$rev"; fi; done

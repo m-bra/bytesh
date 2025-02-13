@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#file=$(mktemp --tmpdir "tmp-XXXXX${1}")
+file="/tmp/scratch${1}"
+echo "${file}"

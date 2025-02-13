@@ -1,0 +1,12 @@
+#!/bin/bash
+
+WORKSPACE=$(cat ~/subsys/var/code.subtree/workspace)
+path=$(clipboard.out)
+test -e "${WORKSPACE}/${path}" || {
+	echo "${WORKSPACE}/${path}" does not exist.
+	exit 1
+}
+targetfile="${WORKSPACE}/subtree/${path}"
+mkdir -p $(dirname "${targetfile}")
+test -e "${targetfile}" || lns "${WORKSPACE}/${path}" "${targetfile}"
+test -f "${targetfile}" && code "${targetfile}"

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+executorfull="${0}"
+msg="${1}"
+shift
+
+printf "%s" "${msg}"
+
+read answer
+
+return_failure=1
+return_success=0
+
+executor="$(basename ${executorfull})"
+test "${executor}" == "ask" && executor="ask-y"
+
+test "${executor}" == "ask-y" \
+	&& test "${answer}" == "n" && exit "${return_failure}"
+test "${executor}" == "ask-y" \
+	                           && exit "${return_success}"
+test "${executor}" == "ask-n" \
+	&& test "${answer}" == "y" && exit "${return_success}"
+test "${executor}" == "ask-n" \
+	                           && exit "${return_failure}"
+
+echo "ask: Internal error"

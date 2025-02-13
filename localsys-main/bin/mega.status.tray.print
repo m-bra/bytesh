@@ -1,0 +1,12 @@
+#!/bin/bash
+
+null=/dev/null
+
+mega-sync > "/tmp/mega.out"
+cat "/tmp/mega.out" | grep Running > $null
+test "$?" == "0" && {
+	exit 0
+} || {
+	cat "/tmp/mega.out"
+	exit 1
+}

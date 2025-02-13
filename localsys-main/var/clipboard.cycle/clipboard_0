@@ -1,0 +1,1 @@
+#[warn(non_upper_case_globals)]

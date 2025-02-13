@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if test "${1}" == "start"
+then echo "START $(date)" >> ~/.local/var/tracktime.log
+fi
+
+if test "${1}" == "stop"
+then 
+    echo "STOP  $(date)" >> ~/.local/var/tracktime.log
+    echo "" >> ~/.local/var/tracktime.log
+fi
+
+if test "${1}" == "show"
+then xed ~/.local/var/tracktime.log
+fi
+

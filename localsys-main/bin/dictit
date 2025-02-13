@@ -1,0 +1,2 @@
+#!/bin/bash
+firefox dict.leo.org/italienisch-deutsch/$1

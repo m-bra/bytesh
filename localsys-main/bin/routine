@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if test "${1}" == "new"
+then
+	shift
+	routine-new $@
+elif test "${1}" == "rm"
+then
+	shift
+	routine-rm $@
+elif test "${1}" == "edit"
+then
+	shift
+	routine-edit $@
+else
+	echo "Usage: ${0} {new|rm|edit}"
+fi

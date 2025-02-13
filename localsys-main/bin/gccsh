@@ -1,0 +1,19 @@
+#!/bin/bash
+
+input_src_file="${1}"
+
+#if test "${input_src_file}" == "${input_src_file%.c}"
+#then
+#	echo "Usage: ${0} \${input_src_file}"
+#	echo "    where \${input_src_file} must end with '.c'"
+#	exit
+#fi
+
+[ "$(sed -n '/^#\//p;q' ${input_src_file})" ] && {
+	new_input_src_file=$(mktemp --tmpdir XXXXX.c)
+	tail -n +2 "${input_src_file}" > "${new_input_src_file}"
+	input_src_file=${new_input_src_file}
+}
+
+gcc "${input_src_file}" -o"${input_src_file%.c}.bin" ${CFLAGS}
+"${input_src_file%.c}.bin"

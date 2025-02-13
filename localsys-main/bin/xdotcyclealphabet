@@ -1,0 +1,2 @@
+#!/bin/bash
+xdotcyclealphabet_rawbin $@ 1>/tmp/rustshell.log 2>&1

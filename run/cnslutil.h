@@ -1,4 +1,5 @@
 
+
 ////////////////////////////////////////////////////////////////////////
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
@@ -90,6 +91,20 @@ void diff(char *from, char *to)
 ////////////////////////////////////////////////////////////////////////
 //                          ADDITIONAL COMMANDS
 /////////////////////////////////////////////////////////////////////////
+
+#include "quickdef.h"
+
+void quickdef(char *def)
+{
+	char path[NBUF];
+	snprintf(path, NBUF, "%s/run/quickdef.h", ROOT);
+    char defb[strlen(def) + 2];
+    strcpy(defb, def);
+    defb[strlen(def)] = '\n';
+    defb[strlen(def) + 1] = 0;
+	fputsclose(defb, fopen(path, "a"));
+}
+#define quickdef quickdef (
 
 #define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 #define mainh sys "micro /data/data/com.termux/files/home/prj/bytesh/run/main.h" _
