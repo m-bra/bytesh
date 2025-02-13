@@ -155,6 +155,7 @@ int main(int argc, char **argv) {
 			void *f = fopen(path, "w");
 			fprintf(f, "%s/%s/\n", cwd, line);			
 			fclose(f);
+			loadcwd(workdir);
 		}
 		else {
 		    if (syssh) fprintf(srcfile, "system(\"%s\");", line);

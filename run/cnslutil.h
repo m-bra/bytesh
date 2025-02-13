@@ -6,7 +6,7 @@
 #define vncserver sys "vncserver -localhost" _
 #define prootdistro sys "proot-distro login archlinux" _
 #define tmux sys "tmux" _
-#define ls sys "ls" _
+#define ls sys "ls -hAltr" _
 
 void micro(char const *path)
 {
