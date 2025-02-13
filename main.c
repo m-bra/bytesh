@@ -149,7 +149,10 @@ int main(int argc, char **argv) {
 		if (childid) {
 			waitpid(childid, 0, 0);
 		} else {
-			
+			//char filename[NBUF] = "";
+			//strcat(filename, rootworkdir);
+			//strcat(filename, "a.out.txt");
+			//freopen(filename, "w", stdout);
 			execl(outfilename, "a.out", (char *) NULL);
 		}
 

@@ -1,4 +1,7 @@
+#ifndef RUN_CNSLUTIL_H_INCLUDED
+#define RUN_CNSLUTIL_H_INCLUDED
 
+#include "main.h"
 
 ////////////////////////////////////////////////////////////////////////
 //                          WRAPPERS & ALIASES
@@ -23,6 +26,15 @@ void micro(char const *path)
 #define _ ) ;
 #define sys system (
 
+void tputcup(int col)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "tput cup %d 0", col);
+	system(buf);
+}
+#define tputcup tputcup (
+
+#define tputed sys "tput ed" _
 
 void mkdir(char *path)
 {
@@ -91,6 +103,42 @@ void diff(char *from, char *to)
 ////////////////////////////////////////////////////////////////////////
 //                          ADDITIONAL COMMANDS
 /////////////////////////////////////////////////////////////////////////
+
+#include "prop.h"
+
+void prop(char *filename, char *identget, char *identset)
+{
+	char headerpath[NBUF] = "";
+	strcat(headerpath, ROOT);
+	strcat(headerpath, "/run/prop.h");
+
+	char def[NBUF * 64];
+	strcat(def, "char * ");
+	strcat(def,        identget);
+	strcat(def,                "() {\n");
+	strcat(def, "    char *path = \"");
+	strcat(def,                     ROOT);
+	strcat(def,                        "/run/prop/");
+	strcat(def,                                   filename);
+	strcat(def,                                           "\";\n");
+	strcat(def, "    return loads(path);\n");
+	strcat(def, "\n");
+	strcat(def, "}\n");
+	strcat(def, "\n");
+	strcat(def, "void \n");
+	strcat(def,       identset);
+	strcat(def,              "(char *val) {\n");
+	strcat(def, "    char *path = \"");
+	strcat(def,                     ROOT);
+	strcat(def,                        "/run/prop/");
+	strcat(def,                                   filename);
+	strcat(def,                                           "\";\n");
+	strcat(def, "    fputsclose(val, fopen(path, \"w\"));\n");
+	strcat(def, "}\n");
+
+	fputsclose(def, fopen(headerpath, "a"));
+}
+#define prop prop (
 
 #include "quickdef.h"
 
@@ -225,4 +273,4 @@ void man(char *topic) {
 #define man man (
 
 
-
+#endif
