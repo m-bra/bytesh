@@ -7,6 +7,7 @@
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
 
+#define getcol sys "./getcol" _
 #define pfs printf("%s",
 #define vncserver sys "vncserver -localhost" _
 #define prootdistro sys "proot-distro login archlinux" _
@@ -142,8 +143,11 @@ void prop(char *filename, char *identget, char *identset)
 
 #include "quickdef.h"
 
-void quickdef(char *def)
+void quickdef()
 {
+    char def[NBUF];
+    printf(".c (quickdef) $ ");
+    fgets(def, NBUF, stdin);
 	char path[NBUF];
 	snprintf(path, NBUF, "%s/run/quickdef.h", ROOT);
     char defb[strlen(def) + 2];
@@ -152,11 +156,29 @@ void quickdef(char *def)
     defb[strlen(def) + 1] = 0;
 	fputsclose(defb, fopen(path, "a"));
 }
-#define quickdef quickdef (
+#define quickdef quickdef();
 
 #define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
-#define mainh sys "micro /data/data/com.termux/files/home/prj/bytesh/run/main.h" _
 
+void mainh()
+{
+	char cmd[NBUF] = "";
+	strcat(cmd, "micro ");
+	strcat(cmd       , ROOT);
+	strcat(cmd,            "/run/main.h");
+	sys cmd _
+}
+#define mainh mainh();
+
+void cnslutilh()
+{
+	char cmd[NBUF] = "";
+	strcat(cmd, "micro ");
+	strcat(cmd,        ROOT);
+	strcat(cmd,             "/run/cnslutil.h");
+	sys cmd _
+}
+#define cnslutilh cnslutilh();
 
 void editcompiler()
 {
