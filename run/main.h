@@ -200,11 +200,11 @@ void echosys(char const *cmd)
 #define echosys echosys (
 
 void gitupdate() {
-	echosys "git add *" _
-	echosys "git add */*" _
-	echosys "git commit -m untitled" _
+	    sys "git add *" _
+	    sys "git add */*" _
+	    sys "git commit -m untitled" _
 	echosys "git status" _
-	echosys "git log" _
+	//echosys "git log" _
 }
 #define gitupdate gitupdate();
 
