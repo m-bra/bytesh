@@ -1,3 +1,25 @@
 
 [/data/data/com.termux/files/home/prj/bytesh/run]
-.c (priv) $ gitupdate
+.c (priv) $ [master dde7dd3] untitled
+ 8 files changed, 47 insertions(+), 6 deletions(-)
+ create mode 100644 run/a.out.txt
+ create mode 100755 run/getcol
+ create mode 100644 run/log.txt
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../a.out
+	modified:   ../main.c
+	deleted:    col
+	modified:   log.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+[auto]
+$ git status
+
+
+[/data/data/com.termux/files/home/prj/bytesh/run]
+.c (priv) $ 
+gitupdate
