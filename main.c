@@ -18,6 +18,19 @@
   	}                                       \
 //
 
+char *memcmov(char *dst, char *src, int c, size_t n)
+{
+	char tmp[n];
+	        memccpy(tmp, src, c, n);
+	return  memccpy(dst, tmp, c, n);
+}
+
+
+char *escapecstr(char *s)
+{
+	return s;
+}
+
 void loadcwd(char *workdir)
 {
     char path[NBUF]; snprintf(path, NBUF, "%s/cwd.txt", workdir);
@@ -50,6 +63,8 @@ int main(int argc, char **argv) {
   char *batchfilename = c;
 
   int setemptyline = 1;
+
+  char lastline[NBUF];
 
   while ( 1 ) {
     loadcwd(workdir);
@@ -123,10 +138,14 @@ int main(int argc, char **argv) {
         	syssh = 1;
         	line += 2;
         }
-    
+
+        char *ll = lastline;
         void *srcfile = fopen(srcfilename, "w");
 		fprintf(srcfile, "#include \"main.h\"\n");
+		fprintf(srcfile, "\n");
+		fprintf(srcfile, "#define lastcmd \"%s\"\n", escapecstr(ll));
 		fprintf(srcfile, "#define syssh %d\n", syssh);
+		fprintf(srcfile, "\n");
 		fprintf(srcfile, "int main(int argc, char **argv) {\n");
 		fprintf(srcfile,     "MAIN_BEGIN\n");
 
@@ -162,12 +181,14 @@ int main(int argc, char **argv) {
 		snprintf(cmd, NBUF, "gcc %s -o%s", srcfilename, outfilename);
 		system(cmd);
 
-		pid_t child = fork();
-		if (child != 0) {
-			waitpid(child, 0, 0);
+		pid_t childid = fork();
+		if (childid) {
+			waitpid(childid, 0, 0);
 		} else {
 			execl(outfilename, "a.out", (char *) NULL);
 		}
+
+		strcpy(linebuf, lastline);
     }
   } 
 }
