@@ -12,6 +12,8 @@
 #include "unistd.h"
 #include "string.h"
 
+#include "cnslutil.h"
+
 //#include "todo.h"
 
 #define ln ;printf("\n");
@@ -59,7 +61,11 @@ void statusprint(int issyssh)
     if (!dobatch)
     {
     	printf("\n[%s]\n",  cwd);
-        printf("$ %s", issyssh ? "$ " : "");
+    	if (issyssh) {
+    		printf(".sh (priv) $ ");
+    	} else {
+    		printf(".c (priv) $ ");
+    	}
     }
     else {
 
@@ -78,14 +84,14 @@ void submain(int argc, char **argv)
 	printf("Hello submain");
 }
 
-void man(char *topic)
+/*void man(char *topic)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "man %s", topic);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define man man (
+#define man man (*/
 
 void mv(char *from, char *to)
 {
@@ -205,8 +211,8 @@ void gitupdate() {
 #define switchstr
 #define casestr if ( !strcmp(
 
-void manpriv(char *topic) {
-	if (1//!strcmp(topic, "fopen")
+void man(char *topic) {
+	if (0//!strcmp(topic, "fopen")
 	//|| (!strcmp(topic, "fdopen"))
 	|| (!strcmp(topic, "freopen")))
 	{
@@ -222,8 +228,38 @@ void manpriv(char *topic) {
 		printf("indicate the error.\n");
 	
 	}
+
+	if (!strcmp(topic, "memcmov")) {
+		printf("NAME\n");
+		printf("       memcmov - move memory area\n");
+		printf("\n");
+		printf("LIBRARY\n");
+		printf("       Extended Standard C library\n");
+		printf("\n");
+		printf("SYNOPSIS\n");
+		printf("       #include <stringext.h>\n");
+		printf("\n");
+		printf("       void *memcmov(void dst[.n], \n");
+		printf("                     void const src[.n], int c,\n");
+		printf("                     size_t n);\n");
+		printf("\n");
+		printf("DESCRIPTION\n");
+		printf("       The memcmov() function copies no more than\n");
+		printf("       `n` bytes from memory area `src` to memory\n");
+		printf("       area `dst`, stopping when the character\n");
+		printf("       `c` is found (`c` is copied).\n");
+		printf("\n");
+		printf("       The memory areas may overlap.\n");
+		printf("\n");
+		printf("RETURN VALUE\n");
+		printf("       The memcmov() function returns a pointer to\n");
+		printf("       the next character in `dst` after `c`, or\n");
+		printf("       NULL if `c` was not found in the first `n`\n");
+		printf("       characters of `src`.\n");
+		printf("\n");
+	}
 }
-#define manpriv manpriv (
+#define man man (
 
 void lines(int n) {
   for (
