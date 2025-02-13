@@ -4,8 +4,6 @@
 #define MAIN_BEGIN runbatch();
 #define MAIN_END mvbatch(); statusprint(syssh);
 
-#warning system() does not wait for command to exit!
-
 #define NBUF 512
 
 #define ROOT "/data/data/com.termux/files/home/prj/bytesh/"
