@@ -22,7 +22,6 @@
 
 //#include "todo.h"
 
-
 void statusprint(int issyssh)
 {
 	char cwd[NBUF]; getcwd(cwd, NBUF);
@@ -39,6 +38,7 @@ void statusprint(int issyssh)
 
 void test()
 {
+
 }
 
 #endif

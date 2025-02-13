@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
   int syssh = 0;
   
   char *workdir = argv[1];
+  char *rootworkdir = workdir;
 
   if (argc < 2) { printf("%s: %s %s%s\n", "Usage", argv[0], "<workdir>", ""); return 1; }
 
@@ -148,6 +149,7 @@ int main(int argc, char **argv) {
 		if (childid) {
 			waitpid(childid, 0, 0);
 		} else {
+			
 			execl(outfilename, "a.out", (char *) NULL);
 		}
 

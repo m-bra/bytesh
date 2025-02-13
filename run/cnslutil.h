@@ -137,9 +137,7 @@ void gitupdate() {
 #define gitupdate gitupdate();
 
 void man(char *topic) {
-	if (0//!strcmp(topic, "fopen")
-	//|| (!strcmp(topic, "fdopen"))
-	|| (!strcmp(topic, "freopen")))
+	if (!strcmp(topic, "freopen"))
 	{
 		printf("#include <stdio.h>\n");
 		printf("FILE *freopen(char *path, char *mode, FILE *f);\n");
@@ -183,7 +181,7 @@ void man(char *topic) {
 		printf("       characters of `src`.\n");
 		printf("\n");
 	}
-	if (!strcmp(topic, "fgets"))
+	else if (!strcmp(topic, "fgets"))
 	{
 		printf("NAME\n");
 		printf("       fgets - input of strings\n");
