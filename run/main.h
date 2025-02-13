@@ -1,6 +1,8 @@
 #define MAIN_BEGIN runbatch();
 #define MAIN_END mvbatch(); statusprint(syssh);
 
+#warning system() does not wait for command to exit!
+
 #define NBUF 512
 
 #define ROOT "/data/data/com.termux/files/home/prj/bytesh/"
@@ -9,6 +11,8 @@
 #include "stdlib.h"
 #include "unistd.h"
 #include "string.h"
+
+//#include "todo.h"
 
 #define ln ;printf("\n");
 
@@ -74,6 +78,15 @@ void submain(int argc, char **argv)
 	printf("Hello submain");
 }
 
+void man(char *topic)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "man %s", topic);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define man man (
+
 void mv(char *from, char *to)
 {
 	char buf[NBUF];
@@ -91,6 +104,15 @@ void cp(char *from, char *to)
 	// TODO: undefined escape rules in param strings
 }
 #define cp cp (
+
+void rm(char *filename)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "rm %s", filename);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define rm rm (
 
 void cat(char *filename)
 {
@@ -179,6 +201,29 @@ void gitupdate() {
 	echosys "git log" _
 }
 #define gitupdate gitupdate();
+
+#define switchstr
+#define casestr if ( !strcmp(
+
+void manpriv(char *topic) {
+	if (1//!strcmp(topic, "fopen")
+	//|| (!strcmp(topic, "fdopen"))
+	|| (!strcmp(topic, "freopen")))
+	{
+		printf("#include <stdio.h>\n");
+		printf("FILE *freopen(char *path, char *mode, FILE *f);\n");
+		printf("\n");
+		printf("The freopen() function opens the file whose name is\n");
+		printf("the string pointed to by `path` and associates the\n");
+		printf("stream pointed to by `f` with it. The original\n");
+		printf("stream (if it exists) is closed.\n");
+		printf("\n");
+		printf("On failure, NULL is returend and `errno` is set to\n");
+		printf("indicate the error.\n");
+	
+	}
+}
+#define manpriv manpriv (
 
 void lines(int n) {
   for (

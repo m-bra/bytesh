@@ -2,6 +2,5 @@
 #define syssh 0
 int main(int argc, char **argv) {
 MAIN_BEGIN
-gitupdate
-
+gitupdate 
 MAIN_END}

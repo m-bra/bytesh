@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
-#include "unistd.h"
+#include <unistd.h>
+#include <sys/wait.h>
 
 #define NBUF 1024
 #define loop (1)
@@ -31,6 +32,8 @@ void loadcwd(char *workdir)
 }
 
 int main(int argc, char **argv) {
+  printf("[press enter]");
+
   int syssh = 0;
   
   char *workdir = argv[1];
@@ -127,9 +130,9 @@ int main(int argc, char **argv) {
 		fprintf(srcfile, "int main(int argc, char **argv) {\n");
 		fprintf(srcfile,     "MAIN_BEGIN\n");
 
-		for (unsigned long i = 0; i < strlen(line); ++i) {
-			if (line[i] == '\n')
-			    ;//line[i] = ' ';
+		for (unsigned long i = 1; i < strlen(line); ++i) {
+			if (line[i] == '\n' && line[i-1] != '\\')
+			    line[i] = ' ';
 		}
 
 		if (0 == strncmp(line, "cd ", 3)) {
@@ -158,8 +161,13 @@ int main(int argc, char **argv) {
 	
 		snprintf(cmd, NBUF, "gcc %s -o%s", srcfilename, outfilename);
 		system(cmd);
-	
-		system(outfilename);	
+
+		pid_t child = fork();
+		if (child != 0) {
+			waitpid(child, 0, 0);
+		} else {
+			execl(outfilename, "a.out", (char *) NULL);
+		}
     }
   } 
 }
