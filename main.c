@@ -86,6 +86,10 @@ int main(int argc, char **argv) {
     }
     char *line = linebuf;
 
+    char aouttxtpath[NBUF] = "";
+    snprintf(aouttxtpath, NBUF, "%s/log.txt", rootworkdir);
+    fputsclose(line, fopen(aouttxtpath, "a"));
+
     if (!syssh && 0 == strncmp(line, "#exit", 5)) {
     	exit(0);
     }
@@ -139,22 +143,28 @@ int main(int argc, char **argv) {
 		fclose(srcfile);
 	
 		char cmd[NBUF];
+
+		cmd[0] = 0;
 		snprintf(cmd, NBUF, "rm -f %s", outfilename);
 		system(cmd);
 	
 		snprintf(cmd, NBUF, "gcc %s -o%s", srcfilename, outfilename);
 		system(cmd);
 
-		pid_t childid = fork();
-		if (childid) {
-			waitpid(childid, 0, 0);
-		} else {
-			//char filename[NBUF] = "";
-			//strcat(filename, rootworkdir);
-			//strcat(filename, "a.out.txt");
-			//freopen(filename, "w", stdout);
-			execl(outfilename, "a.out", (char *) NULL);
-		}
+		char stdoutpath[NBUF] = "";
+		strcat(stdoutpath, rootworkdir);
+		strcat(stdoutpath,           "/a.out.txt");
+
+		cmd[0] = 0;
+		strcat(cmd, outfilename);
+		//strcat(cmd,           " > ");
+		//strcat(cmd,               stdoutpath);
+		//strcat(cmd,                        " 2>&1");
+		system(cmd);
+
+		char cmdouttxt[NBUF * 80 * 128] = "";
+		//fgetsclose(cmdouttxt, sizeof cmdouttxt, fopen(stdoutpath, "r"));
+		printf("%s", cmdouttxt);
 
 		strcpy(lastline, linebuf);
     }

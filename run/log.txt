@@ -23,3 +23,6 @@ $ git status
 [/data/data/com.termux/files/home/prj/bytesh/run]
 .c (priv) $ 
 gitupdate
+cd ..
+
+gitupdate
