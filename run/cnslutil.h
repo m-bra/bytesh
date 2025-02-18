@@ -6,7 +6,8 @@
 ////////////////////////////////////////////////////////////////////////
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
-
+#define _ ) ;
+#define sys system (
 #define getcol sys "./getcol" _
 #define pfs printf("%s",
 #define vncserver sys "vncserver -localhost" _
@@ -15,6 +16,15 @@
 #define ls sys "ls -hAltr" _
 #define process edit "" _
 
+void syssleep(char const *time)
+{
+	linebuf_t buf;
+	snprintf(buf, sizeof(buf), "sleep %s", time);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define sleep syssleep (
+
 void micro(char const *path)
 {
 	char buf[512];
@@ -22,10 +32,7 @@ void micro(char const *path)
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-
 #define edit micro (
-#define _ ) ;
-#define sys system (
 
 void tputcup(int col)
 {
@@ -157,6 +164,14 @@ void quickdef()
 	fputsclose(defb, fopen(path, "a"));
 }
 #define quickdef quickdef();
+
+void programm()
+{
+	linebuf_t path = "";
+	snprintf(path, sizeof(linebuf_t), "%s%s", ROOT, "/run/programm.txt");
+	edit path _
+}
+#define programm programm();
 
 #define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 

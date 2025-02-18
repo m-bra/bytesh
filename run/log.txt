@@ -1,28 +1,62 @@
-
-[/data/data/com.termux/files/home/prj/bytesh/run]
-.c (priv) $ [master dde7dd3] untitled
- 8 files changed, 47 insertions(+), 6 deletions(-)
- create mode 100644 run/a.out.txt
- create mode 100755 run/getcol
- create mode 100644 run/log.txt
-On branch master
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   ../a.out
-	modified:   ../main.c
-	deleted:    col
-	modified:   log.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-[auto]
-$ git status
-
-
-[/data/data/com.termux/files/home/prj/bytesh/run]
-.c (priv) $ 
-gitupdate
+rm "core" _
+cd tmp
+ls
+cat "test.txt" _
 cd ..
+ls
+printf("%s");
+editcompiler
 
+mainh
+
+editcompiler
+
+mainh
+man "fputs" _
+mainh
+
+
+
+mainh
+
+
+mainh
+
+
+\
+(int a, a = 1, a)
+
+mainh
+
+\
+int n = 0;\
+alloclist_t al;\
+ensurealloclist(al);\
+ensurealloclist(n);\
+
+mainh
+
+\
+int *ip;\
+int i;\
+alloclist_t *al;\
+ensurealloclist(ip);\
+ensurealloclist(i);\
+ensurealloclist(al);\
+
+
+mainh
+
+pwd
+
+
+ls
+cat "status.txt" _
+cd ..
+ls
+cat "status.txt" _
+mainh
+
+
+mainh
 gitupdate
