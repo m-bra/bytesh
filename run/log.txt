@@ -60,3 +60,9 @@ mainh
 
 mainh
 gitupdate
+pwd
+
+printf("%s", "hello\nworld\n!\n");
+
+
+gitupdate

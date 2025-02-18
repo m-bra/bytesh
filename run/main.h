@@ -68,14 +68,14 @@ void statusprint(int issyssh)
     {
     	snprintf(statusbuf, sbn, "\n[%s]\n",  cwd);
     	if (issyssh) {
-    		snprintf(statusbuf, sbn, ".sh (priv) $ ");
+    		snprintf(statusbuf, sbn, "%s.sh (priv) $ ", statusbuf);
     	} else {
-    		snprintf(statusbuf, sbn, ".c (priv) $ ");
+    		snprintf(statusbuf, sbn, "%s.c (priv) $ ", statusbuf);
     	}
     }
 
     printf("%s", statusbuf);
-    fputsclose(statusbuf, fopen(ROOTC("/status.txt"), "w"));
+    fputsclose(statusbuf, fopen(ROOTC("/run/status.txt"), "w"));
 }
 
 void test()
