@@ -66,3 +66,335 @@ printf("%s", "hello\nworld\n!\n");
 
 
 gitupdate
+sys "play" _
+sys "mpv" _
+cnslutilh
+quickdef
+
+quickdef
+mainh
+cd run
+edit "quickdef.h" _
+cnslutilh
+mainh
+quickdef
+mpv("");
+
+quickdef
+quickdefh
+
+mpv("");
+ls
+cd ..
+cd ..
+cd ..
+ls
+cd storage
+ls
+cd music
+ls
+ls
+ls /system/media/audio/ringtones
+
+cd system/media/audio/ringtones
+
+
+cd ..
+cd ..
+cd ..
+ls
+cd storage
+ls
+cd downloads
+ls
+quickdef
+pfs storagepath _
+quickdef
+printf(s, storagepath);
+cd /storage/emulated/0
+
+
+ls
+cd Ringtones
+ls
+ls
+cd ..
+cd Alarms
+ls
+cd ..
+ls
+cd Notifications
+ls
+cd Audiobooks
+ls
+cd ..
+cd Music
+ls
+cd ..
+ls
+cd Download
+ls
+
+ls
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilluther1535shrink.pdf 
+
+ls
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilluther1535shrink.pdf Lutherbibel\ 1535.pdf" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFile=luther1535shrink.pdf Lutherbibe\ 1535.pdf" _
+exit
+
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilLU1535COMP.PDF LU1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=LU1535COMP.PDF LU1535.PDF" _
+ls
+mv "LUT1535.PDF", "LU1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=LU1535COMP.PDF LU1535.PDF" _
+ls
+micro cmd
+
+edit "cmd" _
+
+sys “gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF” _
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _  
+ls
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _  c
+
+clear
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535COMP.PDF" _  
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535COMP.PDF" _
+ls
+sys "rm LU1535COMP.PDF" _
+sys "LU1535COMP36.PDF" _
+sys "rm LU1535COMP36.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535.PDF" _
+
+ls
+rm "LU1535COMP36.PDF" _
+ls
+sys “gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF” _
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535.PDF" _
+ls
+tar xvf poppler-25.02.0.tar.xz
+
+sys "tar xvf poppler-*" _
+mv "poppler*", "poppler" _
+sys "mv -r poppler* poppler" _
+ls
+sys "rm poppler*.tar.xz" _
+ls
+sys "mv poppler* poppler" _
+ls
+cd poppler
+ls
+cat README.md
+
+cat "README.md" _
+cat "INSTALL.md" _
+cat "INSTALL" _
+$ 
+
+
+
+ls
+lns
+
+quickdef
+tmux
+cd ..
+cd ..
+
+tmuxhelp
+
+quickdef
+macroadd(sizeof(linebuf_t));
+
+mainh
+mallocadd(sizeof(linebuf_t));
+mainh
+#define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf│
+(lastmalloc, sizeof(linebuf_t), "ln -                                          │
+                                                                               │[/storage/emulated/0
+
+edit "│/data/data/com.termux/files/home/prj/bytesh//run/quickdef.h" _
+edit "/data/data/com.termux/files/home/prj/bytesh//run/quickdef.h" _
+ls
+
+
+touch a
+
+touch "a" _
+lns "a", "b" _
+
+lnsfn("a", "b");
+
+tmuxhelp
+exit
+
+
+ls
+exit
+
+#edit
+cd /data/data/com.termux/files/home
+
+
+cd /data/data/com.termux/files/home/
+
+ls
+ls .local
+
+cd .local
+ls
+cd ..
+ls
+cd downloads
+ls
+cd ..
+ls
+cd prj
+ls
+cd localsys
+ls
+time
+
+sys "time" _
+sys "date" _
+ls
+ ls
+cd bin
+ls
+cat adb
+
+cat "adb" _
+rm "adb" _
+ls
+cat "xdoth_getmouselocation" _
+sys "pkg search xdotool" _
+cd ..
+cd ..
+cd ..
+ls
+mv prj/localsys opt
+
+mv "prj/localsys", "opt" _
+cd opt
+ls
+cd ..
+cd prj
+ls
+mainh
+sys "date" _
+
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads/victory-parade.webm" _
+ls
+cd ..
+ls
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads/victory-parade.webm" _
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads" _
+
+exit
+#exit
+
+ls
+mainh
+cd prj
+cd bytesh
+ls
+cd ru
+
+
+ls
+edit "quickdef.h" _
+printf(s, storagepath);
+cd /storage/emulated/0/
+
+man "tmux" _
+man "stty" _
+man "ioctl" _
+
+man "stty" _
+mainh
+cnslutilh
+prootdistro
+
+tmuxhelp
+
+prootdistro
+vncserver
+prootdistro
+
+cnslutilh
+
+vncserver
+cnslutilh
+sys "vncserver -localhost" _
+sys "DISPLAY=:1 libreoffice" _
+prootdistro
+
+cd prj
+ls
+
+cd ..
+cd ..
+ls
+cd helloworld-js
+ls
+cat "index.html" _
+mainh
+cnslutilh
+quickdefh
+sys "python -m http.server" _
+ls
+micro index.html
+
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _ 
+edit "index.html" _ sys "python -m http.server" _
+edit "index.html" _ sys "python -m http.server" _
+edit "index.html" _ sys "python -m http.server" _
+
+quickdef
+printf(s, testᚩ);ln
+
+printf("%d", testᚩ);ln
+
+quickdef
+quickdefh
+
+
+
+mainh
+stdlibexth
+
+edit "stdlibext.h" _
+cd ..
+cd bytehs
+
+ls
+cd run
+micro stdlibext.h
+
+edit "stdlibext.h" _
+ᛚs ᛍprintfᛍ "Hello, World"ᛆ;
+
+ᛚ s ᛍ printf ᛍ "Hello, World" ᛆ ;
+
+
+cnslutilh
+gitupdate

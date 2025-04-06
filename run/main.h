@@ -24,30 +24,6 @@ typedef char pagebuf_t[sizeof(linebuf_t) * 128];
     (char *)lastmalloc\
 )
 
-#define MALLOCLISTMAXPTRS 2048
-typedef struct
-{
-	void *ptrs[MALLOCLISTMAXPTRS];
-	int nptrs;
-} malloclist_t;
-#define lastmalloc (malloclist->ptrs[malloclist->nptrs - 1])
-
-void mallocadd_(malloclist_t *malloclist, int size)
-{
-	if (malloclist->nptrs + 1 > MALLOCLISTMAXPTRS)
-	{
-		printf("Error at %s:%d\n", __FILE__, __LINE__);
-		exit(1);
-	}
-
-    malloclist->ptrs[malloclist->nptrs] = malloc(size);
-    malloclist->nptrs += 1;
-}
-#define mallocadd(size) mallocadd_(malloclist, size)
-
-malloclist_t malloclistval;
-malloclist_t *malloclist = &malloclistval;
-
 #include "stdlibext.h"
 #include "stringext.h"
 #include "stringutil.h"
