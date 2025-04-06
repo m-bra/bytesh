@@ -31,3 +31,5 @@
 #define lns lnsfn (
 
 
+#define stdioexth edit "/data/data/com.termux/files/home/prj/bytesh/run/stdioext.h" _
+

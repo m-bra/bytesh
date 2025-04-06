@@ -33,10 +33,6 @@ malloclist_t *malloclist = &malloclistval;
 
 #define in(a, f, b) f ( a , b )
 
-#define ᛚ in (
-#define ᛆ )
-#define ᛍ ,
-
 #define loop (1)
 
 #define throwngerrno(x)                     \

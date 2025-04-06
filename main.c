@@ -11,13 +11,14 @@ void loadcwd(char *workdir)
 {
     char path[NBUF]; snprintf(path, NBUF, "%s/cwd.txt", workdir);
 //    printf("path = '%s'\n", path);
-    FILE *f = fopen(path, "r");
-    char line[NBUF]; fgets(line, NBUF, f);
+    char line[NBUF]; fgetsclose(line, NBUF, fopen(path, "r"));
     line[strlen(line) - 1] = 0;
 //    printf("line = '%s'\n", line);
     int r = chdir(line);
-    if (r < 0) printf("cd: error\n");
-    fclose(f);
+    if (r < 0) {
+        printf("cd: error\n");
+        fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    }
 }
 
 int main(int argc, char **argv) {

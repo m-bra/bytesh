@@ -398,3 +398,31 @@ edit "stdlibext.h" _
 
 cnslutilh
 gitupdate
+editcompiler
+
+edit "stdlibext.h" _
+ls
+edit "stdioext.h" _
+editcompiler
+
+quickdef
+stdioexth
+
+fputscloseh
+
+stdioexth
+fgetscloseh
+stdioexth
+fgetscloseh
+fputscloseh
+editcompiler
+
+editcompiler
+
+#exit
+
+cd nnnnn
+cd ..
+cd asdfasdf
+
+gitupdate

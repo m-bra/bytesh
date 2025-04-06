@@ -5,7 +5,7 @@
 
 #define ln ;printf("\n");
 
-
+#define fgetscloseh printf(s, "fgetsclose(char *s, int n, FILE *f)")ln;
 char *fgetsclose(char *s, int n, FILE *f)
 {
 	char *result = s;
@@ -18,6 +18,7 @@ char *fgetsclose(char *s, int n, FILE *f)
 	return result;
 }
 
+#define fputscloseh printf(s, "fputsclose(char *s, FILE *f)")ln;
 void fputsclose(char *s, FILE *f)
 {
 	fputs(s, f);
