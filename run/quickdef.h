@@ -33,3 +33,13 @@
 
 #define stdioexth edit "/data/data/com.termux/files/home/prj/bytesh/run/stdioext.h" _
 
+#define psefgrepfn(term) (\
+	mallocaddlinebuf,\
+	snprintf((char *)lastmalloc, linebuf_tn, "%s%s", "ps -ef | grep ", (term)),\
+	sys ((char*)lastmalloc) )\
+) ;
+
+#define psefgrep psefgrepfn (
+
+#define termux11 sys "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"" _
+

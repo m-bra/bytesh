@@ -173,7 +173,7 @@ void programm()
 }
 #define programm programm();
 
-#define tmuxhelp printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
+#define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 
 void mainh()
 {

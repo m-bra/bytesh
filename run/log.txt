@@ -426,3 +426,226 @@ cd ..
 cd asdfasdf
 
 gitupdate
+ᚠg
+
+mainh
+cd run
+edit "mish.h" _
+
+prootdistro
+tmuxhelp
+
+tmuxhelp
+
+prootdistro
+
+mainh
+cnslutilh
+vnch
+
+vncserver
+cnslutilh
+man "vncserver" _
+sys "vncserver --help" _
+cd ..
+cd ..
+cd ..
+cd .vnc
+ls
+cat "passwd" _
+
+
+prootdistro
+
+cnslutilh
+quickdef
+sys "pkg i termux-x11-nightly" _
+sys "pkg i xfce" _
+
+sys "vncserver -list" _
+
+
+
+sys "pkg i browsh" _
+sys "browsh duckduckgo.com" _
+
+browsh
+
+sys "browsh" _
+
+cd ..
+ls
+cd downloads
+ls
+cd ..
+ls
+mainh
+
+ls
+mainh
+
+
+
+mainh
+cnslutilh
+storage
+
+storagepath
+
+storagepath;
+printf(s, storagepath);
+cd /storage/emulated/0
+cd /storage/emulated/0/
+cd ../../..
+cd ..
+cd ..
+cd ..
+cd ..
+cd /storage/emulated/0/
+ls
+cd Download
+ls
+sys "./browsh_1.8.0_linux_arm64" _
+sys "chmod +x ./browsh_1.8.0_linux_arm64" _
+sys "./browsh_1.8.0_linux_arm64" _
+quickdef
+sys "echo hello" ⏎
+
+
+
+quickdef
+
+
+
+ls
+mv "browsh_1.8.0_linux_arm64" "browsh" _
+
+mv "browsh_1.8.0_linux_arm64", "browsh" _
+mv browsh ../../../../data/data/termux/home
+
+mv "browsh", "../../../../data/data/com.termux/files/home/" _
+cd ../../../..
+cd data/data/com.termux/files/hoem
+cd data/data/com.termux/files/home
+
+cd ..
+cd ..
+ls
+./browsh
+
+sys "./browsh" _
+sys "pkg i which" _
+sys "./browsh" _
+sys "browsh" _
+sys "./browsh --help" _
+
+
+
+sys "./browsh" _
+sys "./browsh" _
+quickdef
+psefgrep
+quickdefh
+
+psefgrep("firefox")
+
+
+mainh
+
+psefgrep("firefox")
+
+sys "./browsh" _
+psefgrep("firefox")
+quickdefh
+psefgrep "firefox" _
+
+psefgrepfn("firefox")
+
+$ 
+
+
+
+
+proot-distro
+
+prootdistro
+
+proot-distro
+
+prootdistro
+
+prootdistro
+
+prootdistro
+
+cnshlutilh
+
+cnslutilh
+
+
+
+prootdistro
+
+quickdefh
+quickdef
+
+quickdefh
+quickdef
+termux11
+
+sys "thunderbird" _
+sys "libreoffice" _
+prootdistro
+
+sys "libreoffice" _
+
+
+quickdefh
+termux11
+
+pkg install thunderbird
+
+sys "pkg install thunderbird" _
+
+termux11
+
+stdlibh
+
+quickdef
+
+stdlibexth
+
+ls
+cd prj
+
+sys "pacman -S poppler" _
+sys "pkg install poppler" _
+cd ..
+cd /storage/emulated/0
+ls
+storagepath
+
+printf(s, storagepath);
+cd /storage/emulated/0
+cd ../../../../../../../../storage/emulated/0
+ls
+cd Documents
+ls
+cd ..
+cd Download
+ls
+mkdir tmp
+
+mkdir "tmp" _
+cp "LU1535.PDF", "tmp" _
+cd tmp
+ls
+pdftoppm -png LU1535.PDF split
+
+sys "pdftoppm -png LU1535.PDF split" _
+
+termux11
+gitupdate
+cd ../../../../../../data/data/com/termux
+cd ../../../../../data/data/com/termux/home
+gitupdate
