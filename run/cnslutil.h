@@ -10,109 +10,109 @@
 #define sys system (
 #define getcol sys "./getcol" _
 #define pfs printf("%s",
-#define vncserver sys "vncserver -localhost" _
-#define prootdistro sys "proot-distro login archlinux" _
-#define tmux sys "tmux" _
-#define ls sys "ls -hAltr" _
+#define vncserver sh, "vncserver -localhost", endsh
+#define prootdistro sh, "proot-distro login archlinux", endsh
+#define tmux sh, "tmux", endsh
+#define ls sh, "ls -hAltr", endsh
 #define process edit "" _
 
-void syssleep(char const *time)
+void syssleep(int ignore, char const *time, char *ignore_)
 {
 	linebuf_t buf;
 	snprintf(buf, sizeof(buf), "sleep %s", time);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define sleep syssleep (
+#define sleep syssleep ( 0
 
-void micro(char const *path)
+void micro(int ignore, char const *path, char *ignore_)
 {
 	char buf[512];
 	snprintf(buf, 512, "micro %s", path);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define edit micro (
+#define edit micro ( 0
 
-void tputcup(int col)
+void tputcup(int ignore, int col, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "tput cup %d 0", col);
 	system(buf);
 }
-#define tputcup tputcup (
+#define tputcup tputcup ( 0
 
-#define tputed sys "tput ed" _
+#define tputed sh, "tput ed", endsh
 
-void mkdir(char *path)
+void mkdir(int ignore, char *path, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "mkdir %s", path);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define mkdir mkdir (
+#define mkdir mkdir ( 0
 
-void mv(char *from, char *to)
+void mv(int ignore, char *from, char *to, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "mv %s %s", from, to);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define mv mv (
+#define mv mv ( 0
 
-void cp(char *from, char *to)
+void cp(int ignore, char *from, char *to, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "cp %s %s", from, to);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define cp cp (
+#define cp cp ( 0
 
-void rm(char *filename)
+void rm(int ignore, char *filename, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "rm %s", filename);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define rm rm (
+#define rm rm ( 0
 
-void cat(char *filename)
+void cat(int ignore, char *filename, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "cat %s", filename);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define cat cat (
+#define cat cat ( 0
 
-void touch(char *s)
+void touch(int ignore, char *s, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "touch %s", s);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define touch touch (
+#define touch touch ( 0
 
-void diff(char *from, char *to)
+void diff(int ignore, char *from, char *to, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "diff %s %s", from, to);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
-#define diff diff (
+#define diff diff ( 0
 
 
 ////////////////////////////////////////////////////////////////////////
 //                          ADDITIONAL COMMANDS
 /////////////////////////////////////////////////////////////////////////
 
-#include "prop.h"
+//#include "prop.h"
 
 void prop(char *filename, char *identget, char *identset)
 {
@@ -156,7 +156,7 @@ void quickdef()
     printf(".c (quickdef) $ ");
     fgets(def, NBUF, stdin);
 	char path[NBUF];
-	snprintf(path, NBUF, "%s/run/quickdef.h", ROOT);
+	snprintf(path, NBUF, "%s/run/cnslutil.h", ROOT);
     char defb[strlen(def) + 2];
     strcpy(defb, def);
     defb[strlen(def)] = '\n';
@@ -169,31 +169,14 @@ void programm()
 {
 	linebuf_t path = "";
 	snprintf(path, sizeof(linebuf_t), "%s%s", ROOT, "/run/programm.txt");
-	edit path _
+	edit, path, endsh;
 }
 #define programm programm();
 
 #define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 
-void mainh()
-{
-	char cmd[NBUF] = "";
-	strcat(cmd, "micro ");
-	strcat(cmd       , ROOT);
-	strcat(cmd,            "/run/main.h");
-	sys cmd _
-}
-#define mainh mainh();
-
-void cnslutilh()
-{
-	char cmd[NBUF] = "";
-	strcat(cmd, "micro ");
-	strcat(cmd,        ROOT);
-	strcat(cmd,             "/run/cnslutil.h");
-	sys cmd _
-}
-#define cnslutilh cnslutilh();
+#define mainh     (sh, mlinebufprintf("micro %s/%s", ROOT, "run/main.h"), endsh)
+#define cnslutilh (sh, mlinebufprintf("micro %s/%s", ROOT, "run/cnslutil.h"), endsh)
 
 void editcompiler()
 {
@@ -213,10 +196,11 @@ void echosys(char const *cmd)
 #define echosys echosys (
 
 void gitupdate() {
-	    sys "git add *" _
-	    sys "git add */*" _
-	    sys "git commit -m untitled" _
-	echosys "git status" _
+	    sh, "git add *", endsh;
+	    sh, "git add */*", endsh;
+	    sh, "git commit -m untitled", endsh;
+	    sh, "git status", endsh;
+	    sh, "echo git status", endsh;
 	//echosys "git log" _
 }
 #define gitupdate gitupdate();
@@ -311,3 +295,43 @@ void man(char *topic) {
 
 
 #endif
+
+// quickdef
+
+#define clear sys "clear" _
+#define tputsc sys "tput sc" _
+#define tputrc sys "tput rc" _
+#define repeat(n) for (int i = 0; i < n; ++i)
+
+
+#define longtext repeat(100) {pfs "hello, world" _ ln}
+
+#define mpv(s) sys \
+    (\
+        snprintf(\
+            mallocadd(sizeof(linebuf_t)), \
+            sizeof(linebuf_t), \
+            "mpv %s", s\
+        ),\
+        lastmalloc\
+    ) _
+
+#define quickdefh edit ROOTC("/run/quickdef.h") _
+
+#define storagepath "/storage/emulated/0/"
+
+#define s "%s"
+
+
+
+#define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf(lastmalloc, sizeof(linebuf_t), "ln -s %s %s", a, b), lastmalloc) _
+
+#define lns lnsfn (
+
+
+#define stdioexth (edit, mlinebufprintf("ROOT/%s", "/run/stdioext.h", endsh)
+
+#define psefgrep (sh, mlinebufprintf("ps -ef | grep %s", term), endsh)
+
+#define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
+

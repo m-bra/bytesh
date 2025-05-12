@@ -1,4 +1,8 @@
 
+ * Δ0430
+   * sh, ..., ..., endsh; macro
+   * bytesh: fix crash on compiler error...
+
  * introduce persistent variables
    only char[] type allowed.
    after user once commanded
