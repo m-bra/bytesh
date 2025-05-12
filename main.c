@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -7,9 +6,9 @@
 #include <sys/wait.h>
 #include "run/main.h"
 
-void loadcwd(char *workdir)
-{
-    char path[NBUF]; snprintf(path, NBUF, "%s/cwd.txt", workdir);
+void loadcwd(char *rootworkdir)
+{  
+    char path[NBUF]; snprintf(path, NBUF, "%s/cwd.txt", rootworkdir);
 //    printf("path = '%s'\n", path);
     char line[NBUF]; fgetsclose(line, NBUF, fopen(path, "r"));
     line[strlen(line) - 1] = 0;
@@ -21,40 +20,49 @@ void loadcwd(char *workdir)
     }
 }
 
+typedef struct {                       
+  int syssh;                                                                                   
+  char *rootworkdir;                                                                         
+  int setemptyline;
+  char *lastline;                                                                          
+} maincontext_t;
+
+char *ctxtmwf(malloclist_t *malloclist, maincontext_t *ctxt, char *path)
+{
+	return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
+}
+#define ctxtmwf(path) ctxtmwf(malloclist, &ctxt, path)
+#define ctxtmrootworkdirfile ctxtmwf
+
 int main(int argc, char **argv) {
+  maincontext_t ctxt;
+  
   printf("[press enter]");
 
-  int syssh = 0;
+  ctxt.syssh = 0;
   
-  char *workdir = argv[1];
-  char *rootworkdir = workdir;
+  ctxt.rootworkdir = argv[1];
 
+  if (ctxt.rootworkdir[strlen(ctxt.rootworkdir) - 1] == '/') {
+  	ctxt.rootworkdir[strlen(ctxt.rootworkdir) - 1] = 0;
+  }
+  
   if (argc < 2) { printf("%s: %s %s%s\n", "Usage", argv[0], "<workdir>", ""); return 1; }
 
-  char a[NBUF]; snprintf(a, NBUF, "%s/main.c", workdir);
-  char *srcfilename = a;
-
-  char b[NBUF]; snprintf(b, NBUF, "%s/a.out", workdir);
-  char *outfilename = b;
-
-  char c[NBUF]; snprintf(c, NBUF, "%s/batch.h", workdir);
-  char *batchfilename = c;
-
-  int setemptyline = 1;
-
-  char lastline[NBUF*4];
+  ctxt.lastline = mallocaddlinebuf;
+  ctxt.setemptyline = 1;
 
   while ( 1 ) {
-    loadcwd(workdir);
+    loadcwd(ctxt.rootworkdir);
     char cwd[NBUF]; getcwd(cwd, NBUF);
     
     // printf("%s $ ", cwd); if (syssh) printf("$ ");
 
-    setemptyline = 0;
+    ctxt.setemptyline = 0;
 
     char linebuf[NBUF];
     linebuf[0] = 0;
-    if (!setemptyline)
+    if (!ctxt.setemptyline)
     {
         int displaynumber = 1;
         while loop {
@@ -83,36 +91,36 @@ int main(int argc, char **argv) {
     else {
     	linebuf[0] = '\n';
     	linebuf[1] = 0;
-    	setemptyline = 0;
+    	ctxt.setemptyline = 0;
     }
     char *line = linebuf;
 
     char aouttxtpath[NBUF] = "";
-    snprintf(aouttxtpath, NBUF, "%s/log.txt", rootworkdir);
+    snprintf(aouttxtpath, NBUF, "%s/log.txt", ctxt.rootworkdir);
     fputsclose(line, fopen(aouttxtpath, "a"));
 
-    if (!syssh && 0 == strncmp(line, "#exit", 5)) {
+    if (!ctxt.syssh && 0 == strncmp(line, "#exit", 5)) {
     	exit(0);
     }
 
     {
-        if (syssh && 0 == strncmp(line, "exit", 4)) {
-    	    syssh = 0;
+        if (ctxt.syssh && 0 == strncmp(line, "exit", 4)) {
+    	    ctxt.syssh = 0;
     	    line+= 4;
         }
 
-        if (!syssh && 0 == strncmp(line, "$ ", 2)) {
-        	syssh = 1;
+        if (!ctxt.syssh && 0 == strncmp(line, "$ ", 2)) {
+        	ctxt.syssh = 1;
         	line += 2;
         }
 
-        void *srcfile = fopen(srcfilename, "w");
+        void *srcfile = fopen(ctxtmwf("main.c"), "w");
 		fprintf(srcfile, "#include \"main.h\"\n");
 		fprintf(srcfile, "\n");
 		fprintf(srcfile, "char *lastcmd = \"%s\";\n", 
-		        escapecstr(lastline, sizeof(lastline)));
-		fprintf(srcfile, "int syssh = %d;\n", syssh);
-		fprintf(srcfile, "char *workdir = \"%s\";", workdir);
+		        escapecstr(ctxt.lastline, linebuf_tn));
+		fprintf(srcfile, "int syssh = %d;\n", ctxt.syssh);
+		fprintf(srcfile, "char *workdir = \"%s\";", ctxt.rootworkdir);
 		fprintf(srcfile, "\n");
 		fprintf(srcfile, "int main(int argc, char **argv) {\n");
 		fprintf(srcfile,     "MAIN_BEGIN\n");
@@ -126,15 +134,15 @@ int main(int argc, char **argv) {
 			line += 3;
 			line[strlen(line) - 1] = 0;
 			char path[NBUF];
-			snprintf(path, NBUF, "%s/cwd.txt", workdir);
+			snprintf(path, NBUF, "%s/cwd.txt", ctxt.rootworkdir);
 			void *f = fopen(path, "w");
 			fprintf(f, "%s/%s/\n", cwd, line);			
 			fclose(f);
-			loadcwd(workdir);
+			loadcwd(ctxt.rootworkdir);
 		}
 		else {
-		    if (syssh) fprintf(srcfile, "system(\"%s\");", line);
-			else       fprintf(srcfile, "%s", line);
+		    if (ctxt.syssh) fprintf(srcfile, "system(\"%s\");", line);
+			else            fprintf(srcfile, "%s", line);
 				
 		}
         
@@ -142,32 +150,45 @@ int main(int argc, char **argv) {
 		fprintf(srcfile, "}");	
 	
 		fclose(srcfile);
-	
-		char cmd[NBUF];
 
-		cmd[0] = 0;
-		snprintf(cmd, NBUF, "rm -f %s", outfilename);
-		system(cmd);
-	
-		snprintf(cmd, NBUF, "gcc %s -o%s", srcfilename, outfilename);
-		system(cmd);
+		{
+			sh, "rm -f %s", ctxtmwf("a.out"), endsh;
+			(sh, "gcc %s -o%s", ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) && (
+				0
+			);
+			{
+				/*
+				if (sh, "mv %s %s", ctxt.rootworkdir, mlinebufprintf("%s%s", ctxt.rootworkdir, ".err"), endsh)
+				{
+					printf("mv rootworkdir rootworkdir.err failed");
+				}
+				else
+				{
+					if (sh, "mv %s %s", 
+					    mlinebufprintf("%s%s", ctxt.rootworkdir, ".bak"), ctxt.rootworkdir,
+					    endsh)
+					{
+					    printf("mv rootworkdir.bak rootworkdir failed");
+					}
+					else
+					{
+						printf("rootworkdir restored to last working version.");
+					}
+				}
+				*/
+			}
+		}
+		sh, ctxtmwf("a.out"), endsh;
 
-		char stdoutpath[NBUF] = "";
-		strcat(stdoutpath, rootworkdir);
-		strcat(stdoutpath,           "/a.out.txt");
+		sh, "cp -r %s %s", ctxt.rootworkdir, mlinebufprintf("%s.bak", ctxt.rootworkdir), endsh;
 
-		cmd[0] = 0;
-		strcat(cmd, outfilename);
-		//strcat(cmd,           " > ");
-		//strcat(cmd,               stdoutpath);
-		//strcat(cmd,                        " 2>&1");
-		system(cmd);
 
+		//char *stdoutpath = mlinebufprintf("%s/%s", ctxt.rootworkdir, "a.out.txt");
 		char cmdouttxt[NBUF * 80 * 128] = "";
 		//fgetsclose(cmdouttxt, sizeof cmdouttxt, fopen(stdoutpath, "r"));
 		printf("%s", cmdouttxt);
 
-		strcpy(lastline, linebuf);
+		strcpy(ctxt.lastline, linebuf);
     }
   } 
 }
