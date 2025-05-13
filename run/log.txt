@@ -1047,3 +1047,450 @@ gitupdate
 gitupdate
 gitupdate
 gitupdate
+sh, "git push", endsh;
+sh, "git push --set-upstream origin master", endsh;
+cd ..
+cd ..
+ls
+
+ls
+cd prj
+cd bytesh
+ls
+quickdef
+gpgencrypt, "repositorypassword", endsh;
+
+gpgencrypt, "repositorypassword", endsh;
+ls
+
+ls
+rm, "repositorypassword", endsh;
+gpgencrypt, "repositorypassword.asc", endsh;
+
+gpgencrypt, "repositorypassword.asc", endsh;
+sh, "gpg -a -d %s", "repositorypassword.asc", endsh;
+
+sh, "gpg -a -d %s", "repositorypassword.asc", endsh;
+ls
+
+ls
+cat, "repositorypassword.asc", endsh;
+mv, "repositorypassword.asc", "repopw.txt", endsh;
+
+mv, "repositorypassword.asc", "repopw.txt", endsh;
+cd run
+
+cd run
+ls
+cat, "log.txt", endsh;
+sh, "git push --set-upstream origin master", endsh;
+cnslutilh
+
+cnslutilh
+sh, "browsh", endsh;
+editcompiler
+
+
+
+
+
+sh, "echo %s", "hello", endsh;
+
+cd ../../..
+ls
+cd .config
+ls
+cd micro
+ls
+mkdir syntax
+
+mkdir, "syntax", endsh;
+cd syntax
+ls
+edit, "c.yaml", endsh;
+mv, "c.yaml", "cext.yaml", endsh;
+ls
+
+ls
+edit, "cext.yaml", endsh;
+
+editcompiler
+edit, "cext.yaml", endsh;
+
+editcompiler
+
+editcompiler
+cd ..
+cd ../../../
+cd home
+cd prj
+cd bytesh
+cd run
+man "find" _
+cnslutilh
+man, "find", endsh;
+sh, "grep -r 'fprintfclose' *", endsh;
+stdioexth
+
+edit, "stdioext.h", endsh;
+man, "strlen", endsh;
+sh, "xclip -selection clipboard -delete", endsh;
+sh, "xsel -b -c", endsh;
+
+sh, "xsel -b -c", endsh;
+sh, "pkg install xclip", endsh;
+
+
+
+
+error
+
+
+ 
+error
+
+printf(s, "hello");ln;
+
+error
+
+
+error
+
+
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mainh
+
+
+
+mainh
+
+
+programm
+
+editcompiler
+
+stdlibexth
+
+edit, "stdlibext.h", endsh;
+
+
+mainh
+editcompiler
+
+
+
+
+
+
+
+
+ls ..
+
+
+
+
+
+mistake
+
+cd ..
+
+# cd ..
+
+ls
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mainh
+
+
+
+mainh
+
+
+mainh
+
+
+
+mainh
+
+
+mkdir run.err
+
+mkdir, "run.err", endsh
+
+mainh
+
+rm, "-r run.err", endsh;
+
+mainh
+
+
+
+
+ls
+edit, "run.bak/stdlibext.h", endsh;
+
+
+
+
+
+
+
+
+
+mainh
+
+
+
+
+
+
+
+
+
+
+ls
+mv, "run.bak.bak.bak* run.alternative*", "run/toberemoved", endsh
+ls
+
+ls
+ls run
+
+# cd run
+ls
+mv, "run.bak*", "toberemoved", endsh
+mv, "run.bak*", "toberemoved/run.alt.alt.bak", endsh
+
+mv, "run.bak*", "toberemoved/run.alt.alt.bak", endsh
+ls
+
+ls
+cd ..
+
+# cd ..
+ls
+# cd run.bak
+ls
+ls
+ls
+# cd ..
+# cd run
+ls
+touch TEST
+
+
+touch, "TEST", endsh
+ls
+# cd ..
+# cd run.bak
+ls
+# cd ..
+# cd run
+ls
+mv, ".bak", "toberemoved", endsh
+# cd ..
+
+# cd ..
+# cd run.bak
+ls
+# cd run.bak.bak
+ls
+# cd run.bak.bak
+ls
+stat, "run.bak.bak/run.bak.bak/run.bak.bak/run.bak.bak/run.bak.bak", endsh
+
+
+sh, "stat %s", "run.bak.bak/run.bak.bak/run.bak.bak/run.bak.bak/run.bak.bak", endsh
+# cd ..
+
+# cd ../..
+# cd ..
+ls
+mainh
+
+
+
+
+
+mainh
+
+
+
+
+
+
+
+mainh
+sh, "echo hello", endsh
+
+
+edit, "run.bak/main.h", endsh;
+
+
+
+
+
+ls
+mainh
+
+
+
+
+
+mainh
+
+
+
+
+
+ls
+quickdef
+date
+
+
+
+
+programm
+
+
+
+tmuxh
+
+tmux
+
+tmuxh
+
+du -h -d 1
+
+
+ls
+sh, "rm run.bak/run.bak.bak && rm run.tmp.bak/run.bak.bak && rm run/run.bak.bak", endsh
+sh, "rm -r run.bak/run.bak.bak && rm run.tmp.bak/run.bak.bak && rm -r run/run.bak.bak", endsh
+
+sh, "rm -r run.bak/run.bak.bak && rm -r run.tmp.bak/run.bak.bak && rm run/run.bak.bak", endsh
+
+sh, "du -h -d 1", endsh
+sh, "rm -r run.bak && mkdir run.bak", endsh
+ls
+
+ls
+sh, "mv -f run.err run", endsh
+
+
+quickdef
+quickdef
+cnslutilh
+
+editcompiler
+
+editcompiler
+
+du(1)
+# cd run.bak
+du(1)
+rm, "-r run.bak.bak", endsh
+# cd ..
+ls
+du(1)
+du(1)
+
+du(1)
+du(1)
+du(1)
+date
+cnslutilh
+gitupdate

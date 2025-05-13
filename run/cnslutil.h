@@ -8,13 +8,11 @@
 /////////////////////////////////////////////////////////////////////////
 #define _ ) ;
 #define sys system (
-#define getcol sys "./getcol" _
 #define pfs printf("%s",
 #define vncserver sh, "vncserver -localhost", endsh
 #define prootdistro sh, "proot-distro login archlinux", endsh
 #define tmux sh, "tmux", endsh
 #define ls sh, "ls -hAltr", endsh
-#define process edit "" _
 
 void syssleep(int ignore, char const *time, char *ignore_)
 {
@@ -163,7 +161,7 @@ void quickdef()
     defb[strlen(def) + 1] = 0;
 	fputsclose(defb, fopen(path, "a"));
 }
-#define quickdef quickdef();
+#define quickdef quickdef()
 
 void programm()
 {
@@ -171,7 +169,7 @@ void programm()
 	snprintf(path, sizeof(linebuf_t), "%s%s", ROOT, "/run/programm.txt");
 	edit, path, endsh;
 }
-#define programm programm();
+#define programm programm()
 
 #define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 
@@ -185,7 +183,7 @@ void editcompiler()
                -o /data/data/com.termux/files/home/prj/bytesh/a.out");
 	exit(0);
 }
-#define editcompiler editcompiler();
+#define editcompiler editcompiler()
 
 void echosys(char const *cmd)
 {
@@ -199,13 +197,14 @@ void gitupdate() {
 	    sh, "git add *", endsh;
 	    sh, "git add */*", endsh;
 	    sh, "git commit -m untitled", endsh;
+	    sh, "git push", endsh;
 	    sh, "git status", endsh;
 	    sh, "echo git status", endsh;
 	//echosys "git log" _
 }
-#define gitupdate gitupdate();
+#define gitupdate gitupdate()
 
-void man(char *topic) {
+void man(int ignore, char *topic, char *ignore_) {
 	if (!strcmp(topic, "freopen"))
 	{
 		printf("#include <stdio.h>\n");
@@ -291,7 +290,7 @@ void man(char *topic) {
 		system(cmd);
 	}
 }
-#define man man (
+#define man man ( 0
 
 
 #endif
@@ -334,4 +333,11 @@ void man(char *topic) {
 #define psefgrep (sh, mlinebufprintf("ps -ef | grep %s", term), endsh)
 
 #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
+
+#define gpgencrypt sh, "gpg -a -c %s"
+
+#define date sh, "date", endsh
+
+void du(int depth) {sh, "du -h -d %d", depth, endsh;}
+
 

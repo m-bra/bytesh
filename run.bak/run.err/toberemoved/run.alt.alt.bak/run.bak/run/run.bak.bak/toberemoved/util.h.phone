@@ -1,0 +1,9 @@
+
+#define FUNC (
+#define __ )
+
+void insertchar FUNC
+char *buf, int len, int index, char c __ 
+{
+	
+}

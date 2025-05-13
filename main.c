@@ -24,171 +24,178 @@ typedef struct {
   int syssh;                                                                                   
   char *rootworkdir;                                                                         
   int setemptyline;
-  char *lastline;                                                                          
+  char *lastline;  
+  char *linebuf;
+  char *line;
+  char *cwd; 
+
+  FILE *srcfile;                                                                       
 } maincontext_t;
+
+void maingetline(maincontext_t *ctxt) 
+{
+    ctxt->linebuf[0] = 0;
+
+    int displaynumber = 1;
+    while loop {
+	    char *prtline = 0; size_t prtlinen = 0; ssize_t r;
+	    r = getline(&prtline, &prtlinen, stdin);
+    	throwngerrno(r);
+     	if (strlen(ctxt->linebuf) + strlen(prtline) < NBUF) {
+    		strcat(ctxt->linebuf + strlen(ctxt->linebuf), prtline);
+    	} else {
+    		printf("Buffer overflow.\n");
+    		exit(1);
+    	}
+	
+       free(prtline);
+       if (strlen(prtline) < 2 
+       || (prtline[strlen(prtline) - 2] != '\\'))
+  	       break;
+           printf("%d ", ++displaynumber);
+       }
+    
+    printf("\n");
+}
+
 
 char *ctxtmwf(malloclist_t *malloclist, maincontext_t *ctxt, char *path)
 {
 	return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
 }
-#define ctxtmwf(path) ctxtmwf(malloclist, &ctxt, path)
+#define ctxtmwf(path) ctxtmwf(malloclist, ctxt, path)
 #define ctxtmrootworkdirfile ctxtmwf
 
+void mainprintsubmainbegin(maincontext_t *ctxt)
+{
+    ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    	fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+	fprintf(ctxt->srcfile, "\n");
+	fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+	    escapecstr(ctxt->lastline, linebuf_tn));
+	fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+	fprintf(ctxt->srcfile, "char *rootworkdir = \"%s\";", ctxt->rootworkdir);
+	fprintf(ctxt->srcfile, "\n");
+	fprintf(ctxt->srcfile, "int main(int argc, char **argv) {\n");
+	fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");	
+}
+
+void maincdcase(maincontext_t *ctxt)
+{
+	if (0 == strncmp(ctxt->line, "# cd ", 5)) {
+		ctxt->line += 5;
+		ctxt->line[strlen(ctxt->line) - 1] = 0;
+			
+		fputsclose
+		(
+		    mlinebufprintf("%s/%s/\n", ctxt->cwd, ctxt->line), 
+		    fopen(ctxtmwf("cwd.txt"), "w")
+		);
+		loadcwd(ctxt->rootworkdir);
+
+		ctxt->line = ctxt->line + strlen(ctxt->line);
+	}	
+}
+
+void mainfixinputline(maincontext_t *ctxt)
+{
+	for (unsigned long i = 0; i < strlen(ctxt->line); ++i) {
+		if ((ctxt->line[i] == '\n' || ctxt->line[i] == (char)10) && ctxt->line[i-1] != '\\')
+		    ctxt->line[i] = ' ';
+	}    	
+}
+
+void mainprintsubmainend(maincontext_t *ctxt)
+{
+	fprintf(ctxt->srcfile, "%s", ctxt->line);		
+	fprintf(ctxt->srcfile,     "\nMAIN_END");
+	fprintf(ctxt->srcfile, "}");	
+	fclose(ctxt->srcfile);
+}
+
 int main(int argc, char **argv) {
-  maincontext_t ctxt;
+  maincontext_t *ctxt = mallocadd(sizeof(maincontext_t));
   
-  printf("[press enter]");
+  printf("[press enter] ");
 
-  ctxt.syssh = 0;
+  ctxt->syssh = 0;
   
-  ctxt.rootworkdir = argv[1];
+  ctxt->rootworkdir = argv[1];
 
-  if (ctxt.rootworkdir[strlen(ctxt.rootworkdir) - 1] == '/') {
-  	ctxt.rootworkdir[strlen(ctxt.rootworkdir) - 1] = 0;
+  if (ctxt->rootworkdir[strlen(ctxt->rootworkdir) - 1] == '/') {
+  	ctxt->rootworkdir[strlen(ctxt->rootworkdir) - 1] = 0;
   }
   
   if (argc < 2) { printf("%s: %s %s%s\n", "Usage", argv[0], "<workdir>", ""); return 1; }
 
-  ctxt.lastline = mallocaddlinebuf;
-  ctxt.setemptyline = 1;
+  ctxt->lastline = mallocaddlinebuf;
+  ctxt->cwd = mallocaddlinebuf;
+  ctxt->setemptyline = 0;
+  ctxt->linebuf = mallocaddlinebuf;
 
-  while ( 1 ) {
-    loadcwd(ctxt.rootworkdir);
-    char cwd[NBUF]; getcwd(cwd, NBUF);
+  while loop {
+    loadcwd(ctxt->rootworkdir);
+    getcwd(ctxt->cwd, linebuf_tn);
     
     // printf("%s $ ", cwd); if (syssh) printf("$ ");
 
-    ctxt.setemptyline = 0;
+    //ctxt->setemptyline = 0;
 
-    char linebuf[NBUF];
-    linebuf[0] = 0;
-    if (!ctxt.setemptyline)
+    if (!ctxt->setemptyline)
     {
-        int displaynumber = 1;
-        while loop {
-    	    char *prtline = 0; size_t prtlinen = 0; ssize_t r;
-    	    r = getline(&prtline, &prtlinen, stdin);
-        	throwngerrno(r);
-
-        	if (strlen(linebuf) + strlen(prtline) < NBUF) {
-        		strcat(linebuf + strlen(linebuf), prtline);
-        	} else {
-        		printf("Buffer overflow.\n");
-        		exit(1);
-        	}
-    	
-		    free(prtline);
-
-		    if (strlen(prtline) < 2 
-		    || (prtline[strlen(prtline) - 2] != '\\'))
-		    	break;
-
-		    printf("%d ", ++displaynumber);
-        }
-        
-        printf("\n");
+    	maingetline(ctxt);
     }
     else {
-    	linebuf[0] = '\n';
-    	linebuf[1] = 0;
-    	ctxt.setemptyline = 0;
+    	ctxt->linebuf[0] = '\n';
+    	ctxt->linebuf[1] = 0;
+    	ctxt->setemptyline = 0;
     }
-    char *line = linebuf;
+    ctxt->line = ctxt->linebuf;
 
-    char aouttxtpath[NBUF] = "";
-    snprintf(aouttxtpath, NBUF, "%s/log.txt", ctxt.rootworkdir);
-    fputsclose(line, fopen(aouttxtpath, "a"));
+    in(ctxt->line, fputsclose, fopen(ctxtmwf("log.txt"), "a"));
 
-    if (!ctxt.syssh && 0 == strncmp(line, "#exit", 5)) {
+    if (!ctxt->syssh && 0 == strncmp(ctxt->line, "# exit", 6)) {
     	exit(0);
     }
 
-    {
-        if (ctxt.syssh && 0 == strncmp(line, "exit", 4)) {
-    	    ctxt.syssh = 0;
-    	    line+= 4;
-        }
+    mainfixinputline(ctxt);
 
-        if (!ctxt.syssh && 0 == strncmp(line, "$ ", 2)) {
-        	ctxt.syssh = 1;
-        	line += 2;
-        }
+    mainprintsubmainbegin(ctxt);
+	maincdcase(ctxt);
+    mainprintsubmainend(ctxt);    
 
-        void *srcfile = fopen(ctxtmwf("main.c"), "w");
-		fprintf(srcfile, "#include \"main.h\"\n");
-		fprintf(srcfile, "\n");
-		fprintf(srcfile, "char *lastcmd = \"%s\";\n", 
-		        escapecstr(ctxt.lastline, linebuf_tn));
-		fprintf(srcfile, "int syssh = %d;\n", ctxt.syssh);
-		fprintf(srcfile, "char *workdir = \"%s\";", ctxt.rootworkdir);
-		fprintf(srcfile, "\n");
-		fprintf(srcfile, "int main(int argc, char **argv) {\n");
-		fprintf(srcfile,     "MAIN_BEGIN\n");
+    char quiet[] = " 2> /dev/null > /dev/null";
 
-		for (unsigned long i = 1; i < strlen(line); ++i) {
-			if (line[i] == '\n' && line[i-1] != '\\')
-			    line[i] = ' ';
-		}
-
-		if (0 == strncmp(line, "cd ", 3)) {
-			line += 3;
-			line[strlen(line) - 1] = 0;
-			char path[NBUF];
-			snprintf(path, NBUF, "%s/cwd.txt", ctxt.rootworkdir);
-			void *f = fopen(path, "w");
-			fprintf(f, "%s/%s/\n", cwd, line);			
-			fclose(f);
-			loadcwd(ctxt.rootworkdir);
-		}
-		else {
-		    if (ctxt.syssh) fprintf(srcfile, "system(\"%s\");", line);
-			else            fprintf(srcfile, "%s", line);
-				
-		}
-        
-		fprintf(srcfile,     "\nMAIN_END");
-		fprintf(srcfile, "}");	
-	
-		fclose(srcfile);
-
-		{
-			sh, "rm -f %s", ctxtmwf("a.out"), endsh;
-			(sh, "gcc %s -o%s", ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) && (
-				0
-			);
+	// TODO write back to ? : && || syntax
+	(sh, "rm -f %s", ctxtmwf("a.out"), endsh);
+	if (sh, "gcc %s -o%s", ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) {
+		if (strncmp(ctxt->linebuf, " ", 2)) { ctxt->setemptyline = 1; } else {
+		    printf(s, "A1");ln;breakpt;
+			if (sh, "stat %s %s", mf("%s%s", ctxt->rootworkdir, ".err"), quiet, endsh)
 			{
-				/*
-				if (sh, "mv %s %s", ctxt.rootworkdir, mlinebufprintf("%s%s", ctxt.rootworkdir, ".err"), endsh)
-				{
-					printf("mv rootworkdir rootworkdir.err failed");
-				}
-				else
-				{
-					if (sh, "mv %s %s", 
-					    mlinebufprintf("%s%s", ctxt.rootworkdir, ".bak"), ctxt.rootworkdir,
-					    endsh)
-					{
-					    printf("mv rootworkdir.bak rootworkdir failed");
-					}
-					else
-					{
-						printf("rootworkdir restored to last working version.");
-					}
-				}
-				*/
+				printf(s, "A2");ln;breakpt;
+				if (sh, "mv %s %s", 
+				     ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err", endsh)
+				) { printf("Error at %s:%d\n", __FILE__, __LINE__); } else {
+                if (sh, "cp -r %s %s",
+                     mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
+                ) { printf("Error at %s:%d\n", __FILE__, __LINE__); }}
 			}
+			else
+				printf(s, mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));ln;
 		}
-		sh, ctxtmwf("a.out"), endsh;
-
-		sh, "cp -r %s %s", ctxt.rootworkdir, mlinebufprintf("%s.bak", ctxt.rootworkdir), endsh;
-
-
-		//char *stdoutpath = mlinebufprintf("%s/%s", ctxt.rootworkdir, "a.out.txt");
-		char cmdouttxt[NBUF * 80 * 128] = "";
-		//fgetsclose(cmdouttxt, sizeof cmdouttxt, fopen(stdoutpath, "r"));
-		printf("%s", cmdouttxt);
-
-		strcpy(ctxt.lastline, linebuf);
-    }
+	} else {
+    	(sh, ctxtmwf("a.out"), endsh),
+    	(sh, "rm -r %s",    mf("%s%s", ctxt->rootworkdir, ".bak"), 
+    	                  /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh),
+    	(sh, "mv %s %s",    mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
+    	                    mf("%s%s", ctxt->rootworkdir, ".bak"), endsh),
+	    (sh, "cp -r %s %s", mf("%s%s", ctxt->rootworkdir, ""),
+	                        mf("%s%s", ctxt->rootworkdir, ".tmp.bak"), endsh);
+	  //(sh, "mv %s %s%s",  mf("%s%s", ctxt->rootworkdir, ".bak.bak"),
+	  //                    mf("%s%s", ctxt->rootworkdir, ".bak"), "" , endsh);
+	}
+	
+	strcpy(ctxt->lastline, ctxt->linebuf);
   } 
 }

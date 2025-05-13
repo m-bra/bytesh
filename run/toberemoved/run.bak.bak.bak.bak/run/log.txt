@@ -1,0 +1,1028 @@
+rm "core" _
+cd tmp
+ls
+cat "test.txt" _
+cd ..
+ls
+printf("%s");
+editcompiler
+
+mainh
+
+editcompiler
+
+mainh
+man "fputs" _
+mainh
+
+
+
+mainh
+
+
+mainh
+
+
+\
+(int a, a = 1, a)
+
+mainh
+
+\
+int n = 0;\
+alloclist_t al;\
+ensurealloclist(al);\
+ensurealloclist(n);\
+
+mainh
+
+\
+int *ip;\
+int i;\
+alloclist_t *al;\
+ensurealloclist(ip);\
+ensurealloclist(i);\
+ensurealloclist(al);\
+
+
+mainh
+
+pwd
+
+
+ls
+cat "status.txt" _
+cd ..
+ls
+cat "status.txt" _
+mainh
+
+
+mainh
+gitupdate
+pwd
+
+printf("%s", "hello\nworld\n!\n");
+
+
+gitupdate
+sys "play" _
+sys "mpv" _
+cnslutilh
+quickdef
+
+quickdef
+mainh
+cd run
+edit "quickdef.h" _
+cnslutilh
+mainh
+quickdef
+mpv("");
+
+quickdef
+quickdefh
+
+mpv("");
+ls
+cd ..
+cd ..
+cd ..
+ls
+cd storage
+ls
+cd music
+ls
+ls
+ls /system/media/audio/ringtones
+
+cd system/media/audio/ringtones
+
+
+cd ..
+cd ..
+cd ..
+ls
+cd storage
+ls
+cd downloads
+ls
+quickdef
+pfs storagepath _
+quickdef
+printf(s, storagepath);
+cd /storage/emulated/0
+
+
+ls
+cd Ringtones
+ls
+ls
+cd ..
+cd Alarms
+ls
+cd ..
+ls
+cd Notifications
+ls
+cd Audiobooks
+ls
+cd ..
+cd Music
+ls
+cd ..
+ls
+cd Download
+ls
+
+ls
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilluther1535shrink.pdf 
+
+ls
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilluther1535shrink.pdf Lutherbibel\ 1535.pdf" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFile=luther1535shrink.pdf Lutherbibe\ 1535.pdf" _
+exit
+
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dQUIET -dBATCH -sOutputFilLU1535COMP.PDF LU1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=LU1535COMP.PDF LU1535.PDF" _
+ls
+mv "LUT1535.PDF", "LU1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=LU1535COMP.PDF LU1535.PDF" _
+ls
+micro cmd
+
+edit "cmd" _
+
+sys “gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF” _
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _  
+ls
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _  c
+
+clear
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535COMP.PDF" _  
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535COMP.PDF" _
+ls
+sys "rm LU1535COMP.PDF" _
+sys "LU1535COMP36.PDF" _
+sys "rm LU1535COMP36.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535.PDF" _
+
+ls
+rm "LU1535COMP36.PDF" _
+ls
+sys “gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF” _
+
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535COMP.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LUT1535.PDF" _
+sys "gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -dColorImageResolution=36 -sOutputFile=LU1535COMP36.PDF LU1535.PDF" _
+ls
+tar xvf poppler-25.02.0.tar.xz
+
+sys "tar xvf poppler-*" _
+mv "poppler*", "poppler" _
+sys "mv -r poppler* poppler" _
+ls
+sys "rm poppler*.tar.xz" _
+ls
+sys "mv poppler* poppler" _
+ls
+cd poppler
+ls
+cat README.md
+
+cat "README.md" _
+cat "INSTALL.md" _
+cat "INSTALL" _
+$ 
+
+
+
+ls
+lns
+
+quickdef
+tmux
+cd ..
+cd ..
+
+tmuxhelp
+
+quickdef
+macroadd(sizeof(linebuf_t));
+
+mainh
+mallocadd(sizeof(linebuf_t));
+mainh
+#define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf│
+(lastmalloc, sizeof(linebuf_t), "ln -                                          │
+                                                                               │[/storage/emulated/0
+
+edit "│/data/data/com.termux/files/home/prj/bytesh//run/quickdef.h" _
+edit "/data/data/com.termux/files/home/prj/bytesh//run/quickdef.h" _
+ls
+
+
+touch a
+
+touch "a" _
+lns "a", "b" _
+
+lnsfn("a", "b");
+
+tmuxhelp
+exit
+
+
+ls
+exit
+
+#edit
+cd /data/data/com.termux/files/home
+
+
+cd /data/data/com.termux/files/home/
+
+ls
+ls .local
+
+cd .local
+ls
+cd ..
+ls
+cd downloads
+ls
+cd ..
+ls
+cd prj
+ls
+cd localsys
+ls
+time
+
+sys "time" _
+sys "date" _
+ls
+ ls
+cd bin
+ls
+cat adb
+
+cat "adb" _
+rm "adb" _
+ls
+cat "xdoth_getmouselocation" _
+sys "pkg search xdotool" _
+cd ..
+cd ..
+cd ..
+ls
+mv prj/localsys opt
+
+mv "prj/localsys", "opt" _
+cd opt
+ls
+cd ..
+cd prj
+ls
+mainh
+sys "date" _
+
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads/victory-parade.webm" _
+ls
+cd ..
+ls
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads/victory-parade.webm" _
+mv "MUSIC FOR VICTORY PARADE ｜ МУЗЫКА ПАРАДА ПОБЕДЫ [H7p7v9aHYxs].webm", "downloads" _
+
+exit
+#exit
+
+ls
+mainh
+cd prj
+cd bytesh
+ls
+cd ru
+
+
+ls
+edit "quickdef.h" _
+printf(s, storagepath);
+cd /storage/emulated/0/
+
+man "tmux" _
+man "stty" _
+man "ioctl" _
+
+man "stty" _
+mainh
+cnslutilh
+prootdistro
+
+tmuxhelp
+
+prootdistro
+vncserver
+prootdistro
+
+cnslutilh
+
+vncserver
+cnslutilh
+sys "vncserver -localhost" _
+sys "DISPLAY=:1 libreoffice" _
+prootdistro
+
+cd prj
+ls
+
+cd ..
+cd ..
+ls
+cd helloworld-js
+ls
+cat "index.html" _
+mainh
+cnslutilh
+quickdefh
+sys "python -m http.server" _
+ls
+micro index.html
+
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _
+sys "python -m http.server" _
+edit "index.html" _ 
+edit "index.html" _ sys "python -m http.server" _
+edit "index.html" _ sys "python -m http.server" _
+edit "index.html" _ sys "python -m http.server" _
+
+quickdef
+printf(s, testᚩ);ln
+
+printf("%d", testᚩ);ln
+
+quickdef
+quickdefh
+
+
+
+mainh
+stdlibexth
+
+edit "stdlibext.h" _
+cd ..
+cd bytehs
+
+ls
+cd run
+micro stdlibext.h
+
+edit "stdlibext.h" _
+ᛚs ᛍprintfᛍ "Hello, World"ᛆ;
+
+ᛚ s ᛍ printf ᛍ "Hello, World" ᛆ ;
+
+
+cnslutilh
+gitupdate
+editcompiler
+
+edit "stdlibext.h" _
+ls
+edit "stdioext.h" _
+editcompiler
+
+quickdef
+stdioexth
+
+fputscloseh
+
+stdioexth
+fgetscloseh
+stdioexth
+fgetscloseh
+fputscloseh
+editcompiler
+
+editcompiler
+
+#exit
+
+cd nnnnn
+cd ..
+cd asdfasdf
+
+gitupdate
+ᚠg
+
+mainh
+cd run
+edit "mish.h" _
+
+prootdistro
+tmuxhelp
+
+tmuxhelp
+
+prootdistro
+
+mainh
+cnslutilh
+vnch
+
+vncserver
+cnslutilh
+man "vncserver" _
+sys "vncserver --help" _
+cd ..
+cd ..
+cd ..
+cd .vnc
+ls
+cat "passwd" _
+
+
+prootdistro
+
+cnslutilh
+quickdef
+sys "pkg i termux-x11-nightly" _
+sys "pkg i xfce" _
+
+sys "vncserver -list" _
+
+
+
+sys "pkg i browsh" _
+sys "browsh duckduckgo.com" _
+
+browsh
+
+sys "browsh" _
+
+cd ..
+ls
+cd downloads
+ls
+cd ..
+ls
+mainh
+
+ls
+mainh
+
+
+
+mainh
+cnslutilh
+storage
+
+storagepath
+
+storagepath;
+printf(s, storagepath);
+cd /storage/emulated/0
+cd /storage/emulated/0/
+cd ../../..
+cd ..
+cd ..
+cd ..
+cd ..
+cd /storage/emulated/0/
+ls
+cd Download
+ls
+sys "./browsh_1.8.0_linux_arm64" _
+sys "chmod +x ./browsh_1.8.0_linux_arm64" _
+sys "./browsh_1.8.0_linux_arm64" _
+quickdef
+sys "echo hello" ⏎
+
+
+
+quickdef
+
+
+
+ls
+mv "browsh_1.8.0_linux_arm64" "browsh" _
+
+mv "browsh_1.8.0_linux_arm64", "browsh" _
+mv browsh ../../../../data/data/termux/home
+
+mv "browsh", "../../../../data/data/com.termux/files/home/" _
+cd ../../../..
+cd data/data/com.termux/files/hoem
+cd data/data/com.termux/files/home
+
+cd ..
+cd ..
+ls
+./browsh
+
+sys "./browsh" _
+sys "pkg i which" _
+sys "./browsh" _
+sys "browsh" _
+sys "./browsh --help" _
+
+
+
+sys "./browsh" _
+sys "./browsh" _
+quickdef
+psefgrep
+quickdefh
+
+psefgrep("firefox")
+
+
+mainh
+
+psefgrep("firefox")
+
+sys "./browsh" _
+psefgrep("firefox")
+quickdefh
+psefgrep "firefox" _
+
+psefgrepfn("firefox")
+
+$ 
+
+
+
+
+proot-distro
+
+prootdistro
+
+proot-distro
+
+prootdistro
+
+prootdistro
+
+prootdistro
+
+cnshlutilh
+
+cnslutilh
+
+
+
+prootdistro
+
+quickdefh
+quickdef
+
+quickdefh
+quickdef
+termux11
+
+sys "thunderbird" _
+sys "libreoffice" _
+prootdistro
+
+sys "libreoffice" _
+
+
+quickdefh
+termux11
+
+pkg install thunderbird
+
+sys "pkg install thunderbird" _
+
+termux11
+
+stdlibh
+
+quickdef
+
+stdlibexth
+
+ls
+cd prj
+
+sys "pacman -S poppler" _
+sys "pkg install poppler" _
+cd ..
+cd /storage/emulated/0
+ls
+storagepath
+
+printf(s, storagepath);
+cd /storage/emulated/0
+cd ../../../../../../../../storage/emulated/0
+ls
+cd Documents
+ls
+cd ..
+cd Download
+ls
+mkdir tmp
+
+mkdir "tmp" _
+cp "LU1535.PDF", "tmp" _
+cd tmp
+ls
+pdftoppm -png LU1535.PDF split
+
+sys "pdftoppm -png LU1535.PDF split" _
+
+termux11
+gitupdate
+cd ../../../../../../data/data/com/termux
+cd ../../../../../data/data/com/termux/home
+gitupdate
+termux11
+
+ioipoi
+
+
+
+
+
+
+termux11
+
+
+
+mainsh
+
+mainh
+cnslutilh
+
+
+cnslutilh
+quickdefh
+cnslutilh
+vncserver
+cnslutilh
+man "vncserver" _
+sys "vncserver --help" _
+sys "vncserver -list" _
+vncserver -kill ":1" _
+
+sys "vncserver -kill :1" _
+sys "vncserver -kill :2" _
+cnslutilh
+quickdefh
+sys "termux-x11 --help" _
+man "termux-x11" _
+cnslutilh
+quickdef
+quickdefh
+psefgrep "termux" _
+psefgrep "x11" _
+exit
+
+editcompiler
+
+vncserver
+sys "vncserver -kill :2" _
+exit
+
+
+vncserver
+rm "/data/data/com.termux/files/usr/tmp/.X1-lock" _
+cd ../../../../../../../../..//data/data/com.termux/files/usr/tmp/
+ls
+sys "reboot" _
+
+
+vncserver
+export DISPLAY=:3 gimp
+
+sys "export DISPLAY=:3 gimp" _
+
+sys "gimp" _
+sys "DISPLAY=:3 gimp" _
+sys "history" _
+
+prootdistro
+sys "pkg search gradle" _
+sys "pkg install gradle" _
+cd ..
+cd ..
+cd ..
+ls
+cd files
+ls
+cd home
+ls
+cd prj
+cd out
+ls
+cd ..
+ls
+cd outlook
+cardova requirements
+
+sys "cardova platform ls" _
+sys "cordava platform ls" _
+sys "pkg install cardova" _
+
+cd ..
+cd ..
+cd ..
+sys "du -h" _
+man "du" _
+sys "du -h -d 0" _
+sys "du -h -d 2" _
+
+prootdistro
+
+mainh
+cnslutilh
+mainh
+misch
+
+cd prj
+cd home/prj
+ls
+cd run
+edit "misc.h" _
+ls
+edit "mainsys.h" _
+edit "quickdef.h" _
+printf(s, storagepath);
+printf(s, storagepath);ln;
+cd ../../../../../../storage/emulated/0
+cd ../../../../../../storage/emulated/0
+cd ..
+cd ..
+cd ../../
+cd ../../
+cd ..
+cd storage/emulated/0
+ls
+cd Download
+ls
+cd tmp
+ls
+rm "split-08**.png" _
+rm "split-07**.png" _
+rm "split-06**.png" _
+rm "split-05**.png" _
+rm "split-04**.png" _
+rm "split-03**.png" _
+rm "split-02**.png" _
+rm "split-01**.png" _
+ls
+mkdir noremove
+
+mkdir "noremove" _
+mv "split-0070.png" "noremove" _
+
+mv "split-0070.png", "noremove" _
+mv "split-0071.png" , "noremove" _
+mv "split-0072.png", "noremove" _
+mv "split-0073.png", "noremove" _
+mv "splt-0074.png", "noremove" _
+mv "split-0074.png", "noremove" _
+mv "noremove", ".." _
+ls
+ls ..
+
+ls ".." _
+
+cd ..
+ls
+cd tmp
+ls
+rm "*" _
+ls
+cd ..
+mv noremove tmp
+
+mv "noremove", "tmp" _
+cd tmp
+ls
+mv "noremove", "tmp" _
+cd ..
+mv tmp tmp2
+
+mv "tmp", "tmp2" _
+
+mv "tmp2/tmp", "." _
+printf(s, storagepath)ln;
+cd ../../...
+cd ../../../../../../
+cd ..
+cd /storage/emulated/0
+ls
+cd Down	
+cd Download
+cd ../.././../../../
+cd ../../
+cd /storage/emulated/0
+cd Download
+ls
+mv "tmp2/tmp", "." _
+ls "tmp2" _
+
+cd tmp2
+ls
+cd ..
+rm "tmp2" _
+sys "rm -r tmp2" _
+
+
+quickdefh
+cd run
+cnslutilh
+sys "cat quickdef.h >> cnslutil.h" _
+cnslutilh
+
+
+
+
+
+
+
+
+cnslutilh
+ls
+edit "util.h.phone" ᚩ
+
+editcompiler
+
+man "system" _
+man "fork" _
+man "wait" _
+man "system" _
+cnslutilh
+ls
+mkdir "toberemoved" _
+mv "util.h.phone", "toberemoved" _
+quickdef
+quickdef
+stat "submain" _
+
+quickdef
+cnslutilh
+sys "stat submain" _
+edit "submain" _
+cmv("submain")
+ls
+cmv("batch.h.next")
+cmv("test.txt")
+cmv("batch.h.bak")
+cmv("batch.h")
+cd tmp
+lls
+ls
+cd ..
+cmv("tmp")
+
+ls
+cd run
+ls
+cmv("prop")
+cmv("prop.h")
+
+
+ls
+sys "cat getcol" _
+cmv("getcol")
+cmv("a.out.txt")
+sys "programm.txt" _
+sys "cat programm.txt" _
+man "fgets" _
+ls
+sys "cat status.txt" _
+sys "cat log.txt" _
+ls
+mainh
+programm
+editcompiler
+
+cnslutilh
+tmuxh
+tmux
+
+tmuxh
+
+editcompiler
+mainh
+stdlibexth
+
+edit "stdlibext.h" _
+edit "stdlibext.h" _
+tmuxh
+
+
+
+
+
+
+
+
+
+
+
+editcompiler
+tmuxh
+edit "stdlibext.h" _
+
+tmuxh
+stdlibexth
+
+edit "stdlibext.h" _
+ls
+mainh
+mainsysh
+
+edit "mainsys.h" _
+
+
+
+
+
+
+ls
+rm a.out
+
+rm "a.out" _
+
+ls
+
+
+
+
+
+
+
+
+programm
+edit "stdlibext.h" _
+sys "clear" _
+
+sys "echo hello" _
+tmuxh
+man "fork" _
+man "WIFEXITED" _
+
+
+
+
+
+
+
+sys "echo hello" _
+sh, "echo %s", "hello", endsh;
+
+
+sh, "hello, %s", "world", endsh;
+sh, "echo %s", "hello, world", endsh;
+
+
+sh, "echo %s", "hello, world", endsh;
+
+sh, "echo hello", endsh;
+sh,,,,,,,,,,
+ls
+cnslutilh
+
+
+
+
+
+
+editcompiler
+
+
+
+cd ..
+
+# cd ..
+ls
+
+ls;
+cd run
+
+# cd run
+mainh;
+# cd ..
+edit, "run.err/main.h", endsh;
+ls
+
+ls;
+mv, "run.err", "run.err.bak", endsh;
+mv, "run.bak", "run.bak.bak", endsh;
+

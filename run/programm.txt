@@ -1,7 +1,9 @@
 
- * Δ0430
+ * Δ0505 21:49bis1105 08:54bis10:05 10:35bis11:27
    * sh, ..., ..., endsh; macro
+     and more improvments in bytesh code architecture
    * bytesh: fix crash on compiler error...
+   * general tidy up of bytesh
 
  * introduce persistent variables
    only char[] type allowed.

@@ -1,0 +1,15 @@
+
+ * Δ0505 21:49bis1105
+   * sh, ..., ..., endsh; macro
+   * bytesh: fix crash on compiler error...
+   * other work on bytesh
+
+ * introduce persistent variables
+   only char[] type allowed.
+   after user once commanded
+    $ #pers char varname[256];
+   every compilation for each future command will load the persistent variables as follows:
+    $ char varname[256]; (as global variable)
+    $ fgetsclose(varname, sizeof(varname), fopen(".../varname.txt", "r"));
+   and save each persistent variable as
+    $ fputsclose(varname, fopen(".../varname.txt", "w"));

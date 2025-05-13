@@ -61,6 +61,7 @@ char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...) {
 }
 #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
 #define malloclinebufprintf mlinebufprintf
+#define mf mlinebufprintf
 
 int sh_(int ignored, char *fmt, ...) 
 {
