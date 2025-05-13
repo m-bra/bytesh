@@ -335,6 +335,7 @@ void man(int ignore, char *topic, char *ignore_) {
 #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
 
 #define gpgencrypt sh, "gpg -a -c %s"
+#define gpgdecrypt sh, "gpg -a -d %s"
 
 #define date sh, "date", endsh
 

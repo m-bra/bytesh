@@ -1493,3 +1493,10 @@ du(1)
 du(1)
 date
 cnslutilh
+gitupdate
+
+cnslutilh
+
+ls
+gpgdecrypt, "repopw.txt", endsh
+gpgdecrypt, "repopw.txt", endsh
