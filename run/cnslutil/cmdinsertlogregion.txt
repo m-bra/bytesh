@@ -1,2 +1,1 @@
-int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
-ed(r);
+
