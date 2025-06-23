@@ -6,8 +6,8 @@
 int gitupdaterequired(char *dir) {
 	sh, "cd %s", dir, endsh;
 
-	sh, "git status > %s", ROOTC("/run/gitstatus.txt"), endsh;
-	FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
+	sh, "git status > %s",("/tmp/gitstatus.txt"), endsh;
+	FILE *f = fopen(("/tmp/gitstatus.txt"), "r");\
 
 	char *lastline = 0;
 	rep {
@@ -24,7 +24,7 @@ int gitupdaterequired(char *dir) {
 	    }
 	    lastline = line;
 	}
-	rm, ROOTC("/run/gitstatus.txt"), endsh;
+	rm, ("/tmp/gitstatus.txt"), endsh;
 	return 1;	
 }
 
