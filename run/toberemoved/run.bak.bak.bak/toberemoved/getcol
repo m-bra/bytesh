@@ -1,5 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-
-COL=
-IFS=';' read -sdR -p $'\E[6n' ROW COL
-echo "${COL}"

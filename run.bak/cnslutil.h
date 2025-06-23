@@ -9,19 +9,31 @@
 #define _ ) ;
 #define sys system (
 #define pfs printf("%s",
-#define vncserver sh, "vncserver -localhost", endsh
-#define prootdistro sh, "proot-distro login archlinux", endsh
-#define tmux sh, "tmux", endsh
-#define ls sh, "ls -hAltr", endsh
 
-void syssleep(int ignore, char const *time, char *ignore_)
-{
-	linebuf_t buf;
-	snprintf(buf, sizeof(buf), "sleep %s", time);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define sleep syssleep ( 0
+#define QUIET "> /dev/null 2>&1"
+#define ROOTLOG(name) mf("> /root/%s.log 2>&1", name)
+#define BG "&"
+#define DISPLAYN 4
+#define DISPLAYCONFIG mf("DISPLAY=:%d", DISPLAYN)
+
+#define LOGVNCSERVER ROOTLOG(mf("vncserver.%d", DISPLAYN))
+#define vncserver sh, "vncserver :%d %s %s", \
+                      DISPLAYN, LOGVNCSERVER, BG, endsh
+
+#define prootdistrou(PROOTUSER) sh, "proot-distro login archlinux --user %s", PROOTUSER, endsh
+#define prootdistro prootdistrou("mbrandt")
+
+#define tmux sh, "tmux", endsh
+#define lsp sh, "ls -hAltr %s"
+#define ls lsp, "", endsh
+#define lsgrep sh, "ls -hAltr | grep %s"
+#define lspgrep sh, "ls -hAltr %s | grep %s"
+
+#define history cmdlog
+
+#define errfixdone rmr, mf("%s/%s", ROOT, "/run"), endsh; mv, mf("%s/%s", ROOT, "/run.err"), mf("%s/%s", ROOT, "/run"), endsh;
+
+extern char *rootworkdir;
 
 void micro(int ignore, char const *path, char *ignore_)
 {
@@ -31,6 +43,136 @@ void micro(int ignore, char const *path, char *ignore_)
 	// TODO: undefined escape rules in param strings
 }
 #define edit micro ( 0
+
+
+#define cmdlogedit edit, ROOTC("/run/log.txt"), endsh
+
+void cmdlog()
+{
+	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+	linebuf_t buf;
+	int linen = -1;
+	while loop {
+		linen+= 1;
+		if (!fgets((char *) buf, linebuf_tn, f))
+			break;
+		printf("0x%05X .. $ %s", linen, (char *) buf);
+		//printf("%s", (char *)buf);
+	}
+
+	fclose(f);
+}
+#define cmdlog cmdlog()
+#define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+
+void cmdloggrep(char *mask)
+{
+	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+	linebuf_t buf[4];
+	int linen = -1;
+	while loop {
+		linen+= 1;
+		if (!fgets((char *) buf, 4 * linebuf_tn, f))
+			break;
+		if (strstr((char *) buf, mask))
+			printf("0x%05X .. $ %s", linen, (char *)buf);
+	}
+
+	fclose(f);
+}
+
+void cmdloghead(int end)
+{
+	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+	linebuf_t buf;
+	int linen = -1;
+	while loop {
+		linen+= 1;
+		if (!fgets((char *) buf, linebuf_tn, f))
+			break;
+		if (linen < end)
+			printf("0x%05X .. $ %s", linen, (char *)buf);
+	}
+
+	fclose(f);
+}
+
+
+void cmdlogat(int i, linebuf_t *buf)
+{
+	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+	int linen = -1;
+	while loop {
+		linen+= 1;
+		if (!fgets((char *) buf, linebuf_tn, f))
+			break;
+		if (linen == i)
+			break;
+	}
+	fclose(f);
+}
+
+int cmdlogn()
+{
+	linebuf_t val;
+	linebuf_t *buf = &val;
+	
+	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+	int linen = -1;
+	while loop {
+		linen+= 1;
+		if (!fgets((char *) buf, linebuf_tn, f))
+			break;
+	}
+	fclose(f);
+	return linen;
+}
+
+#define cmdlogregionh \
+     printf("%s\n", "cmdlogregion(int from, int to, char buf[linebuf_tn * (to - from)])");
+loctag
+void cmdlogregion(int from, int to, char *buf)
+{
+	char *p = buf;
+	for (int i = from; i < to; ++i) {
+		cmdlogat(i, (linebuf_t *) p);
+		p += strlen(p);
+	}	
+}
+
+#define l    cmdinsertlogregion(cmdlogn() - 1, cmdlogn() - 0);
+#define ll   cmdinsertlogregion(cmdlogn() - 2, cmdlogn() - 1);
+#define lll  cmdinsertlogregion(cmdlogn() - 3, cmdlogn() - 2);
+
+void cmdinsert(char *cmd)
+{
+	fputsclose(cmd, fopen(ROOTC("/insert.c"), "a"));
+}
+
+#define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+
+void cmdinsertlogregion(int from, int to)
+{
+	int nbuf = (to - from) * linebuf_tn;
+	char *buf = mallocadd(nbuf);
+	cmdlogregion(from, to, buf);
+
+	char *filename = ROOTC("/run/cnslutil/cmdinsertlogregion.txt");
+	fputsclose(buf, fopen(filename, "w"));
+	edit, filename, endsh;
+	char *nextbuf = mallocadd(32 * pagebuf_tn);
+	fgetallsclose(nextbuf, 32 * pagebuf_tn, fopen(filename, "r"));
+	cmdinsert(nextbuf);
+}
+
+void syssleep(int ignore, char const *time, char *ignore_)
+{
+	linebuf_t buf;
+	snprintf(buf, sizeof(buf), "sleep %s", time);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define sleep syssleep ( 0
 
 void tputcup(int ignore, int col, char *ignore_)
 {
@@ -50,6 +192,15 @@ void mkdir(int ignore, char *path, char *ignore_)
 	// TODO: undefined escape rules in param strings
 }
 #define mkdir mkdir ( 0
+
+void mkdirp(int ignore, char *path, char *ignore_)
+{
+	char buf[NBUF];
+	snprintf(buf, NBUF, "mkdir -p %s", path);
+	system(buf);
+	// TODO: undefined escape rules in param strings
+}
+#define mkdirp mkdirp ( 0
 
 void mv(int ignore, char *from, char *to, char *ignore_)
 {
@@ -146,22 +297,116 @@ void prop(char *filename, char *identget, char *identset)
 }
 #define prop prop (
 
-#include "quickdef.h"
-
-void quickdef()
+loctag
+void hcreate(char *name)
 {
-    char def[NBUF];
-    printf(".c (quickdef) $ ");
-    fgets(def, NBUF, stdin);
+	char *lastslash = strrstr(name, "/");
+	char *nameleaf = lastslash;
+	if ( nameleaf) nameleaf += 1;
+	if (!nameleaf) nameleaf = name;
+	if (!lastslash) lastslash = name;
+
+	char parent [linebuf_tn];
+iff (lastslash - name) + 1 > linebuf_tn
+thn goto err;
+	strncpy(parent, name, lastslash - name);
+	parent[lastslash - name] = 0;
+
+	char NL = '\n';
+
+	mkdirp, mf("%s/%s/%s", ROOT, "run", parent), endsh;
+	
+	fputsclose(
+    	mf(
+    		//"#ifndef HEADERGUARD_%s%c"
+    		//"#define HEADERGUARD_%s%c"
+			"#define %sh edit, ROOTC(%c/run/%s.h%c), endsh%c"
+			"#define %shadd hadd(%c%s%c)%c"
+			"#define %shaddfn(ident) haddfn(%c%s%c, ident)%c"
+			"#define %shadddef(ident) hadditem(%c%s%c, ident, 1)%c"
+    		"%c"
+    		"%c",
+    		//"#endif  HEADERGUARD_%s%c",
+    		//nameleaf, NL, 
+    		//nameleaf, NL, 
+    		nameleaf, '"', name, '"', NL,
+    		nameleaf, '"', name, '"', NL,
+    		nameleaf, '"', name, '"', NL,
+    		nameleaf, '"', name, '"', NL,
+    		NL, 
+    		NL 
+    		//nameleaf, NL
+    	),
+		fopen(mf("%s/%s/%s.%s", ROOT, "run", name, "h"), "a")	
+	);
+	fputsclose(
+		mf(
+			"#include %c%s/%s/%s.h%c%c",
+			'"', ".", "", name, '"', NL
+		),
+		fopen(mf("%s/run/%s", ROOT, "cnslutil.h"), "a")
+	);
+	return;
+
+err:
+    char *NLS = "\n";
+	printf("Error at %s:%d%c", __FILE__, __LINE__, *NLS);
+	return;
+}
+
+# define BACKSLASH ((char) 92)
+
+#define xyzhadd hadd
+#define hadd(namepath)   haddfn(namepath, 0)
+#define haddfn(namepath, ident) hadditem(namepath, ident, 0)
+void hadditem(char *namepath, char *ident, int preprocessor)
+{
+	char *fn = ident;
+	
+	char *name = strrstr(namepath, "/");
+	if ( name) name += 1;
+	if (!name) name = namepath;
+	
+	char *cmd = mf("%sh", name);
+	char *filename = mf("%s.h", namepath);
+	
+	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fn ? (preprocessor ? "def" : "fn") : "");
+	printf("%s", prompt);
+	fflush(stdout);
+		
+	char space[] = "                                 ";
+	space[strlen(prompt) - 5] = 0;
+	char *def = mgetescline(mf("%s%%02d $ ", space));
+    
 	char path[NBUF];
-	snprintf(path, NBUF, "%s/run/cnslutil.h", ROOT);
+	snprintf(path, NBUF, "%s/run/%s", ROOT, filename);
+
     char defb[strlen(def) + 2];
     strcpy(defb, def);
     defb[strlen(def)] = '\n';
     defb[strlen(def) + 1] = 0;
-	fputsclose(defb, fopen(path, "a"));
+
+    char *NLS = "\n";
+
+	FILE *f = fopen(path, "a");
+	fn&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+	             fn, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
+
+	int pp =  preprocessor;
+	int np = !preprocessor;
+	np&&fn&&fputs(mf("void %s()%c", ident, *NLS), f);
+	np&&fn&&fputs(   mf("{%c", *NLS),      f);
+	np&&    fputs(       defb, f);
+	np&&fn&&fputs(   mf("}%c", *NLS),      f);
+	pp&&fn&&fputs(mf("#define %s %s%c", ident, defb, *NLS), f);
 }
-#define quickdef quickdef()
+
+#define cnslutilhadd xyzhadd("cnslutil")
+#define cnslutilhaddfn(ident) haddfn("cnslutil", ident)
+#define cnslutilhadddef(ident) hadditem("cnslutil", ident, 1)
+#define tmphadd xyzhadd("tmp")
+#define tmphaddfn(ident) haddfn("tmp", ident)
+#define tmphadddef(ident) hadditem("tmp", ident, 1)
 
 void programm()
 {
@@ -176,14 +421,7 @@ void programm()
 #define mainh     (sh, mlinebufprintf("micro %s/%s", ROOT, "run/main.h"), endsh)
 #define cnslutilh (sh, mlinebufprintf("micro %s/%s", ROOT, "run/cnslutil.h"), endsh)
 
-void editcompiler()
-{
-	system("micro /data/data/com.termux/files/home/prj/bytesh/main.c");
-    system("gcc   /data/data/com.termux/files/home/prj/bytesh/main.c \
-               -o /data/data/com.termux/files/home/prj/bytesh/a.out");
-	exit(0);
-}
-#define editcompiler editcompiler()
+# define compilerh edit, ROOTC("main.c"), endsh;
 
 void echosys(char const *cmd)
 {
@@ -203,6 +441,8 @@ void gitupdate() {
 	//echosys "git log" _
 }
 #define gitupdate gitupdate()
+
+# define PIPES "|"
 
 void man(int ignore, char *topic, char *ignore_) {
 	if (!strcmp(topic, "freopen"))
@@ -263,11 +503,10 @@ void man(int ignore, char *topic, char *ignore_) {
 		printf("       char *fgets(char s[.n], int n, FILE *f)\n");
 		printf("\n");
 		printf("DESCRIPTION\n");
-		printf("       fgets() reads in at most one less than\n");
+		printf("       fgets() reads in less than\n");
 		printf("       `size` characters from `f` and stores them\n");
-		printf("       into the buffer pointed to by `s`. Reading\n");
-		printf("       stops after an EOF or a newline. If a new-\n");
-		printf("       line is read, it is stored into the buffer.\n");
+		printf("       into the buffer pointed to by `s`.\n");
+		printf("       Stops after an EOF or a newline.\n");
 		printf("       A terminating null byte ('\\0') is stored\n");
 		printf("       after the last character in the buffer.\n");
 		printf("       \n");
@@ -285,9 +524,9 @@ void man(int ignore, char *topic, char *ignore_) {
 	}
 	else
 	{
-		char cmd[NBUF];
-		snprintf(cmd, NBUF, "man %s", topic);
-		system(cmd);
+		sh, "man %s %c col -b >> %s/%s%s", topic, *PIPES, 
+		    ROOTC("/run/cnslutil/man/"), topic, ".txt", endsh;
+		edit, mf("%s/%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt"), endsh;
 	}
 }
 #define man man ( 0
@@ -297,9 +536,6 @@ void man(int ignore, char *topic, char *ignore_) {
 
 // quickdef
 
-#define clear sys "clear" _
-#define tputsc sys "tput sc" _
-#define tputrc sys "tput rc" _
 #define repeat(n) for (int i = 0; i < n; ++i)
 
 
@@ -328,9 +564,8 @@ void man(int ignore, char *topic, char *ignore_) {
 #define lns lnsfn (
 
 
-#define stdioexth (edit, mlinebufprintf("ROOT/%s", "/run/stdioext.h", endsh)
-
-#define psefgrep (sh, mlinebufprintf("ps -ef | grep %s", term), endsh)
+#define psgrep printf("UID        PID  PPID  C STIME TTY          TIME CMD\n"), sh, "ps -ef --forest | grep %s"
+#define ps sh, "ps -ef --forest", endsh
 
 #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
 
@@ -340,5 +575,253 @@ void man(int ignore, char *topic, char *ignore_) {
 #define date sh, "date", endsh
 
 void du(int depth) {sh, "du -h -d %d", depth, endsh;}
+
+
+#define yays(x) sh, "yay -S %s", x, endsh
+
+#define pacmansyyu sh, "sudo pacman -Syyu", endsh
+#define pacmansyu  sh, "sudo pacman -Syu",  endsh
+#define pacmansyy  sh, "sudo pacman -Syy",  endsh
+#define pacmansy   sh, "sudo pacman -Sy",   endsh
+
+#define pacmans(x) sh, "sudo pacman -S %s", x, endsh
+
+#define pacmanss(x) sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh; edit, "/tmp/pacmanss.txt", endsh;
+
+#define pacmanqi(x) sh, "pacman -Qi %s", x, endsh
+
+#define rmr sh, "rm -r %s"
+
+#define cpr sh, "cp -r %s %s"
+
+#define ping sh, "ping %s"
+
+#define pacmanql(x) sh, "pacman -Ql %s", x, endsh;
+
+#define libreoffice sh, "%s libreoffice %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define pacmanr(x) sh, "sudo pacman -R %s", x, endsh
+
+ # define which sh, "which %s"
+
+//# define kill sh, "kill -sigkill %s"
+
+# define pwd sh, "pwd", endsh
+
+# define aptinstall sh, "apt install %s"
+
+# define stat sh, "stat %s"
+
+# define whoami sh, "whoami", endsh
+
+#define firefox sh, "%s firefox -P default-release %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define qutebrowser sh, "%s qutebrowser %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define dynalist sh, "%s firefox -P dynalist --new-tab 'https://dynalist.io/' %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define urxvt sh, "%s urxvt -e bytesh %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define killh printf(s, "kill(pid_t pid, int sig)");ln;
+
+
+
+# define xterm sh, "%s xterm %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+# define sigterm(pid) kill(pid, SIGTERM);
+
+# define suroot sh, "su -c bytesh - root", endsh
+
+
+
+# define psgrepvnc psgrep, "vnc", endsh
+
+# define top sh, "top", endsh
+
+# define chmodx sh, "chmod +x %s"
+
+# define memstress sh, "stress --timeout 6 -m 1 --vm-keep --vm-bytes %s"
+
+# define memstressloop \
+  printf("2250M: "); fflush(stdout); memstress, "2250M", endsh;\
+  printf("2300M: "); fflush(stdout); memstress, "2300M", endsh;\
+  printf("2350M: "); fflush(stdout); memstress, "2350M", endsh;\
+  printf("2400M: "); fflush(stdout); memstress, "2400M", endsh;\
+  printf("2450M: "); fflush(stdout); memstress, "2450M", endsh;\
+  printf("2500M: "); fflush(stdout); memstress, "2500M", endsh;\
+  printf("2550M: "); fflush(stdout); memstress, "2550M", endsh;\
+  printf("2600M: "); fflush(stdout); memstress, "2600M", endsh;\
+  printf("2650M: "); fflush(stdout); memstress, "2650M", endsh;\
+  printf("2700M: "); fflush(stdout); memstress, "2700M", endsh;\
+  while loop {\
+    printf("Enter memory or q.. : ");\
+    char *answer = mgetescline("");\
+    if (!strncmp(answer, "q", 1)) break;\
+    memstress, answer, endsh;\
+  }
+
+# define ARCH printf("Lenovo Tab M10: ARMv8 64bit");ln;
+
+
+
+# define breakifn(msg) ln; printf(s, msg); if (!strncmp("n", mgetescline(""), 1)) break;
+# define breakify(msg) ln; printf(s, msg); if (!strncmp("y", mgetescline(""), 1)) break;
+# define breakifq(msg) ln; printf(s, msg); if (!strncmp("q", mgetescline(""), 1)) break;
+# define breakifqdef breakifq("loop... ")
+# define stdioexth edit, mf("%s/%s", ROOT, "/run/stdioext.h"), endsh
+
+# define stdlibexth edit, mf("%s/%s", ROOT, "/run/stdlibext.h"), endsh
+
+# define STRINGIFY(x) #x
+
+# define displaysh(...) sh, "%s %s %s %s", DISPLAYCONFIG, mf(__VA_ARGS__), QUIET, BG, endsh
+
+# define elev \
+
+
+
+# define yayss(pkg) sh, "yay -Ss %s", pkg, endsh
+
+# define PIPE |
+
+# define PIPEC '|'
+
+# define program programm
+
+#define gccaout(f) sh, "gcc %s", f, endsh; sh, "./a.out", endsh; rm, "./a.out", endsh
+
+#define ffmpegi sh, "ffmpeg -i %s %s"
+
+#define textstreamanimateh \
+  edit, mf("%s/%s", ROOT, "../textstreamanimate/textstreamanimate.h"), endsh;
+
+#define posttsa \
+  \
+  // sh, "%s firefox -P default-release %s%s %s %s", DISPLAYCONFIG, "file://", ROOTC("../textstreamanimate/main.png"), QUIET, BG, endsh
+
+
+
+
+# define tsah textstreamanimateh
+
+
+
+# define wc(f) sh, "wc %s", f, endsh
+
+# define tmph edit, ROOTC("/run/tmp.h"), endsh
+
+# define strncpyh man, "strncpy", endsh
+
+
+
+# define NL '\n'
+# define NLC NL
+# define NLS "\n"
+
+\
+void browsertabtitle(char *title) \
+{\
+  fputsclose(mf("<title> %s </title>", title), fopen(mf("%s%s%s%s", ROOT, "/run/var/browsertabs/", title, ".html"), "w"));\
+  printf("%s%s%s%s%s", "file://", ROOT, "/run/var/browsertabs/", title, ".html");
+}\
+
+
+#define ENDBLOCK
+
+# define bakpre(f) mkdir, "-p bak", endsh; mv, f, "bak", endsh;
+
+void bak(char *, char *f, char *)
+{
+	bakpre(f)
+}
+#define bak bak ( ""
+
+# define meld sh, "%s meld %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+
+
+# define stringexth edit, ROOTC("/run/stringext.h"), endsh
+
+
+
+#include "/data/data/com.termux/files/home/prj/bytesh//run/tmp5.h"
+#include ".//tmp6.h"
+#include ".//cnslutil/curl.h"
+# define clear sh, "clear", endsh
+
+# define mainsysh edit, ROOTC("/run/mainsys.h"), endsh
+
+# define microsyntax edit, "/home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+
+#define asciih printf("%s", "Found in: $ cnslutilh")
+
+void ascii()
+{
+  for (int i = 0; i < 256; ++i)
+    printf("%03d '%c' ", i, (char)i);
+  ln;
+}
+
+
+
+
+
+#define prettierh printf("%s", "Found in: $ cnslutilh\n")
+#define prettier sh, "prettier -w %s"
+
+
+#include ".//test444.h"
+#include ".//subtest/test333.h"
+#include ".//htmlutil.h"
+#define i3configh printf("%s", "Found in: $ cnslutilh\n")
+#define i3config edit, "$HOME/.config/i3/config", endsh
+
+
+#define docfrltxth printf("%s", "Found in: $ cnslutilh\n")
+#define docfrltxt edit, "/home/mbrandt/doc/frl.a.txt", endsh
+
+
+#define sigactionhh printf("%s", "Found in: $ cnslutilh\n")
+#define sigactionh man, "sigaction", endsh
+
+
+#define signalhh printf("%s", "Found in: $ cnslutilh\n")
+#define signalh man, "signal.h", endsh
+
+
+#define fgetchh printf("%s", "Found in: $ cnslutilh\n")
+#define fgetch man, "fgetc", endsh
+
+
+#define fsetposhh printf("%s", "Found in: $ cnslutilh\n")
+#define fsetposh man, "fsetpos", endsh
+
+
+#define fgetposhh printf("%s", "Found in: $ cnslutilh\n")
+#define fgetposh man, "fsetpos", endsh
+
+
+#define strlenhh printf("%s", "Found in: $ cnslutilh\n")
+#define strlenh man, "strlen", endsh
+
+
+#define fgetshh printf("%s", "Found in: $ cnslutilh\n")
+#define fgetsh man, "fgets", endsh
+
+
+#include ".//readconf.h"
+#define lnshh printf("%s", "Found in: $ cnslutilh\n")
+#define lnsh man, "ln", endsh
+
+
+#define test1234h printf("%s", "Found in: $ cnslutilh\n")
+#define test1234 
+
+
+#define test647h printf("%s", "Found in: $ cnslutilh\n")
+#define test647 
+
+
+#define vncserverconfigh printf("%s", "Found in: $ cnslutilh\n")
+#define vncserverconfig edit, "/home/mbrandt/.config/tigervnc/config", endsh
 
 
