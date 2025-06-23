@@ -1,6 +1,6 @@
 #include "main.h"
 
-char *lastcmd = "edit, \".gitignore\", endsh ";
+char *lastcmd = "sh, \"git status\", endsh ";
 int syssh = 0;
 char *rootworkdir = "/data/data/com.termux/files/home/prj/bytesh//run";int isfirstcmd = 0;
 int main(int argc, char **argv) {

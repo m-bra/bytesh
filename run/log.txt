@@ -9503,3 +9503,5 @@ eedit, ".gitignore", endsh
 
 edit, ".gitignore", endsh
 gitupdate
+sh, "git status", endsh
+gitupdate
