@@ -9492,3 +9492,4 @@ gitupdate
 sh, "git config --global user.email merlin.brandt@hotmail.de", endsh
 sh, "git config --global user.name 'Merlin Brandt'", endsh
 gitupdate
+gitupdate
