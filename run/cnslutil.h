@@ -825,3 +825,5 @@ void ascii()
 #define vncserverconfig edit, "/home/mbrandt/.config/tigervnc/config", endsh
 
 
+#include ".//mtnc.h"
+#include ".//mntc.h"

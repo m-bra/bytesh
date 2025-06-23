@@ -1,0 +1,19 @@
+
+int gitupdaterequired() {
+	FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
+	char *lastline = 0;
+	rep {
+	    char *line = fgetm(f); /*fgetmh*/\
+	    if (!line) 
+	    {
+	    iff !lastline
+	    thn break;
+	        char *cmpwith = "okok";
+	    iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
+	    thn return 0;   
+	    	break;
+	    }
+	    lastline = line;
+	}
+	return 1;	
+}

@@ -25,8 +25,8 @@ char *fgetsclose(char *s, int n, FILE *f)
 char *fgetm(malloclist_t *malloclist, int n, FILE *f)
 {
 	mallocadd(n);
-	fgets(lastmalloc, n, f);
-	return lastmalloc;	
+	char *r = fgets(lastmalloc, n, f);
+	return r ? lastmalloc : 0;	
 }
 #define fgetm(n, f) fgetm(malloclist, n, f)
 
