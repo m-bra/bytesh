@@ -9,11 +9,12 @@ int gitupdaterequired(char *dir) {
 	sh, "git status > %s",("/tmp/gitstatus.txt"), endsh;
 	FILE *f = fopen(("/tmp/gitstatus.txt"), "r");\
 
-	char *lastline = 0;
+	char lastline[linebuf_tn];
 	rep {
-	    char *line = fgetm(linebuf_tn, f); 
+        char line[linebuf_tn];
+	    char *r = fgets(line, linebuf_tn, f); 
 		es(line);
-	    if (!line) 
+	    if (!r) 
 	    {
    	    iff !lastline
 	    thn break;
@@ -22,7 +23,7 @@ int gitupdaterequired(char *dir) {
 	    thn return 0;   
 	    	break;
 	    }
-	    lastline = line;
+	    strncpy(lastline, line, linebuf_tn);
 	}
 	rm, ("/tmp/gitstatus.txt"), endsh;
 	return 1;	
