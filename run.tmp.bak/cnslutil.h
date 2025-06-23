@@ -436,8 +436,8 @@ void gitupdate() {
 	    sh, "git add */*", endsh;
 	    sh, "git commit -m untitled", endsh;
 	    sh, "git push", endsh;
-	    sh, "git status", endsh;
-	    sh, "echo git status", endsh;
+	    //sh, "git status", endsh;
+	    //sh, "echo git status", endsh;
 	//echosys "git log" _
 }
 #define gitupdate gitupdate()

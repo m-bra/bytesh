@@ -9465,3 +9465,17 @@ ls
 
 
 ls
+edit, "2025-06-23-PSTN.TXT", endsh
+edit, "*WHATSAPP", endsh
+cnslutilh
+man, "git status", endsh
+man, "git-status", endsh
+# cdroot /data/data/com.termux/files/home/prj/bytesh
+/data/data/com.termux/files/home/prj/bytesh/
+
+
+sh, "git status", endsh
+ls
+cat, "repopw.txt", endsh
+cnsltuilh
+

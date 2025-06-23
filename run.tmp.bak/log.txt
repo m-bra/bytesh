@@ -9479,3 +9479,22 @@ ls
 cat, "repopw.txt", endsh
 cnsltuilh
 
+cnslutilh
+gpgencrypt, "repopw.txt", endsh
+gpgdecrypt, "repopw.txt", endsh
+gitupdate
+gitupdate
+
+cnslutilh
+gitupdate
+
+gitupdate
+sh, "git config --global user.email merlin.brandt@hotmail.de", endsh
+sh, "git config --global user.name 'Merlin Brandt'", endsh
+gitupdate
+gitupdate
+sh, "git status", endsh
+edit, ".gitignore", endsh
+l
+l
+l

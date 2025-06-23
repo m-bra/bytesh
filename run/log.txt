@@ -9493,3 +9493,13 @@ sh, "git config --global user.email merlin.brandt@hotmail.de", endsh
 sh, "git config --global user.name 'Merlin Brandt'", endsh
 gitupdate
 gitupdate
+sh, "git status", endsh
+edit, ".gitignore", endsh
+l
+l
+l
+
+eedit, ".gitignore", endsh
+
+edit, ".gitignore", endsh
+gitupdate

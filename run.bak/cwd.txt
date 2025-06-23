@@ -1,1 +1,1 @@
-/storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/COMMUNICATION/
+/data/data/com.termux/files/home/prj/bytesh/
