@@ -12,11 +12,11 @@ int gitupdaterequired(char *dir) {
 	char *lastline = 0;
 	rep {
 	    char *line = fgetm(linebuf_tn, f); 
+		es(line);
 	    if (!line) 
 	    {
    	    iff !lastline
 	    thn break;
-	    	es(lastline);
 	        char *cmpwith = "nothing to commit, working tree clean";
 	    iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
 	    thn return 0;   
