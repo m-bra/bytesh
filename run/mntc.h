@@ -8,16 +8,15 @@ int gitupdaterequired(char *dir) {
 
 	sh, "git status > %s", ROOTC("/run/gitstatus.txt"), endsh;
 	FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
-iff !f
-thn printf("hello no f");
 
 	char *lastline = 0;
 	rep {
 	    char *line = fgetm(linebuf_tn, f); 
 	    if (!line) 
 	    {
-	    iff !lastline
+   	    iff !lastline
 	    thn break;
+	    	es(lastline);
 	        char *cmpwith = "nothing to commit, working tree clean";
 	    iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
 	    thn return 0;   
@@ -25,6 +24,7 @@ thn printf("hello no f");
 	    }
 	    lastline = line;
 	}
+	rm, ROOTC("/run/gitstatus.txt"), endsh;
 	return 1;	
 }
 
