@@ -50,34 +50,5 @@ char *loads(char *filename)
 	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
 }
 
-#define mgetline mgetescline("")
-
-char *mgetescline(char *beginlinefmt) 
-{
-	char *pagebuf = mallocaddpagebuf;
-	
-    int displaynumber = 1;
-    while loop {
-	    char *prtline = 0; size_t prtlinen = 0; ssize_t r;
-	    r = getline(&prtline, &prtlinen, stdin);
-    	throwngerrno(r);
-    	
-     	if (strlen(pagebuf) + strlen(prtline) < pagebuf_tn) {
-    		strcat(pagebuf + strlen(pagebuf), prtline);
-    	} else {
-    		printf("Buffer overflow.\n");
-    		exit(1);
-    	}
-	
-       if (strlen(prtline) < 2 
-       || (prtline[strlen(prtline) - 2] != '\\'))
-  	       break;
-  	   free(prtline);
-       printf(beginlinefmt, ++displaynumber);
-    }
-
-    return pagebuf;
-}
-
 
 #endif

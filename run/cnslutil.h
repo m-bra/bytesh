@@ -24,7 +24,7 @@
 #define prootdistro prootdistrou("mbrandt")
 
 #define tmux sh, "tmux", endsh
-#define lsp sh, "ls -hAltr %s"
+#define lsp sh, "ls -hAlr %s"
 #define ls lsp, "", endsh
 #define lsgrep sh, "ls -hAltr | grep %s"
 #define lspgrep sh, "ls -hAltr %s | grep %s"
@@ -349,8 +349,7 @@ thn goto err;
 	return;
 
 err:
-    char *NLS = "\n";
-	printf("Error at %s:%d%c", __FILE__, __LINE__, *NLS);
+	printf("Error at %s:%d%c", __FILE__, __LINE__, '\n');
 	return;
 }
 
@@ -730,8 +729,10 @@ void browsertabtitle(char *title) \
 
 # define bakpre(f) mkdir, "-p bak", endsh; mv, f, "bak", endsh;
 
-void bak(char *, char *f, char *)
+void bak(char *a, char *f, char *b)
 {
+	(void) a;
+	(void) b;
 	bakpre(f)
 }
 #define bak bak ( ""
@@ -743,14 +744,11 @@ void bak(char *, char *f, char *)
 
 
 
-#include "/data/data/com.termux/files/home/prj/bytesh//run/tmp5.h"
-#include ".//tmp6.h"
 #include ".//cnslutil/curl.h"
-# define clear sh, "clear", endsh
 
 # define mainsysh edit, ROOTC("/run/mainsys.h"), endsh
 
-# define microsyntax edit, "/home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+# define microsyntax edit, "/data/data/com.termux/files/home/.config/micro/syntax/cext.yaml", endsh
 
 #define asciih printf("%s", "Found in: $ cnslutilh")
 
@@ -827,3 +825,8 @@ void ascii()
 
 #include ".//mtnc.h"
 #include ".//mntc.h"
+#include ".//tmp/termiostest.h"
+#define exechh printf("%s", "Found in: $ cnslutilh\n")
+#define exech man, "exec", endsh
+
+#include "scanfs.h"

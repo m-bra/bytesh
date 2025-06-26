@@ -1,7 +1,22 @@
 
- * bytesh. input/output using micro exclusevly
+ * coding should be more social. also in economical sense. but academy does have economical relevance.
+   * short post about #define macro(x) x() {}
+                      macro(int examplefn) {
+                      	
+                      }
 
- * run code above 0x02436
+                      #define newblock(x) x
+                      {
+                      	newblock {
+                      		printf("Hello");
+                      	}
+                      }
+
+ * autojump to reported compiler errors in editor
+
+ * bytesh. input/output using micro exclusevly. send signal to micro every 10 minutes to ask for activity log.
+
+ * run readconfigh
 
  * qemu. valgrind.
 
@@ -14,13 +29,10 @@
    zugeteilter monatsplanung bekannt per woche vor folgendem monat
    20juli bis 10august ferien
 
- * how to see where segfault or other error signals occured
-
  * tsa("ABC") is the only working expression; tsa(mf(..)) does not work.
    file as "known bug".
 
  * bytesh should compile itself (main.c)
-   * advantage: referencing old commands using # 0xABC
 
  * Δ0505 21:49bis1105 08:54bis10:05 10:35bis11:27
    * sh, ..., ..., endsh; macro

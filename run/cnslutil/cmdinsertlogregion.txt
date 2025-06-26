@@ -1,0 +1,1 @@
+sh, "ln -s /data/data/com.termux/files/home/.config/micro/syntax/cext.yaml /home/mbrandt/.config/micro/syntax/cext.yaml", endsh

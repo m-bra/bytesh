@@ -112,11 +112,11 @@ int main(int argc, char **argv) {
 
   int defstrchrnul = 0;
 
-  /*
+  
   while loop {
-	//printf("prooted? [y] ");
+	printf("prooted? [y] ");
 	fflush(stdout);
-	//char *answer = mgetescline("");
+	char *answer = mgetescline("");
 
   	if (!strncmp(answer, "y", 1)) {
   	  defstrchrnul = 0;
@@ -129,7 +129,7 @@ int main(int argc, char **argv) {
   	defstrchrnul = 0;
   	break;
   }
-  */
+  
 
   fflush(stdout);
   printf("[press enter] ");
@@ -252,9 +252,10 @@ int main(int argc, char **argv) {
         mf("%s/%s", ctxt->rootworkdir, "b.out"), 
         QUIET, endsh;
 
-	// TODO write back to ? : && || syntax
+    char *defstrchrnulflag = defstrchrnul ? "-D DEFSTRCHRNUL" : "";
+
 	(sh, "rm -f %s", ctxtmwf("a.out"), endsh);
-	if (sh, "gcc %s %s -o%s", defstrchrnul ? "-D DEFSTRCHRNUL" : "", ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) {
+	if (sh, "gcc %s %s -o%s", defstrchrnulflag, ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) {
 		if (strncmp(ctxt->linebuf, " ", 2)) { ctxt->setemptyline = 1; } else {
 			if (sh, "stat %s %s", mf("%s%s", ctxt->rootworkdir, ".err"), quiet, endsh)
 			{

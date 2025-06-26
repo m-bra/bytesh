@@ -92,6 +92,12 @@ malloclist_t *malloclist = &malloclistval;
 #define cef if (EOF == (
 #define theh printf("THen Err\n#define the thn goto err;\n");
 #define the thn goto err;
+#define stmh printf("STateMent\n#define stm\n");
+#define stm
+#define blkh printf("BLocK\n#define blk {");
+#define blk {
+#define end_blkh printf("END BLocK\n#define end }");
+#define end_blk }
 
 #define then ) )
 #define ift if (   (

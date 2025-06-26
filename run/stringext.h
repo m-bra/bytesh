@@ -30,7 +30,7 @@ char *strlaststr(char *haystack, char *needle)
 {
 	char *q = 0;
 	char *p = haystack;
-	while (p = strstr(p, needle))
+	while ((p = strstr(p, needle)))
 	{
 		q = p;
 		p += strlen(needle);

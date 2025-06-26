@@ -14,6 +14,7 @@
 #include "stringext.h"
 #include "stringutil.h"
 #include "stdioext.h"
+#include ".//userinterface.h"
 
 void sighandle(int signum)
 {
@@ -80,12 +81,15 @@ void statusprint(char *rootworkdir)
 	char cwd[NBUF]; getcwd(cwd, NBUF);
 
 	char quiet[] = " 2> /dev/null > /dev/null";
+
+	int gitupdaterequired(char *);
     
     char *status = mf(
     	mf("%s%s", "\n%s[%s]\n%s", PROMPT), 
     	GLOBAL_INDENT, cwd, 
     	GLOBAL_INDENT, 
     	cmdlogn(),
+    	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
     	!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""
     );
     printf("%s", status);

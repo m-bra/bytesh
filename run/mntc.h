@@ -16,7 +16,7 @@ int gitupdaterequired(char *dir) {
 		es(line);
 	    if (!r) 
 	    {
-   	    iff !lastline
+   	    iff !strlen(lastline)
 	    thn break;
 	        char *cmpwith = "nothing to commit, working tree clean";
 	    iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
