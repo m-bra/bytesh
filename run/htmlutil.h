@@ -1,14 +1,30 @@
-#define REJECTTAGS "Local Job", "Photography", "Sewing", "House Cleaning", "Housework", "Handyman", "Painting", "CAD/CAM", "Videography", "Removal Services", "Plumbing", "Interior Design", "Electric Repair",
+#include "main.h"
+
+#ifndef HTMLUTILH 
+#define HTMLUTILH
+
+#define REJECTTAGS "Local Job", "Photography", "Sewing", "House Cleaning", "Housework", "Handyman", "Painting", "CAD/CAM", "Videography", "Removal Services", "Plumbing", "Interior Design", "Electric Repair", "Baking", "Trucking"
 #define CURRENTPAGE 12
 
 #define scanhtmlh printf("Found in : $ htmlutilh%c", *NLS);
-int scanhtmli(int i)
-{	
-	FILE *f = fopen(mf("/tmp/Freelancer%d.html", i), "r");
-	if (!f) return 0;
-
-	FILE *out = stdout;
+int scanhtml(char *filename)
+{
+iff errno
+thn { perror(mf("%s:%d", __FILE__, __LINE__)); return 0; }    
 	
+    char *filenameaccept = mf("%s%s", filename, ".accept.txt");
+	char *filenamereject = mf("%s%s", filename, ".reject.txt");
+	char *filenames[3] = {filenameaccept, filenamereject, 0};
+for (char **f = filenames; *f; ++f)
+iff access(*f, F_OK) == 0
+thn { printf("%s %s \n", *f, "already exists."); return 0;}
+
+	errno = 0;
+
+	FILE *f = fopen(filename, "r");
+cen FILE *outreject = fopen(mf("%s%s", filename, ".reject.txt"), "w");
+cen FILE *outaccept = fopen(mf("%s%s", filename, ".accept.txt"), "w");
+cen	
     char *entrydbuf = mallocaddpagebuf; //[pagebuf_tn];
     char *entrybuf = mallocaddpagebuf;//[pagebuf_tn];
 	entrybuf[0] = 0;
@@ -23,10 +39,17 @@ int scanhtmli(int i)
 
 	entryctxt.buildingentry = 0;
 
+	char pageline[linebuf_tn];
+
 	char line[linebuf_tn];
 	while (fgets(line, linebuf_tn, f))
 	{
 		int wasbuildingentry = entryctxt.buildingentry;
+
+		if (strstr(line, "# # PAGE"))
+		{
+			strcpy(pageline, line);
+		}
 
 		if (strstr(line, "href=\"/project"))
 		{
@@ -128,8 +151,8 @@ int scanhtmli(int i)
 	         
 			     if (strstr(buf, "Footer")) 
 			     {
-			     ifn entryctxt.reject
-			     thn fprintf(out, "%s%c", entrybuf, *NLS);
+			         FILE *out = entryctxt.reject ? outreject : outaccept;
+			         fprintf(out, "%s\n%s%c", pageline, entrybuf, *NLS);
 			         entrybuf[0] = 0;
 			         entryctxt.buildingentry = 0;	
 			     }
@@ -142,25 +165,19 @@ int scanhtmli(int i)
 	   }
 	
  }	
+ 
   return 1;
-}
-#define scanhtmli scanhtmli(i++)
 
-loctag
-nil scanhtml() { 
-int i = CURRENTPAGE;
-rep {
-	ifn scanhtmli
-	thn break;
-	}
+err:
+  perror(mf("%s:%d", __FILE__, __LINE__));
+  return 0;
 }
-#define scanhtml scanhtml()
-
-#define prettierfrlh printf("%s", "Found in: $ htmlutilh\n")
-#define prettierfrl prettier, "/tmp/Freelancer*.html", endsh
+#define prettierah printf("%s", "Found in: $ htmlutilh\n")
+#define prettiera prettier, "*.html", endsh
 
 #define htmlutilh edit, ROOTC("/run/htmlutil.h"), endsh
 #define htmlutilhadd hadd("htmlutil")
 #define htmlutilhaddfn(ident) haddfn("htmlutil", ident)
 #define htmlutilhadddef(ident) hadditem("htmlutil", ident, 1)
 
+#endif

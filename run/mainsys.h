@@ -18,4 +18,4 @@ typedef char pagebuf_t[sizeof(linebuf_t) * 128];
 
 #define ROOT "/data/data/com.termux/files/home/prj/bytesh/"
 #define ROOTLEN strlen(ROOT)
-#define ROOTC(arg) mf("%s/%s", ROOT, arg)
+#define ROOTC(arg) mf("%s%s", ROOT, arg)

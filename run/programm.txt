@@ -1,4 +1,24 @@
 
+ * setup pipewire [JUL03THU13:45AM]
+
+ * bytesh tweak: tee command output [JUL03THU12:45AM-13:45AM]
+
+ * bytesh tweaks: cnsllinedel [JUL02WED11:27PM-12:45AM]
+
+ * bytesh -c <> and closer interaction with micro.
+
+ * bytesh tweaks [JUL02WED09:36PM - 11:27PM]
+
+ * micro make plugin to introduce a cmd which allows to quickly define new cmds
+
+ * firefox pulseaudio/pipewire
+
+ * direct piping of execl process
+
+ * posix ls api
+
+ * arrow up feature not able to implement
+
  * coding should be more social. also in economical sense. but academy does have economical relevance.
    * short post about #define macro(x) x() {}
                       macro(int examplefn) {
@@ -14,7 +34,6 @@
 
  * autojump to reported compiler errors in editor
 
- * bytesh. input/output using micro exclusevly. send signal to micro every 10 minutes to ask for activity log.
 
  * run readconfigh
 

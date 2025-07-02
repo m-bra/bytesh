@@ -3,11 +3,11 @@
 
 #include "main.h"
 
-char *escapeccstr(char *s, int buflen, int c, int r)
+char *escapeccstr(char *sz, int buflen, int c, int r)
 {
-	if (buflen < (int)strlen(s) * 2) goto error;
+	if (buflen < (int)strlen(sz) * 2) goto error;
 
-    char *p = s;
+    char *p = sz;
     char *end = p + strlen(p);
     while ((p = strchrnul(p, c)) != end)
     {
@@ -17,20 +17,20 @@ char *escapeccstr(char *s, int buflen, int c, int r)
     	p+= 2;
     	end = p + strlen(p);
     }
-	return s;
+	return sz;
 
 error:
 	printf("Error at %s:%d\n", __FILE__, __LINE__);
 	exit(1);
 }
 
-char *escapecstr(char *s, int buflen)
+char *escapecstr(char *sz, int buflen)
 {
-    if (buflen < (int)strlen(s) * 2 * 2 * 2) goto error;
-	s = escapeccstr(s, buflen, '\\', '\\');
-	s = escapeccstr(s, buflen, '\"', '\"');
-	s = escapeccstr(s, buflen, '\n', 'n');
-    return s;
+    if (buflen < (int)strlen(sz) * 2 * 2 * 2) goto error;
+	sz = escapeccstr(sz, buflen, '\\', '\\');
+	sz = escapeccstr(sz, buflen, '\"', '\"');
+	sz = escapeccstr(sz, buflen, '\n', 'n');
+    return sz;
 
 error:
 	printf("Error at %s:%d\n", __FILE__, __LINE__);

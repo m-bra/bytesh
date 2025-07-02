@@ -9,20 +9,12 @@
 #define MALLOCLISTDEBUG if (0)
 
 #ifndef NOEVAL
-#define ed(x) printf("%s = %d \n", #x, x);
-#define ec(x) printf("%s = %c \n", #x, x);
-#define ef(x) printf("%s = %f \n", #x, x);
+#define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+#define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+#define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
 
-void es(char *name, char *s)
-{
-	printf("%s ", name);
-	while (*s) {
-		printf("%c", *s);
-		fflush(stdout);
-		++s;
-	}
-}
-#define es(x) es(#x, x)
+void es_(char *name, char *sz);
+#define es(x) es_(#x, x)
 #endif
 
 #define MALLOCLISTMAXPTRS 2048000
@@ -74,10 +66,26 @@ malloclist_t *malloclist = &malloclistval;
 
 #define in(a, f, b) f ( a , b )
 
+#define ANONSTRUCT_COUNT_(x) anon_struct##x
+#define ANONSTRUCT_COUNT(x) ANONSTRUCT_COUNT_(x) 
+
+#define SECTION
+#define TEXT struct ANONSTRUCT_COUNT(__COUNTER__) {
+#define FUNCTION blk_end ;
+#define def blk 
+#define DATA blk_end ;
+
+#define dat DATA
+#define txt TEXT
+#define fn
+#define fnc FUNCTION
+
 #define looph printf("#define loop (1)\n");
 #define loop (1)
+#define range(from, to) (int i = from; i < to; ++i)
 #define reph printf("REPeat infinitely\n#define rep while (1)\n");
 #define rep while (1)
+#define ign if (0)
 #define iffh printf("IF and only iF \n#define iff if ( (\n");
 #define iff if (   (
 #define ifnh printf("IF Not \n#define ifn if ( ! (\n");
@@ -94,9 +102,12 @@ malloclist_t *malloclist = &malloclistval;
 #define the thn goto err;
 #define stmh printf("STateMent\n#define stm\n");
 #define stm
+#define s
 #define blkh printf("BLocK\n#define blk {");
 #define blk {
-#define end_blkh printf("END BLocK\n#define end }");
+#define blk_endh printf("BLocK END\n#define blk_end }");
+#define blk_end }
+#define end_blkh printf("END BLocK\n#define end_blk }")
 #define end_blk }
 
 #define then ) )
@@ -129,6 +140,27 @@ char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...) {
 #define malloclinebufprintf mlinebufprintf
 #define mf mlinebufprintf
 
+void es_(char *name, char *sz)
+{
+    char *pre = mf("(%s) = ", name);
+    char *prespace[strlen(pre)];
+	memset(prespace, ' ', strlen(pre));
+    
+	printf("%s\"", pre);
+	while (*sz) {
+	iff *sz == '\n'
+	thn printf("'\n%s\"", prespace);
+	els printf("%c", *sz);
+		fflush(stdout);
+		++sz;
+	}
+	printf("\"\n");
+	fflush(stdout);
+}
+
+#define BOOLTOSYS(b) (!(b))
+
+
 int sh_(int ignored, char *fmt, ...) 
 {
   va_list args;
@@ -139,6 +171,7 @@ int sh_(int ignored, char *fmt, ...)
 
   va_end(args);
 
+  int fd[2];
   pid_t fr = fork(); 
   if (!fr) 
   {
@@ -146,14 +179,49 @@ int sh_(int ignored, char *fmt, ...)
   }
   else
   {
-  	int wstatus;
-  	wait(&wstatus);
-  	return !WIFEXITED(wstatus) || WEXITSTATUS(wstatus);
+  	  int wstatus;
+  	  wait(&wstatus);
+      return BOOLTOSYS(WIFEXITED(wstatus)) || WEXITSTATUS(wstatus);
   }
   return 1;
+  
+err:
+  perror(mf("%s:%d", __FILE__, __LINE__));
+  return 0;
+}
+
+int shfd_(int ignored, char *fmt, ...) 
+{
+  va_list args;
+  va_start(args, fmt);
+  linebuf_t buf;
+
+  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+
+  va_end(args);
+
+  int fd[2];
+  pipe(fd);
+  pid_t fr = fork(); 
+  if (!fr) 
+  {
+    close(fd[0]);
+    dup2(fd[1], STDOUT_FILENO);
+    close(fd[1]);
+    execl("/bin/sh", "sh", "-c", buf, (char *) NULL);
+    _exit(1);	
+  }
+  else
+  {
+    close(fd[1]);
+    return fd[0];
+  }
+  return -1;
 }
 
 #define sh sh_ ( 0
+#define shfd shfd_ ( 0
 #define endsh "" )
 
 #endif
+ 

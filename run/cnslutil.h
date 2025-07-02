@@ -24,10 +24,10 @@
 #define prootdistro prootdistrou("mbrandt")
 
 #define tmux sh, "tmux", endsh
-#define lsp sh, "ls -hAlr %s"
-#define ls lsp, "", endsh
-#define lsgrep sh, "ls -hAltr | grep %s"
-#define lspgrep sh, "ls -hAltr %s | grep %s"
+#define ls sh, "ls -hAl %s"
+#define lsc ls, ".", endsh
+#define lscgrep sh, "ls -hAl . | grep %s"
+#define lsgrep sh, "ls -hAl %s | grep %s"
 
 #define history cmdlog
 
@@ -95,37 +95,6 @@ void cmdloghead(int end)
 	}
 
 	fclose(f);
-}
-
-
-void cmdlogat(int i, linebuf_t *buf)
-{
-	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
-	int linen = -1;
-	while loop {
-		linen+= 1;
-		if (!fgets((char *) buf, linebuf_tn, f))
-			break;
-		if (linen == i)
-			break;
-	}
-	fclose(f);
-}
-
-int cmdlogn()
-{
-	linebuf_t val;
-	linebuf_t *buf = &val;
-	
-	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
-	int linen = -1;
-	while loop {
-		linen+= 1;
-		if (!fgets((char *) buf, linebuf_tn, f))
-			break;
-	}
-	fclose(f);
-	return linen;
 }
 
 #define cmdlogregionh \
@@ -238,10 +207,10 @@ void cat(int ignore, char *filename, char *ignore_)
 }
 #define cat cat ( 0
 
-void touch(int ignore, char *s, char *ignore_)
+void touch(int ignore, char *sz, char *ignore_)
 {
 	char buf[NBUF];
-	snprintf(buf, NBUF, "touch %s", s);
+	snprintf(buf, NBUF, "touch %s", sz);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }
@@ -261,41 +230,6 @@ void diff(int ignore, char *from, char *to, char *ignore_)
 //                          ADDITIONAL COMMANDS
 /////////////////////////////////////////////////////////////////////////
 
-//#include "prop.h"
-
-void prop(char *filename, char *identget, char *identset)
-{
-	char headerpath[NBUF] = "";
-	strcat(headerpath, ROOT);
-	strcat(headerpath, "/run/prop.h");
-
-	char def[NBUF * 64];
-	strcat(def, "char * ");
-	strcat(def,        identget);
-	strcat(def,                "() {\n");
-	strcat(def, "    char *path = \"");
-	strcat(def,                     ROOT);
-	strcat(def,                        "/run/prop/");
-	strcat(def,                                   filename);
-	strcat(def,                                           "\";\n");
-	strcat(def, "    return loads(path);\n");
-	strcat(def, "\n");
-	strcat(def, "}\n");
-	strcat(def, "\n");
-	strcat(def, "void \n");
-	strcat(def,       identset);
-	strcat(def,              "(char *val) {\n");
-	strcat(def, "    char *path = \"");
-	strcat(def,                     ROOT);
-	strcat(def,                        "/run/prop/");
-	strcat(def,                                   filename);
-	strcat(def,                                           "\";\n");
-	strcat(def, "    fputsclose(val, fopen(path, \"w\"));\n");
-	strcat(def, "}\n");
-
-	fputsclose(def, fopen(headerpath, "a"));
-}
-#define prop prop (
 
 loctag
 void hcreate(char *name)
@@ -360,7 +294,7 @@ err:
 #define haddfn(namepath, ident) hadditem(namepath, ident, 0)
 void hadditem(char *namepath, char *ident, int preprocessor)
 {
-	char *fn = ident;
+	char *fnct = ident;
 	
 	char *name = strrstr(namepath, "/");
 	if ( name) name += 1;
@@ -369,35 +303,35 @@ void hadditem(char *namepath, char *ident, int preprocessor)
 	char *cmd = mf("%sh", name);
 	char *filename = mf("%s.h", namepath);
 	
-	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fn ? (preprocessor ? "def" : "fn") : "");
+	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fnct ? (preprocessor ? "def" : "fn") : "");
 	printf("%s", prompt);
 	fflush(stdout);
 		
 	char space[] = "                                 ";
 	space[strlen(prompt) - 5] = 0;
-	char *def = mgetescline(mf("%s%%02d $ ", space));
+	char *szdef = mgetescline(mf("%s%%02d $ ", space));
     
 	char path[NBUF];
 	snprintf(path, NBUF, "%s/run/%s", ROOT, filename);
 
-    char defb[strlen(def) + 2];
-    strcpy(defb, def);
-    defb[strlen(def)] = '\n';
-    defb[strlen(def) + 1] = 0;
+    char szdefb[strlen(szdef) + 2];
+    strcpy(szdefb, szdef);
+    szdefb[strlen(szdef)] = '\n';
+    szdefb[strlen(szdef) + 1] = 0;
 
     char *NLS = "\n";
 
 	FILE *f = fopen(path, "a");
-	fn&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
-	             fn, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
+	fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+	             fnct, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
 
 	int pp =  preprocessor;
 	int np = !preprocessor;
-	np&&fn&&fputs(mf("void %s()%c", ident, *NLS), f);
-	np&&fn&&fputs(   mf("{%c", *NLS),      f);
-	np&&    fputs(       defb, f);
-	np&&fn&&fputs(   mf("}%c", *NLS),      f);
-	pp&&fn&&fputs(mf("#define %s %s%c", ident, defb, *NLS), f);
+	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+	np&&     fputs(       szdefb, f);
+	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
 }
 
 #define cnslutilhadd xyzhadd("cnslutil")
@@ -521,12 +455,12 @@ void man(int ignore, char *topic, char *ignore_) {
 
 
 	}
-	else
-	{
-		sh, "man %s %c col -b >> %s/%s%s", topic, *PIPES, 
-		    ROOTC("/run/cnslutil/man/"), topic, ".txt", endsh;
-		edit, mf("%s/%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt"), endsh;
-	}
+	els blk
+	stm char *filename = mf("%s%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt");
+	iff access(filename, F_OK) != 0
+	thn sh, "man %s | col -b > %s", topic, filename, endsh;
+	stm edit, filename, endsh;
+	blk_end
 }
 #define man man ( 0
 
@@ -554,10 +488,6 @@ void man(int ignore, char *topic, char *ignore_) {
 
 #define storagepath "/storage/emulated/0/"
 
-#define s "%s"
-
-
-
 #define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf(lastmalloc, sizeof(linebuf_t), "ln -s %s %s", a, b), lastmalloc) _
 
 #define lns lnsfn (
@@ -576,18 +506,35 @@ void man(int ignore, char *topic, char *ignore_) {
 void du(int depth) {sh, "du -h -d %d", depth, endsh;}
 
 
-#define yays(x) sh, "yay -S %s", x, endsh
+int yays(int ignore, char *x, char *ignores)
+{
+	return sh, "yay -S %s", x, endsh;
+}
+#define yays yays ( 0
 
 #define pacmansyyu sh, "sudo pacman -Syyu", endsh
 #define pacmansyu  sh, "sudo pacman -Syu",  endsh
 #define pacmansyy  sh, "sudo pacman -Syy",  endsh
 #define pacmansy   sh, "sudo pacman -Sy",   endsh
 
-#define pacmans(x) sh, "sudo pacman -S %s", x, endsh
+int pacmans(int ignore, char *x, char *ignores)
+{
+	return sh, "sudo pacman -S %s", x, endsh;
+}
+#define pacmans pacmans ( 0
 
-#define pacmanss(x) sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh; edit, "/tmp/pacmanss.txt", endsh;
+int pacmanss(int ignore, char *x, char *ignores)
+{
+	return sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh;
+	edit, "/tmp/pacmanss.txt", endsh;
+}
+#define pacmanss pacmanss ( 0
 
-#define pacmanqi(x) sh, "pacman -Qi %s", x, endsh
+int pacmanqi(int ignore, char *x, char *ignores)
+{
+	return sh, "pacman -Qi %s", x, endsh;
+}
+#define pacmanqi pacmanqi ( 0
 
 #define rmr sh, "rm -r %s"
 
@@ -595,11 +542,19 @@ void du(int depth) {sh, "du -h -d %d", depth, endsh;}
 
 #define ping sh, "ping %s"
 
-#define pacmanql(x) sh, "pacman -Ql %s", x, endsh;
+int pacmanql(int ignore, char *x, char *ignores)
+{
+	return sh, "pacman -Ql %s", x, endsh;
+}
+#define pacmanql pacmanql ( 0
 
 #define libreoffice sh, "%s libreoffice %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
-# define pacmanr(x) sh, "sudo pacman -R %s", x, endsh
+int pacmanr(int ignore, char *x, char *ignores)
+{
+	return sh, "sudo pacman -R %s", x, endsh;
+}
+#define pacmanr pacmanr ( 0
 
  # define which sh, "which %s"
 
@@ -628,7 +583,7 @@ void du(int depth) {sh, "du -h -d %d", depth, endsh;}
 # define xterm sh, "%s xterm %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
 # define sigterm(pid) kill(pid, SIGTERM);
-
+# define sigkill(pid) kill(pid, SIGKILL);
 # define suroot sh, "su -c bytesh - root", endsh
 
 
@@ -678,8 +633,11 @@ void du(int depth) {sh, "du -h -d %d", depth, endsh;}
 # define elev \
 
 
-
-# define yayss(pkg) sh, "yay -Ss %s", pkg, endsh
+int yayss(int ignore, char *pkg, char *ignores)
+{
+	return sh, "yay -Ss %s", pkg, endsh;
+}
+#define yayss yayss ( 0
 
 # define PIPE |
 
@@ -727,7 +685,7 @@ void browsertabtitle(char *title) \
 
 #define ENDBLOCK
 
-# define bakpre(f) mkdir, "-p bak", endsh; mv, f, "bak", endsh;
+# define bakpre(f) mkdir, "-p .bak", endsh; mv, f, ".bak", endsh;
 
 void bak(char *a, char *f, char *b)
 {
@@ -830,3 +788,25 @@ void ascii()
 #define exech man, "exec", endsh
 
 #include "scanfs.h"
+#define stdlibexth_addkeywordh printf("%s", "Found in: $ cnslutilh\n")
+
+void stdlibexth_addkeyword()
+{
+	printf("keyword:\n#define "); char *szkeyword = mgetline("");
+	printf("syntax type (statement, type): "); char *sztype = mgetline("");
+    char *configfilename = "/data/data/com.termux/files/home/.config/micro/syntax/cext.yaml";
+    fputsclose(mf("\n - %s : \"%s\"\n", sztype, szkeyword), fopen(configfilename, "a"));
+    printf("#define %s ", szkeyword); char *keywordbody = mgetline("");
+    fputsclose(mf("#define %s %s", szkeyword, keywordbody), fopen(ROOTC("/run/stdlibext.h"), "a"));\
+}
+#define cnsllinedelh printf("%s", "Found in: $ cnslutilh\n")
+#define cnsllinedel \
+	rep iff unbufreadc(STDIN_FILENO) == (int) 'c'      \
+	    thn {printf("%s", "\033[2K\033[T"); fflush(stdout);}        \
+	    els break;
+	
+#define cnsllinedeldown(n) \
+	for range(0, n)\
+	stm printf("%s", "\033[2K");
+
+

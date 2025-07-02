@@ -1,3 +1,5 @@
+#include "main.h"
+
 #ifndef USERINTERFACEHINCLUDED
 #define USERINTERFACEHINCLUDED
 #define userinterfaceh edit, ROOTC("/run/userinterface.h"), endsh
@@ -9,37 +11,47 @@
 
 #define ARROW_CONTROL_KEYh printf("%s", "Found in: $ userinterfaceh\n")
 #define ARROW_CONTROL_KEY 27
+#define ESC '\x1B'
+#define ARROW_UP_SEQ "\x1B[A"
+#define ESCSEQ_ARROW_UP
+#define ESCSEQ_CURSOR_BACK "\x1B[1D"
 #define BACKSPACE_CONTROL_KEY 127
 
-#include "main.h"
 #include <termios.h>
 #include <unistd.h>
 
-struct termios uirestoreval;
+SECTION TEXT
 
-struct termios uiunbuffered() {   
-	struct termios old_tio, new_tio;        
+SECTION DATA
+
+	struct termios uirestoreval;
+
+SECTION TEXT
+
+FUNCTION struct termios uiunbuffered()
+
+def struct termios old_tio, new_tio;        
 	tcgetattr(STDIN_FILENO, &old_tio);    
 	new_tio = old_tio;    
 	// Disable canonical mode (line buffering) and echoing    
 	new_tio.c_lflag &= (~ICANON & ~ECHO);    
 	tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);    
 	return old_tio;
-}
 
-void uibuffered() {   
-	struct termios new_tio;   
+
+FUNCTION void uibuffered()
+
+def 
+    struct termios new_tio;   
 	tcgetattr(STDIN_FILENO, &uirestoreval);    
 	new_tio = uirestoreval;    
 	// Disable canonical mode (line buffering) and echoing    
 	new_tio.c_lflag |= (ICANON | ECHO);    
 	tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);    
-}
 
-void uirestore(struct termios old_tio)
-{
-	tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);    
-}
+FUNCTION  void uirestore(struct termios old_tio)
+
+def tcsetattr(STDIN_FILENO, TCSANOW, &old_tio);    
 
 #define uicallunbuffn(f, ...) uiunbuffered(); f(uiunbufcall, __VA_ARGS__); uirestore();
 
@@ -58,99 +70,137 @@ void uirestore(struct termios old_tio)
     
 #define exec
 
-exec uiunbuf(void, uiexample, int, x)
-{
-	ed(x);
-}
-
 #define unbuf(inner) {\
   struct termios old_tio = uiunbuffered();\
   { inner }\
   uirestore(old_tio);\
 }
 
-void uiexample_rendered(int i)
-{
+
+FUNCTION void uiexample_rendered(int i)
+
+def
 	unbuf (
 		printf("test %s", "hello");
 	)
-}//*/
 
 
 #define mgetescline mgetline
 
-void uitest()
-{
-	unbuf (
+
+FUNCTION void uitest()
+
+def unbuf (
 		char input[4];
 		int n = read(STDIN_FILENO, input, 1);
 	//iff n < 1
 	//thn break;
 		printf("Keycode %d \n", (int) input[0]);
 	)
-}
+
 #define uitest uitest()
 
-char *mgetline(char *beginlinefmt) 
-{
-	fflush(stdout);
+FUNCTION int unbufreadc(int fd) 
+
+def int c; unbuf( c = readc(STDIN_FILENO); ) return c;
+
+FUNCTION char *mgetline(char *beginlinefmt) loctag
+
+def
 	
-	char *pagebuf = mallocaddpagebuf;
-	
-    int displaynumber = 1;
-    char lastchar = ' ';
-    rep {
-    stm char c[2];
-    stm c[1] = 0;
-    stm char *prtline = c; size_t prtlinen = 1; ssize_t r;
-	stm int n;
-    stm unbuf( n = read(STDIN_FILENO, prtline, 1); )
-        
-	iff n < 1 
-	thn break;
+stm char *pagebuf = mallocaddpagebuf; pagebuf[0] = 0;
+stm int linen = 1;
+stm char lastchar = ' ';
+stm int cmdlogline = 0;// cmdlogn();
+    
+rep 
+blk
 
-	stm int is_control_key = *c == BACKSPACE_CONTROL_KEY;
+stm fflush(stdout);
+stm int c = unbufreadc(STDIN_FILENO);
+stm int is_control_key = c == BACKSPACE_CONTROL_KEY || c == ESC;
 
-	iff *c == BACKSPACE_CONTROL_KEY 
-	 && strlen(pagebuf) > 0
-	 && pagebuf[strlen(pagebuf) - 1] != '\n' 
-	thn {
-    stm stm pagebuf[strlen(pagebuf) - 1] = 0;
-	stm stm clear; printf("%s", pagebuf); fflush(stdout);
-	stm }
+iff c == EOF 
+thn return pagebuf;
 
-	iff !is_control_key
-	thn {
-	stm stm printf("%c", *c);
-        
-		    //r = getline(&prtline, &prtlinen, stdin);
-	    	//throwngerrno(r);
-	    	
-	     	if (strlen(pagebuf) + strlen(prtline) < pagebuf_tn) {
-	    		strcat(pagebuf + strlen(pagebuf), prtline);
-	    	} else {
-	    		printf("Buffer overflow.\n");
-	    		exit(1);
-	    	}
-	    }
+iff c == BACKSPACE_CONTROL_KEY
+ && strlen(pagebuf) > 0
+ && pagebuf[strlen(pagebuf) - 1] != '\n' 
+thn blk
+    stm pagebuf[strlen(pagebuf) - 1] = 0;
+    stm printf("\x1B[1D \x1B[1D"); fflush(stdout);
+    blk_end
 
-	
-	iff (*c == '\n' && lastchar != '\\')
-	thn {break;}
-	
-        //if (strlen(prtline) < 2 
-        //|| (prtline[strlen(prtline) - 2] != '\\'))
-  	    //    break;
-  	    //free(prtline);
+iff c == ESC
+ && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[1]
+ && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[2]
+thn blk             
+    stm linebuf_t buf;
+    stm cmdlogat(cmdlogline--, &buf);
+	//stm printf("Hello");ln;
+	for range(0, strlen(pagebuf))
+	iff buf[i] == '\n'
+	thn buf[i] =   ' ';
 
-  	    if (*c == '\n')
-            ;//printf(beginlinefmt, ++displaynumber);
-        fflush(stdout);
+    for range(0, strlen(pagebuf))
+    stm printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
+    stm fflush(stdout);
 
-	iff !is_control_key
-	thn lastchar = *c;
-    }
+    stm *stpncpy(pagebuf, buf, linebuf_tn) = 0;
+    stm printf("%s", pagebuf);
+    blk_end
 
-    return pagebuf;
-}
+
+iff c == '\t'
+ && !strncmp(pagebuf, "us", 2)
+thn blk
+    nil tab_triggers()
+    s   blk
+    s   for range(0, strlen(pagebuf))
+	s   s   printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
+	s   s   char *sznew = "userinterfaceh";
+	s   s   strcpy(pagebuf, sznew);
+	s   s   printf("%s", sznew); fflush(stdout);
+	s   blk_end
+    s   tab_triggers();
+    blk_end
+
+iff c == c && !is_control_key
+thn blk
+    stm putc(c, stdout);
+	ifn strlen(pagebuf) + 1 < pagebuf_tn
+	the pagebuf[strlen(pagebuf) + 0] = c;
+    stm pagebuf[strlen(pagebuf) + 1] = 0;
+
+    nil automatic_triggers()
+        blk
+		iff !strncmp(pagebuf, "cd", 3)
+		thn blk
+		    stm strcpy(pagebuf, "# cd");
+	        stm printf("\x1B[1D\x1B[1D# cd"); fflush(stdout);
+		    blk_end
+	    blk_end
+	stm automatic_triggers();        	
+    blk_end
+
+iff c == '\n' && lastchar != '\\'
+thn return pagebuf;
+
+iff c == '\n'
+thn printf(beginlinefmt, ++linen);
+
+stm fflush(stdout);
+
+iff !is_control_key
+thn lastchar = c;
+
+stm continue;
+err:
+stm printf("Error at %s:%d: Buffer overflow.\n", __FILE__, __LINE__);
+stm exit(1);
+blk_end
+
+FUNCTION void unused_end_ui()
+blk end_blk
+
 #endif

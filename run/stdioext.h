@@ -8,15 +8,15 @@
 #define ln ;printf("\n");
 
 #define fgetallsclose fgetsclose
-#define fgetscloseh printf(s, "fgetsclose(char *s, int n, FILE *f)")ln;
-char *fgetsclose(char *s, int n, FILE *f)
+#define fgetscloseh printf("%s", "fgetsclose(char *s, int n, FILE *f)")ln;
+char *fgetsclose(char *sz, int n, FILE *f)
 {
 	int const NNULLCH = 1;
-	char *result = s;
-	while ((n > NNULLCH) && fgets(s, n, f))
+	char *result = sz;
+	while ((n > NNULLCH) && fgets(sz, n, f))
 	{
-		n-= strlen(s);
-		s+= strlen(s);
+		n-= strlen(sz);
+		sz+= strlen(sz);
 	}
 	fclose(f);
 	return result;
@@ -37,10 +37,10 @@ char *fgetmclose(int n, FILE *f)
 	return result;
 }
 
-#define fputscloseh printf(s, "fputsclose(char *s, FILE *f)")ln;
-void fputsclose(char *s, FILE *f)
+#define fputscloseh printf("%s", "fputsclose(char *s, FILE *f)")ln;
+void fputsclose(char *sz, FILE *f)
 {
-	fputs(s, f);
+	fputs(sz, f);
 	fclose(f);
 }
 

@@ -1,4 +1,5 @@
 
+
 char *memcmov(char *dst, char *src, int c, size_t n)
 {
 	char tmp[n];

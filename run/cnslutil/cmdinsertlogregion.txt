@@ -1,1 +1,8 @@
-sh, "ln -s /data/data/com.termux/files/home/.config/micro/syntax/cext.yaml /home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\

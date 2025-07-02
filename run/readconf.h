@@ -1,15 +1,19 @@
+/*
+#include "main.h"
+
 #define readconfh edit, ROOTC("/run/readconf.h"), endsh
 #define readconfhadd hadd("readconf")
 #define readconfhaddfn(ident) haddfn("readconf", ident)
 #define readconfhadddef(ident) hadditem("readconf", ident, 1)
 
+//fnc 
+    int fskipwh(FILE *f)
+blk rep blk
+stm 
+blk_end blk_end
+
+//*/
 /*
-int fskipwh(FILE *f)
-{
-	rep {
-	
-	}
-}
 
 int readconf() {
 	FILE *f = fopen(pacmanssqemutxt, "r");\
@@ -31,3 +35,4 @@ err:
 }
 
 */
+//*/

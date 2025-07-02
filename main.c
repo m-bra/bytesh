@@ -62,29 +62,19 @@ void maincdcase(maincontext_t *ctxt)
 	if (0 == strncmp(ctxt->line, "# cd ", 5)) {
 		ctxt->line += 5;
 		ctxt->line[strlen(ctxt->line) - 1] = 0;
-			
-		fputsclose
+
+		int isroot = strlen(ctxt->line) && ctxt->line[0] == '/';
+
+       	fputsclose
 		(
-		    mlinebufprintf("%s/%s/\n", ctxt->cwd, ctxt->line), 
+		    mf("%s/%s/\n", isroot ? "" : ctxt->cwd, ctxt->line), 
 		    fopen(ctxtmwf("cwd.txt"), "w")
 		);
 		loadcwd(ctxt->rootworkdir);
 
-		ctxt->line = ctxt->line + strlen(ctxt->line);
-	}	
-
-	if (0 == strncmp(ctxt->line, "# cdroot ", 9)) {
-		ctxt->line += 9;
-		ctxt->line[strlen(ctxt->line) - 1] = 0;
-			
-		fputsclose
-		(
-		    mf("%s/\n", ctxt->line), 
-		    fopen(ctxtmwf("cwd.txt"), "w")
-		);
-		loadcwd(ctxt->rootworkdir);
-
-		ctxt->line = ctxt->line + strlen(ctxt->line);
+		// ctxt->line = ctxt->line + strlen(ctxt->line);
+		ctxt->line = ctxt->linebuf;
+		ctxt->line[0] = 0;   			
 	}	
 }
 
@@ -105,18 +95,23 @@ void mainprintsubmainend(maincontext_t *ctxt)
 	fclose(ctxt->srcfile);
 }
 
-int main(int argc, char **argv) {
+loctag
+int submain(int argc, char **argv) {
   maincontext_t *ctxt = mallocadd(sizeof(maincontext_t));
+
+  ed(argc);
+  if (2 < argc)
+  es(argv[2] ? argv[2] : "(null)");
 
   linebuf_t runopt;
 
   int defstrchrnul = 0;
 
-  
+  if (!argv[2])
   while loop {
 	printf("prooted? [y] ");
 	fflush(stdout);
-	char *answer = mgetescline("");
+	char *answer = mgetline("");
 
   	if (!strncmp(answer, "y", 1)) {
   	  defstrchrnul = 0;
@@ -132,7 +127,8 @@ int main(int argc, char **argv) {
   
 
   fflush(stdout);
-  printf("[press enter] ");
+  if (!argv[2])
+  	printf("[press enter] ");
   fflush(stdout);
 
   ctxt->isfirstcmd = 1;
@@ -155,7 +151,7 @@ int main(int argc, char **argv) {
 
   int nextbackup = 10;
 
-  while loop {
+  rep {
     loadcwd(ctxt->rootworkdir);
     getcwd(ctxt->cwd, linebuf_tn);
     
@@ -164,19 +160,31 @@ int main(int argc, char **argv) {
     //ctxt->setemptyline = 0;
 
     if (!ctxt->setemptyline)
-    loctag {
+    {
         ctxt->linebuf[0] = 0;
 
-        char page[pagebuf_tn];
-        page[0] = 0;
-		fgetallsclose(page, pagebuf_tn - 1, fopen(ROOTC("/insert.c"), "r"));
+        char page[pagebuf_tn]; page[0] = 0;
+    iff argv[2]
+    thn strcpy(page, argv[2]);
+	els fgetallsclose(page, pagebuf_tn - 1, fopen(ROOTC("/insert.c"), "r"));
+
+    stm char *status = mallocaddlinebuf;
+    stm FILE *statusfile = fopen(ROOTC("/run/status.txt"), "r");
+    rep ifn fgets(status, linebuf_tn, statusfile)
+        thn break;
+    stm fclose(statusfile);
+    stm int skipstatuslen = strlen(status) - 5;
+    stm char skipstatus[skipstatuslen + 1];
+    for range(0, skipstatuslen)
+    stm skipstatus[i] = ' ';
+    stm skipstatus[skipstatuslen] = 0;
 
         // add fskipwh here
     iff !strlen(page)
-    thn	{    strncat(ctxt->linebuf, mgetescline(mf("%s%%02d ", GLOBAL_INDENT)), pagebuf_tn - 1);ln;}
+    thn	{    strncat(ctxt->linebuf, mgetline(mf("%s%%02d $ ", skipstatus)), pagebuf_tn - 1);ln;}
     els {    strncat(ctxt->linebuf, page,                                       pagebuf_tn - 1);
              fputsclose("", fopen(ROOTC("/insert.c"), "w"));
-             printf("<insert.c>\n\n");
+             if (!argv[2]) printf("<insert.c>\n\n");
         }
     }
     else {
@@ -253,9 +261,11 @@ int main(int argc, char **argv) {
         QUIET, endsh;
 
     char *defstrchrnulflag = defstrchrnul ? "-D DEFSTRCHRNUL" : "";
+	char *flags = mf("%s%s", " ", defstrchrnulflag);
 
 	(sh, "rm -f %s", ctxtmwf("a.out"), endsh);
-	if (sh, "gcc %s %s -o%s", defstrchrnulflag, ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) {
+
+	if (sh, "gcc %s %s -o%s", flags, ctxtmwf("main.c"), ctxtmwf("a.out"), endsh) {
 		if (strncmp(ctxt->linebuf, " ", 2)) { ctxt->setemptyline = 1; } else {
 			if (sh, "stat %s %s", mf("%s%s", ctxt->rootworkdir, ".err"), quiet, endsh)
 			{
@@ -267,10 +277,34 @@ int main(int argc, char **argv) {
                 ) { printf("Error at %s:%d\n", __FILE__, __LINE__); }}
 			}
 			else
-				printf(s, mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));ln;
+				printf("%s", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));ln;
 		}
-	} else {
-    	(sh, "%s %s %s", runopt, ctxtmwf("a.out"), argc > 2 ? argv[2] : "", endsh);
+	} else 
+	{
+	    (sh, "%s %s", runopt, ctxtmwf("a.out"), endsh);
+
+    ign blk
+		stm FILE *tee = fopen(ROOTC(mf("/run/log/0x%X.txt", cmdlogn())), "w");
+		cen char buf[pagebuf_tn];
+	    stm int fd = (shfd, "%s %s", runopt, ctxtmwf("a.out"), endsh);
+		rep blk
+		s   int wstatus;
+	    s   stm waitpid(-1, &wstatus, WNOHANG);
+	    s   int werrno = errno;
+	    s   iff werrno && werrno != ECHILD
+	    s   the 
+		s   int n = read(fd, buf, pagebuf_tn);
+		s   iff n == -1
+		s   the
+		s   iff n > 0
+		s   thn {fwrite(buf, 1, n, stdout); fwrite(buf, 1, n, tee);}
+        s
+		s   iff WIFEXITED(wstatus) || werrno == ECHILD
+	    s   thn break; 
+		s   blk_end
+		stm fclose(tee);
+		stm fflush(stdout);
+        blk_end
 
     	if (!nextbackup--)
     	{
@@ -286,8 +320,44 @@ int main(int argc, char **argv) {
 		
     	}
 	}
+
+iff argv[2]
+thn break;
 	
 	strcpy(ctxt->lastline, ctxt->linebuf);
 	ctxt->isfirstcmd = 0;
-  } 
+  }
+  return 0; 
+
+err:
+  perror(mf("%s:%d", __FILE__, __LINE__));
+  return 1;
 }
+
+SECTION TEXT
+
+FUNCTION int main(int iargc, char **iargv) 
+
+def
+stm char *cmd = NULL;
+
+iff 1 < iargc
+ && !strncmp(iargv[1], "-c", 3)
+thn blk
+    ifn 2 < iargc
+    the cmd = iargv[2];     
+end_blk
+
+iff cmd	
+thn es(cmd);
+els ed((int) (size_t) cmd);
+
+stm char *argv[3] = {"bytesh", ROOTC("/run/"), cmd};
+stm submain(3, argv);
+stm return 0;
+
+err:
+stm printf("Usage: %s [-c <command>]\n", 0 < iargc ? iargv[0] : "bytesh");
+stm return 1;
+
+SECTION DATA

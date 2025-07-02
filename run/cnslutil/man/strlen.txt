@@ -1,3 +1,6 @@
+MNEMONIC
+       if strlen would count '\0' it'd be named buflen
+
 NAME
        strlen - calculate the length of a string
 
