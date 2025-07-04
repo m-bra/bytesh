@@ -10,8 +10,7 @@
 
 SECTION TEXT
 
-#define testgit gitupdaterequired("/storage/self/primary/prj/bytesh/")
-FUNCTION int gitupdaterequired(char *dir) 
+FUNCTION int routine_gitupdaterequired(char *dir) 
 
 def sh, "cd %s", dir, endsh;
 
@@ -24,7 +23,6 @@ rep
 blk
     char line[linebuf_tn];
     char *r = fgets(line, linebuf_tn, f); 
-	es(line);
 	
 iff !r 
 thn blk

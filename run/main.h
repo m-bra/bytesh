@@ -139,7 +139,7 @@ chr cwd[NBUF]; getcwd(cwd, NBUF);
 
 chr quiet[] = " 2> /dev/null > /dev/null";
 
-int gitupdaterequired(char *);
+int routine_gitupdaterequired(char *);
     
 chr *status = mf(
     	mf("%s%s", "\n%s[%s]\n%s\n", PROMPT), 
@@ -149,7 +149,7 @@ chr *status = mf(
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
     	mf("%s%s", 
     		!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX) " : "",
-			gitupdaterequired("/storage/self/primary/prj/bytesh/") ? ("!(bytesh/)") : ""
+			routine_gitupdaterequired("/storage/self/primary/prj/bytesh/") ? ("!(bytesh/)") : ""
     	)
     );
     printf("%s", status);
