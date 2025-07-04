@@ -95,7 +95,7 @@ def unbuf (
 		int n = read(STDIN_FILENO, input, 1);
 	//iff n < 1
 	//thn break;
-		printf("Keycode %d \n", (int) input[0]);
+		printf("read (int) %d \n", (int) input[0]);
 	)
 
 #define uitest uitest()

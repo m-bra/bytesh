@@ -30,12 +30,26 @@ char *fgetm(malloclist_t *malloclist, int n, FILE *f)
 }
 #define fgetm(n, f) fgetm(malloclist, n, f)
 
-char *fgetmclose(int n, FILE *f)
+char *fgetmclose(malloclist_t *malloclist, int n, FILE *f)
 {
 	char *result = fgetm(n, f);
 	fclose(f);
 	return result;
 }
+#define fgetmclose(n, f) fgetmclose(malloclist, n, f)
+
+char *fgetallmclose(int n, FILE *f)
+{
+	mallocadd(n);
+	return fgetallsclose(lastmalloc, n, f);
+}
+
+int readm(malloclist_t *malloclist, int fd, size_t size)
+{
+	mallocadd(size);
+	return read(fd, lastmalloc, size);
+}
+#define readm(fd, size) readm(malloclist, fd, size)
 
 #define fputscloseh printf("%s", "fputsclose(char *s, FILE *f)")ln;
 void fputsclose(char *sz, FILE *f)

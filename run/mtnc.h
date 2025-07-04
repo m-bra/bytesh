@@ -1,4 +1,5 @@
-#define mtnch edit, ROOTC("/run/mtnc.h"), endsh
+
+/*#define mtnch edit, ROOTC("/run/mtnc.h"), endsh
 #define mtnchadd hadd("mtnc")
 #define mtnchaddfn(ident) haddfn("mtnc", ident)
 #define mtnchadddef(ident) hadditem("mtnc", ident, 1)
@@ -23,3 +24,4 @@ int asdfasdfasfdgitupdaterequired() {
 	return 1;	
 }
 
+*/

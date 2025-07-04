@@ -149,7 +149,7 @@ void es_(char *name, char *sz)
 	printf("%s\"", pre);
 	while (*sz) {
 	iff *sz == '\n'
-	thn printf("'\n%s\"", prespace);
+	thn printf("\\n\"\n%s\"", prespace);
 	els printf("%c", *sz);
 		fflush(stdout);
 		++sz;

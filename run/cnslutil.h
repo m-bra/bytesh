@@ -525,8 +525,9 @@ int pacmans(int ignore, char *x, char *ignores)
 
 int pacmanss(int ignore, char *x, char *ignores)
 {
-	return sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh;
-	edit, "/tmp/pacmanss.txt", endsh;
+	int r = sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh;
+	if (!r) edit, "/tmp/pacmanss.txt", endsh;
+	return r;
 }
 #define pacmanss pacmanss ( 0
 
@@ -808,5 +809,33 @@ void stdlibexth_addkeyword()
 #define cnsllinedeldown(n) \
 	for range(0, n)\
 	stm printf("%s", "\033[2K");
+
+
+#define dbus_daemon_sessionh printf("%s", "Found in: $ cnslutilh\n")
+#define dbus_daemon_session \
+    sh, "dbus-daemon --session --print-address > %s %s", \
+        ROOTC("/run/cnslutil/dbus_daemon_session_address.txt"), BG, endsh
+
+
+#define dbus_session_bus_addressh printf("%s", "Found in: $ cnslutilh\n")
+char *dbus_session_bus_address()
+{
+    char *address = fgetmclose(linebuf_tn, \
+        fopen(ROOTC("/run/cnslutil/dbus_daemon_session_address.txt"), "r"));
+    address[strlen(address) - 1] = '\0';
+	return address;
+}
+#define dbus_session_bus_address dbus_session_bus_address()
+
+#define dbus_session_bus_address_config \
+    mf("%s=\"%s\"", "DBUS_SESSION_BUS_ADDRESS", dbus_session_bus_address)
+
+
+#define edithh printf("%s", "Found in: $ cnslutilh\n")
+#define edith edit, ROOTC("/run/cnslutil/edith.md"), endsh
+
+
+#define lnhh printf("%s", "Found in: $ cnslutilh\n")
+#define lnh man, "ln", endsh
 
 

@@ -5,9 +5,12 @@ NAME
 
 SYNOPSIS
        ln [OPTION]... [-T] TARGET LINK_NAME
-       ln [OPTION]... TARGET
        ln [OPTION]... TARGET... DIRECTORY
+       ln [OPTION]... TARGET
        ln [OPTION]... -t DIRECTORY TARGET...
+
+       -T, --no-target-directory
+	      treat LINK_NAME as a normal file always
 
 DESCRIPTION
        In the 1st form, create a link to TARGET with the name LINK_NAME.  In

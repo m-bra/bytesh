@@ -261,7 +261,7 @@ int submain(int argc, char **argv) {
         QUIET, endsh;
 
     char *defstrchrnulflag = defstrchrnul ? "-D DEFSTRCHRNUL" : "";
-	char *flags = mf("%s%s", " ", defstrchrnulflag);
+	char *flags = mf("%s %s", "-g", defstrchrnulflag);
 
 	(sh, "rm -f %s", ctxtmwf("a.out"), endsh);
 
@@ -281,7 +281,9 @@ int submain(int argc, char **argv) {
 		}
 	} else 
 	{
-	    (sh, "%s %s", runopt, ctxtmwf("a.out"), endsh);
+		mv, ctxtmwf("a.out"), "/data/data/com.termux/files/home/a.out", endsh;
+		chmodx, "/data/data/com.termux/files/home/a.out", endsh;
+	    sh, "%s %s", runopt, "/data/data/com.termux/files/home/a.out", endsh;
 
     ign blk
 		stm FILE *tee = fopen(ROOTC(mf("/run/log/0x%X.txt", cmdlogn())), "w");

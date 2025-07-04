@@ -1,4 +1,7 @@
+#include "main.h"
 
+#ifndef STRINGEXTH
+#define STRINGEXTH
 
 char *memcmov(char *dst, char *src, int c, size_t n)
 {
@@ -39,16 +42,22 @@ char *strlaststr(char *haystack, char *needle)
 	return q;
 }
 
-void memrpl(char *dst, char c, int n, char original)
-{
-	for (int i = 0; i < n; ++i)
-		if (dst[i] == original)
-			dst[i] = c;
-}
+SECTION TEXT
 
-void strrpl(char *dst, char c, char original)
-{
-	for (int i = 0; dst[i]; ++i)
-		if (dst[i] == original)
-			dst[i] = c;
-}
+FUNCTION void memrpl(char *dst, char c, int n, char original)
+
+def
+for (int i = 0; i < n; ++i)
+iff dst[i] == original
+thn dst[i] = c;
+
+FUNCTION void strrpl(char *dst, char c, char original)
+
+def
+for (int i = 0; dst[i]; ++i)
+iff dst[i] == original
+thn dst[i] = c;
+
+SECTION DATA
+
+#endif

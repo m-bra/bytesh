@@ -1,70 +1,76 @@
 
- * setup pipewire [JUL03THU13:45AM]
+	 * qemu. valgrind.
 
- * bytesh tweak: tee command output [JUL03THU12:45AM-13:45AM]
+	 * git status
+	    * JUL05SAT12:55AM-
 
- * bytesh tweaks: cnsllinedel [JUL02WED11:27PM-12:45AM]
+	 * arrow up feature not able to implement
+	   * JUL04FRI09:01PM-09:49PM cmdlogn() involved. run valgrind first.
 
- * bytesh -c <> and closer interaction with micro.
+	 * bytesh -c <> and closer interaction with micro.
 
- * bytesh tweaks [JUL02WED09:36PM - 11:27PM]
+	 * posix ls api
 
- * micro make plugin to introduce a cmd which allows to quickly define new cmds
+	 * micro make plugin to introduce a cmd which allows to quickly define new cmds
 
- * firefox pulseaudio/pipewire
+	 * coding should be more social. also in economical sense. but academy does have economical relevance.
+	   * code should include passages that will be rendered visibly to document, 
+	     while everything else is hidden.
+	   * short post about [2]
 
- * direct piping of execl process
+	 * bytesh tweak: 
+	   * tee command output JUL03THU12:45AM-13:45AM
+	   * cnsllinedel JUL02WED11:27PM-12:45AM
+	   * Δ0505 21:49-11:05 08:54-10:05 10:35-11:27
+		   * sh, ..., ..., endsh; macro
+		     and more improvments in bytesh code architecture
+		   * bytesh: fix crash on compiler error...
+	       * general tidy up of bytesh
+	   * other JUL02WED09:36PM-11:27PM
 
- * posix ls api
+	 * run readconfigh
+	 
+	 * signal handler with program line [1]
+	 * autojump to reported compiler errors in editor
+	 
+	 * run tsaframe(i)
 
- * arrow up feature not able to implement
+	 * ubimaster
+	   erwartung
+	   zugeteilter monatsplanung bekannt per woche vor folgendem monat
+	   20juli bis 10august ferien
 
- * coding should be more social. also in economical sense. but academy does have economical relevance.
-   * short post about #define macro(x) x() {}
-                      macro(int examplefn) {
-                      	
-                      }
+	   
+	 * bytesh should compile itself (main.c)
 
-                      #define newblock(x) x
-                      {
-                      	newblock {
-                      		printf("Hello");
-                      	}
-                      }
+	 * try setup pipewire [JUL03THU13:45AM-05:00AM]
+	   * failed. other solution found.
+	   
+	 * introduce persistent variables
+	   only char[] type allowed.
+	   after user once commanded
+	    $ #pers char varname[256];
+	   every compilation for each future command will load the persistent variables as follows:
+	    $ char varname[256]; (as global variable)
+	    $ fgetsclose(varname, sizeof(varname), fopen(".../varname.txt", "r"));
+	   and save each persistent variable as
+	    $ fputsclose(varname, fopen(".../varname.txt", "w"));
 
- * autojump to reported compiler errors in editor
+	 * [1] https://stackoverflow.com/questions/71387696/get-file-source-line-and-variable-name-in-signal-handler
+	 
+	 * [2] #define macro(x) x() {}
+	        macro(int examplefn) {
+	        	
+	        }
+
+	        #define newblock(x) x
+	        {
+	        	newblock {
+	        		printf("Hello");
+	        	}
+	        }
 
 
- * run readconfigh
 
- * qemu. valgrind.
 
- * signal handler with program line  https://stackoverflow.com/questions/71387696/get-file-source-line-and-variable-name-in-signal-handler
- 
- * run tsaframe(i)
 
- * ubimaster
-   erwartung
-   zugeteilter monatsplanung bekannt per woche vor folgendem monat
-   20juli bis 10august ferien
-
- * tsa("ABC") is the only working expression; tsa(mf(..)) does not work.
-   file as "known bug".
-
- * bytesh should compile itself (main.c)
-
- * Δ0505 21:49bis1105 08:54bis10:05 10:35bis11:27
-   * sh, ..., ..., endsh; macro
-     and more improvments in bytesh code architecture
-   * bytesh: fix crash on compiler error...
-   * general tidy up of bytesh
-
- * introduce persistent variables
-   only char[] type allowed.
-   after user once commanded
-    $ #pers char varname[256];
-   every compilation for each future command will load the persistent variables as follows:
-    $ char varname[256]; (as global variable)
-    $ fgetsclose(varname, sizeof(varname), fopen(".../varname.txt", "r"));
-   and save each persistent variable as
-    $ fputsclose(varname, fopen(".../varname.txt", "w"));
