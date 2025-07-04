@@ -92,6 +92,7 @@ malloclist_t *malloclist = &malloclistval;
 #define ifn if ( ! (
 #define thnh printf("THeN\n#define thn ) )\n");
 #define thn ) )
+#define chr char
 #define elsh printf("ELSe\n#define els else\n");
 #define els else
 #define cenh printf("Catch ErrNo (after instr) (singular instr)\n#define cen if (errno != 0) goto err;\n");

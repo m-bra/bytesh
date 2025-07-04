@@ -135,19 +135,22 @@ SECTION TEXT
 FUNCTION void statusprint(char *rootworkdir)
 
 def
-	char cwd[NBUF]; getcwd(cwd, NBUF);
+chr cwd[NBUF]; getcwd(cwd, NBUF);
 
-	char quiet[] = " 2> /dev/null > /dev/null";
+chr quiet[] = " 2> /dev/null > /dev/null";
 
-	int gitupdaterequired(char *);
+int gitupdaterequired(char *);
     
-    char *status = mf(
+chr *status = mf(
     	mf("%s%s", "\n%s[%s]\n%s\n", PROMPT), 
     	GLOBAL_INDENT, cwd, 
     	GLOBAL_INDENT, 
     	cmdlogn(),
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
-    	!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""
+    	mf("%s%s", 
+    		!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX) " : "",
+			gitupdaterequired("/storage/self/primary/prj/bytesh/") ? ("!(bytesh/)") : ""
+    	)
     );
     printf("%s", status);
     fflush(stdout);

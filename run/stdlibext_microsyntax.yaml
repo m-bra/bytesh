@@ -68,3 +68,4 @@ rules:
     - type: "\\b(TEXT)\\b"
     - type: "\\b(loctag)\\b"
     - statement: "\\b(s)\\b"
+    - type: "\\b(chr)\\b"
