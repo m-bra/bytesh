@@ -1,0 +1,4 @@
+
+[/data/data/com.termux/files/home/prj/bytesh/run]
+
+0x2074.priv.c  $ 

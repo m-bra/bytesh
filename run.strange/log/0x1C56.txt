@@ -1,0 +1,4 @@
+
+[/data/data/com.termux/files/home/prj/bytesh/run]
+
+0x1C56.priv.c  $ 

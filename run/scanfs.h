@@ -3,6 +3,7 @@
 
 // BEGIN
 
+inline
 void    scanfs()
 #define scanfs   scanfs()
 {

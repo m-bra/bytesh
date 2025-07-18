@@ -1,0 +1,13 @@
+total 129K
+-rw-rw----  1 10182 1023 100K Jul 17 07:28 a.out
+drwxrws---  7 10182 1023 3.4K Jul  4 23:30 .git
+-rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+-rw-rw----  1 10182 1023    0 Jul 17 07:28 insert.c
+drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+-rw-rw----  1 10182 1023 9.2K Jul 17 07:16 main.c
+-rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+drwxrws--- 10 10182 1023 3.4K Jul 17 07:29 run
+drwxrws--- 10 10182 1023 3.4K Jul 17 03:54 run.bak
+drwxrws--- 11 10182 1023 3.4K Jul 17 07:23 run.impostor
+drwxrws--- 10 10182 1023 3.4K Jul 17 07:25 run.tmp.bak
+-rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt

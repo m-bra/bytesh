@@ -1,0 +1,4 @@
+
+[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ 

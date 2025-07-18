@@ -29,37 +29,14 @@ typedef struct
   malloclist_t malloclistobj;\
   malloclist_t *malloclist = &malloclistobj;
 
-void *mallocadd_(malloclist_t *pmalloclist, int size)
-{
-	malloclist_t *malloclist = pmalloclist;
-	if (pmalloclist->nptrs + 1 > MALLOCLISTMAXPTRS)
-	{
-		printf("Error at %s:%d\n", __FILE__, __LINE__);
-		exit(1);
-	}
-
-    pmalloclist->ptrs[pmalloclist->nptrs] = malloc(size);
-    pmalloclist->nptrs += 1;
-
-    MALLOCLISTDEBUG ed(malloclist->nptrs);
-    MALLOCLISTDEBUG ed(MALLOCLISTMAXPTRS);
-
-    return lastmalloc;
-}
+void *mallocadd_(malloclist_t *pmalloclist, int size);
 #define mallocadd(size) mallocadd_(malloclist, size)
 
-void mfree(malloclist_t *malloclist)
-{
-	MALLOCLISTDEBUG printf("mfree "); ed(malloclist->nptrs);
-	
-	for (int i = 0; i < malloclist->nptrs; ++i)
-		free(malloclist->ptrs[i]);
-	malloclist->nptrs = 0;
-}
-#define mfree mfree(malloclist)
+void mfree_(malloclist_t *malloclist);
+#define mfree mfree_(malloclist)
 
-malloclist_t malloclistval;
-malloclist_t *malloclist = &malloclistval;
+extern malloclist_t malloclistval;
+extern malloclist_t *malloclist;
 
 
 #define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin);};
@@ -77,8 +54,6 @@ malloclist_t *malloclist = &malloclistval;
 
 #define dat DATA
 #define txt TEXT
-#define fn
-#define fnc FUNCTION
 
 #define looph printf("#define loop (1)\n");
 #define loop (1)
@@ -116,7 +91,7 @@ malloclist_t *malloclist = &malloclistval;
 
 #define asstr (char *)
 #define asmem (char *)
-#define nil void
+#define nil int
 
 #define throwngerrno(x)                     \
     if (x < 0) {                            \
@@ -130,95 +105,18 @@ malloclist_t *malloclist = &malloclistval;
 
 #include <stdarg.h>
 
-char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...) {
-	va_list args;
-	va_start(args, fmt);
-	vsnprintf(mallocaddlinebuf, linebuf_tn, fmt, args);
-	va_end(args);
-	return lastmalloc;
-}
+char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
 #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
 #define malloclinebufprintf mlinebufprintf
 #define mf mlinebufprintf
 
-void es_(char *name, char *sz)
-{
-    char *pre = mf("(%s) = ", name);
-    char *prespace[strlen(pre)];
-	memset(prespace, ' ', strlen(pre));
-    
-	printf("%s\"", pre);
-	while (*sz) {
-	iff *sz == '\n'
-	thn printf("\\n\"\n%s\"", prespace);
-	els printf("%c", *sz);
-		fflush(stdout);
-		++sz;
-	}
-	printf("\"\n");
-	fflush(stdout);
-}
+void es_(char *name, char *sz);
 
 #define BOOLTOSYS(b) (!(b))
+#define SYSTOBOOL(b) (!(b))
 
-
-int sh_(int ignored, char *fmt, ...) 
-{
-  va_list args;
-  va_start(args, fmt);
-  linebuf_t buf;
-
-  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
-
-  va_end(args);
-
-  int fd[2];
-  pid_t fr = fork(); 
-  if (!fr) 
-  {
-    execl("/bin/sh", "sh", "-c", buf, (char *) NULL);	
-  }
-  else
-  {
-  	  int wstatus;
-  	  wait(&wstatus);
-      return BOOLTOSYS(WIFEXITED(wstatus)) || WEXITSTATUS(wstatus);
-  }
-  return 1;
-  
-err:
-  perror(mf("%s:%d", __FILE__, __LINE__));
-  return 0;
-}
-
-int shfd_(int ignored, char *fmt, ...) 
-{
-  va_list args;
-  va_start(args, fmt);
-  linebuf_t buf;
-
-  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
-
-  va_end(args);
-
-  int fd[2];
-  pipe(fd);
-  pid_t fr = fork(); 
-  if (!fr) 
-  {
-    close(fd[0]);
-    dup2(fd[1], STDOUT_FILENO);
-    close(fd[1]);
-    execl("/bin/sh", "sh", "-c", buf, (char *) NULL);
-    _exit(1);	
-  }
-  else
-  {
-    close(fd[1]);
-    return fd[0];
-  }
-  return -1;
-}
+int sh_(int ignored, char *fmt, ...) ;
+int shfd_(int ignored, char *fmt, ...);
 
 #define sh sh_ ( 0
 #define shfd shfd_ ( 0

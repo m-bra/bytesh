@@ -7,6 +7,7 @@
 #define CURRENTPAGE 12
 
 #define scanhtmlh printf("Found in : $ htmlutilh%c", *NLS);
+inline
 int scanhtml(char *filename)
 {
 iff errno

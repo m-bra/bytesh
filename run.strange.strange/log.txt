@@ -1,0 +1,10812 @@
+
+sh, "git status", endsh
+edit, ".gitignore", endsh
+exit
+
+sh, "git status", endsh
+sh, "git status | tail", endsh
+\
+sh, "git status > /tmp/gitstatus.txt", endsh;\
+
+\
+sh, "git status > %s", ROOTC("/run/gitstatus.txt"), endsh;\
+FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
+rep {\
+    char *line = fgetm(f); /*fgetmh*/\
+}ERROR
+
+stdioexth
+fgetsh
+
+
+
+
+fgetsh
+stdioexth
+\
+cmdlog
+cmdinsertlogregion(0xC, 0xF);
+FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
+rep {\
+    char *line = fgetm(f); /*fgetmh*/\
+
+edit, "run/cnslutil/tmp.txt", endsh
+cmdlog
+# cd run
+/data/data/com.termux/files/home/prj/bytesh/run/
+
+
+# cd cnslutil
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/
+
+
+ls
+cmdinsertlogregion(0x00, 0x01);
+
+int gitupdaterequired() {
+	FILE *f = fopen(ROOTC("/run/gitstatus.txt"), "r");\
+	char *lastline = 0;
+	rep {
+	    char *line = fgetm(f); /*fgetmh*/\
+	    if (!line) 
+	    {
+	    iff !lastline
+	    thn break;
+	        char *cmpwith = "okok";
+	    iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
+	    thn return 0;   
+	    	break;
+	    }
+	    lastline = line;
+	}
+	return 1;	
+}
+
+ls
+edit, "tmp.txt", endsh
+hcreate("mtnc")
+cat, "tmp.txt >> ../mtnc.h", endsh
+cat, "../mtnc.h", endsh
+
+
+
+
+
+rm, "tmp.txt", endsh
+mtnch
+sizeof int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mtnch
+mtnch
+hcreate("mntc")
+mtnch
+mtnch
+mntch
+
+
+
+
+
+
+mntch
+lsp, "/data/data/com.termux/files/home", endsh
+cmdinsertlogat(0x6B);
+edit, "/data/data/com.termux/files/home/gitstatus.txt", endsh
+
+gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+
+cmdlog
+mntch
+mntch
+cmdinsertlogat(0x6F);
+gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+
+mntch
+cmdinsertlogat(0x6F);
+gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+cmdinsertlogat(0x6F);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+sh, "git status", endsh
+gitupdate
+gpgdecrypt, ROOTC("/repopw.txt"), endsh
+gitupdate
+sh, "git status", endsh
+# cd ../..
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/../../
+gitupdate
+
+gitupdate
+sh, "git status", endsh
+cmdinsertlogat(0x6F);
+gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+cmdinsertlogat(0x6F);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+mntch
+cmdlog
+cmdinsertlogat(0x8B);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+sh, "git status", endsh
+mntch
+cmdinsertlogregion(0x8B, 0x8D);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+gitupdate
+sh, "git status", endsh
+cmdlog
+cmdinsertlogregion(0x8B, 0x8D);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+sh, "git status", endsh
+cmdinsertlogregion(0x8B, 0x8D);
+int r = gitupdaterequired("/data/data/com.termux/files/home/prj/bytesh/run/cnslutil");
+ed(r);
+mntch
+cmdlog
+# cd run/cnslutil
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/
+sh, "git status", endsh
+
+sh, "git status", endsh
+# cd ../../
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/../..//
+edit, ".gitignore", endsh
+
+ll
+
+edit, ".gitignore", endsh
+gitupdate
+gitupdate
+sh, "git add .gitignore", endsh
+gitupdate
+sh, "git status", endsh
+# cd run/cnslutil
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/
+sh, "git status", endsh
+
+sh, "git status", endsh
+# cd ../..
+/data/data/com.termux/files/home/prj/bytesh/run/cnslutil/../../
+gitupdaterequired(ROOTC("."));
+
+\
+int r = gitupdaterequired(ROOTC("."));\
+ed(r);
+sh, "git status", endsh
+edit, ".gitignore", endsh
+sh, "git add .gitignore", endsh
+sh, "git commit -m ''", endsh
+sh, "git commit -a", endsh
+
+sh, "git add .gitignore", endsh
+sh, "git commit -m ", endsh
+sh, "git commit -m ''", endsh
+cat, ".gitignore", endsh
+sh, "git add a.out", endsh
+sh, "git commit -m ''", endsh
+sh, "git commit -m '.'", endsh
+sh, "git add .gitignore", endsh
+sh, "git commit -m .", endsh
+sh, "git rm run/cwd.txt", endsh
+sh, "git rm -f run/cwd.txt", endsh
+
+# cd data/data/com.termux/files/home/prj/bytesh
+//data/data/com.termux/files/home/prj/bytesh/
+sh, "git status", endsh
+sh, "git status", endsh
+cmdlog
+cmdinsertlogregion(0xBE, 0xC0);
+int r = gitupdaterequired(ROOTC("."));\
+ed(r);
+sh, "git status", endsh
+rm, "run/cnslutil/cmdinsertlogregion.txt", endsh
+\
+int r = gitupdaterequired(ROOTC("."));\
+ed(r);
+sh, "git status", endsh
+gitupdate
+sh, "git status", endsh
+\
+int r = gitupdaterequired(ROOTC("."));\
+ed(r);\
+
+sh, "git status", endsh
+mntch
+mntch
+gitupdaterequired(ROOTC("."));
+
+sh, "git add run/mntc.h", endsh
+gitupdate
+gitupdaterequired(".")
+
+mntch
+gitupdaterequired(".")
+
+mntch
+gitupdaterequired(".")
+
+gitupdate
+gitupdaterequired(".")
+
+ed(gitupdaterequired("."))
+
+mntch
+ed(gitupdaterequired("."));
+
+mntch
+sh, "git status", endsh
+gitupdate
+gitupdaterequired(".")
+ed(gitupdaterequired("."))
+mainh
+
+
+
+
+
+
+exit
+
+
+
+program
+readconfigh
+
+readconfh
+program
+program
+# include <termios.h>
+# cd run
+/data/data/com.termux/files/home/prj/bytesh/run/
+stat, "tmp", endsh
+
+stat, "tmp", endsh
+# cd tmp
+/data/data/com.termux/files/home/prj/bytesh/run/tmp/
+
+
+ls
+hcreate("tmp/termiostest")
+termiostesth
+termiostesthaddfn("termiostestmain")
+
+
+
+
+ascii
+\
+for (int i = 0; i < 256; ++i)\
+  ec((char)i);
+termiostesth
+termiostestmain()
+termiostestmain()
+termiostesth
+termiostestmain()
+termiostestmain()
+termiostestmain()
+clear
+termiostestmain()
+termiostesth
+termiostestmain()
+termiostesth
+termiostestmain()
+
+
+
+stdout
+STDOUT
+
+microsynta
+
+microsyntax
+termiostesth
+fflush
+termiostesth
+termiostest()
+termiostest()
+termiostest()
+termiostest()
+termiostest()
+termiostest()
+\
+
+edit, "", endsh
+SH
+
+termiostesth
+lsp, "/data/data/com.termux/files/usr/include", endsh
+edit, "/data/data/com.termux/files/usr/include/termios.h", endsh
+termiostest()
+[Ahcreate("userinterface")
+
+termiostest()
+[A
+
+termiostesth
+termiostest()
+[Achar c; read(STDIN_FILENO, &c, 2);
+
+termiostest(); char c; read(STDIN_FILENO, &c, 2);
+
+termiostest(); char c[3]; read(STDIN_FILENO, &c, 2);
+
+cmdinsertlogat(0x15C);
+termiostest(); char c[3]; read(STDIN_FILENO, &c, 2);
+
+
+ed(0x33)
+ed(0x1B)
+hcreate("userinterface")
+userinterfacehadddef("ARROW_CONTROL_KEY")
+termiostesth
+
+
+
+micro
+edit, "", endsh
+termiostesth
+userinterfaceh
+stdioexth
+compilerh
+xclip
+
+sh, "xclip", endsh
+man, "xclip", endsh
+vncserver
+sh, "%s xclip", DISPLAYCONFIG, endsh
+cnslutilh
+# cd ..
+/data/data/com.termux/files/home/prj/bytesh/run/tmp/../
+mainh
+
+mainh
+mainsysh
+ls
+sh, "ls -hAlr", endsh
+sh, "ls -hAtr", endsh
+sh, "ls -hAlt", endsh
+ls, "-Altr", endsh
+
+sh, "ls -Altr", endsh
+cmdlog
+sh, "ls", endsh
+sh, "ls -hltr", endsh
+sh, "ls -hltr", endsh
+ls, "-hAtr", endsh
+
+sh, "ls -hAtr", endsh
+sh, "ls -Altr", endsh
+ls, "hAtr", endsh
+
+sh, "ls -hAtr", endsh
+sh, "ls -hAlr", endsh
+cnslutilh
+ls
+bak, "tmp*.h", endsh
+ls
+
+
+
+
+
+
+
+
+
+ls
+cmdlog
+sh, "%s xclip", DISPLAYCONFIG, endsh
+ls
+stdlibexth
+man, "exec", endsh
+stdlibexth
+cat, "/tmp/tmp.txt", endsh
+man, "exec", endsh
+man, "fork", endsh
+man, "exec", endsh
+man, "wait", endsh
+cnslutilhadddef("exech")
+cnslutilh
+stdioexth
+
+
+
+
+LS
+
+userinterfaceh
+\
+
+
+
+
+\
+#define defff(x) printf("%d%d\n", x, __VA_ARGS__)
+
+\
+#define defff(x, ...) printf("%d%d%d\n", x, __VA_ARGS__)\
+defff(1, 2, 3);
+stdlibexth
+#define defff(...) printf("%d%d%d", __VA_ARGS__)\
+
+tmph
+defff(1, 2, 3)
+
+tmph
+mainh
+defff(1, 2, 3)
+cmdlog
+userinterfaceh
+example()
+
+uicallunbuffn(example)
+
+void a(int i) {}; a(1,);
+
+userinterfaceh
+uicallunbuffn(example, 1)
+userinterfaceh
+
+userinterfaceh
+uidefunbuffn(x)
+
+userinterfaceh
+uidefunbuffn(x)
+
+char uidefunbuffn(x)
+userinterfaceh
+testdef(int i)
+testdef(int i); i = 1;
+testdef(int i = 0); ed(i)
+testdef(int i = 0; i = 1); ed(i)
+userinterfaceh
+e
+
+
+
+
+fn_example(uiunbufcall, 1)
+userinterfaceh
+
+macro
+
+userinterfaceh
+
+
+
+
+
+
+userinterfaceh
+
+uiexample_(uiunbufcall, 1);
+userinterfaceh
+
+
+
+stdlibexth
+man, "va_end", endsh
+userinterfaceh
+man, "va_begin", endsh
+
+
+
+
+
+userinterfaceh
+
+
+
+
+
+userinterfaceh
+
+
+
+userinterfaceh
+stdlibexth
+man, "preprocessor", endsh
+userinterfaceh
+
+test123({int i = 0; i = 1, 2;})
+test123({int i = 0; i = 1, 2; ed(i);})
+int i = 0; i = 1, 2; ed(i);
+test123({char c = 0; c = 'A'; printf("%c", c);ln;})
+userinterfaceh
+test123 { { int i = 0; i = 1; } }
+test123 { { int i = 0; ed(i); } }
+programm
+userinterfaceh
+
+
+
+
+userinterfaceh
+
+
+
+userinterfaceh
+
+userinterfaceh
+
+userinterfaceh
+
+userinterfaceh
+man, "read", endsh
+userinterfaceh
+
+userinterfaceh
+
+
+
+
+
+
+printfeee
+userinterf
+eee
+userinterf
+userinterfaceh\
+hello\
+
+userinterfacehtermiostest()
+termiostest()
+termiostesthuserinterfaceh\
+abcdefg\
+hijklmnop\
+
+# cd ../../data/data/com.termux/files/home/prj/bytesh/run/../../
+dd
+# cdroot /storage/self/primary/data/data/com.termux/files/home/prj/bytesh/# cdroot /storage/self/primary
+ - 
+e# 
+vncserverfirefox[A
+firefoxvncserverfirefoxlsp, @"
+termiostest()
+userinterfacehuitest()
+
+
+
+tu
+uitestuserinterfaceh
+
+ab
+userinterfaceh
+
+
+
+
+userinterfaceh
+\# 
+
+userinterfacehman, "tcsetaddr", endsh;
+man, "tcsetaddr", endshman, "termios", endsh
+userinterfaceh
+userinterfacehstdlibexth
+stdlibetxt
+stdlibexthmicrosynta
+microstyntax
+microsyntaxuserinterfaceh# restart
+printf("Hello, world");vncserverfirefoxlsp, "/", endsh
+
+
+
+
+
+
+
+
+
+
+
+
+
+compilerhexituserinterfacehstringexthclearcnslutilhclearcnslutilhclearmntchcleartsahcleartsah\ascii\
+hello\\
+\
+\
+
+userinterfaceh\
+for (int i = 0; i < 256; ++i)\
+  printf("%d %c \n", i, (char) i);\
+char chars[26 * 2 + 10];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+ed(i);userinterfaceh
+
+
+
+
+
+
+
+cmdlogcmdlogcmdinsertlogregion(0x2730x27D);
+cmdinsertlogregion(0x273, 0x27D);for (int i = 0; i < 256; ++i)\
+  printf("%d %c \n", i, (char) i);\
+
+int nchars = 26 * 2 + 10 + 1;
+char chars[nchars];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+chars[i++] = ' ';
+
+for (int i = 0; i < nchars; ++i)
+for (int j = 0; j < nchars; ++j)
+for (int k = 0; k < nchars; ++k)
+{
+	lsp, mf("/%c%c%c", chars[i], chars[j], chars[k]), endsh;
+}
+tmphlsp, "run", endshedit, "readconf.h", endshreadconfhcmdlogcmdinsertlogregion(0x289, 0x29A);int nchars = 26 * 2 + 10 + 1;
+char chars[nchars];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+chars[i++] = ' ';
+
+for (int i = 0; i < nchars; ++i)
+{
+printf("Files starting with \"/%c\"\n", chars[i]);
+for (int j = 0; j < nchars; ++j)
+for (int k = 0; k < nchars; ++k)
+{
+	if (access(mf("/%c%c%c", chars[i], chars[j], chars[k])) == 0)
+	{
+		printf("\"/%s\" exists\n", mf("/%c%c%c", chars[i], chars[j], chars[k]));
+	}
+}
+}
+cmdlogcmdlogcmdinsertlogregion(0x29B, 0x2B1);char chars[nchars];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+chars[i++] = ' ';
+
+for (int i = 0; i < nchars; ++i)
+{
+printf("Files starting with \"/%c\"\n", chars[i]);
+for (int j = 0; j < nchars; ++j)
+for (int k = 0; k < nchars; ++k)
+{
+	if (access(mf("/%c%c%c", chars[i], chars[j], chars[k]), F_OK) == 0)
+	{
+		printf("\"/%s\" exists\n", mf("/%c%c%c", chars[i], chars[j], chars[k]));
+	}
+}
+}
+
+cmdlogcmdlogcmdinsertlogregion(0x29B, 0x2B1);int nchars = 26 + 26 + 10 + 1;
+char chars[nchars];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+chars[i++] = ' ';
+
+for (int i = 0; i < nchars; ++i)
+{
+printf("Files starting with \"/%c\"\n", chars[i]);
+for (int j = 0; j < nchars; ++j)
+for (int k = 0; k < nchars; ++k)
+{
+	if (access(mf("/%c%c%c", chars[i], chars[j], chars[k]), F_OK) == 0)
+	{
+		printf("\"/%s\" exists\n", mf("/%c%c%c", chars[i], chars[j], chars[k]));
+	}
+}
+}
+[A[B
+cmdlogcmdlogcmdinsertlogregion(0x29B, 0x2B1);
+// BEGIN
+
+char chars[nchars];\
+int i = 0;\
+for (char a = 'a'; a <= 'z'; ++a)\
+   chars[i++] = a;\
+for (char a = 'A'; a <= 'Z'; ++a)\
+   chars[i++] = a;\
+for (char a = '0'; a <= '9'; ++a)\
+   chars[i++] = a;\
+chars[i++] = ' ';
+
+int nindices = 3;
+int indices[nindices];
+for (int i = 0; i < 5; ++i)
+stm indices[i] = 0;
+
+rep {
+stm indices[nindices - 1]++;
+for (int i = nindices - 1; i >= 0; --i)
+iff indices[i] >= nchars
+thn { 
+    stm indices[i] = 0;  
+    iff i > 0
+    thn indices[i - 1]++;
+    }
+
+stm char filename[1 + nindices + 1];
+stm filename[1 + nindices] = 0;
+stm filename[0] = '/';
+for (int i = 0; i < nindices; ++i)
+stm filename[1 + i] = chars[indices[i]];
+
+iff access(filename, F_OK) == 0)
+thn printf("\"/%s\" exists\n", filename); 
+}
+
+for (int i = 0; i < nchars; ++i)
+{
+//printf("Files starting with \"/%c\"\n", chars[i]);
+for (int j = 0; j < nchars; ++j)
+for (int k = 0; k < nchars; ++k)
+{
+	if (access(mf("/%c%c%c", chars[i], chars[j], chars[k])) == 0)
+	{
+		printf("\"/%s\" exists\n", mf("/%c%c%c", chars[i], chars[j], chars[k]));
+	}
+}
+}
+
+// END
+edit, "run/scanfs.c",e ndsh
+edit, "run/scanfs.c", endshlsp, "/home/mbrandt/.config/micro", endshlsp, "/home/mbrandt/.config", endshcnslutilhmicrosyntaxcp, "/home/mbrandt/.config/micro/syntax/cext.yaml", "/data/data/com.termux/files/home/cext.yaml", endshcmdloguserinterfacehcmdlogmkdirp, "/data/data/com.termux/files/home/.config/micro/syntax", endshmv, "/data/data/com.termux/files/home/cext.yaml", "/data/data/com.termux/files/home/.config/micro/syntax", endsh
+edit, "run/scanfs.h", endsh
+edit, "run/scanfs.c", endsh
+mv, "run/scanfs.c", "run/scanfs.h", endsh
+cnslutilh
+scanfs()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+scanfs()
+
+
+
+mainh
+mainh
+
+edit, "run/scanfs.h", endsh
+scanfs
+
+
+
+
+
+
+scanfs
+scanfs()
+
+scanfsh
+scanfs
+
+scanfsh
+scanfs
+scanfsh
+scanfs
+[A[Bscanfsh
+
+scanfsh
+scanfs
+scanfsh
+scanfs
+
+
+scanfs
+scanfs
+
+scanfsh
+scanfsh
+scanfs
+[A
+
+scanfsh
+scanfs
+
+
+
+
+
+
+
+scanfs
+scanfsh
+scanfs
+scanfs
+scanfsh
+scanfs
+scanfsh
+[A[B
+
+scanfsh
+scanfs
+
+scanfsh
+scanfsh
+scanfs
+stat, "/proc", endsh
+stat, "/asdflkahdf", endsh
+stat, "/proc", endsh
+lsp, "/proc", endsh
+scanfsh
+scanfs
+
+
+scanfsh
+scanfs
+scanfsh
+scanfs
+scanfsh
+scanfs
+[A[B
+
+scanfsh
+scanfsh
+scanfs
+scanfsh
+scanfs
+scanfsh
+scanfs
+
+scanfsh
+scanfs
+
+scanfsh
+stdlibexth
+microsyntax
+
+
+
+
+
+
+
+
+microsyntax
+microsyntax
+
+# cd ../../
+
+# cd .config/micro
+rm, "cext.yaml", endsh
+ls
+# cd syntax
+
+rm, "cext.yaml", endsh
+man, "ln", endsh
+
+
+cmdloggrep("syntax");
+cmdloggrep("syntax")
+mv, "/home/mbrandt/.config/micro/syntax/cext.yaml", "/data/data/com.termux/files/home/.config/micro/syntax", endsh
+cmdlog
+ln, "-s /data/data/com.termux/files/home/.config/micro/syntax/cext.yaml", "/home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+
+sh, "ln -s /data/data/com.termux/files/home/.config/micro/syntax/cext.yaml "/home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+
+
+cmdinsertlogat(0x03A8);
+
+cmdlog
+cmdinsertlogat(0x03A7);
+sh, "ln -s /data/data/com.termux/files/home/.config/micro/syntax/cext.yaml /home/mbrandt/.config/micro/syntax/cext.yaml", endsh
+
+microsyntax
+cnslutilh
+microsyntax
+scanfsh
+scanfs
+
+
+
+
+
+
+scanfs
+
+scanfs
+
+scanfsh
+scanfs
+
+scanfsh
+scanfs
+
+scanfsh
+scanfs
+
+lsp, "/proc", endsh
+
+lsp, "/proc", endsh
+lsp, "/proc/sys", endsh
+lsp, "/proc", endsh
+date
+# cd /data/data/com.termux/files/home/prj/bytesh
+# cdroot /data/data/com.termux/files/home/prj/bytesh
+gitupdate
+gpgdecrypt, "repopw.txt", endsh
+gitupdate
+gitupdate
+
+
+vncserver
+firefox
+firefox
+
+vncserver
+firefox
+compilerh
+compilerh
+
+compilerh
+compilerh
+stdioexth
+userinterfaceh
+
+userinterfaceh
+
+userinterfaceh
+man, "read", endsh
+man, "read", endsh
+hcreate("unistdext")
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+unistdexth
+userinterfaceh
+
+
+
+
+userinterfaceh
+
+
+
+
+userinterfaceh
+stdlibexth
+userinterfaceh
+
+userinterfaceh
+# cd /data/data/com.termux/files/home/.config/
+
+
+
+date
+ls
+sh, "ls -hAlr", endsh
+ls
+man, "ls" , endsh
+sh, "ls -hAl", endsh
+cnslutilh
+ls
+# cd /home/mbrandt/.config/tigervnc
+//home/mbrandt/.config/tigervnc/
+ls
+ls
+edit, "config", endsh
+vncserver
+firefox
+edit, "config", endsh
+psgrepvnc
+sigkill(17845)
+
+sigkill, 17845, endsh
+
+cnslutilh
+sigterm, 17845, endsh
+
+sigterm(17845)
+vncserver
+
+firefox
+gimp
+
+sh, "%s gimp %s", DISPLAYCONFIG, BG, endsh
+
+edit, "config", endsh
+psgrepvnc
+sigterm(18496)
+vncserver
+
+firefox
+firefox
+firefox
+firefox
+psgrep("i3")
+
+psgrep, "i3", endsh
+sigterm(19076)
+vncserver
+psgrep
+
+ps
+firefox
+
+
+ps
+
+
+
+
+
+
+man, "termios", endsh
+cnslutilh
+cnslutilh
+man, "access", endsh
+cnslutilh
+man, "access", endsh
+cnslutilh
+man, "termios", endsh
+man, "termios", endsh
+man, "termios", endsh
+cnslutilh
+man, "termios", endsh
+man, "termios", endsh
+man, "termios", endsh
+printf("ab\x1B[2Ccd\n")
+printf("ab\x1B[2Dcd\n");
+userinterface
+
+userinterfaceh
+
+abcd
+
+userinterfaceh
+# res
+
+
+abcd
+
+userinterfaceh
+
+
+asdf  
+
+userinterfaceh
+stdlibexth
+microsyntax
+stdlibexth
+userintrerf
+
+userinterfaceh
+
+
+printf("hello")
+userinterface
+
+# cd /storage/self/primary/MEGABUEROKRATIE
+/data/data/com.
+
+
+
+
+# cd /storage/self/primary/MEGABUEROKRATIE
+/data/data/com.termux/files/home/prj/bytesh/
+
+# cd /
+///
+
+# cd storage/self/
+//storage/self//
+cd primary
+# cd Documents/MEGABUEROKRATIE
+/data/data/com.termux/files/home/prj/bytesh/cd Documents
+
+
+# cd Documents
+/data/data/com.termux/files/home/prj/bytesh/Documents/
+cd /storage/self/primary
+
+
+# cd /storage/self/primary
+//storage/self/primary/
+cd Documents
+
+# cd Documents
+/storage/self/primary/Documents/
+s
+
+ls
+# cd MEGABUEROKRATIE
+/storage/self/primary/Documents/MEGABUEROKRATIE/
+ls
+
+ls
+bak, "Sta*", endsh
+ls
+lsp, "_TMP", endsh
+# cd DATACONTROL
+/storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/
+ls
+
+ls
+# cd CONTACTS
+/storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/CONTACTS/
+ls
+
+ls
+pacmans("khard")
+sh, "khard 2025-06-23-GOOGLE.VCF", endsh
+sh, "khard", endsh
+pacmans("mutt_vc_query")
+# cd /tmp
+//tmp/
+sh, "git clone https://github.com/libvc/mutt_vc_query", endsh
+# cd mutt_vc_query
+/data/data/com.termux/files/home/prj/bytesh/
+
+# cd mutt_vc_query
+/data/data/com.termux/files/home/prj/bytesh/mutt_vc_query/
+
+
+# cd /tmp/mutt_vc_query
+/data/data/com.termux/files/home/prj/bytesh/
+
+# cd /tmp
+//tmp/
+
+sh, "git clone https://github.com/libvc/mutt_vc_query", endsh
+# cd mutt_vc_query
+/tmp/mutt_vc_query/
+sh, "autoreconf -f -i", endsh
+
+sh, "autoreconf -f -i", endsh
+sh, "./configure", endsh
+ddf[D[D  [D[Ddd[D[[D[D[D[D[C[C[C[C[A[A[B
+
+sh, "make", endsh
+pacmans("libvc")
+pacmanss("libvc")
+yayss("libvc")
+yays("libvc")
+yayss("libvc")
+yays("libvc-git")
+yayss("khard")
+yays("khard")
+man, "khard", endsh
+sh, "khard -h", endsh
+sh, "khard", endsh
+edit, "/home/mbrandt/.config/khard/khard.conf", endsh
+# cd /storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/CONTACTS
+//storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/CONTACTS/
+
+compilerh
+
+# cd ..
+/storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/CONTACTS/../
+printf("hello")
+
+compilerh
+compilerh
+mainh
+# cd CONTACTS
+/storage/self/primary/Documents/MEGABUEROKRATIE/DATACONTROL/CONTACTS/
+ls
+
+ls
+sh, "khard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+ard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+unistdexth
+userinterfaceh
+
+
+
+
+userinterfaceh
+
+
+
+
+userinterfaceh
+stdlibexth
+userinterfaceh
+
+userinterfaceh
+# cd /data/data/com.termux/files/home/.config/
+
+
+
+date
+ls
+sh, "ls -hAlr", endsh
+ls
+man, "ls" , endsh
+sh, "ls -hAl", endsh
+cnslutilh
+ls
+# cd /home/mbrandt/.config/tigervnc
+//home/mbrandt/.config/tigervnc/
+ls
+ls
+edit, "config", endsh
+vncserver
+firefox
+edit, "config", endsh
+psgrepvnc
+sigkill(17845)
+
+sigkill, 17845, endsh
+
+cnslutilh
+sigterm, 17845, endsh
+
+sigterm(17845)
+vncserver
+
+firefox
+gimp
+
+sh, "%s gimp %s", DISPLAYCONFIG, BG, endsh
+
+edit, "config", endsh
+psgrepvnc
+sigterm(18496)
+vncserver
+
+firefouserinterfaceh
+
+
+ard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+ard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uniuserinterfaceh
+
+
+ard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+ard *GOOGLE.VCF", endsh
+sh, "yay -Qi khard", endsh
+, "yay -Ql khard", endsh
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql khard", endsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+unmainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql ksetbuffered()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistd
+
+
+
+program
+userinterfaceh
+mainh
+program
+vncserver
+userinterfaceh
+mainh
+
+\
+printf("hello");ln;\
+0 ? goto err : 1;\
+goto theend;\
+err:\
+printf("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+
+("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistd
+
+
+("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+
+("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+userinterfaceh
+("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+
+("world");ln;\
+theend:\
+
+
+(return 1)
+
+mainh
+stdlibexth
+mainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+
+thaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+ainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+thaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+
+thaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+ainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+uniuserinterfaceh
+
+
+
+
+
+
+
+userinterfaceh
+mainh
+mainh
+microsyntax
+cnslutilhaddfn("stdlibexthaddkeyword")
+cnslutilh
+
+
+
+
+
+man, "errno", endsh
+mainh
+userinterfaceh
+mainh
+man, "errno", endsh
+mainh
+
+
+userinterfaceh
+
+
+
+userinterfaceh
+
+mainh
+userinterfaceh
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+man, "stpncpy", endsh
+man, "strncpy", endsh
+man, "stpncpy", endsh
+userinterfaceh
+mainh
+main
+mainh
+man, "fopen", endsh
+mainh
+man, "errno", endsh
+
+
+
+
+
+
+
+thaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+
+thaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+h
+
+sh, "yay -Ql k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+", endsh
+man, "math.h", endsh
+man, "math.h", ends
+
+
+
+ainh
+userinterfaceh
+mainh
+mainh
+mainsysh
+mainh
+
+mainh
+
+
+userinterfaceh
+stdlibexth
+
+userinterfaceh
+man, "stpncpy", endsh
+userinterfaceh
+
+
+n, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+uni
+
+
+
+mainh
+man, "errno", endsh
+man, "strerror", endsh
+mainh
+
+userinterfaceh
+
+man, "errno", endsh
+man, "perror", endsh
+userinterfaceh
+mainh
+
+userfaceh
+
+userinterfaceh
+stat, "run/log.txt", endsh
+mainh
+mainh
+mainsysh
+mainh
+
+
+mainsysh
+es(ROOTC("/run/log.txt"))
+mainsysh
+mainh
+mainh
+AABA# restart
+
+mainh
+userinterfaceh
+
+
+\n\n\n\n\n\n\n\n
+
+
+read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+uni
+
+
+
+mainh
+man, "errno", endsh
+man, "strerror", endsh
+mainh
+
+userinterfaceh
+
+man, "errno", endsh
+man, "perror", endsh
+userinterfaceh
+mainh
+
+userfaceh
+
+userinterfaceh
+stat, "run/log.txt", endsh
+mainh
+mainh
+mainsysh
+mainh
+
+
+mainsysh
+es(ROOTC("/run/log.txt"))
+mainsysh
+mainh
+mainh
+AABA# restart
+
+mainh
+userinterfaceh
+
+
+\n\n\n\n\n\n\n\n
+
+erfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+uni
+
+userinterfaceh
+read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+mainh
+cnslutilh
+userinterfaceh
+stdlibexth
+userinterfaceh
+man, "strlen", endsh
+buflen
+
+stdlibexth
+stringexth
+stdlibexth
+userinterfaceh
+man, "strncpy", endsh
+userinterfaceh
+man, "min", endsh
+man, "math.h", endsh
+man, "math.h", endsh
+hcreate("mathext")
+mathexthaddfn("imin")
+mathexth
+userinterfaceh
+man, "strlen", endsh
+
+
+
+unistdexth
+
+man, "read", endsh
+man, "fgetc", endsh
+man, "read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+uni
+
+
+
+mainh
+man, "errno", endsh
+man, "strerror", endsh
+mainh
+
+userinterfaceh
+
+man, "errno", endsh
+man, "perror", endsh
+userinterfaceh
+mainh
+
+userfaceh
+
+userinterfaceh
+stat, "run/log.txt", endsh
+mainh
+mainh
+mainsysh
+mainh
+
+
+mainsysh
+es(ROOTC("/run/log.txt"))
+mainsysh
+mainh
+mainh
+AABA# restart
+
+mainh
+userinterfaceh
+
+
+\n\n\n\n\n\n\n\n
+
+
+read", endsh
+man, "EOF", endsh
+unistdh
+
+unistdexth
+unistdexthaddfn("readc")
+unistdexth
+man, "read", endsh
+uni# exit
+
+
+dsh
+cmdlog
+sh, "khard *GOOGLE.VCF", endsh
+mkdirp, "/home/mbrandt/.contacts/family", endsh
+userinterfaceh
+uitest
+userinterfaceh
+
+cnslutilh
+
+cnslutilh
+userinterfaceh
+cmdlogath
+
+cnslutilh
+m# restart
+
+
+
+AAA
+
+program
+
+vncserver
+firefox
+
+vncserver
+ps
+sh, "ps", endsh
+cnslutilh
+sh, "ps -ef --forest", endsh
+ps, "ps -ef --forest -o pid cmd", endsh
+
+sh, "ps -ef --forest -opid,cmd", endsh
+sh, "ps -ef --forest", endsh
+sh, "ps -opid,cmd -ef --forest", endsh
+vncserver
+firefox
+
+vncserver
+firefox
+
+ 
+
+
+mkdirp, "../../freelancer", endsh
+# cd "../../freelancer"
+/data/data/com.termux/files/home/prj/bytesh/"../../freelancer"/
+
+
+# cd ../../freelancer
+/data/data/com.termux/files/home/prj/bytesh/../../freelancer/
+edit, "raw.html", endsh
+
+edit, "JUN27.raw.html", endsh
+edit, "JUN27.raw.html", endsh
+ls run
+
+cnslutilh
+ls, "run", endsh
+ls, ROOTC("run"), endsh
+htmlutilh
+htmlutilh
+prettiera
+
+
+
+
+prettiera
+
+htmlutilh
+man, "accept", endsh
+man, "unistd.h", endsh
+htmlutilh
+lsc
+scanhtml("jun27.raw.html")
+mainh
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+fopen("jun27.raw.html", "r");D
+
+FILE *f = fopen("jun27.raw.html", "r"); if (!f) perror("");
+htmlutilh
+scanhtml("jun27.raw.html");
+htmlutilh
+stat, "jun27.raw.html", endsh
+FILE *f = fopen("jun27.raw.html", endsh; ed((int)f);
+FILE *f = fopen("jun27.raw.html"); ed((int) f);
+
+FILE *f = fopen("jun27.raw.html", "r"); ed((int) f);
+FILE *f = fopen("jun27.raw.html", "r"); perror("");
+htmlutilh
+cnslutilh
+cnslutilhaddfn("stdlibexth_addkeyword")
+
+cnslutilh
+microsyntax
+cnslutilh
+userinterfaceh
+stdlibexth_addkeyword
+cnslutilh
+userinterfaceh
+cnslutilh
+stdlibexth_addkeyword()
+cnslutilh
+
+
+
+microsyntax
+cmdlog
+FILE *f = fopen("jun27.raw.html", "r"); perror("");
+htmlutilh
+microsyntax
+stdlibexth
+htmlutilh
+
+
+
+htmlutilh
+
+scanhtml("jun27.raw.html")
+htmlutilh
+microsyntax
+htmlutilh
+scanhtml("");
+htmlutilh
+scanhtml("");
+htmlutilh
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+scanhtml("jun27.raw.html")
+htmlutilh
+scanhtml("jun27.raw.html")
+ls
+
+lsc
+cat, "jun27.raw.html.accept*", endsh
+sh, "cat jun27.raw.html.accept.txt | grep PAGE", endsh
+sh, "cat jun27.raw.html | grep PAGE", endsh
+htmlutilh
+scanhtml("jun27.raw.html")
+bak, "jun27.raw.html.accept.txt", endsh
+bak, "jun27.raw.html.reject.txt", endsh
+scanhtml("jun27.raw.html")
+sh, "cat jun27.raw.html.accept.txt | grep PAGE", endsh
+htmlutilh
+bak, "jun27.raw.html.accept.txt", endsh
+bak, "jun27.raw.html.reject.txt", endsh
+scanhtml("jun27.raw.html")
+sh, "cat jun27.raw.html.accept.txt | grep PAGE", endsh
+sh, "cat jun27.raw.html.reject.txt | grep PAGE", endsh
+edit, "jun27.raw.html.accept.txt", endsh
+htmlutilh
+edit, "jun27.raw.html.reject.txt", endsh
+edit, "jun27.raw.html.accept.txt", endsh
+
+sh, "which bytesh", endsh
+sh, "micro $(which bytesh)", endsh
+compilerh
+compilerh
+sh, "sh -h", endsh
+man, "sh", endsh
+compilerh
+sh, "bytesh -c printf(\"hello\\n\")", endsh
+tmph
+tmphadd("test777")
+
+tmphadd
+sh, "bytesh -c test123", endsh
+-ccompilerh
+curlh
+
+sh, "bytesh -c test123", endsh
+-ccompilerh
+
+setupvnc
+
+
+
+
+
+
+sh, "bytesh -c test123", endsh
+
+compilerh
+
+compilerh
+program
+ls
+
+lsc
+edit, "jun27.raw.html.accept.txt", endsh
+edit, "jun27.raw.html.accep.txt", endsh
+edit, "jun27.raw.html.accept.txt", endsh
+
+htmlutilh
+edit, "jun27.raw.html.accept.txt", endsh
+
+vncserver
+firefox
+
+vncserver
+�# exit
+
+
+vncserver
+
+firefox
+
+sh, �"mpv", endsh
+
+sh, "mpv", endsh
+ls, �"/media/", endsh
+
+ls, "/media", endsh
+ls "/storage/self/primary/Download"
+
+ls, "/storage/self/primary/Download", endsh
+# cd ..
+/data/data/com.termux/files/home/freelancer/../
+mv, "/storage/self/primary/Download/file_example_MP3_700KB.mp3", ".", endsh
+
+mv, "/storage/self/primary/Download/file_example_MP3_700KB.mp3", ".", endsh
+ls
+
+ls
+
+lsc
+
+sh, "mpv file*", endsh
+
+vncserver
+firefox
+
+sh, �"ffmpeg file*", endsh
+
+sh, "ffmpeg file*", endsh
+AABBq
+
+
+sh, "ffplay file*", endsh
+pacmans)("pulseaudio")
+
+pacmans("pulseaudio")
+pacmans("pipewire-alsa")
+pacmansyyu
+
+sh, "mpv -ao=pulse file*", endsh
+sh, "mpv --ao=pulse file*", endsh
+sh, "mpv --ao=jack file*", endsh
+sh, "mpv --ao=alsa file*", endsh
+sh, "mpv --ao=pcm file*", endsh
+sh, "mpv --ao=pcm file*",endsh
+sh, "mpv file*", endsh
+sh, "mpv --ao=openal file*", endsh
+sh, "mpv --ao=help", endsh
+sh, "mpv --ao=pipewire", endsh
+sh, "mpv --ao=pipewire file*", endsh
+sh, "mpv --ao=oss file*", endsh
+sh, "pipewire &", endsh
+
+�# exit
+
+
+
+# cd ../usr
+/data/data/com.termux/files/home/../usr/
+lsc
+
+lsc
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbrandt//
+ls
+lsc
+# cd Downloads
+/home/mbrandt/Downloads/
+lsc
+
+lsc
+sh, "echo $PATH", endsh
+readconfh
+microsyntax
+stdlibexth
+readconfh
+
+
+
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbrandt//
+ls
+lsc
+# cd Downloads
+/home/mbrandt/Downloads/
+lsc
+
+lsc
+sh, "echo $PATH", endsh
+readconfh
+microsyntax
+stdlibexth
+readconfh
+
+
+
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+htmlutilh
+cnslutilh
+cnslutilhaddfn("stdlibexth_addkeyword")
+
+cnslutilh
+microsyntax
+cnslutilh
+userinterfaceh
+stdlibexth_addkeyword
+cnslutilh
+userinterfaceh
+cnslutilh
+stdlibexth_addkeyword()
+cnslutilh
+
+
+
+microsyntax
+cmdlog
+FILE *f = fopen("jun27.raw.html", "r"); perror("");
+htmlutilh
+microsyntax
+stdlibexth
+htmlutilh
+
+
+
+htmlutilh
+
+scanhtml("jun27.raw.html")
+htmlutilh
+microsyntax
+htmlutilh
+scanhtml(""A
+
+
+
+# cd ..
+pdata/data/com.termux/files/home/prj/bytesh/../
+rintf("Hello");
+
+u
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbrandt//
+ls
+lsc
+# cd Downloads
+/home/mbrandt/Downloads/
+lsc
+
+lsc
+sh, "echo $PATH", endsh
+readconfh
+microsyntax
+stdlibexth
+readconfh
+
+
+
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbrserinterfaceh
+
+userinterfaceh
+#data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbrandt//
+ls
+lsc
+# cd Downloads
+/home/mbrandt/Downloads/
+lsc
+
+lsc
+sh, "echo $PATH", endsh
+readconfh
+microsyntax
+stdlibexth
+readconfh
+
+
+
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+aceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+p
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/dint i = 0;
+
+int i = 0;
+int i = 0;
+
+
+
+u
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/daserinterfaceh
+
+userinterfaceh
+dinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/daserinterfaceh
+
+ndsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/daate
+
+man, "pipewire", endsh
+uermux/files/usrserinterfaceh
+
+userinterfaceh
+sinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/daserinterfaceh
+
+userinterfaceh
+dinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usrtdlibh
+
+cnslutilh
+uinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usr/etc/
+ls
+
+lsc
+edit, "bash.bashrc", endsh
+
+ls, "/tmp", endsh
+# cd
+/data/data/com.termux/files/usr/etc//
+
+
+# cd /home/mbrandt/
+//home/mbr restart
+
+
+
+
+
+
+
+
+
+
+printf("hello");
+printf("hello");
+
+
+
+
+
+userinterfaceh
+#
+
+
+
+
+
+readconfh
+stdioexth
+stdlibexth
+ls, "run", endsh
+userinterfaceh
+htmlutilh
+man, "unistd.h", endsh
+man, "confstr", endsh
+man, "unistd.h", endsh
+man, "fork", endsh
+man, "unistd.h", endsh
+stdioexth
+sh, "ls run", endsh
+program
+program
+program
+man, "execl", endsh
+userinterfaceh
+
+
+
+userinterfaceh
+mainh
+userinterfaceh
+
+
+abcd
+
+AABBuserinterfaceh
+
+userinterfaceh
+
+
+userinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/daserinterfaceh
+
+userinterfaceh
+dinterfaceh
+
+AAABBBAAuserinterfaceh
+
+userinterfaceh
+# restart
+
+
+
+
+data/data/com.termux/files/usr/etc/../
+ls
+
+lsc
+# cd share
+/data/data/com.termux/files/usr/share/
+
+
+lsc
+# cd ../bin
+/data/data/com.termux/files/usr/share/../bin/
+
+
+lsc
+# cd ..
+/data/data/com.termux/files/usr/bin/../
+cd etc/
+
+# cd etc
+/data/data/com.termux/files/usrserinterfaceh
+
+
+userinterfaceh
+man, "find", endsh
+find
+
+sh, "find", endsh
+# cd bytesh
+ldata/data/com.termux/files/home/prj/bytesh/
+s
+
+lsc
+# cd run
+sdata/data/com.termux/files/home/prj/bytesh/run/
+h, "find", endsh
+
+sh, "find", endsh
+rmr, "run.err", endsh
+rmr, "toberemoved", endsh
+lsc
+rmr, "bak", endsh
+cnslutilh
+sh, "find | xargs grep fnc", endsh
+mainh
+userinterfaceh
+readconfh
+stdlibh
+
+stdlibexth
+sh, "find | grep //fnc", endsh
+sh, "find | grep \\/\\/fnc", endsh
+sh, "find | grep fnc", endsh
+sh, "find | xargs grep //fnc", endsh
+mainh
+stdlibh
+
+stdlibexth
+
+
+
+
+
+stdlibexth
+microsyntax
+cmdlog
+mainh
+stdlibexth
+
+
+
+microsyntax
+
+mainh
+
+stdlibexth
+stdlibexth
+mainh
+
+
+
+
+man, "gcc", endsh
+sh, "gcc -h", endhs
+
+sh, "gcc -h", endsh
+sh, "gcc --help", endsh
+sh, "gcc --help=warnings", endsh
+sh, "gcc --help=warnings | grep struct", endsh
+sh, "gcc --help", endsh
+sh, "cc --help", endsh
+sh, "gcc -v --help", endsh
+
+
+sdata/data/com.th, "gcc -v --help | grep warning", endsh
+
+sh, "gcc -v --help | grep warning", endsh
+compilerh
+
+sh, "cc1 --help", endsh
+man, "pipewire", endsh
+man, "pulseaudio", endsh
+sh, "pulseaudio --check", endsh
+sh, "pacman -Ql", endsh
+sh, "echo hello world | grep \\$hello", endsh
+sh, "echo hello world | grep ^hello", endsh
+sh, "pacman -Ql | grep ^pipewire", endsh
+man, "pipewire-pulse", endsh
+man, "pipewire-client", endsh
+sh, "pw-top", endsh
+sh, "pw-play --help", endsh
+# cd ../../../
+ldata/data/com.termux/files/home/prj/bytesh/run/../../..//
+sc
+
+lsc
+sh, "pw-play file*", endsh
+sh, "pacman -Ql pulseaudio", endsh
+sh, "pacman -Ql pulse-audio", endsh
+sh, "pacman -Ql | grep pa", endsh
+sh, "pacman -Ql | grep pa-", endsh
+sh, "pacman -Ql | grep pulse", endsh
+sh, "paplay --help", endsh
+sh, "paplay file*", endsh
+sh, "pactl", endsh
+sh, "pactl --help", endsh
+sh, "pactl stat", endsh
+sh, "pactl info", endsh
+
+mainsysh
+stdlibexth
+man, "STDOUT_FILENO", endsh
+man, "unistd.h", endsh
+stdlibexth
+# cd prj/bytesh/run
+sdata/data/com.termux/files/home/prj/bytesh/run/
+h, "find | grep range", endsh
+
+sh, "find | xargs grep range", endsh
+userinterfaceh
+stdlibexth
+
+
+
+
+
+
+
+
+stdlibexth
+microsyntax
+stdlibexth
+man, "WEXITSTATUS", endsh
+man, "wait", endsh
+stdlibexth
+
+stdlibexth
+\
+
+userinterfaceh
+
+
+us	
+
+termiostest
+
+uitest
+printf("%d\n", (int)'\t');
+cmdlog
+stdlibexth
+userinterfaceh
+
+
+
+
+
+userinterfaceh	
+userinterfaceh	
+\
+\
+int fd = shfd, "lsc", endsh;\
+rep\
+stm printf("%c", readc(fd));\
+stm fflush(stdout);\
+
+
+cmdlog
+\
+rep \
+stm printf("%c", readc(fd));\
+stm fflush(stdout);\
+
+
+cmdlog
+\
+int fd = shfd, "lsc", endsh;\
+rep \
+stm printf("%c", readc(fd));\
+stm fflush(stdout);\
+
+
+cmdlog
+man, "getch", endsh
+man, "getc", endsh
+cmdlog
+\
+int fd = shfd, "lsc", endsh;\
+rep \
+stm int c = readc(fd);\
+iff c == EOF\
+thn break;\
+stm printf("%c", c);\
+stm fflush(stdout);\
+
+
+cmdlog
+\
+int fd = shfd, "lsc", endsh;\
+rep \
+stm int c = readc(fd);\
+iff c == EOF \
+thn break;\
+stm printf("%c", c);\
+stm fflush(stdout);\
+
+
+cmdlog
+cmdinsertlogregion(0x1AD6, 0x1Add);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd ../../../
+
+data/data/com.termux/files/home/prj/bytesh/run/../../..//
+
+lsc
+
+
+sh, "pw-play file*", endsh
+
+
+suroot
+suroot
+
+sh, "pw-play file*", endsh
+sh, "ps -u -C pipewire", endsh
+sh, "ps u -C pipewire", endsh
+
+program
+userinterfaceh	
+stdlibh
+
+stdlibexth
+microsyntax
+program
+program
+microsyntax
+stdlibexth
+# cd prj/bytesh/run
+fdata/data/com.termux/files/home/prj/bytesh/run/
+sh, "find" , endsh
+
+sh, "find", endsh
+sh, "find -f", endsh
+sh, "find | xargs grep FUNCTION", endsh
+sh, "find | xargs grep SECTION", endsh
+stdlibexth
+sh, "find | xargs grep TEXT", endsh
+FUNCTION
+
+SECTION
+
+TEXT
+
+DATA
+
+microsyntax
+stdlibexth
+sh, "find | xargs grep txt", endsh
+program
+program
+userinterfaceh	
+
+
+
+
+
+compilerh
+
+
+compielrh
+
+compilerh
+sh, "bytesh -c lsc", endsh
+
+
+sh, "bytesh -c lsc", endsh
+
+compilerh
+stdlibexth
+
+
+
+
+
+
+
+
+
+stdlibexth
+
+sh, "bytesh -c lsc", endsh
+
+compilerh
+microsyntax
+compielrh
+
+compilerh
+which, "bytesh", endsh
+\
+
+userinterfaceh	
+sh, "find | xargs grep mgetline", endsh
+sh, "find | xargs grep mgetescline", endsh
+userinterfaceh	
+program
+userinterfaceh	
+man, "putc", endsh
+userinterfaceh	
+stringexth
+man, "strlen", endsh
+userinterfaceh	
+strend
+
+stringexth
+userinterfaceh	
+
+
+
+
+
+
+micro
+userinterfaceh	
+
+
+
+
+
+microsyntax
+stdlibexth
+
+
+
+
+
+
+
+
+userinterfaceh	
+
+\
+
+compilerh
+mainh
+compilerh
+stdioexth
+compilerh
+stdioexth
+compilerh
+
+stdlibexth
+cnslutilh
+
+\
+
+compilerh
+edit, "run/status.txt", endsh
+lsc
+edit, "status.txt", endsh
+compielrh
+
+compilerh
+man, "fgets", ends
+
+man, "fgets", endsh
+compilerh
+
+\
+compilerh
+
+\
+compilerh
+
+\
+compilerh
+
+\
+compilerh
+
+\
+\
+\
+compilerh
+
+\
+\
+\
+\
+\
+\
+program
+\
+\
+\
+
+program
+compilerh
+0 && (printf("hello\n"), 0) || (printf("bye\n"), 0);
+1 && (printf("hello\n"), 0) || (printf("bye\n"), 0);
+compilerh
+stdlibexth
+sh, "find | xargs grep shfd", endsh
+cmdlog
+stdlibexth
+
+compilerh
+stdioexth
+stdlibexth
+userinterfaceh	
+sh, "find | xargs grep readc", endsh
+unistdexth
+compilerh
+man, "read", endsh
+compilerh
+compilerh
+stdlibexth
+
+stdlibexth
+stdlibexth
+
+
+
+
+compilerh
+sh, "bytesh -c lsc", endsh
+
+program
+
+# cd ../../..
+
+[/data/data/com.termux/files/home]
+0x1BDC.priv.c  $ /../
+
+sh, "pw-play file*", endsh
+pacmans("pipewire");
+pacmans("pipewire-docs");
+pacmanql("pipewire-audio")
+pacmanqi("pipewire-audio")
+man, "termios", endsh
+printf("%s", "\033[A\33[2K");
+
+\
+for range(0, 4)\
+stm printf("%s", "\033[a\33[2K");
+for range(0, 12)\
+stm printf("%s", "\033[A\33[2K");
+cnslutilhadddef("cnsllinedel")
+cnslutilh
+cnsllinedel(5);
+cnslutilh
+cnsllinedel(1)
+cnsllinedel(6)
+cnsllinedel(9);
+cnsllinedel(8)
+cnslutilh
+cnsllinedeldown(1)
+cnsllinedeldown(4)
+cnslutilh
+cnsllinedeldown(1)
+cnsllinedeldown(3)
+cnsllinedel(12)
+cnsllinedeldown(10)
+cnsllinedeldown(20)
+cnslutilh
+cnsllinedel
+
+
+
+
+cnsllinedel
+
+
+
+userinterfaceh	
+mainh
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+
+
+
+
+
+
+
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+program
+program
+compilerh
+# cd prj/bytesh/run
+kdir, "log", endsh
+
+mkdir, "log", endsh
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+ptilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+
+
+
+
+
+
+
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+program
+program
+compilerh
+# cd prj/bytesh/run
+kdir, "log", endsh
+
+mkdir, "log", endsh
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd ../../../
+
+data/data/com.termux/files/home/prj/bytesh/run/../../..//
+
+lsc
+
+
+sh, "pw-play file*", endsh
+
+
+suroot
+suroot
+
+sh, "pw-play file*", endsh
+sh, "ps -u -C pipewire", endsh
+sh, "ps u -C pipewire", endsh
+
+program
+userinterfaceh	
+stdlibh
+
+stdlibexth
+microsyntax
+program
+program
+microsyntax
+stdlibexth
+# cd prj/bytesh/run
+fdata/data/com.termux/files/home/prj/bytesh/run/
+sh, "find" , endsh
+
+sh, "find", endsh
+sh, "find -f", endsh
+sh, "find | xargs grep FUNCTION", endsh
+sh, "find | xargs grep SECTION", endsh
+stdlibexth
+sh, "find | xargs grep TEXT", endsh
+FUNCTION
+
+SECTION
+
+TEXT
+
+DATA
+
+microsyntax
+stdlibexth
+sh, "find | xargs grep txt", endsh
+program
+program
+userinterfaceh	
+
+
+
+
+
+compilerh
+
+
+compielrh
+
+compilerh
+sh, "bytesh -c lsc", endsh
+
+
+sh, "bytesh -c lsc", endsh
+
+compilerh
+stdlibexth
+
+
+
+
+
+
+
+
+
+stdlibexth
+rintf("Hello");ln;
+
+
+
+tilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+
+
+
+
+
+
+
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+program
+program
+compilerh
+# cd prj/bytesh/run
+kdir, "log", endsh
+
+mkdir, "log", endsh
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+ptilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+
+
+
+
+
+
+
+cnsllinedel
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+cnslutilh
+cnsllinedel
+program
+program
+compilerh
+# cd prj/bytesh/run
+kdir, "log", endsh
+
+mkdir, "log", endsh
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+ buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf
+ endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf
+
+
+ endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf
+ endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, 
+uf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf
+ endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, %c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, 
+
+uf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf
+ endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+cmdlog
+cmdinsertlogregion(0x1AE1, 0x1AE9)
+int fd = shfd, "ls", endsh;\
+rep blk \
+    int c = readc(fd);\
+    iff c == EOF \
+    thn break;\
+    stm printf("%c", c);\
+end_blk
+stm fflush(stdout);\
+
+
+cmdlog
+# cd .
+
+
+
+compilerh
+
+compilerh
+\
+pagebuf_t buf;\
+char *s = asstr buf;\
+printf("%h, %h", &buf, s);\
+
+
+pagebuf_t buf;\
+
+pagebuf_t buf;\
+char *sz = asstr buf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, 
+uf;\
+printf("%h, %h", &buf, sz);\
+
+(
+
+printf("%H\n", 123);
+printf("%x\n", 123);
+pagebuf_t val;\
+char *arr = asstr val;\
+printf("%x, %x\n", &val, arr);\
+
+pagebuf_t val;\
+char *arr = asstr &val;\
+printf("%x, %x\n", &val, arr);
+compilerh
+man, "puts", endsh
+compilerh
+man, "fputs", endsh
+man, "fputs", endsh
+man, "fwrite", endsh
+compilerh
+man, "fopen", endsh
+compielrh
+
+mpilerh
+
+compilerh
+
+printf("hello\n");
+
+
+
+
+
+
+
+
+
+
+);
+int fd = shfd, "lsc", endsh;\
+rep blk \
+    int c = readc(fd);\
+    if
+
+program
+# cd ..
+l[/data/data/com.termux/files/home/prj/bytesh]
+
+0x21C2.priv.c  $ sc
+
+lsc
+gpgdecrypt, "repopw.txt", endsh
+cnslutilh
+pacmanss, "firefox", endsh
+cnslutilh
+yayss, "chrome", endsh
+cmdlog
+gitupdate
+gitupdate
+pacmanqi, "pipewire-audio", endsh
+pacmanqi, "pipewire-pulse", endsh
+sh, "systemctl start pipewire-pulse.service", endsh
+sh, "service --help", endsh
+sh, "service -h", endsh
+sh, "service list", endsh
+shfd, "service list", endsh\
+ERROR
+
+int fd = shfd, "service list", endsh\
+
+sh, "service list | less", endsh
+which, "service", endsh
+sh, "service list | less", endsh
+sh, "service list | grep pipewire", endsh
+pacmanql, "pipewire-pulse", endsh
+cmdlog
+sh, "pacman -Ql pipewire-pulse | grep systemd", endsh
+edit, "/usr/lib/systemd/user/pipewire-pulse.service", endsh
+edit, "/sr/lib/systemd/user/pipewire-pulse.socket", endsh
+edit, "/usr/lib/systemd/usr/pipewire-pulse.socket", endsh
+edit, "/usr/lib/systemd/user/pipewire-pulse.socket", endsh
+edit, "/usr/lib/systemd/usr/pipewire-pulse.socket", endsh
+edit, "/usr/lib/systemd/user/pipewire-pulse.service", endsh
+edit, "/etc/pam.d/system-login", endsh
+edit, "/etc/pam.d/system-login", endsh
+cmdlog
+sh, "systemctl help", endsh
+sh, "systemctl --help", endsh
+sh, "systemctrl --help start", endsh
+sh, "systemctl --help start", endsh
+sh, "systemctl start --help", endsh
+sh, "systemctl --user start pipewire-pulse.service", endsh
+suroot
+
+sh, "systemctl --user start pipewire-pulse.service", endsh
+ps
+sh, "pipewire", endsh
+vncserver
+sh, "pipewire", endsh
+pacmans, "dbus-broker-units", endsh
+pacmans, "dbus-broker-units", endsh
+sh, "dbus-daemon --config-file=/abcdefgh", endsh
+sh, "dbus-daemon --system", endsh
+ps
+sigterm(23091)
+sh, "pipewire", endsh
+ps
+sigterm(26497)
+cnslutilh
+sh, "dbus-daemon --session", endsh
+
+sh, "dbus-daemon --sessions %s", BG, endsh
+cnsllinedel
+cnsllinedel
+sh, "dbus-daemon --session %s", BG, endsh
+sh, "pipewire", endsh
+sh, "dbus-daemon --help", endsh
+man, "dbus-daemon", endsh
+cmdlog
+cnsllinedel
+# exi
+
+ exit
+
+for range(0, 20)\
+stm printf("%s", "hello, world\n");
+for range(0, 20)\
+stm printf("%s", "bye, world\n");
+cnsllinedel
+pacmans, "kitty", endsh
+
+sh, "kitty", endsh
+vncserver
+sh, "%s kitty", DISPLAYCONFIG, endsh
+
+vncserver
+sh, "dbus-daemon --session --print-address %s", BG, endsh
+
+sh, "%s kitty", DISPLAYCONFIG, endsh
+
+vncserver
+sh, "dbus-daemon --session --print-address %s", BG, endsh
+
+sh, "%s kitty %s", DISPLAYCONFIG, BG, endsh
+
+psgrep, "kitty", endsh
+sigterm(29202)
+psgrep, "kitty", endsh
+ 
+
+(ROOTC("."));\
+ed(r);
+sh, "git status", endsh
+edit, ".gitignore", endsh
+sh, "git add .gitignore", endsh
+sh, "git commit -m ''", endsh
+sh, "git commit -a", endsh
+
+sh, "git add .gitignore", endsh
+sh, "git commit -m ", endsh
+sh, "git commit -m ''", endsh
+cat, ".gitignore", endsh
+sh, "git add a.out", endsh
+sh, "git commit -m ''", endsh
+sh, "git commit -m '.'", endsh
+sh, "git add .gitignore", endsh
+sh, "git commit -m .", endsh
+sh, "git rm run/cwd.txt", endsh
+sh, "git rm -f run/cwd.txt", endsh
+
+# cd data/data/com.termux/files/home/prj/bytesh
+//data/data/com.t
+
+sh, "%s %s %s %s", DISPLAYCONFIG, "DBUS_SESSION_BUS_ADDRESS='unix:path=/tmp/dbus-sEZ26EFQRi,guid=b8dc2ceabac9ca55819060bd6865d6bc'", "kitty", BG, endsh
+
+ps
+
+cnslutilhadddef("dbus_daemon_session")
+
+
+cnslutilh
+dbus_daemon_session
+
+cnslutilh
+dbus_daemon_session
+
+
+
+
+dbus_daemon_session
+cnslutilh
+dbus_daemon_session
+
+cnslutilh
+dbus_daemon_session
+sh, "%s pipewire %s", "", BG, endsh
+
+cnslutilhadddef("dbus_session_bus_address")
+dbus_session_bus_address
+cnslutilh
+printf("%s\n", dbus_session_bus_address);
+
+cnslutilh
+dbus_session_bus_address
+
+cnslutilh
+printf("%s\n", dbus_session_bus_address);
+cnslutilhadd
+cnslutilh
+
+dbus_daemon_session
+sh, "%s pipewire %s", dbus_session_bus_address_config, BG, endsh
+
+cnslutilh
+stringutilh
+
+edit, "/run/stringutil.h", endsh
+ls, "run", endsh
+edit, "run/stringutil.h", endsh
+stringexth
+man, "memset", endsh
+cnslutilh
+sh, "%s pipewire %s", dbus_session_bus_address_config, BG, endsh
+
+
+
+
+dbus_daemon_session
+sh, "%s pipewire %s", "", BG, endsh
+
+sh, "%s pipewire %s", dbus_session_bus_address_config, BG, endsh
+es(dbus_session_bus_address_config)
+cnslutilh
+sh, "%s pipewire %s", dbus_session_bus_address_config, BG, endsh
+
+sh, "proot-distro list", endsh
+
+
+exit
+
+termiostest
+
+uitest
+uitest
+uitest
+eus	
+
+userinterfaceh	
+
+
+
+proot-distro login void
+
+
+pacmanr("pipewire")
+
+pacmanr, "pipewire", endsh
+pacmanr, "telegram-desktop", endsh
+pacmanr, "wireplumber", endsh
+pacmanr, "pipewire-session-manager", endsh
+pacmanr, "wireplumber", endsh
+pacmanr, "pipewire-pulse", endsh
+pacmanr, "pulse-native-provider", endsh
+pacmanr, "pipewire-pulse", endsh
+pacmanr, "gnome-settings-daemon", endsh
+pacmanr, "pipewire-pulse", endsh
+cmdlog
+pacmanr, "pipewire", endsh
+pacmanr, "wireplumber", endsh
+pacmanr, "pipewire-audio", endsh
+pacmanr, "pipewire", endsh
+pacmanr, "pulseaudio", endsh
+pacmanss("pulse")
+
+pacmanss, "pulse", endsh
+pacmanss, "pa-", endsh
+pacmanr, "pulseaudio", endsh
+sh, "amixer sset Master unmute", endsh
+pacmanss, "alsa", endsh
+sh, "pacman -Ss alsa", endsh
+cmdlog
+sh, "pacman -Ss pulse", endsh
+cnslutilh
+pacmanss, "alsa", endsh
+pacmans, "alsa-lib", endsh
+pacmans, "alsa-tools", endsh
+sh, "amixer sset Master unmute", endsh
+suroot
+
+sh, "amixer sset Master unmute", endsh
+pacmans, "alsa-utils", endsh
+cmdlog
+sh, "amixer sset Master unmute", endsh
+lsmod
+
+sh, "lsmod", endsh
+suroot
+
+sh, "lsmod", endsh
+pacmans, "alsa-firmware", endsh
+cmdlog
+sh, "amixer sset Master unmute", endsh
+usermod -G audio
+
+sh, "usermod -G audio", endsh
+suroot
+
+sh, "usermod -G audio", endsh
+sh, "usermod -aG audio mbrandt", endsh
+cmdlog
+sh, "amixer sset Master unmute", endsh
+
+program
+edit, ROOTC("/run/cnslutil/microhelp.txt"), endsh
+# cd run/cnslutil
+m[/data/data/com.termux/files/home/prj/bytesh/run/cnslutil]
+
+0x22CF.priv.c  $ v, "microhelp.txt", "microhelp.md", endsh
+
+mv, "microhelp.txt", "microhelp.md", endsh
+edit, "microhelp.md", endsh
+program
+mv, "microhelp.md", "edith.md", endsh
+cnslutilhadddef("edith")
+edith
+program
+program
+stat, "/media/external/downloads", endsh
+stat, "/media", endsh
+ls, "/storage/self/primary/Download", endsh
+program
+program
+\
+
+# cd ..
+\[/data/data/com.termux/files/home/prj/bytesh/run]
+
+0x22E3.priv.c  $ 
+
+
+stdioexth
+\
+char *text = fgetallmclose(20 * pagebuf_tn, "programm.txt");\
+ERROR
+
+userinterfaceh	
+program
+userinterfaceh	
+compilerh
+
+# cd ..
+s[/data/data/com.termux/files/home/prj/bytesh]
+
+
+
+which, "bytesh", endsh
+stdioexth
+readh
+
+man, "read", endsh
+program
+stdioexth
+man, "read", endsh
+stdioexth
+man, "read", endsh
+stdioexth
+\
+
+
+
+
+
+program
+\
+cmdlog
+int fd;\
+edit, (readm((shfd, "which bytesh", endsh), linebuf_tn), lastmalloc), endsh
+
+sh, "r2 ./a.out", endsh
+sh, "r2 -e bin.cache=true ./a.out", endsh
+sh, "gdb ./a.out", endsh
+
+edit, (readm((shfd, "which bytesh", endsh), linebuf_tn), lastmalloc), endsh
+
+
+userinterfaceh	
+sh, "gdb a.out", endsh
+
+sh, "gdb a.out", endsh
+
+tmux -c "echo hello" 
+
+sh, "tmux -c 'echo hello'", endsh
+man, "tmux", endsh
+# cd /home/mbrandt
+m[/home/mbrandt]
+
+0x231F.priv.c  $edit, ".bashrc", endsh
+
+edit, ".bashrc", endsh
+
+edit, ".bashrc", endsh
+
+edit, ".bashrc", endsh
+sh, "tmux -c bytesh", endsh
+
+
+program
+cnslutilh
+# cd /data/data/com.termux/files/home
+c[/data/data/com.termux/files/home]
+
+0x232E.priv.c  $ d .config/micro/syntax
+
+# cd .config/micro/syntax
+l[/data/data/com.termux/files/home/.config/micro/syntax]
+
+0x2333.priv.c  $ls
+
+ls
+
+lsc
+cnslutilhadd("lnh")
+
+cnslutilhadddef("lnh")
+lnh
+mv, "cext.yaml", ROOTC("/run/stdlibext_microsyntax.yaml"), endsh
+ln, ROOTC("/run/stdlibext_microsyntax.yaml"), "cext.yaml", endsh
+
+sh, "ln -s %s %s", ROOTC("/run/stdlibext_microsyntax.yaml"), "cext.yaml", endsh
+stdlibexth
+# cd ../../..
+
+[/data/data/com.termux/files/home]
+
+0x2344.priv.c  $ ../../../
+
+# cd prj/
+c[/data/data/com.termux/files/home/prj]
+
+0x234A.priv.c  $ d ..
+
+# cd ..
+m[/data/data/com.termux/files/home]
+
+0x234F.priv.c  $ v, "prj", "/storage/self/primary", endsh
+
+mv, "prj", "/storage/self/primary/", endsh
+
+
+
+
+# cd /data/data/com.termux/files/home
+l[/data/data/com.termux/files/home]
+
+0x2359.priv.c  $ sc
+
+lsc
+edit, "/tmp/ls.txt", ends
+
+edit, "/tmp/ls.txt", endsh
+mv, "audiodump*", "/storage/self/primary/", endsh
+edit, "/tmp/ls.txt", endsh
+ls, "bin", endsh
+tmphadddef("tmpls")
+tmpls
+ls, "Desktop", endsh
+tmpls
+ls, ".local", endsh
+tmpls
+ls, "downloads", endsh
+mv, "downloads", "/storage/self/primary/downloads_b", endsh
+tmpls
+ls, "freelancer", endsh
+mv, "freelancer", "/storage/self/primary/", endsh
+tmpls
+ls, "media", endsh
+rm, "media", endsh
+bak, "media", endsh
+tmpls
+ls, "opt", endsh
+ls, "opt/localsys", endsh
+mv, "opt/localsys", "opt/localsys.bak", endsh
+tmpls
+ls, "tmp", endsh
+cat, "tmp/test.txt", endsh
+ls, "/home/mbrandt", endsh
+mv, "/home/mbrandt/doc", "/storage/self/primary/Documents_B", endsh
+# cd /home/mbrandt/Downloads
+l[/home/mbrandt/Downloads]
+
+0x237D.priv.c  $ s
+
+ls
+
+ls
+
+lsc
+mv, "CSA*", "/storage/self/primary/Downloads/", endsh
+mv, "CSA*", "/storage/self/primary/Download", endsh
+# cd ..
+
+[/home/mbrandt]
+
+0x2389.priv.c  $ 
+ls
+
+lsc
+
+ls, "opt", endsh
+ls, "opt/yay", endsh
+# cd /storage/self/primary/Download
+l[/storage/self/primary/Download]
+
+0x2394.priv.c  $ s, "-t .", endsh
+
+ls, "-t .", endsh
+# cd ..
+l[/storage/self/primary]
+
+0x239A.priv.c  $ sc
+
+lsc
+ls, ROOTC("/run/"), endsh
+cat, ROOTC("/run/mntc.h"), endsh; 
+cat, ROOTC("/run/mtnc.h"), endsh
+mkdir, "mntc", endsh
+# cd mntc
+
+[/storage/self/primary/mntc]
+
+0x23A4.priv.c  $ 
+edit, "list.txt", endsh
+cat, "list.txt", endsh
+program
+mv, "../Download/TikTok*.apk", ".", endsh
+mv, "../Download/VK", ".", endsh;\
+mv, "../Download/VK*", ".", endsh;\
+mv, "../Download/Instagram*", ".", endsh;\
+mv, "../Download/Kleinanzeigen*", ".", endsh;\
+mv, "../Download/Wise_*", ".", endsh;\
+mv, "../Download/congstar_5*", ".", endsh;\
+
+lsc
+bak, "list.txt", endsh
+lsc
+edit, "other.txt", endsh
+edit, "", endsh
+sh, "micro", endsh
+sh, "micro", endsh
+stdlibexth
+program
+mntch
+mtnch
+mntch
+program
+mntch
+ed(testgit)
+mntch
+# cd /storage/self/primary/prj/bytesh
+l[/storage/self/primary/prj/bytesh]
+
+0x23C4.priv.c  $ sc
+
+lsc
+sh, "git status", endsh
+sh, "git config --global --add safe.directory /storage/self/primary/prj/bytesh", endsh
+sh, "git status", endsh
+ed(testgit)
+stdlibexth
+ed(testgit)
+stdlibexth
+ed(testgit)
+mntch
+gitupdate
+ed(testgit)
+mainh
+microsynteax
+
+int
+chr
+
+# cd run
+f[/storage/self/primary/prj/bytesh/run]
+
+0x23DB.priv.c  $sh, 
+
+sh, "find . | xargs grep chr", endsh
+microsyntax
+stdlibexth
+microsyntax
+cmdlog
+mntch
+mainh
+
+gitupdate
+
+
+mntch
+
+gitupdate
+
+
+mntch
+programm
+mntch
+
+
+
+
+
+pacmanss("qemu")
+
+ls, "/tmp/", endsh
+cat, "/tmp/pacmanss.txt", endsh
+# cd ..
+l[/storage/self/primary/prj/bytesh]
+
+0x23FC.priv.c  $ s
+
+lsc
+bak, "cnslutil.h core main.ppm", endsh
+bak, "cnslutil.h.bak", endsh
+ls, "tmp.txt", endsh
+cat, "tmp.txt", endsh
+bak, "tmp.txt", endsh
+lsc
+compilerh
+stdlibexth
+compilerh
+
+
+e[/storage/self/primary/prj/bytesh]
+
+0x240C.priv.c  $ dit, "dir.h", endsh
+
+e[/storage/self/primary/prj/bytesh]
+
+0x2410.priv.c  $ dit, "dir.h", endsh
+
+e[/storage/self/primary/prj/bytesh]
+
+0x2414.priv.c  $ dit, "dir.h", endsh
+
+
+[/storage/self/primary/prj/bytesh]
+
+0x2418.priv.c  $ 
+
+[/storage/self/primary/prj/bytesh]
+
+0x241C.priv.c  $ 
+e[/storage/self/primary/prj/bytesh]
+
+0x2420.priv.c  $ dit, "main.c", endsh
+
+
+
+[/storage/self/primary/prj/bytesh]
+
+0x2425.priv.c  $ 
+m[/storage/self/primary/prj/bytesh]
+
+0x2429.priv.c  $compilerh
+
+
+
+
+
+# cd run
+l[/storage/self/primary/prj/bytesh/run]
+
+0x2432.priv.c  $ sc
+
+
+
+
+lsc
+compilerh
+mainh
+mainh
+mainh
+
+
+
+
+echo, "hello", endsh
+
+
+
+
+
+
+lsc
+cnslutilh
+cnslutilh
+
+cnslutilh
+chslutilh
+
+cnslutilh
+
+cnslutilh
+
+cnslutilh
+
+cnslutil.h
+
+cnslutilh
+
+lsc
+
+mainh
+
+cnslutilh
+cnslutilh
+exit
+
+program
+sh, "gdb ../a.out", endsh
+cp, "../a.out", "/tmp/a.out", endsh; sh, "gdb %s", "/tmp/a.out", endsh;
+# cd /data/data/com.termux/files/home
+m[/data/data/com.termux/files/home]
+
+0x2466.priv.c  $ kdirp, "tmp", endsh
+
+# cd tmp
+
+[/data/data/com.termux/files/home/tmp]
+
+0x246B.priv.c  $ 
+# cd ..
+
+[/data/data/com.termux/files/home]
+
+0x2470.priv.c  $ 
+sh, "gdb a.out", endsh
+# cd tmp
+c[/data/data/com.termux/files/home/tmp]
+
+0x2476.priv.c  
+
+cp, "../prj/bytesh/a.out", ".", endsh; sh, "gdb %s", "a.out", endsh
+chmodx, "a.out", endsh
+sh, "gdb %s", "a.out", endsh
+printf()sh, "bytesh -c printf(\"hello\");", endsh
+tmphadddef("tmp1")
+sh, "bytesh -c tmp1", endsh
+
+
+compilerh
+
+sh, "bytesh -c tmp1", endsh
+
+sh, "bytesh -c tmp1", endsh
+tmp1compilerh
+
+micro
+edit, "", endsh
+tmp1
+compilerh
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+cnslutilhadddef("micro")
+micro
+tmp1tmp1tmp1tmp1
+micro
+mainh
+micro
+micro
+
+edit, "/tmp/byteshpipe.txt", endsh
+
+
+
+edit, "/tmp/byteshpipe.txt", endsh
+
+cnslutilh
+edit, "/tmp/byteshpipe.txt", endsh
+tmp1tmp1
+mainh
+
+sh, "bytesh -c tmp1", endsh
+tmp1
+cat, "/tmp/byteshpipe.txt", endsh
+compilerh
+mainh
+compilerh
+
+sh, "bytesh -c tmp1", endsh
+tmp1
+cat, "/tmp/byteshpipe.txt", endsh
+edit, "/tmp/byteshpipe.txt", endsh
+tmp1
+# cd /home/mbrandt
+e[/home/mbrandt]
+
+0x0000.priv.c  $ dit, ".config/micro/config", endsh
+
+edit, ".config/micro/config", endsh
+edit, ".config/micro", endsh
+# cd .config/micro
+ls
+
+edit, "settings.json", endsh
+edit, "/tmp/byteshpipe.txt", endsh
+tmp1tmp1lsc
+program
+# cd /storage/self/primary/prj/bytesh/run
+
+[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ 
+edit, "", endsh
+lsc
+edit, "/tmp/byteshpipe.txt", endsh
+lsclsclsc
+compilerh
+
+
+[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ 
+
+#[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $  exit
+
+#[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ exit
+
+
+
+
+c[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ d ..
+
+#[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $  exit
+
+
+
+
+c[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.
+
+c[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $
+
+�[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ �# exit
+
+
+
+
+vncserver
+libreoffice
+vncserver
+libreoffice
+date
+9:25 UTC
+
+ABT 09:05 UTC
+
+rep printf(" "�);
+
+rep printf(" ");
+
+# cd /tmp
+e[/tmp]
+
+0x0000.priv.c  $ dit, "A.txt", endsh
+
+edit, "A.txt", endsh
+edit, "B.txt", endsh
+sh, "diff -w A.txt B.txt", endsh
+edit, "A.txt", endsh
+sh, "diff -w A.txt B.txt", endsh
+cnslutilhadddef("diffw")
+# cd /data/data/com.termux/files/home/.termu
+
+[/tmp]
+
+0x0000.priv.c  $ s/home/prj/bytesh/
+# cd /data/data/com.termux/files/home
+m[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ kdirp, ".termux/widget/dynamic_shorcuts", endsh
+
+mkdirp, ".termux/widget/dynamic_shortcuts", endsh
+# cd .termux/widget/dyn	amic_shortcuts
+c[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ ic_shortcuts/
+d .termux
+
+# cd .termux
+
+[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ 
+# cd /data/data/com.termux/files/home
+
+[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ 
+mkdirp, ".termux/widget/dynamic_shortcuts", endsh
+# cd .termux/widget/dynamic_shortcuts
+dit, "vncserver", endsh
+
+edit, "vncserver", endsh
+chmodx, "vncserver", endsh
+sh, "./vncserver", endsh
+lsc
+sh, "./vncserver", endsh
+sh, "/data/data/com.termux/files/home/.termux/widget/dynamic_shortcuts", endsh
+sh, "/data/data/com.termux/files/home/.termux/widget/dynamic_shortcuts/vncserver", endsh
+edit, "vncserver", endsh
+sh, "./vncserver", endsh
+edit, "vncserver", endsh
+sh, "./vncserver", endsh
+printf("%s",
+edit, "vncserver", endsh
+sh, "bytesh -c 'hellohellohello'", endsh
+hellohellohello
+edit, "vncserver", endsh
+sh, "./vncserver", endsh
+printf("%s",
+
+tmph
+
+
+vncserver; libreoffice;
+progrma
+
+program
+cmdloggrep("UTC")
+date
+mainh
+ls, ROOTC("/run/"), endsh
+sh, "find . | grep git", endsh
+sh, "find %s | grep git", ROOTC("/run/"), endsh
+sh, "find %s | xargs grep git", ROOTC("/run/"), endsh
+mntch
+mainh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mntch
+# cd /storage/self/primary/Download
+m[/storage/self/primary/Download]
+
+0x0000.priv.c  
+
+stat, "../Downloads", endsh
+lns
+
+cnslutilh
+lnsh
+sh, "ln -s Download ../Downloads", endsh
+sh, "termux-setup-storage", endsh
+sh, "ln -s Download ../Downloads", endsh
+ls
+
+lsc
+cnslutilh
+lsct
+mv, "monero*", "/data/data/com.termux/files/home/", endsh
+cnslutilhadd("TERMUX_HOME")
+
+cnslutilhadddef("TERMUX_HOME")
+# cd /data/data/com.termux/files/home
+l[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ s
+
+lsct
+cnslutilhaddef("tarxvf")
+
+cnslutilhadddef("tarxvf")
+tarxvf, "monero*", endsh
+sh, "cat monero*.bz2 | sha256sum", endsh
+sh, "shasum -a 256 monero*.bz2", endsh
+pacmani("monero-gui")
+
+pacmani, "monero-gui", endsh
+
+cnslutilh
+pacmans, "monero-gui", endsh
+pacmanss, "monero", endsh
+yayss, "monero", endsh
+yays, "monero-gui-static-bin", endsh
+pacmanss, "qt", endsh
+pacmans, "qt6-base", endsh
+# cd /data/data/com.termux/prj
+c[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ d /
+
+# cd /
+c[/]
+
+0x0000.priv.c  $ d /storage/self/primary/prj
+
+# cd /storage/self/primary/prj
+c[/storage/self/primary/prj]
+
+0x0000.priv.c  $ d textstreamanimate
+
+# cd textstreamanimate
+
+[/storage/self/primary/prj/textstreamanimate]
+
+0x0000.priv.c  $ 
+bak, "*.ppm", endsh
+lsc
+bak, "a.out core main.png main.png.bak main.ppm.bak main.webm toremove", endsh
+lsc
+rm, ".bak bak", endsh
+rmr, ".bak bak", endsh
+# cd /storage/self/primary/
+e[/storage/self/primary]
+
+0x0000.priv.c  $cd mntc
+
+# cd mntc
+l[/storage/self/primary/mntc]
+
+0x0000.priv.c  $ s
+
+lsc
+edit, "other.txt", endsh
+
+bak, mf("%s/%s", TERMUX_HOME, "font.ttf"), endsh
+bak, mf("%s/%s", TERMUX_HOME, ".termux/font.ttf"), endsh
+exit
+
+tarxvf, mf("%s/%s", "/storage/self/primary/", "Download/germania/Germania.ttf"), endsh
+sh, "unzip", endsh
+sh, "unzip /storage/self/primary/Dowload/germania/Germania.ttf", endsh
+program
+sh, "ping google.com", endsh
+
+compielrh
+
+# cd ..
+c[/storage/self/primary]
+
+0x0000.priv.c  $
+
+# cd prj/bytesh
+l[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ s
+
+# cd run
+l[/storage/self/primary/prj/bytesh/run]
+
+0x0000.priv.c  $ sc
+
+lsc
+cnslutilh
+sh, "ping google.com", endsh
+
+
+
+
+
+
+ping
+
+ping, "google.com", endsh
+
+program
+ping, "google.com", endsh
+
+# cd /storage/self/primary/Download
+
+[/storage/self/primary/Download]
+
+0x0000.priv.c  $ 
+lsct
+sh, "aria2c manjaro*", endsh
+
+
+python2
+
+sh, "python2", endsh
+�# exit
+
+
+pacmanss, "dynalist", endsh
+yayss, "dynalist", endsh
+cnslutilhadddef("pacmanyayss")
+cnslutilh
+pacmanyayss("dynalist")
+
+pacmanyayss, "dynalist", endsh
+
+cnslutilh
+cnslutilh
+pacmanyayss, "dynalist", endsh
+
+cnslutilh
+pacmanyayss, "dynalist", endsh
+program
+# cd ../prj/bytesh
+c[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ d run
+
+compilerh
+
+
+
+compilerh
+
+program
+program
+printf("%s", TERMUX_HOME);
+printf("%s\n", TERMUX_HOME);
+# cd /data/data/com.termux/files/home/tmp
+s[/data/data/com.termux/files/home/tmp]
+
+0x0000.priv.c  $ h, "run.sh", endsh
+
+
+program
+cmdlog
+
+edit, "", endsh
+
+
+
+
+compilerh
+sh, "ccache --version", endsh
+
+compielrh
+
+compilerh
+# cd ~
+c[/data/data/com.termux/files/home/tmp]
+
+0x0000.priv.c  $ d /data/data/com.termux/files/home
+
+
+# cd /data/data/com.termux/files/home/
+s[/data/data/com.termux/files/home]
+
+0x0000.priv.c
+
+# cd opt
+l[/data/data/com.termux/files/home/opt]
+
+0x0000.priv.c  $ s
+
+lsc
+rmr, "cmake", endsh
+y
+
+gitclone
+
+cnslutilhadddef("gitclone")
+cnslutilh
+
+
+
+
+sh, "git clone https://gitlab.kitware.com/cmake/cmake.git > ~/gitclone.txt 2>&1 &", endsh
+cat, "~/gitclone.txt", endsh
+sh, "jobs", endsh
+psefgrep, "git", endsh
+
+psgrep, "git", endsh
+compilerh
+progrm
+
+program
+compilerh
+microsyntax
+compilerh
+
+psgrep, "git", endsh
+# cd cmake
+s[/data/data/com.termux/files/home/opt/cmake]
+
+0x0000.priv.c  $ h, "./bootstrap --prefix=$PREFIX", endsh
+
+sh, "./bootstrap --prefix=$PREFIX", endsh
+
+cmdlog
+# cd ..
+b[/data/data/com.termux/files/home/opt]
+
+0x0000.priv.c  $rmr, "-y cmake", endsh
+
+rmr, "-y cmake", endsh
+rmr, "-f cmake", endsh
+
+sh, "git clone https://gitlab.kitware.com/cmake/cmake.git > ~/gitclone.txt 2>&1 &", endsh
+compilerh
+
+
+compilerh
+
+compilerh
+
+
+compilerh
+
+compielrh
+
+compilerh
+psgrep, "git", endsh
+cat, "~/gitclone.txt", endsh
+psgrep, "git", endsh
+program
+compilerh
+
+compilerh
+
+# cd /data/data/com.termux/files/home
+
+[/data/data/com.termux/files/home]
+
+0x0000.priv.c  $ 
+# cd opt
+r[/data/data/com.termux/files/home/opt]
+
+0x0000.priv.c  $ mr, "-f cmake", endsh
+
+rmr, "-f cmake", endsh
+lsc
+cmdloggrep("git")
+sh, "git clone https://gitlab.kitware.com/cmake/cmake.git > ~/gitclone.txt 2>&1 &", endsh
+compilerh
+psgrep, "git", endsh
+# cd cmake
+s[/data/data/com.termux/files/home/opt/cmake]
+
+0x0000.priv.c  $ h, "./bootstrap --prefix=$PREFIX > ~/bootstrap.txt 2>&1 &", endsh
+
+sh, "./bootstrap --prefix=$PREFIX > ~/bootstrap.txt 2>&1 &", endsh
+cat, "~/bootstrap.txt", endsh
+cat, "~/bootstrap.txt", endsh
+cat, "~/bootstrap.txt", endsh
+cat, "~/bootstrap.txt", endsh
+compilerh
+ignore
+
+compilerh
+microsyntax
+compilerh
+stdlibexth
+compilerh
+
+
+
+# cd ..
+p[/data/data/com.termux/files/home/opt]
+
+0x0000.priv.c  $ rogram
+
+program
+rmr, "-f cmake", endsh
+
+cmdlog
+sh, "git clone https://gitlab.kitware.com/cmake/cmake.git", endsh
+# cd /data/data/com.termux/opt
+
+[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ 
+# cd /data/data/com.termux/files/home/opt/
+
+cmdlog
+sh, "git clone https://gitlab.kitware.com/cmake/cmake.git", endsh
+# cd cmake
+s[/data/data/com.termux/files/home/opt/cmake]
+
+0x0000.priv.c  $ h, "./bootstrap --prefix=$PREFIX", endsh
+
+sh, "./bootstrap --prefix=$PREFIX", endsh
+sh, "make", endsh
+
+compilerh
+program
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+
+compilerh
+program
+compilerh
+
+
+compilerh
+
+sh, "make install", endsh
+
+compilerh
+microsyntax
+compilerh
+
+compilerh
+compilerh
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+/data/data/com.termux/files/home/prj/bytesh//insert.c
+
+# cd ../
+
+[/data/data/com.termux/files/home/opt]
+
+0x0000.priv.c  $ 
+program
+lsc
+# cd monero-gui
+s[/data/data/com.termux/files/home/opt/monero-gui]
+
+0x0000.priv.c  $ h, "make release", endsh
+
+sh, "make release", endsh
+ls, "../cmake", endsh
+cnslutilhadddef("POSTPATH")
+cnslutilh
+PREPATH, mf("%s/%s", TERMUX_HOME, "/opt/monero-gui"), endsh
+sh, "echo $PATH", endsh
+cmdlog
+
+
+POSTPATH, "/data/data/com.termux/files/home/opt/cmake/bin/", endsh
+
+PREPATH, "/data/data/com.termux/files/home/opt/cmake/bin/", endsh
+sh, "echo $PATH", endsh
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+cmdlog
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+cmdlog
+edit, "Makefile", endsh
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+man, "cmake", endsh
+sh, "cmake --help", endsh
+edit, "Makefile", endsh
+cmdlog
+h, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+h, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" which cmake", endsh
+
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" which cmake", endsh
+sh, "which cmake", endsh
+pacmanr, "cmake", endsh
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" which cmake", endsh
+sh, "which cmake", endsh
+sh, "PATH=\"/data/data/com.termux/files/home/opt/cmake/bin/:$PATH\" make release", endsh
+
+program
+compilerh
+compilerh
+compilerh
+
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+microsyntax
+compilerh
+man, "strncat", endsh
+man, "mempcpy", endsh
+man, "strncpy", endsh
+man, "strnlen", endsh
+man, "stpncpy", endsh
+compilerh
+program
+compilerh
+compilerh
+�# restart
+
+compilerh
+
+
+sh, "echo hello" , endsh
+compilerh
+cnslutilh
+compilerh
+compilerh
+cnslutilh
+man, "system", endsh
+cnslutilh
+cnslutih
+
+cnslutilh
+stdlibexth
+
+compilerh
+compilerh
+
+void func(struct {int a; int b} par) {}
+\
+void func(struct {int a; int b} para, int parb)\
+{\
+    para.a = parb;\
+}\
+\
+struct {int c; int d} arga;\
+\
+// new\
+\
+void func(struct {int a; int b} *para, int parb)\
+{\
+    para.a = parb;\
+}\
+\
+struct {int c; int d} arga;\
+
+cmdinsertlogregion(0x0275F, 0x02767); // 0x0275E
+void func(void *paravoid, int parb)\
+{\
+    struct tmp_t {int a; int b} *para = (tmp_t *) paravoid;
+    para->a = parb;\
+}\
+\
+struct {int c; int d} arga;\
+func(&arga, 1);\
+printf("arga.c = %d;\n", arga.c);\
+// 0x02767
+
+edit, ROOTC("/run/log.txt"), endsh
+cmdlog
+edit, ROOTC("/run/log.txt"), endsh
+cnslutilh
+cmdlogedit
+cmdinsertlogat(0x0275E);
+cmdlog
+cmdinsertlogregion(0x0275F, 0x2768);
+mainh
+FILE *f = fopen(ROOTC("/run/log.txt"), "r");\
+ed(errno);
+stat, ROOTC("/run/log.txt"), endsh
+mainh
+edit, ROOTC("/run/main.h:116"), endsh
+FILE *f = fopen(ROOTC("/run/log.txt"), "r");\
+perror("i: ");
+cat, ROOTC("/run/log.txt"), endsh
+void func(void *paravoid, int parb)\
+{\
+    struct tmp_t {int a; int b} *para = (tmp_t *) paravoid;\
+    para->a = parb;\
+\\
+}
+
+cmdlog
+cmdloghead(0x02769)
+void func(void *paravoid, int parb)\
+{\
+    struct tmp_t {int a; int b} *para = (struct tmp_t *) paravoid;\
+    para->a = parb;\
+}\
+\
+struct {int c; int d} arga;\
+func(&arga, 1);\
+printf("arga.c = %d;\n", arga.c);\
+
+
+cmdlogedit
+void func(void *paravoid, int parb)\
+{\
+    struct tmp_t {int a; int b} *para = (struct tmp_t *) paravoid;\
+    para->a = parb;\
+}\
+\
+struct {int c; int d} arga;\
+func(&arga, 1);\
+printf("arga.c = %d;\n", arga.c);\
+cmdlogedit
+void func(void *paravoid, int parb)\
+{\
+    struct tmp_t {int a; int b;} *para = (struct tmp_t *) paravoid;\
+    para->a = parb;\
+}\
+\
+struct {int c; int d;} arga;\
+func(&arga, 1);\
+printf("arga.c = %d;\n", arga.c);\
+compilerh
+
+#define pair 1, 2\
+#define printfdirect(a, b) printf("%d, %d\n", a, b);\
+#define printfpair(a, b) printfdirect(a, b);\
+printfpair(pair);
+edit, ROOTC("insert.c"), endsh
+#define pair 1, 2
+#define printfdirect(a, b) printf("%d, %d\n", a, b);
+#define printfpair(a, b) printfdirect(a, b);
+printfpair(pair);
+edit, "/tmp/insert.c", endsh
+printf("Hello, World\n");
+
+
+#define pair 1, 2
+#define printfdirect(a, b) printf("%d, %d\n", a, b);
+#define printfpair(a, b) printfdirect(a, b);
+printfpair(pair);
+
+# cd /data/data/com.termux/files/home/prj/bytesh
+t[/storage/self/primary/prj/bytesh]
+
+0x0000.priv.c  $ mph
+
+tmph
+
+
+
+
+
+
+
+
+
+
+
+compilerh
+
+tmph
+tmpmain()
+tmph
+compilerh
+struct {\
+   int a = 1;\
+   int b = 2;\
+} var;\
+ed(var.a);
+
+struct {\
+   int a : 1;\
+   int b : 2;\
+} var;\
+ed(var.a)\
+
+compilerh
+
+\
+edit, "insert.c", endsh
+#define test(...) printf(__VA_ARGS__); printf(__VA_ARGS__); printf(__VA_ARGS__);
+test("Hello, World, %d, %d\n", 1, 2);
+edit, "insert.c", endsh
+printf("helloworld")
+edit, "insert.c", endsh
+tmph
+ed(vardup(1 +) 1)
+compilerh
+program
+compilerh
+man, "__VA_ARGS__", endsh
+man, "preprocessor", endsh
+man, "string.h", endsh
+man, "man", endsh
+edit, "/data/data/com.termux/files/usr/etc/man.conf", endsh
+ls, "/data/data/com.termux/files/usr/share/man", endsh
+man, "man", endsh
+ls, "$PREFIX/share/man/", endsh
+ls, "$PREFIX/usr/share/man", endsh
+ls, "$PREFIX/usr/share/man/man7", endsh
+man, "file-hierarchy", endsh
+ls, "$PREFIX/usr/share/man/man7", endsh
+ls, "$PREFIX/usr/share/man/man2
+
+compilerh
+man, "valist", endsh
+man, "va_list", endsh
+ls, "$PREFIX/usr/share/man/man3", endsh
+cnslutilh
+lsgrep, "$PREFIX/usr/share/man/man3", "var", endsh
+man, "va_list", endsh
+man, "gcc", endsh
+sh, "gcc -h", endsh
+sh, "gcc --help" , endsh
+pacmanql, "gcc", endsh
+
+compilerh
+tmph
+test564(1)
+
+$a
+
+tmph
+test564(1)
+
+tmph
+test564(1)
+
+tmph
+program
+tmph
+test564(1)
+
+
+
+
+
+
+
+
+
+
+test564(1)
+
+tmph
+testva(printf("Hello");, printf("World"););
+
+tmph
+testva(printf("Hello"), printf("World"))
+tmph
+testva(printf("Hello")), 0
+
+testva(printf("hello"))
+
+tmph
+testva(printf("h"))
+tmph
+compielrh
+
+compilerh
+tmph
+tmph
+compilerh
+tmph
+testva(a, b)
+
+testva(1, 2)
+
+int testva(1, 2)
+
+tmph
+int testva(1, 2)
+int testva(1); begin = 1;
+compilerh
+tmph
+testopt(1)
+
+testopt()
+
+edit, "/tmp/vaargs.txt", endsh
+compilerh
+
+compilerh
+compilerh
+compilerh
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+int a = 1;\
+{\
+    int a = a + 1;\
+}\
+ed(a);\
+
+int a = 1;\
+{\
+    int a = a + 1;\
+    ed(a);\
+}
+int a = a + 1; ed(a)
+int a ; ed (a)
+compilerh
+
+sh, "gcc --help", endsh
+sh, "gcc --help=params", endsh
+sh, "gcc --help", endsh
+clear
+sh, "gcc --help=common", endsh
+sh, "gcc --help=target", endsh
+clear
+sh, "%s %s", "gcc", "--help", endsh
+sh, "cc --help", endsh
+sh, "gcc --std", endsh
+sh, "gcc --std=gnuc", endsh
+sh, "gcc --std=gnu", endsh
+edit, (int fd = shfd, "which bytesh", endsh; readall(fd)), endsh
+
+sh, "which bytesh", endhs
+
+sh, "which bytesh", endsh
+edit, "/data/data/com.termux/files/usr/bin/bytesh", endsh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+tmph
+receiveparlist((1, 2, 3))
+
+tmph
+receiveparlist(dosth, (1, 2, 3))
+
+tmph
+receiveparlist(dosthdirect, (1, 2, 3))
+ed(receiveparlist(dosthdirect, (1, 2, 3))
+
+ed(receiveparlist(dosthdirect, (1, 2, 3)))
+tmph
+clear
+
+
+
+tmph
+
+
+compilerh
+clear
+compilerh
+clear
+compilerh
+tmph
+printf("%s\n", "is this " testopt(1, 2, 3) "?");
+printf("%s\n", "is this " testopt() "?");
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+compilerh
+compilerh
+clear
+compilerh
+clear
+compilerh
+clear
+compilerh
+compilerh
+clear
+compilerh
+printf("%s\n", testopt());
+printf("%s\n", testopt);
+
+printf("%s\n", testopt(123));
+printf("%s\n", APPLYMACRO_NONEMPTY(testopt, (123)));
+
+es(APPLYMACRO_NONEMPTYARGS(testopt, (123)));
+es(APPLMACRO_NONEMPTYARGS(testop, ()));
+
+es(APPLYMACRO_NONEMPTYARGS(testop, ()));
+
+es("prefix_" APPLYMACRO_NONEMPTYARGS(testopt, ()));
+es("prefix_" APPLYMACRO_NONEMPTYARGS(testopt, (123, 123, 123)));
+clear
+compilerh
+compilerh
+debugmacro()
+
+
+compilerh
+
+
+compilerh
+tmph
+debugmacro()
+tmph
+microsyntax
+tmph
+tmph
+debugmacro()
+
+
+
+
+debugmacro()
+compilerh
+
+tmph
+debugmacro()
+tmph
+debugmacro()
+tmph
+debugmacro()
+tmph
+debugmacro()
+
+
+
+
+
+
+
+
+
+debugmacro()
+tmph
+debugmacro()
+tmph
+tmph
+es(STRINGIFY())
+tmph
+EVALSTRINGIFYPRINT(())
+EVALSTRINGIFYPRINT(ECHO(()))
+EVALSTRINGIFYPRINT(ECHO())
+EVALSTRINGIFYPRINT(UNPACKROUNDBRACKETS((a)))
+tmph
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS((a)))
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS(()))
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS())
+tmph
+debugmacro()
+tmph
+debugmacro()
+
+
+
+debugmacro()
+tmph
+debugmacro()
+
+
+
+
+debugmacro
+compilerh
+edit, "$(which bytesh)", endsh
+
+tmph
+
+
+
+
+debugmacro
+debugmacro()
+compilerh
+compilerh
+tmph
+end
+
+tmph
+
+
+
+
+debugmacro
+tmph
+debugmacro()
+tmph
+debugmacro()
+compilerh
+
+tmph
+clear
+
+tmph
+compilerh
+
+
+
+
+
+
+
+
+
+tmph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+testpars()
+
+testpars(1, 2, 3, 4, 5, 6, 7)
+
+tmph
+testpars()
+testpars(1)
+testpars(1, 2)
+
+compilerh
+tmph
+es(UNPACK_ROUND_BRACKETS(()))
+
+es("is: " UNPACK_ROUND_BRACKETS(()))
+es("is: " UNPACK_ROUND_BRACKETS(("a")))
+es("is: " ("a"))
+
+tmph
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS())
+tmph
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS())
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS(()))
+EVALSTRINGIFYPRINT(UNPACK_ROUND_BRACKETS((a, b, 1)))
+
+tmph
+debugmacro()
+
+
+dummy(1)
+dummy()
+tmph
+debug_macro()
+
+
+dummy(1, 2, 3)
+dummy(1, 2)
+dummy(1)
+
+tmph
+dummy(1, 2)
+dummy(1)
+dummy()
+tmph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+compilerh
+tmph
+
+
+
+
+
+
+
+tmph
+compilerh
+edit, "$(which bytesh)", endsh
+
+tmph
+sh, "find . | xargs grep fnc", endsh
+tmph
+tmph
+tmph
+tmph
+
+
+
+
+
+clear
+
+
+
+compilerh
+clear
+compilerh
+tmph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tmph
+
+tmph
+
+
+
+
+
+
+tmph
+lsc
+rmr, "cmake", ends
+
+rmr, "cmake", endsh
+
+lsc
+sh, "find run | xargs grep fnc", endsh
+sh, "find run | xargs grep fnc | micro", endsh
+mainh
+stdlibexth
+tmph
+microsyntax
+tmph
+
+
+tmph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+edit, "$(which bytesh)", endsh
+
+compilerh
+tmph
+compilerh
+clear
+
+
+compilerh
+exit
+
+compilerh
+tmph
+compilerh
+
+
+compilerh
+
+
+
+
+tmph
+
+
+
+
+
+
+tmph
+
+
+
+
+
+tmph
+
+
+
+
+tmph
+
+compilerh
+
+compilerh
+
+compilerh
+compilerh
+compilerh
+
+tmph
+
+
+
+
+
+
+
+
+
+
+
+
+tmph
+
+
+tmph
+lsc
+tmph
+tmph
+
+tmph
+compilerh
+program
+compilerh
+tmph
+compilerh
+tmph
+compilerh
+tmph
+compilerh
+
+
+compilerh
+clear
+tmph
+clear
+
+
+
+compilerh
+edit, "$(which bytesh)", endsh
+compilerh
+ed(1)
+es("hello")
+program
+compilerh
+program
+
+

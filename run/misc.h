@@ -1,9 +1,7 @@
 
 #define batch edit batchpath _
 
-char nbufarr[16][NBUF];
-
-
+inline
 void printallascii(int from, int to)
 {
 	for (int i = from; i < to; ++i)
@@ -15,6 +13,7 @@ void printallascii(int from, int to)
 }
 #define printallascii printallascii('1', '~');
 
+inline
 void testwrite(char *path)
 {
 //	FILE *mainhfile = fopen("/data/data/com.termux/files/home/prj/c/bytesh/run/main.h", "w");
@@ -27,6 +26,7 @@ void testwrite(char *path)
 #define switchstr
 #define casestr if ( !strcmp(
 
+inline
 void lines(int n) {
   for (
     int i = 0;
@@ -39,6 +39,7 @@ void lines(int n) {
 
 #define LINESPERPAGE 8
 
+inline
 void draw(char n) {
   for (
     int i = 0;
@@ -56,6 +57,7 @@ void draw(char n) {
   }
 }
 
+inline
 void cycle() {
   char c = 'A';
   int i = 0;
@@ -75,27 +77,4 @@ void cycle() {
     );	
   }
 }
-
-#define batchnextpath in(                 \
-    memcpy(nbufarr[0], ROOT, ROOTLEN),    \
-    (strcat), "/run/batch.h.next")
-#define batchpath     in(                 \
-    memcpy(nbufarr[1], ROOT, ROOTLEN),    \
-    (strcat), "/run/batch.h")
-void mvbatch()
-{
-    //void cp(char *, char*);
-	//cp(batchnextpath, batchpath);
-	char cmd[NBUF];
-	snprintf(cmd, NBUF, "echo '' > %s", batchnextpath);
-	//system(cmd);
-}
-
-void runbatch()
-{
-    //#include "batch.h"
-    //system("mv batch.h batch.h.bak");
-    //system("touch batch.h");
-}
-
 

@@ -1,4 +1,4 @@
-#ifndef RUN_STDIOEXT_H_INCLUDED
+ #ifndef RUN_STDIOEXT_H_INCLUDED
 #define RUN_STDIOEXT_H_INCLUDED
 
 #include <errno.h>
@@ -9,60 +9,25 @@
 
 #define fgetallsclose fgetsclose
 #define fgetscloseh printf("%s", "fgetsclose(char *s, int n, FILE *f)")ln;
-char *fgetsclose(char *sz, int n, FILE *f)
-{
-	int const NNULLCH = 1;
-	char *result = sz;
-	while ((n > NNULLCH) && fgets(sz, n, f))
-	{
-		n-= strlen(sz);
-		sz+= strlen(sz);
-	}
-	fclose(f);
-	return result;
-}
+char *fgetsclose(char *sz, int n, FILE *f);
 
-char *fgetm(malloclist_t *malloclist, int n, FILE *f)
-{
-	mallocadd(n);
-	char *r = fgets(lastmalloc, n, f);
-	return r ? lastmalloc : 0;	
-}
-#define fgetm(n, f) fgetm(malloclist, n, f)
+char *fgetm_(malloclist_t *malloclist, int n, FILE *f);
+#define fgetm(n, f) fgetm_(malloclist, n, f)
 
-char *fgetmclose(malloclist_t *malloclist, int n, FILE *f)
-{
-	char *result = fgetm(n, f);
-	fclose(f);
-	return result;
-}
-#define fgetmclose(n, f) fgetmclose(malloclist, n, f)
+char *fgetmclose_(malloclist_t *malloclist, int n, FILE *f);
+#define fgetmclose(n, f) fgetmclose_(malloclist, n, f)
 
-char *fgetallmclose(int n, FILE *f)
-{
-	mallocadd(n);
-	return fgetallsclose(lastmalloc, n, f);
-}
+char *fgetallmclose_(malloclist_t *malloclist, int n, FILE *f);
+#define fgetallmclose(n, f) fgetallmclose_(malloclist, n, f)
 
-int readm(malloclist_t *malloclist, int fd, size_t size)
-{
-	mallocadd(size);
-	return read(fd, lastmalloc, size);
-}
-#define readm(fd, size) readm(malloclist, fd, size)
+int readm_(malloclist_t *malloclist, int fd, size_t size);
+#define readm(fd, size) readm_(malloclist, fd, size)
 
 #define fputscloseh printf("%s", "fputsclose(char *s, FILE *f)")ln;
-void fputsclose(char *sz, FILE *f)
-{
-	fputs(sz, f);
-	fclose(f);
-}
+void fputsclose(char *sz, FILE *f);
 
 #define LOADBUFN (16 * 1024)
-char *loads(char *filename)
-{
-	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
-}
+char *loads(char *filename);
 
 
 #endif

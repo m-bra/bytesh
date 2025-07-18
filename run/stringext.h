@@ -3,61 +3,22 @@
 #ifndef STRINGEXTH
 #define STRINGEXTH
 
-char *memcmov(char *dst, char *src, int c, size_t n)
-{
-	char tmp[n];
-	        memccpy(tmp, src, c, n);
-	return  memccpy(dst, tmp, c, n);
-}
+char *memcmov(char *dst, char *src, int c, size_t n);
 
-char *strnmov(char *dst, char *src, size_t n)
-{
-	return memcmov(dst, src, 0, n);
-}
+char *strnmov(char *dst, char *src, size_t n);
 
 #ifdef DEFSTRCHRNUL
 
-char *strchrnul(char *s, int c)
-{
-	char *res = strchr(s, c);
-	if (!res)
-		return s + strlen(s);
-	return res;
-}
+char *strchrnul(char *sz, int c);
 
 #endif
 
 #define mstrcpy(src) strcpy(mallocadd(strlen(src) + 1), src)
 
 #define strrstr strlaststr
-char *strlaststr(char *haystack, char *needle)
-{
-	char *q = 0;
-	char *p = haystack;
-	while ((p = strstr(p, needle)))
-	{
-		q = p;
-		p += strlen(needle);
-	}
-	return q;
-}
+char *strlaststr(char *haystack, char *needle);
 
-SECTION TEXT
-
-FUNCTION void memrpl(char *dst, char c, int n, char original)
-
-def
-for (int i = 0; i < n; ++i)
-iff dst[i] == original
-thn dst[i] = c;
-
-FUNCTION void strrpl(char *dst, char c, char original)
-
-def
-for (int i = 0; dst[i]; ++i)
-iff dst[i] == original
-thn dst[i] = c;
-
-SECTION DATA
+void memrpl(char *dst, char c, int n, char original);
+void strrpl(char *dst, char c, char original);
 
 #endif

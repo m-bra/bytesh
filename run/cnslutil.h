@@ -6,9 +6,6 @@
 ////////////////////////////////////////////////////////////////////////
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
-#define _ ) ;
-#define sys system (
-#define pfs printf("%s",
 
 #define QUIET "> /dev/null 2>&1"
 #define ROOTLOG(name) mf("> /root/%s.log 2>&1", name)
@@ -24,315 +21,91 @@
 #define prootdistro prootdistrou("mbrandt")
 
 #define tmux sh, "tmux", endsh
-#define ls sh, "ls -hAl %s"
-#define lsc ls, ".", endsh
+#define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+#define ls  sh, mf("ls -hAl  %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
+#define lst sh, mf("ls -hAlt %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
+#define lsS sh, mf("ls -hAlS %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
+#define lsc  ls, ".", endsh
+#define lsct lst, ".", endsh
+#define lscS lsS, ".", endsh
 #define lscgrep sh, "ls -hAl . | grep %s"
 #define lsgrep sh, "ls -hAl %s | grep %s"
 
 #define history cmdlog
 
-#define errfixdone rmr, mf("%s/%s", ROOT, "/run"), endsh; mv, mf("%s/%s", ROOT, "/run.err"), mf("%s/%s", ROOT, "/run"), endsh;
+#define errfixdone SYSTOBOOL(bak, ROOTC("run"), endsh) && mv, ROOTC("run.err"), ROOTC("run"), endsh;
 
 extern char *rootworkdir;
 
-void micro(int ignore, char const *path, char *ignore_)
-{
-	char buf[512];
-	snprintf(buf, 512, "micro %s", path);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define edit micro ( 0
+void micro_(int ignore, char const *path, char *ignore_);
+#define edit micro_ ( 0
 
 
 #define cmdlogedit edit, ROOTC("/run/log.txt"), endsh
 
-void cmdlog()
-{
-	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
-	linebuf_t buf;
-	int linen = -1;
-	while loop {
-		linen+= 1;
-		if (!fgets((char *) buf, linebuf_tn, f))
-			break;
-		printf("0x%05X .. $ %s", linen, (char *) buf);
-		//printf("%s", (char *)buf);
-	}
-
-	fclose(f);
-}
-#define cmdlog cmdlog()
+void cmdlog_();
+#define cmdlog cmdlog_()
 #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
 
-void cmdloggrep(char *mask)
-{
-	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
-	linebuf_t buf[4];
-	int linen = -1;
-	while loop {
-		linen+= 1;
-		if (!fgets((char *) buf, 4 * linebuf_tn, f))
-			break;
-		if (strstr((char *) buf, mask))
-			printf("0x%05X .. $ %s", linen, (char *)buf);
-	}
+void cmdloggrep_(char *mask);
 
-	fclose(f);
-}
-
-void cmdloghead(int end)
-{
-	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
-	linebuf_t buf;
-	int linen = -1;
-	while loop {
-		linen+= 1;
-		if (!fgets((char *) buf, linebuf_tn, f))
-			break;
-		if (linen < end)
-			printf("0x%05X .. $ %s", linen, (char *)buf);
-	}
-
-	fclose(f);
-}
+void cmdloghead(int end);
 
 #define cmdlogregionh \
      printf("%s\n", "cmdlogregion(int from, int to, char buf[linebuf_tn * (to - from)])");
-loctag
-void cmdlogregion(int from, int to, char *buf)
-{
-	char *p = buf;
-	for (int i = from; i < to; ++i) {
-		cmdlogat(i, (linebuf_t *) p);
-		p += strlen(p);
-	}	
-}
 
-#define l    cmdinsertlogregion(cmdlogn() - 1, cmdlogn() - 0);
-#define ll   cmdinsertlogregion(cmdlogn() - 2, cmdlogn() - 1);
-#define lll  cmdinsertlogregion(cmdlogn() - 3, cmdlogn() - 2);
+void cmdlogregion(int from, int to, char *buf);
 
-void cmdinsert(char *cmd)
-{
-	fputsclose(cmd, fopen(ROOTC("/insert.c"), "a"));
-}
+void cmdinsert(char *cmd);
 
 #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
 
-void cmdinsertlogregion(int from, int to)
-{
-	int nbuf = (to - from) * linebuf_tn;
-	char *buf = mallocadd(nbuf);
-	cmdlogregion(from, to, buf);
+void cmdinsertlogregion(int from, int to);
 
-	char *filename = ROOTC("/run/cnslutil/cmdinsertlogregion.txt");
-	fputsclose(buf, fopen(filename, "w"));
-	edit, filename, endsh;
-	char *nextbuf = mallocadd(32 * pagebuf_tn);
-	fgetallsclose(nextbuf, 32 * pagebuf_tn, fopen(filename, "r"));
-	cmdinsert(nextbuf);
-}
-
-void syssleep(int ignore, char const *time, char *ignore_)
-{
-	linebuf_t buf;
-	snprintf(buf, sizeof(buf), "sleep %s", time);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
+void syssleep(int ignore, char const *time, char *ignore_);
 #define sleep syssleep ( 0
 
-void tputcup(int ignore, int col, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "tput cup %d 0", col);
-	system(buf);
-}
+void tputcup(int ignore, int col, char *ignore_);
 #define tputcup tputcup ( 0
 
 #define tputed sh, "tput ed", endsh
 
-void mkdir(int ignore, char *path, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "mkdir %s", path);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define mkdir mkdir ( 0
+void mkdir_(int ignore, char *path, char *ignore_);
+#define mkdir mkdir_ ( 0
 
-void mkdirp(int ignore, char *path, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "mkdir -p %s", path);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define mkdirp mkdirp ( 0
+void mkdirp_(int ignore, char *path, char *ignore_);
+#define mkdirp mkdirp_ ( 0
 
-void mv(int ignore, char *from, char *to, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "mv %s %s", from, to);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define mv mv ( 0
+int mv_(int ignore, char *from, char *to, char *ignore_);
+#define mv mv_ ( 0
 
-void cp(int ignore, char *from, char *to, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "cp %s %s", from, to);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define cp cp ( 0
+#define mvf sh, "mv -f %s %s"
+#define rmf sh, "rm -f %s %s"
 
-void rm(int ignore, char *filename, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "rm %s", filename);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define rm rm ( 0
+void cp_(int ignore, char *from, char *to, char *ignore_);
+#define cp cp_ ( 0
 
-void cat(int ignore, char *filename, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "cat %s", filename);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define cat cat ( 0
+void rm_(int ignore, char *filename, char *ignore_);
+#define rm rm_ ( 0
 
-void touch(int ignore, char *sz, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "touch %s", sz);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define touch touch ( 0
+void cat_(int ignore, char *filename, char *ignore_);
+#define cat cat_ ( 0
 
-void diff(int ignore, char *from, char *to, char *ignore_)
-{
-	char buf[NBUF];
-	snprintf(buf, NBUF, "diff %s %s", from, to);
-	system(buf);
-	// TODO: undefined escape rules in param strings
-}
-#define diff diff ( 0
+void touch_(int ignore, char *sz, char *ignore_);
+#define touch touch_ ( 0
 
+void diff_(int ignore, char *from, char *to, char *ignore_);
+#define diff diff_ ( 0
 
-////////////////////////////////////////////////////////////////////////
-//                          ADDITIONAL COMMANDS
-/////////////////////////////////////////////////////////////////////////
-
-
-loctag
-void hcreate(char *name)
-{
-	char *lastslash = strrstr(name, "/");
-	char *nameleaf = lastslash;
-	if ( nameleaf) nameleaf += 1;
-	if (!nameleaf) nameleaf = name;
-	if (!lastslash) lastslash = name;
-
-	char parent [linebuf_tn];
-iff (lastslash - name) + 1 > linebuf_tn
-thn goto err;
-	strncpy(parent, name, lastslash - name);
-	parent[lastslash - name] = 0;
-
-	char NL = '\n';
-
-	mkdirp, mf("%s/%s/%s", ROOT, "run", parent), endsh;
-	
-	fputsclose(
-    	mf(
-    		//"#ifndef HEADERGUARD_%s%c"
-    		//"#define HEADERGUARD_%s%c"
-			"#define %sh edit, ROOTC(%c/run/%s.h%c), endsh%c"
-			"#define %shadd hadd(%c%s%c)%c"
-			"#define %shaddfn(ident) haddfn(%c%s%c, ident)%c"
-			"#define %shadddef(ident) hadditem(%c%s%c, ident, 1)%c"
-    		"%c"
-    		"%c",
-    		//"#endif  HEADERGUARD_%s%c",
-    		//nameleaf, NL, 
-    		//nameleaf, NL, 
-    		nameleaf, '"', name, '"', NL,
-    		nameleaf, '"', name, '"', NL,
-    		nameleaf, '"', name, '"', NL,
-    		nameleaf, '"', name, '"', NL,
-    		NL, 
-    		NL 
-    		//nameleaf, NL
-    	),
-		fopen(mf("%s/%s/%s.%s", ROOT, "run", name, "h"), "a")	
-	);
-	fputsclose(
-		mf(
-			"#include %c%s/%s/%s.h%c%c",
-			'"', ".", "", name, '"', NL
-		),
-		fopen(mf("%s/run/%s", ROOT, "cnslutil.h"), "a")
-	);
-	return;
-
-err:
-	printf("Error at %s:%d%c", __FILE__, __LINE__, '\n');
-	return;
-}
+void hcreate(char *name);
 
 # define BACKSLASH ((char) 92)
 
 #define xyzhadd hadd
 #define hadd(namepath)   haddfn(namepath, 0)
 #define haddfn(namepath, ident) hadditem(namepath, ident, 0)
-void hadditem(char *namepath, char *ident, int preprocessor)
-{
-	char *fnct = ident;
-	
-	char *name = strrstr(namepath, "/");
-	if ( name) name += 1;
-	if (!name) name = namepath;
-	
-	char *cmd = mf("%sh", name);
-	char *filename = mf("%s.h", namepath);
-	
-	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fnct ? (preprocessor ? "def" : "fn") : "");
-	printf("%s", prompt);
-	fflush(stdout);
-		
-	char space[] = "                                 ";
-	space[strlen(prompt) - 5] = 0;
-	char *szdef = mgetescline(mf("%s%%02d $ ", space));
-    
-	char path[NBUF];
-	snprintf(path, NBUF, "%s/run/%s", ROOT, filename);
 
-    char szdefb[strlen(szdef) + 2];
-    strcpy(szdefb, szdef);
-    szdefb[strlen(szdef)] = '\n';
-    szdefb[strlen(szdef) + 1] = 0;
-
-    char *NLS = "\n";
-
-	FILE *f = fopen(path, "a");
-	fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
-	             fnct, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
-
-	int pp =  preprocessor;
-	int np = !preprocessor;
-	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
-	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
-	np&&     fputs(       szdefb, f);
-	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
-	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
-}
+void hadditem(char *namepath, char *ident, int preprocessor);
 
 #define cnslutilhadd xyzhadd("cnslutil")
 #define cnslutilhaddfn(ident) haddfn("cnslutil", ident)
@@ -341,12 +114,7 @@ void hadditem(char *namepath, char *ident, int preprocessor)
 #define tmphaddfn(ident) haddfn("tmp", ident)
 #define tmphadddef(ident) hadditem("tmp", ident, 1)
 
-void programm()
-{
-	linebuf_t path = "";
-	snprintf(path, sizeof(linebuf_t), "%s%s", ROOT, "/run/programm.txt");
-	edit, path, endsh;
-}
+void programm();
 #define programm programm()
 
 #define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
@@ -356,112 +124,15 @@ void programm()
 
 # define compilerh edit, ROOTC("main.c"), endsh;
 
-void echosys(char const *cmd)
-{
-    printf("\n[auto]\n");
-	printf("$ %s\n\n", cmd);
-	system(cmd);
-}
+void echosys(char const *cmd);
 #define echosys echosys (
 
-void gitupdate() {
-	    sh, "git add *", endsh;
-	    sh, "git add */*", endsh;
-	    sh, "git commit -m untitled", endsh;
-	    sh, "git push", endsh;
-	    //sh, "git status", endsh;
-	    //sh, "echo git status", endsh;
-	//echosys "git log" _
-}
+void gitupdate();
 #define gitupdate gitupdate()
 
 # define PIPES "|"
 
-void man(int ignore, char *topic, char *ignore_) {
-	if (!strcmp(topic, "freopen"))
-	{
-		printf("#include <stdio.h>\n");
-		printf("FILE *freopen(char *path, char *mode, FILE *f);\n");
-		printf("\n");
-		printf("The freopen() function opens the file whose name is\n");
-		printf("the string pointed to by `path` and associates the\n");
-		printf("stream pointed to by `f` with it. The original\n");
-		printf("stream (if it exists) is closed.\n");
-		printf("\n");
-		printf("On failure, NULL is returend and `errno` is set to\n");
-		printf("indicate the error.\n");
-	
-	}
-	else if (!strcmp(topic, "memcmov")) 
-	{
-		printf("NAME\n");
-		printf("       memcmov - move memory area\n");
-		printf("\n");
-		printf("LIBRARY\n");
-		printf("       Extended Standard C library\n");
-		printf("\n");
-		printf("SYNOPSIS\n");
-		printf("       #include <stringext.h>\n");
-		printf("\n");
-		printf("       void *memcmov(void dst[.n], \n");
-		printf("                     void const src[.n], int c,\n");
-		printf("                     size_t n);\n");
-		printf("\n");
-		printf("DESCRIPTION\n");
-		printf("       The memcmov() function copies no more than\n");
-		printf("       `n` bytes from memory area `src` to memory\n");
-		printf("       area `dst`, stopping when the character\n");
-		printf("       `c` is found (`c` is copied).\n");
-		printf("\n");
-		printf("       The memory areas may overlap.\n");
-		printf("\n");
-		printf("RETURN VALUE\n");
-		printf("       The memcmov() function returns a pointer to\n");
-		printf("       the next character in `dst` after `c`, or\n");
-		printf("       NULL if `c` was not found in the first `n`\n");
-		printf("       characters of `src`.\n");
-		printf("\n");
-	}
-	else if (!strcmp(topic, "fgets"))
-	{
-		printf("NAME\n");
-		printf("       fgets - input of strings\n");
-		printf("\n");
-		printf("LIBRARY\n");
-		printf("       Standard C library\n");
-		printf("\n");
-		printf("SYNOPSIS\n");
-		printf("       #include <stdio.h>\n");
-		printf("\n");
-		printf("       char *fgets(char s[.n], int n, FILE *f)\n");
-		printf("\n");
-		printf("DESCRIPTION\n");
-		printf("       fgets() reads in less than\n");
-		printf("       `size` characters from `f` and stores them\n");
-		printf("       into the buffer pointed to by `s`.\n");
-		printf("       Stops after an EOF or a newline.\n");
-		printf("       A terminating null byte ('\\0') is stored\n");
-		printf("       after the last character in the buffer.\n");
-		printf("       \n");
-		printf("RETURN VALUE\n");
-		printf("       fgets() returns `s` on success, and NULL on\n");
-		printf("       error or when end of file occurs while no\n");
-		printf("       characters have been read.\n");
-		printf("       \n");
-		printf("       \n");
-		printf("       \n");
-		printf("       \n");
-		printf("       \n");
-
-
-	}
-	els blk
-	stm char *filename = mf("%s%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt");
-	iff access(filename, F_OK) != 0
-	thn sh, "man %s | col -b > %s", topic, filename, endsh;
-	stm edit, filename, endsh;
-	blk_end
-}
+void man(int ignore, char *topic, char *ignore_) ;
 #define man man ( 0
 
 
@@ -503,13 +174,10 @@ void man(int ignore, char *topic, char *ignore_) {
 
 #define date sh, "date", endsh
 
-void du(int depth) {sh, "du -h -d %d", depth, endsh;}
+void du(char *, int depth, char *);
+#define du du (
 
-
-int yays(int ignore, char *x, char *ignores)
-{
-	return sh, "yay -S %s", x, endsh;
-}
+int yays(int ignore, char *x, char *ignores);
 #define yays yays ( 0
 
 #define pacmansyyu sh, "sudo pacman -Syyu", endsh
@@ -517,24 +185,13 @@ int yays(int ignore, char *x, char *ignores)
 #define pacmansyy  sh, "sudo pacman -Syy",  endsh
 #define pacmansy   sh, "sudo pacman -Sy",   endsh
 
-int pacmans(int ignore, char *x, char *ignores)
-{
-	return sh, "sudo pacman -S %s", x, endsh;
-}
+int pacmans(int ignore, char *x, char *ignores);
 #define pacmans pacmans ( 0
 
-int pacmanss(int ignore, char *x, char *ignores)
-{
-	int r = sh, "pacman -Ss %s > /tmp/pacmanss.txt", x, endsh;
-	if (!r) edit, "/tmp/pacmanss.txt", endsh;
-	return r;
-}
-#define pacmanss pacmanss ( 0
+int pacmanss_(int ignore, char *x, char *ignores);
+#define pacmanss pacmanss_ ( 0
 
-int pacmanqi(int ignore, char *x, char *ignores)
-{
-	return sh, "pacman -Qi %s", x, endsh;
-}
+int pacmanqi(int ignore, char *x, char *ignores);
 #define pacmanqi pacmanqi ( 0
 
 #define rmr sh, "rm -r %s"
@@ -543,18 +200,12 @@ int pacmanqi(int ignore, char *x, char *ignores)
 
 #define ping sh, "ping %s"
 
-int pacmanql(int ignore, char *x, char *ignores)
-{
-	return sh, "pacman -Ql %s", x, endsh;
-}
+int pacmanql(int ignore, char *x, char *ignores);
 #define pacmanql pacmanql ( 0
 
 #define libreoffice sh, "%s libreoffice %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
-int pacmanr(int ignore, char *x, char *ignores)
-{
-	return sh, "sudo pacman -R %s", x, endsh;
-}
+int pacmanr(int ignore, char *x, char *ignores);
 #define pacmanr pacmanr ( 0
 
  # define which sh, "which %s"
@@ -633,12 +284,8 @@ int pacmanr(int ignore, char *x, char *ignores)
 
 # define elev \
 
-
-int yayss(int ignore, char *pkg, char *ignores)
-{
-	return sh, "yay -Ss %s", pkg, endsh;
-}
-#define yayss yayss ( 0
+int yayss_(int ignore, char *pkg, char *ignores);
+#define yayss yayss_ ( 0
 
 # define PIPE |
 
@@ -676,25 +323,13 @@ int yayss(int ignore, char *pkg, char *ignores)
 # define NLC NL
 # define NLS "\n"
 
-\
-void browsertabtitle(char *title) \
-{\
-  fputsclose(mf("<title> %s </title>", title), fopen(mf("%s%s%s%s", ROOT, "/run/var/browsertabs/", title, ".html"), "w"));\
-  printf("%s%s%s%s%s", "file://", ROOT, "/run/var/browsertabs/", title, ".html");
-}\
-
 
 #define ENDBLOCK
 
 # define bakpre(f) mkdir, "-p .bak", endsh; mv, f, ".bak", endsh;
 
-void bak(char *a, char *f, char *b)
-{
-	(void) a;
-	(void) b;
-	bakpre(f)
-}
-#define bak bak ( ""
+void bak_(char *a, char *f, char *b);
+#define bak bak_ ( ""
 
 # define meld sh, "%s meld %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
@@ -710,14 +345,7 @@ void bak(char *a, char *f, char *b)
 # define microsyntax edit, "/data/data/com.termux/files/home/.config/micro/syntax/cext.yaml", endsh
 
 #define asciih printf("%s", "Found in: $ cnslutilh")
-
-void ascii()
-{
-  for (int i = 0; i < 256; ++i)
-    printf("%03d '%c' ", i, (char)i);
-  ln;
-}
-
+#define ascii printallascii
 
 
 
@@ -769,15 +397,6 @@ void ascii()
 #define lnshh printf("%s", "Found in: $ cnslutilh\n")
 #define lnsh man, "ln", endsh
 
-
-#define test1234h printf("%s", "Found in: $ cnslutilh\n")
-#define test1234 
-
-
-#define test647h printf("%s", "Found in: $ cnslutilh\n")
-#define test647 
-
-
 #define vncserverconfigh printf("%s", "Found in: $ cnslutilh\n")
 #define vncserverconfig edit, "/home/mbrandt/.config/tigervnc/config", endsh
 
@@ -791,15 +410,6 @@ void ascii()
 #include "scanfs.h"
 #define stdlibexth_addkeywordh printf("%s", "Found in: $ cnslutilh\n")
 
-void stdlibexth_addkeyword()
-{
-	printf("keyword:\n#define "); char *szkeyword = mgetline("");
-	printf("syntax type (statement, type): "); char *sztype = mgetline("");
-    char *configfilename = "/data/data/com.termux/files/home/.config/micro/syntax/cext.yaml";
-    fputsclose(mf("\n - %s : \"%s\"\n", sztype, szkeyword), fopen(configfilename, "a"));
-    printf("#define %s ", szkeyword); char *keywordbody = mgetline("");
-    fputsclose(mf("#define %s %s", szkeyword, keywordbody), fopen(ROOTC("/run/stdlibext.h"), "a"));\
-}
 #define cnsllinedelh printf("%s", "Found in: $ cnslutilh\n")
 #define cnsllinedel \
 	rep iff unbufreadc(STDIN_FILENO) == (int) 'c'      \
@@ -816,17 +426,6 @@ void stdlibexth_addkeyword()
     sh, "dbus-daemon --session --print-address > %s %s", \
         ROOTC("/run/cnslutil/dbus_daemon_session_address.txt"), BG, endsh
 
-
-#define dbus_session_bus_addressh printf("%s", "Found in: $ cnslutilh\n")
-char *dbus_session_bus_address()
-{
-    char *address = fgetmclose(linebuf_tn, \
-        fopen(ROOTC("/run/cnslutil/dbus_daemon_session_address.txt"), "r"));
-    address[strlen(address) - 1] = '\0';
-	return address;
-}
-#define dbus_session_bus_address dbus_session_bus_address()
-
 #define dbus_session_bus_address_config \
     mf("%s=\"%s\"", "DBUS_SESSION_BUS_ADDRESS", dbus_session_bus_address)
 
@@ -837,5 +436,36 @@ char *dbus_session_bus_address()
 
 #define lnhh printf("%s", "Found in: $ cnslutilh\n")
 #define lnh man, "ln", endsh
+
+
+#define microh printf("%s", "Found in: $ cnslutilh\n")
+
+
+#define diffwh printf("%s", "Found in: $ cnslutilh\n")
+#define diffw sh, "diff -w %s %s"
+
+
+#define TERMUX_HOMEh printf("%s", "Found in: $ cnslutilh\n")
+#define TERMUX_HOME "/data/data/com.termux/files/home/"
+
+
+#define tarxvfh printf("%s", "Found in: $ cnslutilh\n")
+#define tarxvf sh, "tar xvf %s"
+
+
+#define pacmanyayssh printf("%s", "Found in: $ cnslutilh\n")
+
+int pacmanyayss(char *ignore, char *pkg, char *ignore2);
+
+#define pacmanyayss pacmanyayss ( 0
+#define gitcloneh printf("%s", "Found in: $ cnslutilh\n")
+//#define ROOTCGITCLONE ROOTC("/run/cnslutil/gitclone.txt")
+//#define gitclone sh, mf("git clone %%s > %s 2>&1 & && %s" \
+//                        "echo 'Command started in background, output piped to %s.'",
+//                        ROOTCGITCLONE, ROOTCGITCLONE)
+
+
+#define PREPATHh printf("%s", "Found in: $ cnslutilh\n")
+#define PREPATH sh, "export PATH=\"%s:$PATH\""
 
 

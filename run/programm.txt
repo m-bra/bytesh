@@ -1,15 +1,31 @@
+     * folgendes in dynalist schreiben:
+       * mittwoch sabbath, 13h hobbyprojekt
 
-	 * qemu. valgrind.
+     * in dynalist/telegram:
+       * maximillian/icg brief -> stefan glasner. bitte addressaten angeben.
+       * jonas. telegram/msc/glaubenslieder
+       * traktate ukrainisch.
 
-	 * git status
-	    * JUL05SAT12:55AM-
+   	 * qemu. valgrind.
 
 	 * arrow up feature not able to implement
 	   * JUL04FRI09:01PM-09:49PM cmdlogn() involved. run valgrind first.
 
 	 * bytesh -c <> and closer interaction with micro.
+	   * Δ0130h
 
 	 * posix ls api
+
+     * take control of process outputs
+
+	 * make compilation quicker
+	   * Δ01:00 Δ01:00 Δ02:00 Δ01:00 Δ01:00 Δ00:36 Δ13:00 Δ03:00
+	   * tidy up ROOTC("/main.c")
+	     * caught quite a few long-term, hindering bugs while doing so...!
+	   * by moving function bodies to .c
+	   * results disappointing. research how to profile gcc compilations.
+
+     * ROOTC("main.c")::fn: improve env syntax.
 
 	 * micro make plugin to introduce a cmd which allows to quickly define new cmds
 
@@ -31,7 +47,6 @@
 	 * run readconfigh
 	 
 	 * signal handler with program line [1]
-	 * autojump to reported compiler errors in editor
 	 
 	 * run tsaframe(i)
 
@@ -40,11 +55,13 @@
 	   zugeteilter monatsplanung bekannt per woche vor folgendem monat
 	   20juli bis 10august ferien
 
-	   
 	 * bytesh should compile itself (main.c)
 
-	 * try setup pipewire [JUL03THU13:45AM-05:00AM]
-	   * failed. other solution found.
+     * finished
+	    * git status
+	       * JUL05SAT12:55AM-01:26AM
+	    * try setup pipewire [JUL03THU13:45AM-05:00AM]
+	      * failed. other solution found.
 	   
 	 * introduce persistent variables
 	   only char[] type allowed.
@@ -58,18 +75,21 @@
 
 	 * [1] https://stackoverflow.com/questions/71387696/get-file-source-line-and-variable-name-in-signal-handler
 	 
-	 * [2] #define macro(x) x() {}
-	        macro(int examplefn) {
-	        	
-	        }
+	 * [2]
+	    * C preprocessor macro argument is any token string until non-round-parenthesized comma 
+	    * #define macro(x) x() {}
+          macro(int examplefn) {
+        	
+          }
 
-	        #define newblock(x) x
-	        {
-	        	newblock {
-	        		printf("Hello");
-	        	}
-	        }
+          #define newblock(x) x
+          {
+          	  newblock {
+        		  printf("Hello");
+        	  }
+          }
 
+      * [3] https://superuser.com/questions/246777/what-is-the-best-way-to-speedup-gcc
 
 
 
