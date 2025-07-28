@@ -1,6 +1,6 @@
 #include "main.h"
 
-void micro(int ignore, char const *path, char *ignore_)
+void micro_(int ignore, char const *path, char *ignore_)
 {
 	dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
 	char buf[512];

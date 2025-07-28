@@ -469,3 +469,7 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define PREPATH sh, "export PATH=\"%s:$PATH\""
 
 
+#define backh printf("%s", "Found in: $ cnslutilh\n")
+#define back printf("/storage/self/primary/Documents/MEGABUEROKRATIE/ARBEITSSTELLE/BEWERBUNG/HIFI-JOURNAL\n");
+
+
