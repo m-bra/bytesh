@@ -1,10 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <unistd.h>
+
 #include <sys/wait.h>
 #include "run/main.h"
+
+#include <unistd.h>
 
 typedef char **ppchar;
 typedef char *pchar;
@@ -46,12 +44,12 @@ void mainprintsubmainend(maincontext_t *ctxt);
 char *whitestatus();
 char *trimmatchingend(char *target, char ch);
 
-#define printfflush(...) {printf(__VA_ARGS__); fflush(stdout);}
+#define printfflush(...) {printf(__VA_ARGS__); fflush(getstdout());}
 
 #define ignore
 
-EVALECHO
-(
+//EVALECHO
+//(
 
 SECTION TEXT
 
@@ -62,8 +60,8 @@ int nextbackup = 10;
 
 	
 	typedef int *intptr;
-fnc (decl int defstrchrnul),
-    stm defstrchrnul = 0;
+//f (decl int defstrchrnul),
+    int defstrchrnul = 0;
     iff !ctxt->interactive
     thn defstrchrnul = 0;
     stm
@@ -75,7 +73,7 @@ fnc (decl int defstrchrnul),
     iff !strncmp(answer, "n", 1)
     thn defstrchrnul = 1;
     stm defstrchrnul = 0;
-end
+//e
 
 
 iff ctxt->interactive
@@ -86,9 +84,9 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 	stm ctxt->linebuf[0] = 0;
 
     stm pchar cctxt = (pchar) ctxt;
-	fnc (decl pchar cmd, pass pchar cctxt),
+	//f (decl pchar cmd, pass pchar cctxt),
 		stm maincontext_t *ctxt = (maincontext_t *) cctxt;
-		stm cmd = mallocaddpagebuf;
+		chr *cmd = mallocaddpagebuf;
 		stm *cmd = 0;
 		iff !ctxt->setemptyline && !ctxt->interactive
 		thn stm *stpncpy(cmd, ctxt->argcmd, pagebuf_tn - 2) = 0;
@@ -105,7 +103,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 	   	    stm cmd[1] = 0;
 	   	    stm ctxt->setemptyline = 0;
 	    end_blk
-	end
+	//e
 
 	stm *stpncpy(ctxt->linebuf, cmd, pagebuf_tn - 2) = '\0';	    
     stm ctxt->line = ctxt->linebuf;
@@ -136,7 +134,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm pchar linebuf = ctxt->linebuf;
     stm pchar cwd = ctxt->cwd;
     stm pchar rootworkdir = ctxt->rootworkdir;
-    fnc (pass ppchar pline, pass pchar linebuf, pass pchar cwd, pass pchar rootworkdir),
+    //f fnc (pass ppchar pline, pass pchar linebuf, pass pchar cwd, pass pchar rootworkdir),
     
     stm ctxtmatchcmd("# cd ")
     	blk
@@ -154,9 +152,10 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     	stm *pline = linebuf;
         stm (*pline)[0] = 0;   			
         blk_end	
-    end
+    //e end
 
     stm in(ctxt->line, fputsclose, fopen(ctxtmwf("log.txt"), "a"));
+
 
     stm mainremoveunescnl(ctxt->line);
     stm mainprintsubmainbegin(ctxt);
@@ -165,11 +164,21 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
 	
 	chr *flags = mf("%s %s", "-g", defstrchrnul ? "-D DEFSTRCHRNUL" : "");
-	printf("Compiling...\n");
-	int compilestatus = 
-	        sh, "%s %s %s %s -o%s", 
-	        "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), endsh;
-	printf("Done.\n");
+	stm printf("Compiling...\n");
+	int compilestatus;
+	stm if (!fork()) { execl("/bin/sh", "sh", "-c", mf(
+		    "%s %s %s %s -o%s", 
+            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out")
+	    ), (char *) NULL); };
+	rep blk
+	    stm printf(".");
+	    int wstatus;
+	    stm waitpid(-1, &wstatus, 0);
+	    //s wait   (&wstatus);
+	    iff WIFEXITED(wstatus)
+        thn {compilestatus = WEXITSTATUS(wstatus); break;}
+    end_blk
+	        
 	iff compilestatus
 	thn blk
 		iff !strncmp(ctxt->linebuf, " ", 2)
@@ -203,20 +212,20 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 		rep blk
 		    int wstatus;
 	        stm waitpid(-1, &wstatus, WNOHANG);
-	        int werrno = errno;
+	        int werrno = geterrno();
 	        iff werrno && werrno != ECHILD
 	        the 
 		    int n = read(fd, buf, pagebuf_tn);
 		    iff n == -1
 		    the
 		    iff n > 0
-		    thn {fwrite(buf, 1, n, stdout); fwrite(buf, 1, n, tee);}
+		    thn {fwrite(buf, 1, n, getstdout()); fwrite(buf, 1, n, tee);}
          
 		    iff WIFEXITED(wstatus) || werrno == ECHILD
 	        thn break; 
 		    blk_end
 		stm fclose(tee);
-		stm fflush(stdout);
+		stm fflush(getstdout());
         blk_end
 
    	iff !nextbackup--
@@ -321,7 +330,7 @@ FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
 def
     ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
     fprintf(ctxt->srcfile, "#include \"main.h\"\n");
-//
+
 //chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
 //iff SYSTOBOOL(access(cwdinclude, F_OK))
 //thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
@@ -355,4 +364,4 @@ def {
 
 SECTION DATA
 
-)
+//)
