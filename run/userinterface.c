@@ -1,21 +1,15 @@
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <assert.h>
-#include <signal.h>
-#include <stdio.h>
-#include <errno.h>
+
 #include <termios.h>
 
-#define RUN_MAIN_H_INCLUDED
-#include "mainsys.h"
-#include "stdlibext.h"
-#include "stringext.h"
-#include "stringutil.h"
-#include "stdioext.h"
-#include "unistdext.h"
-#include "mathext.h"
+int echoflag()
+{
+	return ECHO;
+}
+
+#include <signal.h>
+#include <errno.h>
+
+#include "main.h"
 
 #include "userinterface.h"
 
@@ -32,7 +26,7 @@ def struct termios old_tio, new_tio;
 	tcgetattr(STDIN_FILENO, &old_tio);    
 	new_tio = old_tio;    
 	// Disable canonical mode (line buffering) and echoing    
-	new_tio.c_lflag &= (~ICANON & ~ECHO);    
+	new_tio.c_lflag &= (~ICANON & ~echoflag());    
 	tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);    
 	return old_tio;
 
@@ -44,7 +38,7 @@ def
 	tcgetattr(STDIN_FILENO, &uirestoreval);    
 	new_tio = uirestoreval;    
 	// Disable canonical mode (line buffering) and echoing    
-	new_tio.c_lflag |= (ICANON | ECHO);    
+	new_tio.c_lflag |= (ICANON | echoflag());    
 	tcsetattr(STDIN_FILENO, TCSANOW, &new_tio);    
 
 FUNCTION void uirestore(struct termios old_tio)
@@ -64,11 +58,11 @@ stm int cmdlogline = 0;// cmdlogn();
 rep 
 blk
 
-stm fflush(stdout);
+stm fflush(getstdout());
 stm int c = unbufreadc(STDIN_FILENO);
 stm int is_control_key = c == BACKSPACE_CONTROL_KEY || c == ESC;
 
-iff c == EOF 
+iff c == eof() 
 thn return pagebuf;
 
 iff c == BACKSPACE_CONTROL_KEY
@@ -76,7 +70,7 @@ iff c == BACKSPACE_CONTROL_KEY
  && pagebuf[strlen(pagebuf) - 1] != '\n' 
 thn blk
     stm pagebuf[strlen(pagebuf) - 1] = 0;
-    stm printf("\x1B[1D \x1B[1D"); fflush(stdout);
+    stm printf("\x1B[1D \x1B[1D"); fflush(getstdout());
     blk_end
 
 iff c == ESC
@@ -93,7 +87,7 @@ thn blk
 
     for range(0, strlen(pagebuf))
     stm printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
-    stm fflush(stdout);
+    stm fflush(getstdout());
 
     stm *stpncpy(pagebuf, buf, linebuf_tn) = 0;
     stm printf("%s", pagebuf);
@@ -109,14 +103,14 @@ thn blk
 	        printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
 	        char *sznew = "userinterfaceh";
 	        strcpy(pagebuf, sznew);
-	        printf("%s", sznew); fflush(stdout);
+	        printf("%s", sznew); fflush(getstdout());
 	    blk_end
         tab_triggers();
     blk_end
 
 iff c == c && !is_control_key
 thn blk
-    stm putc(c, stdout);
+    stm putc(c, getstdout());
 	ifn strlen(pagebuf) + 1 < pagebuf_tn
 	the pagebuf[strlen(pagebuf) + 0] = c;
     stm pagebuf[strlen(pagebuf) + 1] = 0;
@@ -126,7 +120,7 @@ thn blk
 		iff !strncmp(pagebuf, "cd", 3)
 		thn blk
 		    stm strcpy(pagebuf, "# cd");
-	        stm printf("\x1B[1D\x1B[1D# cd"); fflush(stdout);
+	        stm printf("\x1B[1D\x1B[1D# cd"); fflush(getstdout());
 		    blk_end
 	    blk_end
 	stm automatic_triggers();        	
@@ -138,7 +132,7 @@ thn return pagebuf;
 iff c == '\n'
 thn printf(beginlinefmt, ++linen);
 
-stm fflush(stdout);
+stm fflush(getstdout());
 
 iff !is_control_key
 thn lastchar = c;

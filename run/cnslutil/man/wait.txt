@@ -12,6 +12,39 @@ PRIVATE NOTES
                return !WIFEXITED(wstatus) || WEXITSTATUS(wstatus);
        }
 
+       (...)
+
+       #define wait(pwstatus) waitpid(-1, pwstatus, 0);
+       int waitpid(pid_t pid, int *_Nullable wstatus, int options);
+
+       (...)
+
+       The value of options is an OR of zero or more of the following
+       constants:
+
+       WNOHANG
+	      return immediately if no child has exited.
+ 
+       (...)
+
+       If wstatus is not NULL, wait() and waitpid() store status information
+       in the int to which it points.  This integer can be inspected with the
+       following macros (which take the integer itself as an argument, not a
+       pointer to it, as is done in wait() and waitpid()!):
+
+       WIFEXITED(wstatus)
+	      returns true if the child terminated normally, that is, by
+	      calling exit(3) or _exit(2), or by returning from main().
+
+       WEXITSTATUS(wstatus)
+	      returns the exit status of the child.  This consists of the
+	      least significant 8 bits of the status argument that the child
+	      specified in a call to exit(3) or _exit(2) or as the argument
+	      for a return statement in main().	 This macro should be employed
+	      only if WIFEXITED returned true.
+
+
+
 NAME
        wait, waitpid, waitid - wait for process to change state
 
@@ -58,9 +91,10 @@ DESCRIPTION
 
    wait() and waitpid()
        The wait() system call suspends execution of the calling thread until
-       one of its children terminates.	The call wait(&wstatus) is equivalent
-       to:
+       one of its children terminates.	
 
+       The call wait(&wstatus) is equivalent to:
+       
 	   waitpid(-1, &wstatus, 0);
 
        The waitpid() system call suspends execution of the calling thread

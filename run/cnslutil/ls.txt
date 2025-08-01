@@ -1,7 +1,7 @@
-total 1.3G
--rw-rw---- 1 10182 1023  270 Jul 14 15:38 apks.txt
--rw-rw---- 1 10182 1023 1.3G Jul 28 13:05 archlinux-2025.07.01-x86_64.iso
--rw-rw---- 1 10182 1023  462 Jul 28 13:05 archlinux-2025.07.01-x86_64.iso.aria2
--rw-rw---- 1 10182 1023  73K Jul 28 13:05 archlinux-2025.07.01-x86_64.iso.torrent
-drwxrws--- 2 10182 1023 3.4K Jul 14 17:32 .bak
--rw-rw---- 1 10182 1023 8.8K Jul 28 11:40 index.html
+total 31M
+drwxrws--- 2 10182 1023 3.4K Jul 28 16:07 BOSSGT1000
+-rwxrwx--- 1 10182 1023  12M Jul 22 15:44 NTS-3 kaoss pad kit - PROGRAMMABLE EFFECT KIT _ KORG (EU - DE)
+-rwxrwx--- 1 10182 1023 3.0M Jul 22 15:51 Roland - Blues Cube Tour _ Gitarren Verstärker
+-rwxrwx--- 1 10182 1023 3.7M Jul 22 15:55 Roland - JU-06 _ Sound Module
+-rwxrwx--- 1 10182 1023 9.2M Jul 22 15:53 Roland - JUNO-X _ Programmierbarer Polyphoner Synthesizer
+-rwxrwx--- 1 10182 1023 3.3M Jul 22 15:55 Roland - SE-02 _ Analoger Synthesizer

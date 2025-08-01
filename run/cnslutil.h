@@ -22,9 +22,11 @@
 
 #define tmux sh, "tmux", endsh
 #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
-#define ls  sh, mf("ls -hAl  %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
-#define lst sh, mf("ls -hAlt %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
-#define lsS sh, mf("ls -hAlS %%s > %s ; micro %s", ROOTCLS, ROOTCLS)
+#define NBUFFERED_OUT(text, f) mf("%s", text)
+#define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+#define ls  sh, NBUFFERED_OUT("ls -hAl  %s", ROOTCLS)
+#define lst sh, NBUFFERED_OUT("ls -hAlt %s", ROOTCLS)
+#define lsS sh, NBUFFERED_OUT("ls -hAlS %s", ROOTCLS)
 #define lsc  ls, ".", endsh
 #define lsct lst, ".", endsh
 #define lscS lsS, ".", endsh
@@ -61,9 +63,6 @@ void cmdinsert(char *cmd);
 #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
 
 void cmdinsertlogregion(int from, int to);
-
-void syssleep(int ignore, char const *time, char *ignore_);
-#define sleep syssleep ( 0
 
 void tputcup(int ignore, int col, char *ignore_);
 #define tputcup tputcup ( 0
@@ -120,9 +119,12 @@ void programm();
 #define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 
 #define mainh     (sh, mlinebufprintf("micro %s/%s", ROOT, "run/main.h"), endsh)
+#define mainstaticc (sh, ROOTC("/run/mainstatic.c"), endsh)
 #define cnslutilh (sh, mlinebufprintf("micro %s/%s", ROOT, "run/cnslutil.h"), endsh)
+#define cnslutilc (edit, ROOTC("run/cnslutil.c"), endsh)
 
 # define compilerh edit, ROOTC("main.c"), endsh;
+# define compilerc edit, ROOTC("main.c"), endsh;
 
 void echosys(char const *cmd);
 #define echosys echosys (
@@ -203,7 +205,8 @@ int pacmanqi(int ignore, char *x, char *ignores);
 int pacmanql(int ignore, char *x, char *ignores);
 #define pacmanql pacmanql ( 0
 
-#define libreoffice sh, "%s libreoffice %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+#define libreoffice  libreofficef, "", endsh
+#define libreofficef sh, mf("%s libreoffice %%s %s %s", DISPLAYCONFIG, QUIET, BG)
 
 int pacmanr(int ignore, char *x, char *ignores);
 #define pacmanr pacmanr ( 0
@@ -248,27 +251,7 @@ int pacmanr(int ignore, char *x, char *ignores);
 
 # define memstress sh, "stress --timeout 6 -m 1 --vm-keep --vm-bytes %s"
 
-# define memstressloop \
-  printf("2250M: "); fflush(stdout); memstress, "2250M", endsh;\
-  printf("2300M: "); fflush(stdout); memstress, "2300M", endsh;\
-  printf("2350M: "); fflush(stdout); memstress, "2350M", endsh;\
-  printf("2400M: "); fflush(stdout); memstress, "2400M", endsh;\
-  printf("2450M: "); fflush(stdout); memstress, "2450M", endsh;\
-  printf("2500M: "); fflush(stdout); memstress, "2500M", endsh;\
-  printf("2550M: "); fflush(stdout); memstress, "2550M", endsh;\
-  printf("2600M: "); fflush(stdout); memstress, "2600M", endsh;\
-  printf("2650M: "); fflush(stdout); memstress, "2650M", endsh;\
-  printf("2700M: "); fflush(stdout); memstress, "2700M", endsh;\
-  while loop {\
-    printf("Enter memory or q.. : ");\
-    char *answer = mgetescline("");\
-    if (!strncmp(answer, "q", 1)) break;\
-    memstress, answer, endsh;\
-  }
-
 # define ARCH printf("Lenovo Tab M10: ARMv8 64bit");ln;
-
-
 
 # define breakifn(msg) ln; printf(s, msg); if (!strncmp("n", mgetescline(""), 1)) break;
 # define breakify(msg) ln; printf(s, msg); if (!strncmp("y", mgetescline(""), 1)) break;
@@ -277,6 +260,7 @@ int pacmanr(int ignore, char *x, char *ignores);
 # define stdioexth edit, mf("%s/%s", ROOT, "/run/stdioext.h"), endsh
 
 # define stdlibexth edit, mf("%s/%s", ROOT, "/run/stdlibext.h"), endsh
+# define stdlibextc edit, ROOTC("/run/stdlibext.c"), endsh
 
 # define STRINGIFY(x) #x
 
@@ -354,8 +338,6 @@ void bak_(char *a, char *f, char *b);
 #define prettier sh, "prettier -w %s"
 
 
-#include ".//test444.h"
-#include ".//subtest/test333.h"
 #include ".//htmlutil.h"
 #define i3configh printf("%s", "Found in: $ cnslutilh\n")
 #define i3config edit, "$HOME/.config/i3/config", endsh
@@ -401,9 +383,7 @@ void bak_(char *a, char *f, char *b);
 #define vncserverconfig edit, "/home/mbrandt/.config/tigervnc/config", endsh
 
 
-#include ".//mtnc.h"
 #include ".//mntc.h"
-#include ".//tmp/termiostest.h"
 #define exechh printf("%s", "Found in: $ cnslutilh\n")
 #define exech man, "exec", endsh
 
@@ -413,7 +393,7 @@ void bak_(char *a, char *f, char *b);
 #define cnsllinedelh printf("%s", "Found in: $ cnslutilh\n")
 #define cnsllinedel \
 	rep iff unbufreadc(STDIN_FILENO) == (int) 'c'      \
-	    thn {printf("%s", "\033[2K\033[T"); fflush(stdout);}        \
+	    thn {printf("%s", "\033[2K\033[T"); fflush(getstdout());}        \
 	    els break;
 	
 #define cnsllinedeldown(n) \
@@ -473,3 +453,4 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define back printf("/storage/self/primary/Documents/MEGABUEROKRATIE/ARBEITSSTELLE/BEWERBUNG/HIFI-JOURNAL\n");
 
 
+#define lsrhifi sh, "find . -type d -not -path \\*175\\* -not -path \\*.bak\\*", endsh

@@ -1,9 +1,6 @@
 #ifndef STDLIBEXTH_INCLUDED
 #define STDLIBEXTH_INCLUDED
 
-#include <unistd.h>
-#include <sys/wait.h>
-
 #include "main.h"
 
 #define MALLOCLISTDEBUG if (0)
@@ -39,7 +36,7 @@ extern malloclist_t malloclistval;
 extern malloclist_t *malloclist;
 
 
-#define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin);};
+#define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin());};
 
 #define in(a, f, b) f ( a , b )
 
@@ -71,7 +68,7 @@ extern malloclist_t *malloclist;
 #define elsh printf("ELSe\n#define els else\n");
 #define els else
 #define cenh printf("Catch ErrNo (after instr) (singular instr)\n#define cen if (errno != 0) goto err;\n");
-#define cen if (errno != 0) goto err;
+#define cen if (geterrno() != 0) goto err;
 #define cefh printf("Catch EoF (before instr) (paired with thn/the)\n#define cef if (EOF ==\n");
 #define cef if (EOF == (
 #define theh printf("THen Err\n#define the thn goto err;\n");
@@ -93,14 +90,14 @@ extern malloclist_t *malloclist;
 #define asmem (char *)
 #define nil int
 
-#define throwngerrno(x)                     \
-    if (x < 0) {                            \
-        printf("Error at ");                \
-  	    printf("%s:", __FILE__);            \
-  		printf("%d\n", __LINE__);           \
-  		printf("%s\n", strerror(errno));    \
-  		exit(1);                            \
-  	}                                       \
+#define throwngerrno(x)                      \
+    if (x < 0) {                             \
+        printf("Error at ");                 \
+  	    printf("%s:", __FILE__);             \
+  		printf("%d\n", __LINE__);            \
+  		printf("%s\n", strerror(geterrno()));\
+  		exit(1);                             \
+  	}                                        \
 //
 
 #include <stdarg.h>
@@ -114,6 +111,13 @@ void es_(char *name, char *sz);
 
 #define BOOLTOSYS(b) (!(b))
 #define SYSTOBOOL(b) (!(b))
+
+#define spawn(code)     \
+    do {                \
+    	if (!fork()) {  \
+    		code        \
+    	}               \
+    } while (0)         //
 
 int sh_(int ignored, char *fmt, ...) ;
 int shfd_(int ignored, char *fmt, ...);

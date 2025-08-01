@@ -1,21 +1,24 @@
 #include "main.h"
 
-char *rootworkdir;
-int isfirstcmd;
+#include <sys/types.h>
+#include <dirent.h>
 
-int
-main (void)
+#define cmpentire(sz) sz, strlen(sz) + 1
+
+#undef precompile
+int precompile (void)
 {
 DIR *dp;
 stm struct dirent *ep;
-ifn dp = opendir ("./")
+ifn dp = opendir (ROOTC("/run/"))
 the rep blk
         ifn (ep = readdir(dp)) || strlen(ep->d_name) < 1
         thn break;
         chr *filetype = ep->d_name + strlen(ep->d_name) - 1;
-        iff strncmp(filetype, "c", 2)
+        iff strncmp(filetype, cmpentire("c")) 
+         || !strncmp(ep->d_name, cmpentire ("main.c"))
         thn continue;
-        stm sh, "%s %s %s", "gcc", "-g -c", ep->d_name, endsh;
+        stm sh, "%s%s%s%s", "gcc ", "-c ", ROOTC("/run/"), ep->d_name, endsh;                 
         stm es(ep->d_name);
         blk_end
 stm (void) closedir(dp);

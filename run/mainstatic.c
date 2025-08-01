@@ -1,4 +1,11 @@
+
+#include <fcntl.h>
+#include <stdio.h>
+#include <errno.h>
+
+#define NOSTDIOH
 #include "main.h"
+
 
 int ORIGINAL_STDOUT_FILENO;
 int counter = 14;
@@ -8,7 +15,7 @@ void main_begin(int argc, char **argv)
 	if (isfirstcmd && argc > 1 && 0 == strncmp(argv[1], "setupvnc", 8)) {\
 	    printf("%s", "setup vnc? [n] ");\
 	    if (!strncmp(mgetescline("%d "), "y", 1)) {\
-	      printf("setup vnc...");ln; \
+	      printf("setup vnc...\n"); \
 	      vncserver; \
 	      sh, "sleep 5", endsh; \
 	      firefox;\

@@ -1,5 +1,21 @@
 #include "main.h"
 
+#include <stdarg.h>
+
+/* stdio.h */ /* { */
+
+int vprintf(const char *restrict format, va_list ap);
+int vfprintf(struct FILE *restrict stream,
+            const char *restrict format, va_list ap);
+int vsprintf(char *restrict str,
+            const char *restrict format, va_list ap);
+int vsnprintf(
+            char *str, size_t size,
+            const char *restrict format, va_list ap);
+
+/* } */
+
+
 malloclist_t malloclistval;
 malloclist_t *malloclist = &malloclistval;
 
@@ -14,11 +30,11 @@ void es_(char *name, char *sz)
 	iff *sz == '\n'
 	thn printf("\\n\"\n%s\"", prespace);
 	els printf("%c", *sz);
-		fflush(stdout);
+		fflush(getstdout());
 		++sz;
 	}
 	printf("\"\n");
-	fflush(stdout);
+	fflush(getstdout());
 }
 
 char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...) 

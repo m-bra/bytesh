@@ -233,7 +233,7 @@ void hadditem(char *namepath, char *ident, int preprocessor)
 	
 	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fnct ? (preprocessor ? "def" : "fn") : "");
 	printf("%s", prompt);
-	fflush(stdout);
+	fflush(getstdout());
 		
 	char space[] = "                                 ";
 	space[strlen(prompt) - 5] = 0;
@@ -421,7 +421,7 @@ int yayss_(int ignore, char *pkg, char *ignores)
 }
 
 #undef bak
-void bak(char *a, char *f, char *b)
+void bak_(char *a, char *f, char *b)
 {
 	(void) a;
 	(void) b;
