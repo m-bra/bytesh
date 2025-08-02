@@ -4,6 +4,17 @@
 
 #include <unistd.h>
 
+#define _XOPEN_SOURCE 600
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <time.h>
+
+  
+
+
+
 typedef char **ppchar;
 typedef char *pchar;
 
@@ -164,20 +175,44 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
 	
 	chr *flags = mf("%s %s", "-g", defstrchrnul ? "-D DEFSTRCHRNUL" : "");
-	stm printf("Compiling...\n");
 	int compilestatus;
 	stm if (!fork()) { execl("/bin/sh", "sh", "-c", mf(
-		    "%s %s %s %s -o%s", 
-            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out")
+		    "%s %s %s %s -o%s > %s", 
+            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "/dev/null 2>&1"
 	    ), (char *) NULL); };
+	int lines = 0;
+	int ms, lastms = 0;
+	stm printf("\n\n\n\n\n\n\n\n\n");
 	rep blk
-	    stm printf(".");
+	    
+   	    stm struct timespec  ts;
+   	    iff clock_gettime(CLOCK_REALTIME, &ts) == -1
+   	    the ms = ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
+   	    iff (ms - lastms > 11)
+	    thn blk
+	        chr *line = "          # # # # # # # # #           # # # # # # # # #           # # # # # # # # # ";
+	        chr modline[strlen(line) + 1];
+	        stm modline[strlen(line)] = 0;
+	        stm printfflush("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
+	        for (int j = 0; j < 8; ++j)
+	        blk for (int i = 0; i < strlen(line); ++i)
+	            stm modline[i] = line[(i + lines + j * 0) % strlen(line)];
+	            stm printf("%s\n", (j % 2) ? "" : modline);
+            blk_end
+            stm ++lines;
+	        stm lastms = ms;
+	    end_blk
+	    
 	    int wstatus;
-	    stm waitpid(-1, &wstatus, 0);
 	    //s wait   (&wstatus);
-	    iff WIFEXITED(wstatus)
+	    iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+	          if (r == -1) goto err;
+	          r;}) 
+	     && WIFEXITED(wstatus)
         thn {compilestatus = WEXITSTATUS(wstatus); break;}
     end_blk
+
+    stm printfflush("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
 	        
 	iff compilestatus
 	thn blk

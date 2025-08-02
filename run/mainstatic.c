@@ -46,6 +46,7 @@ stm fclose(f);
 stm return linen;
 
 err:
+stm printf("\n");
 stm perror(mf("%s:%d", __FILE__, __LINE__));
 stm return 0;
 
