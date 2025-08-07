@@ -130,3 +130,17 @@ int shfd_(int ignored, char *fmt, ...)
   }
   return -1;
 }
+
+FILE *psh_(int ignored, char *fmt, ...)
+{
+    va_list args;
+    va_start(args, fmt);
+    linebuf_t buf;
+
+    vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+
+    va_end(args);
+
+    FILE *f = popen(buf, "r");
+    return f;
+}

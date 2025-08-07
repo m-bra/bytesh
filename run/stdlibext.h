@@ -76,12 +76,25 @@ extern malloclist_t *malloclist;
 #define stmh printf("STateMent\n#define stm\n");
 #define stm
 #define s
-#define blkh printf("BLocK\n#define blk {");
-#define blk {
-#define blk_endh printf("BLocK END\n#define blk_end }");
-#define blk_end }
-#define end_blkh printf("END BLocK\n#define end_blk }")
-#define end_blk }
+
+#ifdef BETTER_BLK
+    #define blkh printf("BLocK\n#define blk {");
+    #define blk blk1 blk2
+    #define blk1 blk3
+    #define blk2 (
+    #define blk3(...) {__VA_ARGS__}
+    #define blk_endh printf("BLocK END\n#define blk_end }");
+    #define blk_end end_
+    #define end_blkh printf("END BLocK\n#define end_blk }")
+    #define end_blk end_
+#else
+    #define blkh printf("BLocK\n#define blk {");
+    #define blk {
+    #define blk_endh printf("BLocK END\n#define blk_end }");
+    #define blk_end }
+    #define end_blkh printf("END BLocK\n#define end_blk }")
+    #define end_blk }
+#endif
 
 #define then ) )
 #define ift if (   (
@@ -121,9 +134,11 @@ void es_(char *name, char *sz);
 
 int sh_(int ignored, char *fmt, ...) ;
 int shfd_(int ignored, char *fmt, ...);
+FILE *psh_(int ignored, char *fmt, ...);
 
 #define sh sh_ ( 0
 #define shfd shfd_ ( 0
+#define psh psh_ ( 0
 #define endsh "" )
 
 #endif

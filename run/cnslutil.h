@@ -457,4 +457,4 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define mgeth printf("%s", "Found in: $ cnslutilh\n")
 #define mget sh, "yt-dlp %s"
 
-
+#define gitlog sh, "git log --pretty='%h %Cgreen%an %Cblue%ar %Creset%s%N %Cred%d' --graph", endsh

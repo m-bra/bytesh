@@ -123,6 +123,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm ctxt->line = ctxt->linebuf;
 
     stm linebuf_t runopt;
+    stm runopt[0] = 0;
     // ctxt->line
 
     #define ctxtmatchcmd(pattern) \
@@ -178,10 +179,11 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
         blk_end	
     //e end
 
+    stm in("\n/* $ */\n\n", fputsclose, fopen(ctxtmwf("log.txt"), "a")); 
     stm in(ctxt->line, fputsclose, fopen(ctxtmwf("log.txt"), "a"));
 
 
-    stm mainremoveunescnl(ctxt->line);
+    ign mainremoveunescnl(ctxt->line);
     stm mainprintsubmainbegin(ctxt);
     stm mainprintsubmainend(ctxt);    
 
