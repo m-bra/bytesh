@@ -2,8 +2,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-#undef scanfs
-void   scanfs()
+void   scanfs (char const *prefix)
 {
 	int nchars = 26 + 26 + 10 + 1;
 	char chars[nchars];\
@@ -55,7 +54,7 @@ void   scanfs()
 
 		stm // printf("%s\n", filename);
 
-		iff access(filename, F_OK) == 0
-		thn printf("\"%s\" exists\n", filename); 
+		iff access(mf("%s%s", prefix, filename), F_OK) == 0
+		thn printf("\"%s%s\" exists\n", prefix, filename); 
 	}
 }

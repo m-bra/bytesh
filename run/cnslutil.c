@@ -4,7 +4,8 @@ void micro_(int ignore, char const *path, char *ignore_)
 {
 	dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
 	char buf[512];
-	snprintf(buf, 512, "micro %s", path);
+	// simply switch from micro to vim
+	snprintf(buf, 512, "vim %s", path);
 	system(buf);
 	// TODO: undefined escape rules in param strings
 }

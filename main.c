@@ -75,20 +75,23 @@ int nextbackup = 10;
     int defstrchrnul = 0;
     iff !ctxt->interactive
     thn defstrchrnul = 0;
-    stm
-	stm printfflush("prooted? [y] ");
-    chr *answer = mgetline("");
-    stm
-	iff !strncmp(answer, "y", 1)
-    thn defstrchrnul = 0;
-    iff !strncmp(answer, "n", 1)
-    thn defstrchrnul = 1;
-    stm defstrchrnul = 0;
+    els blk
+	    stm printfflush("prooted? [y] ");
+        chr *answer = mgetline("");
+        stm
+    	iff !strncmp(answer, "y", 1)
+        thn defstrchrnul = 0;
+        iff !strncmp(answer, "n", 1)
+        thn defstrchrnul = 1;
+        stm defstrchrnul = 0;
+    end_blk
 //e
 
 
 iff ctxt->interactive
 thn printfflush("[press enter] ");
+
+stm linebuf_t cflags;
 
 rep
 blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
@@ -141,6 +144,16 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
    		ctxt->line = ctxt->line + strlen(ctxt->line);
     blk_end
 
+    stm ctxtmatchcmd("# cflags ") 
+    blk 
+   		ctxt->line[strlen(ctxt->line) - 1] = 0;
+   			
+		strncpy(cflags, ctxt->line, linebuf_tn - 1);
+		runopt[linebuf_tn - 1] = 0;
+   
+   		ctxt->line = ctxt->line + strlen(ctxt->line);
+    blk_end
+
     stm ppchar pline = &ctxt->line;
     stm pchar linebuf = ctxt->linebuf;
     stm pchar cwd = ctxt->cwd;
@@ -173,31 +186,41 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm mainprintsubmainend(ctxt);    
 
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
-	
-	chr *flags = mf("%s %s", "-g", defstrchrnul ? "-D DEFSTRCHRNUL" : "");
+
+	ign es (cflags);
+	chr *flags = mf("%s %s %s", "-g", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
 	int compilestatus;
 	stm if (!fork()) { execl("/bin/sh", "sh", "-c", mf(
-		    "%s %s %s %s -o%s > %s", 
-            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "/dev/null 2>&1"
+		    "%s %s %s %s -o%s %s", 
+            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), ""
 	    ), (char *) NULL); };
 	int lines = 0;
 	int ms, lastms = 0;
-	stm printf("\n\n\n\n\n\n\n\n\n");
+	#   define animf(...) \
+	    do { \
+	        if (ctxt->interactive) \
+	            printfflush(__VA_ARGS__); \
+	    } while (0)
+	#   undef animf
+	#   define animf(...)
+	stm animf("\n\n\n\n\n\n\n\n\n");
 	rep blk
 	    
    	    stm struct timespec  ts;
    	    iff clock_gettime(CLOCK_REALTIME, &ts) == -1
    	    the ms = ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
-   	    iff (ms - lastms > 11)
+   	    iff (ms - lastms > 90)
 	    thn blk
-	        chr *line = "          # # # # # # # # #           # # # # # # # # #           # # # # # # # # # ";
+	        chr *line =
+"# # # #        # # # #        # # # #        ";
+	        //chr *line = "          # # # # # # # # #           # # # # # # # # #           # # # # # # # # # ";
 	        chr modline[strlen(line) + 1];
 	        stm modline[strlen(line)] = 0;
-	        stm printfflush("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
+	        stm animf("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
 	        for (int j = 0; j < 8; ++j)
 	        blk for (int i = 0; i < strlen(line); ++i)
-	            stm modline[i] = line[(i + lines + j * 0) % strlen(line)];
-	            stm printf("%s\n", (j % 2) ? "" : modline);
+	            stm modline[i] = line[(i + lines * 4 + j * 0) % strlen(line)];
+	            stm animf("%s\n", (j % 2) ? "" : modline);
             blk_end
             stm ++lines;
 	        stm lastms = ms;
@@ -212,7 +235,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
         thn {compilestatus = WEXITSTATUS(wstatus); break;}
     end_blk
 
-    stm printfflush("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
+    stm animf("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
 	        
 	iff compilestatus
 	thn blk
@@ -278,6 +301,8 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     iff !ctxt->interactive
     thn break;
+
+    stm statusprint(ROOTC("/run"));
 	
 	stm strcpy(ctxt->lastline, ctxt->linebuf);
 	stm ctxt->isfirstcmd = 0;
@@ -380,6 +405,9 @@ def
 	fprintf(ctxt->srcfile, "\n");
 	fprintf(ctxt->srcfile, "int main(int argc, char **argv) {\n");
 	fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");	
+	fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+	fprintf(ctxt->srcfile,     "EVALECHO (\n");
+    fprintf(ctxt->srcfile,     "#endif\n");
 
 FUNCTION void mainremoveunescnl(char *line)
 
@@ -391,7 +419,10 @@ def for (unsigned long i = 1; i < strlen(line); ++i) {
 
 FUNCTION void mainprintsubmainend(maincontext_t *ctxt)
 def {
-	fprintf(ctxt->srcfile, "%s", ctxt->line);		
+	fprintf(ctxt->srcfile,     "%s\n", ctxt->line);
+	fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+	fprintf(ctxt->srcfile,     ")\n");
+	fprintf(ctxt->srcfile,     "#endif\n");		
 	fprintf(ctxt->srcfile,     "\nMAIN_END");
 	fprintf(ctxt->srcfile, "}");	
 	fclose(ctxt->srcfile);

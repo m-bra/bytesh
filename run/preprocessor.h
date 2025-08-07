@@ -1,5 +1,9 @@
 #include "main.h"
 
+#define preprocessorh edit, ROOTC("/run/preprocessor.h"), endsh
+
+#ifdef BYTESH_DISABLE_OPTIMIZATION
+
 #define STRINGIFY(x) #x
 #define EVALSTRINGIFY(x) STRINGIFY(x)
 #define EVALSTRINGIFYPRINT(x) es(STRINGIFY(x))
@@ -709,31 +713,4 @@ void tmpmain()
 #undef printfpair
 #undef tmpcmd
 
-#define defff(x, ...) printf("%d%d%d\n" ,1, 2, 3)
-#define test123 printf("Hello World\n")
-
-#define tmplsh printf("%s", "Found in: $ tmph\n")
-#define tmpls edit, "/tmp/ls.txt", endsh
-
-
-#define tmp1h printf("%s", "Found in: $ tmph\n")
-#define tmp1 printf("hello");
-
-
-#include <sys/types.h>
-#include <dirent.h>
-
-#define lsmain \
-  DIR *dp;\
-  struct dirent *ep;\
-\
-  dp = opendir ("./");\
-  if (dp != NULL)\
-    {\
-      while (ep = readdir (dp))\
-        puts (ep->d_name);\
-      (void) closedir (dp);\
-    }\
-  else\
-    perror ("Couldn't open the directory");
-
+#endif

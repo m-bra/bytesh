@@ -454,3 +454,7 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 
 
 #define lsrhifi sh, "find . -type d -not -path \\*175\\* -not -path \\*.bak\\*", endsh
+#define mgeth printf("%s", "Found in: $ cnslutilh\n")
+#define mget sh, "yt-dlp %s"
+
+

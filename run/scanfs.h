@@ -3,6 +3,5 @@
 
 // BEGIN
 
-void scanfs();
-#define scanfs   scanfs()
+void scanfs(char const *prefix);
 

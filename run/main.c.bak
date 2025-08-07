@@ -1,9 +1,16 @@
 #include "main.h"
 
-char *lastcmd = "\n";
+char *lastcmd = "sh, \"7z --help\", endsh ";
 int main_interactive = 1;int syssh = 0;
 char *rootworkdir = "/data/data/com.termux/files/home/prj/bytesh//run";int isfirstcmd = 0;
 int main(int argc, char **argv) {
 MAIN_BEGIN
-compilerh 
+#ifdef BYTESH_DISABLE_OPTIMIZATION
+EVALECHO (
+#endif
+sh, "7z x Lenovo*", endsh 
+#ifdef BYTESH_DISABLE_OPTIMIZATION
+)
+#endif
+
 MAIN_END}

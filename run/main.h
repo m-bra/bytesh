@@ -116,8 +116,8 @@ SECTION TEXT
 	    main_init(argc, argv); \
     
 #define MAIN_END ;\
-        dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);\
-	    if (main_interactive) statusprint(rootworkdir);
+        dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+	    
 	//iff main_interactive 
 	//thn {edit, ROOTC("/run/a.out.txt"), endsh;}
 
@@ -152,6 +152,7 @@ txt
 FUNCTION inline void unused_main()
 blk blk_end
 
+#include "preprocessor.h"
 #include "projects.h"
 #include "tmp.h"
 
