@@ -2,6 +2,7 @@
 #include <sys/wait.h>
 #include "run/main.h"
 
+#include <stdlib.h>
 #include <unistd.h>
 
 #define _XOPEN_SOURCE 600
@@ -10,10 +11,6 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <time.h>
-
-  
-
-
 
 typedef char **ppchar;
 typedef char *pchar;
@@ -43,7 +40,7 @@ typedef struct {maincontext} maincontext_t;
 
 char *ctxtmwf(malloclist_t *malloclist, maincontext_t *ctxt, char *path)
 {
-	return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
+    return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
 }
 #define ctxtmwf(path) ctxtmwf(malloclist, ctxt, path)
 #define ctxtmrootworkdirfile ctxtmwf
@@ -69,17 +66,17 @@ FUNCTION int innermain(maincontext_t *ctxt)
 def 
 int nextbackup = 10;
 
-	
-	typedef int *intptr;
+    
+    typedef int *intptr;
 //f (decl int defstrchrnul),
     int defstrchrnul = 0;
     iff !ctxt->interactive
     thn defstrchrnul = 0;
     els blk
-	    stm printfflush("prooted? [y] ");
+        stm printfflush("prooted? [y] ");
         chr *answer = mgetline("");
         stm
-    	iff !strncmp(answer, "y", 1)
+        iff !strncmp(answer, "y", 1)
         thn defstrchrnul = 0;
         iff !strncmp(answer, "n", 1)
         thn defstrchrnul = 1;
@@ -92,34 +89,35 @@ iff ctxt->interactive
 thn printfflush("[press enter] ");
 
 stm linebuf_t cflags;
+stm cflags[0] = 0;
 
 rep
 blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
-	stm ctxt->linebuf[0] = 0;
+    stm ctxt->linebuf[0] = 0;
 
     stm pchar cctxt = (pchar) ctxt;
-	//f (decl pchar cmd, pass pchar cctxt),
-		stm maincontext_t *ctxt = (maincontext_t *) cctxt;
-		chr *cmd = mallocaddpagebuf;
-		stm *cmd = 0;
-		iff !ctxt->setemptyline && !ctxt->interactive
-		thn stm *stpncpy(cmd, ctxt->argcmd, pagebuf_tn - 2) = 0;
-	    iff !ctxt->setemptyline &&  ctxt->interactive
-		thn blk fgetallsclose(cmd, pagebuf_tn - 1, fopen(ROOTC("/insert.c"), "r"));
-		    stm fputsclose("", fopen(ROOTC("/insert.c"), "w"));
-		    iff strlen(cmd)
-	        thn printf("<insert.c>\n\n");
-	        els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
-	        blk_end
-	    iff ctxt->setemptyline
-	   	thn blk
-	   	    stm cmd[0] = '\n';
-	   	    stm cmd[1] = 0;
-	   	    stm ctxt->setemptyline = 0;
-	    end_blk
-	//e
+    //f (decl pchar cmd, pass pchar cctxt),
+        stm maincontext_t *ctxt = (maincontext_t *) cctxt;
+        chr *cmd = mallocaddpagebuf;
+        stm *cmd = 0;
+        iff !ctxt->setemptyline && !ctxt->interactive
+        thn stm *stpncpy(cmd, ctxt->argcmd, pagebuf_tn - 2) = 0;
+        iff !ctxt->setemptyline &&  ctxt->interactive
+        thn blk fgetallsclose(cmd, pagebuf_tn - 1, fopen(ROOTC("/insert.c"), "r"));
+            stm fputsclose("", fopen(ROOTC("/insert.c"), "w"));
+            iff strlen(cmd)
+            thn printf("<insert.c>\n\n");
+            els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
+            blk_end
+        iff ctxt->setemptyline
+           thn blk
+               stm cmd[0] = '\n';
+               stm cmd[1] = 0;
+               stm ctxt->setemptyline = 0;
+        end_blk
+    //e
 
-	stm *stpncpy(ctxt->linebuf, cmd, pagebuf_tn - 2) = '\0';	    
+    stm *stpncpy(ctxt->linebuf, cmd, pagebuf_tn - 2) = '\0';        
     stm ctxt->line = ctxt->linebuf;
 
     stm linebuf_t runopt;
@@ -137,22 +135,22 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     
     stm ctxtmatchcmd("# runopt ") 
     blk 
-   		ctxt->line[strlen(ctxt->line) - 1] = 0;
-   			
-		strncpy(runopt, ctxt->line, linebuf_tn - 1);
-		runopt[linebuf_tn - 1] = 0;
+           ctxt->line[strlen(ctxt->line) - 1] = 0;
+               
+        strncpy(runopt, ctxt->line, linebuf_tn - 1);
+        runopt[linebuf_tn - 1] = 0;
    
-   		ctxt->line = ctxt->line + strlen(ctxt->line);
+           ctxt->line = ctxt->line + strlen(ctxt->line);
     blk_end
 
     stm ctxtmatchcmd("# cflags ") 
     blk 
-   		ctxt->line[strlen(ctxt->line) - 1] = 0;
-   			
-		strncpy(cflags, ctxt->line, linebuf_tn - 1);
-		runopt[linebuf_tn - 1] = 0;
+           ctxt->line[strlen(ctxt->line) - 1] = 0;
+               
+        strncpy(cflags, ctxt->line, linebuf_tn - 1);
+        runopt[linebuf_tn - 1] = 0;
    
-   		ctxt->line = ctxt->line + strlen(ctxt->line);
+           ctxt->line = ctxt->line + strlen(ctxt->line);
     blk_end
 
     stm ppchar pline = &ctxt->line;
@@ -162,21 +160,21 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     //f fnc (pass ppchar pline, pass pchar linebuf, pass pchar cwd, pass pchar rootworkdir),
     
     stm ctxtmatchcmd("# cd ")
-    	blk
-    	stm (*pline)[strlen(*pline) - 1] = 0;
+        blk
+        stm (*pline)[strlen(*pline) - 1] = 0;
         
-    	int isroot = strlen(*pline) && (*pline)[0] == '/';
+        int isroot = strlen(*pline) && (*pline)[0] == '/';
         
-    	stm fputsclose(
-    		    mf("%s/%s/\n", isroot ? "" : cwd, (*pline)), 
-    		    fopen(ROOTC("/run/cwd.txt"), "w")
-    		);
-    	stm loadcwd(rootworkdir);
+        stm fputsclose(
+                mf("%s/%s/\n", isroot ? "" : cwd, (*pline)), 
+                fopen(ROOTC("/run/cwd.txt"), "w")
+            );
+        stm loadcwd(rootworkdir);
         
-    		// ctxt->line = ctxt->line + strlen(ctxt->line);
-    	stm *pline = linebuf;
-        stm (*pline)[0] = 0;   			
-        blk_end	
+            // ctxt->line = ctxt->line + strlen(ctxt->line);
+        stm *pline = linebuf;
+        stm (*pline)[0] = 0;               
+        blk_end    
     //e end
 
     stm in("\n/* $ */\n\n", fputsclose, fopen(ctxtmwf("log.txt"), "a")); 
@@ -189,125 +187,126 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
 
-	ign es (cflags);
-	chr *flags = mf("%s %s %s", "-g", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
-	int compilestatus;
-	stm if (!fork()) { execl("/bin/sh", "sh", "-c", mf(
-		    "%s %s %s %s -o%s %s", 
-            "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), ""
-	    ), (char *) NULL); };
-	int lines = 0;
-	int ms, lastms = 0;
-	#   define animf(...) \
-	    do { \
-	        if (ctxt->interactive) \
-	            printfflush(__VA_ARGS__); \
-	    } while (0)
-	#   undef animf
-	#   define animf(...)
-	stm animf("\n\n\n\n\n\n\n\n\n");
-	rep blk
-	    
-   	    stm struct timespec  ts;
-   	    iff clock_gettime(CLOCK_REALTIME, &ts) == -1
-   	    the ms = ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
-   	    iff (ms - lastms > 90)
-	    thn blk
-	        chr *line =
+    ign es (cflags);
+    chr flags[256];
+    stm snprintf(flags, 254,"-g %s %s", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
+    chr ccmd[1024];
+    stm snprintf(ccmd, 1020, "%s %s %s %s -o%s %s", "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "");
+    int compilestatus;
+        // :syntax keyword Statement stm
+    stm if (!fork()) { execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+    int lines = 0;
+    int ms, lastms = 0;
+    #   define animf(...) \
+        do { \
+            if (ctxt->interactive) \
+                printfflush(__VA_ARGS__); \
+        } while (0)
+    #   undef animf
+    #   define animf(...)
+    stm animf("\n\n\n\n\n\n\n\n\n");
+    rep blk
+        
+        stm struct timespec  ts;
+        iff clock_gettime(CLOCK_REALTIME, &ts) == -1
+        the ms = ts.tv_sec * 1000 + ts.tv_nsec / 1000000;
+        iff (ms - lastms > 90)
+        thn blk
+            chr *line =
 "# # # #        # # # #        # # # #        ";
-	        //chr *line = "          # # # # # # # # #           # # # # # # # # #           # # # # # # # # # ";
-	        chr modline[strlen(line) + 1];
-	        stm modline[strlen(line)] = 0;
-	        stm animf("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
-	        for (int j = 0; j < 8; ++j)
-	        blk for (int i = 0; i < strlen(line); ++i)
-	            stm modline[i] = line[(i + lines * 4 + j * 0) % strlen(line)];
-	            stm animf("%s\n", (j % 2) ? "" : modline);
+            //chr *line = "          # # # # # # # # #           # # # # # # # # #           # # # # # # # # # ";
+            chr modline[strlen(line) + 1];
+            stm modline[strlen(line)] = 0;
+            stm animf("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
+            for (int j = 0; j < 8; ++j)
+            blk for (int i = 0; i < strlen(line); ++i)
+                stm modline[i] = line[(i + lines * 4 + j * 0) % strlen(line)];
+                stm animf("%s\n", (j % 2) ? "" : modline);
             blk_end
             stm ++lines;
-	        stm lastms = ms;
-	    end_blk
-	    
-	    int wstatus;
-	    //s wait   (&wstatus);
-	    iff ({int r = waitpid(-1, &wstatus, WNOHANG);
-	          if (r == -1) goto err;
-	          r;}) 
-	     && WIFEXITED(wstatus)
+            stm lastms = ms;
+        end_blk
+        
+        int wstatus;
+        //s wait   (&wstatus);
+        iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+              if (r == -1) goto err;
+              r;}) 
+         && WIFEXITED(wstatus)
         thn {compilestatus = WEXITSTATUS(wstatus); break;}
     end_blk
 
     stm animf("\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T\033[2K\033[T");
-	        
-	iff compilestatus
-	thn blk
-		iff !strncmp(ctxt->linebuf, " ", 2)
-		thn ctxt->setemptyline = 1;
-		els ign blk
-				ifn sh, "%s %s %s", "stat", mf("%s%s", ctxt->rootworkdir, ".err"), QUIET, endsh
-				thn printf("%s\n", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));
-				els blk
-					stm iff mv, ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err"), endsh
-					the iff cpr, mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
-	                the 
-				end_blk
-		end_blk
-	end_blk 
-	
-	iff !compilestatus 
-	thn 
-	blk
-	stm mv, ctxtmwf("a.out"), "/data/data/com.termux/files/home/a.out", endsh;
-	stm chmodx, "/data/data/com.termux/files/home/a.out", endsh;
+            
+    iff compilestatus
+    thn blk
+        iff !strncmp(ctxt->linebuf, " ", 2)
+        thn ctxt->setemptyline = 1;
+        els ign blk
+                ifn sh, "%s %s %s", "stat", mf("%s%s", ctxt->rootworkdir, ".err"), QUIET, endsh
+                thn printf("%s\n", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));
+                els blk
+                    stm iff mv, ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err"), endsh
+                    the iff cpr, mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
+                    the 
+                end_blk
+        end_blk
+    end_blk 
+    
+    iff !compilestatus 
+    thn 
+    blk
+    stm mv, ctxtmwf("a.out"), "/data/data/com.termux/files/home/a.out", endsh;
+    stm chmodx, "/data/data/com.termux/files/home/a.out", endsh;
 
-	chr *redirect = " > /tmp/byteshpipe.txt";
-	iff ctxt->interactive
-	thn redirect = "";
-	stm sh, "%s %s %s", runopt, "/data/data/com.termux/files/home/a.out", redirect, endsh;
+    chr *redirect = " > /tmp/byteshpipe.txt";
+    iff ctxt->interactive
+    thn redirect = "";
 
-    ign blk
-		stm FILE *tee = fopen(ROOTC(mf("/run/log/0x%X.txt", cmdlogn())), "w");
-		cen char buf[pagebuf_tn];
-	    stm int fd = (shfd, "%s %s", runopt, ctxtmwf("a.out"), endsh);
-		rep blk
-		    int wstatus;
-	        stm waitpid(-1, &wstatus, WNOHANG);
-	        int werrno = geterrno();
-	        iff werrno && werrno != ECHILD
-	        the 
-		    int n = read(fd, buf, pagebuf_tn);
-		    iff n == -1
-		    the
-		    iff n > 0
-		    thn {fwrite(buf, 1, n, getstdout()); fwrite(buf, 1, n, tee);}
-         
-		    iff WIFEXITED(wstatus) || werrno == ECHILD
-	        thn break; 
-		    blk_end
-		stm fclose(tee);
-		stm fflush(getstdout());
-        blk_end
+    int stdoutfileno = dup(STDOUT_FILENO);
+    stm FILE *faout =
+            popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    //s sh, "/data/data/com.termux/files/home/a.out", endsh;
 
-   	iff !nextbackup--
-   	thn blk
-   		stm nextbackup = 10,
+    int runstatus = 0xFF;
+    rep blk
+        rep blk
+            chr line [linebuf_tn];
+	    iff !fgets(line, linebuf_tn, faout)
+	    thn break;
+	    stm printfflush ("|>>%s", line);
+        end_blk
+        int wstatus;
+        iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+              if (r == -1 && errno != ECHILD) goto err;
+              r;}) 
+         && WIFEXITED(wstatus)
+        thn {runstatus = WEXITSTATUS(wstatus); break;}
+    end_blk
+
+    stm if (faout) pclose(faout);
+
+    iff ctxt->interactive
+    thn statusprint(ROOTC("/run"), runstatus);
+
+    iff !nextbackup--
+    thn blk
+        stm nextbackup = 10,
         stm rmr, mf("%s%s", ctxt->rootworkdir, ".bak"), 
-   		       /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh;
-   		stm mv,  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
-   		         mf("%s%s", ctxt->rootworkdir, ".bak"), endsh;
+               /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh;
+        stm mv,  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
+                 mf("%s%s", ctxt->rootworkdir, ".bak"), endsh;
         stm cpr, mf("%s%s", ctxt->rootworkdir, ""),
                  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"), endsh;
-	end_blk
-    	
-	blk_end
+    end_blk
+        
+    blk_end
 
     iff !ctxt->interactive
     thn break;
 
-    stm statusprint(ROOTC("/run"));
-	
-	stm strcpy(ctxt->lastline, ctxt->linebuf);
-	stm ctxt->isfirstcmd = 0;
+    stm strcpy(ctxt->lastline, ctxt->linebuf);
+    stm ctxt->isfirstcmd = 0;
 
 blk_end
 
@@ -371,7 +370,7 @@ stm return skipstatus;
 FUNCTION char *trimmatchingend(char *target, char ch)
 def
 iff target[strlen(target) - 1] == ch
-thn target[strlen(target) - 1] = 0;	
+thn target[strlen(target) - 1] = 0;    
 stm return target;
 
 FUNCTION void loadcwd(char *rootworkdir)
@@ -396,38 +395,38 @@ def
 //chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
 //iff SYSTOBOOL(access(cwdinclude, F_OK))
 //thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
-    	
-	fprintf(ctxt->srcfile, "\n");
-	fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
-	    escapecstr(ctxt->lastline, ctxt->lastlinen));
-	fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
-	fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
-	fprintf(ctxt->srcfile, "char *rootworkdir = \"%s\";", ctxt->rootworkdir);
-	fprintf(ctxt->srcfile, "int isfirstcmd = %d;", ctxt->isfirstcmd);
-	fprintf(ctxt->srcfile, "\n");
-	fprintf(ctxt->srcfile, "int main(int argc, char **argv) {\n");
-	fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");	
-	fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
-	fprintf(ctxt->srcfile,     "EVALECHO (\n");
+        
+    fprintf(ctxt->srcfile, "\n");
+    fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+        escapecstr(ctxt->lastline, ctxt->lastlinen));
+    fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+    fprintf(ctxt->srcfile, "char *rootworkdir = \"%s\";", ctxt->rootworkdir);
+    fprintf(ctxt->srcfile, "int isfirstcmd = %d;", ctxt->isfirstcmd);
+    fprintf(ctxt->srcfile, "\n");
+    fprintf(ctxt->srcfile, "int main(int argc, char **argv) {\n");
+    fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");    
+    fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+    fprintf(ctxt->srcfile,     "EVALECHO (\n");
     fprintf(ctxt->srcfile,     "#endif\n");
 
 FUNCTION void mainremoveunescnl(char *line)
 
 def for (unsigned long i = 1; i < strlen(line); ++i) {
-		if ((line[i] == '\n' || line[i] == (char)10))
-			if ((line[i-1] != '\\'))
-		    	line[i] = ' ';
-	}    	
+        if ((line[i] == '\n' || line[i] == (char)10))
+            if ((line[i-1] != '\\'))
+                line[i] = ' ';
+    }        
 
 FUNCTION void mainprintsubmainend(maincontext_t *ctxt)
 def {
-	fprintf(ctxt->srcfile,     "%s\n", ctxt->line);
-	fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
-	fprintf(ctxt->srcfile,     ")\n");
-	fprintf(ctxt->srcfile,     "#endif\n");		
-	fprintf(ctxt->srcfile,     "\nMAIN_END");
-	fprintf(ctxt->srcfile, "}");	
-	fclose(ctxt->srcfile);
+    fprintf(ctxt->srcfile,     "%s\n", ctxt->line);
+    fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+    fprintf(ctxt->srcfile,     ")\n");
+    fprintf(ctxt->srcfile,     "#endif\n");        
+    fprintf(ctxt->srcfile,     "\nMAIN_END");
+    fprintf(ctxt->srcfile, "}");    
+    fclose(ctxt->srcfile);
 }
 
 SECTION DATA

@@ -68,7 +68,8 @@ extern malloclist_t *malloclist;
 #define elsh printf("ELSe\n#define els else\n");
 #define els else
 #define cenh printf("Catch ErrNo (after instr) (singular instr)\n#define cen if (errno != 0) goto err;\n");
-#define cen if (geterrno() != 0) goto err;
+extern int cen_line;
+#define cen if (geterrno() != 0) {cen_line = __LINE__; goto err;}
 #define cefh printf("Catch EoF (before instr) (paired with thn/the)\n#define cef if (EOF ==\n");
 #define cef if (EOF == (
 #define theh printf("THen Err\n#define the thn goto err;\n");

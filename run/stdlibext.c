@@ -1,6 +1,9 @@
 #include "main.h"
 
 #include <stdarg.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
 
 /* stdio.h */ /* { */
 
@@ -15,6 +18,7 @@ int vsnprintf(
 
 /* } */
 
+int cen_line = -1;
 
 malloclist_t malloclistval;
 malloclist_t *malloclist = &malloclistval;

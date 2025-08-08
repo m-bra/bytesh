@@ -2,10 +2,14 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <errno.h>
+#include <stdlib.h>
 
 #define NOSTDIOH
 #include "main.h"
 
+/* -lc */
+int dup(int);
+char *getcwd(char *, size_t);
 
 int ORIGINAL_STDOUT_FILENO;
 int counter = 14;
@@ -31,8 +35,9 @@ def
 
 stm linebuf_t val;
 stm linebuf_t *buf = &val;
-	
-stm FILE *f = fopen(ROOTC("run/log.txt"), "r");
+
+    errno = 0;
+    FILE *f = fopen(ROOTC("run/log.txt"), "r");
 cen
 	
 stm int linen = -1;
@@ -47,18 +52,21 @@ stm return linen;
 
 err:
 stm printf("\n");
-stm perror(mf("%s:%d", __FILE__, __LINE__));
+stm perror(mf("%s:%d", __FILE__, cen_line));
 stm return 0;
 
 FUNCTION void main_init(int argc, char **argv)
 def
-    signal(SIGSEGV, sighandle);
-cen signal(SIGILL, sighandle);
-cen signal(SIGFPE, sighandle);
+    errno = 0;
+    // signal(SIGSEGV, sighandle);
+cen // signal(SIGILL, sighandle);
+cen // signal(SIGFPE, sighandle);
 cen
 
-    int fd = open(ROOTC("/tmp/byteshpipe.txt"), O_WRONLY | O_TRUNC);
-    ORIGINAL_STDOUT_FILENO = dup(STDOUT_FILENO);
+    // int fd = open(ROOTC("/tmp/byteshpipe.txt"), O_WRONLY | O_TRUNC);
+iff argc >= 2
+thn ORIGINAL_STDOUT_FILENO = atoi(argv[1]);
+els ORIGINAL_STDOUT_FILENO = dup(STDOUT_FILENO);
 iff !main_interactive
 thn 
     ;// dup2(fd, STDOUT_FILENO);
@@ -72,7 +80,7 @@ err:
 	printf("Error at %s:%d%c", __FILE__, __LINE__, *"\n");
 	return;
 
-FUNCTION void statusprint(char *rootworkdir)
+FUNCTION void statusprint(char *rootworkdir, int runstatus)
 
 def
 chr cwd[NBUF]; getcwd(cwd, NBUF);
@@ -82,8 +90,8 @@ chr quiet[] = " 2> /dev/null > /dev/null";
 int routine_gitupdaterequired(int, char *);
     
 chr *status = mf(
-    	mf("%s%s", "\n%s[%s]\n%s", PROMPT), 
-    	GLOBAL_INDENT, cwd, 
+    	mf("\n%s%s", "%s[0x%02X][%s]\n%s", PROMPT), 
+    	GLOBAL_INDENT, runstatus, cwd, 
     	GLOBAL_INDENT, 
     	cmdlogn(),
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
@@ -96,7 +104,7 @@ chr *status = mf(
     fflush(stdout);
     fputsclose(status, fopen(mf("%s/%s", rootworkdir, "status.txt"), "w"));
 
-
+/*
 FUNCTION inline void sighandle(int signum)
 def
 	switch (signum)
@@ -119,12 +127,13 @@ def
 		break;
 	}
 
-
+*/
 
 FUNCTION inline void cmdlogat(int i, linebuf_t *buf)
 def
 
-	FILE *f = fopen(ROOTC("/run/log.txt"), "r");
+    errno = 0;
+    FILE *f = fopen(ROOTC("/run/log.txt"), "r");
 cen int linen = -1;
 
 rep blk
@@ -139,7 +148,7 @@ stm fclose(f);
 stm return;
 
 err:	
-stm perror(mf("%s:%d\n", __FILE__, __LINE__));
+stm perror(mf("%s:%d\n", __FILE__, cen_line));
 stm return;
 
 SECTION DATA

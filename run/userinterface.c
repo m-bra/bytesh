@@ -12,6 +12,7 @@ int echoflag()
 #include "main.h"
 
 #include "userinterface.h"
+#include <unistd.h>
 
 struct termios uirestoreval;
 

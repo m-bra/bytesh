@@ -18,7 +18,7 @@ the rep blk
         iff strncmp(filetype, cmpentire("c")) 
          || !strncmp(ep->d_name, cmpentire ("main.c"))
         thn continue;
-        stm sh, "%s%s%s%s", "gcc ", "-c ", ROOTC("/run/"), ep->d_name, endsh;                 
+        stm sh, "%s%s%s%s", "gcc ", "-Wfatal-errors -c ", ROOTC("/run/"), ep->d_name, endsh;                 
         stm es(ep->d_name);
         blk_end
 stm (void) closedir(dp);

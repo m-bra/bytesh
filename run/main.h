@@ -48,6 +48,11 @@ FILE *fopen(const char *restrict path, const char *restrict mode);
 int fclose(FILE *stream);
 int fflush(FILE */*_Nullable*/ stream);
 
+ 
+FILE *popen(char const *, char const *);
+int pclose(FILE *);
+
+
 size_t fread(       void *ptr,
                     size_t size, size_t n,
                     FILE *restrict stream);
@@ -95,7 +100,7 @@ extern int main_interactive;
 
 void main_begin(int argc, char **argv);
 void main_init(int argc, char **argv);
-void statusprint(char *);
+void statusprint(char *, int);
 void sighandle(int);
 
 txt
@@ -116,7 +121,7 @@ SECTION TEXT
 	    main_init(argc, argv); \
     
 #define MAIN_END ;\
-        dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+        //dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
 	    
 	//iff main_interactive 
 	//thn {edit, ROOTC("/run/a.out.txt"), endsh;}

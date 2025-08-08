@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 int readc(int fd)
 {

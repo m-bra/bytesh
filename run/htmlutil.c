@@ -1,6 +1,7 @@
 #include "htmlutil.h"
 
 #include <errno.h>
+#include <unistd.h>
 
 int scanhtml(char *filename)
 {

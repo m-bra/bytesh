@@ -120,7 +120,7 @@ void programm();
 
 #define mainh     (sh, mlinebufprintf("micro %s/%s", ROOT, "run/main.h"), endsh)
 #define mainstaticc (sh, ROOTC("/run/mainstatic.c"), endsh)
-#define cnslutilh (sh, mlinebufprintf("micro %s/%s", ROOT, "run/cnslutil.h"), endsh)
+#define cnslutilh (edit, mlinebufprintf("%s/%s", ROOT, "run/cnslutil.h"), endsh)
 #define cnslutilc (edit, ROOTC("run/cnslutil.c"), endsh)
 
 # define compilerh edit, ROOTC("main.c"), endsh;
@@ -458,3 +458,46 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define mget sh, "yt-dlp %s"
 
 #define gitlog sh, "git log --pretty='%h %Cgreen%an %Cblue%ar %Creset%s%N %Cred%d' --graph", endsh
+
+#define objdumph "objdump " \
+	"-g/--debugging " /* print STABS in C-like syntax or else fall back to -W to print DWARF */ \
+	"-e --debugging-tags " /* like -g but usable for ctags */ \
+	"-d --disassemble " /* where code is expected */ \
+	"-D --disassemble-all " /* all non-empty non-bss sections */ \
+	"-f --file-headers " /* (perhaps only used for archieves...?) */ \
+	"-h --section-headers --headers "  \
+	"-M --disassembler-options intel[{-mnemonic}|{64}] " \
+	"-p --private-headers " /* information specific to the object file format */ \
+	"-P --private=options " /* information specific to the object file format, relevant for PE or XCOFF, irrelevant for ELF */ \
+	"-s[Z] --full-contents " /* full contents of sections, compress if Z is specified */ \
+	"-r --reloc " /* relocation entries */ \
+	"-R --dynamic-reloc " /* dynamic relocation entries, only relevant for dynamic objects */ \
+	"-S --source " /* (display source code intermixed with disassembly, if possible.) */ \
+	"--show-all-symbols " /* for a given address, not just the first one */ \
+	"--visualize-jumps[=color] " \
+	"--disassembler-color=terminal|extended " \
+	"-W[...] --dwarf... " /* Display DWARF */ \
+	"--ctf[=...] " /* Display CTF section */ \
+	"--sframe[=...] " /* Display SFrame section */ \
+	"-t --syms " /* Print the symbol table entries */ \
+	"-T --dynamic-syms " /* print the dynamic symbol table entries */ \
+	"-x --all-headers " /* Display all available header information, including the symbol table and relocation entries. equivalent to -a -f -h -p -r -t */ \
+
+#define objdump sh, "objdump " \
+	"--debugging " /* print STABS in C-like syntax or else fall back to -W to print DWARF */ \
+	"--disassemble-all " /* all non-empty non-bss sections */ \
+	"--file-headers " /* (perhaps only used for archieves...?) */ \
+	"--section-headers "  \
+        "--disassembler-options=intel64 " \
+	"--private-headers " /* information specific to the object file format */ \
+	"-sZ " /* full contents of sections, compress if Z is specified */ \
+	"--reloc " /* relocation entries */ \
+	"--dynamic-reloc " /* dynamic relocation entries, only relevant for dynamic objects */ \
+	"--source " /* (display source code intermixed with disassembly, if possible.) */ \
+	"--show-all-symbols " /* for a given address, not just the first one */ \
+	"--visualize-jumps=color " \
+	"--disassembler-color=extended " \
+	"--syms " /* Print the symbol table entries */ \
+	"--dynamic-syms " /* print the dynamic symbol table entries */ \
+	"--all-headers " /* Display all available header information, including the symbol table and relocation entries. equivalent to -a -f -h -p -r -t */ \
+        "%s"
