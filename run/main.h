@@ -100,7 +100,7 @@ extern int main_interactive;
 
 void main_begin(int argc, char **argv);
 void main_init(int argc, char **argv);
-void statusprint(char *, int);
+void statusprint(char *, int, FILE *, FILE *);
 void sighandle(int);
 
 txt

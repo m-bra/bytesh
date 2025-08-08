@@ -80,7 +80,7 @@ err:
 	printf("Error at %s:%d%c", __FILE__, __LINE__, *"\n");
 	return;
 
-FUNCTION void statusprint(char *rootworkdir, int runstatus)
+FUNCTION void statusprint(char *rootworkdir, int runstatus, FILE *first, FILE *second)
 
 def
 chr cwd[NBUF]; getcwd(cwd, NBUF);
@@ -100,9 +100,10 @@ chr *status = mf(
 			routine_gitupdaterequired(++counter, "/storage/self/primary/prj/bytesh/") ? ("!(bytesh/)") : ""
     	)
     );
-    printf("%s", status);
-    fflush(stdout);
-    fputsclose(status, fopen(mf("%s/%s", rootworkdir, "status.txt"), "w"));
+    fprintf(first,  "%s", status);
+    fprintf(second, "%s", status);
+    fflush(first);
+    fflush(second);
 
 /*
 FUNCTION inline void sighandle(int signum)
