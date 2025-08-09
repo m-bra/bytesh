@@ -135,7 +135,7 @@ void cmdlogat(int, linebuf_t *);
 
 #include ".//userinterface.h"
 
-#define PROMPT "0x%04X.priv.c %s $ "
+#define PROMPT "0x%04X.priv.c%s $ "
 
 stm int cmdlogn();
 

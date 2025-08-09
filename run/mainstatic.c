@@ -90,14 +90,14 @@ chr quiet[] = " 2> /dev/null > /dev/null";
 int routine_gitupdaterequired(int, char *);
     
 chr *status = mf(
-    	mf("\n%s%s", "%s[0x%02X][%s]\n%s", PROMPT), 
-    	GLOBAL_INDENT, runstatus, cwd, 
-    	GLOBAL_INDENT, 
+    	mf("\n%s%s", "%s[0x%02X]", PROMPT), 
+    	GLOBAL_INDENT, runstatus, 
+    	 
     	cmdlogn(),
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
     	mf("%s%s", 
-    		(!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX) " : ""),
-			routine_gitupdaterequired(++counter, "/storage/self/primary/prj/bytesh/") ? ("!(bytesh/)") : ""
+    		(!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""),
+			routine_gitupdaterequired(++counter, "/storage/self/primary/prj/bytesh/") ? (" !(bytesh/)") : "" 
     	)
     );
     fprintf(first,  "%s", status);

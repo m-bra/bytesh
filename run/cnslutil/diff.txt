@@ -176,7 +176,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
                 fopen(ROOTC("/run/cwd.txt"), "w")
             );
         stm loadcwd(rootworkdir);
-        stm pwd;        
+        
             // ctxt->line = ctxt->line + strlen(ctxt->line);
         stm *pline = linebuf;
         stm (*pline)[0] = 0;               

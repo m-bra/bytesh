@@ -39,7 +39,7 @@
 
 extern char *rootworkdir;
 
-void micro_(int ignore, char const *path, char *ignore_);
+void /**/micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
 
 
@@ -118,8 +118,8 @@ void programm();
 
 #define tmuxh printf("ctrl+b+\" \nctrl+b+%%\nctrl+b meta+arrow\n");
 
-#define mainh     (sh, mlinebufprintf("micro %s/%s", ROOT, "run/main.h"), endsh)
-#define mainstaticc (sh, ROOTC("/run/mainstatic.c"), endsh)
+#define mainh (edit, ROOTC("/run/main.h"), endsh)
+#define mainstaticc (edit, ROOTC("/run/mainstatic.c"), endsh)
 #define cnslutilh (edit, mlinebufprintf("%s/%s", ROOT, "run/cnslutil.h"), endsh)
 #define cnslutilc (edit, ROOTC("run/cnslutil.c"), endsh)
 

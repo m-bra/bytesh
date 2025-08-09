@@ -3,13 +3,15 @@
 
 void micro_(int ignore, char const *path, char *ignore_)
 {
-    int current_stdout_fileno = dup(STDOUT_FILENO);
+	cp, path, ROOTC("/run/cnslutil/diff.txt"), endsh;
+        int current_stdout_fileno = dup(STDOUT_FILENO);
 	dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
 	char buf[512];
 	// simply switch from micro to vim
 	snprintf(buf, 512, "vim %s", path);
 	system(buf);
 	dup2(current_stdout_fileno, STDOUT_FILENO);
+        sh, "diff %s %s", ROOTC("/run/cnslutil/diff.txt"), path, endsh; 
 	// TODO: undefined escape rules in param strings
 }
 
