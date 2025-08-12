@@ -3,6 +3,7 @@
 #ifndef USERINTERFACEHINCLUDED
 #define USERINTERFACEHINCLUDED
 #define userinterfaceh edit, ROOTC("/run/userinterface.h"), endsh
+#define userinterfacec edit, ROOTC("/run/userinterface.c"), endsh
 #define userinterfacehadd hadd("userinterface")
 #define userinterfacehaddfn(ident) haddfn("userinterface", ident)
 #define userinterfacehadddef(ident) hadditem("userinterface", ident, 1)

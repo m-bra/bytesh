@@ -1,0 +1,2641 @@
+diff with context
+
+    [0x00]0x027C.priv.c $ cnslutilc
+    5a6,10
+    >     edit_(path);
+    > }
+    > 
+    > void edit_(char const *path)
+    > {
+    14c19
+    <         sh, "diff %s %s", ROOTC("/run/cnslutil/diff.txt"), path, endsh; 
+    ---
+    >         sh, "diff -C 5 %s %s", ROOTC("/run/cnslutil/diff.txt"), path, endsh; 
+
+    [0x00]0x029A.priv.c $ precompile
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+
+cmdlog with date
+
+    [0x00]0x0267.priv.c !(bytesh/) $ mainh
+    138c138
+    < #define PROMPT "0x%04X.priv.c%s $ "
+    ---
+    > #define PROMPT "%s priv.c:%d%s $ "
+
+    [0x00]0x026D.priv.c !(bytesh/) $ mainstaticc
+    95c95,97
+    <     	 
+    ---
+    >     	
+    > 	/* date */
+    > 	"",
+
+    [0x00]0x0275.priv.c !(bytesh/) $ man, "date", endsh
+
+    [0x00]0x0279.priv.c !(bytesh/) $ sh, "time", endsh
+
+    [0x00]0x0036.priv.c $ man, "date", endsh
+    9a10,20
+    > PRIVATE NOTES
+    >     FORMAT:
+    > 	// %b month
+    > 	// %Y year 
+    > 	// %d day of month
+    > 	// %H hour
+    > 	// %M minute
+    > 	// %n newline
+    > 	// %S second
+    > 	// %T %H:%M:%S
+    > 
+
+    [0x00]0x0048.priv.c $ sh, "info '(coreutils) date invocation'", endsh
+
+    [0x00]0x0046.priv.c !(bytesh/) $ shdirectout, "info '(coreutils) date invocation'", endsh
+
+
+    [0x00]0x0049.priv.c !(bytesh/) $ shdirectout("info '(coreutils) date invocation'");
+
+    [0x00]0x004B.priv.c !(bytesh/) $ tmphadddef("getdate")
+    0xFFFF.priv.c $ tmphadddef $ 
+
+    [0x00]0x004E.priv.c !(bytesh/) $ mainstaticc
+
+
+    [0x00]0x0051.priv.c $ man, "date", endsh
+
+    [0x00]0x0053.priv.c $ sh, "date %Y", endsh
+
+    [0x00]0x0055.priv.c $ # exit
+
+
+    [0x00]0x0058.priv.c $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00]0x006A.priv.c $ # restart
+
+
+    [0x00]0x006D.priv.c $ # exit
+
+
+    [0x00]2025-Aug-09 21:39:22
+     priv.c:112 $ mainstaticc
+    94a95
+    > stm szdate[strlen(szdate) - 1] = ' ';
+
+    [0x00]2025-Aug-09 21:40:04
+     priv.c:117 $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00]2025-Aug-09 21:40:07
+     priv.c:136 $ 
+
+    [0x00]2025-Aug-09 21:40:09
+     priv.c:139 $ # restart
+
+
+    [0x00]2025-Aug-09 21:40:14
+     priv.c:143 $ # exit
+
+
+    [0x00]2025-Aug-09 21:40:30  priv.c:147 $ mainstaticc
+    95c95
+    < stm szdate[strlen(szdate) - 1] = ' ';
+    ---
+    > stm szdate[strlen(szdate) - 1] = '\0';
+    99c99
+    <     	mf("\n%s%s", "%s[0x%02X]", PROMPT), 
+    ---
+    >     	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
+
+    [0x00]2025-Aug-09 21:41:04  priv.c:157 $ # exit
+
+
+    [0x00] 2025-Aug-09 21:41:19 priv.c:160 $ ////////////////////////////////////////////////////
+
+    [0x00] 2025-Aug-09 21:42:13 priv.c:162 $ man, "date", endsh
+
+    [0x00] 2025-Aug-09 21:48:08 priv.c:164 $ man, "now", endsh
+
+    [0x00] 2025-Aug-09 21:48:16 priv.c:166 $ sh, "now", endsh
+
+    [0x00] 2025-Aug-09 21:48:21 priv.c:168 $ shdirectout("now")
+
+    [0x00] 2025-Aug-09 21:48:29 priv.c:170 !(bytesh/) $ shdirectout("info now")
+
+    [0x00] 2025-Aug-09 21:48:41 priv.c:172 !(bytesh/) $ man, "date", endsh
+
+    [0x00] 2025-Aug-09 21:49:49 priv.c:174 !(bytesh/) $ shdirectout("tzselect")
+
+    [0x00] 2025-Aug-09 21:50:32 priv.c:176 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-09 21:50:36 priv.c:178 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-09 21:50:43 priv.c:180 !(bytesh/) $ man, "tzselect", endsh
+
+    [0x00] 2025-Aug-09 21:50:59 priv.c:182 !(bytesh/) $ man, "date", endsh
+
+    [0x00] 2025-Aug-09 21:51:51 priv.c:184 !(bytesh/) $ man, "setlocale", endsh
+
+    [0x00] 2025-Aug-09 21:52:03 priv.c:186 !(bytesh/) $ shdirectout("setlocale")
+
+    [0x00] 2025-Aug-09 21:52:09 priv.c:188 !(bytesh/) $ # exit
+
+
+    [0x00] 2025-Aug-09 21:59:20 priv.c:191 $ mainstaticc
+    97a98,103
+    > stm FILE *datedatefile = popen(mf("date --date=\"%s\"", szdate), "r");
+    > chr szdatedate[256];
+    > stm fgets(szdatedate, 254, datedatefile);
+    > stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    > stm pclose (datedatefile);
+    > 
+
+    [0x00] 2025-Aug-09 22:01:19 priv.c:200 $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00] 2025-Aug-09 22:01:26 priv.c:218 $ # restart
+
+
+    [0x00] 2025-Aug-09 22:01:32 priv.c:221 $ # exit
+
+
+    [0x00] 2025-Aug-09 22:01:45 priv.c:224 $ mainstaticc
+    98c98
+    < stm FILE *datedatefile = popen(mf("date --date=\"%s\"", szdate), "r");
+    ---
+    > stm FILE *datedatefile = popen(mf("date +%Y-%b-%d\\ %H:%M:%S --date=\"%s\"", szdate), "r");
+
+    [0x00] 2025-Aug-09 22:02:40 priv.c:230 $ man, "date", endsh
+
+    [0x00] 2025-Aug-09 22:05:19 priv.c:232 $ mainstaticc
+    92c92
+    < stm FILE *datefile = popen("date +%Y-%b-%d\\ %H:%M:%S", "r");
+    ---
+    > stm FILE *datefile = popen("date +%Y-%m-%d\\ %H:%M:%S", "r");
+
+    [0x00] 2025-Aug-09 22:05:41 priv.c:238 $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00] 2025-Aug-09 22:05:47 priv.c:256 $ 
+
+    [0x00] 2025-Aug-09 22:05:51 priv.c:258 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-09 22:05:56 priv.c:260 !(bytesh/) $ # restart
+
+
+    [0x00] 2025-Aug-09 22:06:06 priv.c:263 $ # exit
+
+
+
+    [0x00] 2025-Aug-09 22:07:40 priv.c:267 $ 
+
+    [0x00] 2025-Aug-09 22:07:46 priv.c:269 $ mainstaticc
+    98c98
+    < stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date=\"%s\"", szdate), "r");
+    ---
+    > stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+
+    [0x00] 2025-Aug-09 22:09:17 priv.c:275 $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00] 2025-Aug-09 22:09:22 priv.c:293 $ # restart
+
+
+    [0x00] 2025-Aug-09 22:09:27 priv.c:296 $ # exit
+
+
+    [0x00] �? priv.c:299 $ man, "date", endsh
+
+    [0x00] `W priv.c:301 $ shdirectout(tzselect)
+    shdirectout("tzselect")
+
+    [0x00] @s priv.c:304 $ shdirectout(tzselect)
+    shdirectout("tzselect")
+
+    [0x00] � priv.c:307 $ mainstaticc
+    92c92
+    < stm FILE *datefile = popen("date +%Y-%m-%d\\ %H:%M:%S", "r");
+    ---
+    > stm FILE *datefile = popen("TZ='Europe/Kyiv' date +%Y-%b-%d\\ %H:%M:%S", "r");
+    98,102c98,102
+    < stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+    < chr szdatedate[256];
+    < stm fgets(szdatedate, 254, datedatefile);
+    < stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    < stm pclose (datedatefile);
+    ---
+    > //stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+    > //chr szdatedate[256];
+    > //stm fgets(szdatedate, 254, datedatefile);
+    > //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    > //stm pclose (datedatefile);
+    109c109
+    < 	szdatedate,
+    ---
+    > 	szdate,
+
+    [0x00] �� priv.c:329 $ # exit
+
+cmdlog tweaks
+
+    [0x00] 2025-Aug-10 01:16:46 priv.c:329 $ mainh
+    108c108
+    < #define GLOBAL_INDENT ""
+    ---
+    > #define GLOBAL_INDENT "    "
+
+    [0x00] 2025-Aug-10 01:16:58 priv.c:335 $ 
+
+    [0x00] 2025-Aug-10 01:17:00 priv.c:337 $ # restart
+
+
+    [0x00] 2025-Aug-10 01:17:08 priv.c:340 $ 
+
+    [0x00] 2025-Aug-10 01:17:10 priv.c:342 $ precompile
+    lalala
+    (ep->d_name) = "build.c"
+    (ep->d_name) = "cnslutil.c"
+    (ep->d_name) = "mainstatic.c"
+    (ep->d_name) = "stdioext.c"
+    (ep->d_name) = "stdlibext.c"
+    (ep->d_name) = "mntc.c"
+    (ep->d_name) = "errno.c"
+    (ep->d_name) = "unistdext.c"
+    (ep->d_name) = "stringext.c"
+    (ep->d_name) = "userinterface.c"
+    (ep->d_name) = "stringutil.c"
+    (ep->d_name) = "htmlutil.c"
+    (ep->d_name) = "scanfs.c"
+    (ep->d_name) = "trpg.c"
+    (ep->d_name) = "main.rewirestderr.c"
+
+    [0x00] 2025-Aug-10 01:17:17 priv.c:360 $ # cd .
+    /home/mbrandt/storage/prj/bytesh/run
+
+    [0x00] 2025-Aug-10 01:17:21 priv.c:363 $ # exit
+
+
+    [0x00] 2025-Aug-10 01:17:35 priv.c:366 $ sh, "echo New Test Title >> %s", ROOTC("/run/log.txt"), endsh
+
+New Test Title
+
+    [0x00] 2025-Aug-10 01:18:25 priv.c:369 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 01:18:39 priv.c:372 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 01:20:04 priv.c:373 $ sh, "r2", endsh
+Usage: r2 [-ACdfjLMnNqStuvwzX] [-P patch] [-p prj] [-a arch] [-b bits] [-c cmd]
+          [-s addr] [-B baddr] [-m maddr] [-i script] [-e k=v] file|pid|-|--|=
+
+    [0x00] 2025-Aug-10 01:23:57 priv.c:377 $ 
+
+    [0x00] 2025-Aug-10 01:25:36 priv.c:379 !(bytesh/) $ # exit
+
+
+    [0x00] 2025-Aug-10 13:08:32 priv.c:382 $ compilerh
+291,292c291,292
+< 	    stm printfflush ("%s", line);
+< 	    stm fputs (line, cmdlogfile);
+---
+> 	    stm printfflush ("%s%s", GLOBAL_INDENT, line);
+> 	    stm printf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+
+    [0x00] 2025-Aug-10 13:11:47 priv.c:390 $ # restart
+compilerh
+292c292
+< 	    stm printf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+---
+> 	    stm fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+
+    [0x00] 2025-Aug-10 13:12:06 priv.c:397 $ # restart
+
+
+    [0x00] 2025-Aug-10 13:12:11 priv.c:400 $ printf("HELLO\n");
+    HELLO
+
+    [0x00] 2025-Aug-10 13:12:20 priv.c:403 $ # cd .
+/home/mbrandt/storage/prj/bytesh/run
+
+    [0x00] 2025-Aug-10 13:12:44 priv.c:406 $ compilerh
+    186a187
+    > 	stm fputsclose(GLOBAL_INDENT, fopen(ROOTC("/run/log.txt"), "a"));
+
+    [0x00] 2025-Aug-10 13:16:37 priv.c:410 $ # restart
+
+
+    [0x00] 2025-Aug-10 13:16:43 priv.c:413 $ # cd .
+    /home/mbrandt/storage/prj/bytesh/run
+
+    [0x00] 2025-Aug-10 13:16:46 priv.c:416 $ # cd ../../..
+    /storage/self/primary
+
+    [0x00] 2025-Aug-10 13:16:55 priv.c:419 $ ls
+lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:16 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  6 10182 1023 3.4K Aug  4 12:39 Documents
+    drwxrws---  4 10182 1023 3.4K Jun 18 21:56 Documents_B
+    drwxrws--- 15 10182 1023  52K Aug  9 16:23 Download
+    drwxrws---  2 10182 1023 3.4K Jul  2 10:55 downloads_b
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023  20K Aug  8 07:22 Glaubenslieder
+    drwxrws---  2 10182 1023 3.4K Dec 16  2024 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Jul 28 16:02 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug  8 00:11 tmp
+
+    [0x00] 2025-Aug-10 13:17:05 priv.c:454 $ mv, "tmp/vimscript", "mntc/.vimrc", endsh
+
+    [0x00] 2025-Aug-10 13:17:16 priv.c:456 $ # cd ..
+    /storage/self
+
+    [0x00] 2025-Aug-10 13:17:22 priv.c:459 !(bytesh/) $ # cd /home/mbrandt
+    /home/mbrandt
+
+    [0x00] 2025-Aug-10 13:17:31 priv.c:462 !(bytesh/) $ man, "ln", endsh
+
+    [0x00] 2025-Aug-10 13:17:39 priv.c:464 !(bytesh/) $ lns, "storage/mntc/vimrc", ".vimrc", endsh
+    
+    [0x00] 2025-Aug-10 13:17:** priv.c:*** ********** $ sh, "ln -s storage/mntc/vimrc .vimrc", endsh
+
+    [0x00] 2025-Aug-10 13:18:27 priv.c:467 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Aug-10 13:18:59 priv.c:470 !(bytesh/) $ # cd storage/mntc
+    /storage/self/primary/mntc
+
+    [0x00] 2025-Aug-10 13:19:08 priv.c:473 !(bytesh/) $ mv, ".vimrc", "vimrc", endsh
+
+    [0x00] 2025-Aug-10 13:19:17 priv.c:475 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Aug-10 13:19:33 priv.c:477 !(bytesh/) $ compilerh
+
+    [0x00] 2025-Aug-10 13:19:45 priv.c:479 !(bytesh/) $ stat, "/home/mbrandt/.vimrc", endsh
+      File: /home/mbrandt/.vimrc -> storage/mntc/vimrc
+      Size: 18        	Blocks: 0          IO Block: 4096   symbolic link
+    Device: 254,15	Inode: 557344      Links: 1
+    Access: (0777/lrwxrwxrwx)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-08-10 10:18:27.663698758 +0000
+    Modify: 2025-08-10 10:18:27.663698758 +0000
+    Change: 2025-08-10 10:18:27.663698758 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 13:19:55 priv.c:489 !(bytesh/) $ vim, "/home/mbrandt/.vimrc", endsh
+
+
+    [0x00] 2025-Aug-10 13:20:10 priv.c:492 !(bytesh/) $ edit, "/home/mbrandt/.vimrc", endsh
+    3d2
+    < 
+
+    [0x00] 2025-Aug-10 13:26:22 priv.c:496 !(bytesh/) $ edit, "", endsh
+
+    [0x00] 2025-Aug-10 13:27:25 priv.c:498 !(bytesh/) $ sh, "vim --help", endsh
+    VIM - Vi IMproved 9.1 (2024 Jan 02, compiled Jun 30 2025 01:40:19)
+    
+    Usage: vim [arguments] [file ..]       edit specified file(s)
+       or: vim [arguments] -               read text from stdin
+       or: vim [arguments] -t tag          edit file where tag is defined
+       or: vim [arguments] -q [errorfile]  edit file with first error
+    
+    Arguments:
+       --			Only file names after this
+       -v			Vi mode (like "vi")
+       -e			Ex mode (like "ex")
+       -E			Improved Ex mode
+       -s			Silent (batch) mode (only for "ex")
+       -d			Diff mode (like "vimdiff")
+       -y			Easy mode (like "evim", modeless)
+       -R			Readonly mode (like "view")
+       -Z			Restricted mode (like "rvim")
+       -m			Modifications (writing files) not allowed
+       -M			Modifications in text not allowed
+       -b			Binary mode
+       -l			Lisp mode
+       -C			Compatible with Vi: 'compatible'
+       -N			Not fully Vi compatible: 'nocompatible'
+       -V[N][fname]		Be verbose [level N] [log messages to fname]
+       -D			Debugging mode
+       -n			No swap file, use memory only
+       -r			List swap files and exit
+       -r (with file name)	Recover crashed session
+       -L			Same as -r
+       -A			Start in Arabic mode
+       -H			Start in Hebrew mode
+       -T <terminal>	Set terminal type to <terminal>
+       --not-a-term		Skip warning for input/output not being a terminal
+       --ttyfail		Exit if input or output is not a terminal
+       -u <vimrc>		Use <vimrc> instead of any .vimrc
+       --noplugin		Don't load plugin scripts
+       -p[N]		Open N tab pages (default: one for each file)
+       -o[N]		Open N windows (default: one for each file)
+       -O[N]		Like -o but split vertically
+       +			Start at end of file
+       +<lnum>		Start at line <lnum>
+       --cmd <command>	Execute <command> before loading any vimrc file
+       -c <command>		Execute <command> after loading the first file
+       -S <session>		Source file <session> after loading the first file
+       -s <scriptin>	Read Normal mode commands from file <scriptin>
+       -w <scriptout>	Append all typed commands to file <scriptout>
+       -W <scriptout>	Write all typed commands to file <scriptout>
+       -x			Edit encrypted files
+       --startuptime <file>	Write startup timing messages to <file>
+       --log <file>		Start logging to <file> early
+       -i <viminfo>		Use <viminfo> instead of .viminfo
+       --clean		'nocompatible', Vim defaults, no plugins, no viminfo
+       -h  or  --help	Print Help (this message) and exit
+       --version		Print version information and exit
+
+    [0x00] 2025-Aug-10 13:27:32 priv.c:554 !(bytesh/) $ pwd
+    /storage/self/primary/mntc
+
+    [0x00] 2025-Aug-10 13:28:38 priv.c:557 !(bytesh/) $ # cd ..
+    /storage/self/primary
+
+    [0x00] 2025-Aug-10 13:28:41 priv.c:560 !(bytesh/) $ lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:28 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  6 10182 1023 3.4K Aug  4 12:39 Documents
+    drwxrws---  4 10182 1023 3.4K Jun 18 21:56 Documents_B
+    drwxrws--- 15 10182 1023  52K Aug  9 16:23 Download
+    drwxrws---  2 10182 1023 3.4K Jul  2 10:55 downloads_b
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023  20K Aug  8 07:22 Glaubenslieder
+    drwxrws---  2 10182 1023 3.4K Dec 16  2024 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:28:45 priv.c:594 !(bytesh/) $ mv, "Glaubenslieder", "Documents/NEUESREICH/", endsh
+
+    [0x00] 2025-Aug-10 13:29:56 priv.c:596 !(bytesh/) $ lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  6 10182 1023 3.4K Aug  4 12:39 Documents
+    drwxrws---  4 10182 1023 3.4K Jun 18 21:56 Documents_B
+    drwxrws--- 15 10182 1023  52K Aug  9 16:23 Download
+    drwxrws---  2 10182 1023 3.4K Jul  2 10:55 downloads_b
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Dec 16  2024 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:29:59 priv.c:629 !(bytesh/) $ # cd .LenovoReaper
+    /storage/self/primary/.LenovoReaper
+
+    [0x00] 2025-Aug-10 13:30:09 priv.c:632 !(bytesh/) $ lsc
+    total 7.5K
+    drwxrws--- 2 10182 1023 3.4K Aug 10 10:30 .bak
+    -rw-rw---- 1 10182 1023  129 Dec 16  2024 did
+
+    [0x00] 2025-Aug-10 13:30:11 priv.c:637 !(bytesh/) $ ls, ".bak", endsh
+    total 4.0K
+    -rw-rw---- 1 10182 1023 116 Aug 10 10:30 log.next.txt
+
+    [0x00] 2025-Aug-10 13:30:35 priv.c:641 !(bytesh/) $ pwd
+    /storage/self/primary/.LenovoReaper
+
+    [0x00] 2025-Aug-10 13:30:40 priv.c:644 !(bytesh/) $ compilerh
+    307c307
+    <     stm bak, ROOTC("/run/log.next.txt"), endsh;
+    ---
+    >     stm mv, ROOTC("/run/log.next.txt"), ROOTC("/run/log.next.txt.bak"), endsh;
+
+    [0x00] 2025-Aug-10 13:32:45 priv.c:650 !(bytesh/) $ # restart
+
+
+    [0x00] 2025-Aug-10 13:32:51 priv.c:653 $ lsc
+    total 7.5K
+    drwxrws--- 2 10182 1023 3.4K Aug 10 10:32 .bak
+    -rw-rw---- 1 10182 1023  129 Dec 16  2024 did
+
+    [0x00] 2025-Aug-10 13:34:09 priv.c:658 $ rmr, ".bak", endsh
+
+    [0x00] 2025-Aug-10 13:34:14 priv.c:660 $ # cd did
+    /storage/self/primary/.LenovoReaper
+
+    [0x00] 2025-Aug-10 13:34:16 priv.c:663 $ lsc
+    total 194K
+    -rw-rw----  1 10182 1023  85K Aug 10 10:32 a.out
+    drwxrws---  2 10182 1023 3.4K Aug  9 20:48 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    drwxrws---  7 10182 1023 3.4K Aug  9 22:25 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 10:34 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 10:32 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 10:34 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 10:19 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 10:28 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 13:34:20 priv.c:685 $ pwd
+    /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Aug-10 13:34:23 priv.c:688 !(bytesh/) $ # cd ../../.LenvoReaper
+    /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Aug-10 13:34:30 priv.c:691 !(bytesh/) $ # cd ../..
+    /storage/self/primary
+
+    [0x00] 2025-Aug-10 13:34:33 priv.c:694 !(bytesh/) $ slc
+lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  6 10182 1023 3.4K Aug  4 12:39 Documents
+    drwxrws---  4 10182 1023 3.4K Jun 18 21:56 Documents_B
+    drwxrws--- 15 10182 1023  52K Aug  9 16:23 Download
+    drwxrws---  2 10182 1023 3.4K Jul  2 10:55 downloads_b
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:34:39 priv.c:728 !(bytesh/) $ # cd .LenovoReaper
+    /storage/self/primary/.LenovoReaper
+
+    [0x00] 2025-Aug-10 13:34:44 priv.c:731 !(bytesh/) $ lsc
+    total 4.0K
+    -rw-rw---- 1 10182 1023 129 Dec 16  2024 did
+
+    [0x00] 2025-Aug-10 13:34:46 priv.c:735 !(bytesh/) $ # cd did
+    /storage/self/primary/.LenovoReaper
+
+    [0x00] 2025-Aug-10 13:34:55 priv.c:738 !(bytesh/) $ lsc
+    total 194K
+    -rw-rw----  1 10182 1023  85K Aug 10 10:32 a.out
+    drwxrws---  2 10182 1023 3.4K Aug  9 20:48 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:34 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 10:34 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 10:32 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 10:34 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 10:28 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 10:34 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 13:34:59 priv.c:760 !(bytesh/) $ # cd ../..
+    /storage/self/primary
+
+    [0x00] 2025-Aug-10 13:35:05 priv.c:763 !(bytesh/) $ lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  6 10182 1023 3.4K Aug  4 12:39 Documents
+    drwxrws---  4 10182 1023 3.4K Jun 18 21:56 Documents_B
+    drwxrws--- 15 10182 1023  52K Aug  9 16:23 Download
+    drwxrws---  2 10182 1023 3.4K Jul  2 10:55 downloads_b
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:35:12 priv.c:796 !(bytesh/) $ mv, "Documents_B/*", "Documents", endsh
+
+    [0x00] 2025-Aug-10 13:35:32 priv.c:798 !(bytesh/) $ ls, "Documents_B", endsh
+    total 0
+
+    [0x00] 2025-Aug-10 13:35:38 priv.c:801 !(bytesh/) $ rmr, "Documents_B", endsh
+
+    [0x00] 2025-Aug-10 13:35:45 priv.c:803 !(bytesh/) $ mv, "downloads_b/*", "Download", endsh
+
+    [0x00] 2025-Aug-10 13:35:59 priv.c:805 !(bytesh/) $ ls, "downloads_b", endsh
+    total 0
+
+    [0x00] 2025-Aug-10 13:36:04 priv.c:808 !(bytesh/) $ rmr, "downloads_b", endsh
+
+    [0x00] 2025-Aug-10 13:36:10 priv.c:810 !(bytesh/) $ lsc
+    total 15M
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    -rw-rw----  1 10182 1023  15M Jun 28 13:16 audiodump.wav
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  8 10182 1023 3.4K Aug 10 10:35 Documents
+    drwxrws--- 15 10182 1023  52K Aug 10 10:35 Download
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:36:12 priv.c:841 !(bytesh/) $ rm, "audiodump.wav", endsh
+
+    [0x00] 2025-Aug-10 13:36:41 priv.c:843 !(bytesh/) $ ls, "Android", endsh
+    total 15K
+    drwxrws--x+ 49 1023 1078 8.0K Aug  4 17:28 data
+    drwxrws--x   3 1023 1023 3.4K Jul 19 10:13 media
+    drwxrws--x+  2 1023 1079 3.4K May 28 14:12 obb
+
+    [0x00] 2025-Aug-10 13:36:48 priv.c:849 !(bytesh/) $ mkdir, "mbrandt", endsh
+
+    [0x00] 2025-Aug-10 13:36:57 priv.c:851 !(bytesh/) $ lsc
+    total 160K
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  8 10182 1023 3.4K Aug 10 10:35 Documents
+    drwxrws--- 15 10182 1023  52K Aug 10 10:35 Download
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:36 mbrandt
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:37:00 priv.c:882 !(bytesh/) $ ls, "Books", endsh
+    total 7.0K
+    drwxrws--- 2 10182 1023 3.4K Aug  8 08:04 .MoonReader
+    drwxrws--- 2 10182 1023 3.4K May 12 22:30 MoonReader
+
+    [0x00] 2025-Aug-10 13:37:23 priv.c:887 !(bytesh/) $ # cd mbrandt
+    /storage/self/primary/mbrandt
+
+    [0x00] 2025-Aug-10 13:37:33 priv.c:890 !(bytesh/) $ mkdir, "media", endsh
+
+    [0x00] 2025-Aug-10 13:37:41 priv.c:892 !(bytesh/) $ # cd media
+    /storage/self/primary/mbrandt/media
+
+    [0x00] 2025-Aug-10 13:37:44 priv.c:895 !(bytesh/) $ mainh
+
+    [0x00] 2025-Aug-10 13:37:54 priv.c:897 !(bytesh/) $ cnslutilh
+    164,167d163
+    < #define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf(lastmalloc, sizeof(linebuf_t), "ln -s %s %s", a, b), lastmalloc) _
+    < 
+    < #define lns lnsfn (
+    < 
+    503a500,501
+    > 
+    > #define lns sh, "ln -s %s %s"
+
+    [0x00] 2025-Aug-10 13:38:52 priv.c:907 !(bytesh/) $ cnslutilhadddef("lnstl")
+    0xFFFF.priv.c $ cnslutilhadddef $ lns
+
+    [0x00] 2025-Aug-10 13:39:55 priv.c:910 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-10 13:40:08 priv.c:912 !(bytesh/) $ ls, "~/storage", endsh
+    lrwxrwxrwx 1 mbrandt mbrandt 21 Jul 26 19:00 /home/mbrandt/storage -> /storage/self/primary
+
+    [0x00] 2025-Aug-10 13:40:28 priv.c:915 !(bytesh/) $ ls, "~/storage/", endsh
+    total 160K
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  8 10182 1023 3.4K Aug 10 10:35 Documents
+    drwxrws--- 15 10182 1023  52K Aug 10 10:35 Download
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:37 mbrandt
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:26 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 13:40:45 priv.c:946 !(bytesh/) $ pwd
+    /storage/self/primary/mbrandt/media
+
+    [0x00] 2025-Aug-10 13:40:56 priv.c:949 !(bytesh/) $ lnstl, "~/storage/DCIM", "DCIM", endsh
+
+    [0x00] 2025-Aug-10 13:41:10 priv.c:951 !(bytesh/) $ lsc
+    total 0
+
+    [0x00] 2025-Aug-10 13:41:14 priv.c:954 !(bytesh/) $ touch, "a", endsh
+
+    [0x00] 2025-Aug-10 13:41:41 priv.c:956 !(bytesh/) $ slc
+lsc
+    total 0
+    -rw-rw---- 1 10182 1023 0 Aug 10 10:41 a
+
+    [0x00] 2025-Aug-10 13:41:45 priv.c:961 !(bytesh/) $ rm, "a", endsh
+
+    [0x00] 2025-Aug-10 13:41:54 priv.c:963 !(bytesh/) $ lnstl, "a", "b", endhs
+touch, "a", endsh
+
+    [0x00] 2025-Aug-10 13:42:16 priv.c:966 !(bytesh/) $ lnstl, "a", "b", endsh
+
+    [0x00] 2025-Aug-10 13:42:24 priv.c:968 !(bytesh/) $ # exit
+
+
+    [0x00] 2025-Aug-10 14:29:36 priv.c:971 $ edit, "/tmp/speech.txt", endsh
+
+
+    [0x00] 2025-Aug-10 16:20:01 priv.c:974 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 16:20:34 priv.c:976 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 16:21:49 priv.c:978 $ pwd
+    /storage/self/primary/mbrandt/media
+
+    [0x00] 2025-Aug-10 16:22:06 priv.c:981 $ lnstl, "/home/mbrandt/storage/DCIM", "DCIM", endsh
+
+    [0x00] 2025-Aug-10 16:23:02 priv.c:983 $ lsc
+    total 0
+    -rw-rw---- 1 10182 1023 0 Aug 10 10:42 a
+
+    [0x00] 2025-Aug-10 16:23:08 priv.c:987 !(bytesh/) $ lnstl, "a", "b", endsh
+
+    [0x00] 2025-Aug-10 16:23:24 priv.c:989 !(bytesh/) $ lsc
+    total 0
+    -rw-rw---- 1 10182 1023 0 Aug 10 10:42 a
+
+    [0x00] 2025-Aug-10 16:23:27 priv.c:993 !(bytesh/) $ # exit
+
+
+    [0x00] 2025-Aug-10 16:28:28 priv.c:996 $ # cd /data/data/com.termux/files/home
+    /data/data/com.termux/files/home
+
+    [0x00] 2025-Aug-10 16:29:00 priv.c:999 $ lsc
+    total 97M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 13:29 a.out
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K Jul 22 17:50 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 12:27 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:28 DCIM -> storage/DCIM
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    drwx------  2 mbrandt mbrandt 3.4K Aug  2 08:20 downloads
+    -rwxrwx---  1 mbrandt mbrandt 717K Jun 28 12:18 file_example_MP3_700KB.mp3
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    -rw-------  1 mbrandt mbrandt 7.3M Jul 22 15:01 manjaro-mirror-stable-extra.html
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Mar 26 12:37 monero-aarch64-linux-android-v0.18.4.0
+    -rwxrwx---  1 mbrandt mbrandt  81M Jul 14 14:37 monero-android-armv8-v0.18.4.0.tar.bz2
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 10 mbrandt mbrandt 3.4K Jun  4 07:00 prj.bak
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:34 tmp
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 16:29:11 priv.c:1048 $ lnstl, "storage/mntc/vimrc", ".vimrc", endsh
+
+    [0x00] 2025-Aug-10 16:30:50 priv.c:1050 $ edit, "", endsh
+
+    [0x00] 2025-Aug-10 16:31:03 priv.c:1052 $ mainh
+
+    [0x00] 2025-Aug-10 16:31:15 priv.c:1054 !(bytesh/) $ compilerh
+
+    [0x00] 2025-Aug-10 16:31:29 priv.c:1056 !(bytesh/) $ echo, "$HOME", endsh
+    $ sh, "echo $HOME", endsh
+    /home/mbrandt
+
+    [0x00] 2025-Aug-10 16:31:46 priv.c:1060 !(bytesh/) $ stat, "/home/mbrandt/.vimrc", endsh
+      File: /home/mbrandt/.vimrc -> storage/mntc/vimrc
+      Size: 18        	Blocks: 0          IO Block: 4096   symbolic link
+    Device: 254,15	Inode: 557344      Links: 1
+    Access: (0777/lrwxrwxrwx)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-08-10 10:18:27.663698758 +0000
+    Modify: 2025-08-10 10:18:27.663698758 +0000
+    Change: 2025-08-10 10:18:27.663698758 +0000
+     Birth: -
+
+Sort home and storage directories.
+
+    [0x00] 2025-Aug-10 16:32:01 priv.c:1070 !(bytesh/) $ lsc
+    total 97M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 13:32 a.out
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K Jul 22 17:50 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 12:27 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:28 DCIM -> storage/DCIM
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    drwx------  2 mbrandt mbrandt 3.4K Aug  2 08:20 downloads
+    -rwxrwx---  1 mbrandt mbrandt 717K Jun 28 12:18 file_example_MP3_700KB.mp3
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    -rw-------  1 mbrandt mbrandt 7.3M Jul 22 15:01 manjaro-mirror-stable-extra.html
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Mar 26 12:37 monero-aarch64-linux-android-v0.18.4.0
+    -rwxrwx---  1 mbrandt mbrandt  81M Jul 14 14:37 monero-android-armv8-v0.18.4.0.tar.bz2
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 10 mbrandt mbrandt 3.4K Jun  4 07:00 prj.bak
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:34 tmp
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+
+    [0x00] 2025-Aug-10 16:34:48 priv.c:1123 !(bytesh/) $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    [0x00] 2025-Aug-10 16:36:37 priv.c:1136 !(bytesh/) $ man, "stdio.h", endsh
+
+    [0x00] 2025-Aug-10 16:37:01 priv.c:1138 !(bytesh/) $ man, "fmemopen", endsh
+
+    [0x00] 2025-Aug-10 16:39:30 priv.c:1140 !(bytesh/) $ stdioexth
+
+    [0x00] 2025-Aug-10 16:40:20 priv.c:1142 !(bytesh/) $ man, "fgets", endsh
+    NAME
+           fgets - input of strings
+    
+    LIBRARY
+           Standard C library
+    
+    SYNOPSIS
+           #include <stdio.h>
+    
+           char *fgets(char s[.n], int n, FILE *f)
+    
+    DESCRIPTION
+           fgets() reads in less than
+           `size` characters from `f` and stores them
+           into the buffer pointed to by `s`.
+           Stops after an EOF or a newline.
+           A terminating null byte ('\0') is stored
+           after the last character in the buffer.
+           
+    RETURN VALUE
+           fgets() returns `s` on success, and NULL on
+           error or when end of file occurs while no
+           characters have been read.
+           
+           
+           
+           
+           
+
+    [0x00] 2025-Aug-10 16:40:25 priv.c:1172 !(bytesh/) $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    [0x00] 2025-Aug-10 16:42:06 priv.c:1178 !(bytesh/) $ man, "fseek", endsh
+
+    [0x00] 2025-Aug-10 16:42:44 priv.c:1180 !(bytesh/) $ man, "rewind", endsh
+
+    [0x00] 2025-Aug-10 16:42:56 priv.c:1182 !(bytesh/) $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    [0x00] 2025-Aug-10 16:47:26 priv.c:1199 !(bytesh/) $ man, "stdio.h", endsh
+
+    [0x00] 2025-Aug-10 16:48:17 priv.c:1201 !(bytesh/) $ man, "fread", endsh
+
+    [0x00] 2025-Aug-10 16:48:53 priv.c:1203 !(bytesh/) $ man, "stdio.h", endsh
+
+    [0x00] 2025-Aug-10 16:49:45 priv.c:1205 !(bytesh/) $ compilerh
+
+    [0x00] 2025-Aug-10 16:50:43 priv.c:1207 !(bytesh/) $ pwd
+    /data/data/com.termux/files/home
+
+    [0x00] 2025-Aug-10 16:50:46 priv.c:1210 !(bytesh/) $ lsc storage
+    $ lsc, "storage", endsh
+    $ ls, "storage", endsh
+    lrwxrwxrwx 1 mbrandt mbrandt 21 Jul 22 17:50 storage -> /storage/self/primary
+
+    [0x00] 2025-Aug-10 16:51:06 priv.c:1215 !(bytesh/) $ ls, "storage/mntc", endsh
+    total 1.4G
+    -rw-rw---- 1 10182 1023  270 Jul 14 15:38 apks.txt
+    -rw-rw---- 1 10182 1023 1.3G Jul 28 13:25 archlinux-2025.07.01-x86_64.iso
+    -rw-rw---- 1 10182 1023  510 Jul 28 16:02 archlinux-2025.07.01-x86_64.iso.aria2
+    -rw-rw---- 1 10182 1023  73K Jul 28 13:05 archlinux-2025.07.01-x86_64.iso.torrent
+    drwxrws--- 2 10182 1023 3.4K Aug 10 10:28 .bak
+    -rw-rw---- 1 10182 1023 8.8K Jul 28 11:40 index.html
+    -rw-rw---- 1 10182 1023 7.3M Jul 22 15:01 manjaro-mirror-stable-extra.html
+    drwxrws--- 2 10182 1023 3.4K Mar 26 12:37 monero-aarch64-linux-android-v0.18.4.0
+    -rw-rw---- 1 10182 1023  81M Jul 14 14:37 monero-android-armv8-v0.18.4.0.tar.bz2
+    -rw-rw---- 1 10182 1023  619 Aug 10 10:26 vimrc
+
+    [0x00] 2025-Aug-10 16:51:13 priv.c:1228 !(bytesh/) $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    [0x00] 2025-Aug-10 16:55:08 priv.c:1248 !(bytesh/) $ stdlibexth
+    93c93
+    <     #define blk {
+    ---
+    >     #define blk do {
+    95c95
+    <     #define blk_end }
+    ---
+    >     #define blk_end } while (0);
+    97c97
+    <     #define end_blk }
+    ---
+    >     #define end_blk } while (0);
+
+    [0x00] 2025-Aug-10 16:56:43 priv.c:1262 !(bytesh/) $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    [0x00] 2025-Aug-10 16:59:05 priv.c:1268 $ # restart
+    $ man, "fmemopen", endsh
+
+    [0x00] 2025-Aug-10 16:59:23 priv.c:1271 $ mainh
+    50c50,51
+    < 
+    ---
+    > FILE *fmemopen(
+    >                       void *buf, size_t size, const char *mode);
+
+    [0x00] 2025-Aug-10 16:59:58 priv.c:1278 $ # restart
+    $ mainh
+    51a52
+    > void rewind(FILE *);
+
+    [0x00] 2025-Aug-10 17:00:29 priv.c:1283 $ # restart
+
+    $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    $ # restart
+
+    $ printf("hello, \n");
+    hello, 
+
+    $ printf("ok\n")
+    ok
+
+    $ compilerh
+(Patch is indented 4 spaces.)
+patching file main.c
+    $ # restart
+
+
+
+    $ printf("ok\n")
+    ok
+
+    $ compilerh
+    (Patch is indented 4 spaces.)
+    patching file main.c
+    
+    $ // ok
+
+    $ man, "rewind", endsh
+
+    $ printf ("ok\n");
+    ok
+
+    $ compilerh
+
+    $ pwd
+    /data/data/com.termux/files/home
+
+    $ # cd prj/bytesh
+    /data/data/com.termux/files/home/prj/bytesh
+
+    $ cp, "main.c", "main.hiddencmd.c", endsh
+
+    $ cmdlogedit
+
+    $ # restart
+
+
+    [0x00] 2025-Aug-10 17:16:07 priv.c:1297 $ 
+
+    [0x00] 2025-Aug-10 17:16:09 priv.c:1299 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 17:20:39 priv.c:1289 $ pwd
+    /data/data/com.termux/files/home/prj/bytesh
+
+    [0x00] 2025-Aug-10 17:20:53 priv.c:1292 $ # cd ..
+    /storage/self/primary/prj
+
+    [0x00] 2025-Aug-10 17:20:56 priv.c:1295 $ # cd ..
+    /storage/self/primary
+
+    [0x00] 2025-Aug-10 17:21:23 priv.c:1298 !(bytesh/) $ lsc
+    total 160K
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  8 10182 1023 3.4K Aug 10 10:35 Documents
+    drwxrws--- 15 10182 1023  52K Aug 10 13:18 Download
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:37 mbrandt
+    drwxrws---  4 10182 1023 3.4K Aug 10 13:33 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 17:21:28 priv.c:1329 !(bytesh/) $ # cd /data/data/com.termux/files/home
+    /data/data/com.termux/files/home
+
+    [0x00] 2025-Aug-10 17:21:42 priv.c:1332 !(bytesh/) $ lsc
+    total 8.2M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:21 a.out
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K Jul 22 17:50 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 12:27 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:28 DCIM -> storage/DCIM
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    drwx------  2 mbrandt mbrandt 3.4K Aug  2 08:20 downloads
+    -rwxrwx---  1 mbrandt mbrandt 717K Jun 28 12:18 file_example_MP3_700KB.mp3
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 10 mbrandt mbrandt 3.4K Jun  4 07:00 prj.bak
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:34 tmp
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:21:45 priv.c:1380 !(bytesh/) $ bak, "prj.bak", endsh
+
+    [0x00] 2025-Aug-10 17:21:56 priv.c:1382 !(bytesh/) $ bak, "file_example_MP3_700KB.mp3", endsh
+
+    [0x00] 2025-Aug-10 17:22:33 priv.c:1384 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:22 a.out
+    drwxr-xr-x  5 mbrandt mbrandt 3.4K Aug 10 14:22 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 12:27 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:28 DCIM -> storage/DCIM
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    drwx------  2 mbrandt mbrandt 3.4K Aug  2 08:20 downloads
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:34 tmp
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:22:41 priv.c:1430 !(bytesh/) $ mkdir, "media", endsh
+
+    [0x00] 2025-Aug-10 17:22:53 priv.c:1432 !(bytesh/) $ mv, "DCIM", "media", endsh
+
+    [0x00] 2025-Aug-10 17:22:59 priv.c:1434 !(bytesh/) $ stat, "downloads", endsh
+      File: downloads
+      Size: 3452      	Blocks: 7          IO Block: 4096   directory
+    Device: 254,15	Inode: 741540      Links: 2
+    Access: (0700/drwx------)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-07-14 15:26:55.539427306 +0000
+    Modify: 2025-08-02 08:20:58.051341363 +0000
+    Change: 2025-08-02 08:20:58.051341363 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 17:23:07 priv.c:1444 !(bytesh/) $ ls, "downloads", endsh
+    total 20M
+    -rw------- 1 mbrandt mbrandt  224 Jul 16 10:57 2025-01-27-SVA-TELEFONAT.TXT
+    -rw------- 1 mbrandt mbrandt  246 Jul 31 05:57 bluetooth_content_share_085638.html
+    -rw-r--r-- 1 mbrandt mbrandt 3.3K Aug  2 08:19 build.o
+    -rw-r--r-- 1 mbrandt mbrandt 1.6K Aug  2 08:19 errno.o
+    -rw------- 1 mbrandt mbrandt  16M Jul 14 15:34 gith_is_uploaded
+    -rw------- 1 mbrandt mbrandt 609K Jul 28 16:17 indeed-advertisement-chromehtml
+    -rw------- 1 mbrandt mbrandt 2.5K Jul 27 12:02 JONAS .TXT.txt
+    -rw-r--r-- 1 mbrandt mbrandt 3.4K Aug  2 08:19 mntc.o
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug  2 08:20 newfile
+    -rw------- 1 mbrandt mbrandt  295 Jul 14 15:27 other.txt
+    -rw------- 1 mbrandt mbrandt 1.7M Jul 15 12:55 Packages
+    -rw------- 1 mbrandt mbrandt   64 Jul 22 13:55 README.TXT
+    -rw-r--r-- 1 mbrandt mbrandt 3.2K Aug  2 08:19 scanfs.o
+    -rw-r--r-- 1 mbrandt mbrandt 2.7K Aug  2 08:19 stringext.o
+    -rw-r--r-- 1 mbrandt mbrandt 2.7K Aug  2 08:19 stringutil.o
+    -rw------- 1 mbrandt mbrandt 1.9M Jul 31 06:00 The GNU C Library_085814
+
+    [0x00] 2025-Aug-10 17:23:16 priv.c:1463 !(bytesh/) $ mv, "downloads/*", "storage/Download", endsh
+
+    [0x00] 2025-Aug-10 17:23:33 priv.c:1465 !(bytesh/) $ bak, "downloads", endsh
+
+    [0x00] 2025-Aug-10 17:23:45 priv.c:1467 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:23 a.out
+    drwxr-xr-x  6 mbrandt mbrandt 3.4K Aug 10 14:23 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 12:27 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Aug 10 14:22 media
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:34 tmp
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:23:48 priv.c:1512 !(bytesh/) $ mkdir, "mbrandt", endsh
+
+    [0x00] 2025-Aug-10 17:24:08 priv.c:1514 !(bytesh/) $ mv, "prj", "mbrandt", endsh
+
+
+    [0x00] 2025-Aug-10 17:25:02 priv.c:1517 $ # cd, "mbrandt", endsh
+# cd mbrandt
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 17:25:40 priv.c:1521 $ lnstl, "~/storage/mntc", "mntc", endsh
+
+    [0x00] 2025-Aug-10 17:26:32 priv.c:1523 $  \
+ \
+ \
+ \
+
+
+    [0x00] 2025-Aug-10 17:27:02 priv.c:1529 $ ls, "tmp", endsh
+
+    [0x00] 2025-Aug-10 17:28:18 priv.c:1531 $ mv, "tmp", "mbrandt", endsh
+
+    [0x00] 2025-Aug-10 17:28:29 priv.c:1533 !(bytesh/) $ lsc
+    total 0
+    lrwxrwxrwx 1 mbrandt mbrandt 26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    lrwxrwxrwx 1 mbrandt mbrandt 26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+
+    [0x00] 2025-Aug-10 17:28:40 priv.c:1538 !(bytesh/) $ # cd ..
+    /data/data/com.termux/files/home
+
+    [0x00] 2025-Aug-10 17:28:47 priv.c:1541 !(bytesh/) $ ls, "tmp", endsh
+    total 152K
+    -rw------- 1 mbrandt mbrandt  16K Jul 23 10:45 A
+    -rwxr-x--x 1 mbrandt mbrandt  99K Jul  5 07:56 a.out
+    -rw------- 1 mbrandt mbrandt 2.0K Jul 15 14:58 apt-qt.txt
+    -rw------- 1 mbrandt mbrandt  16K Jul 23 10:45 B
+    -rw------- 1 mbrandt mbrandt   81 Jul 28 13:20 dialogdir.txt
+    -rw------- 1 mbrandt mbrandt   89 Jul 28 13:20 dialog.txt
+    -rw------- 1 mbrandt mbrandt   94 Jul 15 14:32 run.sh
+    -rw------- 1 mbrandt mbrandt    9 Feb 13 16:44 test.txt
+
+    [0x00] 2025-Aug-10 17:28:53 priv.c:1552 !(bytesh/) $ mv, "tmp", "mbrandt", endsh
+
+    [0x00] 2025-Aug-10 17:29:01 priv.c:1554 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:29 a.out
+    drwxr-xr-x  6 mbrandt mbrandt 3.4K Aug 10 14:23 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  3 mbrandt mbrandt 3.4K Aug 10 14:29 mbrandt
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Aug 10 14:22 media
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    drwx------  3 mbrandt mbrandt 3.4K Jul 26 18:48 .termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:29:06 priv.c:1599 !(bytesh/) $ ls, ".termux", endsh
+    total 12K
+    -rw------- 1 mbrandt mbrandt 5.2K Jul 14 17:30 termux.properties
+    drwx------ 3 mbrandt mbrandt 3.4K Jul 11 11:52 widget
+
+    [0x00] 2025-Aug-10 17:29:15 priv.c:1604 !(bytesh/) $ mv, ".termux", "mbrandt/mntc", endsh
+
+    [0x00] 2025-Aug-10 17:29:55 priv.c:1606 !(bytesh/) $ lnstl, "mbrandt/mntc/.termux", ".termux", endsh
+
+    [0x00] 2025-Aug-10 17:30:08 priv.c:1608 !(bytesh/) $ ls, "mbrandt", endsh
+    total 3.5K
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+
+    [0x00] 2025-Aug-10 17:30:20 priv.c:1614 !(bytesh/) $ sh, "ls -a mbrandt", endsh
+    .
+    ..
+    mntc
+    prj
+    tmp
+
+    [0x00] 2025-Aug-10 17:30:52 priv.c:1621 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:31 a.out
+    drwxr-xr-x  6 mbrandt mbrandt 3.4K Aug 10 14:23 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  3 mbrandt mbrandt 3.4K Aug 10 14:29 mbrandt
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Aug 10 14:22 media
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    drwx------  2 mbrandt mbrandt 3.4K Jul 28 12:34 .shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    lrwxrwxrwx  1 mbrandt mbrandt   20 Aug 10 14:30 .termux -> mbrandt/mntc/.termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:31:04 priv.c:1666 !(bytesh/) $ ls, "var", endsh
+    total 0
+
+    [0x00] 2025-Aug-10 17:31:16 priv.c:1669 !(bytesh/) $ ls, "mbrandt", endsh
+    total 3.5K
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+
+    [0x00] 2025-Aug-10 17:31:26 priv.c:1675 !(bytesh/) $ ls, ".shortcuts", endsh
+    total 8.0K
+    -rwxr--r-- 1 mbrandt mbrandt 125 Jul 28 12:39 firefox
+    -rwxr-xr-x 1 mbrandt mbrandt 136 Jul 28 13:23 libreoffice
+
+    [0x00] 2025-Aug-10 17:31:53 priv.c:1680 !(bytesh/) $ mv, ".shortcuts", "mbrandt/mntc", endsh
+
+    [0x00] 2025-Aug-10 17:32:05 priv.c:1682 !(bytesh/) $ lnstl, "mbrandt/mntc/.shortcuts", ".shortcuts", endsh
+
+    [0x00] 2025-Aug-10 17:32:21 priv.c:1684 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 14:32 a.out
+    drwxr-xr-x  6 mbrandt mbrandt 3.4K Aug 10 14:23 .bak
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 12:27 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  3 mbrandt mbrandt 3.4K Aug 10 14:29 mbrandt
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Aug 10 14:22 media
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    lrwxrwxrwx  1 mbrandt mbrandt   23 Aug 10 14:32 .shortcuts -> mbrandt/mntc/.shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    lrwxrwxrwx  1 mbrandt mbrandt   20 Aug 10 14:30 .termux -> mbrandt/mntc/.termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 17:32:29 priv.c:1729 !(bytesh/) $ ls, "opt", endsh
+    total 3.4M
+    drwx------  3 mbrandt mbrandt 3.4K Jul 19 11:09 .bak
+    drwx------ 12 mbrandt mbrandt 3.4K Jul 14 20:41 libunwind
+    drwxr-xr-x  5 mbrandt mbrandt 3.4K Mar 19 19:22 localsys.bak
+    drwxrwx---  7 mbrandt mbrandt 3.4K May 29 13:31 midori
+    drwx------ 18 mbrandt mbrandt 3.4K Jul 19 11:14 monero-gui-0.18.4.1
+    drwx------ 19 mbrandt mbrandt 3.4K Jul 15 14:28 norm
+    -rwx------  1 mbrandt mbrandt 3.4M Jul 15 13:06 protoc-31.1-linux-aarch_64.zip
+    -r-xr-xr-x  1 mbrandt mbrandt  721 Dec 31  1979 readme-google-protobuf.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jul 19 11:30 test
+
+    [0x00] 2025-Aug-10 17:34:53 priv.c:1741 !(bytesh/) $ mv, "opt", "mbrandt/mntc", endsh
+
+    [0x00] 2025-Aug-10 17:38:05 priv.c:1743 !(bytesh/) $ # exit
+
+
+    [0x00] 2025-Aug-10 17:45:08 priv.c:1746 $ stat, "opt", endsh
+      File: opt
+      Size: 3452      	Blocks: 7          IO Block: 4096   directory
+    Device: 254,15	Inode: 68397       Links: 9
+    Access: (0700/drwx------)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-01-04 16:23:42.642299371 +0000
+    Modify: 2025-07-19 11:35:31.545994360 +0000
+    Change: 2025-07-19 11:35:31.545994360 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 17:45:37 priv.c:1756 $ ls, "opt", endsh
+    total 3.4M
+    drwx------  3 mbrandt mbrandt 3.4K Jul 19 11:09 .bak
+    drwx------ 12 mbrandt mbrandt 3.4K Jul 14 20:41 libunwind
+    drwxr-xr-x  5 mbrandt mbrandt 3.4K Mar 19 19:22 localsys.bak
+    drwxrwx---  7 mbrandt mbrandt 3.4K May 29 13:31 midori
+    drwx------ 18 mbrandt mbrandt 3.4K Jul 19 11:14 monero-gui-0.18.4.1
+    drwx------ 19 mbrandt mbrandt 3.4K Jul 15 14:28 norm
+    -rwx------  1 mbrandt mbrandt 3.4M Jul 15 13:06 protoc-31.1-linux-aarch_64.zip
+    -r-xr-xr-x  1 mbrandt mbrandt  721 Dec 31  1979 readme-google-protobuf.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jul 19 11:30 test
+
+    [0x00] 2025-Aug-10 17:45:43 priv.c:1768 $ ls, "opt/libunwind", endsh
+    total 1.9M
+    -rw-------  1 mbrandt mbrandt  54K Jul 14 20:16 aclocal.m4
+    -rw-------  1 mbrandt mbrandt   39 Jul 14 20:11 AUTHORS
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 20:16 autom4te.cache
+    -rw-------  1 mbrandt mbrandt  216 Jul 14 20:11 ChangeLog
+    -rw-------  1 mbrandt mbrandt 3.5K Jul 14 20:11 CMakeLists.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 20:16 config
+    -rw-------  1 mbrandt mbrandt 155K Jul 14 20:41 config.log
+    -rwx------  1 mbrandt mbrandt  73K Jul 14 20:41 config.status
+    -rwx------  1 mbrandt mbrandt 734K Jul 14 20:16 configure
+    -rwx------  1 mbrandt mbrandt 302K Jul 14 20:14 configure~
+    -rw-------  1 mbrandt mbrandt  22K Jul 14 20:11 configure.ac
+    -rw-------  1 mbrandt mbrandt 1.1K Jul 14 20:11 COPYING
+    drwx------  2 mbrandt mbrandt 8.0K Jul 14 20:41 doc
+    drwx------  7 mbrandt mbrandt 3.4K Jul 14 20:11 .git
+    drwx------  4 mbrandt mbrandt 3.4K Jul 14 20:11 .github
+    -rw-------  1 mbrandt mbrandt 1.6K Jul 14 20:11 .gitignore
+    drwx------ 17 mbrandt mbrandt 3.4K Jul 14 20:41 include
+    -rw-------  1 mbrandt mbrandt  16K Jul 14 20:14 INSTALL
+    -rwx------  1 mbrandt mbrandt 351K Jul 14 20:41 libtool
+    -rw-------  1 mbrandt mbrandt 1023 Jul 14 20:11 LICENSE
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 20:16 m4
+    -rw-------  1 mbrandt mbrandt  36K Jul 14 20:41 Makefile
+    -rw-------  1 mbrandt mbrandt 3.4K Jul 14 20:11 Makefile.am
+    -rw-------  1 mbrandt mbrandt  36K Jul 14 20:16 Makefile.in
+    -rw-------  1 mbrandt mbrandt 8.6K Jul 14 20:11 NEWS
+    -rw-------  1 mbrandt mbrandt 7.7K Jul 14 20:11 README
+    lrwxrwxrwx  1 mbrandt mbrandt    6 Jul 14 20:11 README.md -> README
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 20:11 scripts
+    -rw-------  1 mbrandt mbrandt  581 Jul 14 20:11 SECURITY.md
+    drwx------ 27 mbrandt mbrandt 3.4K Jul 14 20:44 src
+    drwx------  3 mbrandt mbrandt 8.0K Jul 14 20:20 tests
+    -rw-------  1 mbrandt mbrandt 5.0K Jul 14 20:11 TODO
+
+    [0x00] 2025-Aug-10 17:46:02 priv.c:1803 $ cmdlogedit
+
+    [0x00] 2025-Aug-10 17:47:20 priv.c:1805 $ stat, "mbrandt/mntc/opt/libunwind/README", endsh
+      File: mbrandt/mntc/opt/libunwind/README
+      Size: 7800      	Blocks: 16         IO Block: 4096   regular file
+    Device: 0,83	Inode: 767775      Links: 1
+    Access: (0660/-rw-rw----)  Uid: (10182/ UNKNOWN)   Gid: ( 1023/ UNKNOWN)
+    Access: 2025-07-14 20:11:12.803997201 +0000
+    Modify: 2025-07-14 20:11:12.803997201 +0000
+    Change: 2025-08-10 14:35:18.587995897 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 17:47:32 priv.c:1815 !(bytesh/) $ stat, "mbrandt/mntc/opt/libunwind/README.md", endsh
+
+    [0x00] 2025-Aug-10 17:47:44 priv.c:1817 !(bytesh/) $ bak, "mbrandt/mntc/opt", endsh
+
+
+    [0x00] 2025-Aug-10 17:49:28 priv.c:1820 $ pwd
+    /data/data/com.termux/files/home
+
+    [0x00] 2025-Aug-10 17:49:30 priv.c:1823 $ rmr, ".bak", endsh
+
+
+    [0x00] 2025-Aug-10 17:50:13 priv.c:1826 $ sh, "yes | rm -r .bak", endsh
+
+    [0x00] 2025-Aug-10 17:50:28 priv.c:1828 $ rmr, "mbrandt/mntc/opt", endsh
+
+    [0x00] 2025-Aug-10 17:51:56 priv.c:1830 $ pwd, lsc
+    /data/data/com.termux/files/home
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 15:00 a.out
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 14:43 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  3 mbrandt mbrandt 3.4K Aug 10 14:29 mbrandt
+    drwxr-xr-x  2 mbrandt mbrandt 3.4K Aug 10 14:22 media
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    drwx------  9 mbrandt mbrandt 3.4K Jul 19 11:35 opt
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    lrwxrwxrwx  1 mbrandt mbrandt   23 Aug 10 14:32 .shortcuts -> mbrandt/mntc/.shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    lrwxrwxrwx  1 mbrandt mbrandt   20 Aug 10 14:30 .termux -> mbrandt/mntc/.termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 18:00:56 priv.c:1875 $ mkdir, "mbrandt/mntc2", endsh
+
+    [0x00] 2025-Aug-10 18:01:44 priv.c:1877 $ mv, "opt", "mbrandt/mntc2", endsh
+
+    [0x00] 2025-Aug-10 18:01:54 priv.c:1879 !(bytesh/) $ mv, "media", "mbrandt", endsh
+
+    [0x00] 2025-Aug-10 18:02:46 priv.c:1881 !(bytesh/) $ lsc
+    total 7.5M
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 15:02 a.out
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 14:43 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    -rwxrwx---  1 mbrandt mbrandt 7.2M Apr  8 16:36 browsh
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  5 mbrandt mbrandt 3.4K Aug 10 15:02 mbrandt
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    lrwxrwxrwx  1 mbrandt mbrandt   23 Aug 10 14:32 .shortcuts -> mbrandt/mntc/.shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    lrwxrwxrwx  1 mbrandt mbrandt   20 Aug 10 14:30 .termux -> mbrandt/mntc/.termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 18:02:53 priv.c:1923 !(bytesh/) $ ls, ".local", endsh
+    total 3.5K
+    drwx------ 4 mbrandt mbrandt 3.4K May  7 15:44 share
+
+    [0x00] 2025-Aug-10 18:03:19 priv.c:1942 !(bytesh/) $ cat, ".gitconfig", endsh
+    [user]
+    	email = merlin.brandt@hotmail.de
+    	name = Merlin Brandt
+    [safe]
+    	diretory = /storage/emulated/0/Download/bytesh
+    	diretory = /storage/emulated/0/Download/bytesh
+    	directory = /storage/emulated/0/prj/bytesh
+
+    [0x00] 2025-Aug-10 18:03:35 priv.c:1951 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Aug-10 18:04:46 priv.c:1938 !(bytesh/) $ ls, "Desktop", endsh
+    total 0
+
+    [0x00] 2025-Aug-10 18:05:12 priv.c:1941 !(bytesh/) $ ls, ".config", endsh
+    total 42K
+    drwx------ 3 mbrandt mbrandt 3.4K Apr  8 17:06 browsh
+    drwx------ 2 mbrandt mbrandt 3.4K Apr 19 14:53 dconf
+    drwx------ 4 mbrandt mbrandt 3.4K Apr  8 15:36 GIMP
+    drwx------ 2 mbrandt mbrandt 3.4K Jan 31  2025 gtk-2.0
+    drwx------ 2 mbrandt mbrandt 3.4K Apr  8 15:36 gtk-3.0
+    drwx------ 2 mbrandt mbrandt 3.4K Jun 18 11:16 i3
+    drwx------ 2 mbrandt mbrandt 3.4K May  7 10:50 insight-nodejs
+    drwx------ 5 mbrandt mbrandt 3.4K Jun 26 18:50 micro
+    drwx------ 2 mbrandt mbrandt 3.4K Feb 21 10:58 mpv
+    drwx------ 2 mbrandt mbrandt 3.4K Jul  1 14:24 pulse
+    drwx------ 2 mbrandt mbrandt 3.4K Apr  8 15:30 Thunar
+    drwx------ 6 mbrandt mbrandt 3.4K Apr  8 15:30 xfce4
+
+    [0x00] 2025-Aug-10 18:05:23 priv.c:1956 !(bytesh/) $ ls, ".config/i3", endsh
+    total 0
+
+    [0x00] 2025-Aug-10 18:05:35 priv.c:1959 !(bytesh/) $ edit, ".config/i3", endsh
+
+    [0x00] 2025-Aug-10 18:05:55 priv.c:1961 !(bytesh/) $ edit, ".config/micro", endsh
+
+    [0x00] 2025-Aug-10 18:06:16 priv.c:1963 !(bytesh/) $ ls, ".config/micro", endsh
+    total 19K
+    drwx------ 2 mbrandt mbrandt 3.4K Aug  1 22:51 backups
+    -rw------- 1 mbrandt mbrandt  192 Feb 13 14:57 bindings.json
+    drwx------ 2 mbrandt mbrandt 3.4K Jan  4  2025 buffers
+    -rw------- 1 mbrandt mbrandt  129 Aug  1 21:09 settings.json
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Jul  4 21:37 syntax
+
+    [0x00] 2025-Aug-10 18:06:29 priv.c:1971 !(bytesh/) $ mv, ".config/micro", "mbrandt/mntc/microconfig", endsh
+
+    [0x00] 2025-Aug-10 18:07:17 priv.c:1973 !(bytesh/) $ lnstl, "mbrandt/mntc/microconfig", ".config/micro", endsh
+
+    [0x00] 2025-Aug-10 18:07:31 priv.c:1975 !(bytesh/) $ mv, "browsh", "mbrandt/mntc2/opt/browsh", endsh
+
+    [0x00] 2025-Aug-10 18:08:48 priv.c:1977 !(bytesh/) $ mv, "$PREFIX/bin/bytesh", "mbrandt/prj/bytesh/bytesh-wrapper", endsh
+
+    [0x00] 2025-Aug-10 18:09:31 priv.c:1979 !(bytesh/) $ lnstl, "mbrandt/prj/bytesh/bytesh-wrapper", "$PREFIX/bin/bytesh", endsh
+
+    [0x00] 2025-Aug-10 18:10:19 priv.c:1981 !(bytesh/) $ stat, "$PREFIX/bin/bytesh", endsh
+      File: /bin/bytesh -> mbrandt/prj/bytesh/bytesh-wrapper
+      Size: 33        	Blocks: 0          IO Block: 4096   symbolic link
+    Device: 254,15	Inode: 779180      Links: 1
+    Access: (0777/lrwxrwxrwx)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-08-10 15:10:18.839994395 +0000
+    Modify: 2025-08-10 15:10:18.839994395 +0000
+    Change: 2025-08-10 15:10:18.839994395 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 18:10:28 priv.c:1991 !(bytesh/) $ ls, "bin", endsh
+    total 4.0K
+    lrwxrwxrwx 1 mbrandt mbrandt  43 Jul 15 13:27 python -> /data/data/com.termux/files/usr/bin/python2
+    lrwxrwxrwx 1 mbrandt mbrandt  41 Jun 23 11:19 termux-file-editor -> /data/data/com.termux/files/usr/bin/micro
+    -rwx------ 1 mbrandt mbrandt 501 Jan 14  2025 termux-url-opener
+
+    [0x00] 2025-Aug-10 18:10:52 priv.c:1997 !(bytesh/) $ lsc
+    total 277K
+    drwx------  2 mbrandt mbrandt 3.4K Jul 23 22:14 .android
+    -rwxrwx--x  1 mbrandt mbrandt  78K Aug 10 15:10 a.out
+    -rw-------  1 mbrandt mbrandt 9.2K Aug 10 14:43 .bash_history
+    -rw-r--r--  1 mbrandt mbrandt  695 Aug  6 08:43 bibel.txt
+    drwx------  2 mbrandt mbrandt 3.4K Jul 15 13:39 bin
+    -rwx------  1 mbrandt mbrandt  75K Jul 18 22:24 b.out
+    drwx------ 16 mbrandt mbrandt 3.4K Jul 28 16:03 .cache
+    drwx------  3 mbrandt mbrandt 3.4K Jul 23 16:08 .cargo
+    drwx------ 14 mbrandt mbrandt 3.4K Jul  1 14:24 .config
+    -rw-------  1 mbrandt mbrandt    0 Aug 10 14:24 core
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .dbus
+    drwx------  2 mbrandt mbrandt 3.4K Apr 19 14:42 Desktop
+    -rw-------  1 mbrandt mbrandt  210 Jul 28 11:42 .gitconfig
+    -rw-------  1 mbrandt mbrandt   38 Jun 23 14:37 gitstatus.txt
+    -rw-------  1 mbrandt mbrandt 2.9K Jul 15 15:27 git.txt
+    drwx------  3 mbrandt mbrandt 3.4K Jun 26 19:42 .gnupg
+    -rw-------  1 mbrandt mbrandt 5.4K May  6 14:17 .ICEauthority
+    -rw-------  1 mbrandt mbrandt  151 Aug  5 20:28 .lesshst
+    -rw-r--r--  1 mbrandt mbrandt    0 May 14 15:51 libreoffice.log
+    drwx------  3 mbrandt mbrandt 3.4K Jan 14  2025 .local
+    drwxr-xr-x  5 mbrandt mbrandt 3.4K Aug 10 15:02 mbrandt
+    lrwxrwxrwx  1 mbrandt mbrandt   12 Aug 10 13:32 mntc -> storage/mntc
+    drwx------  4 mbrandt mbrandt 3.4K Apr  8 17:06 .mozilla
+    drwxr-xr-x  4 mbrandt mbrandt 3.4K May  7 10:46 .npm
+    -rw-------  1 mbrandt mbrandt   24 Jul 15 14:24 .npmrc
+    -rw-------  1 mbrandt mbrandt   25 Jul 15 14:19 pkg.log
+    lrwxrwxrwx  1 mbrandt mbrandt   11 Aug 10 14:24 prj -> mbrandt/prj
+    lrwxrwxrwx  1 mbrandt mbrandt   23 Aug 10 14:32 .shortcuts -> mbrandt/mntc/.shortcuts
+    drwx------  2 mbrandt mbrandt 3.4K Jan  4  2025 .ssh
+    lrwxrwxrwx  1 mbrandt mbrandt   21 Jul 22 17:50 storage -> /storage/self/primary
+    lrwxrwxrwx  1 mbrandt mbrandt   20 Aug 10 14:30 .termux -> mbrandt/mntc/.termux
+    drwx------  2 mbrandt mbrandt 3.4K Jul 14 21:34 var
+    -rw-------  1 mbrandt mbrandt 1.2K Aug  5 19:11 .viminfo
+    lrwxrwxrwx  1 mbrandt mbrandt   18 Aug 10 13:30 .vimrc -> storage/mntc/vimrc
+    drwx------  2 mbrandt mbrandt 3.4K Jul 27 20:51 .vnc
+    -rw-r--r--  1 mbrandt mbrandt 4.2K May 16 11:48 vncserver.log
+    -rw-------  1 mbrandt mbrandt  172 Jul 28 12:03 .wget-hsts
+    -rw-------  1 mbrandt mbrandt  216 Jul 27 20:51 .Xauthority
+
+    [0x00] 2025-Aug-10 18:11:00 priv.c:2038 !(bytesh/) $ # cd mbrandt/
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 18:11:11 priv.c:2041 !(bytesh/) $ slc
+lsc
+    total 11K
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:02 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+
+    [0x00] 2025-Aug-10 18:11:15 priv.c:2050 !(bytesh/) $ stat, "../storage", endsh
+      File: ../storage -> /storage/self/primary
+      Size: 21        	Blocks: 0          IO Block: 4096   symbolic link
+    Device: 254,15	Inode: 558686      Links: 1
+    Access: (0777/lrwxrwxrwx)  Uid: (10229/ mbrandt)   Gid: (10229/ mbrandt)
+    Access: 2025-07-22 17:50:39.651815574 +0000
+    Modify: 2025-07-22 17:50:39.651815574 +0000
+    Change: 2025-07-22 17:50:39.651815574 +0000
+     Birth: -
+
+    [0x00] 2025-Aug-10 18:12:21 priv.c:2060 !(bytesh/) $ ls, "../storage", endsh
+    lrwxrwxrwx 1 mbrandt mbrandt 21 Jul 22 17:50 ../storage -> /storage/self/primary
+
+    [0x00] 2025-Aug-10 18:12:29 priv.c:2063 !(bytesh/) $ ls, "../storage/", endsh
+    total 160K
+    drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    drwxrws---  4 10182 1023 3.4K May 12 22:30 Books
+    drwxrws---  3 10182 1023 3.4K Jun 17 19:01 DCIM
+    drwxrws---  8 10182 1023 3.4K Aug 10 10:35 Documents
+    drwxrws--- 15 10182 1023  52K Aug 10 14:40 Download
+    drwxrws---  2 10182 1023 3.4K Jan  4  2025 Fonts
+    drwxrws---  3 10182 1023 3.4K Jun 27 20:25 freelancer
+    drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    drwxrws---  2 10182 1023 3.4K Jul 22 15:09 manjaro-mirror-stable
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:37 mbrandt
+    drwxrws---  7 10182 1023 3.4K Aug 10 15:07 mntc
+    drwxrws---  7 10182 1023 3.4K May  7 22:01 Movies
+    drwxrws---  5 10182 1023 3.4K Apr 20 13:10 Music
+    drwxrws---  2 10182 1023 3.4K Jul 22 14:52 Notifications
+    drwxrws---  2 10182 1023 3.4K Jul 14 15:30 opt
+    -rw-rw----  1 10182 1023 3.2K Jun 21 16:32 pacmanss.qemu.txt
+    -rw-rw----  1 10182 1023  433 May 29 18:47 phone.applist.txt
+    drwxrws---  8 10182 1023 3.4K Jun 22 08:29 Pictures
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    drwxrws--- 13 10182 1023 3.4K Aug  9 15:08 prj
+    -rw-rw----  1 10182 1023  27K Apr 22 20:50 protokoll.pdf
+    drwxrws---  4 10182 1023 3.4K Feb 27 23:58 ReadEra
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    drwxrws---  2 10182 1023 3.4K Aug 10 10:17 tmp
+
+    [0x00] 2025-Aug-10 18:12:38 priv.c:2094 !(bytesh/) $ ls, "../storage/Android", endsh
+    total 15K
+    drwxrws--x+ 49 1023 1078 8.0K Aug  4 17:28 data
+    drwxrws--x   3 1023 1023 3.4K Jul 19 10:13 media
+    drwxrws--x+  2 1023 1079 3.4K May 28 14:12 obb
+
+    [0x00] 2025-Aug-10 18:13:00 priv.c:2100 !(bytesh/) $ ls, "../storage/Books", endsh
+    total 7.0K
+    drwxrws--- 2 10182 1023 3.4K Aug  8 08:04 .MoonReader
+    drwxrws--- 2 10182 1023 3.4K May 12 22:30 MoonReader
+
+    [0x00] 2025-Aug-10 18:13:15 priv.c:2105 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-10 18:13:27 priv.c:2107 !(bytesh/) $ pwd
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 18:13:30 priv.c:2110 !(bytesh/) $ ls, "media", endsh
+    total 0
+    lrwxrwxrwx 1 mbrandt mbrandt 12 Aug 10 13:28 DCIM -> storage/DCIM
+
+    [0x00] 2025-Aug-10 18:13:38 priv.c:2114 !(bytesh/) $ compilerh
+    308c308,312
+    <     stm clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;
+    ---
+    >     stm printf ("Press space to keep command output...");
+    >     chr *answer = mgetline(""); 
+    >     iff 0 != strncmp(answer, " ", 1)
+    >     thn mv, ROOTC("/run/log.last.txt"), ROOTC("/run/log.txt"), endsh; 
+    >     stm {clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;}
+    309a314,315
+    > 
+    >     stm cp, ROOTC("/run/log.txt"), ROOTC("/run/log.last.txt"), endsh;
+
+
+
+    [0x00] 2025-Aug-10 19:38:36 priv.c:2129 !(bytesh/) $ # cd mbrandt
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 19:38:41 priv.c:2132 !(bytesh/) $ lsc
+    total 22K
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:51 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    -rw-r--r-- 1 mbrandt mbrandt   59 Aug 10 15:54 Meldung.txt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 PRootDownload -> /home/mbrandt/Downloads
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Aug-10 19:38:52 priv.c:2148 !(bytesh/) $ # cd Documents
+    /storage/self/primary/Documents
+
+
+    [0x00] 2025-Aug-10 19:44:54 priv.c:2152 !(bytesh/) $ lsc
+    total 1.5M
+    -rw-rw----  1 10182 1023  59K Jun 20 16:10 5382268950685020771.jpg
+    -rw-rw----  1 10182 1023 627K Jun 18 14:30 angelköder.html
+    drwxrws---  4 10182 1023 3.4K Aug 10 16:44 .bak
+    drwxrws---  2 10182 1023  24K Aug  4 12:35 Baumrinde essen » So bereiten Sie sie zu_files
+    -rw-rw----  1 10182 1023 516K Jun 20 19:42 Baumrinde essen » So bereiten Sie sie zu.html
+    -rwxrwx---  1 10182 1023  358 Jan  2  2025 DIGITALE_ARBEIT.TXT
+    -rw-rw----  1 10182 1023  32K Jun 18 22:01 frl.a.txt
+    -rw-rw----  1 10182 1023   79 Jul 22 02:12 .~lock.LU1535.pdf#
+    -rw-rw----  1 10182 1023   79 Aug  4 12:34 .~lock.Psalm41.UA.odt#
+    drwxrws--- 21 10182 1023 3.4K Jul 14 15:25 MEGABUEROKRATIE
+    -rw-rw----  1 10182 1023  25K Jan  5  2025 Missionsreisen.txt
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:29 NEUESREICH
+    -rw-rw----  1 10182 1023 170K May 16 16:25 Telus-Digital-AI-CV-2025.pdf
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:35 Youtube-Downloader-Android
+
+    [0x00] 2025-Aug-10 19:45:17 priv.c:2169 !(bytesh/) $ ls, "You*", endsh
+    total 20K
+    drwxrws--- 7 10182 1023 3.4K Jan 14  2025 .git
+    -rw-rw---- 1 10182 1023 2.0K Jan 14  2025 install.sh
+    -rw-rw---- 1 10182 1023  495 Jan 14  2025 patch0.1.py
+    -rw-rw---- 1 10182 1023 4.3K Jan 14  2025 README.md
+
+    [0x00] 2025-Aug-10 20:45:27 priv.c:2179 !(bytesh/) $ # cd /data/data/com.termux/files/home
+    /data/data/com.termux/files/home
+
+
+    [0x00] 2025-Aug-10 21:43:18 priv.c:2183 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Aug-10 21:44:04 priv.c:2182 !(bytesh/) $ # cd mbrandt
+    /home/mbrandt
+
+    [0x00] 2025-Aug-10 21:44:18 priv.c:2185 !(bytesh/) $ lsc
+    total 206K
+    -rw-rw----  1 10182 1023  85K Aug 10 16:24 a.out
+    drwxrws---  2 10182 1023 3.4K Aug  9 20:48 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:34 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 18:44 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 16:24 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 18:44 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:30 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:40 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 21:44:44 priv.c:2208 !(bytesh/) $ lsc
+    total 18K
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:51 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Aug-10 21:44:48 priv.c:2223 !(bytesh/) $ # cd .
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 21:47:29 priv.c:2226 !(bytesh/) $ mkdir, "tasks", endsh
+
+    [0x00] 2025-Aug-10 21:47:40 priv.c:2228 !(bytesh/) $ # cd tasks
+    /data/data/com.termux/files/home/mbrandt/tasks
+
+    [0x00] 2025-Aug-10 21:51:51 priv.c:2231 !(bytesh/) $ touch, "\\(external\\) Dynalist", endsh
+
+    [0x00] 2025-Aug-10 21:52:03 priv.c:2233 !(bytesh/) $ lsc
+    total 206K
+    -rw-rw----  1 10182 1023  85K Aug 10 16:24 a.out
+    drwxrws---  2 10182 1023 3.4K Aug  9 20:48 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 Dynalist
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 (external)
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:34 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 16:24 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 18:52 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:40 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:47 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 21:52:47 priv.c:2258 !(bytesh/) $ lsc
+    total 206K
+    -rw-rw----  1 10182 1023  85K Aug 10 16:24 a.out
+    drwxrws---  2 10182 1023 3.4K Aug 10 18:52 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 Dynalist
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 (external)
+    drwxrws---  7 10182 1023 3.4K Aug 10 18:52 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 18:52 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 16:24 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 18:52 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:47 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:52 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 21:55:57 priv.c:2283 !(bytesh/) $ shdirectout("vim -c wq main.c")
+
+    [0x00] 2025-Aug-10 21:56:26 priv.c:2285 !(bytesh/) $ lsc
+    total 206K
+    -rw-rw----  1 10182 1023  85K Aug 10 16:24 a.out
+    drwxrws---  2 10182 1023 3.4K Aug 10 18:53 .bak
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    drwxrws---  7 10182 1023 3.4K Aug 10 18:52 .git
+    -rw-rw----  1 10182 1023   96 Jun 23 15:21 .gitignore
+    -rw-rw----  1 10182 1023    0 Aug 10 18:56 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13 17:01 localsys-main
+    -rw-rw----  1 10182 1023  14K Aug 10 18:56 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    drwxrws--- 11 10182 1023 4.0K Aug 10 18:56 run
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:47 run.bak
+    drwxrws--- 11 10182 1023 3.4K Aug 10 18:52 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18 22:58 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Aug-10 21:56:34 priv.c:2308 !(bytesh/) $ pwd
+    /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Aug-10 21:56:56 priv.c:2311 !(bytesh/) $ # cd /home/mbrandt/TROOT//home/mbrandt/
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 21:57:20 priv.c:2314 !(bytesh/) $ lsc
+    total 18K
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Aug-10 21:57:40 priv.c:2329 !(bytesh/) $ lsc
+    total 18K
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 18:57 (external) Dynalist
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Aug-10 21:59:05 priv.c:2345 !(bytesh/) $ cnslutilh
+    505c505
+    < 
+    ---
+    > #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\$<Enter>Ndv^lldhh' %s", ROOTC("/run/log.txt"))) 
+
+    [0x00] 2025-Aug-10 22:02:39 priv.c:2351 !(bytesh/) $ cnslutilh
+    505c505
+    < #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\$<Enter>Ndv^lldhh' %s", ROOTC("/run/log.txt"))) 
+    ---
+    > #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+
+    [0x00] 2025-Aug-10 22:03:29 priv.c:2357 !(bytesh/) $ cnslutilh
+    505c505
+    < #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+    ---
+    > #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+
+    [0x00] 2025-Aug-10 22:03:51 priv.c:2363 !(bytesh/) $ cmdlogpop
+
+    [0x00] 2025-Aug-10 22:05:23 priv.c:2365 !(bytesh/) $ cnslutilh
+    505c505
+    < #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+    ---
+    > #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+
+    [0x00] 2025-Aug-10 22:07:48 priv.c:2371 !(bytesh/) $ cnslutilh
+    505c505
+    < #define cmdlogpop shdirectout(mf("vim -c 'Gv/\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+    ---
+    > #define cmdlogpop shdirectout(mf("vim -c 'normal Gv/\\$<Enter>Ndv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+
+    [0x00] 2025-Aug-10 22:08:18 priv.c:2377 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-10 22:08:20 priv.c:2379 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-10 22:08:22 priv.c:2381 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-10 22:08:24 priv.c:2383 !(bytesh/) $ cnslutilh
+
+    [0x00] 2025-Aug-10 22:14:05 priv.c:2385 !(bytesh/) $ lsc
+    total 18K
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 18:57 (external) Dynalist
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 19:04 main.c
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 15:01 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 10 14:29 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Aug-10 23:00:27 priv.c:2402 !(bytesh/) $ pwd
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Aug-10 23:00:54 priv.c:2405 !(bytesh/) $ pwd
+    /storage/self/primary/Documents
+
+    [0x00] 2025-Aug-10 23:01:04 priv.c:2408 !(bytesh/) $ lsc
+    total 1.5M
+    -rw-rw----  1 10182 1023  59K Jun 20 16:10 5382268950685020771.jpg
+    -rw-rw----  1 10182 1023 627K Jun 18 14:30 angelköder.html
+    drwxrws---  4 10182 1023 3.4K Aug 10 16:44 .bak
+    drwxrws---  2 10182 1023  24K Aug  4 12:35 Baumrinde essen » So bereiten Sie sie zu_files
+    -rw-rw----  1 10182 1023 516K Jun 20 19:42 Baumrinde essen » So bereiten Sie sie zu.html
+    -rwxrwx---  1 10182 1023  358 Jan  2  2025 DIGITALE_ARBEIT.TXT
+    -rw-rw----  1 10182 1023   79 Jul 22 02:12 .~lock.LU1535.pdf#
+    -rw-rw----  1 10182 1023   79 Aug  4 12:34 .~lock.Psalm41.UA.odt#
+    drwxrws--- 21 10182 1023 3.4K Jul 14 15:25 MEGABUEROKRATIE
+    -rw-rw----  1 10182 1023   59 Aug 10 15:54 Meldung.txt
+    -rw-rw----  1 10182 1023  25K Jan  5  2025 Missionsreisen.txt
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:29 NEUESREICH
+    -rw-rw----  1 10182 1023 170K May 16 16:25 Telus-Digital-AI-CV-2025.pdf
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:35 Youtube-Downloader-Android
+
+    [0x00] 2025-Aug-10 23:02:31 priv.c:2425 !(bytesh/) $ vncserver
+
+    [0x00] 2025-Aug-11 11:10:07 priv.c:2427 $ pwd
+    /storage/self/primary/Documents
+
+    [0x00] 2025-Aug-11 11:10:15 priv.c:2430 $ lsc
+    total 1.5M
+    -rw-rw----  1 10182 1023  59K Jun 20 16:10 5382268950685020771.jpg
+    -rw-rw----  1 10182 1023 627K Jun 18 14:30 angelköder.html
+    drwxrws---  4 10182 1023 3.4K Aug 10 16:44 .bak
+    drwxrws---  2 10182 1023  24K Aug  4 12:35 Baumrinde essen » So bereiten Sie sie zu_files
+    -rw-rw----  1 10182 1023 516K Jun 20 19:42 Baumrinde essen » So bereiten Sie sie zu.html
+    -rwxrwx---  1 10182 1023  358 Jan  2  2025 DIGITALE_ARBEIT.TXT
+    -rw-rw----  1 10182 1023   79 Jul 22 02:12 .~lock.LU1535.pdf#
+    -rw-rw----  1 10182 1023   79 Aug  4 12:34 .~lock.Psalm41.UA.odt#
+    drwxrws--- 21 10182 1023 3.4K Jul 14 15:25 MEGABUEROKRATIE
+    -rw-rw----  1 10182 1023   59 Aug 10 15:54 Meldung.txt
+    -rw-rw----  1 10182 1023  25K Jan  5  2025 Missionsreisen.txt
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:29 NEUESREICH
+    -rw-rw----  1 10182 1023 170K May 16 16:25 Telus-Digital-AI-CV-2025.pdf
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:35 Youtube-Downloader-Android
+
+    [0x00] 2025-Aug-11 11:10:29 priv.c:2447 $ mkdir, "other", endsh
+
+    [0x00] 2025-Aug-11 11:11:01 priv.c:2449 $ mv, "angel* Baum*", "other", endsh
+
+    [0x00] 2025-Aug-11 11:18:36 priv.c:2451 !(bytesh/) $ lsc
+    total 290K
+    -rw-rw----  1 10182 1023  59K Jun 20 16:10 5382268950685020771.jpg
+    drwxrws---  4 10182 1023 3.4K Aug 11 08:17 .bak
+    -rw-rw----  1 10182 1023   79 Jul 22 02:12 .~lock.LU1535.pdf#
+    -rw-rw----  1 10182 1023   79 Aug  4 12:34 .~lock.Psalm41.UA.odt#
+    drwxrws--- 21 10182 1023 3.4K Jul 14 15:25 MEGABUEROKRATIE
+    -rw-rw----  1 10182 1023   59 Aug 10 15:54 Meldung.txt
+    -rw-rw----  1 10182 1023  25K Jan  5  2025 Missionsreisen.txt
+    drwxrws---  7 10182 1023 3.4K Aug 10 10:29 NEUESREICH
+    drwxrws---  3 10182 1023 3.4K Aug 11 08:15 other
+    -rw-rw----  1 10182 1023 170K May 16 16:25 Telus-Digital-AI-CV-2025.pdf
+    drwxrws---  3 10182 1023 3.4K Aug 10 10:35 Youtube-Downloader-Android
+
+    [0x00] 2025-Aug-11 11:19:29 priv.c:2465 !(bytesh/) $ LSC
+lsc
+    total 186K
+    -rw-rw---- 1 10182 1023  56K Jul 17  2023 ADRESSLISTE JUKREI.DOC
+    drwxrws--- 4 10182 1023 3.4K Jun 13 15:41 BABYLON
+    drwxrws--- 4 10182 1023 3.4K Jun 13 16:10 .debris
+    drwxrws--- 2 10182 1023  20K Aug 10 10:29 Glaubenslieder
+    -rw-rw---- 1 10182 1023  36K Jan 14  2024 KONTAKTE.ODT
+    drwxrws--- 7 10182 1023 3.4K Jun 13 15:40 LIEDER
+    -rw-rw---- 1 10182 1023   92 Jun 13 15:40 .megaignore
+    drwxrws--- 4 10182 1023 3.4K Aug 10 16:41 SCHRIFTEN
+    -rw-rw---- 1 10182 1023  60K Mar 27  2024 WALDENSER-WAPPEN.JPG
+
+    [0x00] 2025-Aug-11 11:19:39 priv.c:2478 !(bytesh/) $ # cd SCHRIFTEN
+    /storage/self/primary/Documents/NEUESREICH/SCHRIFTEN
+
+    [0x00] 2025-Aug-11 11:20:22 priv.c:2481 !(bytesh/) $ # cd �PRIVAT
+    /storage/self/primary/Documents/NEUESREICH/SCHRIFTEN
+
+    [0x00] 2025-Aug-11 11:20:37 priv.c:2484 !(bytesh/) $ # cd PRIVAT
+    /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Aug-11 11:21:40 priv.c:2487 !(bytesh/) $ lsc
+    total 14M
+    drwxrws--- 2 10182 1023 3.4K Jun 17 18:53 ABSCHRIFTEN
+    -rw-rw---- 1 10182 1023  52K Oct  1  2024 ADULLAM-ABSCHIED-EINFACHES-DEUTSCH.odt
+    -rw-rw---- 1 10182 1023  52K Sep 30  2024 ADULLAM-ABSCHIED.ODT
+    -rw-rw---- 1 10182 1023  57K Oct  3  2024 ADULLAM-ABSCHIED.PDF.pdf
+    -rw-rw---- 1 10182 1023 4.2K Sep 13  2023 ALEXANDER29NOV.HTML
+    -rw-rw---- 1 10182 1023  24K Mar  9  2024 APG17.PDF
+    -rw-rw---- 1 10182 1023 2.3M Nov  9  2024 BEECHGROVE.PDF
+    -rw-rw---- 1 10182 1023 2.8K Mar 26  2024 BEHAUSUNG.HTML
+    -rw-rw---- 1 10182 1023  56K Aug  6 08:34 DES HERRN WUNDERBARE FÜHRUNG IN WARSCHAU ERSATZ .ODT.odt
+    drwxrws--- 2 10182 1023 3.4K Jul 30 12:57 dotbak
+    -rw-rw---- 1 10182 1023  38K Sep 15  2024 ESRA.ODT.odt
+    -rw-rw---- 1 10182 1023  39K Oct  7  2024 ESTHER-2.ODT.odt
+    -rw-rw---- 1 10182 1023 156K Mar 26  2024 GEBET.HTML
+    -rw-rw---- 1 10182 1023 5.3M Oct 28  2024 HIOB 1.pdf
+    -rw-rw---- 1 10182 1023 2.3M Jun 10  2023 ISLAM.PDF
+    -rw-rw---- 1 10182 1023  11K Jul 26 20:37 JONAS .ODT.odt
+    -rw-rw---- 1 10182 1023  32K Oct 19  2023 KNECHTSCHAFT.HTML
+    -rw-rw---- 1 10182 1023   79 Jul 27 12:01 .~lock.JONAS .TXT.txt#
+    -rw-rw---- 1 10182 1023  40K Sep 19  2024 NEH9.ODT.odt
+    -rw-rw---- 1 10182 1023  35K Oct  9  2023 OBRIGKEITEN IM VOLK GOTTES (VGL. MIT NOTIZ IM ANALOGEN ORDNER)
+    -rw-rw---- 1 10182 1023  19K Nov 23  2023 RÜCKZUG AUS KUHSCHNAPPEL.HTML
+    -rw-rw---- 1 10182 1023  54K Jul 31 05:12 SYSTEM.ODT
+    -rw-rw---- 1 10182 1023  49K Jun 20 15:28 TIM HINDLEY .ODT.odt
+    -rw-rw---- 1 10182 1023  43K Jun 20 15:28 TIM HINDLEY .PDF
+    -rw-rw---- 1 10182 1023   58 Jul 30 12:57 VERLUST_NOTIZ.TXT
+    -rw-rw---- 1 10182 1023 2.8M Nov  2  2023 VERTEIDIGUNG KEVIN.PDF
+    -rw-rw---- 1 10182 1023  29K Jun 26  2024 WIE-WILL-DER-HERR-DURCH-MICH-WIRKEN.PDF
+    -rw-rw---- 1 10182 1023 3.9K Oct 11  2023 WILDETIERE.HTML
+
+    [0x00] 2025-Aug-11 11:22:14 priv.c:2518 !(bytesh/) $ vncserver
+
+    [0x00] 2025-Aug-11 11:23:33 priv.c:2520 !(bytesh/) $ pwd
+    /storage/self/primary/DOCUMENTS/NEUESREICH/SCHRIFTEN/PRIVAT
+
+    [0x00] 2025-Aug-11 11:24:59 priv.c:2523 !(bytesh/) $ mv, TROOTC("/home/mbrandt/mntc/tigervnc"), "/home/mbrandt/.config/tigervncd", endsh
+
+    [0x00] 2025-Aug-11 11:26:30 priv.c:2525 !(bytesh/) $ bak, "/home/mbrandt/.config/tigervnc",endsh
+
+    [0x00] 2025-Aug-11 11:27:19 priv.c:2527 !(bytesh/) $ rm, "/home/mbrandt/.config/tigervnc",endsh
+
+    [0x00] 2025-Aug-11 11:27:57 priv.c:2529 !(bytesh/) $ mv, "/home/mbrandt/.config/tigervncd", "/home/mbrandt/.config/tigervnc", endsh
+
+    [0x00] 2025-Aug-11 11:29:23 priv.c:2531 !(bytesh/) $ vncserver
+
+    [0x00] 2025-Aug-11 11:31:19 priv.c:2533 !(bytesh/) $ cat, "/root//vncserver.4.log", endsh
+    /home/mbrandt/.config/tigervnc/passwd must NOT be accessible by others. Set permission to 0600.
+
+    [0x00] 2025-Aug-11 11:31:55 priv.c:2536 !(bytesh/) $ sh, "chmod 0600 /home/mbrandt/.config/tigervnc/passwd", endsh
+
+    [0x00] 2025-Aug-11 11:32:37 priv.c:2538 !(bytesh/) $ vncserver
+
+    [0x00] 2025-Aug-11 11:32:52 priv.c:2540 !(bytesh/) $ cat, "/root/vncserver.4.log", endsh
+    Using desktop session i3-with-shmlog
+    
+    New 'localhost:4 (mbrandt)' desktop is localhost:4
+    
+    Starting desktop session i3-with-shmlog
+    
+    
+    Xvnc TigerVNC 1.15.0 - built Feb 14 2025 20:54:35
+    Copyright (C) 1999-2025 TigerVNC team and many others (see README.rst)
+    See https://www.tigervnc.org for information on TigerVNC.
+    Underlying X server release 12101015
+    
+    _XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root
+    Could not find any render nodes
+    Failed to initialize DRI3 extension
+    
+    Mon Aug 11 08:32:43 2025
+     vncext:      VNC extension running!
+     vncext:      Listening for VNC connections on all interface(s), port 5904
+     vncext:      Created VNC server for screen 0
+    The XKEYBOARD keymap compiler (xkbcomp) reports:
+    > Warning:          Could not resolve keysym XF86RefreshRateToggle
+    > Warning:          Could not resolve keysym XF86Accessibility
+    > Warning:          Could not resolve keysym XF86DoNotDisturb
+    Errors from xkbcomp are not fatal to the X server
+    [mi] mieq: warning: overriding existing handler (nil) with 0x30001fa3c8 for event 2
+    [mi] mieq: warning: overriding existing handler (nil) with 0x30001fa3c8 for event 3
+    xinit: XFree86_VT property unexpectedly has 0 items instead of 1
+    Running X session wrapper
+    Loading profile from /etc/profile
+    Loading xinit script /etc/X11/xinit/xinitrc.d/40-libcanberra-gtk-module.sh
+    Loading xinit script /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+    Failed to connect to user scope bus via local transport: $DBUS_SESSION_BUS_ADDRESS and $XDG_RUNTIME_DIR not defined (consider using --machine=<user>@.host --user to connect to bus of other user)
+    dbus-update-activation-environment: error: unable to connect to D-Bus: Using X11 for dbus-daemon autolaunch was disabled at compile time, set your DBUS_SESSION_BUS_ADDRESS instead
+    X session wrapper complete, running session i3-with-shmlog
+    /bin/sh: line 1: nm-applet: command not found
+    /bin/sh: line 1: dex: command not found
+    /bin/sh: line 1: xss-lock: command not found
+
+    [0x00] 2025-Aug-11 11:33:32 priv.c:2580 !(bytesh/) $ lsc
+    total 14M
+    drwxrws--- 2 10182 1023 3.4K Jun 17 18:53 ABSCHRIFTEN
+    -rw-rw---- 1 10182 1023  52K Oct  1  2024 ADULLAM-ABSCHIED-EINFACHES-DEUTSCH.odt
+    -rw-rw---- 1 10182 1023  52K Sep 30  2024 ADULLAM-ABSCHIED.ODT
+    -rw-rw---- 1 10182 1023  57K Oct  3  2024 ADULLAM-ABSCHIED.PDF.pdf
+    -rw-rw---- 1 10182 1023 4.2K Sep 13  2023 ALEXANDER29NOV.HTML
+    -rw-rw---- 1 10182 1023  24K Mar  9  2024 APG17.PDF
+    drwxrws--- 2 10182 1023 3.4K Aug 11 08:27 .bak
+    -rw-rw---- 1 10182 1023 2.3M Nov  9  2024 BEECHGROVE.PDF
+    -rw-rw---- 1 10182 1023 2.8K Mar 26  2024 BEHAUSUNG.HTML
+    -rw-rw---- 1 10182 1023  56K Aug  6 08:34 DES HERRN WUNDERBARE FÜHRUNG IN WARSCHAU ERSATZ .ODT.odt
+    drwxrws--- 2 10182 1023 3.4K Jul 30 12:57 dotbak
+    -rw-rw---- 1 10182 1023  38K Sep 15  2024 ESRA.ODT.odt
+    -rw-rw---- 1 10182 1023  39K Oct  7  2024 ESTHER-2.ODT.odt
+    -rw-rw---- 1 10182 1023 156K Mar 26  2024 GEBET.HTML
+    -rw-rw---- 1 10182 1023 5.3M Oct 28  2024 HIOB 1.pdf
+    -rw-rw---- 1 10182 1023 2.3M Jun 10  2023 ISLAM.PDF
+    -rw-rw---- 1 10182 1023  11K Jul 26 20:37 JONAS .ODT.odt
+    -rw-rw---- 1 10182 1023  32K Oct 19  2023 KNECHTSCHAFT.HTML
+    -rw-rw---- 1 10182 1023   79 Jul 27 12:01 .~lock.JONAS .TXT.txt#
+    -rw-rw---- 1 10182 1023  40K Sep 19  2024 NEH9.ODT.odt
+    -rw-rw---- 1 10182 1023  35K Oct  9  2023 OBRIGKEITEN IM VOLK GOTTES (VGL. MIT NOTIZ IM ANALOGEN ORDNER)
+    -rw-rw---- 1 10182 1023  19K Nov 23  2023 RÜCKZUG AUS KUHSCHNAPPEL.HTML
+    -rw-rw---- 1 10182 1023  54K Jul 31 05:12 SYSTEM.ODT
+    -rw-rw---- 1 10182 1023  49K Jun 20 15:28 TIM HINDLEY .ODT.odt
+    -rw-rw---- 1 10182 1023  43K Jun 20 15:28 TIM HINDLEY .PDF
+    -rw-rw---- 1 10182 1023   58 Jul 30 12:57 VERLUST_NOTIZ.TXT
+    -rw-rw---- 1 10182 1023 2.8M Nov  2  2023 VERTEIDIGUNG KEVIN.PDF
+    -rw-rw---- 1 10182 1023  29K Jun 26  2024 WIE-WILL-DER-HERR-DURCH-MICH-WIRKEN.PDF
+    -rw-rw---- 1 10182 1023 3.9K Oct 11  2023 WILDETIERE.HTML
+
+    [0x00] 2025-Aug-11 11:34:11 priv.c:2612 !(bytesh/) $ libreoffice
+
+    [0x00] 2025-Aug-11 11:34:19 priv.c:2614 !(bytesh/) $ ed (112. / 50.)
+    (int) (112. / 50.) = 2 
+
+    [0x00] 2025-Aug-11 17:29:09 priv.c:2617 !(bytesh/) $ ef (112. / 50.)
+    (float) (112. / 50.) = 2.240000 
+
+    [0x00] 2025-Aug-11 17:29:18 priv.c:2620 !(bytesh/) $ ef ((112. - 37.) / 50.)
+    (float) ((112. - 37.) / 50.) = 1.500000 
+
+    [0x00] 2025-Aug-11 17:30:34 priv.c:2623 !(bytesh/) $ ef ((35. / 50.))
+    (float) ((35. / 50.)) = 0.700000 
+
+    [0x00] 2025-Aug-11 17:37:35 priv.c:2626 !(bytesh/) $ ef ((59.6/35.))
+    (float) ((59.6/35.)) = 1.702857 
+
+    [0x00] 2025-Aug-11 17:43:48 priv.c:2629 !(bytesh/) $ 
+
+    [0x00] 2025-Aug-11 19:49:30 priv.c:2631 $ vncserver
+
+    [0x00] 2025-Aug-11 19:49:35 priv.c:2633 $ libreoffice
+
+    [0x00] 2025-Aug-12 04:49:07 priv.c:2635 !(bytesh/) $ pwd
+    /storage/self/primary/DOCUMENTS/NEUESREICH/SCHRIFTEN/PRIVAT
+
+    [0x00] 2025-Aug-12 19:49:12 priv.c:2638 !(bytesh/) $ # cd /home/mbrandt/TROOT//home/mbrandt/prj/bytesh
+    /storage/self/primary/prj/bytesh

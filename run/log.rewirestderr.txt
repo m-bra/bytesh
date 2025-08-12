@@ -1,0 +1,67 @@
+
+[0x00]0x02E0.priv.c !(bytesh/) $ compilerh
+(changes were undone from $ cmdlogedit and backed up to main.rewirestderr.c)
+
+[0x00]0x02F0.priv.c !(bytesh/) $ compilerh 
+(changes were undone from $ cmdlogedit and backed up to main.rewirestderr.c)
+
+[0x00]0x0305.priv.c !(bytesh/) $ compilerh
+(changes were undone from $ cmdlogedit and backed up to main.rewirestderr.c)
+
+[0x00]0x0314.priv.c !(bytesh/) $ compilerh
+(changes were undone from $ cmdlogedit and backed up to main.rewirestderr.c)
+
+[0x00]0x02DB.priv.c !(bytesh/) $ precompile
+lalala
+(ep->d_name) = "build.c"
+(ep->d_name) = "cnslutil.c"
+(ep->d_name) = "mainstatic.c"
+(ep->d_name) = "stdioext.c"
+(ep->d_name) = "stdlibext.c"
+(ep->d_name) = "mntc.c"
+(ep->d_name) = "errno.c"
+(ep->d_name) = "unistdext.c"
+(ep->d_name) = "stringext.c"
+(ep->d_name) = "userinterface.c"
+(ep->d_name) = "stringutil.c"
+(ep->d_name) = "htmlutil.c"
+(ep->d_name) = "scanfs.c"
+(ep->d_name) = "trpg.c"
+
+[0x00]0x02EC.priv.c !(bytesh/) $ # restart
+
+[0x00]0x02EF.priv.c $ man, "open", endsh
+
+[0x00]0x02FF.priv.c $ # restart
+compilerh
+6a7
+> #include <fcntl.h>
+
+
+[0x00]0x02F6.priv.c $ # restart
+
+[0x00]0x0317.priv.c $ man, "diff", endsh
+
+[0x00]0x0319.priv.c $ man, "patch", endsh
+
+[0x00]0x031F.priv.c $ cmdlogedit
+
+[0x00]0x02FE.priv.c !(bytesh/) $ cp, "main.c", "main.c.rewirestderr", endsh
+
+[0x00]0x0300.priv.c !(bytesh/) $ mv, "main.c.rewirestderr", "main.rewirestderr.c", endsh
+
+[0x00]0x0302.priv.c !(bytesh/) $ cmdlogedit // above-mentioned reversals of patches to main.c
+
+[0x00]0x0304.priv.c !(bytesh/) $ # cd ..
+/home/mbrandt/storage/prj/bytesh
+
+
+
+[0x00]0x02DC.priv.c !(bytesh/) $ # restart
+compilerh
+7c7
+< #include <fcntl.h>
+---
+> //#include <fcntl.h>
+
+[0x00] priv.c:734 !(bytesh/) $ // above #include caused compiler error, which is why changes to main.c where moved into main.rewirestderr.c

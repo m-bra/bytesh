@@ -148,3 +148,12 @@ FILE *psh_(int ignored, char *fmt, ...)
     FILE *f = popen(buf, "r");
     return f;
 }
+
+int shdirectout(char const *path)
+{
+    int current_stdout_fileno = dup(STDOUT_FILENO);
+    dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    int result = sh, path, endsh;
+    dup2(current_stdout_fileno, STDOUT_FILENO);
+    return result;
+}

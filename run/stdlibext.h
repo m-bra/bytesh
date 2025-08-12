@@ -134,6 +134,7 @@ void es_(char *name, char *sz);
     } while (0)         //
 
 int sh_(int ignored, char *fmt, ...) ;
+int shdirectout(char const *cmd);
 int shfd_(int ignored, char *fmt, ...);
 FILE *psh_(int ignored, char *fmt, ...);
 

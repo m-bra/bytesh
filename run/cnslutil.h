@@ -39,11 +39,11 @@
 
 extern char *rootworkdir;
 
-void /**/micro_(int ignore, char const *path, char *ignore_);
+void /* */micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
 
 
-#define cmdlogedit edit, ROOTC("/run/log.txt"), endsh
+#define cmdlogedit shdirectout(mf("vim %s", ROOTC("/run/log.txt")))
 
 void cmdlog_();
 #define cmdlog cmdlog_()
@@ -160,10 +160,6 @@ void man(int ignore, char *topic, char *ignore_) ;
 #define quickdefh edit ROOTC("/run/quickdef.h") _
 
 #define storagepath "/storage/emulated/0/"
-
-#define lnsfn(a, b) sys (mallocadd(sizeof(linebuf_t)), snprintf(lastmalloc, sizeof(linebuf_t), "ln -s %s %s", a, b), lastmalloc) _
-
-#define lns lnsfn (
 
 
 #define psgrep printf("UID        PID  PPID  C STIME TTY          TIME CMD\n"), sh, "ps -ef --forest | grep %s"
@@ -501,3 +497,9 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 	"--dynamic-syms " /* print the dynamic symbol table entries */ \
 	"--all-headers " /* Display all available header information, including the symbol table and relocation entries. equivalent to -a -f -h -p -r -t */ \
         "%s"
+
+#define lns sh, "ln -s %s %s"
+#define lnstlh printf("%s", "Found in: $ cnslutilh\n")
+#define lnstl lns
+
+//#define cmdlogpop shdirectout(mf("vim -c 'normal GvF$dv^lldhhwq' %s", ROOTC("/run/log.txt"))) 

@@ -88,11 +88,25 @@ chr cwd[NBUF]; getcwd(cwd, NBUF);
 chr quiet[] = " 2> /dev/null > /dev/null";
 
 int routine_gitupdaterequired(int, char *);
-    
+   
+stm FILE *datefile = popen("TZ='Europe/Kyiv' date +%Y-%b-%d\\ %H:%M:%S", "r");
+chr szdate[256];
+stm fgets(szdate, 254, datefile);
+stm szdate[strlen(szdate) - 1] = '\0';
+stm pclose (datefile);
+
+//stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+//chr szdatedate[256];
+//stm fgets(szdatedate, 254, datedatefile);
+//stm szdatedate[strlen(szdatedate) - 1] = '\0';
+//stm pclose (datedatefile);
+
 chr *status = mf(
-    	mf("\n%s%s", "%s[0x%02X]", PROMPT), 
+    	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
     	GLOBAL_INDENT, runstatus, 
-    	 
+    	
+	/* date */
+	szdate,
     	cmdlogn(),
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
     	mf("%s%s", 

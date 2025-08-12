@@ -1,0 +1,28 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 93,94
+- int cmdlogfd = open(ROOTC("/run/log.txt"), O_WRONLY | O_APPEND);
+- stm FILE *cmdlogfile = fdopen(cmdlogfd);
+--- 93 -----
++ stm FILE *cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
+***************
+*** 204,207
+-     stm if (!fork()) { 
+-     stm    dup2 (cmdlogfd, STDERR_FILENO);
+-     stm    dup2 (cmdlogfd, STDOUT_FILENO);
+-     stm    execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+--- 203 -----
++     stm if (!fork()) { execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+***************
+*** 278
+-     stm cmdlogfd = open(ROOTC("/run/log.next.txt"), O_WRONLY | O_APPEND);
+--- 274 -----
++     stm cmdlogfd = open(ROOTC("/run/log.next/txt"), O_WRONLY | O_APPEND);
+***************
+*** 311,313
+-     stm cmdlogfd = open(ROOTC("/run/log.txt"), O_WRONLY | O_APPEND);
+-     stm cmdlogfile = fdopen(cmdlogfd);
+- 
+--- 307 -----
++     stm cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");

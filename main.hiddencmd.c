@@ -76,7 +76,7 @@ stm dup2(STDOUT_FILENO, STDERR_FILENO);
     iff !ctxt->interactive
     thn defstrchrnul = 0;
     els blk
-        stm printfflush("%sprooted? [y] ", GLOBAL_INDENT);
+        stm printfflush("prooted? [y] ");
         chr *answer = mgetline("");
         stm
         iff !strncmp(answer, "y", 1)
@@ -89,7 +89,7 @@ stm dup2(STDOUT_FILENO, STDERR_FILENO);
 
 
 iff ctxt->interactive
-thn printfflush("%s[press enter] ", GLOBAL_INDENT);
+thn printfflush("[press enter] ");
 
 stm linebuf_t cflags;
 stm cflags[0] = 0;
@@ -98,9 +98,12 @@ stm FILE *cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
 
 #   define teeprintf(...)  \
 	do { \
-	    printf(__VA_ARGS__); \
-	    fprintf(cmdlogfile, __VA_ARGS__); \
+	stm printf(__VA_ARGS__); \
+	iff dolog \
+	stm fprintf(cmdlogfile, __VA_ARGS__); \
 	while (0) \
+
+stm FILE *statustocmdlog = fmemopen(0, 256, "w+");
 
 rep
 blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
@@ -131,8 +134,16 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm *stpncpy(ctxt->linebuf, cmd, pagebuf_tn - 2) = '\0';        
     stm ctxt->line = ctxt->linebuf;
 
-    stm fputs(ctxt->line, cmdlogfile);
-    
+    int dolog = ctxt->line[0] != ' ';
+
+    iff dolog 
+    thn blk rewind(statustocmdlog);
+        stm char buf[256];
+	stm (fgets(buf, 254, statustocmdlog));
+        stm es(buf);	
+	stm fputs(buf, cmdlogfile);
+        stm fputs(ctxt->line, cmdlogfile);
+    end_blk
     stm linebuf_t runopt;
     stm runopt[0] = 0;
     // ctxt->line
@@ -290,7 +301,8 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 	    iff !fgets(line, linebuf_tn, faout)
 	    thn break;
 	    stm printfflush ("%s%s", GLOBAL_INDENT, line);
-	    stm fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+	    iff dolog
+	    thn fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
         end_blk
         int wstatus;
         iff ({int r = waitpid(-1, &wstatus, WNOHANG);
@@ -305,17 +317,13 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm fclose (cmdlogfile);
     stm cat, mf("%s >> %s", ROOTC("/run/log.next.txt"), ROOTC("/run/log.txt")), endsh;
     stm mv, ROOTC("/run/log.next.txt"), ROOTC("/run/log.next.txt.bak"), endsh;
-    stm printfflush("%sPress 'k' to keep command output...", GLOBAL_INDENT);
-    int answer = unbufreadc(STDIN_FILENO); 
-    iff answer != 'k' 
-    thn mv, ROOTC("/run/log.last.txt"), ROOTC("/run/log.txt"), endsh; 
-    stm {clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;}
+    stm clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;
     stm cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
 
-    stm cp, ROOTC("/run/log.txt"), ROOTC("/run/log.last.txt"), endsh;
-
+    stm fclose(statustocmdlog);
+    stm statustocmdlog = fmemopen(0, 256, "w+");
     iff ctxt->interactive
-    thn statusprint(ROOTC("/run"), runstatus, getstdout(), cmdlogfile);
+    thn statusprint(ROOTC("/run"), runstatus, getstdout(), statustocmdlog);
 
     iff !nextbackup--
     thn blk

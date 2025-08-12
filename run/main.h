@@ -47,7 +47,9 @@ void perror(const char *sz);
 FILE *fopen(const char *restrict path, const char *restrict mode);
 int fclose(FILE *stream);
 int fflush(FILE */*_Nullable*/ stream);
-
+FILE *fmemopen(
+                      void *buf, size_t size, const char *mode);
+void rewind(FILE *);
  
 FILE *popen(char const *, char const *);
 int pclose(FILE *);
@@ -105,7 +107,7 @@ void sighandle(int);
 
 txt
 
-#define GLOBAL_INDENT ""
+#define GLOBAL_INDENT "    "
 //#define GLOBAL_INDENT "                           "
 
 #define loctag
@@ -135,7 +137,7 @@ void cmdlogat(int, linebuf_t *);
 
 #include ".//userinterface.h"
 
-#define PROMPT "0x%04X.priv.c%s $ "
+#define PROMPT "%s priv.c:%d%s $ "
 
 stm int cmdlogn();
 
