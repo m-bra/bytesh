@@ -2933,7 +2933,3 @@ lsc
 
     [0x00] 2025-Aug-16 18:38:45 priv.c:7145 !(bytesh/) $ # cd /home/mbrandt/TROOT//home/mbrandt/prj/bytesh
     /storage/self/primary/prj/bytesh
-
-    [0x00] 2025-Aug-16 18:41:18 priv.c:7148 !(bytesh/) $ edit, ".gitignore", endsh
-    6a7
-    > run/log.next.txt
