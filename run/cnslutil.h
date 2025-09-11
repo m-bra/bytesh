@@ -45,7 +45,7 @@ void /* */micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
 
 
-#define cmdlogedit $shdirect, "vim %s", ROOTC("/run/log.txt")$$
+#define cmdlogedit $$shdirect, "vim %s", ROOTC("/run/log.txt")$$
 
 void cmdlog_();
 #define cmdlog cmdlog_()

@@ -16,6 +16,7 @@
 typedef char **ppchar;
 typedef char *pchar;
 
+#include "cflags.h"
 
 char *rootworkdir;
 int isfirstcmd;
@@ -199,7 +200,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
 
     chr flags[256];
-    stm snprintf(flags, 254,"-g %s %s", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
+    stm snprintf(flags, 254, " %s %s", CFLAGS(defstrchrnul), cflags);
     chr ccmd[1024];
     stm snprintf(ccmd, 1020, "%s %s %s %s -o%s %s", "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "");
     int compilestatus;

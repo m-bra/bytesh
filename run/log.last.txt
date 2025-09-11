@@ -5610,7 +5610,9 @@ The C functions inet_ntop() and inet_pton() are used to manipulate IPv6 addresse
       iff c == c && !is_control_key
       thn blk
           stm putc(c, getstdout());
-    Hello, World.
+   
+enhance $ and $$ syntax
+blk
 
     [0x00] 2025-Sep-11 15:20:05 priv.c:5616 !(bytesh/) $ precompile
     gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
@@ -5708,6 +5710,9 @@ compilerh
 
     [0x00] 2025-Sep-11 15:31:49 priv.c:5710 !(bytesh/) $ # cd ..
     /storage/self/primary/prj/bytesh
+
+update bytesh git repository
+blk
 
     [0x00] 2025-Sep-11 15:33:53 priv.c:5713 !(bytesh/) $ gitupdate
     [detached HEAD 2fbe39c] untitled
@@ -5819,3 +5824,359 @@ compilerh
     [master2 37264c8] untitled
      1 file changed, 1 insertion(+), 2 deletions(-)
     branch 'master2' set up to track 'origin/master2'.
+
+    [0x00] 2025-Sep-11 15:56:09 priv.c:5824 !(bytesh/) $ gpgencrypt, "repopw.txt.in" $$
+
+    [0x00] 2025-Sep-11 15:56:33 priv.c:5826 !(bytesh/) $ lsc
+    total 219K
+    -rw-rw----  1 10182 1023  85K Sep 11 12:38 a.out
+    drwxrws---  2 10182 1023 3.4K Aug 10 18:53 .bak
+    -rw-rw----  1 10182 1023   45 Sep 11 12:32 cflags
+    -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    drwxrws---  7 10182 1023 3.4K Sep 11 12:56 .git
+    -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    -rw-rw----  1 10182 1023    0 Sep 11 12:56 insert.c
+    drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    -rw-rw----  1 10182 1023  14K Sep 11 12:25 main.c
+    -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    -rw-rw----  1 10182 1023  309 May 12 15:07 repopw.txt
+    -rw-rw----  1 10182 1023   41 Sep 11 12:55 repopw.txt.in
+    -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt.in.asc
+    drwxrws--- 12 10182 1023 4.0K Sep 11 12:56 run
+    drwxrws--- 12 10182 1023 4.0K Sep 11 12:43 run.bak
+    drwxrws--- 12 10182 1023 4.0K Sep 11 12:53 run.tmp.bak
+    -rw-rw----  1 10182 1023   12 Feb 18  2025 status.txt
+    -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    [0x00] 2025-Sep-11 15:56:39 priv.c:5852 !(bytesh/) $ mv, "repopw.txt.in.asc", "repopw.txt", endsh
+
+    [0x00] 2025-Sep-11 15:56:49 priv.c:5854 !(bytesh/) $ rm, "repopw.txt.in", endsh
+
+blk_end
+
+    [0x00] 2025-Sep-11 16:01:40 priv.c:5856 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-11 16:02:08 priv.c:5860 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-11 16:02:51 priv.c:5865 !(bytesh/) $ compilerh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:03:10.491102915 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-11 13:04:30.363102858 +0000
+    ***************
+    *** 14,23 ****
+    --- 14,24 ----
+      #include <time.h>
+      
+      typedef char **ppchar;
+      typedef char *pchar;
+      
+    + #include "cflags.h"
+      
+      char *rootworkdir;
+      int isfirstcmd;
+      int main_interactive;
+      
+
+    [0x00] 2025-Sep-11 16:04:31 priv.c:5883 !(bytesh/) $ edit, "cflags", endsh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:04:37.267102853 +0000
+    --- cflags	2025-09-11 13:05:20.155102822 +0000
+    ***************
+    *** 1 ****
+    ! -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION
+    --- 1 ----
+    ! #define CFLAGS "-Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION"
+
+    [0x00] 2025-Sep-11 16:05:21 priv.c:5892 !(bytesh/) $ compilerh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:05:25.127102818 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-11 13:09:39.791102636 +0000
+    ***************
+    *** 198,208 ****
+          stm mainprintsubmainend(ctxt);    
+      
+          stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
+      
+          chr flags[256];
+    !     stm snprintf(flags, 254,"-g %s %s", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
+          chr ccmd[1024];
+          stm snprintf(ccmd, 1020, "%s %s %s %s -o%s %s", "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "");
+          int compilestatus;
+              // :syntax keyword Statement stm
+          stm if (!fork()) { execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+    --- 198,208 ----
+          stm mainprintsubmainend(ctxt);    
+      
+          stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
+      
+          chr flags[256];
+    !     stm snprintf(flags, 254, " %s %s", CFLAGS(defstrchrnul), cflags);
+          chr ccmd[1024];
+          stm snprintf(ccmd, 1020, "%s %s %s %s -o%s %s", "gcc", flags, ROOTC("/run/main.c"), ROOTC("/run/*.o"), ROOTC("/run/a.out"), "");
+          int compilestatus;
+              // :syntax keyword Statement stm
+          stm if (!fork()) { execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+
+    [0x00] 2025-Sep-11 16:09:45 priv.c:5921 !(bytesh/) $ mv, "cflags", "cflags.h", endsh
+
+    [0x00] 2025-Sep-11 16:10:05 priv.c:5923 !(bytesh/) $ edit, "cflags.h", endsh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:10:13.199102612 +0000
+    --- cflags.h	2025-09-11 13:12:06.691102531 +0000
+    ***************
+    *** 1 ****
+    ! #define CFLAGS(defstrchrnul) mf("-Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION %s", defstrchrnul ? "-DDEFSTRCHRNUL" : "")
+    --- 1,4 ----
+    ! #define CFLAGS(defstrchrnul) \
+    !     mf( "-Wfatal-errors " \ 
+    !         "-DBYTESH_DISABLE_OPTIMIZATION " \ 
+    ! 	"%s", defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+    [0x00] 2025-Sep-11 16:13:03 priv.c:5935 !(bytesh/) $ stdlibexth
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:13:05.319102489 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-11 13:13:45.535102461 +0000
+    ***************
+    *** 13,23 ****
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef4 ef((((
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+    ! #define es es__ (
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+    --- 13,23 ----
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef4 ef((((
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+    ! #define es es__(
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+
+    [0x00] 2025-Sep-11 16:14:05 priv.c:5964 !(bytesh/) $ # cflags -DBYTESH_DISABLE_OPTIMIZATION
+
+    [0x00] 2025-Sep-11 16:14:24 priv.c:5966 !(bytesh/) $ es "hello" $
+
+
+    [0x00] 2025-Sep-11 16:15:13 priv.c:5969 !(bytesh/) $ stdlibexth
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:15:16.295102396 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-11 13:15:42.807102377 +0000
+    ***************
+    *** 3,13 ****
+      
+      #include "main.h"
+      
+      #define MALLOCLISTDEBUG if (0)
+      
+    ! #define $ ) 
+      
+      #ifndef NOEVAL
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+    --- 3,14 ----
+      
+      #include "main.h"
+      
+      #define MALLOCLISTDEBUG if (0)
+      
+    ! #define INSERT_CLOSING_PAREN )
+    ! #define $ INSERT_CLOSING_PAREN 
+      
+      #ifndef NOEVAL
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+
+    [0x00] 2025-Sep-11 16:15:44 priv.c:5999 !(bytesh/) $ stdlibexth
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:16:52.203102327 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-11 13:18:53.319102240 +0000
+    ***************
+    *** 3,12 ****
+    --- 3,13 ----
+      
+      #include "main.h"
+      
+      #define MALLOCLISTDEBUG if (0)
+      
+    + #define INSERT_OPENING_PAREN (
+      #define INSERT_CLOSING_PAREN )
+      #define $ INSERT_CLOSING_PAREN 
+      
+      #ifndef NOEVAL
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+    ***************
+    *** 14,24 ****
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef4 ef((((
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+    ! #define es es__(
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+    --- 15,26 ----
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef4 ef((((
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+    ! #define es___ es__
+    ! #define es es___ INSERT_OPENING_PAREN
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+
+    [0x00] 2025-Sep-11 16:18:54 priv.c:6043 !(bytesh/) $ es "hello" $
+    ("hello") = "hello"
+
+    [0x00] 2025-Sep-11 16:19:06 priv.c:6046 !(bytesh/) $ stdlibexth
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:19:11.851102227 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-11 13:20:35.207102168 +0000
+    ***************
+    *** 11,21 ****
+      
+      #ifndef NOEVAL
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+    ! #define ef4 ef((((
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+      #define es___ es__
+      #define es es___ INSERT_OPENING_PAREN
+    --- 11,23 ----
+      
+      #ifndef NOEVAL
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+    ! #define ef__(x) ef(x)
+    ! #define ef___ ef__
+    ! #define ef4 ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+      #define es___ es__
+      #define es es___ INSERT_OPENING_PAREN
+
+    [0x00] 2025-Sep-11 16:20:36 priv.c:6077 !(bytesh/) $ ef4 1.0 + 1.0 $ * 2.0 + 1.0 $ * 2.0 $ $
+    (float) (( ( ( 1.0 + 1.0 ) * 2.0 + 1.0 ) * 2.0 )) = 10.000000 
+
+    [0x00] 2025-Sep-11 16:21:07 priv.c:6080 !(bytesh/) $ stdlibexth
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:21:38.403102122 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-11 13:23:02.819102062 +0000
+    ***************
+    *** 13,28 ****
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef__(x) ef(x)
+      #define ef___ ef__
+    ! #define ef4 ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+      #define es___ es__
+    ! #define es es___ INSERT_OPENING_PAREN
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+    --- 13,28 ----
+      #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+      #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
+      #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+      #define ef__(x) ef(x)
+      #define ef___ ef__
+    ! #define $ef4 ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+      
+      void es_(char *name, char *sz);
+      #define es__(x) es_(#x, x)
+      #define es___ es__
+    ! #define $es es___ INSERT_OPENING_PAREN
+      #endif
+      
+      #define MALLOCLISTMAXPTRS 2048000
+      typedef struct
+      {
+    ***************
+    *** 145,157 ****
+      int sh_(int ignored, char *fmt, ...) ;
+      int shdirectout(char *, char *fmt, ...);
+      int shfd_(int ignored, char *fmt, ...);
+      FILE *psh_(int ignored, char *fmt, ...);
+      
+    ! #define $shdirect shdirectout ( 0
+      #define sh sh_ ( 0
+      #define shfd shfd_ ( 0
+      #define psh psh_ ( 0
+      #define endsh "" )
+      
+      #endif
+       
+    --- 145,160 ----
+      int sh_(int ignored, char *fmt, ...) ;
+      int shdirectout(char *, char *fmt, ...);
+      int shfd_(int ignored, char *fmt, ...);
+      FILE *psh_(int ignored, char *fmt, ...);
+      
+    ! #define $$shdirect shdirectout ( 0
+    ! #define $$sh sh_ ( 0
+      #define sh sh_ ( 0
+    + #define $$shfd shfd_ ( 0
+      #define shfd shfd_ ( 0
+    + #define $$psh psh_ ( 0
+      #define psh psh_ ( 0
+      #define endsh "" )
+      
+      #endif
+       
+
+    [0x00] 2025-Sep-11 16:23:37 priv.c:6151 !(bytesh/) $ cnslutilh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:23:40.811102035 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-11 13:24:10.559102013 +0000
+    ***************
+    *** 43,53 ****
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit $shdirect, "vim %s", ROOTC("/run/log.txt")$$
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+      
+    --- 43,53 ----
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit $$shdirect, "vim %s", ROOTC("/run/log.txt")$$
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+    
+blk_end
+
+    [0x00] 2025-Sep-11 16:24:11 priv.c:6180 !(bytesh/) $ cmdlogedit
