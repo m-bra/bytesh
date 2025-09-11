@@ -5743,3 +5743,53 @@ compilerh
       }
       
       #undef programm
+
+    [0x00] 2025-Sep-11 15:41:21 priv.c:5748 $ sh, "git help config | grep push.autoSetupRemote" $$
+           push.autoSetupRemote
+
+    [0x00] 2025-Sep-11 15:41:38 priv.c:5751 !(bytesh/) $ sh, "git help config | grep -C 20 push.autoSetupRemote" $$
+               is run. See "branch.<name>.rebase" for setting this on a per-branch
+               basis.
+    
+               When mmeerrggeess (or just _m), pass the ----rreebbaassee--mmeerrggeess option to _g_i_t
+               _r_e_b_a_s_e so that the local merge commits are included in the rebase
+               (see ggiitt--rreebbaassee(1) for details).
+    
+               When the value is iinntteerraaccttiivvee (or just _i), the rebase is run in
+               interactive mode.
+    
+               NNOOTTEE: this is a possibly dangerous operation; do nnoott use it unless
+               you understand the implications (see ggiitt--rreebbaassee(1) for details).
+    
+           pull.octopus
+               The default merge strategy to use when pulling multiple branches at
+               once.
+    
+           pull.twohead
+               The default merge strategy to use when pulling a single branch.
+    
+           push.autoSetupRemote
+               If set to "true" assume ----sseett--uuppssttrreeaamm on default push when no
+               upstream tracking exists for the current branch; this option takes
+               effect with push.default options _s_i_m_p_l_e, _u_p_s_t_r_e_a_m, and _c_u_r_r_e_n_t. It
+               is useful if by default you want new branches to be pushed to the
+               default remote (like the behavior of _p_u_s_h_._d_e_f_a_u_l_t_=_c_u_r_r_e_n_t) and you
+               also want the upstream tracking to be set. Workflows most likely to
+               benefit from this option are _s_i_m_p_l_e central workflows where all
+               branches are expected to have the same name on the remote.
+    
+           push.default
+               Defines the action ggiitt ppuusshh should take if no refspec is given
+               (whether from the command-line, config, or elsewhere). Different
+               values are well-suited for specific workflows; for instance, in a
+               purely central workflow (i.e. the fetch source is equal to the push
+               destination), uuppssttrreeaamm is probably what you want. Possible values
+               are:
+    
+               +o   nnootthhiinngg - do not push anything (error out) unless a refspec is
+                   given. This is primarily meant for people who want to avoid
+                   mistakes by always being explicit.
+
+    [0x00] 2025-Sep-11 15:41:55 priv.c:5794 !(bytesh/) $ sh, "git config set push.autoSetupRemote" $$
+
+    [0x00] 2025-Sep-11 15:42:25 priv.c:5796 !(bytesh/) $ sh, "git config set push.autoSetupRemote true" $$
