@@ -5708,3 +5708,38 @@ compilerh
 
     [0x00] 2025-Sep-11 15:31:49 priv.c:5710 !(bytesh/) $ # cd ..
     /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-11 15:33:53 priv.c:5713 !(bytesh/) $ gitupdate
+    [detached HEAD 2fbe39c] untitled
+     1 file changed, 79 insertions(+), 467 deletions(-)
+
+    [0x00] 2025-Sep-11 15:34:17 priv.c:5717 !(bytesh/) $ sh, "git checkout -b master2" $$
+
+    [0x00] 2025-Sep-11 15:39:14 priv.c:5719 $ cnslutilc
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 12:39:16.131103941 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2025-09-11 12:40:16.195103898 +0000
+    ***************
+    *** 264,274 ****
+      
+      	int pp =  preprocessor;
+      	int np = !preprocessor;
+      	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+      	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    ! 	np&&     fputs(       szdefb, f);
+      	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+      	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+      }
+      
+      #undef programm
+    --- 264,274 ----
+      
+      	int pp =  preprocessor;
+      	int np = !preprocessor;
+      	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+      	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    ! 	np&&      fputs(       szdefb, f);
+      	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+      	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+      }
+      
+      #undef programm

@@ -266,7 +266,7 @@ void hadditem(char *namepath, char *ident, int preprocessor)
 	int np = !preprocessor;
 	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
 	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
-	np&&     fputs(       szdefb, f);
+	np&&      fputs(       szdefb, f);
 	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
 	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
 }

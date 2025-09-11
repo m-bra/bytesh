@@ -1,79 +1,27 @@
-    * fe18d90 Merlin Brandt 24 seconds ago untitled  (HEAD)
-    * 3f7a02e Merlin Brandt 4 weeks ago untitled 
-    * 5b60184 Merlin Brandt 4 weeks ago untitled 
-    * dc66209 Merlin Brandt 4 weeks ago untitled  (origin/lastworking)
-    * 605f009 Merlin Brandt 4 weeks ago untitled 
-    * d7dad22 Merlin Brandt 5 weeks ago untitled 
-    * f1ee8d0 Merlin Brandt 5 weeks ago untitled 
-    * d3d5ffd Merlin Brandt 5 weeks ago untitled 
-    * 42d5463 Merlin Brandt 5 weeks ago untitled 
-    * e02a11b Merlin Brandt 5 weeks ago untitled 
-    * 00e1d34 Merlin Brandt 5 weeks ago untitled 
-    * 6566358 Merlin Brandt 6 weeks ago untitled 
-    * 581e03b Merlin Brandt 6 weeks ago untitled 
-    * c759637 Merlin Brandt 6 weeks ago untitled 
-    * 142fcb1 Merlin Brandt 6 weeks ago untitled 
-    * eb7372e Merlin Brandt 8 weeks ago untitled 
-    * bb8dd13 Merlin Brandt 10 weeks ago untitled 
-    * 7b85c59 Merlin Brandt 10 weeks ago untitled 
-    * d11b4ef Merlin Brandt 10 weeks ago untitled 
-    * 0a4f5fa Merlin Brandt 2 months ago untitled  (origin/master)
-    * 5b37859 Merlin Brandt 3 months ago untitled 
-    * b229a6e Merlin Brandt 3 months ago untitled 
-    * da37b9c Merlin Brandt 3 months ago untitled 
-    * 18e93d3 Merlin Brandt 3 months ago untitled 
-    * 2d0db20 Merlin Brandt 3 months ago untitled 
-    * 34c61ea Merlin Brandt 3 months ago . 
-    * 0e5293a Merlin Brandt 3 months ago . 
-    * d83c8ad Merlin Brandt 3 months ago . 
-    * 4a308bc Merlin Brandt 3 months ago untitled 
-    * 40a6cb3 Merlin Brandt 3 months ago untitled 
-    * 31a3495 Merlin Brandt 3 months ago untitled 
-    * 41a2c44 Merlin Brandt 3 months ago untitled 
-    * 2781bd4 Merlin Brandt 3 months ago untitled 
-    * 2b3a915 Merlin Brandt 3 months ago . 
-    * a406840 Merlin Brandt 3 months ago . 
-    * dab7491 Merlin Brandt 3 months ago untitled 
-    * 1f79fa2 Merlin Brandt 3 months ago untitled 
-    * a3ab984 Merlin Brandt 3 months ago untitled 
-    * 2da48bb Merlin Brandt 3 months ago untitled 
-    * 5bb4c6c Merlin Brandt 3 months ago untitled 
-    * faa164a Merlin Brandt 4 months ago untitled 
-    * 9e3be69 Merlin Brandt 4 months ago untitled 
-    * 914f74e Merlin Brandt 4 months ago untitled 
-    * 87c9529 Merlin Brandt 4 months ago untitled 
-    * 0acd52e Merlin Brandt 4 months ago untitled 
-    * 77a7493 Merlin Brandt 4 months ago untitled 
-    * 8a7f747 Merlin Brandt 4 months ago untitled 
-    * 38a6d15 Merlin Brandt 4 months ago untitled 
-    * 4ac1532 Merlin Brandt 4 months ago untitled 
-    * 69b551f Merlin Brandt 4 months ago untitled 
-    * 9f6e607 Merlin Brandt 5 months ago untitled 
-    * ce82834 Merlin Brandt 5 months ago untitled 
-    * d3a7e0e Merlin Brandt 7 months ago untitled 
-    * 042c46d Merlin Brandt 7 months ago untitled 
-    * 990aac5 Merlin Brandt 7 months ago untitled 
-    * 664f736 Merlin Brandt 7 months ago untitled 
-    * dde7dd3 Merlin Brandt 7 months ago untitled 
-    * 2ec21b1 Merlin Brandt 7 months ago untitled 
-    * ad0df67 Merlin Brandt 7 months ago untitled 
-    * 17b0115 Merlin Brandt 7 months ago untitled 
-    * a66237d Merlin Brandt 7 months ago untitled 
-    * add4b59 Merlin Brandt 7 months ago untitled 
-    * be032d2 Merlin Brandt 7 months ago untitled 
-    * 0cebe64 Merlin Brandt 7 months ago untitled 
-    * 767dd00 Merlin Brandt 7 months ago untitled 
-    * 0886733 Merlin Brandt 7 months ago untitled 
-    * a74ec2e Merlin Brandt 7 months ago untitled 
-    * d469fb2 Merlin Brandt 7 months ago untitled 
-    * dce546a Merlin Brandt 7 months ago untitled 
-    * 92a35ff Merlin Brandt 7 months ago untitled 
-    * 4cce31b Merlin Brandt 7 months ago untitled 
-    * 44aa8e6 Merlin Brandt 7 months ago untitled 
-    * 86960b0 Merlin Brandt 7 months ago untitled 
-    * e044c2b Merlin Brandt 7 months ago untitled 
-    * 5184cd9 Merlin Brandt 7 months ago untitled 
-    * c69b7c7 Merlin Brandt 7 months ago untitled 
-    * edfad07 Merlin Brandt 7 months ago untitled 
-    * 6c3f6ea Merlin Brandt 7 months ago untitled 
-    * 275338d Merlin Brandt 8 months ago initial commit 
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 12:39:16.131103941 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2025-09-11 12:40:16.195103898 +0000
+    ***************
+    *** 264,274 ****
+      
+      	int pp =  preprocessor;
+      	int np = !preprocessor;
+      	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+      	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    ! 	np&&     fputs(       szdefb, f);
+      	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+      	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+      }
+      
+      #undef programm
+    --- 264,274 ----
+      
+      	int pp =  preprocessor;
+      	int np = !preprocessor;
+      	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+      	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    ! 	np&&      fputs(       szdefb, f);
+      	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+      	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+      }
+      
+      #undef programm
