@@ -5,13 +5,17 @@
 
 #define MALLOCLISTDEBUG if (0)
 
+#define $ ) 
+
 #ifndef NOEVAL
 #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
 #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
 #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+#define ef4 ef((((
 
 void es_(char *name, char *sz);
-#define es(x) es_(#x, x)
+#define es__(x) es_(#x, x)
+#define es es__ (
 #endif
 
 #define MALLOCLISTMAXPTRS 2048000
@@ -134,10 +138,11 @@ void es_(char *name, char *sz);
     } while (0)         //
 
 int sh_(int ignored, char *fmt, ...) ;
-int shdirectout(char const *cmd);
+int shdirectout(char *, char *fmt, ...);
 int shfd_(int ignored, char *fmt, ...);
 FILE *psh_(int ignored, char *fmt, ...);
 
+#define $shdirect shdirectout ( 0
 #define sh sh_ ( 0
 #define shfd shfd_ ( 0
 #define psh psh_ ( 0

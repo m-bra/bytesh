@@ -8,12 +8,11 @@
 #undef precompile
 int precompile (void)
 {
-stm printf("lalala\n");
 DIR *dp;
 stm struct dirent *ep;
-ifn dp = opendir (ROOTC("/run/"))
+iff !(dp = opendir (ROOTC("/run/")))
 the rep blk
-        ifn (ep = readdir(dp)) 
+        iff !(ep = readdir(dp)) 
         thn break;
         iff strlen (ep->d_name) < 1
 	thn break;
@@ -21,10 +20,12 @@ the rep blk
         iff strncmp(filetype, cmpentire("c")) 
          || !strncmp(ep->d_name, cmpentire ("main.c"))
         thn continue;
-        stm es(ep->d_name);
-        stm sh, "%s%s%s%s%s%s%s%s", 
-	        "gcc ", "-Wfatal-errors -c ", ROOTC("/run/"), ep->d_name, 
-		    "-o ", ROOTC("/run/"), ep->d_name, ".o", endsh;                 
+        ign es(ep->d_name);
+	chr *cmd = mf("gcc -Wfatal-errors %s%s%s%s%s%s%s", 
+	        " -c ", ROOTC("/run/"), ep->d_name, 
+		" -o ", ROOTC("/run/"), ep->d_name, ".o");
+	stm printf("%s\n", cmd);
+        stm sh, cmd, endsh;
         blk_end
 stm (void) closedir(dp);
 stm return 0;

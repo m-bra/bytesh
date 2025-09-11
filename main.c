@@ -198,7 +198,6 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
 
-    ign es (cflags);
     chr flags[256];
     stm snprintf(flags, 254,"-g %s %s", defstrchrnul ? "-D DEFSTRCHRNUL" : "", cflags);
     chr ccmd[1024];

@@ -149,11 +149,39 @@ FILE *psh_(int ignored, char *fmt, ...)
     return f;
 }
 
-int shdirectout(char const *path)
+int shdirectout(char *ignore, char *fmt, ...)
 {
-    int current_stdout_fileno = dup(STDOUT_FILENO);
-    dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
-    int result = sh, path, endsh;
-    dup2(current_stdout_fileno, STDOUT_FILENO);
-    return result;
+  int current_stdout_fileno = dup(STDOUT_FILENO);
+  dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    
+  va_list args;
+  va_start(args, fmt);
+  linebuf_t buf;
+
+  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+
+  va_end(args);
+
+  int result;
+
+  int fd[2];
+  pid_t fr = fork();
+  result = 1;
+  if (!fr) 
+  {
+      execl("/bin/sh", "sh", "-c", buf, (char *) NULL);	
+  }
+  else
+  {
+      int wstatus;
+      wait(&wstatus);
+      result = BOOLTOSYS(WIFEXITED(wstatus)) || WEXITSTATUS(wstatus);
+  }
+
+  dup2(current_stdout_fileno, STDOUT_FILENO);
+  return result;
+  
+err:
+  perror(mf("%s:%d", __FILE__, __LINE__));
+  return 0;
 }

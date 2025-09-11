@@ -26,11 +26,9 @@
 #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
 #define ls  sh, NBUFFERED_OUT("ls -hAl  %s", ROOTCLS)
 #define lst sh, NBUFFERED_OUT("ls -hAlt %s", ROOTCLS)
-#define lstr sh, NBUFFERED_OUT("ls -hAltr %s", ROOTCLS)
 #define lsS sh, NBUFFERED_OUT("ls -hAlS %s", ROOTCLS)
 #define lsc  ls, ".", endsh
 #define lsct lst, ".", endsh
-#define lsctr lstr, ".", endsh
 #define lscS lsS, ".", endsh
 #define lscgrep sh, "ls -hAl . | grep %s"
 #define lsgrep sh, "ls -hAl %s | grep %s"
@@ -45,7 +43,7 @@ void /* */micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
 
 
-#define cmdlogedit $shdirect, "vim %s", ROOTC("/run/log.txt")$$
+#define cmdlogedit shdirectout(mf("vim %s", ROOTC("/run/log.txt")))
 
 void cmdlog_();
 #define cmdlog cmdlog_()
@@ -79,7 +77,7 @@ void mkdirp_(int ignore, char *path, char *ignore_);
 
 int mv_(int ignore, char *from, char *to, char *ignore_);
 #define mv mv_ ( 0
-#define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+#define mvpostfix(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
 
 #define mvf sh, "mv -f %s %s"
 #define rmf sh, "rm -f %s %s"

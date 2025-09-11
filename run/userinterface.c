@@ -81,12 +81,12 @@ thn blk
     stm linebuf_t buf;
     stm void cmdlogat(int, linebuf_t *);
     stm cmdlogat(cmdlogline--, &buf);
-	//stm printf("Hello");ln;
-	for range(0, strlen(pagebuf))
-	iff buf[i] == '\n'
-	thn buf[i] =   ' ';
+    //stm printf("Hello");ln;
+    for range(0, strlen(buf))
+    iff buf[i] == '\n'
+    thn buf[i] =   ' ';
 
-    for range(0, strlen(pagebuf))
+    for range(0, strlen(buf))
     stm printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
     stm fflush(getstdout());
 
@@ -102,11 +102,11 @@ thn blk
         blk
         for range(0, strlen(pagebuf))
 	        printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
-	        char *sznew = "userinterfaceh";
-	        strcpy(pagebuf, sznew);
-	        printf("%s", sznew); fflush(getstdout());
-	    blk_end
-        tab_triggers();
+	char *sznew = "userinterfaceh";
+	strcpy(pagebuf, sznew);
+	printf("%s", sznew); fflush(getstdout());
+	blk_end
+    tab_triggers();
     blk_end
 
 iff c == c && !is_control_key

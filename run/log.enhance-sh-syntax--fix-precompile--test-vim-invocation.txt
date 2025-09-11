@@ -1,0 +1,336 @@
+
+    [0x00] 2025-Sep-06 18:04:37 priv.c:5436 $ pwd
+    /storage/self/primary/mntc
+
+    [0x00] 2025-Sep-06 18:04:44 priv.c:5439 $ # cd ../tmp
+    /storage/self/primary/tmp
+
+    [0x00] 2025-Sep-06 18:05:24 priv.c:5442 !(bytesh/) $ edit, "test.txt", endsh
+    1,508c1,5
+    > first line
+    > second line
+    > third line
+    > fourth line
+    > fifth line
+
+    [0x00] 2025-Sep-06 18:05:52 priv.c:5959 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-06 18:10:32 priv.c:5452 !(bytesh/) $ tmph
+    3c3
+    < 
+    ---
+    > #define $SH$ sh ,
+
+    [0x00] 2025-Sep-06 18:11:14 priv.c:5458 !(bytesh/) $ stdlibexth
+    149d148
+    < #define _$ "" )
+
+    [0x00] 2025-Sep-06 18:38:12 priv.c:5462 !(bytesh/) $ tmph
+    3c3,4
+    < #define $SH$ sh ,
+    ---
+    > #define $SH sh ,
+    > #define $$ , "" )
+    5c6
+    < # define TROOTC(path) mf("%s%s", "/data/data/com.termux/files/", path)
+    ---
+    > #define TROOTC(path) mf("%s%s", "/data/data/com.termux/files/", path)
+
+    [0x00] 2025-Sep-06 18:40:27 priv.c:5473 !(bytesh/) $ tmph
+    3c3
+    < #define $SH sh ,
+    ---
+    > #define $sh sh ,
+
+    [0x00] 2025-Sep-06 18:41:03 priv.c:5479 !(bytesh/) $ tmph
+    3c3
+    < #define $sh sh ,
+    ---
+    > #define sh$ sh ,
+
+    [0x00] 2025-Sep-06 18:41:48 priv.c:5485 !(bytesh/) $ stdlibexth
+
+    [0x00] 2025-Sep-06 18:44:19 priv.c:5487 !(bytesh/) $ tmph
+    3a4,5
+    > #define dsh$ directsh$
+    > #define directsh$ shdirectout(mf(
+
+    [0x00] 2025-Sep-06 18:48:31 priv.c:5492 !(bytesh/) $ # cflags -DBYTESH_DISABLE_OPTIMIZATION
+
+    [0x00] 2025-Sep-06 18:53:15 priv.c:5494 !(bytesh/) $ shdirectout("vim -c 'normal Gddddwq' test.txt")
+
+    [0x00] 2025-Sep-06 18:53:52 priv.c:5496 !(bytesh/) $ edit, "test.txt", endsh
+    3a4,5
+    > fourth line
+    > fifth line
+
+    [0x00] 2025-Sep-06 18:54:13 priv.c:5501 !(bytesh/) $ shdirectout("vim -c 'normal Gdddd:wq' test.txt")
+
+    [0x00] 2025-Sep-08 17:50:22 priv.c:5503 $ stdlibextc
+    152c152
+    < int shdirectout(char const *path)
+    ---
+    > int shdirectout(char *ignore, char const *path, char *ignore2)
+
+    [0x00] 2025-Sep-08 17:52:03 priv.c:5509 $ stdlibexth
+    140c140
+    < int shdirectout(char const *cmd);
+    ---
+    > int shdirectout(char *, char const *cmd, char *);
+    144c144
+    < #define shdirectout_ shdirectout
+    ---
+    > #define $shdirect shdirectout ( 0
+
+    [0x00] 2025-Sep-08 17:55:59 priv.c:5519 !(bytesh/) $ stdlibexth
+    140c140
+    < int shdirectout(char *, char const *cmd, char *);
+    ---
+    > int shdirectout(char *, char *fmt, ...);
+
+    [0x00] 2025-Sep-08 17:56:39 priv.c:5525 !(bytesh/) $ stdlibextc
+    154,158c154,186
+    <     int current_stdout_fileno = dup(STDOUT_FILENO);
+    <     dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    <     int result = sh, path, endsh;
+    <     dup2(current_stdout_fileno, STDOUT_FILENO);
+    <     return result;
+    ---
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >     
+    >   va_list args;
+    >   va_start(args, fmt);
+    >   linebuf_t buf;
+    > 
+    >   vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+    > 
+    >   va_end(args);
+    > 
+    >   int result;
+    > 
+    >   int fd[2];
+    >   pid_t fr = fork();
+    >   result = 1;
+    >   if (!fr) 
+    >   {
+    >       execl("/bin/sh", "sh", "-c", buf, (char *) NULL);	
+    >   }
+    >   else
+    >   {
+    >       int wstatus;
+    >       wait(&wstatus);
+    >       result = BOOLTOSYS(WIFEXITED(wstatus)) || WEXITSTATUS(wstatus);
+    >   }
+    > 
+    >   dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   return result;
+    >   
+    > err:
+    >   perror(mf("%s:%d", __FILE__, __LINE__));
+    >   return 0;
+
+    [0x00] 2025-Sep-08 18:06:05 priv.c:5567 !(bytesh/) $ # cd /home/mbrandt/TROOT/home/mbrandt/prj/bytesh
+    /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-08 18:06:19 priv.c:5570 !(bytesh/) $ # cd run
+    /storage/self/primary/prj/bytesh/run
+
+    [0x00] 2025-Sep-08 18:08:36 priv.c:5573 $ $shdirect, "echo %s", "hello" $$
+
+
+    [0x00] 2025-Sep-08 18:10:31 priv.c:5576 $ edit, "build.c", endsh
+    11d10
+    < stm printf("lalala\n");
+    14c13
+    < ifn dp = opendir (ROOTC("/run/"))
+    ---
+    > iff !(dp = opendir (ROOTC("/run/")))
+    16c15
+    <         ifn (ep = readdir(dp)) 
+    ---
+    >         iff !(ep = readdir(dp)) 
+
+    [0x00] 2025-Sep-08 18:15:28 priv.c:5588 !(bytesh/) $ edit, "build.c", endsh
+    23,26c23,28
+    <         stm es(ep->d_name);
+    <         stm sh, "%s%s%s%s%s%s%s%s", 
+    < 	        "gcc ", "-Wfatal-errors -c ", ROOTC("/run/"), ep->d_name, 
+    < 		    "-o ", ROOTC("/run/"), ep->d_name, ".o", endsh;                 
+    ---
+    >         ign es(ep->d_name);
+    > 	chr *cmd = mf("gcc -Wfatal-errors %s%s%s%s%s%s%s", 
+    > 	        "-c ", ROOTC("/run/"), ep->d_name, 
+    > 		"-o ", ROOTC("/run/"), ep->d_name, ".o");
+    > 	stm printf("%s\n", cmd);
+    >         stm sh, cmd, endsh;
+
+    [0x00] 2025-Sep-08 18:19:33 priv.c:5602 !(bytesh/) $ sh, "gcc -c build.c -o build.o", endsh
+
+    [0x00] 2025-Sep-08 18:20:00 priv.c:5604 !(bytesh/) $ sh, "gcc -c build.c -o build.c.o", endsh
+
+    [0x00] 2025-Sep-08 18:26:36 priv.c:5606 $ edit, "build.c", endsh
+    25,26c25,26
+    < 	        "-c ", ROOTC("/run/"), ep->d_name, 
+    < 		"-o ", ROOTC("/run/"), ep->d_name, ".o");
+    ---
+    > 	        " -c ", ROOTC("/run/"), ep->d_name, 
+    > 		" -o ", ROOTC("/run/"), ep->d_name, ".o");
+
+    [0x00] 2025-Sep-08 18:26:54 priv.c:5614 $ sh, "gcc -c build.c -o build.o", endsh
+
+    [0x00] 2025-Sep-08 18:44:38 priv.c:5616 $ $shdirect, "echo %s", "hello" $$
+
+    [0x00] 2025-Sep-08 18:44:55 priv.c:5618 $ $shdirect, "echo %s", "hello"$$
+
+    [0x00] 2025-Sep-08 18:46:39 priv.c:5620 !(bytesh/) $ cnslutilh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-08 15:46:41.297792449 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-08 15:47:11.409792427 +0000
+    ***************
+    *** 43,53 ****
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit shdirectout(mf("vim %s", ROOTC("/run/log.txt")))
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+      
+    --- 43,53 ----
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit $shdirect "vim %s", ROOTC("/run/log.txt")$$
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+      
+    Hello, World.
+
+    [0x00] 2025-Sep-08 18:48:38 priv.c:5650 !(bytesh/) $ cnslutilh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-08 15:48:41.161792363 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-08 15:48:48.257792358 +0000
+    ***************
+    *** 43,53 ****
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit $shdirect "vim %s", ROOTC("/run/log.txt")$$
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+      
+    --- 43,53 ----
+      
+      void /* */micro_(int ignore, char const *path, char *ignore_);
+      #define edit micro_ ( 0
+      
+      
+    ! #define cmdlogedit $shdirect, "vim %s", ROOTC("/run/log.txt")$$
+      
+      void cmdlog_();
+      #define cmdlog cmdlog_()
+      #define cmdlogh printf("See also: cmdloggrep, cmdloghead(int end), cmdlogat(int i, linebuf_t *buf)")
+      
+    Hello, World.
+
+    [0x00] 2025-Sep-08 18:59:57 priv.c:5680 !(bytesh/) $ cnslutilc
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-08 15:59:59.937791878 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2025-09-08 16:00:08.381791872 +0000
+    ***************
+    *** 9,19 ****
+      	char buf[512];
+      	// simply switch from micro to vim
+      	snprintf(buf, 512, "vim %s", path);
+      	system(buf);
+      	dup2(current_stdout_fileno, STDOUT_FILENO);
+    - 	printf ("Hello, World.\n");
+              sh, "diff -C 5 %s %s", ROOTC("/run/cnslutil/diff.txt"), path, endsh; 
+      	// TODO: undefined escape rules in param strings
+      }
+      
+      void micro_(int ignore, char const *path, char *ignore_)
+    --- 9,18 ----
+    Hello, World.
+
+    [0x00] 2025-Sep-08 19:00:09 priv.c:5699 !(bytesh/) $ # cd /home/mbrandt/TROOT/home/mbrandt
+    /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2025-Sep-08 19:00:51 priv.c:5702 !(bytesh/) $ lsc
+    total 18K
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 18:57 (external) Dynalist
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 19:04 main.c
+    drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 23 12:37 mntc2
+    drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 23 12:30 .termux -> /home/mbrandt/TROOT/home/.termux
+    lrwxrwxrwx 1 mbrandt mbrandt   34 Aug 19 13:40 .termuxlinktostorage -> /storage/self/primary/mntc/.termux
+    drwx------ 2 mbrandt mbrandt 3.4K Aug 18 18:10 tmp
+    lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2025-Sep-08 19:00:54 priv.c:5721 !(bytesh/) $ # cd tmp
+    /data/data/com.termux/files/home/mbrandt/tmp
+
+    [0x00] 2025-Sep-08 19:00:57 priv.c:5724 !(bytesh/) $ lsc
+    total 168K
+    -rw------- 1 mbrandt mbrandt  16K Jul 23 10:45 A
+    -rwxr-x--x 1 mbrandt mbrandt  99K Jul  5 07:56 a.out
+    -rw------- 1 mbrandt mbrandt 2.0K Jul 15 14:58 apt-qt.txt
+    -rw------- 1 mbrandt mbrandt  16K Jul 23 10:45 B
+    -rw------- 1 mbrandt mbrandt   81 Jul 28 13:20 dialogdir.txt
+    -rw------- 1 mbrandt mbrandt   89 Jul 28 13:20 dialog.txt
+    -rw------- 1 mbrandt mbrandt   94 Jul 15 14:32 run.sh
+    -rw-r--r-- 1 mbrandt mbrandt 1.3K Aug 18 18:10 settings.cfg
+    -rw------- 1 mbrandt mbrandt  12K Aug 18 18:10 .settings.cfg.swp
+    -rw------- 1 mbrandt mbrandt    9 Feb 13  2025 test.txt
+
+    [0x00] 2025-Sep-08 19:01:01 priv.c:5737 !(bytesh/) $ cat, "test.txt", endsh
+    new line
+
+    [0x00] 2025-Sep-08 19:02:07 priv.c:5740 !(bytesh/) $ cat, "test.txt" $$
+    new line
+
+    [0x00] 2025-Sep-08 19:02:18 priv.c:5743 !(bytesh/) $ cat, "test.txt"$$
+    new line
+
+    [0x00] 2025-Sep-08 19:02:25 priv.c:5746 !(bytesh/) $ edit, "test.txt" $$
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-08 16:02:35.289791766 +0000
+    --- test.txt	2025-09-08 16:02:51.809791755 +0000
+    ***************
+    *** 1 ****
+    --- 1,5 ----
+      new line
+    + second line
+    + third line
+    + fourth line
+    + fifth line
+    Hello, World.
+
+    [0x00] 2025-Sep-08 19:02:55 priv.c:5759 !(bytesh/) $ $shdirect, "vim -c normal Gdddd -c wq" $$
+
+    [0x00] 2025-Sep-08 19:03:34 priv.c:5761 !(bytesh/) $ $shdirect, "vim -c normal Gdddd -c wq test.txt" $$
+
+    [0x00] 2025-Sep-08 19:04:17 priv.c:5763 !(bytesh/) $ $shdirect, "vim -c 'normal Gdddd' -c wq test.txt" $$
+
+    [0x00] 2025-Sep-08 19:04:38 priv.c:5765 !(bytesh/) $ cat, "test.txt" $$
+    new line
+    second line
+    third line
+
+

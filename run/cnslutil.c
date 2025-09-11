@@ -1,11 +1,6 @@
 #include "main.h"
 #include <unistd.h>
 
-void micro_(int ignore, char const *path, char *ignore_)
-{
-    edit_(path);
-}
-
 void edit_(char const *path)
 {
 	cp, path, ROOTC("/run/cnslutil/diff.txt"), endsh;
@@ -16,9 +11,13 @@ void edit_(char const *path)
 	snprintf(buf, 512, "vim %s", path);
 	system(buf);
 	dup2(current_stdout_fileno, STDOUT_FILENO);
-	printf ("Hello, World.\n");
         sh, "diff -C 5 %s %s", ROOTC("/run/cnslutil/diff.txt"), path, endsh; 
 	// TODO: undefined escape rules in param strings
+}
+
+void micro_(int ignore, char const *path, char *ignore_)
+{
+    edit_(path);
 }
 
 void cmdlog_()
