@@ -1,11 +1,2 @@
-    On branch master2
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git restore <file>..." to discard changes in working directory)
-    	modified:   .gitignore
-    
-    Untracked files:
-      (use "git add <file>..." to include in what will be committed)
-    	.bak/
-    
-    no changes added to commit (use "git add" and/or "git commit -a")
+    [master2 8d7d9ea] untitled
+     2 files changed, 24 insertions(+), 1 deletion(-)
