@@ -233,33 +233,35 @@ err:
 
 void hadditem(char *namepath, char *ident, int preprocessor)
 {
-	char *fnct = ident;
 	
-	char *name = strrstr(namepath, "/");
-	if ( name) name += 1;
-	if (!name) name = namepath;
+int current_stdout_fileno = dup(STDOUT_FILENO);
+stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+
+chr *fnct = ident;
 	
-	char *cmd = mf("%sh", name);
-	char *filename = mf("%s.h", namepath);
+chr *name = strrstr(namepath, "/");
+stm if ( name) name += 1;
+stm if (!name) name = namepath;
 	
-	char *prompt = mf("%s%sadd%s $ ", mf(PROMPT, 0xFFFF, ""), cmd, fnct ? (preprocessor ? "def" : "fn") : "");
-	printf("%s", prompt);
-	fflush(getstdout());
+chr *cmd = mf("%sh", name);
+chr *filepath = mf("%s.h", namepath);
+	
+chr *prompt = mf("    [....] %sadd%s $ ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+stm printf("%s", prompt); fflush(getstdout());
 		
-	char space[] = "                                 ";
-	space[strlen(prompt) - 5] = 0;
-	char *szdef = mgetescline(mf("%s%%02d $ ", space));
-    
-	char path[NBUF];
-	snprintf(path, NBUF, "%s/run/%s", ROOT, filename);
+chr space[] = "                                 ";
+stm space[strlen(prompt) - 5] = 0;
+chr *szdef = mgetline(mf("%s%%02d $ ", space));
+   
+chr *path = ROOTC(mf("/run/%s", filepath));
 
-    char szdefb[strlen(szdef) + 2];
-    strcpy(szdefb, szdef);
-    szdefb[strlen(szdef)] = '\n';
-    szdefb[strlen(szdef) + 1] = 0;
+chr szdefb[strlen(szdef) + 2];
+stm strcpy(szdefb, szdef);
+stm szdefb[strlen(szdef)] = '\n';
+stm szdefb[strlen(szdef) + 1] = 0;
 
-	FILE *f = fopen(path, "a");
-	fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+stm FILE *f = fopen(path, "a");
+stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
 	             fnct, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
 
 	int pp =  preprocessor;
@@ -269,6 +271,9 @@ void hadditem(char *namepath, char *ident, int preprocessor)
 	np&&      fputs(       szdefb, f);
 	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
 	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+
+stm dup2(current_stdout_fileno, STDOUT_FILENO);
+stm printf("%s%s", prompt, szdefb);
 }
 
 #undef programm

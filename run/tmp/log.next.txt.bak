@@ -1,0 +1,11 @@
+    > total 2.2M
+    > drwxrws--- 5 10182 1023 3.4K Aug  8 02:50 .bak
+    > -rw-rw---- 1 10182 1023 2.1M Aug  7 20:34 bytesh.lastworking.diff.txt
+    > -rw-rw---- 1 10182 1023  11K Aug  7 20:09 bytesh.lastworking.txt
+    > -rw-rw---- 1 10182 1023 9.9K Aug  7 20:09 bytesh.master.txt
+    > -rw-rw---- 1 10182 1023   26 Aug  9 13:47 log.next.txt
+    > -rw-rw---- 1 10182 1023    0 Sep 13 11:55 log.next.txt.bak
+    > -rw-rw---- 1 10182 1023  237 Aug  1 19:34 main.c.bak
+    > -rw-rw---- 1 10182 1023 5.7K Jul 28 12:12 main.o
+    > drwxrws--- 7 10182 1023 3.4K Jul 28 12:15 run.strange
+    > drwxrws--- 9 10182 1023 3.4K Jul 28 12:15 run.strange.strange

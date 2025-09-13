@@ -1,0 +1,20 @@
+[0x00] 2025-Sep-13 00:42:39 priv.c:7943 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh/run
+
+    [0x00] 2025-Sep-13 00:42:51 priv.c:7946 !(bytesh/) $ cmdlogpop$$ "" $$[0x00] 2025-Sep-13 00:44:05 priv.c:7976 !(bytesh/) $ sh$$ "echo hello" $$
+    > hello
+
+    [0x00] 2025-Sep-13 00:44:20 priv.c:7979 !(bytesh/) $ cmdlogpop$$ "" $$[0x00] 2025-Sep-13 00:44:47 priv.c:7989 !(bytesh/) $ sh$$ "echo hello" $$
+    > hello
+
+      
+
+    [0x00] 2025-Sep-13 00:47:38 priv.c:8028 !(bytesh/) $ cmdlogpop$$ "hello.txt" $$[0x00] 2025-Sep-13 00:48:03 priv.c:7995 !(bytesh/) $ sh$$ "echo newtexthello" $$
+    > newtexthello
+
+    [0x00] 2025-Sep-13 00:48:15 priv.c:7998 !(bytesh/) $ cmdlogpop$$ "hello.txt" $$[0x00] 2025-Sep-13 00:50:26 priv.c:8121 !(bytesh/) $ sh$$ "echo 865" $$
+    > 865
+
+      
+
+    [0x00] 2025-Sep-13 00:56:46 priv.c:8196 !(bytesh/) $ cmdlogpop$$ "hello" $$

@@ -34,6 +34,7 @@
 #define lscS lsS, ".", endsh
 #define lscgrep sh, "ls -hAl . | grep %s"
 #define lsgrep sh, "ls -hAl %s | grep %s"
+#define lsgrep$$ lsgrep,
 
 #define history cmdlog
 
@@ -45,7 +46,7 @@ void /* */micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
 
 
-#define cmdlogedit $$shdirect, "vim %s", ROOTC("/run/log.txt")$$
+#define cmdlogedit shdirect$$ "vim %s", ROOTC("/run/log.txt")$$
 
 void cmdlog_();
 #define cmdlog cmdlog_()
@@ -66,6 +67,12 @@ void cmdinsert(char *cmd);
 
 void cmdinsertlogregion(int from, int to);
 
+#define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+	"-c 'normal G$v' -c '?^\\s\\s\\s\\s[^>]' -c 'normal d' " \
+        "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+#define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+#define cmdlogdir ROOTC("/run/")
 void tputcup(int ignore, int col, char *ignore_);
 #define tputcup tputcup ( 0
 
@@ -92,6 +99,7 @@ void rm_(int ignore, char *filename, char *ignore_);
 
 void cat_(int ignore, char *filename, char *ignore_);
 #define cat cat_ ( 0
+#define cat$$ cat_ ( 0 , 
 
 void touch_(int ignore, char *sz, char *ignore_);
 #define touch touch_ ( 0
@@ -171,7 +179,9 @@ void man(int ignore, char *topic, char *ignore_) ;
 #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
 
 #define gpgencrypt sh, "gpg -a -c %s"
+#define gpgencrypt$$ gpgencrypt,
 #define gpgdecrypt sh, "gpg -a -d %s"
+#define gpgdecrypt$$ gpgdecrypt,
 
 #define date sh, "date", endsh
 
@@ -505,4 +515,4 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
 #define lnstl lns
 
-//#define cmdlogpop shdirectout(mf("vim -c 'normal GvF$dv^lldhhwq' %s", ROOTC("/run/log.txt"))) 
+#define cd$$ sh$$ mf("echo %%s > %s", ROOTC("/run/cwd.txt")),

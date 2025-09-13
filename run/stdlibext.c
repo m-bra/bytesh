@@ -23,29 +23,31 @@ int cen_line = -1;
 malloclist_t malloclistval;
 malloclist_t *malloclist = &malloclistval;
 
-void es_(char *name, char *sz)
+char *es_(char *name, char *sz)
 {
-    char *pre = mf("(%s) = ", name);
-    char prespace[strlen(pre)];
-	memset(prespace, ' ', strlen(pre));
+chr *result = sz;
+chr *pre = mf("(%s) = ", name);
+chr prespace[strlen(pre)];
+stm memset(prespace, ' ', strlen(pre));
     
-	printf("%s\"", pre);
-	while (*sz) {
-	iff *sz == '\n'
-	thn printf("\\n\"\n%s\"", prespace);
-	els printf("%c", *sz);
-		fflush(getstdout());
-		++sz;
-	}
-	printf("\"\n");
-	fflush(getstdout());
+stm printf("%s\"", pre);
+stm while (*sz) 
+    blk iff *sz == '\n'
+        thn printf("\\n\"\n%s\"", prespace);
+        els printf("%c", *sz);
+        stm fflush(getstdout());
+        stm ++sz;
+    blk_end
+stm printf("\"\n");
+stm fflush(getstdout());
+stm return result;
 }
 
 char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...) 
 {
 	va_list args;
 	va_start(args, fmt);
-	vsnprintf(mallocaddlinebuf, linebuf_tn, fmt, args);
+	vsnprintf(mallocadd(linebuf_tn * 6), linebuf_tn * 6, fmt, args);
 	va_end(args);
 	return lastmalloc;
 }
@@ -156,9 +158,9 @@ int shdirectout(char *ignore, char *fmt, ...)
     
   va_list args;
   va_start(args, fmt);
-  linebuf_t buf;
+  char buf[linebuf_tn * 6];
 
-  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+  vsnprintf(buf, linebuf_tn * 6, fmt, args);
 
   va_end(args);
 

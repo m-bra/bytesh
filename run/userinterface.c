@@ -54,7 +54,7 @@ def
 stm char *pagebuf = mallocaddpagebuf; pagebuf[0] = 0;
 stm int linen = 1;
 stm char lastchar = ' ';
-stm int cmdlogline = 0;// cmdlogn();
+stm int cmdlogline = cmdlogn();
     
 rep 
 blk
@@ -78,9 +78,18 @@ iff c == ESC
  && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[1]
  && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[2]
 thn blk             
-    stm linebuf_t buf;
+    stm linebuf_t mem;
+    chr *buf = &mem[0];
     stm void cmdlogat(int, linebuf_t *);
-    stm cmdlogat(cmdlogline--, &buf);
+    rep blk cmdlogat(cmdlogline--, &mem);
+        iff buf[strspn(buf, " ")] == '>'
+        thn continue;
+	iff strstr(buf, "$")
+	thn break;
+	blk_end
+    stm buf = strstr(buf, "$") + 1;
+    iff strlen(buf) > 80
+    thn buf[79] = '\0';
     //stm printf("Hello");ln;
     for range(0, strlen(buf))
     iff buf[i] == '\n'
@@ -91,7 +100,7 @@ thn blk
     stm fflush(getstdout());
 
     stm *stpncpy(pagebuf, buf, linebuf_tn) = 0;
-    stm printf("%s", pagebuf);
+    stm printf("... $ %s", pagebuf);
     blk_end
 
 
@@ -118,13 +127,14 @@ thn blk
 
     nil automatic_triggers()
         blk
-		iff !strncmp(pagebuf, "cd", 3)
-		thn blk
-		    stm strcpy(pagebuf, "# cd");
-	        stm printf("\x1B[1D\x1B[1D# cd"); fflush(getstdout());
-		    blk_end
+	iff !strncmp(pagebuf, "cd", 3)
+	thn ign 
+	    blk
+	    stm strcpy(pagebuf, "# cd");
+            stm printf("\x1B[1D\x1B[1D# cd"); fflush(getstdout());
 	    blk_end
-	stm automatic_triggers();        	
+        blk_end
+    stm automatic_triggers();        	
     blk_end
 
 iff c == '\n' && lastchar != '\\'

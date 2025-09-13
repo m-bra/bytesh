@@ -20,7 +20,6 @@ the rep blk
         iff strncmp(filetype, cmpentire("c")) 
          || !strncmp(ep->d_name, cmpentire ("main.c"))
         thn continue;
-        ign es(ep->d_name);
 	chr *cmd = mf("gcc -Wfatal-errors %s%s%s%s%s%s%s", 
 	        " -c ", ROOTC("/run/"), ep->d_name, 
 		" -o ", ROOTC("/run/"), ep->d_name, ".o");

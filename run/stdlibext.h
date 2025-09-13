@@ -15,12 +15,12 @@
 #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
 #define ef__(x) ef(x)
 #define ef___ ef__
-#define $ef4 ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+#define ef4$ ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
 
-void es_(char *name, char *sz);
+char *es_(char *name, char *sz);
 #define es__(x) es_(#x, x)
 #define es___ es__
-#define $es es___ INSERT_OPENING_PAREN
+#define es$ es___ INSERT_OPENING_PAREN
 #endif
 
 #define MALLOCLISTMAXPTRS 2048000
@@ -130,7 +130,7 @@ char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
 #define malloclinebufprintf mlinebufprintf
 #define mf mlinebufprintf
 
-void es_(char *name, char *sz);
+char *es_(char *name, char *sz);
 
 #define BOOLTOSYS(b) (!(b))
 #define SYSTOBOOL(b) (!(b))
@@ -147,12 +147,12 @@ int shdirectout(char *, char *fmt, ...);
 int shfd_(int ignored, char *fmt, ...);
 FILE *psh_(int ignored, char *fmt, ...);
 
-#define $$shdirect shdirectout ( 0
-#define $$sh sh_ ( 0
+#define shdirect$$ shdirectout ( 0,
+#define sh$$ sh_ ( 0 ,
 #define sh sh_ ( 0
-#define $$shfd shfd_ ( 0
+#define shfd$$ shfd_ ( 0 ,
 #define shfd shfd_ ( 0
-#define $$psh psh_ ( 0
+#define psh$$ psh_ ( 0 ,
 #define psh psh_ ( 0
 #define endsh "" )
 

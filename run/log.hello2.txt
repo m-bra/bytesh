@@ -1,0 +1,3 @@
+[0x00] 2025-Sep-13 00:58:37 priv.c:8255 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-13 00:58:40 priv.c:8257 !(bytesh/) $ cmdlogpop$$ "hello2" $$

@@ -276,7 +276,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     stm fclose(cmdlogfile);
    
-    stm cmdlogfile = fopen(ROOTC("/run/log.next.txt"), "a");
+    stm cmdlogfile = fopen(ROOTC("/run/tmp/log.next.txt"), "a");
 
     int stdoutfileno = dup(STDOUT_FILENO);
     stm FILE *faout =
@@ -287,10 +287,10 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     rep blk
         rep blk
             chr line [linebuf_tn];
-	    iff !fgets(line, linebuf_tn, faout)
+	    iff ({fflush(faout); !fgets(line, linebuf_tn, faout);})
 	    thn break;
-	    stm printfflush ("%s%s", GLOBAL_INDENT, line);
-	    stm fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+	    stm printfflush ("%s> %s", GLOBAL_INDENT, line);
+	    stm fprintf (cmdlogfile, "%s> %s", GLOBAL_INDENT, line);
         end_blk
         int wstatus;
         iff ({int r = waitpid(-1, &wstatus, WNOHANG);
@@ -303,16 +303,16 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm if (faout) pclose(faout);
 
     stm fclose (cmdlogfile);
-    stm cat, mf("%s >> %s", ROOTC("/run/log.next.txt"), ROOTC("/run/log.txt")), endsh;
-    stm mv, ROOTC("/run/log.next.txt"), ROOTC("/run/log.next.txt.bak"), endsh;
+    stm cat, mf("%s >> %s", ROOTC("/run/tmp/log.next.txt"), ROOTC("/run/log.txt")), endsh;
+    stm mv, ROOTC("/run/tmp/log.next.txt"), ROOTC("/run/tmp/log.next.txt.bak"), endsh;
     stm printfflush("%sPress 'k' to keep command output...", GLOBAL_INDENT);
     int answer = unbufreadc(STDIN_FILENO); 
     iff answer != 'k' 
-    thn mv, ROOTC("/run/log.last.txt"), ROOTC("/run/log.txt"), endsh; 
+    thn mv, ROOTC("/run/tmp/log.last.txt"), ROOTC("/run/log.txt"), endsh; 
     stm {clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;}
     stm cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
 
-    stm cp, ROOTC("/run/log.txt"), ROOTC("/run/log.last.txt"), endsh;
+    stm cp, ROOTC("/run/log.txt"), ROOTC("/run/tmp/log.last.txt"), endsh;
 
     iff ctxt->interactive
     thn statusprint(ROOTC("/run"), runstatus, getstdout(), cmdlogfile);

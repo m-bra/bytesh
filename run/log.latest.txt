@@ -1,0 +1,53 @@
+[0x00] 2025-Sep-13 01:34:22 priv.c:8571 $ tmphadd
+    >     [....] tmphadd $ cpl cmdlogpop$$ "latest" $$
+    > 
+
+    [0x00] 2025-Sep-13 01:36:23 priv.c:8575 $ cpl[0x00] 2025-Sep-13 01:34:10 priv.c:8567 $ tmphadd
+    >     [....] tmphadd $ #define a b
+    > 
+
+    
+
+    [0x00] 2025-Sep-13 01:36:31 priv.c:8573 $ cpl[0x00] 2025-Sep-13 01:33:43 priv.c:8551 $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+
+    
+
+    [0x00] 2025-Sep-13 01:37:05 priv.c:8569 $ cpl[0x00] 2025-Sep-13 01:30:29 priv.c:8534 $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-12 22:31:00.169227188 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2025-09-12 22:33:41.889227072 +0000
+    > ***************
+    > *** 271,280 ****
+    > --- 271,281 ----
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > + stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+
+    
+
+    [0x00] 2025-Sep-13 01:37:12 priv.c:8553 $ cpl[0x00] 2025-Sep-13 01:37:20 priv.c:8535 !(bytesh/) $ tmphadd
+    >     [....] tmphadd $ #define cpt cmdlogpop$$ "trash" $$
+    > 
+
+    [0x00] 2025-Sep-13 01:37:58 priv.c:8539 !(bytesh/) $ cpl

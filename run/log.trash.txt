@@ -1,0 +1,84 @@
+[0x00] 2025-Sep-13 01:30:19 priv.c:8531 $ printf(code776);
+    > hello
+    
+
+    
+
+    [0x00] 2025-Sep-13 01:38:08 priv.c:8537 !(bytesh/) $ cpt[0x00] 2025-Sep-13 01:29:57 priv.c:8529 $ tmphadd
+
+    
+
+    [0x00] 2025-Sep-13 01:38:13 priv.c:8533 !(bytesh/) $ cpt[0x00] 2025-Sep-13 01:29:57 priv.c:8529 $ tmphadd
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 14:17:49 priv.c:8535 $ cptr[0x00] 2025-Sep-13 14:23:12 priv.c:7662 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-13 14:23:52 priv.c:7660 !(bytesh/) $ cptr[0x00] 2025-Sep-13 00:08:13 priv.c:7625 !(bytesh/) $ 
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 14:24:08 priv.c:7631 !(bytesh/) $ cptr[0x00] 2025-Sep-13 00:08:10 priv.c:7623 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:24:13 priv.c:7627 !(bytesh/) $ cptr[0x00] 2025-Sep-12 23:54:48 priv.c:7544 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:24:54 priv.c:7548 !(bytesh/) $ cptr[0x00] 2025-Sep-12 23:54:44 priv.c:7542 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:24:59 priv.c:7546 !(bytesh/) $ cptr[0x00] 2025-Sep-12 23:41:37 priv.c:7346 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:26:00 priv.c:7350 !(bytesh/) $ cptr[0x00] 2025-Sep-12 23:41:37 priv.c:7346 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:26:31 priv.c:7350 !(bytesh/) $ cptr[0x00] 2025-Sep-12 23:41:34 priv.c:7344 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:26:35 priv.c:7348 !(bytesh/) $ cptr[0x00] 2025-Sep-12 20:52:13 priv.c:7133 !(bytesh/) $ cmdlogpo
+
+    
+
+    [0x00] 2025-Sep-13 14:27:27 priv.c:7137 !(bytesh/) $ cptr[0x00] 2025-Sep-11 16:59:59 priv.c:6678 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+
+   [0x00] 2025-Sep-12 19:57:12 priv.c:6771 $ cmdlogedit
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 14:38:38 priv.c:6700 !(bytesh/) $ cltr[0x00] 2025-Sep-11 16:44:47 priv.c:6457 !(bytesh/) $ # restart
+
+
+    
+
+    [0x00] 2025-Sep-13 14:39:16 priv.c:6462 !(bytesh/) $ cltr[0x00] 2025-Sep-13 14:49:41 priv.c:6260 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-13 14:51:04 priv.c:6235 !(bytesh/) $ cltr[0x00] 2025-Sep-13 14:52:40 priv.c:6255 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-13 14:52:42 priv.c:6257 !(bytesh/) $ cltr
