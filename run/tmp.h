@@ -23,3 +23,5 @@
 
 # define cltr cptr
 
+# define clmn cmdlogpop$$ "mntc" $$
+

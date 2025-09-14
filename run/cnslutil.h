@@ -24,17 +24,21 @@
 #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
 #define NBUFFERED_OUT(text, f) mf("%s", text)
 #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
-#define ls  sh, NBUFFERED_OUT("ls -hAl  %s", ROOTCLS)
-#define lst sh, NBUFFERED_OUT("ls -hAlt %s", ROOTCLS)
-#define lstr sh, NBUFFERED_OUT("ls -hAltr %s", ROOTCLS)
-#define lsS sh, NBUFFERED_OUT("ls -hAlS %s", ROOTCLS)
-#define lsc  ls, ".", endsh
-#define lsct lst, ".", endsh
-#define lsctr lstr, ".", endsh
-#define lscS lsS, ".", endsh
-#define lscgrep sh, "ls -hAl . | grep %s"
-#define lsgrep sh, "ls -hAl %s | grep %s"
-#define lsgrep$$ lsgrep,
+
+#define lsraw(pipe) mf$                  "ls %s", pipe $
+#ifndef lsrawdef
+#define lswrap(...) __VA_ARGS__
+#endif 
+#define ls$$		lswrap(sh, lsraw("-hAl %s")),
+#define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+#define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+#define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+#define lsc 		lswrap(ls$$ ".", endsh)
+#define lsct 		lswrap(lst$$ ".", endsh)
+#define lsctr	 	lswrap(lstr$$ ".", endsh)
+#define lscS 		lswrap(lsS$$ ".", endsh)
+#define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+#define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
 
 #define history cmdlog
 
@@ -44,7 +48,7 @@ extern char *rootworkdir;
 
 void /* */micro_(int ignore, char const *path, char *ignore_);
 #define edit micro_ ( 0
-
+#define edit$$ edit,
 
 #define cmdlogedit shdirect$$ "vim %s", ROOTC("/run/log.txt")$$
 
@@ -67,10 +71,13 @@ void cmdinsert(char *cmd);
 
 void cmdinsertlogregion(int from, int to);
 
-#define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
-	"-c 'normal G$v' -c '?^\\s\\s\\s\\s[^>]' -c 'normal d' " \
-        "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
-	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+#define cmdlogpop$$  \
+	shdirect$$ mf$ "cd %s && "  \
+            "vim  "\
+	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+                 "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+	         "%s" " && " \
+            "vim -c 'normal Gdddd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
 #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
 #define cmdlogdir ROOTC("/run/")
 void tputcup(int ignore, int col, char *ignore_);
@@ -91,7 +98,7 @@ int mv_(int ignore, char *from, char *to, char *ignore_);
 #define mvf sh, "mv -f %s %s"
 #define rmf sh, "rm -f %s %s"
 
-void cp_(int ignore, char *from, char *to, char *ignore_);
+void cp_(int ignore, char const *from, char const *to, char *ignore_);
 #define cp cp_ ( 0
 
 void rm_(int ignore, char *filename, char *ignore_);
@@ -323,7 +330,7 @@ int yayss_(int ignore, char *pkg, char *ignores);
 
 void bak_(char *a, char *f, char *b);
 #define bak bak_ ( ""
-
+#define bak$$ bak,
 # define meld sh, "%s meld %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
 
@@ -515,4 +522,18 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
 #define lnstl lns
 
-#define cd$$ sh$$ mf("echo %%s > %s", ROOTC("/run/cwd.txt")),
+void cd$$_(char *ignore, char const *path, char *ignore2)
+{
+ign ignore;
+ign ignore2;
+
+    if (path[0] == '/')
+    {
+        sh, "echo '%s' > %s", path, ROOTC("/run/cwd.txt"), endsh;
+    }
+    else 
+    {
+	sh, "echo '/%s' >> %s", path, ROOTC("/run/cwd.txt"), endsh;
+    }
+}
+#define cd$$ cd$$_ ( 0,

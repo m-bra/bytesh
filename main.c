@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <time.h>
+#include <termios.h>
 
 typedef char **ppchar;
 typedef char *pchar;
@@ -69,7 +70,6 @@ def
 int nextbackup = 10;
    
 stm dup2(STDOUT_FILENO, STDERR_FILENO);
-
 
     typedef int *intptr;
 //f (decl int defstrchrnul),
@@ -349,6 +349,8 @@ els printf("Error at %s:%d\n", __FILE__, __LINE__);
 FUNCTION int main(int iargc, char **iargv) 
 
 def
+//s uiunbuffered();
+
 stm char *cmd = NULL;
 
 iff 2 < iargc
@@ -418,12 +420,16 @@ end_blk
 FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
 def
     ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+
+chr *cwdinclude = mf( "%s/%s", ctxt->cwd, "/dir.h" );
+iff SYSTOBOOL(access(cwdinclude, F_OK))
+thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+
     fprintf(ctxt->srcfile, "#include \"main.h\"\n");
 
-//chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
-//iff SYSTOBOOL(access(cwdinclude, F_OK))
-//thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
-        
+stm cwdinclude = mf( "%s/%s", ctxt->cwd, "/dirpost.h" );
+iff SYSTOBOOL(access(cwdinclude, F_OK))
+thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
     fprintf(ctxt->srcfile, "\n");
     fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
         escapecstr(ctxt->lastline, ctxt->lastlinen));

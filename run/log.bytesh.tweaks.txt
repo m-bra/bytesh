@@ -2604,4 +2604,1686 @@ shdirect$$" vim -c 'normal Gv' -c '?^.*\\$.*$' test.txt "$$
               int wstatus;
               iff ({int r = waitpid(-1, &wstatus, WNOHANG);
                     if (r == -1 && errno != ECHILD) goto err;
-     
+      
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 14:57:42 priv.c:6237 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 14:57:48 priv.c:6233 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 14:57:53 priv.c:6233 !(bytesh/) $ clbt
+
+[0x00] 2025-Sep-11 16:34:32 priv.c:6225 $ cat, "cflags.h", endsh
+    #define CFLAGS(defstrchrnul) \
+        mf( "-Wfatal-errors " \
+            "-DBYTESH_DISABLE_OPTIMIZATION " \
+    	"%s", defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+if (r == -1 && errno != ECHILD) goto err;
+
+    
+
+    [0x00] 2025-Sep-13 14:59:01 priv.c:6221 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 14:59:06 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 14:59:33 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 14:59:45 priv.c:6219 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:10:45 priv.c:6286 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 12:10:56.661993869 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 12:11:25.689993848 +0000
+    > ***************
+    > *** 66,77 ****
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " /*" -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    > --- 66,77 ----
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " /*" -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+
+    [0x00] 2025-Sep-13 15:11:26 priv.c:6317 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:11:57 priv.c:6288 !(bytesh/) $ sh$$ "echo 456" $$
+    > 456
+
+    [0x00] 2025-Sep-13 15:12:04 priv.c:6291 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:12:38 priv.c:6290 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 12:12:43.377993793 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 12:12:54.565993785 +0000
+    > ***************
+    > *** 67,77 ****
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " /*" -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    > --- 67,77 ----
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+
+    [0x00] 2025-Sep-13 15:12:55 priv.c:6319 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:10:31 priv.c:6284 !(bytesh/) $ clbt
+
+    
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 15:12:58 priv.c:6292 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:10:19 priv.c:6255 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 12:10:21.161993894 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 12:10:31.209993887 +0000
+    > ***************
+    > *** 66,76 ****
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]'" /*" -c 'normal d' " \
+    >           "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    > --- 66,76 ----
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " /*" -c 'normal d' " \
+    >           "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+
+    
+
+    [0x00] 2025-Sep-13 15:13:02 priv.c:6286 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:08:48 priv.c:6252 !(bytesh/) $ sh$$ "vim %s", ROOTC("/run/log.txt"), $$
+
+
+    
+
+    [0x00] 2025-Sep-13 15:13:06 priv.c:6257 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:07:58 priv.c:6250 !(bytesh/) $ cnslutilh
+
+    
+
+    [0x00] 2025-Sep-13 15:13:10 priv.c:6254 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:00:20 priv.c:6219 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 12:06:45.693994049 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 12:07:42.709994008 +0000
+    > ***************
+    > *** 66,77 ****
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v' -c '?^\\s\\s\\s\\s[^>]' -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    > --- 66,77 ----
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]'" /*" -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+
+    
+
+    [0x00] 2025-Sep-13 15:13:13 priv.c:6252 !(bytesh/) $ clbt 
+
+    
+
+    [0x00] 2025-Sep-13 15:13:25 priv.c:6221 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:34 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:39 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:42 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:47 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:53 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:13:59 priv.c:6219 !(bytesh/) $ clbt 
+
+    [[0x00] 2025-Sep-11 16:31:03 priv.c:6190 !(bytesh/) $ compilerh
+    *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-11 13:31:05.835101716 +0000
+    --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-11 13:32:42.591101647 +0000
+    ***************
+    *** 287,297 ****
+          rep blk
+              rep blk
+                  chr line [linebuf_tn];
+      	    iff !fgets(line, linebuf_tn, faout)
+      	    thn break;
+    ! 	    stm printfflush ("%s%s", GLOBAL_INDENT, line);
+      	    stm fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+              end_blk
+              int wstatus;
+              iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+                    if (r == -1 && errno != ECHILD) goto err;
+    --- 287,297 ----
+          rep blk
+              rep blk
+                  chr line [linebuf_tn];
+      	    iff !fgets(line, linebuf_tn, faout)
+      	    thn break;
+    ! 	    stm printfflush ("%s>%s", GLOBAL_INDENT, line);
+      	    stm fprintf (cmdlogfile, "%s%s", GLOBAL_INDENT, line);
+              end_blk
+              int wstatus;
+              iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+         
+
+0x00] 2025-Sep-13 15:14:03 priv.c:6219 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:17:20 priv.c:6192 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:17:33 priv.c:6192 !(bytesh/) $ clbt[0x00] 2025-Sep-13 15:17:37 priv.c:6192 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 12:17:45.105993577 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 12:17:53.785993571 +0000
+    > ***************
+    > *** 67,77 ****
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    > --- 67,77 ----
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c w "  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+
+    [0x00] 2025-Sep-13 15:17:54 priv.c:6221 !(bytesh/) $ clbt 
+
+    
+
+    [0x00] 2025-Sep-13 15:18:03 priv.c:6194 !(bytesh/) $ clbt 
+
+    
+
+    [0x00] 2025-Sep-13 15:18:03 priv.c:6194 !(bytesh/) $ clbt 
+
+    [0x00] 2025-Sep-13 15:18:19 priv.c:6192 !(bytesh/) $ clbt[0x00] 2025-Sep-13 18:13:10 priv.c:6190 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 15:13:21.414062619 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 15:13:33.302062611 +0000
+    > ***************
+    > *** 67,77 ****
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " /* " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "*/  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    > --- 67,77 ----
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+
+    [0x00] 2025-Sep-13 18:13:34 priv.c:6219 !(bytesh/) $ clbt[0x00] 2025-Sep-13 18:17:31 priv.c:6211 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 15:17:39.902062434 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 15:17:55.134062424 +0000
+    > ***************
+    > *** 321,331 ****
+    >   
+    >   # define bakpre(f) mkdir, "-p .bak", endsh; mv, f, ".bak", endsh;
+    >   
+    >   void bak_(char *a, char *f, char *b);
+    >   #define bak bak_ ( ""
+    > ! 
+    >   # define meld sh, "%s meld %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   
+    >   # define stringexth edit, ROOTC("/run/stringext.h"), endsh
+    >   
+    > --- 321,331 ----
+    >   
+    >   # define bakpre(f) mkdir, "-p .bak", endsh; mv, f, ".bak", endsh;
+    >   
+    >   void bak_(char *a, char *f, char *b);
+    >   #define bak bak_ ( ""
+    > ! #define bak$$ bak,
+    >   # define meld sh, "%s meld %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   
+    >   # define stringexth edit, ROOTC("/run/stringext.h"), endsh
+    >   
+
+    [0x00] 2025-Sep-13 18:17:56 priv.c:6240 !(bytesh/) $ clbt[0x00] 2025-Sep-13 18:20:09 priv.c:6237 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-13 15:20:11.790062326 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-13 15:20:24.262062317 +0000
+    > ***************
+    > *** 42,52 ****
+    >   
+    >   extern char *rootworkdir;
+    >   
+    >   void /* */micro_(int ignore, char const *path, char *ignore_);
+    >   #define edit micro_ ( 0
+    > ! 
+    >   
+    >   #define cmdlogedit shdirect$$ "vim %s", ROOTC("/run/log.txt")$$
+    >   
+    >   void cmdlog_();
+    >   #define cmdlog cmdlog_()
+    > --- 42,52 ----
+    >   
+    >   extern char *rootworkdir;
+    >   
+    >   void /* */micro_(int ignore, char const *path, char *ignore_);
+    >   #define edit micro_ ( 0
+    > ! #define edit$$ edit,
+    >   
+    >   #define cmdlogedit shdirect$$ "vim %s", ROOTC("/run/log.txt")$$
+    >   
+    >   void cmdlog_();
+    >   #define cmdlog cmdlog_()
+
+    [0x00] 2025-Sep-13 18:20:25 priv.c:6266 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:30:05 priv.c:65 !(bytesh/) $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:30:47.358089907 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-14 09:31:08.338089892 +0000
+    > ***************
+    > *** 127,136 ****
+    > --- 127,137 ----
+    >   
+    >   char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
+    >   #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
+    >   #define malloclinebufprintf mlinebufprintf
+    >   #define mf mlinebufprintf
+    > + #define mf$ mlinebufprintf (
+    >   
+    >   char *es_(char *name, char *sz);
+    >   
+    >   #define BOOLTOSYS(b) (!(b))
+    >   #define SYSTOBOOL(b) (!(b))
+
+    [0x00] 2025-Sep-14 12:31:09 priv.c:83 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:31:17 priv.c:67 !(bytesh/) $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:31:30.018089877 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 09:33:18.310089799 +0000
+    > ***************
+    > *** 418,430 ****
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    > ! thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    > --- 418,430 ----
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    > ! thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+
+    [0x00] 2025-Sep-14 12:33:20 priv.c:100 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:28:43 priv.c:32 !(bytesh/) $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:28:55.002089987 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 09:30:00.990089940 +0000
+    > ***************
+    > *** 418,430 ****
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! //chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
+    > ! //iff SYSTOBOOL(access(cwdinclude, F_OK))
+    > ! //thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    > --- 418,430 ----
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! chr *cwdinclude = mf("%s/%s", ctxt->cwd, "/dir.h");
+    > ! iff SYSTOBOOL(access(cwdinclude, F_OK))
+    > ! thn fprintf(ctxt->srcfile, mf("#include \"%s\"", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+
+    
+
+    
+
+    [0x00] 2025-Sep-14 12:33:24 priv.c:69 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:35:40 priv.c:97 $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:35:43.134089696 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 09:37:39.722089612 +0000
+    > ***************
+    > *** 23,40 ****
+    > --- 23,49 ----
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   #define ls  sh, NBUFFERED_OUT("ls -hAl  %s", ROOTCLS)
+    > + #define ls$$ ls,
+    >   #define lst sh, NBUFFERED_OUT("ls -hAlt %s", ROOTCLS)
+    > + #define lst$$ lst,
+    >   #define lstr sh, NBUFFERED_OUT("ls -hAltr %s", ROOTCLS)
+    > + #define lstr$$ lstr,
+    >   #define lsS sh, NBUFFERED_OUT("ls -hAlS %s", ROOTCLS)
+    > + #define lsS$$ lsS,
+    >   #define lsc  ls, ".", endsh
+    > + #define lsc$$ lsc,
+    >   #define lsct lst, ".", endsh
+    > + #define lsct$$ lsct,
+    >   #define lsctr lstr, ".", endsh
+    > + #define lsctr$$ lsctr,
+    >   #define lscS lsS, ".", endsh
+    > + #define lscS$$ lscS,
+    >   #define lscgrep sh, "ls -hAl . | grep %s"
+    > + #define lscgrep$$ lscgrep,
+    >   #define lsgrep sh, "ls -hAl %s | grep %s"
+    >   #define lsgrep$$ lsgrep,
+    >   
+    >   #define history cmdlog
+    >   
+
+    [0x00] 2025-Sep-14 12:37:40 priv.c:131 $ clbt[0x00] 2025-Sep-14 12:39:23 priv.c:99 $ edit$$ "run/preprocessor.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:39:33.306089531 +0000
+    > --- run/preprocessor.h	2025-09-14 09:40:10.734089504 +0000
+    > ***************
+    > *** 1,11 ****
+    >   #include "main.h"
+    >   
+    >   #define preprocessorh edit, ROOTC("/run/preprocessor.h"), endsh
+    >   
+    > - #ifdef BYTESH_DISABLE_OPTIMIZATION
+    > - 
+    >   #define STRINGIFY(x) #x
+    >   #define EVALSTRINGIFY(x) STRINGIFY(x)
+    >   #define EVALSTRINGIFYPRINT(x) es(STRINGIFY(x))
+    >   
+    >   #undef ECHO
+    > --- 1,9 ----
+    > ***************
+    > *** 13,22 ****
+    > --- 11,22 ----
+    >   #define E(...) __VA_ARGS__
+    >   #define EVALECHO(...) ECHO(__VA_ARGS__)
+    >   #define APPLYMACRO_(x) x
+    >   #define APPLYMACRO(macroident, arglist) APPLYMACRO_(macroident arglist)
+    >   
+    > + #ifdef BYTESH_DISABLE_OPTIMIZATION
+    > + 
+    >   #define WEREPASSED(...)
+    >   #define NOBRACKETS(...) __VA_ARGS__ 
+    >   #define UNPACK_ROUND_BRACKETS_B(f, x) f x 
+    >   #define UNPACK_ROUND_BRACKETS(x) \
+    >   	UNPACK_ROUND_BRACKETS_B(NOBRACKETS, x) UNPACK_ROUND_BRACKETS_B(WEREPASSED, x)
+
+    [0x00] 2025-Sep-14 12:40:11 priv.c:132 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:34:39 priv.c:63 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:34:42.782089739 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 09:35:06.518089722 +0000
+    > ***************
+    > *** 413,422 ****
+    > --- 413,424 ----
+    >   thn blk
+    >       stm printf("cd: error\n");
+    >       stm fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    >   end_blk
+    >   
+    > + EVALECHO(
+    > + 
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ***************
+    > *** 436,445 ****
+    > --- 438,449 ----
+    >       fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");    
+    >       fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+    >       fprintf(ctxt->srcfile,     "EVALECHO (\n");
+    >       fprintf(ctxt->srcfile,     "#endif\n");
+    >   
+    > + )
+    > + 
+    >   FUNCTION void mainremoveunescnl(char *line)
+    >   
+    >   def for (unsigned long i = 1; i < strlen(line); ++i) {
+    >           if ((line[i] == '\n' || line[i] == (char)10))
+    >               if ((line[i-1] != '\\'))
+
+    
+
+    
+
+    [0x00] 2025-Sep-14 12:40:26 priv.c:101 $ clbt[0x00] 2025-Sep-14 12:34:08 priv.c:34 $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:34:15.182089758 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-14 09:34:35.334089744 +0000
+    > ***************
+    > *** 127,137 ****
+    >   
+    >   char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
+    >   #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
+    >   #define malloclinebufprintf mlinebufprintf
+    >   #define mf mlinebufprintf
+    > ! #define mf$ mlinebufprintf (
+    >   
+    >   char *es_(char *name, char *sz);
+    >   
+    >   #define BOOLTOSYS(b) (!(b))
+    >   #define SYSTOBOOL(b) (!(b))
+    > --- 127,137 ----
+    >   
+    >   char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
+    >   #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
+    >   #define malloclinebufprintf mlinebufprintf
+    >   #define mf mlinebufprintf
+    > ! #define mf$ mlinebufprintf INSERT_OPENING_PAREN
+    >   
+    >   char *es_(char *name, char *sz);
+    >   
+    >   #define BOOLTOSYS(b) (!(b))
+    >   #define SYSTOBOOL(b) (!(b))
+
+    
+
+    [0x00] 2025-Sep-14 12:40:35 priv.c:65 $ clbt[0x00] 2025-Sep-14 12:43:38 priv.c:41 !(bytesh/) $ edit$$ "run/cnslutil.c" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 09:43:59.594089340 +0000
+    > --- run/cnslutil.c	2025-09-14 09:46:18.846089241 +0000
+    > ***************
+    > *** 1,10 ****
+    > --- 1,11 ----
+    >   #include "main.h"
+    >   #include <unistd.h>
+    >   
+    >   void edit_(char const *path)
+    >   {
+    > + 	rm, ROOTC("/run/cnslutil/diff.txt"), endsh;
+    >   	cp, path, ROOTC("/run/cnslutil/diff.txt"), endsh;
+    >           int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   	dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   	char buf[512];
+    >   	// simply switch from micro to vim
+    > ***************
+    > *** 136,146 ****
+    >   	snprintf(buf, NBUF, "mv %s %s", from, to);
+    >   	return system(buf);
+    >   	// TODO: undefined escape rules in param strings
+    >   }
+    >   
+    > ! void cp_(int ignore, char *from, char *to, char *ignore_)
+    >   {
+    >   	char buf[NBUF];
+    >   	snprintf(buf, NBUF, "cp %s %s", from, to);
+    >   	system(buf);
+    >   	// TODO: undefined escape rules in param strings
+    > --- 137,147 ----
+    >   	snprintf(buf, NBUF, "mv %s %s", from, to);
+    >   	return system(buf);
+    >   	// TODO: undefined escape rules in param strings
+    >   }
+    >   
+    > ! void cp_(int ignore, char const *from, char const *to, char *ignore_)
+    >   {
+    >   	char buf[NBUF];
+    >   	snprintf(buf, NBUF, "cp %s %s", from, to);
+    >   	system(buf);
+    >   	// TODO: undefined escape rules in param strings
+
+    [0x00] 2025-Sep-14 12:46:20 priv.c:84 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:26:03 priv.c:43 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:26:07.438087532 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 10:26:16.226087526 +0000
+    > ***************
+    > *** 98,108 ****
+    >   #define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+    >   
+    >   #define mvf sh, "mv -f %s %s"
+    >   #define rmf sh, "rm -f %s %s"
+    >   
+    > ! void cp_(int ignore, char *from, char *to, char *ignore_);
+    >   #define cp cp_ ( 0
+    >   
+    >   void rm_(int ignore, char *filename, char *ignore_);
+    >   #define rm rm_ ( 0
+    >   
+    > --- 98,108 ----
+    >   #define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+    >   
+    >   #define mvf sh, "mv -f %s %s"
+    >   #define rmf sh, "rm -f %s %s"
+    >   
+    > ! void cp_(int ignore, char const *from, char const *to, char *ignore_);
+    >   #define cp cp_ ( 0
+    >   
+    >   void rm_(int ignore, char *filename, char *ignore_);
+    >   #define rm rm_ ( 0
+    >   
+
+    [0x00] 2025-Sep-14 13:26:18 priv.c:72 !(bytesh/) $ clbt[0x00] 2025-Sep-14 12:40:39 priv.c:36 $ edit$$ "dir.h" $$
+    > ! #define code88 "success"
+
+    
+
+    
+
+    
+
+    [0x00] 2025-Sep-14 13:27:25 priv.c:45 $ clbt[0x00] 2025-Sep-14 13:30:18 priv.c:66 !(bytesh/) $ edit, "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:30:24.726087348 +0000
+    > --- dir.h	2025-09-14 10:30:29.430087345 +0000
+    > ***************
+    > *** 1 ****
+    > - #define code88 "success"
+    > --- 0 ----
+
+    [0x00] 2025-Sep-14 13:30:31 priv.c:74 !(bytesh/) $ for (int i = 0; i < 11; ++i) clbt[0x00] 2025-Sep-14 13:30:15 priv.c:63 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-14 13:30:08 priv.c:61 !(bytesh/) $ cd$$ "bytesh" $$
+
+    [0x00] 2025-Sep-14 13:29:44 priv.c:59 !(bytesh/) $ /* above was error */
+
+    [0x00] 2025-Sep-14 13:29:35 priv.c:56 !(bytesh/) $ es$ code88 $
+
+
+    [0x00] 2025-Sep-14 13:29:31 priv.c:53 !(bytesh/) $ pwd
+    > /storage/self/primary
+
+    [0x00] 2025-Sep-14 13:28:49 priv.c:51 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2025-Sep-14 13:28:39 priv.c:48 !(bytesh/) $ es$ code88 $
+    > ("success") = "success"
+
+    [0x00] 2025-Sep-14 13:28:19 priv.c:45 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-14 13:28:03 priv.c:43 !(bytesh/) $ cd$$ "bytesh" $$
+
+    [0x00] 2025-Sep-14 13:27:47 priv.c:40 $ pwd
+    > /storage/self/primary/prj
+
+    [0x00] 2025-Sep-14 13:43:36 priv.c:127 $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:43:41.398086779 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 10:47:07.922086631 +0000
+    > ***************
+    > *** 526,531 ****
+    >   
+    >   #define lns sh, "ln -s %s %s"
+    >   #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define lnstl lns
+    >   
+    > ! #define cd$$ sh$$ mf("echo %%s > %s", ROOTC("/run/cwd.txt")),
+    > --- 526,537 ----
+    >   
+    >   #define lns sh, "ln -s %s %s"
+    >   #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define lnstl lns
+    >   
+    > ! void cd$$(char const *path)
+    > ! {
+    > !     if (path[0] == '/')
+    > !         sh$$ "echo '%s' > %s", path, ROOTC("/run/cwd.txt") $$;
+    > !     else 
+    > !         sh$$ "echo '/%s' >> %s", path, ROOTC("/run/cwd.txt") $$;
+    > ! }
+
+    [0x00] 2025-Sep-14 13:50:07 priv.c:152 $ clbt[0x00] 2025-Sep-14 13:52:02 priv.c:117 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:52:09.210086415 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 10:52:27.994086402 +0000
+    > ***************
+    > *** 23,33 ****
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    > ! #ifndef lsraw
+    >   #define lsraw(suffix) sh, mf$ "ls %s", suffix $
+    >   #endif 
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+    > --- 23,33 ----
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    > ! #ifndef lsrawdef
+    >   #define lsraw(suffix) sh, mf$ "ls %s", suffix $
+    >   #endif 
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+
+    [0x00] 2025-Sep-14 13:52:29 priv.c:146 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:52:35 priv.c:119 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:52:58.926086380 +0000
+    > --- dir.h	2025-09-14 10:53:11.350086371 +0000
+    > ***************
+    > *** 1 ****
+    > --- 1,2 ----
+    >   #define lsraw(pipe) sh$$ mf$ "echo code 555 && ls %s", pipe $, 
+    > + #define lsrawdef
+
+    [0x00] 2025-Sep-14 13:53:12 priv.c:128 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:53:39 priv.c:121 !(bytesh/) $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:54:23.902086319 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 10:55:17.162086281 +0000
+    > ***************
+    > *** 418,432 ****
+    >   EVALECHO(
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    > -     fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    > --- 418,437 ----
+    >   EVALECHO(
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    > + 
+    > +     fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    > + 
+    > + stm cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dirpost.h" $;
+    > + iff SYSTOBOOL(access(cwdinclude, F_OK))
+    > + thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >           
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+
+    [0x00] 2025-Sep-14 13:55:18 priv.c:163 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:57:05 priv.c:123 !(bytesh/) $ edit, "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:57:10.038086200 +0000
+    > --- dir.h	2025-09-14 10:57:17.482086195 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! #define lsraw(pipe) sh$$ mf$ "echo code 555 && ls %s", pipe $, 
+    >   #define lsrawdef
+    > --- 1,2 ----
+    > ! #define lsraw(pipe) sh$$ mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+
+    [0x00] 2025-Sep-14 13:57:18 priv.c:134 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:57:38 priv.c:125 !(bytesh/) $ edit, "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:57:52.886086170 +0000
+    > --- dir.h	2025-09-14 10:59:42.562086091 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! #define lsraw(pipe) sh$$ mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+    > --- 1,2 ----
+    > ! #define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+
+    [0x00] 2025-Sep-14 13:59:46 priv.c:136 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:01:48 priv.c:157 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:01:50.486086000 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:02:36.326085967 +0000
+    > ***************
+    > *** 24,34 ****
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #ifndef lsrawdef
+    > ! #define lsraw(pipe) sh, mf$                  "ls %s", pipe $
+    >   #endif 
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+    >   #define lst$$ lst,
+    > --- 24,34 ----
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #ifndef lsrawdef
+    > ! #define lsraw(pipe) mf$                  "ls %s", pipe $
+    >   #endif 
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+    >   #define lst$$ lst,
+
+    [0x00] 2025-Sep-14 14:02:37 priv.c:186 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:01:01 priv.c:138 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:01:04.218086033 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:01:09.990086029 +0000
+    > ***************
+    > *** 24,35 ****
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #ifndef lsrawdef
+    > - 
+    > - #define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsraw(pipe) sh, mf$                  "ls %s", pipe $
+    >   #endif 
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+    > --- 24,33 ----
+
+    
+
+    [0x00] 2025-Sep-14 14:03:16 priv.c:159 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:03:42 priv.c:151 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:03:48.158085915 +0000
+    > --- dir.h	2025-09-14 11:03:54.102085911 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! #define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+    > --- 1,2 ----
+    > ! #define lsraw(pipe) mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+
+    [0x00] 2025-Sep-14 14:03:54 priv.c:162 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:04:34 priv.c:119 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:05:13.146085855 +0000
+    > --- dir.h	2025-09-14 11:05:29.026085843 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! #define lsraw(pipe) mf$ "echo code 555 && ls %s", pipe $ 
+    >   #define lsrawdef
+    > --- 1,2 ----
+    > ! #define lsraw(pipe) mf$ "ls %s", pipe $ 
+    >   #define lsrawdef
+
+    [0x00] 2025-Sep-14 14:05:45 priv.c:130 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:50:51 priv.c:109 $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:50:56.822086467 +0000
+    > --- dir.h	2025-09-14 10:51:38.502086437 +0000
+    > ***************
+    > *** 0 ****
+    > --- 1 ----
+    > + #define lsraw(pipe) sh$$ mf$ "echo code 555 && ls %s", pipe $, 
+
+    
+
+    [0x00] 2025-Sep-14 14:06:00 priv.c:119 !(bytesh/) $ clbt[0x00] 2025-Sep-14 13:31:17 priv.c:40 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:31:32.278087300 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 10:41:33.286086870 +0000
+    > ***************
+    > *** 22,50 ****
+    >   
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    > ! #define ls  sh, NBUFFERED_OUT("ls -hAl  %s", ROOTCLS)
+    >   #define ls$$ ls,
+    > ! #define lst sh, NBUFFERED_OUT("ls -hAlt %s", ROOTCLS)
+    >   #define lst$$ lst,
+    > ! #define lstr sh, NBUFFERED_OUT("ls -hAltr %s", ROOTCLS)
+    >   #define lstr$$ lstr,
+    > ! #define lsS sh, NBUFFERED_OUT("ls -hAlS %s", ROOTCLS)
+    >   #define lsS$$ lsS,
+    >   #define lsc  ls, ".", endsh
+    >   #define lsc$$ lsc,
+    >   #define lsct lst, ".", endsh
+    >   #define lsct$$ lsct,
+    >   #define lsctr lstr, ".", endsh
+    >   #define lsctr$$ lsctr,
+    >   #define lscS lsS, ".", endsh
+    >   #define lscS$$ lscS,
+    > ! #define lscgrep sh, "ls -hAl . | grep %s"
+    >   #define lscgrep$$ lscgrep,
+    > ! #define lsgrep sh, "ls -hAl %s | grep %s"
+    >   #define lsgrep$$ lsgrep,
+    >   
+    >   #define history cmdlog
+    >   
+    >   #define errfixdone SYSTOBOOL(bak, ROOTC("run"), endsh) && mv, ROOTC("run.err"), ROOTC("run"), endsh;
+    > --- 22,52 ----
+    >   
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    > ! 
+    > ! #define lsraw(suffix) sh, mf$ "ls %s", suffix $
+    > ! #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    > ! #define lst sh, lsraw("-hAlt %s")
+    >   #define lst$$ lst,
+    > ! #define lstr sh, lsraw("-hAltr %s")
+    >   #define lstr$$ lstr,
+    > ! #define lsS sh, lsraw("-hAlS %s")
+    >   #define lsS$$ lsS,
+    >   #define lsc  ls, ".", endsh
+    >   #define lsc$$ lsc,
+    >   #define lsct lst, ".", endsh
+    >   #define lsct$$ lsct,
+    >   #define lsctr lstr, ".", endsh
+    >   #define lsctr$$ lsctr,
+    >   #define lscS lsS, ".", endsh
+    >   #define lscS$$ lscS,
+    > ! #define lscgrep lsraw("-hAl . | grep %s") 
+    >   #define lscgrep$$ lscgrep,
+    > ! #define lsgrep lsraw("-hAl %s | grep %s") 
+    >   #define lsgrep$$ lsgrep,
+    >   
+    >   #define history cmdlog
+    >   
+    >   #define errfixdone SYSTOBOOL(bak, ROOTC("run"), endsh) && mv, ROOTC("run.err"), ROOTC("run"), endsh;
+
+    
+
+    
+
+    [0x00] 2025-Sep-14 14:06:16 priv.c:111 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:21:57 priv.c:131 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:22:02.250085133 +0000
+    > --- dir.h	2025-09-14 11:22:07.366085129 +0000
+    > ***************
+    > *** 1,2 ****
+    > - #define lsraw(pipe) mf$ "ls %s", pipe $ 
+    > - #define lsrawdef
+    > --- 0 ----
+
+    [0x00] 2025-Sep-14 14:22:08 priv.c:140 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:21:08 priv.c:96 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:21:20.558085163 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:21:40.082085149 +0000
+    > ***************
+    > *** 31,44 ****
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc$$ 		lswrap(ls, ".", endsh),
+    > ! #define lsct$$ 		lswrap(lst, ".", endsh),
+    > ! #define lsctr$$ 	lswrap(lstr, ".", endsh),
+    > ! #define lscS$$ 		lswrap(lsS, ".", endsh),
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+    > --- 31,44 ----
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc 		lswrap(ls, ".", endsh),
+    > ! #define lsct 		lswrap(lst, ".", endsh),
+    > ! #define lsctr	 	lswrap(lstr, ".", endsh),
+    > ! #define lscS 		lswrap(lsS, ".", endsh),
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+
+    
+
+    [0x00] 2025-Sep-14 14:22:13 priv.c:133 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:07:26 priv.c:32 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:08:23.766085718 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:20:47.082085187 +0000
+    > ***************
+    > *** 23,55 ****
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    > - #ifndef lsrawdef
+    >   #define lsraw(pipe) mf$                  "ls %s", pipe $
+    >   #endif 
+    > ! #define ls  sh, lsraw("-hAl %s")
+    > ! #define ls$$ ls,
+    > ! #define lst sh, lsraw("-hAlt %s")
+    > ! #define lst$$ lst,
+    > ! #define lstr sh, lsraw("-hAltr %s")
+    > ! #define lstr$$ lstr,
+    > ! #define lsS sh, lsraw("-hAlS %s")
+    > ! #define lsS$$ lsS,
+    > ! #define lsc  ls, ".", endsh
+    > ! #define lsc$$ lsc,
+    > ! #define lsct lst, ".", endsh
+    > ! #define lsct$$ lsct,
+    > ! #define lsctr lstr, ".", endsh
+    > ! #define lsctr$$ lsctr,
+    > ! #define lscS lsS, ".", endsh
+    > ! #define lscS$$ lscS,
+    > ! #define lscgrep lsraw("-hAl . | grep %s") 
+    > ! #define lscgrep$$ lscgrep,
+    > ! #define lsgrep lsraw("-hAl %s | grep %s") 
+    > ! #define lsgrep$$ lsgrep,
+    >   
+    >   #define history cmdlog
+    >   
+    >   #define errfixdone SYSTOBOOL(bak, ROOTC("run"), endsh) && mv, ROOTC("run.err"), ROOTC("run"), endsh;
+    >   
+    > --- 23,46 ----
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #define lsraw(pipe) mf$                  "ls %s", pipe $
+    > + #ifndef lsrawdef
+    > + #define lswrap(f) f
+    >   #endif 
+    > ! #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    > ! #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    > ! #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    > ! #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc$$ 		lswrap(ls, ".", endsh),
+    > ! #define lsct$$ 		lswrap(lst, ".", endsh),
+    > ! #define lsctr$$ 	lswrap(lstr, ".", endsh),
+    > ! #define lscS$$ 		lswrap(lsS, ".", endsh),
+    > ! #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    > ! #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+    >   #define errfixdone SYSTOBOOL(bak, ROOTC("run"), endsh) && mv, ROOTC("run.err"), ROOTC("run"), endsh;
+    >   
+
+    
+
+    [0x00] 2025-Sep-14 14:22:27 priv.c:98 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:22:47 priv.c:32 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:22:50.590085098 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:23:03.690085089 +0000
+    > ***************
+    > *** 25,35 ****
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #define lsraw(pipe) mf$                  "ls %s", pipe $
+    >   #ifndef lsrawdef
+    > ! #define lswrap(f) f
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > --- 25,35 ----
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    >   #define lsraw(pipe) mf$                  "ls %s", pipe $
+    >   #ifndef lsrawdef
+    > ! #define lswrap(...) __VA_ARGS__
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+
+    [0x00] 2025-Sep-14 14:23:04 priv.c:61 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:23:31 priv.c:34 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:23:34.370085067 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:23:51.038085055 +0000
+    > ***************
+    > *** 31,44 ****
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc 		lswrap(ls, ".", endsh),
+    > ! #define lsct 		lswrap(lst, ".", endsh),
+    > ! #define lsctr	 	lswrap(lstr, ".", endsh),
+    > ! #define lscS 		lswrap(lsS, ".", endsh),
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+    > --- 31,44 ----
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc 		lswrap(ls$$ ".", endsh),
+    > ! #define lsct 		lswrap(lst$$ ".", endsh),
+    > ! #define lsctr	 	lswrap(lstr$$ ".", endsh),
+    > ! #define lscS 		lswrap(lsS$$ ".", endsh),
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+
+    [0x00] 2025-Sep-14 14:23:51 priv.c:69 !(bytesh/) $ clbt[0x00] 2025-Sep-14 14:24:02 priv.c:36 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:24:05.262085045 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 11:24:24.394085031 +0000
+    > ***************
+    > *** 31,44 ****
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc 		lswrap(ls$$ ".", endsh),
+    > ! #define lsct 		lswrap(lst$$ ".", endsh),
+    > ! #define lsctr	 	lswrap(lstr$$ ".", endsh),
+    > ! #define lscS 		lswrap(lsS$$ ".", endsh),
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+    > --- 31,44 ----
+    >   #endif 
+    >   #define ls$$		lswrap(sh, lsraw("-hAl %s")),
+    >   #define lst$$		lswrap(sh, lsraw("-hAlt %s")),
+    >   #define lstr$$ 		lswrap(sh, lsraw("-hAltr %s")),
+    >   #define lsS$$ 		lswrap(sh, lsraw("-hAlS %s")),
+    > ! #define lsc 		lswrap(ls$$ ".", endsh)
+    > ! #define lsct 		lswrap(lst$$ ".", endsh)
+    > ! #define lsctr	 	lswrap(lstr$$ ".", endsh)
+    > ! #define lscS 		lswrap(lsS$$ ".", endsh)
+    >   #define lscgrep$$ 	lswrap("-hAl . | grep %s"),
+    >   #define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+    >   
+    >   #define history cmdlog
+    >   
+
+    [0x00] 2025-Sep-14 14:24:28 priv.c:71 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:28:35 priv.c:33 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:28:52.556997910 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:30:21.428997846 +0000
+    > ***************
+    > *** 69,82 ****
+    >   
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    > ! #define cmdlogpop$$ shdirect$$ mf( "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >           "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    > ! 	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")), 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+    > --- 69,83 ----
+    >   
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    > ! #define cmdlogpop$$  \
+    > ! 	shdirect$$ mf$ "cd %s && vim  "\
+    >   	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >           "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    > ! 	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")$, 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+
+    [0x00] 2025-Sep-14 15:30:22 priv.c:69 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:33:27 priv.c:72 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:33:39.284997705 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:34:32.184997667 +0000
+    > ***************
+    > *** 75,85 ****
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+    > --- 75,85 ----
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+
+    [0x00] 2025-Sep-14 15:34:33 priv.c:101 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:30:29 priv.c:35 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:30:32.544997838 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:33:16.024997721 +0000
+    > ***************
+    > *** 70,83 ****
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$  \
+    > ! 	shdirect$$ mf$ "cd %s && vim  "\
+    > ! 	"-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !         "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    > ! 	"%s", ROOTC("/run/"), ROOTC("/run/log.txt")$, 
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+    > --- 70,85 ----
+    >   #define cmdinsertlogat(addr) cmdinsertlogregion(addr, addr + 1)
+    >   
+    >   void cmdinsertlogregion(int from, int to);
+    >   
+    >   #define cmdlogpop$$  \
+    > ! 	shdirect$$ mf$ "cd %s && "  \
+    > !             "vim  "\
+    > ! 	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    > !                  "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    > ! 	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+
+
+    [0x00] 2025-Sep-14 15:34:37 priv.c:73 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:35:35 priv.c:4 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:35:51.424997610 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:36:00.528997604 +0000
+    > ***************
+    > *** 75,85 ****
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+    > --- 75,85 ----
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cw %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+
+    [0x00] 2025-Sep-14 15:36:01 priv.c:33 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:37:13 priv.c:4 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:37:17.348997549 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:37:44.116997529 +0000
+    > ***************
+    > *** 75,85 ****
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdd' -cw %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+    > --- 75,85 ----
+    >   	shdirect$$ mf$ "cd %s && "  \
+    >               "vim  "\
+    >   	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+    >                    "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
+    >   	         "%s" " && " \
+    > !             "vim -c 'normal Gdddd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+    >   #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
+    >   #define cmdlogdir ROOTC("/run/")
+    >   void tputcup(int ignore, int col, char *ignore_);
+    >   #define tputcup tputcup ( 0
+    >   
+
+    [0x00] 2025-Sep-14 15:37:45 priv.c:33 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:44:59 priv.c:22 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:45:02.904997216 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 12:48:04.732997086 +0000
+    > ***************
+    > *** 520,535 ****
+    >   
+    >   #define lns sh, "ln -s %s %s"
+    >   #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define lnstl lns
+    >   
+    > ! void cd$$(char const *path)
+    >   {
+    >       if (path[0] == '/')
+    >       {
+    >           sh, "echo '%s' > %s", path, ROOTC("/run/cwd.txt"), endsh;
+    >       }
+    >       else 
+    >       {
+    >   	sh, "echo '/%s' >> %s", path, ROOTC("/run/cwd.txt"), endsh;
+    >       }
+    >   }
+    > --- 520,539 ----
+    >   
+    >   #define lns sh, "ln -s %s %s"
+    >   #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define lnstl lns
+    >   
+    > ! void cd$$_(char *ignore, char const *path, char *ignore2)
+    >   {
+    > + ign ignore;
+    > + ign ignore2;
+    > + 
+    >       if (path[0] == '/')
+    >       {
+    >           sh, "echo '%s' > %s", path, ROOTC("/run/cwd.txt"), endsh;
+    >       }
+    >       else 
+    >       {
+    >   	sh, "echo '/%s' >> %s", path, ROOTC("/run/cwd.txt"), endsh;
+    >       }
+    >   }
+    > + #define cd$$ cd$$_ ( 0,
+
+    [0x00] 2025-Sep-14 15:48:06 priv.c:65 !(bytesh/) $ clbt[0x00] 2025-Sep-14 16:12:49 priv.c:233 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:12:51.984996022 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 13:13:27.680995996 +0000
+    > ***************
+    > *** 419,439 ****
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    > ! EVALECHO(
+    > ! chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >   
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! stm cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dirpost.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    > - )        
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    >       fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+    > --- 419,437 ----
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    > ! chr *cwdinclude = mf( "%s/%s", ctxt->cwd, "/dir.h" );
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >   
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    > ! stm cwdinclude = mf( "%s/%s", ctxt->cwd, "/dirpost.h" );
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    >       fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+
+    [0x00] 2025-Sep-14 16:13:34 priv.c:280 $ clbt[0x00] 2025-Sep-14 16:11:33 priv.c:165 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:11:36.200996076 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 13:12:07.484996054 +0000
+    > ***************
+    > *** 417,439 ****
+    >       stm fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    >   end_blk
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    > - EVALECHO(
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >   
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    >   stm cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dirpost.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    > !         
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    >       fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+    > --- 417,439 ----
+    >       stm fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    >   end_blk
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    > + EVALECHO(
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    >   
+    >       fprintf(ctxt->srcfile, "#include \"main.h\"\n");
+    >   
+    >   stm cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dirpost.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    > ! )        
+    >       fprintf(ctxt->srcfile, "\n");
+    >       fprintf(ctxt->srcfile, "char *lastcmd = \"%s\";\n", 
+    >           escapecstr(ctxt->lastline, ctxt->lastlinen));
+    >       fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
+    >       fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
+    > ***************
+    > *** 444,455 ****
+    >       fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");    
+    >       fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
+    >       fprintf(ctxt->srcfile,     "EVALECHO (\n");
+    >       fprintf(ctxt->srcfile,     "#endif\n");
+    >   
+    > - )
+    > - 
+    >   FUNCTION void mainremoveunescnl(char *line)
+    >   
+    >   def for (unsigned long i = 1; i < strlen(line); ++i) {
+    >           if ((line[i] == '\n' || line[i] == (char)10))
+    >               if ((line[i-1] != '\\'))
+    > --- 444,453 ----
+
+    [0x00] 2025-Sep-14 16:13:39 priv.c:233 $ clbt[0x00] 2025-Sep-14 16:10:10 priv.c:131 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:10:13.780996135 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 13:11:10.400996094 +0000
+    > ***************
+    > *** 415,428 ****
+    >   thn blk
+    >       stm printf("cd: error\n");
+    >       stm fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    >   end_blk
+    >   
+    > - EVALECHO(
+    > - 
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+    > --- 415,427 ----
+    >   thn blk
+    >       stm printf("cd: error\n");
+    >       stm fputsclose("/data/data/com.termux/files/home/prj/bytesh/", fopen(path, "w"));
+    >   end_blk
+    >   
+    >   FUNCTION void mainprintsubmainbegin(maincontext_t *ctxt)
+    >   def
+    > + EVALECHO(
+    >       ctxt->srcfile = fopen(ctxtmwf("main.c"), "w");
+    >   
+    >   chr *cwdinclude = mf$ "%s/%s", ctxt->cwd, "/dir.h" $;
+    >   iff SYSTOBOOL(access(cwdinclude, F_OK))
+    >   thn fprintf(ctxt->srcfile, mf("#include \"%s\"\n", cwdinclude));
+
+    [0x00] 2025-Sep-14 16:13:43 priv.c:165 $ clbt[0x00] 2025-Sep-14 16:07:46 priv.c:102 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:09:36.336996162 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 13:09:58.644996146 +0000
+    > ***************
+    > *** 347,357 ****
+    >       return 1;
+    >   
+    >   FUNCTION int main(int iargc, char **iargv) 
+    >   
+    >   def
+    > ! stm (void) uiunbuffered();
+    >   
+    >   stm char *cmd = NULL;
+    >   
+    >   iff 2 < iargc
+    >    && !strncmp(iargv[2], "-c", 3)
+    > --- 347,357 ----
+    >       return 1;
+    >   
+    >   FUNCTION int main(int iargc, char **iargv) 
+    >   
+    >   def
+    > ! //s uiunbuffered();
+    >   
+    >   stm char *cmd = NULL;
+    >   
+    >   iff 2 < iargc
+    >    && !strncmp(iargv[2], "-c", 3)
+
+    [0x00] 2025-Sep-14 16:13:47 priv.c:131 $ clbt[0x00] 2025-Sep-14 16:06:14 priv.c:84 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:06:17.816996304 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 13:06:32.776996293 +0000
+    > ***************
+    > *** 10,19 ****
+    > --- 10,20 ----
+    >   #include <stdbool.h>
+    >   #include <stdint.h>
+    >   #include <stdlib.h>
+    >   #include <sys/types.h>
+    >   #include <time.h>
+    > + #include <termios.h>
+    >   
+    >   typedef char **ppchar;
+    >   typedef char *pchar;
+    >   
+    >   #include "cflags.h"
+
+    [0x00] 2025-Sep-14 16:13:51 priv.c:102 $ clbt[0x00] 2025-Sep-14 15:53:42 priv.c:55 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:53:45.188996842 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 12:53:51.452996838 +0000
+    > ***************
+    > *** 346,356 ****
+    >       return 1;
+    >   
+    >   FUNCTION int main(int iargc, char **iargv) 
+    >   
+    >   def
+    > ! stm uiunbuffered();
+    >   
+    >   stm char *cmd = NULL;
+    >   
+    >   iff 2 < iargc
+    >    && !strncmp(iargv[2], "-c", 3)
+    > --- 346,356 ----
+    >       return 1;
+    >   
+    >   FUNCTION int main(int iargc, char **iargv) 
+    >   
+    >   def
+    > ! stm (void) uiunbuffered();
+    >   
+    >   stm char *cmd = NULL;
+    >   
+    >   iff 2 < iargc
+    >    && !strncmp(iargv[2], "-c", 3)
+
+    [0x00] 2025-Sep-14 16:13:56 priv.c:84 !(bytesh/) $ clbt[0x00] 2025-Sep-14 15:51:49 priv.c:22 $ compilerh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 12:51:59.196996918 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2025-09-14 12:52:40.176996889 +0000
+    > ***************
+    > *** 68,78 ****
+    >   def 
+    >   int nextbackup = 10;
+    >      
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    > - 
+    >       typedef int *intptr;
+    >   //f (decl int defstrchrnul),
+    >       int defstrchrnul = 0;
+    >       iff !ctxt->interactive
+    >       thn defstrchrnul = 0;
+    > --- 68,77 ----
+    > ***************
+    > *** 347,356 ****
+    > --- 346,357 ----
+    >       return 1;
+    >   
+    >   FUNCTION int main(int iargc, char **iargv) 
+    >   
+    >   def
+    > + stm uiunbuffered();
+    > + 
+    >   stm char *cmd = NULL;
+    >   
+    >   iff 2 < iargc
+    >    && !strncmp(iargv[2], "-c", 3)
+    >   thn blk
+
+    [0x00] 2025-Sep-14 16:14:01 priv.c:55 !(bytesh/) $ clbt[0x00] 2025-Sep-14 16:14:05 priv.c:22 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 13:14:26.796995954 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2025-09-14 13:15:36.212995904 +0000
+    > ***************
+    > *** 293,309 ****
+    >   	system(cmd);
+    >   }
+    >   
+    >   #undef gitupdate
+    >   void gitupdate() {
+    > ! 	    sh, "git add *", endsh;
+    > ! 	    sh, "git add */*", endsh;
+    > ! 	    sh, "git commit -m untitled", endsh;
+    > ! 	    sh, "git push", endsh;
+    > ! 	    //sh, "git status", endsh;
+    > ! 	    //sh, "echo git status", endsh;
+    > ! 	//echosys "git log" _
+    >   }
+    >   
+    >   #undef man
+    >   void man(int ignore, char *topic, char *ignore_) 
+    >   {
+    > --- 293,309 ----
+    >   	system(cmd);
+    >   }
+    >   
+    >   #undef gitupdate
+    >   void gitupdate() {
+    > !     sh, "git add *", endsh;
+    > !     sh, "git add */*", endsh;
+    > !     sh, "git commit -m untitled", endsh;
+    > !     sh, "git push", endsh;
+    > !   //sh, "git status", endsh;
+    > !   //sh, "echo git status", endsh;
+    > !   //echosys "git log" _
+    >   }
+    >   
+    >   #undef man
+    >   void man(int ignore, char *topic, char *ignore_) 
+    >   {
+
+    [0x00] 2025-Sep-14 16:15:39 priv.c:63 !(bytesh/) $ clbt

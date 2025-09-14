@@ -2,8 +2,6 @@
 
 #define preprocessorh edit, ROOTC("/run/preprocessor.h"), endsh
 
-#ifdef BYTESH_DISABLE_OPTIMIZATION
-
 #define STRINGIFY(x) #x
 #define EVALSTRINGIFY(x) STRINGIFY(x)
 #define EVALSTRINGIFYPRINT(x) es(STRINGIFY(x))
@@ -14,6 +12,8 @@
 #define EVALECHO(...) ECHO(__VA_ARGS__)
 #define APPLYMACRO_(x) x
 #define APPLYMACRO(macroident, arglist) APPLYMACRO_(macroident arglist)
+
+#ifdef BYTESH_DISABLE_OPTIMIZATION
 
 #define WEREPASSED(...)
 #define NOBRACKETS(...) __VA_ARGS__ 

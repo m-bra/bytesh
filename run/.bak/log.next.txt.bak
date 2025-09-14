@@ -1,0 +1,27 @@
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-12 21:10:13.469230655 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2025-09-12 21:12:02.001230577 +0000
+    > ***************
+    > *** 15,25 ****
+    >   #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+    >   #define ef__(x) ef(x)
+    >   #define ef___ ef__
+    >   #define ef4$ ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+    >   
+    > ! void es_(char *name, char *sz);
+    >   #define es__(x) es_(#x, x)
+    >   #define es___ es__
+    >   #define es$ es___ INSERT_OPENING_PAREN
+    >   #endif
+    >   
+    > --- 15,25 ----
+    >   #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
+    >   #define ef__(x) ef(x)
+    >   #define ef___ ef__
+    >   #define ef4$ ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+    >   
+    > ! char *es_(char *name, char *sz);
+    >   #define es__(x) es_(#x, x)
+    >   #define es___ es__
+    >   #define es$ es___ INSERT_OPENING_PAREN
+    >   #endif
+    >   

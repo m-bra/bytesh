@@ -129,6 +129,7 @@ char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
 #define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
 #define malloclinebufprintf mlinebufprintf
 #define mf mlinebufprintf
+#define mf$ mlinebufprintf INSERT_OPENING_PAREN
 
 char *es_(char *name, char *sz);
 

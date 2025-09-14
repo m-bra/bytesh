@@ -81,4 +81,260 @@
 
     [0x00] 2025-Sep-13 14:51:04 priv.c:6235 !(bytesh/) $ cltr[0x00] 2025-Sep-13 14:52:40 priv.c:6255 !(bytesh/) $ 
 
-    [0x00] 2025-Sep-13 14:52:42 priv.c:6257 !(bytesh/) $ cltr
+    [0x00] 2025-Sep-13 14:52:42 priv.c:6257 !(bytesh/) $ cltr[0x00] 2025-Sep-13 14:52:40 priv.c:6255 !(bytesh/) $ 
+
+    
+
+    [0x00] 2025-Sep-13 14:57:27 priv.c:6259 !(bytesh/) $ cltr[0x00] 2025-Sep-13 14:58:29 priv.c:6233 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-13 14:58:47 priv.c:6226 !(bytesh/) $ cltr[0x00] 2025-Sep-11 16:34:18 priv.c:6222 $ # restart
+
+    
+
+    [0x00] 2025-Sep-13 14:58:54 priv.c:6226 !(bytesh/) $ cltr[0x00] 2025-Sep-11 16:32:43 priv.c:6219 !(bytesh/) $ # restart
+
+
+    
+
+    [0x00] 2025-Sep-13 14:58:58 priv.c:6224 !(bytesh/) $ cltr[0x00] 2025-Sep-13 15:14:07 priv.c:6219 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-13 15:14:37 priv.c:6192 !(bytesh/) $ cltr[0x00] 2025-Sep-13 18:19:01 priv.c:6219 !(bytesh/) $ cmdlogls
+    > drwxrws--- 3 10182 1023 3.4K Aug  9 20:48 log
+    > -rw-rw---- 1 10182 1023 130K Sep 13 15:18 log.bytesh.tweaks.txt
+    > -rw-rw---- 1 10182 1023  12K Sep  8 16:17 log.enhance-sh-syntax--fix-precompile--test-vim-invocation.txt
+    > -rw-rw---- 1 10182 1023 3.4K Aug  9 20:46 log.fixprecompile.txt
+    > -rw-rw---- 1 10182 1023  136 Sep 12 21:58 log.hello2.txt
+    > -rw-rw---- 1 10182 1023  869 Sep 12 21:57 log.hello.txt
+    > -rw-rw---- 1 10182 1023 3.5K Sep 12 22:38 log.latest.txt
+    > -rw-rw---- 1 10182 1023 1.9K Sep 13 11:57 log.mntc.txt
+    > -rw-rw---- 1 10182 1023 150K Aug  9 13:30 log.old.txt
+    > -rw-rw---- 1 10182 1023 1.8K Aug  9 20:21 log.rewirestderr.txt
+    > -rw-rw---- 1 10182 1023 4.8K Sep 13 12:17 log.trash.txt
+    > -rw-rw---- 1 10182 1023 321K Sep 13 15:19 log.txt
+
+    
+
+    [0x00] 2025-Sep-13 18:20:48 priv.c:6235 !(bytesh/) $ cltr[0x00] 2025-Sep-13 18:17:26 priv.c:6194 !(bytesh/) $ cmdlogls
+    > drwxrws--- 3 10182 1023 3.4K Aug  9 20:48 log
+    > -rw-rw---- 1 10182 1023 129K Sep 13 15:13 log.bytesh.tweaks.txt
+    > -rw-rw---- 1 10182 1023  12K Sep  8 16:17 log.enhance-sh-syntax--fix-precompile--test-vim-invocation.txt
+    > -rw-rw---- 1 10182 1023 3.4K Aug  9 20:46 log.fixprecompile.txt
+    > -rw-rw---- 1 10182 1023  136 Sep 12 21:58 log.hello2.txt
+    > -rw-rw---- 1 10182 1023  869 Sep 12 21:57 log.hello.txt
+    > -rw-rw---- 1 10182 1023 386K Sep 12 21:12 log.last.txt
+    > -rw-rw---- 1 10182 1023 141K Aug 16 15:58 log.last.txt.bak
+    > -rw-rw---- 1 10182 1023 3.5K Sep 12 22:38 log.latest.txt
+    > -rw-rw---- 1 10182 1023 1.9K Sep 13 11:57 log.mntc.txt
+    > -rw-rw---- 1 10182 1023 1.2K Sep 12 21:12 log.next.txt.bak
+    > -rw-rw---- 1 10182 1023 150K Aug  9 13:30 log.old.txt
+    > -rw-rw---- 1 10182 1023 1.8K Aug  9 20:21 log.rewirestderr.txt
+    > -rw-rw---- 1 10182 1023 4.8K Sep 13 12:17 log.trash.txt
+    > -rw-rw---- 1 10182 1023 319K Sep 13 15:17 log.txt
+
+    
+
+    
+
+    [0x00] 2025-Sep-13 18:21:44 priv.c:6215 !(bytesh/) $ cltr[0x00] 2025-Sep-14 12:43:12 priv.c:760 $ cmdlogedit
+
+    [0x00] 2025-Sep-14 12:43:32 priv.c:41 !(bytesh/) $ cltr[0x00] 2025-Sep-14 13:27:39 priv.c:38 $ cd$$ ".." $$
+
+    
+
+    [0x00] 2025-Sep-14 13:31:04 priv.c:42 !(bytesh/) $ cltr[0x00] 2025-Sep-14 13:41:35 priv.c:107 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 10:41:39.414086866 +0000
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2025-09-14 10:42:27.506086831 +0000
+    > ***************
+    > *** 23,33 ****
+    > --- 23,35 ----
+    >   #define tmux sh, "tmux", endsh
+    >   #define ROOTCLS ROOTC("/run/cnslutil/ls.txt")
+    >   #define NBUFFERED_OUT(text, f) mf("%s", text)
+    >   #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    >   
+    > + #ifndef lsraw
+    >   #define lsraw(suffix) sh, mf$ "ls %s", suffix $
+    > + #define lsraw
+    >   #define ls  sh, lsraw("-hAl %s")
+    >   #define ls$$ ls,
+    >   #define lst sh, lsraw("-hAlt %s")
+    >   #define lst$$ lst,
+    >   #define lstr sh, lsraw("-hAltr %s")
+
+    
+
+    [0x00] 2025-Sep-14 13:50:16 priv.c:129 $ cltr[0x00] 2025-Sep-14 14:03:24 priv.c:140 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:03:29.646085929 +0000
+    > --- dir.h	2025-09-14 11:03:33.594085926 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! //#define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    > ! //#define lsrawdef
+    > --- 1,2 ----
+    > ! #define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    > ! #define lsrawdef
+
+    
+
+    [0x00] 2025-Sep-14 14:04:04 priv.c:153 !(bytesh/) $ cltr[0x00] 2025-Sep-14 14:00:14 priv.c:127 !(bytesh/) $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-14 11:00:22.030086063 +0000
+    > --- dir.h	2025-09-14 11:00:40.310086050 +0000
+    > ***************
+    > *** 1,2 ****
+    > ! #define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    > ! #define lsrawdef
+    > --- 1,2 ----
+    > ! //#define lsraw(pipe) sh, mf$ "echo code 555 && ls %s", pipe $ 
+    > ! //#define lsrawdef
+
+    
+
+    
+
+    [0x00] 2025-Sep-14 14:04:13 priv.c:142 !(bytesh/) $ cltr[0x00] 2025-Sep-14 14:04:16 priv.c:129 !(bytesh/) $ cmdlogedit
+
+    
+
+    [0x00] 2025-Sep-14 14:05:54 priv.c:121 !(bytesh/) $ cltr[0x00] 2025-Sep-14 14:06:25 priv.c:42 !(bytesh/) $ cmdlogedit
+
+    
+
+    [0x00] 2025-Sep-14 14:22:31 priv.c:34 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:27:09 priv.c:40 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-14 15:27:45 priv.c:32 !(bytesh/) $ cltr[0x00] 2025-Sep-14 12:26:54 priv.c:6 $ lsc
+    > total 207K
+    > -rw-rw----  1 10182 1023  85K Sep 13 15:27 a.out
+    > drwxrws---  2 10182 1023 3.4K Aug 10 18:53 .bak
+    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    > -rw-rw----  1 10182 1023  203 Jul 28 12:20 cnslutil.h.bak
+    > -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    > drwxrws---  7 10182 1023 3.4K Sep 13 15:17 .git
+    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    > -rw-rw----  1 10182 1023    0 Sep 14 09:26 insert.c
+    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    > -rw-rw----  1 10182 1023  14K Sep 12 22:23 main.c
+    > -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    > -rw-rw----  1 10182 1023  16K Jul 28 12:20 main.ppm
+    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 09:26 run
+    > drwxrws--- 12 10182 1023 4.0K Sep 13 15:19 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 13 15:21 run.tmp.bak
+    > -rw-rw----  1 10182 1023   12 Feb 18  2025 status.txt
+    > -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    
+
+    [0x00] 2025-Sep-14 15:27:51 priv.c:32 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:28:11 priv.c:8 !(bytesh/) $ lsc
+    > total 187K
+    > -rw-rw----  1 10182 1023  85K Sep 14 10:55 a.out
+    > drwxrws---  2 10182 1023 3.4K Sep 14 12:26 .bak
+    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    > -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    > -rw-rw----  1 10182 1023    0 Sep 14 11:22 dir.h
+    > drwxrws---  7 10182 1023 3.4K Sep 14 12:27 .git
+    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    > -rw-rw----  1 10182 1023    0 Sep 14 12:28 insert.c
+    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    > -rw-rw----  1 10182 1023  15K Sep 14 10:55 main.c
+    > -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:28 run
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 11:23 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:27 run.tmp.bak
+    > -rw-rw----  1 10182 1023   12 Feb 18  2025 status.txt
+    > -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    
+
+    
+
+
+    [0x00] 2025-Sep-14 15:34:42 priv.c:36 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:28:11 priv.c:8 !(bytesh/) $ lsc
+    > total 187K
+    > -rw-rw----  1 10182 1023  85K Sep 14 10:55 a.out
+    > drwxrws---  2 10182 1023 3.4K Sep 14 12:26 .bak
+    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    > -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    > -rw-rw----  1 10182 1023    0 Sep 14 11:22 dir.h
+    > drwxrws---  7 10182 1023 3.4K Sep 14 12:27 .git
+    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    > -rw-rw----  1 10182 1023    0 Sep 14 12:28 insert.c
+    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    > -rw-rw----  1 10182 1023  15K Sep 14 10:55 main.c
+    > -rw-rw----  1 10182 1023  13K Aug  8 00:14 main.c.bak
+    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:28 run
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 11:23 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:27 run.tmp.bak
+    > -rw-rw----  1 10182 1023   12 Feb 18  2025 status.txt
+    > -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt
+
+    
+
+    
+
+
+    [0x00] 2025-Sep-14 15:34:49 priv.c:36 !(bytesh/) $ cltr[0x00] 2025-Sep-14 12:26:50 priv.c:3 $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    
+
+
+    [0x00] 2025-Sep-14 15:34:53 priv.c:9 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:35:24 priv.c:3 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-14 15:35:29 priv.c:6 !(bytesh/) $ cltr[0x00] 2025-Sep-13 18:27:42 priv.c:1 $ cd$$ ROOTC(".") $$
+
+
+    [0x00] 2025-Sep-14 15:36:16 priv.c:4 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:36:37 priv.c:4 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-14 15:36:42 priv.c:6 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:36:33 priv.c:2 !(bytesh/) $ 
+
+
+    [0x00] 2025-Sep-14 15:36:48 priv.c:5 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:37:04 priv.c:4 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-14 15:37:06 priv.c:6 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:37:51 priv.c:4 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-14 15:38:04 priv.c:6 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:38:10 priv.c:4 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2025-Sep-14 15:38:17 priv.c:7 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:37:02 priv.c:2 !(bytesh/) $ 
+
+    [0x00] 2025-Sep-14 15:38:23 priv.c:4 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:38:28 priv.c:2 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:38:33 priv.c:2 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2025-Sep-14 15:38:41 priv.c:1 !(bytesh/) $ cltr[0x00] 2025-Sep-14 15:38:56 priv.c:25 !(bytesh/) $ bak$$ "core" $$
+
+    [0x00] 2025-Sep-14 15:39:24 priv.c:27 !(bytesh/) $ cltr, cltr;[0x00] 2025-Sep-14 15:38:50 priv.c:3 !(bytesh/) $ lsc
+    > total 171K
+    > -rw-rw----  1 10182 1023  85K Sep 14 10:55 a.out
+    > drwxrws---  2 10182 1023 3.4K Sep 14 12:28 .bak
+    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    > -rw-rw----  1 10182 1023    0 Aug  7 22:20 core
+    > -rw-rw----  1 10182 1023    0 Sep 14 11:22 dir.h
+    > drwxrws---  7 10182 1023 3.4K Sep 14 12:38 .git
+    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    > -rw-rw----  1 10182 1023    0 Sep 14 12:38 insert.c
+    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    > -rw-rw----  1 10182 1023  15K Sep 14 10:55 main.c
+    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:38 run
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:36 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:38 run.tmp.bak
+    > -rw-rw----  1 10182 1023   12 Feb 18  2025 status.txt
+    > -rw-rw----  1 10182 1023  379 Jul 28 12:20 tmp.txt[0x00] 2025-Sep-14 15:49:41 priv.c:22 !(bytesh/) $ bak$$ "insert.c" $$
+
+    [0x00] 2025-Sep-14 15:50:22 priv.c:24 $ cltr[0x00] 2025-Sep-14 15:54:01 priv.c:84 $ cnslutilc
+
+    [0x00] 2025-Sep-14 16:00:31 priv.c:86 $ cltr

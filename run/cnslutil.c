@@ -3,6 +3,7 @@
 
 void edit_(char const *path)
 {
+	rm, ROOTC("/run/cnslutil/diff.txt"), endsh;
 	cp, path, ROOTC("/run/cnslutil/diff.txt"), endsh;
         int current_stdout_fileno = dup(STDOUT_FILENO);
 	dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
@@ -138,7 +139,7 @@ int mv_(int ignore, char *from, char *to, char *ignore_)
 	// TODO: undefined escape rules in param strings
 }
 
-void cp_(int ignore, char *from, char *to, char *ignore_)
+void cp_(int ignore, char const *from, char const *to, char *ignore_)
 {
 	char buf[NBUF];
 	snprintf(buf, NBUF, "cp %s %s", from, to);
@@ -294,13 +295,13 @@ void echosys(char const *cmd)
 
 #undef gitupdate
 void gitupdate() {
-	    sh, "git add *", endsh;
-	    sh, "git add */*", endsh;
-	    sh, "git commit -m untitled", endsh;
-	    sh, "git push", endsh;
-	    //sh, "git status", endsh;
-	    //sh, "echo git status", endsh;
-	//echosys "git log" _
+    sh, "git add *", endsh;
+    sh, "git add */*", endsh;
+    sh, "git commit -m untitled", endsh;
+    sh, "git push", endsh;
+  //sh, "git status", endsh;
+  //sh, "echo git status", endsh;
+  //echosys "git log" _
 }
 
 #undef man
