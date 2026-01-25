@@ -54,7 +54,7 @@ def
 stm char *pagebuf = mallocaddpagebuf; pagebuf[0] = 0;
 stm int linen = 1;
 stm char lastchar = ' ';
-stm int cmdlogline = cmdlogn();
+stm int cmdlogline = cmdlogn() - 2;
     
 rep 
 blk
@@ -77,7 +77,7 @@ thn blk
 iff c == ESC
  && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[1]
  && unbufreadc(STDIN_FILENO) == ARROW_UP_SEQ[2]
-thn blk             
+thn blk    
     stm linebuf_t mem;
     chr *buf = &mem[0];
     stm void cmdlogat(int, linebuf_t *);
@@ -87,6 +87,7 @@ thn blk
 	iff strstr(buf, "$")
 	thn break;
 	blk_end
+    stm es$ buf $;
     stm buf = strstr(buf, "$") + 1;
     iff strlen(buf) > 80
     thn buf[79] = '\0';
@@ -95,12 +96,12 @@ thn blk
     iff buf[i] == '\n'
     thn buf[i] =   ' ';
 
-    for range(0, strlen(buf))
+    for range(0, strlen(pagebuf))
     stm printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
     stm fflush(getstdout());
 
     stm *stpncpy(pagebuf, buf, linebuf_tn) = 0;
-    stm printf("... $ %s", pagebuf);
+    stm printf("%s", pagebuf);
     blk_end
 
 
@@ -110,7 +111,7 @@ thn blk
     nil tab_triggers()
         blk
         for range(0, strlen(pagebuf))
-	        printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
+	    printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
 	char *sznew = "userinterfaceh";
 	strcpy(pagebuf, sznew);
 	printf("%s", sznew); fflush(getstdout());

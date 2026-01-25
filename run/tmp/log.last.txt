@@ -1,30 +1,218 @@
 
-    [0x00] 2025-Sep-14 15:38:47 priv.c:0 !(bytesh/) $ pwd
+    [0x00] 2025-Sep-24 14:01:34 priv.c:0 !(bytesh/) $ pwd
     > /storage/self/primary/prj/bytesh
 
-    [0x00] 2025-Sep-14 15:44:23 priv.c:3 !(bytesh/) $ lsc
+    [0x00] 2025-Sep-24 14:03:23 priv.c:3 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+
+    [0x00] 2025-Sep-24 21:08:06 priv.c:19 !(bytesh/) $ findh
+    > Example: find$$ " . -type d -not -path \\*175\\* -not -path \\*.bak\\* " $$ 
+
+    [0x00] 2025-Sep-25 19:50:51 priv.c:22 $ lsc
     > total 163K
-    > -rw-rw----  1 10182 1023  85K Sep 14 10:55 a.out
-    > drwxrws---  2 10182 1023 3.4K Sep 14 12:40 .bak
+    > -rw-rw----  1 10182 1023  85K Sep 25 16:50 a.out
+    > drwxrws---  2 10182 1023 3.4K Sep 14 12:49 .bak
     > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
     > -rw-rw----  1 10182 1023    0 Sep 14 11:22 dir.h
-    > drwxrws---  7 10182 1023 3.4K Sep 14 12:38 .git
+    > drwxrws---  7 10182 1023 3.4K Sep 24 18:07 .git
     > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
-    > -rw-rw----  1 10182 1023    0 Sep 14 12:44 insert.c
+    > -rw-rw----  1 10182 1023    0 Sep 25 16:50 insert.c
     > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
-    > -rw-rw----  1 10182 1023  15K Sep 14 10:55 main.c
+    > -rw-rw----  1 10182 1023  15K Sep 14 13:13 main.c
     > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
     > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
     > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
     > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
-    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:44 run
-    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:38 run.bak
-    > drwxrws--- 12 10182 1023 4.0K Sep 14 12:39 run.tmp.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 25 18:53 run
+    > drwxrws--- 12 10182 1023 4.0K Sep 24 11:00 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Sep 24 18:08 run.tmp.bak
 
-    [0x00] 2025-Sep-14 16:17:43 priv.c:22 !(bytesh/) $ ls$$"run/tmp"$$
-    > total 8.0K
-    > -rw-rw---- 1 10182 1023 1.1K Sep 14 13:17 log.last.txt
-    > -rw-rw---- 1 10182 1023    0 Sep 14 13:17 log.next.txt
-    > -rw-rw---- 1 10182 1023    0 Sep 14 13:17 log.next.txt.bak
-    > -rw-rw---- 1 10182 1023    0 Jul 17 07:20 scanhtml.txt
-    > -rw-rw---- 1 10182 1023  253 Jul 17 07:20 termiostest.h
+    [0x00] 2025-Sep-25 21:53:45 priv.c:41 $ edit$$ "dir.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-25 18:54:00.688337915 +0000
+    > --- dir.h	2025-09-25 18:54:33.924337891 +0000
+    > ***************
+    > *** 0 ****
+    > --- 1 ----
+    > + #undef find$$
+
+    [0x00] 2025-Sep-25 21:56:35 priv.c:49 !(bytesh/) $ mv$$ "dir.h", "dirpost.h" $$
+
+    [0x00] 2025-Sep-25 21:57:12 priv.c:51 !(bytesh/) $ edit$$ "dirpost.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-25 18:57:20.724337772 +0000
+    > --- dirpost.h	2025-09-25 18:57:51.240337750 +0000
+    > ***************
+    > *** 1 ****
+    > --- 1,2 ----
+    >   #undef find$$
+    > + #define find$$ sh$$ "find . %s ", 
+
+    [0x00] 2026-Jan-24 02:36:08 priv.c:60 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh/run
+
+    [0x00] 2026-Jan-24 02:36:12 priv.c:63 !(bytesh/) $ cd$$ "../.." $$
+
+    [0x00] 2026-Jan-24 02:36:21 priv.c:65 !(bytesh/) $ lsc
+    > total 55K
+    > drwxrws--- 5 10182 1023 3.4K Sep 13 11:55 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 8 10182 1023 3.4K Jan 24 00:02 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25 13:45 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-24 02:48:02 priv.c:82 $ mkdir$$ "editself" $$
+
+    [0x00] 2026-Jan-24 02:48:31 priv.c:84 $ cd$$ "editself" $$
+
+    [0x00] 2026-Jan-24 02:48:38 priv.c:86 $ edit$$ "index.html" $$
+
+    [0x00] 2026-Jan-24 02:49:14 priv.c:88 $ sh$$ "wget https://raw.githubusercontent.com/m-bra/sose22/refs/heads/development/editself/jquery.js" $$
+
+    [0x00] 2026-Jan-24 21:30:11 priv.c:90 $ vncserver
+
+    [0x00] 2026-Jan-24 21:30:15 priv.c:92 $ firefox
+
+    [0x00] 2026-Jan-25 21:05:35 priv.c:94 $ pwd
+    > /storage/self/primary/prj/editself
+
+    [0x00] 2026-Jan-25 21:06:20 priv.c:97 $ cd$$ "../.." $$
+
+    [0x00] 2026-Jan-25 21:06:31 priv.c:99 $ lsc
+    > total 141K
+    > drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
+    > drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
+    > drwxrws---  5 10182 1023 3.4K Jan 25 18:41 Books
+    > drwxrws---  4 10182 1023 3.4K Dec  3 18:29 DCIM
+    > drwxrws---  8 10182 1023 3.4K Dec  1 21:56 Documents
+    > drwxrws--- 22 10182 1023  56K Jan 25 18:41 Download
+    > drwxrws---  2 10182 1023 3.4K Dec  1 22:20 Fonts
+    > drwxrws---  3 10182 1023 3.4K Aug 10 16:45 freelancer
+    > drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
+    > drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
+    > drwxrws---  3 10182 1023 3.4K Aug 10 10:37 mbrandt
+    > drwxrws---  7 10182 1023 3.4K Oct 22 11:38 mntc
+    > drwxrws---  8 10182 1023 3.4K Oct  2 07:18 Movies
+    > drwxrws---  6 10182 1023 3.4K Oct 14 22:15 Music
+    > drwxrws---  2 10182 1023 3.4K Jul 22  2025 Notifications
+    > drwxrws---  2 10182 1023 3.4K Jul 14  2025 opt
+    > -rw-rw----  1 10182 1023 3.2K Jun 21  2025 pacmanss.qemu.txt
+    > drwxrws--- 10 10182 1023 3.4K Dec 28 12:26 Pictures
+    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
+    > drwxrws--- 14 10182 1023 3.4K Jan 24 00:57 prj
+    > drwxrws---  4 10182 1023 3.4K Feb 27  2025 ReadEra
+    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
+    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
+    > drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
+    > drwxrws---  5 10182 1023 3.4K Jan  2 03:17 tmp
+
+    [0x00] 2026-Jan-25 21:06:38 priv.c:127 $ ls$$ "Android" $$
+    > total 15K
+    > drwxrws--x+ 42 1023 1078 8.0K Jan 25 19:04 data
+    > drwxrws--x   3 1023 1023 3.4K Jan 25 18:57 media
+    > drwxrws--x+  2 1023 1079 3.4K Jan 25 18:55 obb
+
+    [0x00] 2026-Jan-25 21:07:57 priv.c:133 $ cd$$ "prj" $$
+
+    [0x00] 2026-Jan-25 22:33:07 priv.c:135 !(bytesh/) $ lsc
+    > total 55K
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 19:57 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:33:13 priv.c:152 !(bytesh/) $ cd$$ "C*" $$
+
+    [0x00] 2026-Jan-25 22:33:25 priv.c:154 !(bytesh/) $ lsc
+    > total 170K
+    > -rw-rw----  1 10182 1023  85K Jan 25 18:58 a.out
+    > drwxrws---  2 10182 1023 3.4K Jan 25 19:57 .bak
+    > drwxrws---  2 10182 1023 3.4K Jan 25 19:57 _.bak
+    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    > -rw-rw----  1 10182 1023 1.1K Sep 25 19:05 dirpost.h
+    > drwxrws---  7 10182 1023 3.4K Jan 24 00:02 .git
+    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    > -rw-rw----  1 10182 1023    0 Jan 25 20:33 insert.c
+    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    > -rw-rw----  1 10182 1023  15K Sep 14 13:13 main.c
+    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    > drwxrws--- 12 10182 1023 4.0K Jan 25 20:33 run
+    > drwxrws--- 12 10182 1023 4.0K Jan 24 00:02 run.bak
+    > drwxrws--- 12 10182 1023 4.0K Jan 24 00:36 run.tmp.bak
+
+    [0x00] 2026-Jan-25 22:33:28 priv.c:174 !(bytesh/) $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is up to date with 'origin/master2'.
+    > 
+    > Changes not staged for commit:
+    >   (use "git add/rm <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   .gitignore
+    > 	deleted:    cflags
+    > 	deleted:    cnslutil.h.bak
+    > 	deleted:    core
+    > 	deleted:    dir.h
+    > 	deleted:    main.c.bak
+    > 	deleted:    main.ppm
+    > 	modified:   run/cnslutil.c
+    > 	modified:   run/cnslutil.c.o
+    > 	modified:   run/cnslutil.h
+    > 	modified:   run/cnslutil/diff.txt
+    > 	modified:   run/log.bytesh.tweaks.txt
+    > 	modified:   run/log.latest.txt
+    > 	modified:   run/log.mntc.txt
+    > 	modified:   run/log.trash.txt
+    > 	modified:   run/main.c.bak
+    > 	modified:   run/stdlibext.h
+    > 	modified:   run/tmp.h
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 	modified:   run/userinterface.c
+    > 	modified:   run/userinterface.c.o
+    > 	deleted:    status.txt
+    > 	deleted:    tmp.txt
+    > 
+    > Untracked files:
+    >   (use "git add <file>..." to include in what will be committed)
+    > 	.bak/
+    > 	_.bak/
+    > 	dirpost.h
+    > 	run/cnslutil/man/printf.txt
+    > 	run/cnslutil/man/sed.txt
+    > 	run/log.examples.txt
+    > 	run/tmp/stardict.txt
+    > 
+    > no changes added to commit (use "git add" and/or "git commit -a")

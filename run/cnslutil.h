@@ -2,7 +2,6 @@
 #define RUN_CNSLUTIL_H_INCLUDED
 
 #include "main.h"
-
 ////////////////////////////////////////////////////////////////////////
 //                          WRAPPERS & ALIASES
 /////////////////////////////////////////////////////////////////////////
@@ -25,7 +24,7 @@
 #define NBUFFERED_OUT(text, f) mf("%s", text)
 #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
 
-#define lsraw(pipe) mf$                  "ls %s", pipe $
+#define lsraw(pipe) mf$ "ls %s", pipe $
 #ifndef lsrawdef
 #define lswrap(...) __VA_ARGS__
 #endif 
@@ -37,8 +36,8 @@
 #define lsct 		lswrap(lst$$ ".", endsh)
 #define lsctr	 	lswrap(lstr$$ ".", endsh)
 #define lscS 		lswrap(lsS$$ ".", endsh)
-#define lscgrep$$ 	lswrap("-hAl . | grep %s"),
-#define lsgrep$$ 	lswrap("-hAl %s | grep %s"),
+#define lscgrep$$ 	lswrap(sh, lsraw("-hAl . | grep %s")),
+#define lsgrep$$ 	lswrap(sh, lsraw("-hAl %s | grep %s")),
 
 #define history cmdlog
 
@@ -71,13 +70,10 @@ void cmdinsert(char *cmd);
 
 void cmdinsertlogregion(int from, int to);
 
-#define cmdlogpop$$  \
-	shdirect$$ mf$ "cd %s && "  \
-            "vim  "\
-	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
-                 "-cw " " -c 'open log.%%s.txt' " " -c 'normal G$p' " " -c wq "  \
-	         "%s" " && " \
-            "vim -c 'normal Gdddd' -cwq %s", ROOTC("/run/"), ROOTC("/run/log.txt"), ROOTC("/run/log.txt") $,
+int cmdlogpop(char *ignore, char *file, char *ignend);
+
+#define cmdlogpop$$ cmdlogpop(0,  
+	
 #define cmdlogls lsgrep$$ ROOTC("/run/"), "'\\slog'" $$ 
 #define cmdlogdir ROOTC("/run/")
 void tputcup(int ignore, int col, char *ignore_);
@@ -86,13 +82,16 @@ void tputcup(int ignore, int col, char *ignore_);
 #define tputed sh, "tput ed", endsh
 
 void mkdir_(int ignore, char *path, char *ignore_);
-#define mkdir mkdir_ ( 0
+//#define mkdir mkdir_ ( 0
+//#define mkdir mkdir_
+#define mkdir$$ mkdir_(0,
 
 void mkdirp_(int ignore, char *path, char *ignore_);
 #define mkdirp mkdirp_ ( 0
 
 int mv_(int ignore, char *from, char *to, char *ignore_);
 #define mv mv_ ( 0
+#define mv$$ mv,
 #define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
 
 #define mvf sh, "mv -f %s %s"
@@ -154,7 +153,7 @@ void gitupdate();
 
 void man(int ignore, char *topic, char *ignore_) ;
 #define man man ( 0
-
+#define man$$ man,
 
 #endif
 
@@ -217,6 +216,7 @@ int pacmanqi(int ignore, char *x, char *ignores);
 #define cpr sh, "cp -r %s %s"
 
 #define ping sh, "ping %s"
+#define ping$$ ping,
 
 int pacmanql(int ignore, char *x, char *ignores);
 #define pacmanql pacmanql ( 0
@@ -235,7 +235,7 @@ int pacmanr(int ignore, char *x, char *ignores);
 
 # define aptinstall sh, "apt install %s"
 
-# define stat sh, "stat %s"
+# define stat$$ sh, "stat %s",
 
 # define whoami sh, "whoami", endsh
 
@@ -326,7 +326,7 @@ int yayss_(int ignore, char *pkg, char *ignores);
 
 #define ENDBLOCK
 
-# define bakpre(f) mkdir, "-p .bak", endsh; mv, f, ".bak", endsh;
+# define bakpre(f) mkdir$$ "-p .bak" $$; mv$$ f, ".bak" $$;
 
 void bak_(char *a, char *f, char *b);
 #define bak bak_ ( ""
@@ -468,10 +468,11 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define backh printf("%s", "Found in: $ cnslutilh\n")
 #define back printf("/storage/self/primary/Documents/MEGABUEROKRATIE/ARBEITSSTELLE/BEWERBUNG/HIFI-JOURNAL\n");
 
-
+#define findh printf("Example: find$$ \" . -type d -not -path \\\\*175\\\\* -not -path \\\\*.bak\\\\* \" $$ \n")
+#define find$$ sh, "find ",
 #define lsrhifi sh, "find . -type d -not -path \\*175\\* -not -path \\*.bak\\*", endsh
 #define mgeth printf("%s", "Found in: $ cnslutilh\n")
-#define mget sh, "yt-dlp %s"
+#define mget$$ sh, "yt-dlp %s",
 
 #define gitlog sh, "git log --pretty='%%h %%Cgreen%%an %%Cblue%%ar %%Creset%%s%%N %%Cred%%d' --graph", endsh
 
@@ -522,18 +523,7 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2);
 #define lnstlh printf("%s", "Found in: $ cnslutilh\n")
 #define lnstl lns
 
-void cd$$_(char *ignore, char const *path, char *ignore2)
-{
-ign ignore;
-ign ignore2;
+void cd$$_(char *ignore, char const *path, char *ignore2);
 
-    if (path[0] == '/')
-    {
-        sh, "echo '%s' > %s", path, ROOTC("/run/cwd.txt"), endsh;
-    }
-    else 
-    {
-	sh, "echo '/%s' >> %s", path, ROOTC("/run/cwd.txt"), endsh;
-    }
-}
 #define cd$$ cd$$_ ( 0,
+#define pinggoogle shdirect$$ "ping google.com | sed -r 's/.*time.([0-9]+).*$/\\1/g'" $$

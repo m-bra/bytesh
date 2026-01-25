@@ -1,9 +1,0 @@
-    > [master2 b4e12cf] untitled
-    >  22 files changed, 8386 insertions(+), 6857 deletions(-)
-    >  create mode 100644 dir.h
-    >  rename run/{ => .bak}/log.hello.txt (100%)
-    >  rename run/{ => .bak}/log.hello2.txt (100%)
-    >  rename run/{ => .bak}/log.last.txt (100%)
-    >  rename run/{ => .bak}/log.last.txt.bak (100%)
-    >  create mode 100644 run/log.mntc.txt
-    >  delete mode 100644 run/log.next.txt.bak

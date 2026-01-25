@@ -450,3 +450,32 @@ int pacmanyayss(char *ignore, char *pkg, char *ignore2)
 {
 stm return (pacmanss, pkg, endsh) && (yayss,    pkg, endsh);
 }
+
+void cd$$_(char *ignore, char const *path, char *ignore2)
+{
+ign ignore;
+ign ignore2;
+
+    if (path[0] == '/')
+    {
+        sh, "printf '%s/' > %s", path, ROOTC("/run/cwd.txt"), endsh;
+    }
+    else 
+    {
+	sh, "printf '/%s/' >> %s", path, ROOTC("/run/cwd.txt"), endsh;
+    }
+}
+
+int cmdlogpop(char *ignore, char *file, char *ignend)
+{
+         return
+             shdirect$$ mf( \
+                 "cd %s" " && " \
+                 "vim  " \
+     	         "-c 'normal G$v'" " -c '?^\\s\\s\\s\\s[^>]' " " -c 'normal d' " \
+                      "-cw " " -c 'open log.%s.txt' " " -c 'normal G$p' " " -c wq "  \
+     	         "%s" " && " \
+                 "vim -c 'normal Gdddd' -cwq %s" " && " \
+     	    "echo '' >> log.%s.txt", \
+     	    ROOTC("/run/"), file, ROOTC("/run/log.txt"), ROOTC("/run/log.txt"), file ) $$; 
+}

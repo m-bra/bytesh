@@ -11,11 +11,14 @@
 
 #ifndef NOEVAL
 #define ed(x) printf("(int) (%s) = %d \n", #x, (int) (x));
+#define ed$ ed___ INSERT_OPENING_PAREN
+#define ed__(x) ed(x)
+#define ed___ ed__
 #define ec(x) printf("(char) (%s) = '%c' \n", #x, (char) (x) == '\n' ? "\\n" : (char) (x));
 #define ef(x) printf("(float) (%s) = %f \n", #x, (float) (x));
 #define ef__(x) ef(x)
 #define ef___ ef__
-#define ef4$ ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
+#define ef$4 ef___ INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN INSERT_OPENING_PAREN
 
 char *es_(char *name, char *sz);
 #define es__(x) es_(#x, x)

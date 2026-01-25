@@ -1,0 +1,59 @@
+[0x00] 2025-Sep-20 14:24:51 priv.c:404 !(bytesh/) $ for (float m = 0.0; m <= 3.0 - (3.0/50.); m += (3.0/50.)) ;
+
+    [0x00] 2025-Sep-24 13:52:41 priv.c:406 !(bytesh/) $ cmdlogpop$$"examples"$$[0x00] 2025-Sep-20 14:22:18 priv.c:401 !(bytesh/) $ ef$4 21. / 32. $ $ $ $
+    > (float) (( ( ( 21. / 32. ) ) )) = 0.656250 
+
+    [0x00] 2025-Sep-24 13:53:19 priv.c:404 !(bytesh/) $ clex[0x00] 2025-Sep-20 14:22:07 priv.c:398 $ ef$4 195. / 32. $ $ $ $
+    > (float) (( ( ( 195. / 32. ) ) )) = 6.093750 
+
+    [0x00] 2025-Sep-24 13:53:32 priv.c:401 !(bytesh/) $ clex[0x00] 2025-Sep-20 14:09:39 priv.c:395 $ ef$4 0.75 * (f(0) + f(0.75) + f(1.5) + f(2.25)) $ * 32 $ $ $
+    > (float) (( ( ( 0.75 * ((-(0*0) + 4.) + (-(0.75*0.75) + 4.) + (-(1.5*1.5) + 4.) + (-(2.25*2.25) + 4.)) ) * 32 ) )) = 195.000000 
+
+    [0x00] 2025-Sep-24 13:53:36 priv.c:398 !(bytesh/) $ clex[0x00] 2025-Sep-20 14:08:21 priv.c:392 $ ef$4 0.75 * (f(0.75) + f(1.5) + f(2.25) + f(3.)) $ * 32. $ $ $
+    > (float) (( ( ( 0.75 * ((-(0.75*0.75) + 4.) + (-(1.5*1.5) + 4.) + (-(2.25*2.25) + 4.) + (-(3.*3.) + 4.)) ) * 32. ) )) = -21.000000 
+
+    [0x00] 2025-Sep-24 13:53:40 priv.c:395 !(bytesh/) $ clex[0x00] 2025-Sep-20 14:08:08 priv.c:389 $ ef$4 f(0.75) $ $ $ $
+    > (float) (( ( ( (-(0.75*0.75) + 4.) ) ) )) = 3.437500 
+
+    [0x00] 2025-Sep-24 13:53:46 priv.c:392 !(bytesh/) $ clex[0x00] 2025-Sep-20 13:55:27 priv.c:384 $ for (float f = -2.5; f < -1.25; f += 0.5) ef$4 1.2 * (f * f) $ $ $ $
+    > (float) (( ( ( 1.2 * (f * f) ) ) )) = 7.500000 
+    > (float) (( ( ( 1.2 * (f * f) ) ) )) = 4.800000 
+    > (float) (( ( ( 1.2 * (f * f) ) ) )) = 2.700000 
+
+    [0x00] 2025-Sep-24 13:53:51 priv.c:389 !(bytesh/) $ clex[0x00] 2025-Sep-20 13:49:56 priv.c:362 !(bytesh/) $ ed$ 1 $
+    > (int) (1) = 1 
+
+    [0x00] 2025-Sep-24 13:55:26 priv.c:365 !(bytesh/) $ clex[0x00] 2025-Sep-20 13:42:34 priv.c:311 $ sh$$ "echo 'hello time=12ms' | sed -r 's/.*time.([0-9])//g'" $$
+    > 2ms
+
+    [0x00] 2025-Sep-24 13:55:57 priv.c:314 !(bytesh/) $ clex[0x00] 2025-Sep-20 13:42:07 priv.c:308 $ sh$$ "echo 'hello time=12ms' | sed 's/.*time.([0-9])//g'" $$
+    > hello time=12ms
+
+    [0x00] 2025-Sep-24 13:56:06 priv.c:311 !(bytesh/) $ clex[0x00] 2025-Sep-20 13:39:12 priv.c:305 $ sh$$ "echo 'hello time=0ms' | sed 's/.*time.[0-0]//g'" $$
+    > ms
+
+    [0x00] 2025-Sep-24 13:56:11 priv.c:308 !(bytesh/) $ clex[0x00] 2025-Sep-15 13:39:56 priv.c:22 $ ef4$ 34.5 * 13.5 $ $ $ $
+    > (float) (( ( ( 34.5 * 13.5 ) ) )) = 465.750000 
+
+    [0x00] 2025-Sep-24 14:00:11 priv.c:25 !(bytesh/) $ clex[0x00] 2026-Jan-24 00:56:22 priv.c:477 !(bytesh/) $ cmdlogls
+    > drwxrws--- 3 10182 1023 3.4K Aug  9 20:48 log
+    > -rw-rw---- 1 10182 1023 232K Jan 23 22:53 log.bytesh.tweaks.txt
+    > -rw-rw---- 1 10182 1023  12K Sep  8 16:17 log.enhance-sh-syntax--fix-precompile--test-vim-invocation.txt
+    > -rw-rw---- 1 10182 1023 2.5K Sep 24 11:00 log.examples.txt
+    > -rw-rw---- 1 10182 1023 3.4K Aug  9 20:46 log.fixprecompile.txt
+    > -rw-rw---- 1 10182 1023 3.5K Sep 12 22:38 log.latest.txt
+    > -rw-rw---- 1 10182 1023 115K Sep 24 10:47 log.mntc.txt
+    > -rw-rw---- 1 10182 1023 469K Sep 13 15:22 log.old.txt
+    > -rw-rw---- 1 10182 1023 1.8K Aug  9 20:21 log.rewirestderr.txt
+    > -rw-rw---- 1 10182 1023  49K Jan 23 22:54 log.trash.txt
+    > -rw-rw---- 1 10182 1023  22K Jan 23 22:56 log.txt
+
+    [0x00] 2026-Jan-24 00:56:28 priv.c:490 !(bytesh/) $ clex[0x00] 2026-Jan-24 01:23:35 priv.c:617 !(bytesh/) $ sh$$ "grep hello tmp.h" $$
+    > #define code776 "hello"
+
+    [0x00] 2026-Jan-24 01:55:42 priv.c:620 !(bytesh/) $ clex
+[0x00] 2025-Oct-19 12:33:57 priv.c:165 $ cat$$"STEUER-ID"$$
+    > 96324254822 (Quelle: Meldebehoerde)
+
+    [0x00] 2026-Jan-24 02:01:16 priv.c:168 !(bytesh/) $ clex
+

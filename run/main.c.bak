@@ -1,7 +1,6 @@
-#include "/storage/self/primary/prj/bytesh//dir.h"
 #include "main.h"
 
-char *lastcmd = "\n";
+char *lastcmd = "vncserver\n";
 int main_interactive = 1;int syssh = 0;
 char *rootworkdir = "/data/data/com.termux/files/home/prj/bytesh//run";int isfirstcmd = 0;
 int main(int argc, char **argv) {
@@ -9,7 +8,7 @@ MAIN_BEGIN
 #ifdef BYTESH_DISABLE_OPTIMIZATION
 EVALECHO (
 #endif
-compilerh
+firefox
 
 #ifdef BYTESH_DISABLE_OPTIMIZATION
 )

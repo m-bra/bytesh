@@ -50,4 +50,124 @@
     >     [....] tmphadd $ #define cpt cmdlogpop$$ "trash" $$
     > 
 
-    [0x00] 2025-Sep-13 01:37:58 priv.c:8539 !(bytesh/) $ cpl
+    [0x00] 2025-Sep-13 01:37:58 priv.c:8539 !(bytesh/) $ cpl[0x00] 2026-Jan-24 02:00:35 priv.c:168 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2026-Jan-24 02:01:05 priv.c:170 !(bytesh/) $ cllt
+[0x00] 2025-Oct-19 12:33:49 priv.c:130 $ lsc
+    > total 4.9M
+    > -rw-rw----  1 10182 1023  96K Jun  9 15:30 2025-05-15-BUCHUNG-WARSCHAU .PDF
+    > -rw-rw----  1 10182 1023 101K Jun  9 15:28 2025-05-28-BUCHUNG-WARSCHAU .PDF
+    > -rw-rw----  1 10182 1023 1.5M Jun  9 15:53 2025-06-09-ZEUGENFRAGEBOGEN-B.PDF
+    > -rw-rw----  1 10182 1023 444K Jun  9 15:55 2025-06-09-ZEUGENFRAGEBOGEN-C.PDF
+    > -rw-rw----  1 10182 1023 1.5M Jun  9 15:37 2025-06-09-ZEUGENFRAGEBOGEN .PDF
+    > -rw-rw----  1 10182 1023 825K Jun 26 17:12 2025-06-24-ERWEITERTES-FUEHRUNGSZEUGNIS.PDF
+    > drwxrws---  2 10182 1023 3.4K May 14 10:20 _ALT
+    > -rw-rw----  1 10182 1023  26K Aug 25  2024 ANWAR-LANGUAGE-SCHOOL-PAYMENT.PDF
+    > drwxrws--- 12 10182 1023 3.4K May 17 13:00 ARBEITSSTELLE
+    > drwxrws---  3 10182 1023 3.4K Jun 17 19:06 AUSWEIS
+    > drwxrws---  2 10182 1023 3.4K Jun 17 19:04 _BILDER
+    > drwxrws---  2 10182 1023 3.4K May 14 10:20 BILDUNG
+    > drwxrws---  3 10182 1023 3.4K May 14 10:20 _COPY
+    > drwxrws---  4 10182 1023 3.4K Jun 23 11:45 DATACONTROL
+    > drwxrws---  3 10182 1023 3.4K May 14 10:20 .debris
+    > -rw-rw----  1 10182 1023 166K Sep  7 15:02 Elektrizität.odt
+    > drwxrws---  2 10182 1023 3.4K Aug 18 12:51 FINANZEN
+    > drwxrws---  4 10182 1023 3.4K May 14 10:20 GRUNDSTÜCK
+    > -rw-rw----  1 10182 1023   22 May  3  2024 JONAS NUMMER
+    > drwxrws---  3 10182 1023 3.4K May 14 10:20 MEDIEN
+    > -rw-rw----  1 10182 1023   92 May 14 10:20 .megaignore
+    > drwxrws---  2 10182 1023 3.4K Aug 18 16:26 _NORM
+    > drwxrws---  2 10182 1023 3.4K May 14 10:20 _ORIGINAL
+    > drwxrws---  4 10182 1023 3.4K May 14 10:20 PERSONENTRANSPORT
+    > -rw-rw----  1 10182 1023   64 May 22 21:35 README.TXT
+    > drwxrws---  2 10182 1023 3.4K Sep  1 14:03 RUNDFUNK
+    > drwxrws---  4 10182 1023 3.4K May 14 10:20 SOZIALVERSICHERUNG
+    > drwxrws---  2 10182 1023 3.4K May 14 10:20 STANDESAMT
+    > -rw-rw----  1 10182 1023   36 Sep 10  2023 STEUER-ID
+    > drwxrws---  2 10182 1023 3.4K Jun  6 15:52 TELEFONIE
+    > drwxrws---  2 10182 1023 3.4K May 24 15:03 _TMP
+    > -rw-rw----  1 10182 1023 200K May 16 13:01 UNTERSCHRIFTEN.JPEG
+
+    [0x00] 2026-Jan-24 02:01:20 priv.c:165 !(bytesh/) $ cllt
+[0x00] 2025-Oct-19 12:33:36 priv.c:128 $ cd$$"../.."$$
+
+    [0x00] 2026-Jan-24 02:01:27 priv.c:130 !(bytesh/) $ cllt
+[0x00] 2026-Jan-24 02:01:33 priv.c:128 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2026-Jan-24 02:01:48 priv.c:130 !(bytesh/) $ cllt
+[0x00] 2025-Oct-16 17:25:28 priv.c:125 !(bytesh/) $ cat$$"SOZIALVERSICHERUNGSNUMMER"$$
+    > 22101138B010
+
+    [0x00] 2026-Jan-24 02:01:54 priv.c:128 !(bytesh/) $ cllt
+[0x00] 2025-Oct-16 17:24:43 priv.c:118 !(bytesh/) $ lsc
+    > total 35K
+    > drwxrws--- 2 10182 1023 3.4K May 24 15:03 DAK
+    > -rw-rw---- 1 10182 1023  23K Nov 12  2022 KINDERGELD KÜNDIGUNG.ODT
+    > drwxrws--- 2 10182 1023 3.4K May 14 10:21 RENTE
+    > -rw-rw---- 1 10182 1023   13 Sep 10  2023 SOZIALVERSICHERUNGSNUMMER
+
+    [0x00] 2026-Jan-24 02:01:58 priv.c:125 !(bytesh/) $ cllt
+[0x00] 2025-Oct-16 17:24:38 priv.c:116 !(bytesh/) $ cd$$"DE"$$
+
+    [0x00] 2026-Jan-24 02:02:04 priv.c:118 !(bytesh/) $ for (int i = 0; i < 1; ++i) cllt
+[0x00] 2025-Oct-16 17:24:29 priv.c:114 !(bytesh/) $ cd$$"SOZIALVERSICHERUNG"$$
+
+    [0x00] 2026-Jan-24 02:02:16 priv.c:116 !(bytesh/) $ for (int i = 0; i < 2; ++i) cllt
+[0x00] 2025-Oct-16 17:23:49 priv.c:110 !(bytesh/) $ cd$$"Documents"$$
+
+    [0x00] 2025-Oct-16 17:24:02 priv.c:112 !(bytesh/) $ cd$$"MEGABUEROKRATIE"$$
+[0x00] 2025-Oct-16 17:23:41 priv.c:107 $ pwd
+    > /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2026-Jan-24 02:02:33 priv.c:110 !(bytesh/) $ cllt
+[0x00] 2025-Oct-16 17:23:37 priv.c:88 $ lsc
+    > total 18K
+    > drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    > lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    > lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    > lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    > -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 18:57 (external) Dynalist
+    > lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    > -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 19:04 main.c
+    > drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    > lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    > drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 23 12:37 mntc2
+    > drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    > lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    > lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 23 12:30 .termux -> /home/mbrandt/TROOT/home/.termux
+    > lrwxrwxrwx 1 mbrandt mbrandt   34 Aug 19 13:40 .termuxlinktostorage -> /storage/self/primary/mntc/.termux
+    > drwx------ 3 mbrandt mbrandt 3.4K Sep 24 08:53 tmp
+    > lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2026-Jan-24 02:02:48 priv.c:107 !(bytesh/) $ cllt
+[0x00] 2025-Oct-16 17:23:24 priv.c:69 $ lsc
+    > total 18K
+    > drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 10 18:50 .bak
+    > lrwxrwxrwx 1 mbrandt mbrandt   31 Aug 10 15:27 Documents -> /home/mbrandt/storage/Documents
+    > lrwxrwxrwx 1 mbrandt mbrandt   30 Aug 10 15:27 Download -> /home/mbrandt/storage/Download
+    > lrwxrwxrwx 1 mbrandt mbrandt   23 Aug 10 16:31 DownloadPRoot -> /home/mbrandt/Downloads
+    > -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 18:57 (external) Dynalist
+    > lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 10 15:28 freelancer -> /home/mbrandt/storage/freelancer
+    > -rw-r--r-- 1 mbrandt mbrandt    0 Aug 10 19:04 main.c
+    > drwxr-xr-x 2 mbrandt mbrandt 3.4K Aug 10 15:49 media
+    > lrwxrwxrwx 1 mbrandt mbrandt   26 Aug 10 14:26 mntc -> /home/mbrandt/storage/mntc
+    > drwxr-xr-x 3 mbrandt mbrandt 3.4K Aug 23 12:37 mntc2
+    > drwxr-xr-x 5 mbrandt mbrandt 3.4K Aug 10 16:27 opt
+    > lrwxrwxrwx 1 mbrandt mbrandt   26 Jul  4 21:49 prj -> /storage/self/primary/prj/
+    > lrwxrwxrwx 1 mbrandt mbrandt   32 Aug 23 12:30 .termux -> /home/mbrandt/TROOT/home/.termux
+    > lrwxrwxrwx 1 mbrandt mbrandt   34 Aug 19 13:40 .termuxlinktostorage -> /storage/self/primary/mntc/.termux
+    > drwx------ 3 mbrandt mbrandt 3.4K Sep 24 08:53 tmp
+    > lrwxrwxrwx 1 mbrandt mbrandt   25 Aug 10 15:57 tmp2 -> /home/mbrandt/storage/tmp
+
+    [0x00] 2026-Jan-24 02:02:53 priv.c:88 !(bytesh/) $ cllt
+[0x00] 2025-Sep-26 00:40:02 priv.c:66 !(bytesh/) $ pwd
+    > /data/data/com.termux/files/home/mbrandt
+
+    [0x00] 2026-Jan-24 02:02:57 priv.c:69 !(bytesh/) $ cllt
+[0x00] 2025-Sep-26 00:39:56 priv.c:64 !(bytesh/) $ cdhome
+
+    [0x00] 2026-Jan-24 02:03:26 priv.c:66 !(bytesh/) $ for (int i = 0; i < 2; ++i) cllt
+[0x00] 2025-Sep-25 21:57:52 priv.c:60 !(bytesh/) $ lsc
+    > total 167K
+    [0x00] 2025-Sep-25 21:58:47 priv.c:79 !(bytesh/) $ cmdlogedit
+
