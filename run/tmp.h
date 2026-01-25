@@ -49,3 +49,7 @@
 #define cdbytesh cd$$ ROOTC(".") $$
 
 
+#define cdup cd$$ ".." $$
+
+# define gitstatus sh$$ "git status" $$
+

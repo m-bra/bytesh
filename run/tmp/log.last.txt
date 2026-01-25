@@ -216,3 +216,331 @@
     > 	run/tmp/stardict.txt
     > 
     > no changes added to commit (use "git add" and/or "git commit -a")
+
+    [0x00] 2026-Jan-25 22:34:41 priv.c:218 !(bytesh/) $ cd$$ "../C*" $$
+
+    [0x00] 2026-Jan-25 22:34:52 priv.c:220 !(bytesh/) $ cd$$ "../" $$
+
+    [0x00] 2026-Jan-25 22:34:58 priv.c:222 !(bytesh/) $ lsc
+    > total 55K
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:33 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:35:00 priv.c:239 !(bytesh/) $ cd$$ "C-OpenGL-Wasm-m5-development" $$
+
+    [0x00] 2026-Jan-25 22:36:05 priv.c:241 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2026-Jan-25 22:36:13 priv.c:243 !(bytesh/) $ bak$$ "C-OpenGL-Wasm-m5-development" $$
+
+    [0x00] 2026-Jan-25 22:36:34 priv.c:245 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2026-Jan-25 22:36:37 priv.c:248 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2026-Jan-25 22:36:42 priv.c:250 !(bytesh/) $ lsc
+    > total 55K
+    > drwxrws--- 3 10182 1023 3.4K Jan 25 20:36 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:35 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:36:45 priv.c:267 !(bytesh/) $ cd$$ "camera-app-master" $$
+
+    [0x00] 2026-Jan-25 22:37:06 priv.c:269 !(bytesh/) $ sh$$ "git status" $$
+
+    [0x00] 2026-Jan-25 22:37:16 priv.c:271 !(bytesh/) $ lsc
+    > total 19K
+    > -rw-rw---- 1 10182 1023 1.9K Dec 13  2024 app.js
+    > -rw-rw---- 1 10182 1023  844 Dec 13  2024 index.html
+    > drwxrws--- 2 10182 1023 3.4K Dec 13  2024 part-1
+    > drwxrws--- 2 10182 1023 3.4K Dec 13  2024 part-2
+    > -rw-rw---- 1 10182 1023  883 Dec 13  2024 style.css
+
+    [0x00] 2026-Jan-25 22:37:30 priv.c:279 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2026-Jan-25 22:37:36 priv.c:281 !(bytesh/) $ tmphadd
+    >     [....] tmphadd $ #define cdup cd$$ ".." $$
+    > 
+
+    [0x00] 2026-Jan-25 22:37:55 priv.c:285 !(bytesh/) $ pwd
+    > /storage/self/primary/prj
+
+    [0x00] 2026-Jan-25 22:38:11 priv.c:288 !(bytesh/) $ lsc
+    > total 55K
+    > drwxrws--- 3 10182 1023 3.4K Jan 25 20:36 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:37 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:38:14 priv.c:305 !(bytesh/) $ cd$$ "helloworld-js" $$
+
+    [0x00] 2026-Jan-25 22:38:44 priv.c:307 !(bytesh/) $ lsc
+    > total 540K
+    > -rw-rw---- 1 10182 1023 8.9M Apr  6  2025 core
+    > -rw-rw---- 1 10182 1023 4.1K Apr  3  2025 index.html
+
+    [0x00] 2026-Jan-25 22:39:02 priv.c:312 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:39:08 priv.c:314 !(bytesh/) $ pwd
+    > /storage/self/primary/prj
+
+    [0x00] 2026-Jan-25 22:39:10 priv.c:317 !(bytesh/) $ bak$$ "helloworld-js" $$
+
+    [0x00] 2026-Jan-25 22:39:19 priv.c:319 !(bytesh/) $ cd$$ "m5" $$
+
+    [0x00] 2026-Jan-25 22:39:36 priv.c:321 !(bytesh/) $ 
+
+    [0x00] 2026-Jan-25 22:39:40 priv.c:323 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2026-Jan-25 22:39:44 priv.c:326 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:39:47 priv.c:328 !(bytesh/) $ cd$$ "./m5" $$
+
+    [0x00] 2026-Jan-25 22:39:54 priv.c:330 !(bytesh/) $ tmphadd
+    >     [....] tmphadd $ # define gitstatus sh$$ "git status" $$
+    > 
+
+    [0x00] 2026-Jan-25 22:40:10 priv.c:334 !(bytesh/) $ gitstatus
+
+    [0x00] 2026-Jan-25 22:40:34 priv.c:336 !(bytesh/) $ sh$$ "git config --global --add safe.directory /storage/self/primary/prj/m5" $$
+
+    [0x00] 2026-Jan-25 22:40:43 priv.c:338 !(bytesh/) $ gitstatus
+    > On branch master
+    > 
+    > No commits yet
+    > 
+    > Untracked files:
+    >   (use "git add <file>..." to include in what will be committed)
+    > 	.gitignore
+    > 	Cargo.toml
+    > 	src/
+    > 
+    > nothing added to commit but untracked files present (use "git add" to track)
+
+    [0x00] 2026-Jan-25 22:40:50 priv.c:351 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2026-Jan-25 22:40:58 priv.c:353 !(bytesh/) $ bak$$ "m5" $$
+
+    [0x00] 2026-Jan-25 22:41:09 priv.c:355 !(bytesh/) $ 
+
+    [0x00] 2026-Jan-25 22:41:12 priv.c:357 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:41:14 priv.c:359 !(bytesh/) $ bak$$ "m5.old" $$
+
+    [0x00] 2026-Jan-25 22:41:20 priv.c:361 !(bytesh/) $ lsc
+    > total 45K
+    > drwxrws--- 6 10182 1023 3.4K Jan 25 20:41 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:41 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:41:23 priv.c:375 !(bytesh/) $ cd$$ "outlook" $$
+
+    [0x00] 2026-Jan-25 22:41:34 priv.c:377 !(bytesh/) $ lsc
+    > total 95K
+    > -rw-rw----   1 10182 1023  504 May  7  2025 config.xml
+    > -rw-rw----   1 10182 1023  889 May  7  2025 .gitignore
+    > drwxrws--- 151 10182 1023 8.0K May  7  2025 node_modules
+    > -rw-rw----   1 10182 1023  518 May  7  2025 package.json
+    > -rw-rw----   1 10182 1023  66K May  7  2025 package-lock.json
+    > drwxrws---   3 10182 1023 3.4K May  7  2025 platforms
+    > drwxrws---   5 10182 1023 3.4K May  7  2025 www
+
+    [0x00] 2026-Jan-25 22:42:02 priv.c:387 !(bytesh/) $ cd$$ ".." $$
+
+    [0x00] 2026-Jan-25 22:42:07 priv.c:389 !(bytesh/) $ bak$$ "outlook" $$
+
+    [0x00] 2026-Jan-25 22:49:53 priv.c:391 !(bytesh/) $ pwd
+    > /storage/self/primary/prj/bytesh
+
+    [0x00] 2026-Jan-25 22:49:55 priv.c:394 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:49:57 priv.c:396 !(bytesh/) $ lsc
+    > total 41K
+    > drwxrws--- 7 10182 1023 3.4K Jan 25 20:42 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:45 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:50:00 priv.c:409 !(bytesh/) $ bak$$ "core" $$
+
+    [0x00] 2026-Jan-25 22:50:08 priv.c:411 !(bytesh/) $ cd$$ "qemu" $$
+
+    [0x00] 2026-Jan-25 22:50:20 priv.c:413 !(bytesh/) $ lsc
+    > total 228K
+    > -rw-rw---- 1 10182 1023 193K Jul 23  2025 hda
+    > -rw-rw---- 1 10182 1023  28K Jul 21  2025 help.txt
+    > -rw-rw---- 1 10182 1023   61 Jul 21  2025 main.c
+
+    [0x00] 2026-Jan-25 22:50:52 priv.c:419 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:50:56 priv.c:421 !(bytesh/) $ pwd
+    > /storage/self/primary/prj
+
+    [0x00] 2026-Jan-25 22:51:06 priv.c:424 !(bytesh/) $ bak$$ "qemu" $$
+
+    [0x00] 2026-Jan-25 22:51:16 priv.c:426 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:51:19 priv.c:428 !(bytesh/) $ lsc
+    > total 38K
+    > drwxrws--- 8 10182 1023 3.4K Jan 25 20:51 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:51 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:51:20 priv.c:439 !(bytesh/) $ cd$$ "test" $$
+
+    [0x00] 2026-Jan-25 22:51:31 priv.c:441 !(bytesh/) $ lsc
+    > total 4.0K
+    > -rw-rw---- 1 10182 1023   0 Jul 24  2025 core
+    > -rw-rw---- 1 10182 1023 945 Jul 25  2025 main.c
+
+    [0x00] 2026-Jan-25 22:51:33 priv.c:446 !(bytesh/) $ cat$$ "main.c" $$
+    > #include <stdio.h>
+    > #include <unistd.h>
+    > 
+    > #define DEL_LINE "\033[2K\033[T"
+    > 
+    > char *rootworkdir;
+    > int isfirstcmd;
+    > 
+    > int printwchartable (char const *src, int const n)
+    > {
+    >     char sz [strlen(src)] ;
+    >     strcpy(sz, src);
+    >     for (int i = 0; i < n; ++i)
+    >     {
+    >    		printf("%s%s - ", sz, sz);
+    >    		for (int i = 0; i < (int) strlen(sz); ++i)
+    >    			printf("%X", (int)sz[i]);
+    >    		printf("\n");
+    > 	    sz [strlen(sz) - 1] ++ ;
+    >    			
+    >     }
+    >     return 0;
+    > }
+    > 
+    > int main (void)
+    > {
+    > 	int const N = 10;
+    > 	char const *src = "𝐵";
+    > 	char sz [strlen(src)] ;
+    >     strcpy(sz, src);
+    >     
+    > 	while (1)
+    > 	{
+    > 		printwchartable (sz, N);
+    > 
+    > 		// ssize_t read(size_t count;
+    > 		//              int fd, void buf[count], size_t count);
+    > 		char buf[5];
+    > 		(void) read(STDIN_FILENO, buf, 1);
+    > 	    //if ( event == (int) 'j' )
+    > 	    //	src += 1;
+    > 		//if ( event == (int) 'k' )
+    > 		//	src -= 1;
+    > 		
+    >         sz [strlen(sz) - 1] ++ ;
+    > 			
+    > 		for (int i = 0; i < N + 1; ++i)
+    > 			printf ("%s", DEL_LINE);		
+    > 	}
+    > }
+
+    [0x00] 2026-Jan-25 22:51:46 priv.c:498 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:51:51 priv.c:500 !(bytesh/) $ lsc
+    > total 38K
+    > drwxrws--- 8 10182 1023 3.4K Jan 25 20:51 .bak
+    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
+    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:51 bytesh
+    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
+    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
+    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
+    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
+    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+
+    [0x00] 2026-Jan-25 22:52:06 priv.c:511 !(bytesh/) $ bak$$ "test.txt" $$
+
+    [0x00] 2026-Jan-25 22:52:15 priv.c:513 !(bytesh/) $ cd$$ "textstreamanimate" $$
+
+    [0x00] 2026-Jan-25 22:52:52 priv.c:515 !(bytesh/) $ cdup
+
+    [0x00] 2026-Jan-25 22:52:56 priv.c:517 !(bytesh/) $ cd$$ "bytesh" $$
+
+    [0x00] 2026-Jan-25 22:53:01 priv.c:519 !(bytesh/) $ gitstatus
+    > On branch master2
+    > Your branch is ahead of 'origin/master2' by 1 commit.
+    >   (use "git push" to publish your local commits)
+    > 
+    > Changes not staged for commit:
+    >   (use "git add/rm <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   .gitignore
+    > 	deleted:    cflags
+    > 	deleted:    cnslutil.h.bak
+    > 	deleted:    core
+    > 	deleted:    dir.h
+    > 	deleted:    main.c.bak
+    > 	deleted:    main.ppm
+    > 	modified:   run/cnslutil/diff.txt
+    > 	modified:   run/tmp.h
+    > 	modified:   run/tmp/log.last.txt
+    > 	deleted:    status.txt
+    > 	deleted:    tmp.txt
+    > 
+    > Untracked files:
+    >   (use "git add <file>..." to include in what will be committed)
+    > 	.bak/
+    > 
+    > no changes added to commit (use "git add" and/or "git commit -a")
