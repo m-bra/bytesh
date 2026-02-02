@@ -3,14 +3,15 @@
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 #define NOSTDIOH
+#define NOUNISTDH
 #include "main.h"
 
-/* -lc */
-int dup(int);
-char *getcwd(char *, size_t);
+int F_OK_VAR = F_OK;
 
+/* -lc */
 int ORIGINAL_STDOUT_FILENO;
 int counter = 14;
 

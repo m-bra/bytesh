@@ -121,6 +121,8 @@ void hcreate(char *name);
 #define hadd(namepath)   haddfn(namepath, 0)
 #define haddfn(namepath, ident) hadditem(namepath, ident, 0)
 
+#define gdbbt$$ sh$$ "gdb %s -ex run -ex bt --btach", 
+
 void hadditem(char *namepath, char *ident, int preprocessor);
 
 #define cnslutilhadd xyzhadd("cnslutil")

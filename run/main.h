@@ -1,6 +1,7 @@
 #ifndef RUN_MAIN_H_INCLUDED
 #define RUN_MAIN_H_INCLUDED
 
+#include <sys/types.h>
 #include <stddef.h> // for size_t
 
 /* stdlib.h */
@@ -34,17 +35,17 @@ char *strchrnul(const char *s, int c);
 
 struct FILE;
 typedef struct FILE FILE;
-int printf(const char *restrict format, ...);
-int fprintf(struct FILE *restrict stream,
-            const char *restrict format, ...);
-int sprintf(char *restrict str,
-            const char *restrict format, ...);
+int printf(const char *format, ...);
+int fprintf(struct FILE *stream,
+            const char *format, ...);
+int sprintf(char *str,
+            const char *format, ...);
 int snprintf(
             char *str, size_t size,
-            const char *restrict format, ...);
+            const char *format, ...);
 void perror(const char *sz);
 
-FILE *fopen(const char *restrict path, const char *restrict mode);
+FILE *fopen(const char *path, const char *mode);
 int fclose(FILE *stream);
 int fflush(FILE */*_Nullable*/ stream);
 FILE *fmemopen(
@@ -57,18 +58,18 @@ int pclose(FILE *);
 
 size_t fread(       void *ptr,
                     size_t size, size_t n,
-                    FILE *restrict stream);
+                    FILE *stream);
 size_t fwrite(const void *ptr,
                     size_t size, size_t n,
-                    FILE *restrict stream);
+                    FILE *stream);
 
-char *fgets(char *sz, int size, FILE *restrict stream);
+char *fgets(char *sz, int size, FILE *stream);
 
 int fputc(int c, FILE *stream);
 int putc(int c, FILE *stream);
 int putchar(int c);
 
-int fputs(const char *restrict s, FILE *restrict stream);
+int fputs(const char *s, FILE *stream);
 int puts(const char *s);
 
 #endif
@@ -80,12 +81,25 @@ int puts(const char *s);
 void seterrno(int);
 int geterrno();
 
-/* unistd */
+/* unistd.h */
+
+#ifndef NOUNISTDH
 
 #define STDIN_FILENO 0
 #define STDOUT_FILENO 1
 #define STDERR_FILENO 2
-int dup2(int, int);
+int dup(int oldfd);
+
+char *getcwd(char *buf, size_t size);
+pid_t fork();
+int execl(const char *path, const char *arg, ...);
+int dup2(int oldfd, int newfd);
+int chdir(const char *path);
+int access(const char *path, int mode);
+extern int F_OK_VAR;
+#define F_OK F_OK_VAR
+
+#endif
 
 //#include <termios.h>
 

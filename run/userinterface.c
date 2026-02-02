@@ -87,7 +87,7 @@ thn blk
 	iff strstr(buf, "$")
 	thn break;
 	blk_end
-    stm es$ buf $;
+    stm EVALECHO( es$ buf $; )
     stm buf = strstr(buf, "$") + 1;
     iff strlen(buf) > 80
     thn buf[79] = '\0';

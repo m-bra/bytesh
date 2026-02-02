@@ -2,17 +2,17 @@
 #include <sys/wait.h>
 #include "run/main.h"
 
-#include <stdlib.h>
-#include <unistd.h>
+//#include <stdlib.h>
+//#include <unistd.h>
 //#include <fcntl.h>
 
 #define _XOPEN_SOURCE 600
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <sys/types.h>
 #include <time.h>
-#include <termios.h>
+//#include <termios.h>
 
 typedef char **ppchar;
 typedef char *pchar;
@@ -88,6 +88,8 @@ stm dup2(STDOUT_FILENO, STDERR_FILENO);
     end_blk
 //e
 
+    sh$$ "touch %s", ROOTC("/run/cwd.txt") $$;
+    sh$$ "touch %s", ROOTC("/run/status.txt") $$;
 
 iff ctxt->interactive
 thn printfflush("%s[press enter] ", GLOBAL_INDENT);
@@ -391,6 +393,8 @@ rep ifn fgets(status, linebuf_tn, statusfile)
     thn break;
 stm fclose(statusfile);
 int skipstatuslen = strlen(status) - 5;
+iff skipstatuslen < 0
+thn skipstatuslen = 0;
 chr *skipstatus = mallocadd(skipstatuslen + 1);
 for range(0, skipstatuslen)
 stm skipstatus[i] = ' ';

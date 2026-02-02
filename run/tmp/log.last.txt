@@ -637,3 +637,63 @@
     > 
 
     [0x00] 2026-Jan-25 22:59:20 priv.c:637 !(bytesh/) $ sh$$ "git add dir.h" $$
+
+    [0x00] 2026-Feb-03 00:12:44 priv.c:639 $ pwd
+    > /data/data/com.termux/files/home/prj/bytesh
+
+    [0x00] 2026-Feb-03 00:12:53 priv.c:642 $ gitupdate
+
+    [0x00] 2026-Feb-03 00:13:13 priv.c:644 $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is up to date with 'origin/master2'.
+    > 
+    > Changes to be committed:
+    >   (use "git restore --staged <file>..." to unstage)
+    > 	modified:   main.c
+    > 	renamed:    run/build.c.o -> run/.bak/build.c.o
+    > 	renamed:    run/cnslutil.c.o -> run/.bak/cnslutil.c.o
+    > 	renamed:    run/errno.c.o -> run/.bak/errno.c.o
+    > 	renamed:    run/htmlutil.c.o -> run/.bak/htmlutil.c.o
+    > 	new file:   run/.bak/mainstatic.c.o
+    > 	renamed:    run/mntc.c.o -> run/.bak/mntc.c.o
+    > 	renamed:    run/scanfs.c.o -> run/.bak/scanfs.c.o
+    > 	renamed:    run/stdioext.c.o -> run/.bak/stdioext.c.o
+    > 	renamed:    run/stdlibext.c.o -> run/.bak/stdlibext.c.o
+    > 	renamed:    run/stringext.c.o -> run/.bak/stringext.c.o
+    > 	renamed:    run/stringutil.c.o -> run/.bak/stringutil.c.o
+    > 	renamed:    run/trpg.c.o -> run/.bak/trpg.c.o
+    > 	renamed:    run/unistdext.c.o -> run/.bak/unistdext.c.o
+    > 	renamed:    run/userinterface.c.o -> run/.bak/userinterface.c.o
+    > 	new file:   run/build.o
+    > 	modified:   run/cnslutil.h
+    > 	new file:   run/cnslutil.o
+    > 	new file:   run/errno.o
+    > 	new file:   run/htmlutil.o
+    > 	modified:   run/main.h
+    > 	new file:   run/main.o
+    > 	modified:   run/mainstatic.c
+    > 	deleted:    run/mainstatic.c.o
+    > 	new file:   run/mainstatic.o
+    > 	new file:   run/mntc.o
+    > 	new file:   run/scanfs.o
+    > 	new file:   run/stdioext.o
+    > 	new file:   run/stdlibext.o
+    > 	new file:   run/stringext.o
+    > 	new file:   run/stringutil.o
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 	new file:   run/trpg.o
+    > 	new file:   run/unistdext.o
+    > 	modified:   run/userinterface.c
+    > 	new file:   run/userinterface.o
+    > 
+    > Changes not staged for commit:
+    >   (use "git add <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 
+
+    [0x00] 2026-Feb-03 00:16:41 priv.c:695 !(bytesh/) $ sh$$" git config --global user.email merlin.brandt@hotmail.de"$$
+
+    [0x00] 2026-Feb-03 00:16:54 priv.c:697 !(bytesh/) $ sh$$"git config --global user.name Brandt"$$
