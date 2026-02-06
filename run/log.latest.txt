@@ -170,4 +170,5135 @@
 [0x00] 2025-Sep-25 21:57:52 priv.c:60 !(bytesh/) $ lsc
     > total 167K
     [0x00] 2025-Sep-25 21:58:47 priv.c:79 !(bytesh/) $ cmdlogedit
+[0x00] 2026-Feb-03 21:41:16 priv.c:1355 $  edit$$ "tmp.txt" $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 20:41:22.137449687 +0100
+    > --- tmp.txt	2026-02-03 21:19:00.705448072 +0100
+    > ***************
+    > *** 1,9 ****
+    > ! 
+    > !                                       
+    > ! 
+    > ! 
+    >   
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    >   
+    > --- 1,6 ----
+    > ! NAME -> KTGR -> (DATE | VERW)
+    >   
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    >   
+    > ***************
+    > *** 238,250 ****
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,66â¬
+    >   
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    > ! 12.09.2025 -1,35â¬
+    > ! PAYPAL *ruben.hummitzs
+    > ! Mastercard
+    >   DATE 13.09.2025 -5,00â¬
+    >   
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 13.09.2025 -0,58â¬
+    > --- 235,248 ----
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,66â¬
+    >   
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    > ! DATE 12.09.2025 -1,35â¬
+    > ! 
+    > ! NAME PAYPAL *ruben.hummitzs
+    > ! KTGR 
+    >   DATE 13.09.2025 -5,00â¬
+    >   
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 13.09.2025 -0,58â¬
+    > ***************
+    > *** 679,691 ****
+    >   KTGR Freizeit
+    >   DATE 13.10.2025 -10,39â¬
+    >   
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    > ! 14.10.2025 -11,55â¬
+    > ! PAYPAL *ruben.hummitzs
+    > ! Mastercard
+    >   DATE 14.10.2025 -350,00â¬
+    >   
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    > --- 677,690 ----
+    >   KTGR Freizeit
+    >   DATE 13.10.2025 -10,39â¬
+    >   
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    > ! DATE 14.10.2025 -11,55â¬
+    > ! 
+    > ! NAME PAYPAL *ruben.hummitzs
+    > ! KTGR
+    >   DATE 14.10.2025 -350,00â¬
+    >   
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    > ***************
+    > *** 1272,1282 ****
+    >   KTGR Freizeit
+    >   DATE 08.12.2025 -19,10â¬
+    >   
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    > ! 09.12.2025 -2,68â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 09.12.2025 +50,00â¬
+    >   
+    > --- 1271,1281 ----
+    >   KTGR Freizeit
+    >   DATE 08.12.2025 -19,10â¬
+    >   
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    > ! DATE 09.12.2025 -2,68â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 09.12.2025 +50,00â¬
+    >   
+    > ***************
+    > *** 1496,1506 ****
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -3,20â¬
+    >   
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    > ! 19.12.2025 +24,99â¬
+    >   
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -2,30â¬
+    >   
+    > --- 1495,1505 ----
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -3,20â¬
+    >   
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    > ! DATE 19.12.2025 +24,99â¬
+    >   
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -2,30â¬
+    >   
+    > ***************
+    > *** 1987,1997 ****
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,63â¬
+    >   
+    >   NAME FLIXBUS.COM
+    >   KTGR Transport
+    > ! 15.01.2026 -33,98â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 15.01.2026 +200,00â¬
+    >   
+    > --- 1986,1996 ----
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,63â¬
+    >   
+    >   NAME FLIXBUS.COM
+    >   KTGR Transport
+    > ! DATE 15.01.2026 -33,98â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 15.01.2026 +200,00â¬
+    >   
+    > ***************
+    > *** 2203,2213 ****
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -41,32â¬
+    >   
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    > ! 01.02.2026 -2,38â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 02.02.2026 +100,00â¬
+    >   
+    > --- 2202,2212 ----
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -41,32â¬
+    >   
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    > ! DATE 01.02.2026 -2,38â¬
+    >   
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 02.02.2026 +100,00â¬
+    >   
+    > ***************
+    > *** 2224,2232 ****
+    >   DATE 03.02.2026 -26,78â¬
+    >   
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.02.2026 -4,50â¬
+    > - VorlÃ¤ufiger Kontoauszug
+    > - 01.02.2026 bis 03.02.2026
+    > - 
+    > - 
+    > --- 2223,2227 ----
+
+    [0x00] 2026-Feb-03 22:19:20 priv.c:1549 $ cllt
+[0x00] 2026-Feb-03 19:51:45 priv.c:1353 $ edit$$ "tmp.txt" $$
+
+    [0x00] 2026-Feb-03 22:19:26 priv.c:1355 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:21:31 priv.c:1376 !(bytesh/) $  edit$$ "tmp.txt" $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 21:21:40.097447958 +0100
+    > --- tmp.txt	2026-02-03 21:24:21.445447843 +0100
+    > ***************
+    > *** 1,2228 ****
+    > ! áª -> NAME -> KTGR -> DATE -> áª 
+    > !                   -> VERW
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    > ! 
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 02.09.2025 -0,17â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 02.09.2025 -0,82â¬
+    > ! 
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 02.09.2025 -1,14â¬
+    > ! 
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 02.09.2025 -1,14â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 03.09.2025 -1,45â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 03.09.2025 -1,66â¬
+    > ! 
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -0,93â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -4,54â¬
+    > ! 
+    >   NAME Maeander Quell GmbH 
+    >   KTGR Ãberweisung
+    >   VERW 145889 / Booklooker - 33321673
+    >   DATE 03.09.2025 -27,60â¬
+    > ! 
+    >   NAME PIN AG
+    >   KTGR Berufsausgaben
+    >   DATE 03.09.2025 -0,88â¬
+    > ! 
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -0,42â¬
+    > ! 
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 04.09.2025 -0,83â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 04.09.2025 -1,04â¬
+    > ! 
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 04.09.2025 -0,34â¬
+    > ! 
+    >   NAME SIM 23
+    >   KTGR Lebensmittel
+    >   DATE 05.09.2025 -0,67â¬
+    > ! 
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 05.09.2025 -1,35â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 06.09.2025 -0,58â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 06.09.2025 -0,83â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 06.09.2025 -1,14â¬
+    > ! 
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 06.09.2025 -0,66â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -3,34â¬
+    > ! 
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,15â¬
+    > ! 
+    >   NAME Bagels Cafe
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -0,94â¬
+    > ! 
+    >   NAME Bagels Cafe
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,36â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,98â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 07.09.2025 -0,57â¬
+    > ! 
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -1,14â¬
+    > ! 
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,73â¬
+    > ! 
+    >   NAME DIMKAVI
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -1,46â¬
+    > ! 
+    >   NAME Halereia
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,83â¬
+    > ! 
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,73â¬
+    > ! 
+    >   NAME KAFE TEATRALNE
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,73â¬
+    > ! 
+    >   NAME KAFE TEATRALNE
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,73â¬
+    > ! 
+    >   NAME KIOSK PRODUKTY
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,65â¬
+    > ! 
+    >   NAME magazin Fokstrot
+    >   KTGR Sonstiges
+    >   DATE 09.09.2025 -7,30â¬
+    > ! 
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 09.09.2025 -1,15â¬
+    > ! 
+    >   NAME Ljubimka
+    >   KTGR Bars & Restaurants
+    >   DATE 09.09.2025 -2,19â¬
+    > ! 
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,52â¬
+    > ! 
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,49â¬
+    > ! 
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,94â¬
+    > ! 
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 10.09.2025 -1,14â¬
+    > ! 
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 10.09.2025 -0,83â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 10.09.2025 -0,83â¬
+    > ! 
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 10.09.2025 -0,57â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 11.09.2025 -0,73â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 11.09.2025 -1,35â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Waehrungstausch
+    >   DATE 11.09.2025 -30,00â¬
+    > ! 
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift August 2025 ubiLearning Solutions GmbH
+    >   DATE 11.09.2025 +106,54â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 11.09.2025 -2,09â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 11.09.2025 -1,76â¬
+    > ! 
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 12.09.2025 -0,17â¬
+    > ! 
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,28â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 12.09.2025 -1,14â¬
+    > ! 
+    >   NAME Magazin Apetit
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,62â¬
+    > ! 
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -1,28â¬
+    > ! 
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -1,10â¬
+    > ! 
+    >   NAME SIM 23
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,66â¬
+    > ! 
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 12.09.2025 -1,35â¬
+    > ! 
+    >   NAME PAYPAL *ruben.hummitzs
+    >   KTGR 
+    >   DATE 13.09.2025 -5,00â¬
+    > ! 
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 13.09.2025 -0,58â¬
+    > ! 
+    >   NAME CAFE STRIT
+    >   KTGR Bars & Restaurants
+    >   DATE 13.09.2025 -1,04â¬
+    > ! 
+    >   NAME RESTORAN AVOCADO
+    >   KTGR Bars & Restaurants
+    >   DATE 13.09.2025 -1,37â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 14.09.2025 -2,69â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 14.09.2025 -1,22â¬
+    > ! 
+    >   NAME MAHAZYN SHCHODNIA
+    >   KTGR Shopping
+    >   DATE 14.09.2025 -0,19â¬
+    > ! 
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,72â¬
+    > ! 
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -1,27â¬
+    > ! 
+    >   NAME KavyarnyaParagraf
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,24â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,45â¬
+    > ! 
+    >   NAME MERCI CAFE
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,35â¬
+    > ! 
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,66â¬
+    > ! 
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,61â¬
+    > ! 
+    >   NAME TAM TAM MINI 2
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,99â¬
+    > ! 
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -1,14â¬
+    > ! 
+    >   NAME 1265
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,00â¬
+    > ! 
+    >   NAME PRODUKTi DOMAShNIi
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -0,93â¬
+    > ! 
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -2,79â¬
+    > ! 
+    >   NAME Kava Avenue KM
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -0,93â¬
+    > ! 
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,28â¬
+    > ! 
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,66â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,03â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,22â¬
+    > ! 
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -0,83â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,01â¬
+    > ! 
+    >   NAME LIQPAY*TOV Bussystem
+    >   KTGR Transport
+    >   DATE 16.09.2025 -7,13â¬
+    > ! 
+    >   NAME KAFE LOFT
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -0,83â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,39â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -1,04â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,57â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,20â¬
+    > ! 
+    >   NAME MAHAZYN SHCHODNIA
+    >   KTGR Shopping
+    >   DATE 17.09.2025 -0,19â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -0,60â¬
+    > ! 
+    >   NAME #1105
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,04â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -0,72â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -1,04â¬
+    > ! 
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 18.09.2025 -0,83â¬
+    > ! 
+    >   NAME KavyarnyaParagraf
+    >   KTGR Bars & Restaurants
+    >   DATE 18.09.2025 -1,24â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 19.09.2025 -0,38â¬
+    > ! 
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 19.09.2025 -0,82â¬
+    > ! 
+    >   NAME COFFEE L.E.M.M.
+    >   KTGR Bars & Restaurants
+    >   DATE 19.09.2025 -0,83â¬
+    > ! 
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 19.09.2025 -0,55â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 20.09.2025 -1,03â¬
+    > ! 
+    >   NAME Student
+    >   KTGR Shopping
+    >   DATE 21.09.2025 -4,03â¬
+    > ! 
+    >   NAME Daily Dosn
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,24â¬
+    > ! 
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,86â¬
+    > ! 
+    >   NAME Kava Aveniu Vynnychenk
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -0,93â¬
+    > ! 
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,86â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,98â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,43â¬
+    > ! 
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 21.09.2025 -0,29â¬
+    > ! 
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -0,81â¬
+    > ! 
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 22.09.2025 -1,55â¬
+    > ! 
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -0,72â¬
+    > ! 
+    >   NAME Domashniy
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -1,07â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 22.09.2025 -1,24â¬
+    > ! 
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! 
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! 
+    >   NAME Kava Aveniu Vynnychenk
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -0,83â¬
+    > ! 
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! 
+    >   NAME Magazin Simimarket
+    >   KTGR Lebensmittel
+    >   DATE 23.09.2025 -1,80â¬
+    > ! 
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 25.09.2025 -0,17â¬
+    > ! 
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,43â¬
+    > ! 
+    >   NAME KAPUChiNO
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,24â¬
+    > ! 
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,63â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,03â¬
+    > ! 
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,47â¬
+    > ! 
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,74â¬
+    > ! 
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,72â¬
+    > ! 
+    >   NAME MAGAZYN 1260
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,45â¬
+    > ! 
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,19â¬
+    > ! 
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,37â¬
+    > ! 
+    >   NAME LIQPAY*TOV Bussystem
+    >   KTGR Transport
+    >   DATE 26.09.2025 -17,65â¬
+    > ! 
+    >   NAME #1105
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,78â¬
+    > ! 
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,54â¬
+    > ! 
+    >   NAME GOODMORNING
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,75â¬
+    > ! 
+    >   NAME KIOSK 40
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,47â¬
+    > ! 
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,19â¬
+    > ! 
+    >   NAME 1202
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -0,50â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -1,50â¬
+    > ! 
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -2,20â¬
+    > ! 
+    >   NAME INFOBUS.EU
+    >   KTGR Transport
+    >   DATE 27.09.2025 -5,96â¬
+    > ! 
+    >   NAME Bistro Intaime
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -4,43â¬
+    > ! 
+    >   NAME Pekarnya"KAVKAZKAVIPIC
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -1,54â¬
+    > ! 
+    >   NAME TARHETMARKET
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -2,19â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 28.09.2025 +25,03â¬
+    > ! 
+    >   NAME POLMAR
+    >   KTGR Lebensmittel
+    >   DATE 29.09.2025 -1,17â¬
+    > ! 
+    >   NAME Pekarnya"KAVKAZKAVIPIC
+    >   KTGR Lebensmittel
+    >   DATE 29.09.2025 -1,66â¬
+    > ! 
+    >   NAME CIRCLE K NOWA DEBA
+    >   KTGR Auto
+    >   DATE 30.09.2025 -2,11â¬
+    > ! 
+    >   NAME PL SBX WARSZAWA ZODIAK
+    >   KTGR Bars & Restaurants
+    >   DATE 30.09.2025 -2,02â¬
+    > ! 
+    >   NAME ZABKA Z4989 K.1
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,40â¬
+    > ! 
+    >   NAME ZABKA Z5579 K.2
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,40â¬
+    > ! 
+    >   NAME CARREFOUR EXPRESS 3327
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,60â¬
+    > ! 
+    >   NAME PAYPAL *INFOBUSGLOB
+    >   KTGR Freizeit
+    >   DATE 01.10.2025 -13,48â¬
+    > ! 
+    >   NAME LUKAS Baecker Grieser
+    >   KTGR Lebensmittel
+    >   DATE 04.10.2025 -1,60â¬
+    > ! 
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 04.10.2025 -1,50â¬
+    > ! 
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift September 2025 ubiLearning Solutions GmbH
+    >   DATE 10.10.2025 +809,83â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 11.10.2025 -1,62â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -2,99â¬
+    > ! 
+    >   NAME leipzig.5elementshoste
+    >   KTGR Freizeit
+    >   DATE 12.10.2025 -32,50â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -0,38â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -1,59â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 12.10.2025 +40,00â¬
+    > ! 
+    >   NAME LOGHANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 13.10.2025 -58,00â¬
+    > ! 
+    >   NAME KONSUM LEIPZIG EG
+    >   KTGR Lebensmittel
+    >   DATE 13.10.2025 -0,39â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 13.10.2025 -1,39â¬
+    >   PAYPAL *ruben.hummitzs
+    >   Mastercard
+    >   DATE 13.10.2025 -350,00â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 13.10.2025 -10,39â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 14.10.2025 -11,55â¬
+    > ! 
+    >   NAME PAYPAL *ruben.hummitzs
+    >   KTGR
+    >   DATE 14.10.2025 -350,00â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 14.10.2025 +60,00â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 15.10.2025 -3,18â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 15.10.2025 -22,47â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 15.10.2025 -1,89â¬
+    > ! 
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 15.10.2025 -2,00â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 16.10.2025 -2,59â¬
+    > ! 
+    >   NAME Starbucks 53206 Leipzi
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -4,20â¬
+    > ! 
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -1,50â¬
+    > ! 
+    >   NAME Huwa GmbH
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -19,80â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -0,77â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -0,98â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -2,14â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 17.10.2025 +25,00â¬
+    > ! 
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 17.10.2025 -13,37â¬
+    > ! 
+    >   NAME REWE Mandy Bronser
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -4,45â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 18.10.2025 -4,08â¬
+    > ! 
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 18.10.2025 -21,96â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 18.10.2025 -2,29â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 19.10.2025 -1,89â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 19.10.2025 -1,59â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 20.10.2025 -0,57â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 20.10.2025 +60,00â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 20.10.2025 -0,65â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 21.10.2025 -1,11â¬
+    > ! 
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 21.10.2025 -24,11â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 22.10.2025 -1,89â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 22.10.2025 -4,48â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 23.10.2025 +30,00â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -0,99â¬
+    > ! 
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 23.10.2025 -14,53â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -0,19â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -2,49â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 24.10.2025 -4,49â¬
+    > ! 
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 24.10.2025 -14,85â¬
+    > ! 
+    >   NAME REWE Matthias Haerzsch
+    >   KTGR Lebensmittel
+    >   DATE 24.10.2025 -2,29â¬
+    > ! 
+    >   NAME MCDONALDS 00923
+    >   KTGR Bars & Restaurants
+    >   DATE 25.10.2025 -2,20â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 25.10.2025 +50,00â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 25.10.2025 -1,90â¬
+    > ! 
+    >   NAME Ristorante Don Giovann
+    >   KTGR Bars & Restaurants
+    >   DATE 25.10.2025 -7,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 25.10.2025 -2,25â¬
+    > ! 
+    >   NAME BERGMANN & SOHN GMBH
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -2,75â¬
+    > ! 
+    >   NAME Ditsch Erfurt Hauptbah
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -2,40â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -0,79â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.10.2025 -2,25â¬
+    > ! 
+    >   NAME Penny Weimar
+    >   KTGR Lebensmittel
+    >   DATE 27.10.2025 -2,38â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.10.2025 -0,51â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 28.10.2025 -3,49â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.10.2025 -0,55â¬
+    > ! 
+    >   NAME REWE Markt GmbH-ZwNL O
+    >   KTGR Lebensmittel
+    >   DATE 29.10.2025 -1,78â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 29.10.2025 -2,44â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 30.10.2025 -0,49â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.10.2025 -0,73â¬
+    > ! 
+    >   NAME MAeC GEIZ Handelsges.
+    >   KTGR Shopping
+    >   DATE 31.10.2025 -1,99â¬
+    > ! 
+    >   NAME dean&david
+    >   KTGR Bars & Restaurants
+    >   DATE 01.11.2025 -3,25â¬
+    > ! 
+    >   NAME REWE Regiemarkt GmbH O
+    >   KTGR Lebensmittel
+    >   DATE 01.11.2025 -0,57â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 01.11.2025 -0,81â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 01.11.2025 +68,00â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 02.11.2025 -1,58â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.11.2025 -2,25â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 02.11.2025 -12,60â¬
+    > ! 
+    >   NAME Penny Weimar
+    >   KTGR Lebensmittel
+    >   DATE 02.11.2025 -3,78â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 04.11.2025 +58,00â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,39â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 04.11.2025 -3,56â¬
+    > ! 
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,39â¬
+    > ! 
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 04.11.2025 -4,55â¬
+    > ! 
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,21â¬
+    > ! 
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -13,50â¬
+    > ! 
+    >   NAME Starbucks 85315 Leipzi
+    >   KTGR Bars & Restaurants
+    >   DATE 04.11.2025 -3,20â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 04.11.2025 +54,00â¬
+    > ! 
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Berufsausgaben
+    >   DATE 05.11.2025 -14,99â¬
+    > ! 
+    >   NAME PAYPAL *HANDYTICKET
+    >   KTGR Transport
+    >   DATE 05.11.2025 -58,00â¬
+    > ! 
+    >   NAME SumUp *Gondals Feinba
+    >   KTGR Lebensmittel
+    >   DATE 06.11.2025 -2,70â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.11.2025 -55,55â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.11.2025 -0,58â¬
+    > ! 
+    >   NAME REWE Markt GmbH-ZwNL O
+    >   KTGR Lebensmittel
+    >   DATE 06.11.2025 -1,69â¬
+    > ! 
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW ao MERLIN BRANDT
+    >   DATE 10.11.2025 +2,00â¬
+    > ! 
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift Oktober 2025 ubiLearning Solutions GmbH
+    >   DATE 11.11.2025 +1.613,65â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.11.2025 -1,28â¬
+    > ! 
+    >   NAME Starbucks 53165 Am Mon
+    >   KTGR Bars & Restaurants
+    >   DATE 12.11.2025 -2,50â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 12.11.2025 -202,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.11.2025 -17,53â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.11.2025 -32,70â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -11,56â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -0,85â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -3,20â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 15.11.2025 -15,39â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 16.11.2025 -0,77â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 16.11.2025 -202,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -0,98â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -23,01â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -19,68â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.11.2025 -1,28â¬
+    > ! 
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 18.11.2025 -201,49â¬
+    > ! 
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 18.11.2025 -203,29â¬
+    > ! 
+    >   NAME KFC 691
+    >   KTGR Bars & Restaurants
+    >   DATE 18.11.2025 -2,29â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 19.11.2025 -6,47â¬
+    > ! 
+    >   NAME LS BEIGE LOUNGE
+    >   KTGR Bars & Restaurants
+    >   DATE 19.11.2025 -3,80â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 19.11.2025 -22,96â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.11.2025 -1,27â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 20.11.2025 -203,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.11.2025 -0,64â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 22.11.2025 -5,94â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 22.11.2025 -11,83â¬
+    > ! 
+    >   NAME REWE Christian Fri
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -2,69â¬
+    > ! 
+    >   NAME FeinbÃ¤ckerei Thiele Fi
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -1,47â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -0,90â¬
+    > ! 
+    >   NAME REWE Christian Fri
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -0,49â¬
+    > ! 
+    >   NAME REWE Stuttgart Kronens
+    >   KTGR Lebensmittel
+    >   DATE 25.11.2025 -1,99â¬
+    > ! 
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 25.11.2025 -10,10â¬
+    > ! 
+    >   NAME Back-Factory Stuttgart
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -1,85â¬
+    > ! 
+    >   NAME REWE Stuttgart Kronens
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -1,76â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.11.2025 -16,00â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -0,10â¬
+    > ! 
+    >   NAME 93030144 Karlsruhe Bhf
+    >   KTGR Bars & Restaurants
+    >   DATE 26.11.2025 -2,19â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -0,10â¬
+    > ! 
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 27.11.2025 -3,25â¬
+    > ! 
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 27.11.2025 -2,70â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.11.2025 -20,72â¬
+    > ! 
+    >   NAME KAMPS STUTTGART 504039
+    >   KTGR Lebensmittel
+    >   DATE 28.11.2025 -2,95â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 28.11.2025 -4,98â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 29.11.2025 -4,96â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 29.11.2025 -14,42â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.11.2025 -15,93â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 30.11.2025 -3,24â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 01.12.2025 -19,43â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 01.12.2025 -2,90â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 01.12.2025 -3,98â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.12.2025 -15,00â¬
+    > ! 
+    >   NAME 63210150 Frankfurt Mai
+    >   KTGR Bars & Restaurants
+    >   DATE 02.12.2025 -3,80â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 03.12.2025 -3,20â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 03.12.2025 -7,76â¬
+    > ! 
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Berufsausgaben
+    >   DATE 03.12.2025 -14,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.12.2025 -15,00â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 04.12.2025 -2,64â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 05.12.2025 -15,00â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 05.12.2025 -2,64â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 05.12.2025 -1,75â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.12.2025 -17,00â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 06.12.2025 -1,39â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 07.12.2025 -15,00â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 07.12.2025 -4,03â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 07.12.2025 -0,38â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 08.12.2025 -19,10â¬
+    > ! 
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 09.12.2025 -2,68â¬
+    > ! 
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 09.12.2025 +50,00â¬
+    > ! 
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 09.12.2025 -0,75â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 10.12.2025 -10,01â¬
+    > ! 
+    >   NAME LOG*HANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 10.12.2025 -58,00â¬
+    > ! 
+    >   NAME SumUp *Cafe May
+    >   KTGR Bars & Restaurants
+    >   DATE 10.12.2025 -6,20â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.12.2025 -12,57â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 10.12.2025 -1,02â¬
+    > ! 
+    >   NAME U-Store 104
+    >   KTGR Sonstiges
+    >   DATE 11.12.2025 -6,90â¬
+    > ! 
+    >   NAME TASK FORCE CONVENIENCE
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -1,50â¬
+    > ! 
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift November 2025 ubiLearning Solutions GmbH
+    >   DATE 11.12.2025 +1.470,50â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -13,71â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -2,03â¬
+    > ! 
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 11.12.2025 -0,54â¬
+    > ! 
+    >   NAME Nur Hier GmbH
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -4,99â¬
+    > ! 
+    >   NAME Rossmann 3210
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 11.12.2025 -5,99â¬
+    > ! 
+    >   NAME BackWerk Hildesheim Hb
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -2,90â¬
+    > ! 
+    >   NAME M. NIEMEYER GMBH & CO.
+    >   KTGR Shopping
+    >   DATE 11.12.2025 -2,49â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -13,65â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 12.12.2025 -3,34â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 12.12.2025 -20,00â¬
+    > ! 
+    >   NAME PayPal Europe S.a r.l. et Cie, S.C.A. 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 12.12.2025 -0,50â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 12.12.2025 -14,68â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 12.12.2025 -6,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.12.2025 -12,29â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.12.2025 -2,64â¬
+    > ! 
+    >   NAME Aral Station 130622178
+    >   KTGR Auto
+    >   DATE 13.12.2025 -3,99â¬
+    > ! 
+    >   NAME Hotel at Booking.com
+    >   KTGR Freizeit
+    >   DATE 13.12.2025 -18,22â¬
+    > ! 
+    >   NAME LS BEIGE LOUNGE
+    >   KTGR Bars & Restaurants
+    >   DATE 13.12.2025 -13,20â¬
+    > ! 
+    >   NAME MCDONALDS 01847
+    >   KTGR Bars & Restaurants
+    >   DATE 14.12.2025 -2,50â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -5,13â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -3,36â¬
+    > ! 
+    >   NAME Hotel at Booking.com
+    >   KTGR Freizeit
+    >   DATE 14.12.2025 -16,56â¬
+    > ! 
+    >   NAME 63240113 Bremen Hbf S
+    >   KTGR Bars & Restaurants
+    >   DATE 14.12.2025 -2,99â¬
+    > ! 
+    >   NAME DB Gepaeckschliessfach
+    >   KTGR Berufsausgaben
+    >   DATE 14.12.2025 -6,00â¬
+    > ! 
+    >   NAME TASK FORCE CONVENIENCE
+    >   KTGR Freizeit
+    >   DATE 14.12.2025 -0,70â¬
+    > ! 
+    >   NAME REWE Markt GmbH ZW
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -3,28â¬
+    > ! 
+    >   NAME DB Gepaeckschliessfach
+    >   KTGR Berufsausgaben
+    >   DATE 14.12.2025 -2,00â¬
+    > ! 
+    >   NAME PayPal (Europe) S.a r.l. et Cie, S.C.A.
+    >   KTGR Ãberweisung
+    >   VERW RTE2OWKnHO9f6E UBQD 12/12
+    >   DATE 15.12.2025 +0,50â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 15.12.2025 -13,65â¬
+    > ! 
+    >   NAME Starbucks 53106 Markts
+    >   KTGR Bars & Restaurants
+    >   DATE 16.12.2025 -3,40â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 16.12.2025 -13,65â¬
+    > ! 
+    >   NAME Handytronics
+    >   KTGR Medien & Telekom
+    >   DATE 16.12.2025 -15,00â¬
+    > ! 
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 16.12.2025 -5,00â¬
+    > ! 
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 16.12.2025 -39,98â¬
+    > ! 
+    >   NAME REWE Florian Gerke oHG
+    >   KTGR Lebensmittel
+    >   DATE 16.12.2025 -4,30â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 16.12.2025 -2,24â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.12.2025 -13,65â¬
+    > ! 
+    >   NAME Starbucks 53165 Am Mon
+    >   KTGR Bars & Restaurants
+    >   DATE 17.12.2025 -3,70â¬
+    > ! 
+    >   NAME Edeka Tamme
+    >   KTGR Lebensmittel
+    >   DATE 17.12.2025 -3,38â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 17.12.2025 -0,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -10,53â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -0,53â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -3,20â¬
+    > ! 
+    >   NAME Backfactory 601
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -3,20â¬
+    > ! 
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 19.12.2025 +24,99â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -2,30â¬
+    > ! 
+    >   NAME MODEHAUS GEHLMANN
+    >   KTGR Shopping
+    >   DATE 19.12.2025 -92,70â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 19.12.2025 -9,95â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 19.12.2025 -0,50â¬
+    > ! 
+    >   NAME Alnatura Produktions u
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -1,99â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -0,95â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.12.2025 -1,06â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.12.2025 -21,27â¬
+    > ! 
+    >   NAME REWE Florian Gerke oHG
+    >   KTGR Lebensmittel
+    >   DATE 21.12.2025 -3,98â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 21.12.2025 -24,00â¬
+    > ! 
+    >   NAME Rossmann 1940
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 21.12.2025 -0,50â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,20â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -3,64â¬
+    > ! 
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 22.12.2025 -2,00â¬
+    > ! 
+    >   NAME Backwerk 427 Bremen HB
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -3,80â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,64â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.12.2025 -0,64â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,58â¬
+    > ! 
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,29â¬
+    > ! 
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 22.12.2025 -2,00â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -2,00â¬
+    > ! 
+    >   NAME DAK-Gesundheit 
+    >   KTGR Ãberweisung
+    >   VERW 51x251119x20655x
+    >   DATE 23.12.2025 -250,00â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 24.12.2025 -12,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 24.12.2025 -0,64â¬
+    > ! 
+    >   NAME Penny Kiez
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -3,89â¬
+    > ! 
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 24.12.2025 -2,00â¬
+    > ! 
+    >   NAME Ditsch Hamburg Altona
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,90â¬
+    > ! 
+    >   NAME KRUSE DER LECKER BÃCKE
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,90â¬
+    > ! 
+    >   NAME Penny Kiez
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,98â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 24.12.2025 -0,64â¬
+    > ! 
+    >   NAME Wurst & Durst
+    >   KTGR Bars & Restaurants
+    >   DATE 24.12.2025 -4,70â¬
+    > ! 
+    >   NAME LeCrobag Bremen Hbf Tu
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -2,80â¬
+    > ! 
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 25.12.2025 -1,60â¬
+    > ! 
+    >   NAME Dat Backhus
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -1,70â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -2,74â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -2,96â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 25.12.2025 -12,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 25.12.2025 -0,64â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -3,88â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 25.12.2025 -23,00â¬
+    > ! 
+    >   NAME H. von Allwoerden GmbH
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,10â¬
+    > ! 
+    >   NAME H. von Allwoerden GmbH
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,20â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.12.2025 -0,64â¬
+    > ! 
+    >   NAME HBB BISTRO BERLINER TO
+    >   KTGR Bars & Restaurants
+    >   DATE 26.12.2025 -2,95â¬
+    > ! 
+    >   NAME Ditsch Hamburg Berline
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,90â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -3,40â¬
+    > ! 
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 27.12.2025 -5,87â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 27.12.2025 -0,64â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 27.12.2025 -2,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.12.2025 -0,64â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 28.12.2025 -2,74â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 28.12.2025 -5,07â¬
+    > ! 
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 29.12.2025 -0,50â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 29.12.2025 -0,64â¬
+    > ! 
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 29.12.2025 -2,75â¬
+    > ! 
+    >   NAME Cuccis Jungfernstieg
+    >   KTGR Bars & Restaurants
+    >   DATE 29.12.2025 -4,50â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 29.12.2025 -140,00â¬
+    > ! 
+    >   NAME SCHIETWETTER GMBH
+    >   KTGR Shopping
+    >   DATE 29.12.2025 -12,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.12.2025 -28,28â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 30.12.2025 -4,19â¬
+    > ! 
+    >   NAME Penny Steindamm
+    >   KTGR Lebensmittel
+    >   DATE 31.12.2025 -3,13â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.12.2025 -1,11â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.12.2025 -0,75â¬
+    > ! 
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 31.12.2025 -2,99â¬
+    > ! 
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 31.12.2025 -0,81â¬
+    > ! 
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 31.12.2025 -1,70â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 01.01.2026 -3,67â¬
+    > ! 
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 01.01.2026 -2,88â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.01.2026 -3,20â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.01.2026 -0,58â¬
+    > ! 
+    >   NAME Back-Factory Bremen Ci
+    >   KTGR Lebensmittel
+    >   DATE 02.01.2026 -2,50â¬
+    > ! 
+    >   NAME Back-Factory Bremen Ci
+    >   KTGR Lebensmittel
+    >   DATE 02.01.2026 -8,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -3,20â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -0,63â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -3,20â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -2,18â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -1,15â¬
+    > ! 
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -3,18â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 04.01.2026 -0,64â¬
+    > ! 
+    >   NAME 63240150 Bremen Hbf D
+    >   KTGR Bars & Restaurants
+    >   DATE 04.01.2026 -3,74â¬
+    > ! 
+    >   NAME LOG*HANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 04.01.2026 -63,00â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 04.01.2026 -3,20â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 04.01.2026 -2,99â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 05.01.2026 -9,82â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 05.01.2026 -3,20â¬
+    > ! 
+    >   NAME Western Union International Bank
+    >   KTGR Ãberweisung
+    >   VERW 2600480311538306
+    >   DATE 05.01.2026 -10,00â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -0,69â¬
+    > ! 
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -2,90â¬
+    > ! 
+    >   NAME ServiceStore DB 3383
+    >   KTGR Sonstiges
+    >   DATE 06.01.2026 -1,00â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 06.01.2026 -130,00â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -0,84â¬
+    > ! 
+    >   NAME a+o hostel and hotel
+    >   KTGR Ãberweisung
+    >   VERW Gast Reg. HH4-823362 Erst./Groups/04
+    >   DATE 07.01.2026 +64,00â¬
+    > ! 
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 07.01.2026 -1,62â¬
+    > ! 
+    >   NAME Schmidtchen Huehnerpos
+    >   KTGR Bars & Restaurants
+    >   DATE 07.01.2026 -3,70â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 07.01.2026 -0,64â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -201,29â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -1,69â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -2,25â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 08.01.2026 -7,72â¬
+    > ! 
+    >   NAME Starbucks 53162 Neuer
+    >   KTGR Bars & Restaurants
+    >   DATE 08.01.2026 -2,30â¬
+    > ! 
+    >   NAME Ditsch Hamburg Berline
+    >   KTGR Lebensmittel
+    >   DATE 08.01.2026 -2,90â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 08.01.2026 -1,72â¬
+    > ! 
+    >   NAME SumUp *Saba UG
+    >   KTGR Bars & Restaurants
+    >   DATE 09.01.2026 -3,50â¬
+    > ! 
+    >   NAME SCHUM EUROSHOP GMBH
+    >   KTGR Shopping
+    >   DATE 09.01.2026 -3,30â¬
+    > ! 
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift Dezember 2025 ubiLearning Solutions GmbH
+    >   DATE 09.01.2026 +1.040,14â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 09.01.2026 -2,08â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 09.01.2026 -0,57â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.01.2026 -0,64â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.01.2026 -0,64â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 10.01.2026 -3,67â¬
+    > ! 
+    >   NAME Pamukkale Back &amp; G
+    >   KTGR Bars & Restaurants
+    >   DATE 11.01.2026 -3,00â¬
+    > ! 
+    >   NAME U-Store 4728
+    >   KTGR Sonstiges
+    >   DATE 11.01.2026 -2,19â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 12.01.2026 -205,77â¬
+    > ! 
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 12.01.2026 -200,00â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.01.2026 -1,99â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.01.2026 -2,68â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -202,49â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,32â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,63â¬
+    > ! 
+    >   NAME FLIXBUS.COM
+    >   KTGR Transport
+    >   DATE 15.01.2026 -33,98â¬
+    > ! 
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 15.01.2026 +200,00â¬
+    > ! 
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 15.01.2026 -3,00â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 15.01.2026 -4,48â¬
+    > ! 
+    >   NAME Espresso House 22028
+    >   KTGR Bars & Restaurants
+    >   DATE 16.01.2026 -3,70â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 16.01.2026 -202,29â¬
+    > ! 
+    >   NAME SCHUM EUROSHOP GMBH
+    >   KTGR Shopping
+    >   DATE 16.01.2026 -1,30â¬
+    > ! 
+    >   NAME REWE Markt GmbH-ZW-NL
+    >   KTGR Lebensmittel
+    >   DATE 16.01.2026 -1,69â¬
+    > ! 
+    >   NAME Espresso House 22030
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -4,05â¬
+    > ! 
+    >   NAME Ali Ceylan
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -3,70â¬
+    > ! 
+    >   NAME Starbucks 53162 Neuer
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -2,30â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.01.2026 -1,28â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,40â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.01.2026 -41,28â¬
+    > ! 
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,40â¬
+    > ! 
+    >   NAME CAFE STENZEL
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,90â¬
+    > ! 
+    >   NAME REWE Hamburg Ballindam
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,23â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -1,43â¬
+    > ! 
+    >   NAME Heinrich von Allwoerde
+    >   KTGR Lebensmittel
+    >   DATE 18.01.2026 -1,80â¬
+    > ! 
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 18.01.2026 -1,48â¬
+    > ! 
+    >   NAME Pamukkale Back &amp; G
+    >   KTGR Bars & Restaurants
+    >   DATE 19.01.2026 -3,50â¬
+    > ! 
+    >   NAME STARBUCKS 53165 AM MON
+    >   KTGR Bars & Restaurants
+    >   DATE 20.01.2026 -3,65â¬
+    > ! 
+    >   NAME Nur Hier Fil. 3130
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,00â¬
+    > ! 
+    >   NAME Nur Hier GmbH
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,50â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.01.2026 -0,64â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.01.2026 -21,98â¬
+    > ! 
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -3,20â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,76â¬
+    > ! 
+    >   NAME SumUp *betahaus Hambu
+    >   KTGR Sonstiges
+    >   DATE 21.01.2026 -13,00â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 21.01.2026 -3,37â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 21.01.2026 -1,89â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.01.2026 -0,64â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.01.2026 -11,30â¬
+    > ! 
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 22.01.2026 -104,99â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 23.01.2026 -1,92â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 23.01.2026 -48,57â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 23.01.2026 -4,88â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 24.01.2026 -3,21â¬
+    > ! 
+    >   NAME Budnikowsky
+    >   KTGR Lebensmittel
+    >   DATE 25.01.2026 -3,19â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 25.01.2026 -4,94â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.01.2026 -10,32â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 27.01.2026 -30,96â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 27.01.2026 -1,34â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 27.01.2026 -1,39â¬
+    > ! 
+    >   NAME WESTERN UNION
+    >   KTGR Investitionen
+    >   DATE 28.01.2026 -13,99â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 28.01.2026 -2,78â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 29.01.2026 -5,16â¬
+    > ! 
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 29.01.2026 -2,84â¬
+    > ! 
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 31.01.2026 -1,19â¬
+    > ! 
+    >   NAME Starbucks 53106 Markts
+    >   KTGR Bars & Restaurants
+    >   DATE 31.01.2026 -2,90â¬
+    > ! 
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 31.01.2026 -2,90â¬
+    > ! 
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 31.01.2026 -2,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -1,28â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -41,32â¬
+    > ! 
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 01.02.2026 -2,38â¬
+    > ! 
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 02.02.2026 +100,00â¬
+    > ! 
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 02.02.2026 -1,50â¬
+    > ! 
+    >   NAME N26 Ratenzahlung
+    >   KTGR Ãberweisung 
+    >   DATE 02.02.2026 +63,00â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.02.2026 -26,78â¬
+    > ! 
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.02.2026 -4,50â¬
+    > --- 1,2227 ----
+    > ! # áª -> NAME -> KTGR -> [VERW] -> DATE -> áª 
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    > ! #
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 02.09.2025 -0,17â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 02.09.2025 -0,82â¬
+    > ! #
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 02.09.2025 -1,14â¬
+    > ! #
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 02.09.2025 -1,14â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 03.09.2025 -1,45â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 03.09.2025 -1,66â¬
+    > ! #
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -0,93â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -4,54â¬
+    > ! #
+    >   NAME Maeander Quell GmbH 
+    >   KTGR Ãberweisung
+    >   VERW 145889 / Booklooker - 33321673
+    >   DATE 03.09.2025 -27,60â¬
+    > ! #
+    >   NAME PIN AG
+    >   KTGR Berufsausgaben
+    >   DATE 03.09.2025 -0,88â¬
+    > ! #
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 03.09.2025 -0,42â¬
+    > ! #
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 04.09.2025 -0,83â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 04.09.2025 -1,04â¬
+    > ! #
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 04.09.2025 -0,34â¬
+    > ! #
+    >   NAME SIM 23
+    >   KTGR Lebensmittel
+    >   DATE 05.09.2025 -0,67â¬
+    > ! #
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 05.09.2025 -1,35â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 06.09.2025 -0,58â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 06.09.2025 -0,83â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 06.09.2025 -1,14â¬
+    > ! #
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 06.09.2025 -0,66â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -3,34â¬
+    > ! #
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,15â¬
+    > ! #
+    >   NAME Bagels Cafe
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -0,94â¬
+    > ! #
+    >   NAME Bagels Cafe
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,36â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 07.09.2025 -1,98â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 07.09.2025 -0,57â¬
+    > ! #
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -1,14â¬
+    > ! #
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,73â¬
+    > ! #
+    >   NAME DIMKAVI
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -1,46â¬
+    > ! #
+    >   NAME Halereia
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,83â¬
+    > ! #
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,73â¬
+    > ! #
+    >   NAME KAFE TEATRALNE
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,73â¬
+    > ! #
+    >   NAME KAFE TEATRALNE
+    >   KTGR Bars & Restaurants
+    >   DATE 08.09.2025 -0,73â¬
+    > ! #
+    >   NAME KIOSK PRODUKTY
+    >   KTGR Lebensmittel
+    >   DATE 08.09.2025 -0,65â¬
+    > ! #
+    >   NAME magazin Fokstrot
+    >   KTGR Sonstiges
+    >   DATE 09.09.2025 -7,30â¬
+    > ! #
+    >   NAME FOPZaharchukIrinaLvivn
+    >   KTGR Bars & Restaurants
+    >   DATE 09.09.2025 -1,15â¬
+    > ! #
+    >   NAME Ljubimka
+    >   KTGR Bars & Restaurants
+    >   DATE 09.09.2025 -2,19â¬
+    > ! #
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,52â¬
+    > ! #
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,49â¬
+    > ! #
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 09.09.2025 -0,94â¬
+    > ! #
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 10.09.2025 -1,14â¬
+    > ! #
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 10.09.2025 -0,83â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 10.09.2025 -0,83â¬
+    > ! #
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 10.09.2025 -0,57â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 11.09.2025 -0,73â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 11.09.2025 -1,35â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Waehrungstausch
+    >   DATE 11.09.2025 -30,00â¬
+    > ! #
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift August 2025 ubiLearning Solutions GmbH
+    >   DATE 11.09.2025 +106,54â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 11.09.2025 -2,09â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 11.09.2025 -1,76â¬
+    > ! #
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 12.09.2025 -0,17â¬
+    > ! #
+    >   NAME Magazin Karamelia
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,28â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 12.09.2025 -1,14â¬
+    > ! #
+    >   NAME Magazin Apetit
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,62â¬
+    > ! #
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -1,28â¬
+    > ! #
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -1,10â¬
+    > ! #
+    >   NAME SIM 23
+    >   KTGR Lebensmittel
+    >   DATE 12.09.2025 -0,66â¬
+    > ! #
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 12.09.2025 -1,35â¬
+    > ! #
+    >   NAME PAYPAL *ruben.hummitzs
+    >   KTGR 
+    >   DATE 13.09.2025 -5,00â¬
+    > ! #
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 13.09.2025 -0,58â¬
+    > ! #
+    >   NAME CAFE STRIT
+    >   KTGR Bars & Restaurants
+    >   DATE 13.09.2025 -1,04â¬
+    > ! #
+    >   NAME RESTORAN AVOCADO
+    >   KTGR Bars & Restaurants
+    >   DATE 13.09.2025 -1,37â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 14.09.2025 -2,69â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 14.09.2025 -1,22â¬
+    > ! #
+    >   NAME MAHAZYN SHCHODNIA
+    >   KTGR Shopping
+    >   DATE 14.09.2025 -0,19â¬
+    > ! #
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,72â¬
+    > ! #
+    >   NAME SILPO
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -1,27â¬
+    > ! #
+    >   NAME KavyarnyaParagraf
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,24â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,45â¬
+    > ! #
+    >   NAME MERCI CAFE
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,35â¬
+    > ! #
+    >   NAME GoodMorning
+    >   KTGR Bars & Restaurants
+    >   DATE 15.09.2025 -1,66â¬
+    > ! #
+    >   NAME SHOP ATB PR1124
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,61â¬
+    > ! #
+    >   NAME TAM TAM MINI 2
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -0,99â¬
+    > ! #
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 15.09.2025 -1,14â¬
+    > ! #
+    >   NAME 1265
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,00â¬
+    > ! #
+    >   NAME PRODUKTi DOMAShNIi
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -0,93â¬
+    > ! #
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -2,79â¬
+    > ! #
+    >   NAME Kava Avenue KM
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -0,93â¬
+    > ! #
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,28â¬
+    > ! #
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,66â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -1,03â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,22â¬
+    > ! #
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 16.09.2025 -0,83â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,01â¬
+    > ! #
+    >   NAME LIQPAY*TOV Bussystem
+    >   KTGR Transport
+    >   DATE 16.09.2025 -7,13â¬
+    > ! #
+    >   NAME KAFE LOFT
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -0,83â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 16.09.2025 -1,39â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -1,04â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,57â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,20â¬
+    > ! #
+    >   NAME MAHAZYN SHCHODNIA
+    >   KTGR Shopping
+    >   DATE 17.09.2025 -0,19â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -0,60â¬
+    > ! #
+    >   NAME #1105
+    >   KTGR Lebensmittel
+    >   DATE 17.09.2025 -1,04â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -0,72â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 17.09.2025 -1,04â¬
+    > ! #
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 18.09.2025 -0,83â¬
+    > ! #
+    >   NAME KavyarnyaParagraf
+    >   KTGR Bars & Restaurants
+    >   DATE 18.09.2025 -1,24â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 19.09.2025 -0,38â¬
+    > ! #
+    >   NAME Kafe Alpaca Coffee
+    >   KTGR Bars & Restaurants
+    >   DATE 19.09.2025 -0,82â¬
+    > ! #
+    >   NAME COFFEE L.E.M.M.
+    >   KTGR Bars & Restaurants
+    >   DATE 19.09.2025 -0,83â¬
+    > ! #
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 19.09.2025 -0,55â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 20.09.2025 -1,03â¬
+    > ! #
+    >   NAME Student
+    >   KTGR Shopping
+    >   DATE 21.09.2025 -4,03â¬
+    > ! #
+    >   NAME Daily Dosn
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,24â¬
+    > ! #
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,86â¬
+    > ! #
+    >   NAME Kava Aveniu Vynnychenk
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -0,93â¬
+    > ! #
+    >   NAME Wecoffee
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,86â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,98â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 21.09.2025 -1,43â¬
+    > ! #
+    >   NAME GIPERMARKET TAM-TAM
+    >   KTGR Lebensmittel
+    >   DATE 21.09.2025 -0,29â¬
+    > ! #
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -0,81â¬
+    > ! #
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 22.09.2025 -1,55â¬
+    > ! #
+    >   NAME ATB
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -0,72â¬
+    > ! #
+    >   NAME Domashniy
+    >   KTGR Lebensmittel
+    >   DATE 22.09.2025 -1,07â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 22.09.2025 -1,24â¬
+    > ! #
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! #
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! #
+    >   NAME Kava Aveniu Vynnychenk
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -0,83â¬
+    > ! #
+    >   NAME Happy Bakery
+    >   KTGR Bars & Restaurants
+    >   DATE 23.09.2025 -1,34â¬
+    > ! #
+    >   NAME Magazin Simimarket
+    >   KTGR Lebensmittel
+    >   DATE 23.09.2025 -1,80â¬
+    > ! #
+    >   NAME CITY CARD SYSTEM
+    >   KTGR Transport
+    >   DATE 25.09.2025 -0,17â¬
+    > ! #
+    >   NAME MAKDONALDZ 116
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,43â¬
+    > ! #
+    >   NAME KAPUChiNO
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,24â¬
+    > ! #
+    >   NAME sim23
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,63â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 25.09.2025 -1,03â¬
+    > ! #
+    >   NAME MAGAZYN 1124
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,47â¬
+    > ! #
+    >   NAME 1255
+    >   KTGR Lebensmittel
+    >   DATE 25.09.2025 -0,74â¬
+    > ! #
+    >   NAME Magazin Smmarket
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,72â¬
+    > ! #
+    >   NAME MAGAZYN 1260
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,45â¬
+    > ! #
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,19â¬
+    > ! #
+    >   NAME AntrekotFOPGoncharTaYi
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,37â¬
+    > ! #
+    >   NAME LIQPAY*TOV Bussystem
+    >   KTGR Transport
+    >   DATE 26.09.2025 -17,65â¬
+    > ! #
+    >   NAME #1105
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,78â¬
+    > ! #
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,54â¬
+    > ! #
+    >   NAME GOODMORNING
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,75â¬
+    > ! #
+    >   NAME KIOSK 40
+    >   KTGR Lebensmittel
+    >   DATE 26.09.2025 -0,47â¬
+    > ! #
+    >   NAME Bar VIDENSKA KAVA
+    >   KTGR Bars & Restaurants
+    >   DATE 26.09.2025 -1,19â¬
+    > ! #
+    >   NAME 1202
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -0,50â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -1,50â¬
+    > ! #
+    >   NAME LVIVSKI KRUASANY
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -2,20â¬
+    > ! #
+    >   NAME INFOBUS.EU
+    >   KTGR Transport
+    >   DATE 27.09.2025 -5,96â¬
+    > ! #
+    >   NAME Bistro Intaime
+    >   KTGR Bars & Restaurants
+    >   DATE 27.09.2025 -4,43â¬
+    > ! #
+    >   NAME Pekarnya"KAVKAZKAVIPIC
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -1,54â¬
+    > ! #
+    >   NAME TARHETMARKET
+    >   KTGR Lebensmittel
+    >   DATE 27.09.2025 -2,19â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 28.09.2025 +25,03â¬
+    > ! #
+    >   NAME POLMAR
+    >   KTGR Lebensmittel
+    >   DATE 29.09.2025 -1,17â¬
+    > ! #
+    >   NAME Pekarnya"KAVKAZKAVIPIC
+    >   KTGR Lebensmittel
+    >   DATE 29.09.2025 -1,66â¬
+    > ! #
+    >   NAME CIRCLE K NOWA DEBA
+    >   KTGR Auto
+    >   DATE 30.09.2025 -2,11â¬
+    > ! #
+    >   NAME PL SBX WARSZAWA ZODIAK
+    >   KTGR Bars & Restaurants
+    >   DATE 30.09.2025 -2,02â¬
+    > ! #
+    >   NAME ZABKA Z4989 K.1
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,40â¬
+    > ! #
+    >   NAME ZABKA Z5579 K.2
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,40â¬
+    > ! #
+    >   NAME CARREFOUR EXPRESS 3327
+    >   KTGR Lebensmittel
+    >   DATE 01.10.2025 -0,60â¬
+    > ! #
+    >   NAME PAYPAL *INFOBUSGLOB
+    >   KTGR Freizeit
+    >   DATE 01.10.2025 -13,48â¬
+    > ! #
+    >   NAME LUKAS Baecker Grieser
+    >   KTGR Lebensmittel
+    >   DATE 04.10.2025 -1,60â¬
+    > ! #
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 04.10.2025 -1,50â¬
+    > ! #
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift September 2025 ubiLearning Solutions GmbH
+    >   DATE 10.10.2025 +809,83â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 11.10.2025 -1,62â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -2,99â¬
+    > ! #
+    >   NAME leipzig.5elementshoste
+    >   KTGR Freizeit
+    >   DATE 12.10.2025 -32,50â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -0,38â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 12.10.2025 -1,59â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 12.10.2025 +40,00â¬
+    > ! #
+    >   NAME LOGHANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 13.10.2025 -58,00â¬
+    > ! #
+    >   NAME KONSUM LEIPZIG EG
+    >   KTGR Lebensmittel
+    >   DATE 13.10.2025 -0,39â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 13.10.2025 -1,39â¬
+    >   PAYPAL *ruben.hummitzs
+    >   Mastercard
+    >   DATE 13.10.2025 -350,00â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 13.10.2025 -10,39â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 14.10.2025 -11,55â¬
+    > ! #
+    >   NAME PAYPAL *ruben.hummitzs
+    >   KTGR
+    >   DATE 14.10.2025 -350,00â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 14.10.2025 +60,00â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 15.10.2025 -3,18â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 15.10.2025 -22,47â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 15.10.2025 -1,89â¬
+    > ! #
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 15.10.2025 -2,00â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 16.10.2025 -2,59â¬
+    > ! #
+    >   NAME Starbucks 53206 Leipzi
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -4,20â¬
+    > ! #
+    >   NAME MCDONALDS 01633
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -1,50â¬
+    > ! #
+    >   NAME Huwa GmbH
+    >   KTGR Bars & Restaurants
+    >   DATE 17.10.2025 -19,80â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -0,77â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -0,98â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -2,14â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 17.10.2025 +25,00â¬
+    > ! #
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 17.10.2025 -13,37â¬
+    > ! #
+    >   NAME REWE Mandy Bronser
+    >   KTGR Lebensmittel
+    >   DATE 17.10.2025 -4,45â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 18.10.2025 -4,08â¬
+    > ! #
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 18.10.2025 -21,96â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 18.10.2025 -2,29â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 19.10.2025 -1,89â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 19.10.2025 -1,59â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 20.10.2025 -0,57â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 20.10.2025 +60,00â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 20.10.2025 -0,65â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 21.10.2025 -1,11â¬
+    > ! #
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 21.10.2025 -24,11â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 22.10.2025 -1,89â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 22.10.2025 -4,48â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 23.10.2025 +30,00â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -0,99â¬
+    > ! #
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 23.10.2025 -14,53â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -0,19â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 23.10.2025 -2,49â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 24.10.2025 -4,49â¬
+    > ! #
+    >   NAME MS* WOMBATSLEIPZIG
+    >   KTGR Freizeit
+    >   DATE 24.10.2025 -14,85â¬
+    > ! #
+    >   NAME REWE Matthias Haerzsch
+    >   KTGR Lebensmittel
+    >   DATE 24.10.2025 -2,29â¬
+    > ! #
+    >   NAME MCDONALDS 00923
+    >   KTGR Bars & Restaurants
+    >   DATE 25.10.2025 -2,20â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW Five Elements and Nutrition
+    >   DATE 25.10.2025 +50,00â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 25.10.2025 -1,90â¬
+    > ! #
+    >   NAME Ristorante Don Giovann
+    >   KTGR Bars & Restaurants
+    >   DATE 25.10.2025 -7,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 25.10.2025 -2,25â¬
+    > ! #
+    >   NAME BERGMANN & SOHN GMBH
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -2,75â¬
+    > ! #
+    >   NAME Ditsch Erfurt Hauptbah
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -2,40â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 26.10.2025 -0,79â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.10.2025 -2,25â¬
+    > ! #
+    >   NAME Penny Weimar
+    >   KTGR Lebensmittel
+    >   DATE 27.10.2025 -2,38â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.10.2025 -0,51â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 28.10.2025 -3,49â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.10.2025 -0,55â¬
+    > ! #
+    >   NAME REWE Markt GmbH-ZwNL O
+    >   KTGR Lebensmittel
+    >   DATE 29.10.2025 -1,78â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 29.10.2025 -2,44â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 30.10.2025 -0,49â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.10.2025 -0,73â¬
+    > ! #
+    >   NAME MAeC GEIZ Handelsges.
+    >   KTGR Shopping
+    >   DATE 31.10.2025 -1,99â¬
+    > ! #
+    >   NAME dean&david
+    >   KTGR Bars & Restaurants
+    >   DATE 01.11.2025 -3,25â¬
+    > ! #
+    >   NAME REWE Regiemarkt GmbH O
+    >   KTGR Lebensmittel
+    >   DATE 01.11.2025 -0,57â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 01.11.2025 -0,81â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 01.11.2025 +68,00â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 02.11.2025 -1,58â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.11.2025 -2,25â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 02.11.2025 -12,60â¬
+    > ! #
+    >   NAME Penny Weimar
+    >   KTGR Lebensmittel
+    >   DATE 02.11.2025 -3,78â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 04.11.2025 +58,00â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,39â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 04.11.2025 -3,56â¬
+    > ! #
+    >   NAME 5elements Hostel
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,39â¬
+    > ! #
+    >   NAME REWE Peggy Engel oHG
+    >   KTGR Lebensmittel
+    >   DATE 04.11.2025 -4,55â¬
+    > ! #
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -10,21â¬
+    > ! #
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Freizeit
+    >   DATE 04.11.2025 -13,50â¬
+    > ! #
+    >   NAME Starbucks 85315 Leipzi
+    >   KTGR Bars & Restaurants
+    >   DATE 04.11.2025 -3,20â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW MERLIN BRANDT
+    >   DATE 04.11.2025 +54,00â¬
+    > ! #
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Berufsausgaben
+    >   DATE 05.11.2025 -14,99â¬
+    > ! #
+    >   NAME PAYPAL *HANDYTICKET
+    >   KTGR Transport
+    >   DATE 05.11.2025 -58,00â¬
+    > ! #
+    >   NAME SumUp *Gondals Feinba
+    >   KTGR Lebensmittel
+    >   DATE 06.11.2025 -2,70â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.11.2025 -55,55â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.11.2025 -0,58â¬
+    > ! #
+    >   NAME REWE Markt GmbH-ZwNL O
+    >   KTGR Lebensmittel
+    >   DATE 06.11.2025 -1,69â¬
+    > ! #
+    >   NAME Merlin Brandt
+    >   KTGR Ãberweisung
+    >   VERW ao MERLIN BRANDT
+    >   DATE 10.11.2025 +2,00â¬
+    > ! #
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift Oktober 2025 ubiLearning Solutions GmbH
+    >   DATE 11.11.2025 +1.613,65â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.11.2025 -1,28â¬
+    > ! #
+    >   NAME Starbucks 53165 Am Mon
+    >   KTGR Bars & Restaurants
+    >   DATE 12.11.2025 -2,50â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 12.11.2025 -202,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.11.2025 -17,53â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.11.2025 -32,70â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -11,56â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -0,85â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 14.11.2025 -3,20â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 15.11.2025 -15,39â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 16.11.2025 -0,77â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 16.11.2025 -202,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -0,98â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -23,01â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 17.11.2025 -19,68â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.11.2025 -1,28â¬
+    > ! #
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 18.11.2025 -201,49â¬
+    > ! #
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 18.11.2025 -203,29â¬
+    > ! #
+    >   NAME KFC 691
+    >   KTGR Bars & Restaurants
+    >   DATE 18.11.2025 -2,29â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 19.11.2025 -6,47â¬
+    > ! #
+    >   NAME LS BEIGE LOUNGE
+    >   KTGR Bars & Restaurants
+    >   DATE 19.11.2025 -3,80â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 19.11.2025 -22,96â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.11.2025 -1,27â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 20.11.2025 -203,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.11.2025 -0,64â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 22.11.2025 -5,94â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 22.11.2025 -11,83â¬
+    > ! #
+    >   NAME REWE Christian Fri
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -2,69â¬
+    > ! #
+    >   NAME FeinbÃ¤ckerei Thiele Fi
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -1,47â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -0,90â¬
+    > ! #
+    >   NAME REWE Christian Fri
+    >   KTGR Lebensmittel
+    >   DATE 23.11.2025 -0,49â¬
+    > ! #
+    >   NAME REWE Stuttgart Kronens
+    >   KTGR Lebensmittel
+    >   DATE 25.11.2025 -1,99â¬
+    > ! #
+    >   NAME PAYPAL *AOHOSTELS
+    >   KTGR Freizeit
+    >   DATE 25.11.2025 -10,10â¬
+    > ! #
+    >   NAME Back-Factory Stuttgart
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -1,85â¬
+    > ! #
+    >   NAME REWE Stuttgart Kronens
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -1,76â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.11.2025 -16,00â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -0,10â¬
+    > ! #
+    >   NAME 93030144 Karlsruhe Bhf
+    >   KTGR Bars & Restaurants
+    >   DATE 26.11.2025 -2,19â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.11.2025 -0,10â¬
+    > ! #
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 27.11.2025 -3,25â¬
+    > ! #
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 27.11.2025 -2,70â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.11.2025 -20,72â¬
+    > ! #
+    >   NAME KAMPS STUTTGART 504039
+    >   KTGR Lebensmittel
+    >   DATE 28.11.2025 -2,95â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 28.11.2025 -4,98â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 29.11.2025 -4,96â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 29.11.2025 -14,42â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.11.2025 -15,93â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 30.11.2025 -3,24â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 01.12.2025 -19,43â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 01.12.2025 -2,90â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 01.12.2025 -3,98â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.12.2025 -15,00â¬
+    > ! #
+    >   NAME 63210150 Frankfurt Mai
+    >   KTGR Bars & Restaurants
+    >   DATE 02.12.2025 -3,80â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 03.12.2025 -3,20â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 03.12.2025 -7,76â¬
+    > ! #
+    >   NAME PAYPAL *PAYPAL
+    >   KTGR Berufsausgaben
+    >   DATE 03.12.2025 -14,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.12.2025 -15,00â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 04.12.2025 -2,64â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 05.12.2025 -15,00â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 05.12.2025 -2,64â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 05.12.2025 -1,75â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 06.12.2025 -17,00â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 06.12.2025 -1,39â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 07.12.2025 -15,00â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 07.12.2025 -4,03â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 07.12.2025 -0,38â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 08.12.2025 -19,10â¬
+    > ! #
+    >   NAME Penny Auf der Mainzer
+    >   KTGR Lebensmittel
+    >   DATE 09.12.2025 -2,68â¬
+    > ! #
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 09.12.2025 +50,00â¬
+    > ! #
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 09.12.2025 -0,75â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 10.12.2025 -10,01â¬
+    > ! #
+    >   NAME LOG*HANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 10.12.2025 -58,00â¬
+    > ! #
+    >   NAME SumUp *Cafe May
+    >   KTGR Bars & Restaurants
+    >   DATE 10.12.2025 -6,20â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.12.2025 -12,57â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 10.12.2025 -1,02â¬
+    > ! #
+    >   NAME U-Store 104
+    >   KTGR Sonstiges
+    >   DATE 11.12.2025 -6,90â¬
+    > ! #
+    >   NAME TASK FORCE CONVENIENCE
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -1,50â¬
+    > ! #
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift November 2025 ubiLearning Solutions GmbH
+    >   DATE 11.12.2025 +1.470,50â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -13,71â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -2,03â¬
+    > ! #
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 11.12.2025 -0,54â¬
+    > ! #
+    >   NAME Nur Hier GmbH
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -4,99â¬
+    > ! #
+    >   NAME Rossmann 3210
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 11.12.2025 -5,99â¬
+    > ! #
+    >   NAME BackWerk Hildesheim Hb
+    >   KTGR Lebensmittel
+    >   DATE 11.12.2025 -2,90â¬
+    > ! #
+    >   NAME M. NIEMEYER GMBH & CO.
+    >   KTGR Shopping
+    >   DATE 11.12.2025 -2,49â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 11.12.2025 -13,65â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 12.12.2025 -3,34â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 12.12.2025 -20,00â¬
+    > ! #
+    >   NAME PayPal Europe S.a r.l. et Cie, S.C.A. 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 12.12.2025 -0,50â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 12.12.2025 -14,68â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 12.12.2025 -6,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 13.12.2025 -12,29â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.12.2025 -2,64â¬
+    > ! #
+    >   NAME Aral Station 130622178
+    >   KTGR Auto
+    >   DATE 13.12.2025 -3,99â¬
+    > ! #
+    >   NAME Hotel at Booking.com
+    >   KTGR Freizeit
+    >   DATE 13.12.2025 -18,22â¬
+    > ! #
+    >   NAME LS BEIGE LOUNGE
+    >   KTGR Bars & Restaurants
+    >   DATE 13.12.2025 -13,20â¬
+    > ! #
+    >   NAME MCDONALDS 01847
+    >   KTGR Bars & Restaurants
+    >   DATE 14.12.2025 -2,50â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -5,13â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -3,36â¬
+    > ! #
+    >   NAME Hotel at Booking.com
+    >   KTGR Freizeit
+    >   DATE 14.12.2025 -16,56â¬
+    > ! #
+    >   NAME 63240113 Bremen Hbf S
+    >   KTGR Bars & Restaurants
+    >   DATE 14.12.2025 -2,99â¬
+    > ! #
+    >   NAME DB Gepaeckschliessfach
+    >   KTGR Berufsausgaben
+    >   DATE 14.12.2025 -6,00â¬
+    > ! #
+    >   NAME TASK FORCE CONVENIENCE
+    >   KTGR Freizeit
+    >   DATE 14.12.2025 -0,70â¬
+    > ! #
+    >   NAME REWE Markt GmbH ZW
+    >   KTGR Lebensmittel
+    >   DATE 14.12.2025 -3,28â¬
+    > ! #
+    >   NAME DB Gepaeckschliessfach
+    >   KTGR Berufsausgaben
+    >   DATE 14.12.2025 -2,00â¬
+    > ! #
+    >   NAME PayPal (Europe) S.a r.l. et Cie, S.C.A.
+    >   KTGR Ãberweisung
+    >   VERW RTE2OWKnHO9f6E UBQD 12/12
+    >   DATE 15.12.2025 +0,50â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 15.12.2025 -13,65â¬
+    > ! #
+    >   NAME Starbucks 53106 Markts
+    >   KTGR Bars & Restaurants
+    >   DATE 16.12.2025 -3,40â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 16.12.2025 -13,65â¬
+    > ! #
+    >   NAME Handytronics
+    >   KTGR Medien & Telekom
+    >   DATE 16.12.2025 -15,00â¬
+    > ! #
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 16.12.2025 -5,00â¬
+    > ! #
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 16.12.2025 -39,98â¬
+    > ! #
+    >   NAME REWE Florian Gerke oHG
+    >   KTGR Lebensmittel
+    >   DATE 16.12.2025 -4,30â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 16.12.2025 -2,24â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.12.2025 -13,65â¬
+    > ! #
+    >   NAME Starbucks 53165 Am Mon
+    >   KTGR Bars & Restaurants
+    >   DATE 17.12.2025 -3,70â¬
+    > ! #
+    >   NAME Edeka Tamme
+    >   KTGR Lebensmittel
+    >   DATE 17.12.2025 -3,38â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 17.12.2025 -0,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -10,53â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -0,53â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 18.12.2025 -3,20â¬
+    > ! #
+    >   NAME Backfactory 601
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -3,20â¬
+    > ! #
+    >   NAME SATURN ELECTRO-HANDELS
+    >   KTGR Sonstiges
+    >   DATE 19.12.2025 +24,99â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -2,30â¬
+    > ! #
+    >   NAME MODEHAUS GEHLMANN
+    >   KTGR Shopping
+    >   DATE 19.12.2025 -92,70â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 19.12.2025 -9,95â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 19.12.2025 -0,50â¬
+    > ! #
+    >   NAME Alnatura Produktions u
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -1,99â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 19.12.2025 -0,95â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.12.2025 -1,06â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.12.2025 -21,27â¬
+    > ! #
+    >   NAME REWE Florian Gerke oHG
+    >   KTGR Lebensmittel
+    >   DATE 21.12.2025 -3,98â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 21.12.2025 -24,00â¬
+    > ! #
+    >   NAME Rossmann 1940
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 21.12.2025 -0,50â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,20â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -3,64â¬
+    > ! #
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 22.12.2025 -2,00â¬
+    > ! #
+    >   NAME Backwerk 427 Bremen HB
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -3,80â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,64â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.12.2025 -0,64â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,58â¬
+    > ! #
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -1,29â¬
+    > ! #
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 22.12.2025 -2,00â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 22.12.2025 -2,00â¬
+    > ! #
+    >   NAME DAK-Gesundheit 
+    >   KTGR Ãberweisung
+    >   VERW 51x251119x20655x
+    >   DATE 23.12.2025 -250,00â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 24.12.2025 -12,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 24.12.2025 -0,64â¬
+    > ! #
+    >   NAME Penny Kiez
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -3,89â¬
+    > ! #
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 24.12.2025 -2,00â¬
+    > ! #
+    >   NAME Ditsch Hamburg Altona
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,90â¬
+    > ! #
+    >   NAME KRUSE DER LECKER BÃCKE
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,90â¬
+    > ! #
+    >   NAME Penny Kiez
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -1,98â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 24.12.2025 -0,64â¬
+    > ! #
+    >   NAME Wurst & Durst
+    >   KTGR Bars & Restaurants
+    >   DATE 24.12.2025 -4,70â¬
+    > ! #
+    >   NAME LeCrobag Bremen Hbf Tu
+    >   KTGR Lebensmittel
+    >   DATE 24.12.2025 -2,80â¬
+    > ! #
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 25.12.2025 -1,60â¬
+    > ! #
+    >   NAME Dat Backhus
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -1,70â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -2,74â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -2,96â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 25.12.2025 -12,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 25.12.2025 -0,64â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 25.12.2025 -3,88â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW
+    >   DATE 25.12.2025 -23,00â¬
+    > ! #
+    >   NAME H. von Allwoerden GmbH
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,10â¬
+    > ! #
+    >   NAME H. von Allwoerden GmbH
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,20â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.12.2025 -0,64â¬
+    > ! #
+    >   NAME HBB BISTRO BERLINER TO
+    >   KTGR Bars & Restaurants
+    >   DATE 26.12.2025 -2,95â¬
+    > ! #
+    >   NAME Ditsch Hamburg Berline
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -2,90â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 26.12.2025 -3,40â¬
+    > ! #
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 27.12.2025 -5,87â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 27.12.2025 -0,64â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 27.12.2025 -2,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 28.12.2025 -0,64â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 28.12.2025 -2,74â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 28.12.2025 -5,07â¬
+    > ! #
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 29.12.2025 -0,50â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 29.12.2025 -0,64â¬
+    > ! #
+    >   NAME YORMAS AG
+    >   KTGR Bars & Restaurants
+    >   DATE 29.12.2025 -2,75â¬
+    > ! #
+    >   NAME Cuccis Jungfernstieg
+    >   KTGR Bars & Restaurants
+    >   DATE 29.12.2025 -4,50â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 29.12.2025 -140,00â¬
+    > ! #
+    >   NAME SCHIETWETTER GMBH
+    >   KTGR Shopping
+    >   DATE 29.12.2025 -12,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 30.12.2025 -28,28â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 30.12.2025 -4,19â¬
+    > ! #
+    >   NAME Penny Steindamm
+    >   KTGR Lebensmittel
+    >   DATE 31.12.2025 -3,13â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.12.2025 -1,11â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.12.2025 -0,75â¬
+    > ! #
+    >   NAME Frischemarkt Altona
+    >   KTGR Lebensmittel
+    >   DATE 31.12.2025 -2,99â¬
+    > ! #
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 31.12.2025 -0,81â¬
+    > ! #
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 31.12.2025 -1,70â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 01.01.2026 -3,67â¬
+    > ! #
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 01.01.2026 -2,88â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.01.2026 -3,20â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 02.01.2026 -0,58â¬
+    > ! #
+    >   NAME Back-Factory Bremen Ci
+    >   KTGR Lebensmittel
+    >   DATE 02.01.2026 -2,50â¬
+    > ! #
+    >   NAME Back-Factory Bremen Ci
+    >   KTGR Lebensmittel
+    >   DATE 02.01.2026 -8,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -3,20â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -0,63â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.01.2026 -3,20â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -2,18â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -1,15â¬
+    > ! #
+    >   NAME Netto Marken-Discount
+    >   KTGR Lebensmittel
+    >   DATE 03.01.2026 -3,18â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 04.01.2026 -0,64â¬
+    > ! #
+    >   NAME 63240150 Bremen Hbf D
+    >   KTGR Bars & Restaurants
+    >   DATE 04.01.2026 -3,74â¬
+    > ! #
+    >   NAME LOG*HANDYTICKET LOGPAY
+    >   KTGR Transport
+    >   DATE 04.01.2026 -63,00â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 04.01.2026 -3,20â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 04.01.2026 -2,99â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 05.01.2026 -9,82â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 05.01.2026 -3,20â¬
+    > ! #
+    >   NAME Western Union International Bank
+    >   KTGR Ãberweisung
+    >   VERW 2600480311538306
+    >   DATE 05.01.2026 -10,00â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -0,69â¬
+    > ! #
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -2,90â¬
+    > ! #
+    >   NAME ServiceStore DB 3383
+    >   KTGR Sonstiges
+    >   DATE 06.01.2026 -1,00â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 06.01.2026 -130,00â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 06.01.2026 -0,84â¬
+    > ! #
+    >   NAME a+o hostel and hotel
+    >   KTGR Ãberweisung
+    >   VERW Gast Reg. HH4-823362 Erst./Groups/04
+    >   DATE 07.01.2026 +64,00â¬
+    > ! #
+    >   NAME Rossmann 159
+    >   KTGR Gesundheit & Drogerien
+    >   DATE 07.01.2026 -1,62â¬
+    > ! #
+    >   NAME Schmidtchen Huehnerpos
+    >   KTGR Bars & Restaurants
+    >   DATE 07.01.2026 -3,70â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 07.01.2026 -0,64â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -201,29â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -1,69â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 07.01.2026 -2,25â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 08.01.2026 -7,72â¬
+    > ! #
+    >   NAME Starbucks 53162 Neuer
+    >   KTGR Bars & Restaurants
+    >   DATE 08.01.2026 -2,30â¬
+    > ! #
+    >   NAME Ditsch Hamburg Berline
+    >   KTGR Lebensmittel
+    >   DATE 08.01.2026 -2,90â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 08.01.2026 -1,72â¬
+    > ! #
+    >   NAME SumUp *Saba UG
+    >   KTGR Bars & Restaurants
+    >   DATE 09.01.2026 -3,50â¬
+    > ! #
+    >   NAME SCHUM EUROSHOP GMBH
+    >   KTGR Shopping
+    >   DATE 09.01.2026 -3,30â¬
+    > ! #
+    >   NAME ubiLearning Solutions GmbH
+    >   KTGR Ãberweisung
+    >   VERW Honorargutschrift Dezember 2025 ubiLearning Solutions GmbH
+    >   DATE 09.01.2026 +1.040,14â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 09.01.2026 -2,08â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 09.01.2026 -0,57â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.01.2026 -0,64â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 10.01.2026 -0,64â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 10.01.2026 -3,67â¬
+    > ! #
+    >   NAME Pamukkale Back &amp; G
+    >   KTGR Bars & Restaurants
+    >   DATE 11.01.2026 -3,00â¬
+    > ! #
+    >   NAME U-Store 4728
+    >   KTGR Sonstiges
+    >   DATE 11.01.2026 -2,19â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 12.01.2026 -205,77â¬
+    > ! #
+    >   NAME Merlin Brandt 
+    >   KTGR Ãberweisung
+    >   VERW Verschiebung
+    >   DATE 12.01.2026 -200,00â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.01.2026 -1,99â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 13.01.2026 -2,68â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -202,49â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,32â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 14.01.2026 -2,63â¬
+    > ! #
+    >   NAME FLIXBUS.COM
+    >   KTGR Transport
+    >   DATE 15.01.2026 -33,98â¬
+    > ! #
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 15.01.2026 +200,00â¬
+    > ! #
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 15.01.2026 -3,00â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 15.01.2026 -4,48â¬
+    > ! #
+    >   NAME Espresso House 22028
+    >   KTGR Bars & Restaurants
+    >   DATE 16.01.2026 -3,70â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 16.01.2026 -202,29â¬
+    > ! #
+    >   NAME SCHUM EUROSHOP GMBH
+    >   KTGR Shopping
+    >   DATE 16.01.2026 -1,30â¬
+    > ! #
+    >   NAME REWE Markt GmbH-ZW-NL
+    >   KTGR Lebensmittel
+    >   DATE 16.01.2026 -1,69â¬
+    > ! #
+    >   NAME Espresso House 22030
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -4,05â¬
+    > ! #
+    >   NAME Ali Ceylan
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -3,70â¬
+    > ! #
+    >   NAME Starbucks 53162 Neuer
+    >   KTGR Bars & Restaurants
+    >   DATE 17.01.2026 -2,30â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.01.2026 -1,28â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,40â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 17.01.2026 -41,28â¬
+    > ! #
+    >   NAME NYA*A
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,40â¬
+    > ! #
+    >   NAME CAFE STENZEL
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,90â¬
+    > ! #
+    >   NAME REWE Hamburg Ballindam
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -3,23â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 17.01.2026 -1,43â¬
+    > ! #
+    >   NAME Heinrich von Allwoerde
+    >   KTGR Lebensmittel
+    >   DATE 18.01.2026 -1,80â¬
+    > ! #
+    >   NAME ALDI NORD
+    >   KTGR Lebensmittel
+    >   DATE 18.01.2026 -1,48â¬
+    > ! #
+    >   NAME Pamukkale Back &amp; G
+    >   KTGR Bars & Restaurants
+    >   DATE 19.01.2026 -3,50â¬
+    > ! #
+    >   NAME STARBUCKS 53165 AM MON
+    >   KTGR Bars & Restaurants
+    >   DATE 20.01.2026 -3,65â¬
+    > ! #
+    >   NAME Nur Hier Fil. 3130
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,00â¬
+    > ! #
+    >   NAME Nur Hier GmbH
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,50â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.01.2026 -0,64â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 20.01.2026 -21,98â¬
+    > ! #
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -3,20â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 20.01.2026 -2,76â¬
+    > ! #
+    >   NAME SumUp *betahaus Hambu
+    >   KTGR Sonstiges
+    >   DATE 21.01.2026 -13,00â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 21.01.2026 -3,37â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 21.01.2026 -1,89â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.01.2026 -0,64â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 22.01.2026 -11,30â¬
+    > ! #
+    >   NAME Frischem. Wandelhalle
+    >   KTGR Lebensmittel
+    >   DATE 22.01.2026 -104,99â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 23.01.2026 -1,92â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 23.01.2026 -48,57â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 23.01.2026 -4,88â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 24.01.2026 -3,21â¬
+    > ! #
+    >   NAME Budnikowsky
+    >   KTGR Lebensmittel
+    >   DATE 25.01.2026 -3,19â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 25.01.2026 -4,94â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 26.01.2026 -10,32â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 27.01.2026 -30,96â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 27.01.2026 -1,34â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 27.01.2026 -1,39â¬
+    > ! #
+    >   NAME WESTERN UNION
+    >   KTGR Investitionen
+    >   DATE 28.01.2026 -13,99â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 28.01.2026 -2,78â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 29.01.2026 -5,16â¬
+    > ! #
+    >   NAME KAUFLAND HAMBURG ST GE
+    >   KTGR Lebensmittel
+    >   DATE 29.01.2026 -2,84â¬
+    > ! #
+    >   NAME REWE Niklas Gerlach oH
+    >   KTGR Lebensmittel
+    >   DATE 31.01.2026 -1,19â¬
+    > ! #
+    >   NAME Starbucks 53106 Markts
+    >   KTGR Bars & Restaurants
+    >   DATE 31.01.2026 -2,90â¬
+    > ! #
+    >   NAME Ditsch Hamburg Hammerb
+    >   KTGR Lebensmittel
+    >   DATE 31.01.2026 -2,90â¬
+    > ! #
+    >   NAME YORMA S BREMEN
+    >   KTGR Bars & Restaurants
+    >   DATE 31.01.2026 -2,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -1,28â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 31.01.2026 -41,32â¬
+    > ! #
+    >   NAME Lidl sagt Danke
+    >   KTGR Lebensmittel
+    >   DATE 01.02.2026 -2,38â¬
+    > ! #
+    >   NAME Cash26
+    >   KTGR CASH26 Einzahlung
+    >   DATE 02.02.2026 +100,00â¬
+    > ! #
+    >   NAME N26
+    >   KTGR CASH26 Deposit fee
+    >   DATE 02.02.2026 -1,50â¬
+    > ! #
+    >   NAME N26 Ratenzahlung
+    >   KTGR Ãberweisung 
+    >   DATE 02.02.2026 +63,00â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.02.2026 -26,78â¬
+    > ! #
+    >   NAME a&o Hotels and Hostels
+    >   KTGR Freizeit
+    >   DATE 03.02.2026 -4,50â¬
+
+    [0x00] 2026-Feb-03 22:24:24 priv.c:5838 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:26:19 priv.c:1404 !(bytesh/) $ mv$$ "statement*", "N26" $$
+
+    [0x00] 2026-Feb-03 22:28:30 priv.c:1406 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:26:07 priv.c:1402 !(bytesh/) $ mkdir$$ "N26" $$
+
+    [0x00] 2026-Feb-03 22:28:34 priv.c:1404 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:25:08 priv.c:1378 !(bytesh/) $ lsc
+    > total 3.8M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw  673 Feb  3 17:09 2025A.TXT
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  38K Feb  3 21:24 N26LATEST
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+    > -rwxrwx--- 1 u0_a182 media_rw  89K Feb  3 17:00 statement-2025-09_050007.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  46K Feb  3 17:00 statement-2025-10_050043.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  45K Feb  3 17:01 statement-2025-11_050117.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  73K Feb  3 17:01 statement-2025-12_050150.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  57K Feb  3 17:02 statement-2026-01_050216.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  21K Feb  3 17:02 statement-2026-02_050238.pdf
+
+    [0x00] 2026-Feb-03 22:28:36 priv.c:1402 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:24:27 priv.c:1376 !(bytesh/) $ mv$$ "tmp.txt", "N26LATEST" $$
+
+    [0x00] 2026-Feb-03 22:28:42 priv.c:1378 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:19:43 priv.c:1356 !(bytesh/) $ edit$$ "tmp.txt" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 21:19:50.281448037 +0100
+    > --- tmp.txt	2026-02-03 21:21:29.341447966 +0100
+    > ***************
+    > *** 1,6 ****
+    > ! NAME -> KTGR -> (DATE | VERW)
+    >   
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    >   
+    > --- 1,7 ----
+    > ! áª -> NAME -> KTGR -> DATE -> áª 
+    > !                   -> VERW
+    >   
+    >   NAME Coffeevibe
+    >   KTGR Bars & Restaurants
+    >   DATE 01.09.2025 -2,91â¬
+    >   
+
+    [0x00] 2026-Feb-03 22:28:44 priv.c:1376 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 22:19:36 priv.c:1353 !(bytesh/) $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 22:28:46 priv.c:1356 !(bytesh/) $ cllt
+[0x00] 2026-Feb-03 18:15:07 priv.c:1229 !(bytesh/) $ cd$$ "MEGABUROKRATIE/FINANZEN/" $$
+
+    [0x00] 2026-Feb-03 22:30:11 priv.c:1231 !(bytesh/) $ cllt
+[0x00] 2026-Feb-04 17:35:05 priv.c:2064 !(bytesh/) $ srcfindword$$ "mf" $$
+    > main.c:123:            els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
+    > main.c:196:                mf("%s/%s/\n", isroot ? "" : cwd, (*pline)), 
+    > main.c:270:                ifn sh, "%s %s %s", "stat", mf("%s%s", ctxt->rootworkdir, ".err"), QUIET, endsh
+    > main.c:271:                thn printf("%s\n", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));
+    > main.c:273:                    stm iff mv, ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err"), endsh
+    > main.c:274:                    the iff cpr, mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
+    > main.c:296:            popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    > main.c:319:    stm cat, mf("%s >> %s", ROOTC("/run/tmp/log.next.txt"), ROOTC("/run/log.txt")), endsh;
+    > main.c:336:        stm rmr, mf("%s%s", ctxt->rootworkdir, ".bak"), 
+    > main.c:337:               /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh;
+    > main.c:338:        stm mv,  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
+    > main.c:339:                 mf("%s%s", ctxt->rootworkdir, ".bak"), endsh;
+    > main.c:340:        stm cpr, mf("%s%s", ctxt->rootworkdir, ""),
+    > main.c:341:                 mf("%s%s", ctxt->rootworkdir, ".tmp.bak"), endsh;
+    > main.c:358:thn perror(mf("%s:%d", __FILE__, __LINE__));
+    > main.c:451:chr *cwdinclude = mf( "%s/%s", ctxt->cwd, "/dir.h" );
+    > main.c:453:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > main.c:457:stm cwdinclude = mf( "%s/%s", ctxt->cwd, "/dirpost.h" );
+    > main.c:459:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > run/build.c:25:	chr *cmd = mf("gcc %s %s%s%s%s%s%s%s",
+    > run/cnslutil.c:26:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:43:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:59:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:196:	mkdirp, mf("%s/%s/%s", ROOT, "run", parent), endsh;
+    > run/cnslutil.c:199:    	mf(
+    > run/cnslutil.c:219:		fopen(mf("%s/%s/%s.%s", ROOT, "run", name, "h"), "a")	
+    > run/cnslutil.c:222:		mf(
+    > run/cnslutil.c:226:		fopen(mf("%s/run/%s", ROOT, "cnslutil.h"), "a")
+    > run/cnslutil.c:247:chr *cmd = mf("%sh", name);
+    > run/cnslutil.c:248:chr *filepath = mf("%s.h", namepath);
+    > run/cnslutil.c:253:    = mf("%s%sadd%s $ ", "    [....] ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    > run/cnslutil.c:259:chr *szdef = mgetline(mf("%s%%02d $ ", space));
+    > run/cnslutil.c:261:chr *path = ROOTC(mf("/run/%s", filepath));
+    > run/cnslutil.c:269:stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+    > run/cnslutil.c:274:	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+    > run/cnslutil.c:275:	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    > run/cnslutil.c:277:	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    > run/cnslutil.c:278:	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    > run/cnslutil.c:392:	stm char *filename = mf("%s%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt");
+    > run/cnslutil.c:476:             shdirect$$ mf( \
+    > run/htmlutil.c:9:thn { perror(mf("%s:%d", __FILE__, __LINE__)); return 0; }    
+    > run/htmlutil.c:11:    char *filenameaccept = mf("%s%s", filename, ".accept.txt");
+    > run/htmlutil.c:12:	char *filenamereject = mf("%s%s", filename, ".reject.txt");
+    > run/htmlutil.c:21:cen FILE *outreject = fopen(mf("%s%s", filename, ".reject.txt"), "w");
+    > run/htmlutil.c:22:cen FILE *outaccept = fopen(mf("%s%s", filename, ".accept.txt"), "w");
+    > run/htmlutil.c:168:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/main.c:12:srcfindword$$ "mf" $$
+    > run/mainstatic.c:56:stm perror(mf("%s:%d", __FILE__, cen_line));
+    > run/mainstatic.c:99://stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+    > run/mainstatic.c:105:chr *status = mf(
+    > run/mainstatic.c:106:    	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
+    > run/mainstatic.c:113:    	mf("%s%s", 
+    > run/mainstatic.c:167:stm perror(mf("%s:%d\n", __FILE__, cen_line));
+    > run/scanfs.c:57:		iff access(mf("%s%s", prefix, filename), F_OK) == 0
+    > run/stdlibext.c:32:chr *pre = mf("(%s) = ", name);
+    > run/stdlibext.c:83:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/stdlibext.c:190:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/cnslutil.h:10:#define ROOTLOG(name) mf("> /root/%s.log 2>&1", name)
+    > run/cnslutil.h:13:#define DISPLAYCONFIG mf("DISPLAY=:%d", DISPLAYN)
+    > run/cnslutil.h:15:#define LOGVNCSERVER ROOTLOG(mf("vncserver.%d", DISPLAYN))
+    > run/cnslutil.h:24:#define NBUFFERED_OUT(text, f) mf("%s", text)
+    > run/cnslutil.h:25:#define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    > run/cnslutil.h:27:#define lsraw(pipe) mf$ "ls %s", pipe $
+    > run/cnslutil.h:95:#define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+    > run/cnslutil.h:226:#define libreofficef sh, mf("%s libreoffice %%s %s %s", DISPLAYCONFIG, QUIET, BG)
+    > run/cnslutil.h:277:# define stdioexth edit, mf("%s/%s", ROOT, "/run/stdioext.h"), endsh
+    > run/cnslutil.h:279:# define stdlibexth edit, mf("%s/%s", ROOT, "/run/stdlibext.h"), endsh
+    > run/cnslutil.h:284:# define displaysh(...) sh, "%s %s %s %s", DISPLAYCONFIG, mf(__VA_ARGS__), QUIET, BG, endsh
+    > run/cnslutil.h:302:  edit, mf("%s/%s", ROOT, "../textstreamanimate/textstreamanimate.h"), endsh;
+    > run/cnslutil.h:427:    mf("%s=\"%s\"", "DBUS_SESSION_BUS_ADDRESS", dbus_session_bus_address)
+    > run/cnslutil.h:460://#define gitclone sh, mf("git clone %%s > %s 2>&1 & && %s" \
+    > run/mainsys.h:21:#define ROOTC(arg) mf("%s%s", ROOT, arg)
+    > run/stdlibext.h:136:#define mf mlinebufprintf
+    > run/stdlibext.h:137:#define mf$ mlinebufprintf INSERT_OPENING_PAREN
+    > run/tmp.h:5:#define directsh$ shdirectout(mf(
+    > run/tmp.h:8:#define TROOTC(path) mf("%s%s", "/data/data/com.termux/files/", path)
+
+    [0x00] 2026-Feb-04 17:39:29 priv.c:2142 !(bytesh/) $ cllt
+[0x00] 2026-Feb-04 21:18:28 priv.c:1892 !(bytesh/) $ man$$ "find" $$
+
+    [0x00] 2026-Feb-04 21:20:18 priv.c:1894 !(bytesh/) $ cllt
+[0x00] 2026-Feb-04 23:54:15 priv.c:1946 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 22:54:17.731941633 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-04 22:56:22.955941543 +0100
+    > ***************
+    > *** 4,13 ****
+    > --- 4,15 ----
+    >   blk
+    >   
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    > + EVALECHO(
+    > + 
+    >   stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   stm breakpt;
+    > ***************
+    > *** 20,33 ****
+    >   stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = 0;
+    >       for seqto(i, size - ignore_last_newline)
+    > !     iff buf[i] == '\n'
+    > !     thn blk linesbegin[j++] = buf + i + 1;
+    > !         stm buf[i] = 0;
+    > ! 	end
+    >   nop
+    >   stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    >       stm printf("%s\n", linesbegin[i]);
+    > --- 22,37 ----
+    >   stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = 0;
+    >       for seqto(i, size - ignore_last_newline)
+    > !     blk ed$ i $
+    > !       ; iff buf[i] == '\n'
+    > !         thn blk linesbegin[j++] = buf + i + 1;
+    > !             stm buf[i] = 0;
+    > ! 	    end
+    > !     end
+    >   nop
+    >   stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    >       stm printf("%s\n", linesbegin[i]);
+    > ***************
+    > *** 35,39 ****
+    > --- 39,44 ----
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+    >   
+    > + )
+
+    [0x00] 2026-Feb-04 23:56:23 priv.c:2007 $ cllt
+[0x00] 2026-Feb-04 23:52:26 priv.c:1912 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 22:52:31.523941709 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-04 22:53:14.047941679 +0100
+    > ***************
+    > *** 1,9 ****
+    > --- 1,13 ----
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   nil readarrfile2(char const *filename)
+    >   blk
+    > + 
+    > + int current_stdout_fileno = dup(STDOUT_FILENO);
+    > + stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    > + 
+    >   stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   stm breakpt;
+    > ***************
+    > *** 25,32 ****
+    > --- 29,39 ----
+    >   nop
+    >   stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    >       stm printf("%s\n", linesbegin[i]);
+    > + 
+    > + stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > + 
+    >   stm return 0;
+    >   end
+    >   
+
+    [0x00] 2026-Feb-04 23:56:28 priv.c:1946 $ cllt
+[0x00] 2026-Feb-05 23:56:02 priv.c:2068 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 22:56:18.479844135 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-05 22:57:34.951844080 +0100
+    > ***************
+    > *** 8,18 ****
+    >   
+    >   //EVALECHO(
+    >   
+    >   stm breakpt;
+    >   int size;
+    > ! chr *buf = mmap2(filename, &size);
+    >   nop
+    >   stm breakpt;
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    > --- 8,19 ----
+    >   
+    >   //EVALECHO(
+    >   
+    >   stm breakpt;
+    >   int size;
+    > ! chr *readbuf = mmap2(filename, &size);
+    > ! chr *buf = malloc(size); memcpy(buf, readbuf, size);
+    >   nop
+    >   stm breakpt;
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+
+    [0x00] 2026-Feb-05 23:59:54 priv.c:2098 $ cllt
+[0x00] 2026-Feb-05 23:43:52 priv.c:2024 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 22:43:54.479844667 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-05 22:44:27.607844643 +0100
+    > ***************
+    > *** 4,14 ****
+    >   blk
+    >   
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    > ! EVALECHO(
+    >   
+    >   stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    > --- 4,14 ----
+    >   blk
+    >   
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    > ! //EVALECHO(
+    >   
+    >   stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    > ***************
+    > *** 39,44 ****
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+    >   
+    > ! )
+    > --- 39,44 ----
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+    >   
+    > ! //)
+
+    [0x00] 2026-Feb-06 00:00:02 priv.c:2068 $ cllt
+[0x00] 2026-Feb-06 02:34:00 priv.c:2218 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 01:34:06.103837363 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 01:35:53.483837286 +0100
+    > ***************
+    > *** 21,43 ****
+    >       thn ++lines;
+    >       nop
+    >   stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    > !     stm linesbegin[j++] = 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk ed( i )
+    >         ; iff buf[i] == '\n'
+    >           thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    > ! 	    end
+    > !     end
+    >   nop
+    >   stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    > !     stm printf("%s\n", linesbegin[i]);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+    > --- 21,42 ----
+    >       thn ++lines;
+    >       nop
+    >   stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    > !     stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk ed( i )
+    >         ; iff buf[i] == '\n'
+    >           thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    > !     end	    end
+    >   nop
+    >   stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    > ! stm printf("%s\n", linesbegin[i]);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+
+    [0x00] 2026-Feb-06 02:35:54 priv.c:2270 $ cllt
+[0x00] 2026-Feb-06 02:37:30 priv.c:2189 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 01:37:33.003837215 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 01:37:42.703837208 +0100
+    > ***************
+    > *** 6,39 ****
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    >   //EVALECHO(
+    >   
+    > - stm breakpt;
+    >   int size;
+    >   chr *readbuf = mmap2(filename, &size);
+    >   chr *buf = malloc(size); memcpy(buf, readbuf, size);
+    >   nop
+    > - stm breakpt;
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    > - stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk ed( i )
+    >         ; iff buf[i] == '\n'
+    >           thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    >       end	    end
+    >   nop
+    > - stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    >   stm printf("%s\n", linesbegin[i]);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > --- 6,35 ----
+
+    [0x00] 2026-Feb-06 02:37:43 priv.c:2230 $ cllt
+[0x00] 2026-Feb-06 02:38:27 priv.c:2189 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 01:38:30.287837174 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 01:49:07.211836719 +0100
+    > ***************
+    > *** 16,38 ****
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    > ! chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk ed( i )
+    >         ; iff buf[i] == '\n'
+    >           thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    >       end	    end
+    > - nop
+    > - stm ed(lines);
+    > - for seqto(i, lines - 1)
+    > - stm printf("%s\n", linesbegin[i]);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+    > --- 16,39 ----
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    > ! ;;# define instr(i) &linesbegin[i][0]
+    > ! ;;# define arg(i)   &linesbegin[i][5]
+    > !     chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk ed( i )
+    >         ; iff buf[i] == '\n'
+    >           thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    > + 	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    > + 	    iff linelen > 4 
+    > + 	    thn linesbegin[j-2][4] = '\0';
+    >       end	    end
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    >   stm return 0;
+    >   end
+
+    [0x00] 2026-Feb-06 03:01:58 priv.c:2243 !(bytesh/) $ cllt
+[0x00] 2026-Feb-06 02:26:59 priv.c:2187 !(bytesh/) $ edit$$ "-b N26LATEST" $$
+
+    [0x00] 2026-Feb-06 03:02:07 priv.c:2189 !(bytesh/) $ cllt
 

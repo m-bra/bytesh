@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define NOSTRINGH
 #define NOSTDIOH
 #define NOUNISTDH
 #include "main.h"

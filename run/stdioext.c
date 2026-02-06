@@ -29,13 +29,14 @@ int eof()
 #include <stdio.h>
 
 
-#define NOSTDIOH
-#include "main.h"
 
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
+#define NOSTRINGH
+#define NOSTDIOH
+#include "main.h"
 
 struct SYSFILE *stdoutmacro()
 {

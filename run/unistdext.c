@@ -1,5 +1,5 @@
-#include "main.h"
 #include <unistd.h>
+#include "main.h"
 
 int readc(int fd)
 {

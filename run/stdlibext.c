@@ -1,11 +1,15 @@
-#include "main.h"
-
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/mman.h>
+#include <fcntl.h>
 
-/* stdio.h */ /* { */
+#define NOSTDIOH
+#define NOSTRINGH
+#include "main.h"
+
+/* stdio.h */ /* { 
 
 int vprintf(const char *restrict format, va_list ap);
 int vfprintf(struct FILE *restrict stream,
@@ -16,7 +20,7 @@ int vsnprintf(
             char *str, size_t size,
             const char *restrict format, va_list ap);
 
-/* } */
+} */
 
 int cen_line = -1;
 
@@ -56,9 +60,9 @@ int sh_(int ignored, char *fmt, ...)
 {
   va_list args;
   va_start(args, fmt);
-  linebuf_t buf;
+  linebuf_t buf[6];
 
-  vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+  vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args);
 
   va_end(args);
 
@@ -66,7 +70,7 @@ int sh_(int ignored, char *fmt, ...)
   pid_t fr = fork(); 
   if (!fr) 
   {
-    execl("/bin/sh", "sh", "-c", buf, (char *) NULL);	
+    execl("/bin/sh", "sh", "-c", &buf[0], (char *) NULL);	
   }
   else
   {
@@ -187,3 +191,13 @@ err:
   perror(mf("%s:%d", __FILE__, __LINE__));
   return 0;
 }
+
+nil *mmap2(char const *filename, int *size)
+blk struct stat statbuf;
+int fd = open(filename, O_RDONLY);
+stm fstat(fd, &statbuf); 
+iff size
+thn *size = (int) statbuf.st_size - 1;
+stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+end
+

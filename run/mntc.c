@@ -13,8 +13,8 @@ thn return lastresult;
 
     sh, "cd %s", dir, endsh;
 
-	sh, "git status > %s",("/tmp/gitstatus.txt"), endsh;
-	FILE *f = fopen(("/tmp/gitstatus.txt"), "r");\
+	sh, "git status > %s",ROOTC("/gitstatus.tmp"), endsh;
+	FILE *f = fopen(ROOTC("/gitstatus.tmp"), "r");\
 
 chr lastline[linebuf_tn];
 
@@ -36,7 +36,7 @@ thn blk
     strncpy(lastline, line, linebuf_tn);
 end_blk
 
-	rm, ("/tmp/gitstatus.txt"), endsh;
+	rm, ROOTC("/gitstatus.tmp"), endsh;
 	return lastresult = 1;	
 
 

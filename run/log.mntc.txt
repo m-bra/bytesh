@@ -131,4 +131,149 @@
     [0x00] 2025-Sep-24 13:45:41 priv.c:1123 !(bytesh/) $ clmn[0x00] 2025-Sep-24 11:55:52 priv.c:639 !(bytesh/) $ pwd
     > /storage/self/primary/Documents
 
-    [0x00] 2025-Sep-24 13:47:14 priv.c:642 !(bytesh/) $ clmn
+    [0x00] 2025-Sep-24 13:47:14 priv.c:642 !(bytesh/) $ clmn[0x00] 2026-Feb-04 01:06:02 priv.c:1341 !(bytesh/) $ man$$ "mmap" $$
+
+    [0x00] 2026-Feb-04 01:07:16 priv.c:1343 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:44:59 priv.c:1930 !(bytesh/) $ edit$$ ".vimrc" $$
+
+    [0x00] 2026-Feb-04 21:45:23 priv.c:1932 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:43 priv.c:1928 !(bytesh/) $ edit$$ ".vimrc" $$
+
+    [0x00] 2026-Feb-04 21:45:33 priv.c:1930 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:41 priv.c:1926 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-04 21:45:35 priv.c:1928 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:31 priv.c:1924 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-04 21:45:37 priv.c:1926 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:27 priv.c:1920 !(bytesh/) $ lsc
+    > total 3.5K
+    > drwx------ 2 u0_a228 u0_a228 3.4K Feb  3 16:11 syntax
+
+    [0x00] 2026-Feb-04 21:46:02 priv.c:1924 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:19 priv.c:1915 !(bytesh/) $ lsc
+    > total 7.5K
+    > -rw------- 1 u0_a228 u0_a228  135 Feb  3 16:10 .netrwhist
+    > drwx------ 3 u0_a228 u0_a228 3.4K Feb  3 16:10 after
+
+    [0x00] 2026-Feb-04 21:47:31 priv.c:1920 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:14 priv.c:1913 !(bytesh/) $ cd$$ ".vim" $$
+
+    [0x00] 2026-Feb-04 21:47:33 priv.c:1915 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:42:11 priv.c:1898 !(bytesh/) $ lsc
+    > total 160K
+    > drwx------ 2 u0_a228 u0_a228 3.4K Jan 30 22:48 .android
+    > -rw------- 1 u0_a228 u0_a228 4.0K Feb  4 19:49 .bash_history
+    > drwx------ 3 u0_a228 u0_a228 3.4K Feb  4 19:42 .config
+    > -rw------- 1 u0_a228 u0_a228   20 Feb  3 01:08 .lesshst
+    > drwx------ 2 u0_a228 u0_a228 3.4K Jan 28 01:04 .ssh
+    > drwx------ 2 u0_a228 u0_a228 3.4K Feb  3 16:33 .termux
+    > drwx------ 3 u0_a228 u0_a228 3.4K Jan 31 22:23 .tor
+    > drwx------ 3 u0_a228 u0_a228 3.4K Feb  3 16:10 .vim
+    > -rw------- 1 u0_a228 u0_a228  41K Feb  4 20:41 .viminfo
+    > -rwx------ 1 u0_a228 u0_a228  80K Feb  4 20:42 a.out
+    > drwx------ 4 u0_a228 u0_a228 3.4K Feb  4 16:16 prj
+    > drwx------ 2 u0_a228 u0_a228 3.4K Feb  3 00:13 storage
+
+    [0x00] 2026-Feb-04 21:47:35 priv.c:1913 !(bytesh/) $ clmn
+[0x00] 2026-Feb-04 21:47:49 priv.c:1898 !(bytesh/) $ cdbytesh
+
+    [0x00] 2026-Feb-04 21:47:54 priv.c:1900 !(bytesh/) $ clmn
+[0x00] 2026-Feb-05 22:07:23 priv.c:1952 $ sh$$ "pkg install which" $$
+    > No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+    > Testing the available mirrors:
+    > [*] (10) https://packages-cf.termux.dev/apt/termux-main: ok
+    > [*] (1) https://mirror.textcord.xyz/termux/termux-main: bad
+    > [*] (1) https://mirror.nevacloud.com/applications/termux/termux-main: ok
+    > [*] (1) https://mirrors.nguyenhoang.cloud/termux/termux-main: ok
+    > [*] (1) https://mirror.twds.com.tw/termux/termux-main: ok
+    > [*] (1) https://linux.domainesia.com/applications/termux/termux-main: ok
+    > [*] (1) https://tmx.xvx.my.id/apt/termux-main: bad
+    > [*] (1) https://mirror.freedif.org/termux/termux-main: ok
+    > [*] (1) https://mirrors.cbrx.io/apt/termux/termux-main: ok
+    > [*] (1) https://mirrors.in.sahilister.net/termux/termux-main/: ok
+    > [*] (1) https://mirror.albony.in/termux/termux-main: ok
+    > [*] (1) https://mirror.bardia.tech/termux/termux-main: bad
+    > [*] (1) https://mirrors.sdu.edu.cn/termux/termux-main: ok
+    > [*] (1) https://mirrors.sau.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.nju.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.sustech.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.pku.edu.cn/termux/termux-main/: ok
+    > [*] (1) https://mirror.sjtu.edu.cn/termux/termux-main/: ok
+    > [*] (1) https://mirror.iscas.ac.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.ustc.edu.cn/termux/termux-main: ok
+    > [*] (1) https://mirrors.aliyun.com/termux/termux-main: ok
+    > [*] (1) https://mirrors.qvq.net.cn/termux/termux-main: bad
+    > [*] (1) https://mirrors.cqupt.edu.cn/termux/termux-main: ok
+    > [*] (1) https://mirrors.zju.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.hust.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.bfsu.edu.cn/termux/apt/termux-main: bad
+    > [*] (1) https://mirror.nyist.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://ftp.agdsn.de/termux/termux-main: ok
+    > [*] (4) https://grimler.se/termux/termux-main: ok
+    > [*] (1) https://ro.mirror.flokinet.net/termux/termux-main: ok
+    > [*] (1) https://mirrors.cfe.re/termux/termux-main: bad
+    > [*] (1) https://mirror.termux.dev/termux-main: bad
+    > [*] (1) https://termux.3san.dev/termux/termux-main: bad
+    > [*] (1) https://mirror.bouwhuis.network/termux/termux-main: ok
+    > [*] (1) https://mirror.accum.se/mirror/termux.dev/termux-main: ok
+    > [*] (1) https://termux.mentality.rip/termux-main: ok
+    > [*] (1) https://is.mirror.flokinet.net/termux/termux-main: ok
+    > [*] (1) https://md.mirrors.hacktegic.com/termux/termux-main: bad
+    > [*] (1) https://termux.astra.in.ua/apt/termux-main: bad
+    > [*] (1) https://mirror.mwt.me/termux/main: ok
+    > [*] (1) https://mirrors.medzik.dev/termux/termux-main: ok
+    > [*] (1) https://packages.termux.dev/apt/termux-main: ok
+    > [*] (1) https://mirror.sunred.org/termux/termux-main: ok
+    > [*] (1) https://mirrors.de.sahilister.net/termux/termux-main: ok
+    > [*] (1) https://mirror.leitecastro.com/termux/termux-main: bad
+    > [*] (1) https://termux.cdn.lumito.net/termux-main: ok
+    > [*] (1) https://nl.mirror.flokinet.net/termux/termux-main: ok
+    > [*] (1) https://ftp.fau.de/termux/termux-main: ok
+    > [*] (1) https://termux.librehat.com/apt/termux-main: ok
+    > [*] (1) https://mirror.autkin.net/termux/termux-main: ok
+    > [*] (1) https://mirror.polido.pt/termux/termux-main: bad
+    > [*] (1) https://dl.kcubeterm.com/termux-main: bad
+    > [*] (1) https://termux.danyael.xyz/termux/termux-main: ok
+    > [*] (1) https://mirror.mwt.me/termux/main: bad
+    > [*] (1) https://mirrors.utermux.dev/termux/termux-main: bad
+    > [*] (1) https://mirror.vern.cc/termux/termux-main: ok
+    > [*] (1) https://plug-mirror.rcac.purdue.edu/termux/termux-main: ok
+    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > [*] (1) https://mirror.fcix.net/termux/termux-main: ok
+    > [*] (1) https://mirror.csclub.uwaterloo.ca/termux/termux-main: ok
+    > [*] (1) https://mirror.endianness.com/termux/termux-main: bad
+    > [*] (1) https://mirrors.rda.run/termux/termux-main: bad
+    > [*] (1) https://repository.su/termux/termux-main/: ok
+    > [*] (1) http://mirror.mephi.ru/termux/termux-main: ok
+    > Picking mirror: (11) /data/data/com.termux/files/usr/etc/termux/mirrors/asia/mirrors.nguyenhoang.cloud
+    > Get:1 https://mirrors.nguyenhoang.cloud/termux/termux-main stable InRelease [14.0 kB]
+    > Get:2 https://mirrors.nguyenhoang.cloud/termux/termux-main stable/main aarch64 Packages [545 kB]
+    > Fetched 559 kB in 6s (88.3 kB/s)
+    > Reading package lists...
+    > Building dependency tree...
+    > Reading state information...
+    > 77 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    > Reading package lists...
+    > Building dependency tree...
+    > Reading state information...
+    > The following NEW packages will be installed:
+    >   which
+    > 0 upgraded, 1 newly installed, 0 to remove and 77 not upgraded.
+    > Need to get 12.5 kB of archives.
+    > After this operation, 86.0 kB of additional disk space will be used.
+    > Get:1 https://mirrors.nguyenhoang.cloud/termux/termux-main stable/main aarch64 which aarch64 2.23-1 [12.5 kB]
+    > Fetched 12.5 kB in 1s (8428 B/s)
+    > Selecting previously unselected package which.
+    > (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%    > (Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ..    > . 95%(Reading database ... 100%(Reading database ... 33733 files and directories currently installed.)
+    > Preparing to unpack .../which_2.23-1_aarch64.deb ...
+    > Unpacking which (2.23-1) ...
+    > Setting up which (2.23-1) ...
+    > Processing triggers for mandoc (1.14.6-6) ...
+
+    [0x00] 2026-Feb-05 22:08:22 priv.c:2047 $ clmn
+[0x00] 2026-Feb-06 00:01:47 priv.c:2010 !(bytesh/) $ bak$$ "cnslutil2.h" $$
+
+    [0x00] 2026-Feb-06 00:04:10 priv.c:2012 $ clmn
+

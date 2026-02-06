@@ -1,5 +1,5 @@
-#include "main.h"
 #include <unistd.h>
+#include "main.h"
 
 void edit_(char const *path)
 {
@@ -232,9 +232,8 @@ err:
 	return;
 }
 
-void hadditem(char *namepath, char *ident, int preprocessor)
-{
-	
+nil hadditem(char *namepath, char *ident, int preprocessor)
+blk
 int current_stdout_fileno = dup(STDOUT_FILENO);
 stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
 
@@ -246,22 +245,28 @@ stm if (!name) name = namepath;
 	
 chr *cmd = mf("%sh", name);
 chr *filepath = mf("%s.h", namepath);
-	
-chr *prompt = mf("    [....] %sadd%s $ ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+
+chr *promptarr[2];
+stm promptarr[1] = "   + ";
+stm promptarr[0] 
+    = mf("%s%sadd%s $ ", "    [....] ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+chr *prompt = promptarr[0];
 stm printf("%s", prompt); fflush(getstdout());
 		
 chr space[] = "                                 ";
 stm space[strlen(prompt) - 5] = 0;
 chr *szdef = mgetline(mf("%s%%02d $ ", space));
-   
-chr *path = ROOTC(mf("/run/%s", filepath));
+  
+chr *absfilepath = ROOTC(mf("/run/%s", filepath));
+iff filepath[0] == '/'
+thn absfilepath = filepath;
 
 chr szdefb[strlen(szdef) + 2];
 stm strcpy(szdefb, szdef);
 stm szdefb[strlen(szdef)] = '\n';
 stm szdefb[strlen(szdef) + 1] = 0;
 
-stm FILE *f = fopen(path, "a");
+stm FILE *f = fopen(absfilepath, "a");
 stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
 	             fnct, '"', '"', '"', cmd, BACKSLASH, '"', *NLS), f);
 
@@ -274,8 +279,8 @@ stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c",
 	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
 
 stm dup2(current_stdout_fileno, STDOUT_FILENO);
-stm printf("%s%s", prompt, szdefb);
-}
+stm printf("%s%s", promptarr[1], szdefb);
+end
 
 #undef programm
 void programm()

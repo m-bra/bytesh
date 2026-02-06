@@ -11,6 +11,7 @@ void *malloc(size_t size);
 void free(void *ptr);
 
 /* string.h */
+#ifndef NOSTRINGH
 char *strstr(char const *, char const *);
 char *strcpy(char *, char const *);
 char *strcat(char *, char const *);
@@ -27,7 +28,12 @@ void *memset(
 void *memccpy(
                      void *dest, const void *src,
                      int c, size_t n);
-char *strchrnul(const char *s, int c);
+char *strchrnul(char *s, int c);
+char *strchr(char const *s, int c);
+void *memcpy(
+                    void *dest, const void *src,
+                    size_t n);
+#endif
 
 /* stdio.h */
 
@@ -111,6 +117,7 @@ extern int F_OK_VAR;
 #include "unistdext.h"
 #include "mathext.h"
 #include "build.h"
+#include "../cflags.h"
 
 extern int main_interactive;
 
@@ -176,6 +183,5 @@ blk blk_end
 #include "preprocessor.h"
 #include "projects.h"
 #include "tmp.h"
-
 
 #endif

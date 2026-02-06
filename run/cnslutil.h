@@ -57,7 +57,7 @@ void cmdlog_();
 
 void cmdloggrep_(char *mask);
 
-void cmdloghead(int end);
+void cmdloghead(int endpos);
 
 #define cmdlogregionh \
      printf("%s\n", "cmdlogregion(int from, int to, char buf[linebuf_tn * (to - from)])");
@@ -123,7 +123,7 @@ void hcreate(char *name);
 
 #define gdbbt$$ sh$$ "gdb %s -ex run -ex bt --btach", 
 
-void hadditem(char *namepath, char *ident, int preprocessor);
+nil hadditem(char *namepath, char *ident, int preprocessor);
 
 #define cnslutilhadd xyzhadd("cnslutil")
 #define cnslutilhaddfn(ident) haddfn("cnslutil", ident)
@@ -142,7 +142,6 @@ void programm();
 #define cnslutilh (edit, mlinebufprintf("%s/%s", ROOT, "run/cnslutil.h"), endsh)
 #define cnslutilc (edit, ROOTC("run/cnslutil.c"), endsh)
 
-# define compilerh edit, ROOTC("main.c"), endsh;
 # define compilerc edit, ROOTC("main.c"), endsh;
 
 void echosys(char const *cmd);
@@ -529,3 +528,9 @@ void cd$$_(char *ignore, char const *path, char *ignore2);
 
 #define cd$$ cd$$_ ( 0,
 #define pinggoogle shdirect$$ "ping google.com | sed -r 's/.*time.([0-9]+).*$/\\1/g'" $$
+# define open$$ sh$$ "termux-open %s", 
+
+#define findgrep$$ sh$$ "find %s | xargs grep -n %s ", 
+#define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+# define which$$ sh$$ "which %s",
+

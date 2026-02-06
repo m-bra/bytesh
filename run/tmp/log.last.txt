@@ -1,699 +1,2414 @@
 
-    [0x00] 2025-Sep-24 14:01:34 priv.c:0 !(bytesh/) $ pwd
-    > /storage/self/primary/prj/bytesh
 
-    [0x00] 2025-Sep-24 14:03:23 priv.c:3 !(bytesh/) $ precompile
+    [0x00] 2026-Feb-03 00:51:37 priv.c:1 $ pwd
+    > /data/data/com.termux/files/home/prj/bytesh
+
+    [0x00] 2026-Feb-03 00:53:12 priv.c:4 $ # exit
+
+
+    [0x00] 2026-Feb-03 00:53:21 priv.c:7 $ pwd
+    > /data/data/com.termux/files/home/prj/bytesh
+
+    [0x00] 2026-Feb-03 00:54:20 priv.c:10 $ cdup
+
+    [0x00] 2026-Feb-03 00:54:26 priv.c:12 $ pwd
+    > /data/data/com.termux/files/home/prj
+
+    [0x00] 2026-Feb-03 00:54:29 priv.c:15 $ cd$$ "../storage/" $$
+
+    [0x00] 2026-Feb-03 01:13:36 priv.c:17 $ lsc
+    > total 0
+    > lrwxrwxrwx 1 u0_a228 u0_a228 24 Jan 28 02:09 dcim -> /storage/emulated/0/DCIM
+    > lrwxrwxrwx 1 u0_a228 u0_a228 28 Jan 28 02:09 downloads -> /storage/emulated/0/Download
+    > lrwxrwxrwx 1 u0_a228 u0_a228 26 Jan 28 02:09 movies -> /storage/emulated/0/Movies
+    > lrwxrwxrwx 1 u0_a228 u0_a228 25 Jan 28 02:09 music -> /storage/emulated/0/Music
+    > lrwxrwxrwx 1 u0_a228 u0_a228 28 Jan 28 02:09 pictures -> /storage/emulated/0/Pictures
+    > lrwxrwxrwx 1 u0_a228 u0_a228 19 Jan 28 02:09 shared -> /storage/emulated/0
+
+    [0x00] 2026-Feb-03 01:16:45 priv.c:26 $ cnslutilh
+
+    [0x00] 2026-Feb-03 01:17:08 priv.c:28 $ tmph
+
+    [0x00] 2026-Feb-03 01:22:31 priv.c:30 !(bytesh/) $ cd$$ "/storage/self/primary/" $$
+
+    [0x00] 2026-Feb-03 01:22:48 priv.c:32 !(bytesh/) $ lsc
+    > total 84K
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug 10 12:34 .LenovoReaper
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug 10 12:29 .bak
+    > drwxrws--x  5 media_rw media_rw 3.4K Mar 15  2024 Android
+    > drwxrws---  5 u0_a182  media_rw 3.4K Jan 25 19:41 Books
+    > drwxrws---  4 u0_a182  media_rw 3.4K Dec  3 19:29 DCIM
+    > drwxrws---  3 u0_a182  media_rw 3.4K Feb  2 23:01 Download
+    > drwxrws---  2 u0_a182  media_rw 3.4K Dec  1 23:20 Fonts
+    > drwxrws--- 21 u0_a182  media_rw 3.4K Feb  3 00:13 MEGABUEROKRATIE
+    > drwxrws---  2 u0_a182  media_rw 3.4K Feb  3 00:11 MEGADOCUMENTS
+    > drwxrws---  8 u0_a182  media_rw 3.4K Oct  2 09:18 Movies
+    > drwxrws---  6 u0_a182  media_rw 3.4K Oct 15 00:15 Music
+    > drwxrws---  2 u0_a182  media_rw 3.4K Jul 22  2025 Notifications
+    > drwxrws---  6 u0_a182  media_rw 3.4K Jan 26 16:45 Pictures
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Podcasts
+    > drwxrws---  4 u0_a182  media_rw 3.4K Feb 28  2025 ReadEra
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Recordings
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Ringtones
+    > drwxrws---  3 u0_a182  media_rw 3.4K Jan 14  2025 Termux_Downloader
+    > drwxrws---  3 u0_a182  media_rw 3.4K Aug 10 18:45 freelancer
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug  6 22:48 gl
+    > drwxrws---  3 u0_a182  media_rw 3.4K Aug 10 12:37 mbrandt
+    > drwxrws---  7 u0_a182  media_rw 3.4K Oct 22 13:38 mntc
+    > drwxrws---  2 u0_a182  media_rw 3.4K Jul 14  2025 opt
+    > drwxrws---  4 u0_a182  media_rw 3.4K Jan 25 22:01 prj
+
+    [0x00] 2026-Feb-03 01:22:51 priv.c:59 !(bytesh/) $ cd$$ "MEGABUEROKRATIE" $$
+
+    [0x00] 2026-Feb-03 01:22:59 priv.c:61 !(bytesh/) $ cd$$ "FINANZEN" $$
+
+    [0x00] 2026-Feb-03 01:23:14 priv.c:63 !(bytesh/) $ lsc
+    > total 196K
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 HASPA-AUSZUG-DREI-MONATE.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 HASPA_AUSZUG_DREI_MONATE.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 MÄRZ BIS MAI.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 MÄRZ BIS MAI.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 01:23:16 priv.c:73 !(bytesh/) $ sh$$ "am --help" $$
+    > Activity manager (activity) commands provided by the com.termux app.
+    > These are similar to commands provided by the Android platform with the /system/bin/am command.
+    > 
+    > Usage: am [subcommand] [options]
+    >        am start [-D] [-N] [-W] [-P <FILE>] [--start-profiler <FILE>]
+    >                [--sampling INTERVAL] [-R COUNT] [-S]
+    >                [--track-allocation] [--user <USER_ID> | current]
+    >                [--check-draw-over-apps-permission] <INTENT>
+    >        am startservice [--user <USER_ID> | current]
+    >                        [--check-draw-over-apps-permission] <INTENT>
+    >        am stopservice [--user <USER_ID> | current] <INTENT>
+    >        am broadcast [--user <USER_ID> | all | current] <INTENT>
+    >        am to-uri [INTENT]
+    >        am to-intent-uri [INTENT]
+    >        am to-app-uri [INTENT]
+    >        am get-current-user
+    > 
+    > am: Options are:
+    >     -h | --help: Show help
+    > am start|start-activity: start an Activity.
+    > Options are:
+    >     -D: enable debugging
+    >     -N: enable native debugging
+    >     -W: wait for launch to complete
+    >     --start-profiler <FILE>: start profiler and send results to <FILE>
+    >     --sampling INTERVAL: use sample profiling with INTERVAL microseconds
+    >         between samples (use with --start-profiler)
+    >     -P <FILE>: like above, but profiling stops when app goes idle
+    >     -R: repeat the activity launch <COUNT> times.  Prior to each repeat,
+    >         the top activity will be finished.
+    >     -S: force stop the target app before starting the activity
+    >     --track-allocation: enable tracking of object allocations
+    >     --user <USER_ID> | current: Specify which user to run as; if not
+    >         specified then run as the current user.
+    >     --check-draw-over-apps-permission: Check if calling package has
+    >         Draw over other apps permission before starting activity since        starting activities from background may fail on Android >= 10.
+    >         https://developer.android.com/guide/components/activities/background-starts
+    >     --stack <STACK_ID>: Specify into which stack should the activity be put.
+    > am startservice|start-service: start a Service.
+    > Options are:
+    >     --user <USER_ID> | current: Specify which user to run as; if not
+    >         specified then run as the current user.
+    >     --check-draw-over-apps-permission: Check if calling package has
+    >         Draw over other apps permission before starting service since        starting foreground services from background may fail if targeting Android >= 12.
+    >         https://developer.android.com/guide/components/foreground-services#background-start-restrictions
+    > 
+    > am stopservice|stop-service: stop a Service.
+    > Options are:
+    >     --user <USER_ID> | current: Specify which user to run as; if not
+    >         specified then run as the current user.
+    > 
+    > am broadcast: send a broadcast Intent.  Options are:
+    >     --user <USER_ID> | all | current: Specify which user to send to; if not
+    >         specified then send to all users.
+    >     --receiver-permission <PERMISSION>: Require receiver to hold permission.
+    > On Android '>= 14', broadcast result will not be waited for and exit code will always be 0.
+    > 
+    > am to-uri: print the given Intent specification as a URI.
+    > 
+    > am to-intent-uri: print the given Intent specification as an intent: URI.
+    > 
+    > am to-app-uri: print the given Intent specification as an android-app: URI.
+    > 
+    > am get-current-user: returns user id for the current process if it is owned 
+    >   by an app, otherwise current foreground user if it is owned by
+    >   a privileged user like root or shell.
+    > 
+    > 
+    > <INTENT> specifications include these flags and arguments:
+    >     [-a <ACTION>] [-d <DATA_URI>] [-t <MIME_TYPE>]
+    >     [-c <CATEGORY> [-c <CATEGORY>] ...]
+    >     [-e|--es <EXTRA_KEY> <EXTRA_STRING_VALUE> ...]
+    >     [--esn <EXTRA_KEY> ...]
+    >     [--ez <EXTRA_KEY> <EXTRA_BOOLEAN_VALUE> ...]
+    >     [--ei <EXTRA_KEY> <EXTRA_INT_VALUE> ...]
+    >     [--el <EXTRA_KEY> <EXTRA_LONG_VALUE> ...]
+    >     [--ef <EXTRA_KEY> <EXTRA_FLOAT_VALUE> ...]
+    >     [--eu <EXTRA_KEY> <EXTRA_URI_VALUE> ...]
+    >     [--ecn <EXTRA_KEY> <EXTRA_COMPONENT_NAME_VALUE>]
+    >     [--eia <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]
+    >         (mutiple extras passed as Integer[])
+    >     [--eial <EXTRA_KEY> <EXTRA_INT_VALUE>[,<EXTRA_INT_VALUE...]]
+    >         (mutiple extras passed as List<Integer>)
+    >     [--ela <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]
+    >         (mutiple extras passed as Long[])
+    >     [--elal <EXTRA_KEY> <EXTRA_LONG_VALUE>[,<EXTRA_LONG_VALUE...]]
+    >         (mutiple extras passed as List<Long>)
+    >     [--efa <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]
+    >         (mutiple extras passed as Float[])
+    >     [--efal <EXTRA_KEY> <EXTRA_FLOAT_VALUE>[,<EXTRA_FLOAT_VALUE...]]
+    >         (mutiple extras passed as List<Float>)
+    >     [--esa <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]
+    >         (mutiple extras passed as String[]; to embed a comma into a string,
+    >          escape it using "\,")
+    >     [--esal <EXTRA_KEY> <EXTRA_STRING_VALUE>[,<EXTRA_STRING_VALUE...]]
+    >         (mutiple extras passed as List<String>; to embed a comma into a string,
+    >          escape it using "\,")
+    >     [-f <FLAG>]
+    >     [--grant-read-uri-permission] [--grant-write-uri-permission]
+    >     [--grant-persistable-uri-permission] [--grant-prefix-uri-permission]
+    >     [--debug-log-resolution] [--exclude-stopped-packages]
+    >     [--include-stopped-packages]
+    >     [--activity-brought-to-front] [--activity-clear-top]
+    >     [--activity-clear-when-task-reset] [--activity-exclude-from-recents]
+    >     [--activity-launched-from-history] [--activity-multiple-task]
+    >     [--activity-no-animation] [--activity-no-history]
+    >     [--activity-no-user-action] [--activity-previous-is-top]
+    >     [--activity-reorder-to-front] [--activity-reset-task-if-needed]
+    >     [--activity-single-top] [--activity-clear-task]
+    >     [--activity-task-on-home]
+    >     [--receiver-registered-only] [--receiver-replace-pending]
+    >     [--receiver-foreground] [--receiver-no-abort]
+    >     [--receiver-include-background]
+    >     [--selector]
+    >     [<URI> | <PACKAGE> | <COMPONENT>]
+
+    [0x00] 2026-Feb-03 01:23:42 priv.c:190 !(bytesh/) $ lsc
+    > total 196K
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 HASPA-AUSZUG-DREI-MONATE.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 HASPA_AUSZUG_DREI_MONATE.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 MÄRZ BIS MAI.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 MÄRZ BIS MAI.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 01:25:09 priv.c:200 !(bytesh/) $ sh$$ "am start N26.TXT" $$
+    > Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] pkg=N26.TXT }
+
+    [0x00] 2026-Feb-03 01:26:29 priv.c:203 !(bytesh/) $ sh$$ "mv MÄRZ\\ BIS\\ MAI.PDF 2024.PDF" $$
+
+    [0x00] 2026-Feb-03 01:27:23 priv.c:205 !(bytesh/) $ sh$$ "mv MÄRZ\\ BIS\\ MAI.ODT 2024.ODT" $$
+
+    [0x00] 2026-Feb-03 01:27:39 priv.c:207 !(bytesh/) $ lsc
+    > total 196K
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 HASPA-AUSZUG-DREI-MONATE.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 HASPA_AUSZUG_DREI_MONATE.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 01:27:58 priv.c:217 !(bytesh/) $ tmphadd
+    >     [....] tmphadd $ # define less$$ sh$$ "less %s",
+    > 
+
+    [0x00] 2026-Feb-03 01:28:38 priv.c:221 !(bytesh/) $ less$$ "HASPA-*.TXT" $$
+    > HASPA-*.TXT: No such file or directory
+
+    [0x00] 2026-Feb-03 01:29:49 priv.c:224 !(bytesh/) $ less$$ "HASPA*.TXT" $$
+    > 
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:C240614EUR18,60
+    > :61:2406250625DR3,70N037NONREF
+    > :86:106?00KARTENZAHLUNG?109208?20SVWZ+2024-06-22T12.18?21Debitk.3
+    >  2026-12?22ABWA+Coffee Fellows Galerie?23//9111/DE?30DEUTDEFFXXX?
+    > 31DE58500700100175531305?32ELAVON?34011
+    > :62F:C240625EUR14,90
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:C240625EUR14,90
+    > :61:2406260626DR4,10N037NONREF
+    > :86:106?00KARTENZAHLUNG?109208?20SVWZ+2024-06-24T20.50?21Debitk.3
+    >  2026-12?22ABWA+ALEX Chemnitz, Galerie?23 Roter Turm//Chemnitz/DE
+    > ?30WELADEDDXXX?31DE19300500000001643204?32Mitchells Butlers Germa
+    > ny G?33mbH?34011
+    > :61:2406260626DR3,08N037NONREF
+    > :86:106?00KARTENZAHLUNG?109208?20SVWZ+2024-06-25T12.16?21Debitk.3
+    >  2026-12?22ABWA+REWE SAGT DANKE. 42655?23880//Dresden/DE?30WELADE
+    > DDXXX?31DE41300500000001484310?32REWE Nicole Peikert oHG?34011
+    > :62F:C240626EUR7,72
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:C240626EUR7,72
+    > :61:2406270627DR4,49N011NONREF
+    > :86:107?00SEPA-ELV-LASTSCHRIFT?109208?20EREF+25061547305573526121
+    > 00?211666660301730?22MREF+G030566880102405131931?23CRED+DE16ZZZ00
+    > 000020245?24SVWZ+2506154730557352612100?2516666 ELV60301730 25.06
+    >  15.?2647 ME3?30COBADEFFXXX?31DE71500400000600247190?32ROSSMANN 1
+    > 666 CHEMNITZ?34019
+    > :62F:C240627EUR3,23
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:C240627EUR3,23
+    > :61:2406280628DR1,60N037NONREF
+    > :86:106?00KARTENZAHLUNG?109242?20SVWZ+2024-06-27T12.08?21Debitk.3
+    >  2026-12?22ABWA+YORMA S AG//PLATTLING/?23DE?30BYLADEM1SRG?31DE637
+    > 42500000041199589?32DANKE YORMAS?34011
+    > :61:2406290628DR4,95N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Abrechnung 28.06.2024?21Infor
+    > mation zur Abrechnung?22Entgelte vom 01.06.2024 bis?23 28.06.2024
+    >  4,95-?24Grundpreis 1 x 4,95 4,95-?25Kartenzahlungen 7 x 0,00?26K
+    > ontoabrechnung 1 x 0,00?27 --------------?28Abrechnung 28.06.2024
+    >  4,95-?29Dieser Umsatz ist nicht ums?60atzsteuerbar in Deutschlan
+    > d?61.
+    > :61:2406290628DR0,00N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Rechnungsnummer. 20240628-H?2
+    > 1H001-00132151727
+    > :61:2407010628CR0,00N066NONREF
+    > :86:805?00ABSCHLUSS?106666?20Abrechnung 28.06.2024?21Information 
+    > zur Abrechnung?22Kontostand am 28.06.2024?233,32 -?24 -----------
+    > ---?25Abrechnungszeitraum vom 02.?2604.2024 bis 30.06.2024?27Abre
+    > chnung 30.06.2024 0,00+?28Dieser Umsatz ist nicht ums?29atzsteuer
+    > bar in Deutschland?60.
+    > :61:2407010628CR0,00N066NONREF
+    > :86:805?00ABSCHLUSS?106666?20Kontostand/Rechnungsabschlu?21ss am 
+    > 28.06.2024 3,32 -?22Rechnungsnummer. 20240628-H?23H001-0013215172
+    > 2
+    > :62F:D240628EUR3,32
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240628EUR3,32
+    > :61:2407010701CR0,01N061NONREF
+    > :86:166?00UEBERWEISUNGSGUTSCHRIFT?107199?20SVWZ+Ihr Ticketcode. W
+    > LL0QL?21JDM1   Robbie Williams Tick?22ets unter. www.eventim.de/h
+    > ?23aspajoker?30HASPDEHHXXX?31DE25200505509598110006?32Hamburger S
+    > parkasse
+    > :62F:D240701EUR3,31
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240701EUR3,31
+    > :61:2407220722DR7,04NDDTNONREF
+    > :86:105?00FOLGELASTSCHRIFT?109208?20EREF+1035735071802?21MREF+5JB
+    > J224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1035735071
+    > 802/PP.4848.?25PP/. FREELANCER OUTSOURCING?26 UK LIMITED, Ihr Ein
+    > kauf be?27AWV-MELDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0800
+    > ) 1234-111?30PPLXLUL2?31LU89751000135104200E?32PayPal Europe S.a.
+    > r.l. et C?33ie S.C.A?34888
+    > :62F:D240722EUR10,35
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240722EUR10,35
+    > :61:2407220723CR7,04N073NONREF
+    > :86:181?00LS WIEDERGUTSCHRIFT?109350?20EREF+1035735071802?21MREF+
+    > 5JBJ224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1035735
+    > 071802/PP.4848.?25PP/. FREELANCER OUTSOURCING?26 UK LIMITED, Ihr 
+    > Einkauf be?27AWV-MELDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0
+    > 800) 1234-111?30PPLXLUL2?31LU89751000135104200E?32PayPal Europe S
+    > .a.r.l. et C?33ie S.C.A?34906
+    > :62F:D240723EUR3,31
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240723EUR3,31
+    > :61:2408010731DR4,95N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Abrechnung 31.07.2024?21Infor
+    > mation zur Abrechnung?22Entgelte vom 29.06.2024 bis?23 31.07.2024
+    >  4,95-?24Grundpreis 1 x 4,95 4,95-?25Lastschriften 1 x 0,00?26Zah
+    > lungseing. preisfr 2 x?270,00?28Kontoabrechnung 2 x 0,00?29 -----
+    > ---------?60Abrechnung 31.07.2024 4,95-
+    > :61:2408010731DR0,00N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Dieser Umsatz ist nicht ums?2
+    > 1atzsteuerbar in Deutschland?22.?23Rechnungsnummer. 20240731-H?24
+    > H001-00134601591
+    > :62F:D240731EUR8,26
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240731EUR8,26
+    > :61:2408090809CR271,60N062NONREF
+    > :86:168?00ECHTZEIT-GUTSCHRIFT?109249?20EREF+24080905669573912?21S
+    > VWZ+INSTANT TRANSFER?31LU947510261215211218?32PAYPAL
+    > :61:2408090809DR58,39N033NONREF
+    > :86:177?00ONLINE-UEBERWEISUNG?109310?20SVWZ+Umzug des Kontos?21DA
+    > TUM 09.08.2024, 16.45 UHR?30NTSBDEB1XXX?31DE07100110012628623252?
+    > 32Merlin Brandt?34997
+    > :62F:C240809EUR204,95
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:C240809EUR204,95
+    > :61:2408120812DR209,90N032NONREF
+    > :86:106?00AUSZAHL. MIT KUNDENENTGELT?109208?20SVWZ+2024-08-09T07.
+    > 36?21Debitk.3 2026-12 Einsatzent?22gelt 4,95 EUR Fremdentgelt?234
+    > ,95 EUR?24ABWA+Erste Bank/Am Hauptbah?25nhof, Top UG1.139 1/Wien/
+    > AT?26/1?30HELADEFF?31DE69500500000959566019?32Landesbank Hessen-T
+    > huringen?33 Girozentrale?34023
+    > :62F:D240812EUR4,95
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240812EUR4,95
+    > :61:2409010830DR4,95N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Abrechnung 30.08.2024?21Infor
+    > mation zur Abrechnung?22Entgelte vom 01.08.2024 bis?23 30.08.2024
+    >  4,95-?24Grundpreis 1 x 4,95 4,95-?25GA-Verf. Fremdbank 1 x 0,00?
+    > 26Überw. OnlineBanking 1 x?270,00?28Zahlungseingänge 1 x 0,00?29K
+    > ontoabrechnung 1 x 0,00?60 --------------
+    > :61:2409010830DR0,00N024NONREF
+    > :86:809?00ENTGELTABSCHLUSS?106666?20Abrechnung 30.08.2024 4,95-?2
+    > 1Dieser Umsatz ist nicht ums?22atzsteuerbar in Deutschland?23.?24
+    > Rechnungsnummer. 20240830-H?25H001-00136012645
+    > :62F:D240830EUR9,90
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240830EUR9,90
+    > :61:2409090909DR49,00NDDTNONREF
+    > :86:105?00FOLGELASTSCHRIFT?109208?20EREF+1036742788803?21MREF+5JB
+    > J224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1036742788
+    > 803/. LogPay?25 Financial Services GmbH, I?26hr Einkauf bei LogPa
+    > y Finan?27AWV-MELDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0800
+    > ) 1234-111?30PPLXLUL2?31LU89751000135104200E?32PayPal Europe S.a.
+    > r.l. et C?33ie S.C.A?34888
+    > :61:2409090909DR5,16NDDTNONREF
+    > :86:105?00FOLGELASTSCHRIFT?109208?20EREF+1036739557568?21MREF+5JB
+    > J224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1036739557
+    > 568/PP.4848.?25PP/. Flink SE, Ihr Einkauf?26bei Flink SE?27AWV-ME
+    > LDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0800) 1234-111?30PPL
+    > XLUL2?31LU89751000135104200E?32PayPal Europe S.a.r.l. et C?33ie S
+    > .C.A?34888
+    > :62F:D240909EUR64,06
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240909EUR64,06
+    > :61:2409090910CR5,16N073NONREF
+    > :86:181?00LS WIEDERGUTSCHRIFT?109350?20EREF+1036739557568?21MREF+
+    > 5JBJ224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1036739
+    > 557568/PP.4848.?25PP/. Flink SE, Ihr Einkauf?26bei Flink SE?27AWV
+    > -MELDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0800) 1234-111?30
+    > PPLXLUL2?31LU89751000135104200E?32PayPal Europe S.a.r.l. et C?33i
+    > e S.C.A?34906
+    > :61:2409090910CR49,00N073NONREF
+    > :86:181?00LS WIEDERGUTSCHRIFT?109350?20EREF+1036742788803?21MREF+
+    > 5JBJ224TC8RK6?22CRED+LU96ZZZ000000000000000?230058?24SVWZ+1036742
+    > 788803/. LogPay?25 Financial Services GmbH, I?26hr Einkauf bei Lo
+    > gPay Finan?27AWV-MELDEPFLICHT BEACHTEN?28HOTLINE BUNDESBANK.?29(0
+    > 800) 1234-111?30PPLXLUL2?31LU89751000135104200E?32PayPal Europe S
+    > .a.r.l. et C?33ie S.C.A?34906
+    > :62F:D240910EUR9,90
+    > -
+    > :20:STARTUMSE
+    > :25:20050550/1395438466
+    > :28C:00000/001
+    > :60F:D240910EUR9,90
+    > :61:2409190919CR14,85N062NONREF
+    > :86:166?00GUTSCHR. UEBERWEISUNG?109263?20EREF+6b3ecfc8f71f4c41b3a
+    > e19?21f28204a41e?22SVWZ+Kuendigung Haspa Konto?30NTSBDEB1XXX?31DE
+    > 07100110012628623252?32Merlin Brandt
+    > :62F:C240919EUR4,95
+    > -
+    [0x00] 2026-Feb-03 01:30:11 priv.c:438 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 00:30:14.761996387 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-03 00:30:22.097996382 +0100
+    > ***************
+    > *** 51,57 ****
+    >   
+    >   #define cdup cd$$ ".." $$
+    >   
+    >   # define gitstatus sh$$ "git status" $$
+    >   
+    > ! # define less$$ sh$$ "less %s",
+    >   
+    > --- 51,57 ----
+    >   
+    >   #define cdup cd$$ ".." $$
+    >   
+    >   # define gitstatus sh$$ "git status" $$
+    >   
+    > ! # define less$$ shdirect$$ "less %s",
+    >   
+
+    [0x00] 2026-Feb-03 01:30:22 priv.c:458 !(bytesh/) $  less$$ "HASPA*.TXT" $$ 
+
+    [0x00] 2026-Feb-03 01:36:22 priv.c:460 !(bytesh/) $ lsc
+    > total 196K
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 HASPA-AUSZUG-DREI-MONATE.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 HASPA_AUSZUG_DREI_MONATE.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 01:36:24 priv.c:470 !(bytesh/) $ mv$$ "HASPA-* 2024B.CSV" $$
+k
+
+
+    [0x00] 2026-Feb-03 01:36:58 priv.c:474 !(bytesh/) $ mv$$ "HASPA-*", "2024B.CSV" $$
+
+    [0x00] 2026-Feb-03 01:37:13 priv.c:476 !(bytesh/) $ mv$$ "HASPA_*", "2024B.TXT" $$
+
+    [0x00] 2026-Feb-03 01:38:23 priv.c:478 !(bytesh/) $ cat$$ "SCHUFA.TXT" $$
+    > Hallo Herr Brandt,
+    > 
+    >  
+    > 
+    > vielen Dank für Ihre Rückmeldung und den avisierten Ausgleich.
+    > 
+    >  
+    > 
+    > Eine kostenpflichtige Bonitätsauskunft können Sie hier beantragen:
+    > 
+    > https://www.haspa.de/de/home/service/schufa-bonitaetscheck.html?n=true&stref=search&q=Schufa&mdidianlass=&mdidiansprache=
+    > 
+    > oder die kostenfreie Datenkopie direkt über die Schufa:
+    > 
+    > https://www.meineschufa.de/de/datenkopie?etcc_cmp=schufa.de&etcc_med=%20Link/Referrer-schufa.de&et_cmp_seg5=Schnelleinstiege&et_cmp_seg4=dako
+    > 
+    >  
+    > 
+    > Mit freundlichen Grüßen
+    > 
+    > Hamburger Sparkasse
+    > Finanz-Center Geesthacht
+    > Bergedorfer Str. 37
+    > 21502 Geesthacht
+    > 
+    > Tel.: 040/35789-1284
+    > geesthacht@haspa.de
+
+    [0x00] 2026-Feb-03 01:46:21 priv.c:507 !(bytesh/) $ sh$$ "termux-open SCHUFA.TXT" $$
+
+    [0x00] 2026-Feb-03 01:46:38 priv.c:509 !(bytesh/) $ cnslutilhadd
+    >     [....] cnslutilhadd $ # define open$$ sh$$ "termux-open %s", 
+    > 
+
+    [0x00] 2026-Feb-03 01:47:30 priv.c:513 !(bytesh/) $ cnslutilc
+
+    [0x00] 2026-Feb-03 01:48:28 priv.c:515 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 00:48:32.785995602 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 00:50:26.225995521 +0100
+    > ***************
+    > *** 272,282 ****
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+    > --- 272,282 ----
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! //stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+
+    [0x00] 2026-Feb-03 01:50:27 priv.c:544 !(bytesh/) $ precompile
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
-    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
     > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
 
-    [0x00] 2025-Sep-24 21:08:06 priv.c:19 !(bytesh/) $ findh
-    > Example: find$$ " . -type d -not -path \\*175\\* -not -path \\*.bak\\* " $$ 
+    [0x00] 2026-Feb-03 01:50:34 priv.c:560 !(bytesh/) $ # exit
 
-    [0x00] 2025-Sep-25 19:50:51 priv.c:22 $ lsc
-    > total 163K
-    > -rw-rw----  1 10182 1023  85K Sep 25 16:50 a.out
-    > drwxrws---  2 10182 1023 3.4K Sep 14 12:49 .bak
-    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
-    > -rw-rw----  1 10182 1023    0 Sep 14 11:22 dir.h
-    > drwxrws---  7 10182 1023 3.4K Sep 24 18:07 .git
-    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
-    > -rw-rw----  1 10182 1023    0 Sep 25 16:50 insert.c
-    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
-    > -rw-rw----  1 10182 1023  15K Sep 14 13:13 main.c
-    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
-    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
-    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
-    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
-    > drwxrws--- 12 10182 1023 4.0K Sep 25 18:53 run
-    > drwxrws--- 12 10182 1023 4.0K Sep 24 11:00 run.bak
-    > drwxrws--- 12 10182 1023 4.0K Sep 24 18:08 run.tmp.bak
 
-    [0x00] 2025-Sep-25 21:53:45 priv.c:41 $ edit$$ "dir.h" $$
-    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-25 18:54:00.688337915 +0000
-    > --- dir.h	2025-09-25 18:54:33.924337891 +0000
+    [0x00] 2026-Feb-03 01:51:56 priv.c:563 $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 01:52:09 priv.c:566 $ tmphadd
+
+    [0x00] 2026-Feb-03 01:52:33 priv.c:568 $ tmphadd
+
+    [0x00] 2026-Feb-03 01:52:42 priv.c:570 $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 00:52:58.141995412 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 00:56:06.153995278 +0100
     > ***************
-    > *** 0 ****
-    > --- 1 ----
-    > + #undef find$$
+    > *** 244,255 ****
+    >   stm if ( name) name += 1;
+    >   stm if (!name) name = namepath;
+    >   	
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    > ! 	
+    > ! chr *prompt = mf("    [....] %sadd%s $ ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    >   chr *szdef = mgetline(mf("%s%%02d $ ", space));
+    > --- 244,258 ----
+    >   stm if ( name) name += 1;
+    >   stm if (!name) name = namepath;
+    >   	
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    > ! 
+    > ! chr *promptarr[2];
+    > ! for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "      ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    > ! chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    >   chr *szdef = mgetline(mf("%s%%02d $ ", space));
+    > ***************
+    > *** 272,282 ****
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! //stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+    > --- 275,285 ----
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
 
-    [0x00] 2025-Sep-25 21:56:35 priv.c:49 !(bytesh/) $ mv$$ "dir.h", "dirpost.h" $$
+    [0x00] 2026-Feb-03 01:56:07 priv.c:629 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
 
-    [0x00] 2025-Sep-25 21:57:12 priv.c:51 !(bytesh/) $ edit$$ "dirpost.h" $$
-    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2025-09-25 18:57:20.724337772 +0000
-    > --- dirpost.h	2025-09-25 18:57:51.240337750 +0000
+    [0x00] 2026-Feb-03 01:56:20 priv.c:645 $ tmphadd
+    >     [....] tmphadd $ # define test783946 "ok"
+    > 
+
+    [0x00] 2026-Feb-03 01:56:36 priv.c:649 $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 00:56:42.097995252 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 00:57:08.169995233 +0100
+    > ***************
+    > *** 275,285 ****
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! stm printf("%s%s", prompt, szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+    > --- 275,285 ----
+    >   	np&&      fputs(       szdefb, f);
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > ! stm printf("%s%s", promptarr[1], szdefb);
+    >   }
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+
+    [0x00] 2026-Feb-03 01:57:09 priv.c:678 $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 01:57:14 priv.c:694 $ # exit
+
+
+    [0x00] 2026-Feb-03 01:57:20 priv.c:697 $ tmphadd
+    >       tmphadd $ #define TEST234987234 "ok"
+    > 
+
+    [0x00] 2026-Feb-03 01:57:38 priv.c:701 $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 00:58:41.837995166 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 00:59:13.729995143 +0100
+    > ***************
+    > *** 247,257 ****
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "      ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    > --- 247,257 ----
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "    |", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+
+    [0x00] 2026-Feb-03 01:59:14 priv.c:730 $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 02:00:46 priv.c:746 $ tmphadd
+    >     |tmphadd $ 
+    > 
+
+    [0x00] 2026-Feb-03 02:00:56 priv.c:750 $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 01:00:59.097995068 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 01:01:24.813995050 +0100
+    > ***************
+    > *** 247,257 ****
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "    |", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    > --- 247,257 ----
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "   +", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+
+    [0x00] 2026-Feb-03 02:01:25 priv.c:779 !(bytesh/) $ tmphadd
+    >     |tmphadd $ 
+    > 
+
+    [0x00] 2026-Feb-03 02:01:42 priv.c:783 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 02:01:57 priv.c:799 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 01:02:01.729995023 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 01:02:07.269995019 +0100
+    > ***************
+    > *** 247,257 ****
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "   +", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    > --- 247,257 ----
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    >   for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "   + ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+
+    [0x00] 2026-Feb-03 02:02:29 priv.c:828 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 02:02:38 priv.c:844 !(bytesh/) $ tmphadd
+    >    + tmphadd $ 
+    > 
+
+    [0x00] 2026-Feb-03 02:02:46 priv.c:848 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 01:03:01.729994980 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-03 01:05:32.237994873 +0100
+    > ***************
+    > *** 246,257 ****
+    >   	
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    > ! for (int i = 0; i < 2; ++i) promptarr[i] 
+    > !     = mf("%s%sadd%s $ ", i == 0 ? "    [....] " : "   + ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+    > --- 246,258 ----
+    >   	
+    >   chr *cmd = mf("%sh", name);
+    >   chr *filepath = mf("%s.h", namepath);
+    >   
+    >   chr *promptarr[2];
+    > ! stm promptarr[1] = "   + ";
+    > ! stm promptarr[0] 
+    > !     = mf("%s%sadd%s $ ", "    [....] ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    >   chr *prompt = promptarr[0];
+    >   stm printf("%s", prompt); fflush(getstdout());
+    >   		
+    >   chr space[] = "                                 ";
+    >   stm space[strlen(prompt) - 5] = 0;
+
+    [0x00] 2026-Feb-03 02:05:33 priv.c:880 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 02:05:37 priv.c:896 !(bytesh/) $ tmphadd
+    >    + 
+    > 
+
+    [0x00] 2026-Feb-03 02:06:03 priv.c:900 !(bytesh/) $ tmphadd
+    >    + # define test349872349 "ok"
+    > 
+
+    [0x00] 2026-Feb-03 02:06:16 priv.c:904 !(bytesh/) $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 02:06:45 priv.c:907 !(bytesh/) $ lsc
+    > total 3.4M
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 BUCHHALTUNG.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 HANDSCHRIFT.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 02:06:47 priv.c:921 !(bytesh/) $ open$$ "BUCH*" $$
+
+    [0x00] 2026-Feb-03 02:08:18 priv.c:923 !(bytesh/) $ less$$ "BUCH*" $$
+
+    [0x00] 2026-Feb-03 02:11:11 priv.c:925 !(bytesh/) $ mv$$ "BUCH*", "2024C.HTML", $$
+k
+
+
+    [0x00] 2026-Feb-03 02:11:30 priv.c:929 !(bytesh/) $ mv$$ "BUCH*", "2024C.HTML" $$
+
+    [0x00] 2026-Feb-03 02:11:40 priv.c:931 !(bytesh/) $ mv$$ "HAND*", "2023A.PDF" $$
+
+    [0x00] 2026-Feb-03 02:12:55 priv.c:933 !(bytesh/) $ mv$$ "2024.ODT", "2024A.ODT" $$
+
+    [0x00] 2026-Feb-03 02:13:03 priv.c:935 !(bytesh/) $ mv$$ "2024.PDF", "2024A.PDF" $$
+
+    [0x00] 2026-Feb-03 02:13:15 priv.c:937 !(bytesh/) $ lsc
+    > total 3.4M
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 02:15:28 priv.c:951 !(bytesh/) $ edit$$ "2026-02-03-HAUSHALT.TXT" $$
+
+    [0x00] 2026-Feb-03 17:08:32 priv.c:953 $ edit$$ "~/.vim/after/syntax/c.vim" $$
+
+    [0x00] 2026-Feb-03 17:09:12 priv.c:955 $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 17:10:04 priv.c:958 !(bytesh/) $ mkdir$$ "-p ~/.vim/after/syntax/c.vim" $$
+
+    [0x00] 2026-Feb-03 17:10:50 priv.c:960 !(bytesh/) $ bak$$ "~/.vim/after/syntax/c.vim" $$
+
+    [0x00] 2026-Feb-03 17:11:02 priv.c:962 !(bytesh/) $ edit$$ "~/.vim/after/syntax/c.vim" $$
+
+    [0x00] 2026-Feb-03 17:11:26 priv.c:964 !(bytesh/) $ cnslutilc
+
+    [0x00] 2026-Feb-03 17:11:33 priv.c:966 !(bytesh/) $ tmphadd
+    >    + # define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+    > 
+
+    [0x00] 2026-Feb-03 17:12:19 priv.c:970 !(bytesh/) $ tmphadd
+    >    + # define addckeyword$$ sh$$ "syntax keyword Keyword %s",
+    > 
+
+    [0x00] 2026-Feb-03 17:13:21 priv.c:974 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 16:13:27.846999542 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-03 16:13:54.390999523 +0100
+    > ***************
+    > *** 79,85 ****
+    >   
+    >   # define test349872349 "ok"
+    >   
+    >   # define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+    >   
+    > ! # define addckeyword$$ sh$$ "syntax keyword Keyword %s",
+    >   
+    > --- 79,85 ----
+    >   
+    >   # define test349872349 "ok"
+    >   
+    >   # define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+    >   
+    > ! # define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
+    >   
+
+    [0x00] 2026-Feb-03 17:13:55 priv.c:995 !(bytesh/) $ addckeyword$$ "stm" $$
+
+    [0x00] 2026-Feb-03 17:14:06 priv.c:997 !(bytesh/) $ cnslutilc
+
+    [0x00] 2026-Feb-03 17:14:26 priv.c:999 !(bytesh/) $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 16:14:28.722999498 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-02-03 16:15:00.050999476 +0100
+    > ***************
+    > *** 87,96 ****
+    > --- 87,97 ----
+    >   #define theh printf("THen Err\n#define the thn goto err;\n");
+    >   #define the thn goto err;
+    >   #define stmh printf("STateMent\n#define stm\n");
+    >   #define stm
+    >   #define s
+    > + #define nop
+    >   
+    >   #ifdef BETTER_BLK
+    >       #define blkh printf("BLocK\n#define blk {");
+    >       #define blk blk1 blk2
+    >       #define blk1 blk3
+
+    [0x00] 2026-Feb-03 17:15:01 priv.c:1017 !(bytesh/) $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 17:15:05 priv.c:1020 !(bytesh/) $ lsc
+    > total 3.4M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 17:15:08 priv.c:1036 !(bytesh/) $ ls$$ ROOTC(".") $$
+    > total 191K
+    > drwx------  7 u0_a228 u0_a228 3.4K Feb  2 23:23 .git
+    > -rw-------  1 u0_a228 u0_a228   96 Feb  2 23:22 .gitignore
+    > drwx------  2 u0_a228 u0_a228 3.4K Feb  2 23:23 _.bak
+    > -rwx------  1 u0_a228 u0_a228  54K Feb  3 00:20 a.out
+    > -rw-------  1 u0_a228 u0_a228  148 Feb  2 23:23 cflags.h
+    > -rw-------  1 u0_a228 u0_a228  203 Feb  2 23:22 cnslutil.h.bak
+    > -rw-------  1 u0_a228 u0_a228    0 Feb  2 23:23 core
+    > -rw-------  1 u0_a228 u0_a228 1.1K Feb  2 23:23 dirpost.h
+    > -rw-------  1 u0_a228 u0_a228    0 Feb  3 16:15 insert.c
+    > drwx------  4 u0_a228 u0_a228 3.4K Feb  2 23:22 localsys-main
+    > -rw-------  1 u0_a228 u0_a228  15K Feb  2 23:23 main.c
+    > -rw-------  1 u0_a228 u0_a228  13K Feb  2 23:23 main.c.bak
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.c.orig
+    > -rw-------  1 u0_a228 u0_a228  946 Feb  2 23:23 main.c.rej
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.hiddencmd.c
+    > -rw-------  1 u0_a228 u0_a228  16K Feb  2 23:22 main.ppm
+    > -rw-------  1 u0_a228 u0_a228  232 Feb  2 23:23 repopw.txt
+    > drwx------ 12 u0_a228 u0_a228 8.0K Feb  3 16:15 run
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  3 16:11 run.bak
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  3 16:15 run.tmp.bak
+    > -rw-------  1 u0_a228 u0_a228   12 Feb  2 23:22 status.txt
+    > -rw-------  1 u0_a228 u0_a228  379 Feb  2 23:22 tmp.txt
+
+    [0x00] 2026-Feb-03 17:15:43 priv.c:1061 !(bytesh/) $ cat$$ ROOTC("/dirpost.h") $$
+    > #undef find$$
+    > #define findgrep$$ sh$$ "find main.c run -not -type d | xargs grep %s ", 
+    > 
+    > /*
+    >     > -rw-rw----  1 10182 1023  85K Sep 25 16:50 a.out
+    >     > drwxrws---  2 10182 1023 3.4K Sep 14 12:49 .bak
+    >     > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
+    >     > -rw-rw----  1 10182 1023   49 Sep 25 18:57 dirpost.h
+    >     > drwxrws---  7 10182 1023 3.4K Sep 25 18:56 .git
+    >     > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
+    >     > -rw-rw----  1 10182 1023    0 Sep 25 18:57 insert.c
+    >     > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
+    >     > -rw-rw----  1 10182 1023  15K Sep 14 13:13 main.c
+    >     > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
+    >     > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
+    >     > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
+    >     > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
+    >     > drwxrws--- 12 10182 1023 4.0K Sep 25 18:57 run
+    >     > drwxrws--- 12 10182 1023 4.0K Sep 24 11:00 run.bak
+    >     > drwxrws--- 12 10182 1023 4.0K Sep 24 18:08 run.tmp.bak
+    > */
+    > 
+
+    [0x00] 2026-Feb-03 17:34:01 priv.c:1085 $ tmphadd
+    >    + # define ᛋ 1
+    > 
+
+    [0x00] 2026-Feb-03 17:34:16 priv.c:1089 $ printf("%d\n", ᛋ);
+    > 1
+
+    [0x00] 2026-Feb-03 17:34:40 priv.c:1092 $ tmphadd
+    >    + # define ᛪ�ᛪ�ᛗᛋ 2
+    > 
+
+    [0x00] 2026-Feb-03 17:35:07 priv.c:1096 $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 16:35:11.918998609 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-03 16:35:22.466998602 +0100
+    > ***************
+    > *** 83,89 ****
+    >   
+    >   # define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
+    >   
+    >   # define ᛋ 1
+    >   
+    > - # define ᛪ�ᛪ�ᛗᛋ 2
+    > - 
+    > --- 83,87 ----
+
+    [0x00] 2026-Feb-03 17:35:23 priv.c:1110 $ tmphadd
+    >    + # define ᛋᚠ 2
+    > 
+
+    [0x00] 2026-Feb-03 17:35:38 priv.c:1114 !(bytesh/) $ println("%d\n", ᛋᚠ);
+
+
+    [0x00] 2026-Feb-03 17:36:19 priv.c:1117 !(bytesh/) $ printf("%d\n", ᛋᚠ);
+    > 2
+
+    [0x00] 2026-Feb-03 17:36:27 priv.c:1120 !(bytesh/) $ tmphadd
+    >    + #define varᚠ 1
+    > 
+
+    [0x00] 2026-Feb-03 17:46:33 priv.c:1124 !(bytesh/) $ printf("%d\n", varᚠ);
+    > 1
+
+    [0x00] 2026-Feb-03 17:46:44 priv.c:1127 !(bytesh/) $ lsc
+    > total 3.4M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 18:06:56 priv.c:1143 !(bytesh/) $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-03 18:09:13 priv.c:1146 !(bytesh/) $ lsc
+    > total 3.4M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw  673 Feb  3 17:09 2025A.TXT
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+
+    [0x00] 2026-Feb-03 18:09:31 priv.c:1163 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-03 18:10:17 priv.c:1165 !(bytesh/) $ cd$$ "Downloads" $$
+
+    [0x00] 2026-Feb-03 18:10:27 priv.c:1167 !(bytesh/) $ cd$$ "/storage/self/primary/Downloads" $$
+
+    [0x00] 2026-Feb-03 18:10:39 priv.c:1169 !(bytesh/) $ cd$$ "/storage/self/primary" $$
+
+    [0x00] 2026-Feb-03 22:33:08 priv.c:1171 !(bytesh/) $ cdbytesh
+
+    [0x00] 2026-Feb-03 22:33:32 priv.c:1173 !(bytesh/) $ cat$$ "cflags.h" $$
+    > #define CFLAGS(defstrchrnul) \
+    >     mf( "-Wfatal-errors " \
+    >         "-DBYTESH_DISABLE_OPTIMIZATION " \
+    > 	"%s", defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+    [0x00] 2026-Feb-04 00:04:45 priv.c:1179 $ precompile
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -DTEST7777-DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-04 00:54:27 priv.c:1195 $ cdup
+
+    [0x00] 2026-Feb-04 00:54:36 priv.c:1197 $ mkdir$$ "arrfile" $$
+
+    [0x00] 2026-Feb-04 00:55:28 priv.c:1199 $ cd$$ "arrfile" $$
+
+    [0x00] 2026-Feb-04 00:55:37 priv.c:1201 !(bytesh/) $ edit$$ "main.h" $$
+
+    [0x00] 2026-Feb-04 00:55:56 priv.c:1203 !(bytesh/) $ cd$$ "../bytesh" $$
+
+    [0x00] 2026-Feb-04 00:56:04 priv.c:1205 !(bytesh/) $ edit$$ "cflags.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 23:56:17.973441322 +0100
+    > --- cflags.h	2026-02-03 23:57:33.173441268 +0100
+    > ***************
+    > *** 1,5 ****
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    >           "-DTEST7777" \
+    > ! 	"%s", defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+    > --- 1,6 ----
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    >           "-DTEST7777" \
+    > ! 	"-I%s/../arrfile/" \
+    > ! 	"%s", , ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+    [0x00] 2026-Feb-04 00:57:55 priv.c:1223 $ edit$$ "cflags.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 23:58:02.081441247 +0100
+    > --- cflags.h	2026-02-03 23:58:10.857441241 +0100
+    > ***************
+    > *** 1,6 ****
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    >           "-DTEST7777" \
+    >   	"-I%s/../arrfile/" \
+    > ! 	"%s", , ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+    > --- 1,6 ----
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    >           "-DTEST7777" \
+    >   	"-I%s/../arrfile/" \
+    > ! 	"%s", ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+    [0x00] 2026-Feb-04 00:58:43 priv.c:1242 $ edit$$ "cflags.h" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 23:58:47.809441215 +0100
+    > --- cflags.h	2026-02-03 23:59:07.989441200 +0100
+    > ***************
+    > *** 1,6 ****
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    > -         "-DTEST7777" \
+    >   	"-I%s/../arrfile/" \
+    >   	"%s", ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+    > --- 1,5 ----
+
+    [0x00] 2026-Feb-04 00:59:08 priv.c:1255 $ # exit
+
+
+    [0x00] 2026-Feb-04 00:59:37 priv.c:1258 $ edit$$ "cflags.h" $$
+
+    [0x00] 2026-Feb-04 00:59:59 priv.c:1260 $ cdup
+
+    [0x00] 2026-Feb-04 01:00:06 priv.c:1262 $ cd$$ "arrfile" $$
+
+    [0x00] 2026-Feb-04 01:00:13 priv.c:1264 $ mv$$ "main.h", "arrfile.h" $$
+
+    [0x00] 2026-Feb-04 01:00:24 priv.c:1266 $ tmphadd
+    >    + # define arrfileh edit$$ ROOTC("/../arrfile/arrfile.h") $$
+    > 
+
+    [0x00] 2026-Feb-04 01:03:08 priv.c:1270 $ edit$$ ROOTC("/cflags.h") $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:03:15.589441023 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//cflags.h	2026-02-04 00:03:37.857441007 +0100
+    > ***************
+    > *** 1,5 ****
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    > ! 	"-I%s/../arrfile/" \
+    >   	"%s", ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+    > --- 1,5 ----
+    >   #define CFLAGS(defstrchrnul) \
+    >       mf( "-Wfatal-errors " \
+    >           "-DBYTESH_DISABLE_OPTIMIZATION " \
+    > ! 	"-I%s/../arrfile/ " \
+    >   	"%s", ROOTC("."), defstrchrnul ? "-DDEFSTRCHRNUL" : "" )
+
+    [0x00] 2026-Feb-04 01:03:56 priv.c:1287 $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:03:59.321440992 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 00:04:27.069440972 +0100
+    > ***************
+    > *** 1 ****
+    > ! #define test4322
+    > --- 1,6 ----
+    > ! 
+    > ! nil readarrfile(FILE *file)
+    > ! blk
+    > ! 
+    > ! end
+    > ! 
+
+    [0x00] 2026-Feb-04 01:04:27 priv.c:1301 $ addckeyword$$ "nil" $$
+
+    [0x00] 2026-Feb-04 01:04:33 priv.c:1303 $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:04:36.865440965 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 00:04:55.557440952 +0100
+    > ***************
+    > *** 1,6 ****
+    >   
+    >   nil readarrfile(FILE *file)
+    >   blk
+    > ! 
+    >   end
+    >   
+    > --- 1,6 ----
+    >   
+    >   nil readarrfile(FILE *file)
+    >   blk
+    > !     
+    >   end
+    >   
+
+    [0x00] 2026-Feb-04 01:04:56 priv.c:1322 $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:05:02.093440947 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-04 00:06:02.069440904 +0100
+    > ***************
+    > *** 27,36 ****
+    > --- 27,38 ----
+    >   #define clex cmdlogpop$$ "examples" $$
+    >   #define cpex clex
+    >   
+    >   #define stardict shdirect$$ "less %s", ROOTC("/run/tmp/stardict.txt") $$
+    >   
+    > + //int *mmap2
+    > + 
+    >   /*void mmaptest() 
+    >   {
+    >       struct stat statbuf;
+    >       int fd = open("/some/shared/resource/file", "r");
+    >       fstat(fd, &statbuf);
+
+    [0x00] 2026-Feb-04 01:07:28 priv.c:1341 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:07:34.129440838 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-04 00:08:33.385440796 +0100
+    > ***************
+    > *** 27,37 ****
+    >   #define clex cmdlogpop$$ "examples" $$
+    >   #define cpex clex
+    >   
+    >   #define stardict shdirect$$ "less %s", ROOTC("/run/tmp/stardict.txt") $$
+    >   
+    > ! //int *mmap2
+    >   
+    >   /*void mmaptest() 
+    >   {
+    >       struct stat statbuf;
+    >       int fd = open("/some/shared/resource/file", "r");
+    > --- 27,37 ----
+    >   #define clex cmdlogpop$$ "examples" $$
+    >   #define cpex clex
+    >   
+    >   #define stardict shdirect$$ "less %s", ROOTC("/run/tmp/stardict.txt") $$
+    >   
+    > ! //char *mmap2(char const *filename, 
+    >   
+    >   /*void mmaptest() 
+    >   {
+    >       struct stat statbuf;
+    >       int fd = open("/some/shared/resource/file", "r");
+
+    [0x00] 2026-Feb-04 01:09:08 priv.c:1370 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:09:10.989440769 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-04 00:12:14.053440638 +0100
+    > ***************
+    > *** 186,190 ****
+    > --- 186,213 ----
+    >     
+    >   err:
+    >     perror(mf("%s:%d", __FILE__, __LINE__));
+    >     return 0;
+    >   }
+    > + 
+    > + nil mmap2(char const *filename)
+    > + blk
+    > + stm struct stat statbuf;
+    > + int fd = open(filename, "r");
+    > + stm fstat(fd, &statbuf);
+    > + nop
+    > + int *shared = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > + 
+    > + /*void mmaptest()                                                                                         {                                                                                                             struct stat statbuf;                     >                                                                      int fd = open("/some/shared/resource/file", "r");
+    > +     fstat(fd, &statbuf);                                                                                                                                                                                                // Creating a read only, shared, file    >  backed memory allocation                                            int *shared = mmap(
+    > +          addr=  NULL,
+    > +          length=  statbuf.st_size - 1,
+    > +          prot=  PROT_READ, // | PROT_WRITE                                                                         flags=  MAP_SHARED,                                                                                       fd=  fd,                            >                                                                           offset=  0);
+    > + }*/
+    > + 
+    > + 
+    > + nil mmap2()                                                                                         {                                                                                                             struct stat statbuf;                           >                                                                int fd = open("/some/shared/resource/file", "r");
+    > +     fstat(fd, &statbuf);                                                                                                                                                                                                // Creating a read only, shared, file    >  backed memory allocation                                            int *shared = mmap(
+    > +          addr=  NULL,
+    > +          length=  statbuf.st_size - 1,
+    > +          prot=  PROT_READ, // | PROT_WRITE                                                                         flags=  MAP_SHARED,                                                                                       fd=  fd,                            >                                                                           offset=  0);
+    > + }
+
+    [0x00] 2026-Feb-04 01:12:26 priv.c:1411 !(bytesh/) $ man$$ "fstat" $$
+
+    [0x00] 2026-Feb-04 01:12:40 priv.c:1413 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:28:28.237439941 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-04 00:31:32.869439809 +0100
+    > ***************
+    > *** 187,213 ****
+    >   err:
+    >     perror(mf("%s:%d", __FILE__, __LINE__));
+    >     return 0;
+    >   }
+    >   
+    > ! nil mmap2(char const *filename)
+    > ! blk
+    > ! stm struct stat statbuf;
+    >   int fd = open(filename, "r");
+    >   stm fstat(fd, &statbuf);
+    > ! nop
+    > ! int *shared = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    >   
+    > - /*void mmaptest()                                                                                         {                                                                                                             struct stat statbuf;                     >                                                                      int fd = open("/some/shared/resource/file", "r");
+    > -     fstat(fd, &statbuf);                                                                                                                                                                                                // Creating a read only, shared, file    >  backed memory allocation                                            int *shared = mmap(
+    > -          addr=  NULL,
+    > -          length=  statbuf.st_size - 1,
+    > -          prot=  PROT_READ, // | PROT_WRITE                                                                         flags=  MAP_SHARED,                                                                                       fd=  fd,                            >                                                                           offset=  0);
+    > - }*/
+    > - 
+    > - 
+    > - nil mmap2()                                                                                         {                                                                                                             struct stat statbuf;                           >                                                                int fd = open("/some/shared/resource/file", "r");
+    > -     fstat(fd, &statbuf);                                                                                                                                                                                                // Creating a read only, shared, file    >  backed memory allocation                                            int *shared = mmap(
+    > -          addr=  NULL,
+    > -          length=  statbuf.st_size - 1,
+    > -          prot=  PROT_READ, // | PROT_WRITE                                                                         flags=  MAP_SHARED,                                                                                       fd=  fd,                            >                                                                           offset=  0);
+    > - }
+    > --- 187,200 ----
+    >   err:
+    >     perror(mf("%s:%d", __FILE__, __LINE__));
+    >     return 0;
+    >   }
+    >   
+    > ! nil *mmap2(char const *filename, int *size)
+    > ! blk struct stat statbuf;
+    >   int fd = open(filename, "r");
+    >   stm fstat(fd, &statbuf);
+    > ! iff size
+    > ! thn *size = statbuf.st_size - 1;
+    > ! stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > ! end
+    >   
+
+    [0x00] 2026-Feb-04 01:31:50 priv.c:1467 !(bytesh/) $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:31:58.325439791 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-02-04 00:32:13.949439780 +0100
+    > ***************
+    > *** 162,168 ****
+    > --- 162,170 ----
+    >   #define psh psh_ ( 0
+    >   #define endsh "" )
+    >   
+    >   #define seqto(i, n) (int i = 0; i < n; ++i)
+    >   
+    > + void *mmap2(char const *, int *);
+    > + 
+    >   #endif
+    >    
+
+    [0x00] 2026-Feb-04 01:32:14 priv.c:1483 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:32:19.141439776 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 00:40:20.861439432 +0100
+    > ***************
+    > *** 1,6 ****
+    >   
+    > ! nil readarrfile(FILE *file)
+    >   blk
+    > !     
+    >   end
+    >   
+    > --- 1,16 ----
+    > + #include "main.h"
+    >   
+    > ! nil readarrfile(char const *filename)
+    >   blk
+    > ! int size;
+    > ! chr *buf = mmap2(filename, &size);
+    > ! nop
+    > ! int lines = 0;
+    > ! int ignore_last_newline = 1;
+    > ! for (int i = 0; i < size - ignore_last_newline; ++i)
+    > ! iff buf[i] == '\n'
+    > ! thn ++lines;
+    > ! nop
+    > ! int linesbegin[lines];
+    >   end
+    >   
+
+    [0x00] 2026-Feb-04 01:40:23 priv.c:1512 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:40:27.885439427 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 00:40:32.865439423 +0100
+    > ***************
+    > *** 9,16 ****
+    >   int ignore_last_newline = 1;
+    >   for (int i = 0; i < size - ignore_last_newline; ++i)
+    >   iff buf[i] == '\n'
+    >   thn ++lines;
+    >   nop
+    > ! int linesbegin[lines];
+    >   end
+    >   
+    > --- 9,16 ----
+    >   int ignore_last_newline = 1;
+    >   for (int i = 0; i < size - ignore_last_newline; ++i)
+    >   iff buf[i] == '\n'
+    >   thn ++lines;
+    >   nop
+    > ! int linesbegin[lines]; aksjfhaslkdfhalkjsdh
+    >   end
+    >   
+
+    [0x00] 2026-Feb-04 01:40:36 priv.c:1535 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:40:45.957439414 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 00:40:54.105439408 +0100
+    > ***************
+    > *** 9,16 ****
+    >   int ignore_last_newline = 1;
+    >   for (int i = 0; i < size - ignore_last_newline; ++i)
+    >   iff buf[i] == '\n'
+    >   thn ++lines;
+    >   nop
+    > ! int linesbegin[lines]; aksjfhaslkdfhalkjsdh
+    >   end
+    >   
+    > --- 9,16 ----
+    >   int ignore_last_newline = 1;
+    >   for (int i = 0; i < size - ignore_last_newline; ++i)
+    >   iff buf[i] == '\n'
+    >   thn ++lines;
+    >   nop
+    > ! int linesbegin[lines]; 
+    >   end
+    >   
+
+    [0x00] 2026-Feb-04 01:40:55 priv.c:1558 !(bytesh/) $ mainh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:40:57.089439406 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/main.h	2026-02-04 00:41:10.729439396 +0100
+    > ***************
+    > *** 175,181 ****
+    >   
+    >   #include "preprocessor.h"
+    >   #include "projects.h"
+    >   #include "tmp.h"
+    >   
+    > - 
+    >   #endif
+    > --- 175,180 ----
+
+    [0x00] 2026-Feb-04 01:41:38 priv.c:1572 !(bytesh/) $ edit$$ ROOTC("run/projects.h") $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:41:49.197439368 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/projects.h	2026-02-04 00:41:58.905439361 +0100
     > ***************
     > *** 1 ****
     > --- 1,2 ----
-    >   #undef find$$
-    > + #define find$$ sh$$ "find . %s ", 
+    >   //#include "../../textstreamanimate/textstreamanimate.h"
+    > + #include "arrfile.h" 
 
-    [0x00] 2026-Jan-24 02:36:08 priv.c:60 !(bytesh/) $ pwd
-    > /storage/self/primary/prj/bytesh/run
+    [0x00] 2026-Feb-04 01:50:28 priv.c:1581 $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 00:50:31.333438995 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 01:05:16.601438362 +0100
+    > ***************
+    > *** 5,17 ****
+    >   blk
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    > ! int ignore_last_newline = 1;
+    > ! for (int i = 0; i < size - ignore_last_newline; ++i)
+    > ! iff buf[i] == '\n'
+    > ! thn ++lines;
+    >   nop
+    > ! int linesbegin[lines]; 
+    >   end
+    >   
+    > --- 5,28 ----
+    >   blk
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    > !     int ignore_last_newline = 1;
+    > !     for seqto(i, size - ignore_last_newline)
+    > !     iff buf[i] == '\n'
+    > !     thn ++lines;
+    > !     nop
+    > ! chr *linesbegin[lines];
+    > !     int j = 0;
+    > !     stm linesbegin[j++] = 0;
+    > !     for seqto(i, size - ignore_last_newline)
+    > !     iff buf[i] == '\n'
+    > !     thn blk linesbegin[j++] = buf + i + 1;
+    > !         stm buf[i] = 0;
+    > ! 	end
+    >   nop
+    > ! for seqto(i, lines - 1)
+    > !     stm printf("%s\n", linesbegin[i]);
+    > ! stm return 0;
+    >   end
+    >   
 
-    [0x00] 2026-Jan-24 02:36:12 priv.c:63 !(bytesh/) $ cd$$ "../.." $$
+    [0x00] 2026-Feb-04 02:05:17 priv.c:1625 $ cd$$ mf("%s/MEGABUEROKRATIE/FINANZEN/", ssp) $$
 
-    [0x00] 2026-Jan-24 02:36:21 priv.c:65 !(bytesh/) $ lsc
-    > total 55K
-    > drwxrws--- 5 10182 1023 3.4K Sep 13 11:55 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 8 10182 1023 3.4K Jan 24 00:02 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
-    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25 13:45 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+    [0x00] 2026-Feb-04 02:06:34 priv.c:1627 !(bytesh/) $ readarrfile("N26.TXT")
 
-    [0x00] 2026-Jan-24 02:48:02 priv.c:82 $ mkdir$$ "editself" $$
+    [0x00] 2026-Feb-04 02:06:44 priv.c:1629 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 01:06:54.061438292 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 01:07:19.301438274 +0100
+    > ***************
+    > *** 19,28 ****
+    > --- 19,29 ----
+    >       iff buf[i] == '\n'
+    >       thn blk linesbegin[j++] = buf + i + 1;
+    >           stm buf[i] = 0;
+    >   	end
+    >   nop
+    > + stm ed$ lines $;
+    >   for seqto(i, lines - 1)
+    >       stm printf("%s\n", linesbegin[i]);
+    >   stm return 0;
+    >   end
+    >   
 
-    [0x00] 2026-Jan-24 02:48:31 priv.c:84 $ cd$$ "editself" $$
-
-    [0x00] 2026-Jan-24 02:48:38 priv.c:86 $ edit$$ "index.html" $$
-
-    [0x00] 2026-Jan-24 02:49:14 priv.c:88 $ sh$$ "wget https://raw.githubusercontent.com/m-bra/sose22/refs/heads/development/editself/jquery.js" $$
-
-    [0x00] 2026-Jan-24 21:30:11 priv.c:90 $ vncserver
-
-    [0x00] 2026-Jan-24 21:30:15 priv.c:92 $ firefox
-
-    [0x00] 2026-Jan-25 21:05:35 priv.c:94 $ pwd
-    > /storage/self/primary/prj/editself
-
-    [0x00] 2026-Jan-25 21:06:20 priv.c:97 $ cd$$ "../.." $$
-
-    [0x00] 2026-Jan-25 21:06:31 priv.c:99 $ lsc
-    > total 141K
-    > drwxrws--x  5  1023 1023 3.4K Mar 15  2024 Android
-    > drwxrws---  2 10182 1023 3.4K Aug 10 10:29 .bak
-    > drwxrws---  5 10182 1023 3.4K Jan 25 18:41 Books
-    > drwxrws---  4 10182 1023 3.4K Dec  3 18:29 DCIM
-    > drwxrws---  8 10182 1023 3.4K Dec  1 21:56 Documents
-    > drwxrws--- 22 10182 1023  56K Jan 25 18:41 Download
-    > drwxrws---  2 10182 1023 3.4K Dec  1 22:20 Fonts
-    > drwxrws---  3 10182 1023 3.4K Aug 10 16:45 freelancer
-    > drwxrws---  2 10182 1023 3.4K Aug  6 20:48 gl
-    > drwxrws---  2 10182 1023 3.4K Aug 10 10:34 .LenovoReaper
-    > drwxrws---  3 10182 1023 3.4K Aug 10 10:37 mbrandt
-    > drwxrws---  7 10182 1023 3.4K Oct 22 11:38 mntc
-    > drwxrws---  8 10182 1023 3.4K Oct  2 07:18 Movies
-    > drwxrws---  6 10182 1023 3.4K Oct 14 22:15 Music
-    > drwxrws---  2 10182 1023 3.4K Jul 22  2025 Notifications
-    > drwxrws---  2 10182 1023 3.4K Jul 14  2025 opt
-    > -rw-rw----  1 10182 1023 3.2K Jun 21  2025 pacmanss.qemu.txt
-    > drwxrws--- 10 10182 1023 3.4K Dec 28 12:26 Pictures
-    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Podcasts
-    > drwxrws--- 14 10182 1023 3.4K Jan 24 00:57 prj
-    > drwxrws---  4 10182 1023 3.4K Feb 27  2025 ReadEra
-    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Recordings
-    > drwxrws---  2 10182 1023 3.4K Mar 15  2024 Ringtones
-    > drwxrws---  3 10182 1023 3.4K Jan 14  2025 Termux_Downloader
-    > drwxrws---  5 10182 1023 3.4K Jan  2 03:17 tmp
-
-    [0x00] 2026-Jan-25 21:06:38 priv.c:127 $ ls$$ "Android" $$
-    > total 15K
-    > drwxrws--x+ 42 1023 1078 8.0K Jan 25 19:04 data
-    > drwxrws--x   3 1023 1023 3.4K Jan 25 18:57 media
-    > drwxrws--x+  2 1023 1079 3.4K Jan 25 18:55 obb
-
-    [0x00] 2026-Jan-25 21:07:57 priv.c:133 $ cd$$ "prj" $$
-
-    [0x00] 2026-Jan-25 22:33:07 priv.c:135 !(bytesh/) $ lsc
-    > total 55K
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 19:57 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
-    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
-
-    [0x00] 2026-Jan-25 22:33:13 priv.c:152 !(bytesh/) $ cd$$ "C*" $$
-
-    [0x00] 2026-Jan-25 22:33:25 priv.c:154 !(bytesh/) $ lsc
-    > total 170K
-    > -rw-rw----  1 10182 1023  85K Jan 25 18:58 a.out
-    > drwxrws---  2 10182 1023 3.4K Jan 25 19:57 .bak
-    > drwxrws---  2 10182 1023 3.4K Jan 25 19:57 _.bak
-    > -rw-rw----  1 10182 1023  148 Sep 11 13:33 cflags.h
-    > -rw-rw----  1 10182 1023 1.1K Sep 25 19:05 dirpost.h
-    > drwxrws---  7 10182 1023 3.4K Jan 24 00:02 .git
-    > -rw-rw----  1 10182 1023  113 Aug 16 15:41 .gitignore
-    > -rw-rw----  1 10182 1023    0 Jan 25 20:33 insert.c
-    > drwxrws---  4 10182 1023 3.4K Feb 13  2025 localsys-main
-    > -rw-rw----  1 10182 1023  15K Sep 14 13:13 main.c
-    > -rw-rw----  1 10182 1023  14K Aug  9 20:13 main.c.orig
-    > -rw-rw----  1 10182 1023  946 Aug  9 20:06 main.c.rej
-    > -rw-rw----  1 10182 1023  14K Aug 10 14:11 main.hiddencmd.c
-    > -rw-rw----  1 10182 1023  232 Sep 11 12:56 repopw.txt
-    > drwxrws--- 12 10182 1023 4.0K Jan 25 20:33 run
-    > drwxrws--- 12 10182 1023 4.0K Jan 24 00:02 run.bak
-    > drwxrws--- 12 10182 1023 4.0K Jan 24 00:36 run.tmp.bak
-
-    [0x00] 2026-Jan-25 22:33:28 priv.c:174 !(bytesh/) $ sh$$ "git status" $$
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
-    > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   .gitignore
-    > 	deleted:    cflags
-    > 	deleted:    cnslutil.h.bak
-    > 	deleted:    core
-    > 	deleted:    dir.h
-    > 	deleted:    main.c.bak
-    > 	deleted:    main.ppm
-    > 	modified:   run/cnslutil.c
-    > 	modified:   run/cnslutil.c.o
-    > 	modified:   run/cnslutil.h
-    > 	modified:   run/cnslutil/diff.txt
-    > 	modified:   run/log.bytesh.tweaks.txt
-    > 	modified:   run/log.latest.txt
-    > 	modified:   run/log.mntc.txt
-    > 	modified:   run/log.trash.txt
-    > 	modified:   run/main.c.bak
-    > 	modified:   run/stdlibext.h
-    > 	modified:   run/tmp.h
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	modified:   run/userinterface.c
-    > 	modified:   run/userinterface.c.o
-    > 	deleted:    status.txt
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 	_.bak/
-    > 	dirpost.h
-    > 	run/cnslutil/man/printf.txt
-    > 	run/cnslutil/man/sed.txt
-    > 	run/log.examples.txt
-    > 	run/tmp/stardict.txt
-    > 
-    > no changes added to commit (use "git add" and/or "git commit -a")
-
-    [0x00] 2026-Jan-25 22:34:41 priv.c:218 !(bytesh/) $ cd$$ "../C*" $$
-
-    [0x00] 2026-Jan-25 22:34:52 priv.c:220 !(bytesh/) $ cd$$ "../" $$
-
-    [0x00] 2026-Jan-25 22:34:58 priv.c:222 !(bytesh/) $ lsc
-    > total 55K
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:33 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
-    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
-
-    [0x00] 2026-Jan-25 22:35:00 priv.c:239 !(bytesh/) $ cd$$ "C-OpenGL-Wasm-m5-development" $$
-
-    [0x00] 2026-Jan-25 22:36:05 priv.c:241 !(bytesh/) $ cd$$ ".." $$
-
-    [0x00] 2026-Jan-25 22:36:13 priv.c:243 !(bytesh/) $ bak$$ "C-OpenGL-Wasm-m5-development" $$
-
-    [0x00] 2026-Jan-25 22:36:34 priv.c:245 !(bytesh/) $ pwd
-    > /storage/self/primary/prj/bytesh
-
-    [0x00] 2026-Jan-25 22:36:37 priv.c:248 !(bytesh/) $ cd$$ ".." $$
-
-    [0x00] 2026-Jan-25 22:36:42 priv.c:250 !(bytesh/) $ lsc
-    > total 55K
-    > drwxrws--- 3 10182 1023 3.4K Jan 25 20:36 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:35 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
-    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
-
-    [0x00] 2026-Jan-25 22:36:45 priv.c:267 !(bytesh/) $ cd$$ "camera-app-master" $$
-
-    [0x00] 2026-Jan-25 22:37:06 priv.c:269 !(bytesh/) $ sh$$ "git status" $$
-
-    [0x00] 2026-Jan-25 22:37:16 priv.c:271 !(bytesh/) $ lsc
-    > total 19K
-    > -rw-rw---- 1 10182 1023 1.9K Dec 13  2024 app.js
-    > -rw-rw---- 1 10182 1023  844 Dec 13  2024 index.html
-    > drwxrws--- 2 10182 1023 3.4K Dec 13  2024 part-1
-    > drwxrws--- 2 10182 1023 3.4K Dec 13  2024 part-2
-    > -rw-rw---- 1 10182 1023  883 Dec 13  2024 style.css
-
-    [0x00] 2026-Jan-25 22:37:30 priv.c:279 !(bytesh/) $ cd$$ ".." $$
-
-    [0x00] 2026-Jan-25 22:37:36 priv.c:281 !(bytesh/) $ tmphadd
-    >     [....] tmphadd $ #define cdup cd$$ ".." $$
+    [0x00] 2026-Feb-04 02:07:59 priv.c:1647 $ tmphadd
+    >    + # define test readarrfile("N26.TXT")
     > 
 
-    [0x00] 2026-Jan-25 22:37:55 priv.c:285 !(bytesh/) $ pwd
-    > /storage/self/primary/prj
+    [0x00] 2026-Feb-04 02:08:18 priv.c:1651 $ test
 
-    [0x00] 2026-Jan-25 22:38:11 priv.c:288 !(bytesh/) $ lsc
-    > total 55K
-    > drwxrws--- 3 10182 1023 3.4K Jan 25 20:36 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:37 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Apr  6  2025 helloworld-js
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
-    > drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+    [0x00] 2026-Feb-04 02:08:22 priv.c:1653 $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 01:08:27.061438226 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 01:08:45.973438212 +0100
+    > ***************
+    > *** 1,10 ****
+    > --- 1,11 ----
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   inline
+    >   nil readarrfile(char const *filename)
+    >   blk
+    > + stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
 
-    [0x00] 2026-Jan-25 22:38:14 priv.c:305 !(bytesh/) $ cd$$ "helloworld-js" $$
+    [0x00] 2026-Feb-04 02:13:46 priv.c:1671 $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
 
-    [0x00] 2026-Jan-25 22:38:44 priv.c:307 !(bytesh/) $ lsc
-    > total 540K
-    > -rw-rw---- 1 10182 1023 8.9M Apr  6  2025 core
-    > -rw-rw---- 1 10182 1023 4.1K Apr  3  2025 index.html
-
-    [0x00] 2026-Jan-25 22:39:02 priv.c:312 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:39:08 priv.c:314 !(bytesh/) $ pwd
-    > /storage/self/primary/prj
-
-    [0x00] 2026-Jan-25 22:39:10 priv.c:317 !(bytesh/) $ bak$$ "helloworld-js" $$
-
-    [0x00] 2026-Jan-25 22:39:19 priv.c:319 !(bytesh/) $ cd$$ "m5" $$
-
-    [0x00] 2026-Jan-25 22:39:36 priv.c:321 !(bytesh/) $ 
-
-    [0x00] 2026-Jan-25 22:39:40 priv.c:323 !(bytesh/) $ pwd
-    > /storage/self/primary/prj/bytesh
-
-    [0x00] 2026-Jan-25 22:39:44 priv.c:326 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:39:47 priv.c:328 !(bytesh/) $ cd$$ "./m5" $$
-
-    [0x00] 2026-Jan-25 22:39:54 priv.c:330 !(bytesh/) $ tmphadd
-    >     [....] tmphadd $ # define gitstatus sh$$ "git status" $$
+    [0x00] 2026-Feb-04 02:13:53 priv.c:1674 $ tmphadd
+    >    + #define buerokrfin "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN"
     > 
 
-    [0x00] 2026-Jan-25 22:40:10 priv.c:334 !(bytesh/) $ gitstatus
+    [0x00] 2026-Feb-04 02:14:47 priv.c:1678 $ cdbytesh
 
-    [0x00] 2026-Jan-25 22:40:34 priv.c:336 !(bytesh/) $ sh$$ "git config --global --add safe.directory /storage/self/primary/prj/m5" $$
+    [0x00] 2026-Feb-04 02:14:58 priv.c:1680 !(bytesh/) $ srcfindgrep$$ "stdin" $$
+    > main.c:#include <stdint.h>
+    > run/main.c:srcfindgrep$$ "stdin" $$
+    > run/stdioext.c:struct SYSFILE *stdinmacro();
+    > run/stdioext.c:struct SYSFILE *getstdin()
+    > run/stdioext.c:	return stdinmacro();
+    > run/stdioext.c:struct SYSFILE *stdinmacro()
+    > run/stdioext.c:	return (struct SYSFILE *) stdin;
+    > run/stdioext.h:struct SYSFILE *getstdin();
+    > run/stdioext.h:#define getstdin()  ((FILE *) getstdin())
+    > run/stdlibext.h:#define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin);};
 
-    [0x00] 2026-Jan-25 22:40:43 priv.c:338 !(bytesh/) $ gitstatus
-    > On branch master
-    > 
-    > No commits yet
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.gitignore
-    > 	Cargo.toml
-    > 	src/
-    > 
-    > nothing added to commit but untracked files present (use "git add" to track)
+    [0x00] 2026-Feb-04 02:16:04 priv.c:1692 !(bytesh/) $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 01:16:07.997437896 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-02-04 01:16:14.229437891 +0100
+    > ***************
+    > *** 46,56 ****
+    >   
+    >   extern malloclist_t malloclistval;
+    >   extern malloclist_t *malloclist;
+    >   
+    >   
+    > ! #define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin);};
+    >   
+    >   #define in(a, f, b) f ( a , b )
+    >   
+    >   #define ANONSTRUCT_COUNT_(x) anon_struct##x
+    >   #define ANONSTRUCT_COUNT(x) ANONSTRUCT_COUNT_(x) 
+    > --- 46,56 ----
+    >   
+    >   extern malloclist_t malloclistval;
+    >   extern malloclist_t *malloclist;
+    >   
+    >   
+    > ! #define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, getstdin());};
+    >   
+    >   #define in(a, f, b) f ( a , b )
+    >   
+    >   #define ANONSTRUCT_COUNT_(x) anon_struct##x
+    >   #define ANONSTRUCT_COUNT(x) ANONSTRUCT_COUNT_(x) 
 
-    [0x00] 2026-Jan-25 22:40:50 priv.c:351 !(bytesh/) $ cd$$ ".." $$
+    [0x00] 2026-Feb-04 02:16:15 priv.c:1721 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 01:16:17.237437889 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 01:16:21.237437886 +0100
+    > ***************
+    > *** 1,11 ****
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   inline
+    >   nil readarrfile(char const *filename)
+    >   blk
+    > ! //stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    > --- 1,11 ----
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   inline
+    >   nil readarrfile(char const *filename)
+    >   blk
+    > ! stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
 
-    [0x00] 2026-Jan-25 22:40:58 priv.c:353 !(bytesh/) $ bak$$ "m5" $$
+    [0x00] 2026-Feb-04 02:16:25 priv.c:1750 !(bytesh/) $ test
 
-    [0x00] 2026-Jan-25 22:41:09 priv.c:355 !(bytesh/) $ 
+    [0x00] 2026-Feb-04 02:16:28 priv.c:1752 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 01:16:30.981437879 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 01:16:52.821437864 +0100
+    > ***************
+    > *** 1,11 ****
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   inline
+    >   nil readarrfile(char const *filename)
+    >   blk
+    > - stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    > --- 1,10 ----
 
-    [0x00] 2026-Jan-25 22:41:12 priv.c:357 !(bytesh/) $ cdup
+    [0x00] 2026-Feb-04 16:25:31 priv.c:1770 !(bytesh/) $ srcfindword$$ "readarrfile" $$
+    > run/main.c:srcfindword$$ "readarrfile" $$
+    > run/tmp.h:# define test readarrfile("N26.TXT")
 
-    [0x00] 2026-Jan-25 22:41:14 priv.c:359 !(bytesh/) $ bak$$ "m5.old" $$
+    [0x00] 2026-Feb-04 18:33:49 priv.c:1774 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 17:33:51.890846135 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 17:38:39.210845930 +0100
+    > ***************
+    > *** 1,29 ****
+    > ! #include "../bytesh/run/main.h"
+    >   
+    > - inline
+    > - nil readarrfile(char const *filename)
+    > - blk
+    > - int size;
+    > - chr *buf = mmap2(filename, &size);
+    > - nop
+    > - int lines = 0;
+    > -     int ignore_last_newline = 1;
+    > -     for seqto(i, size - ignore_last_newline)
+    > -     iff buf[i] == '\n'
+    > -     thn ++lines;
+    > -     nop
+    > - chr *linesbegin[lines];
+    > -     int j = 0;
+    > -     stm linesbegin[j++] = 0;
+    > -     for seqto(i, size - ignore_last_newline)
+    > -     iff buf[i] == '\n'
+    > -     thn blk linesbegin[j++] = buf + i + 1;
+    > -         stm buf[i] = 0;
+    > - 	end
+    > - nop
+    > - stm ed(lines);
+    > - for seqto(i, lines - 1)
+    > -     stm printf("%s\n", linesbegin[i]);
+    > - stm return 0;
+    > - end
+    >   
+    > --- 1,3 ----
+    > ! nil readarrfile(char const *filename);
+    >   
+    >   
 
-    [0x00] 2026-Jan-25 22:41:20 priv.c:361 !(bytesh/) $ lsc
-    > total 45K
-    > drwxrws--- 6 10182 1023 3.4K Jan 25 20:41 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:41 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 5 10182 1023 3.4K May  7  2025 outlook
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+    [0x00] 2026-Feb-04 18:38:52 priv.c:1813 !(bytesh/) $ // also wrote to arrfile.c
 
-    [0x00] 2026-Jan-25 22:41:23 priv.c:375 !(bytesh/) $ cd$$ "outlook" $$
+    [0x00] 2026-Feb-04 18:39:09 priv.c:1815 !(bytesh/) $ mv$$ "arrfile.c", "../arrfile" $$
 
-    [0x00] 2026-Jan-25 22:41:34 priv.c:377 !(bytesh/) $ lsc
-    > total 95K
-    > -rw-rw----   1 10182 1023  504 May  7  2025 config.xml
-    > -rw-rw----   1 10182 1023  889 May  7  2025 .gitignore
-    > drwxrws--- 151 10182 1023 8.0K May  7  2025 node_modules
-    > -rw-rw----   1 10182 1023  518 May  7  2025 package.json
-    > -rw-rw----   1 10182 1023  66K May  7  2025 package-lock.json
-    > drwxrws---   3 10182 1023 3.4K May  7  2025 platforms
-    > drwxrws---   5 10182 1023 3.4K May  7  2025 www
+    [0x00] 2026-Feb-04 18:39:24 priv.c:1817 !(bytesh/) $ cdup
 
-    [0x00] 2026-Jan-25 22:42:02 priv.c:387 !(bytesh/) $ cd$$ ".." $$
+    [0x00] 2026-Feb-04 18:46:03 priv.c:1819 !(bytesh/) $ lsc
+    > total 8.0K
+    > -rw------- 1 u0_a228 u0_a228 574 Feb  4 17:38 arrfile.c
+    > -rw------- 1 u0_a228 u0_a228  41 Feb  4 17:38 arrfile.h
 
-    [0x00] 2026-Jan-25 22:42:07 priv.c:389 !(bytesh/) $ bak$$ "outlook" $$
+    [0x00] 2026-Feb-04 21:12:34 priv.c:1824 !(bytesh/) $ readarrfile2("test.txt")
+    > (int) (lines) = 0 
 
-    [0x00] 2026-Jan-25 22:49:53 priv.c:391 !(bytesh/) $ pwd
-    > /storage/self/primary/prj/bytesh
+    [0x00] 2026-Feb-04 21:13:19 priv.c:1827 !(bytesh/) $ cd$$ buerokrfin $$
 
-    [0x00] 2026-Jan-25 22:49:55 priv.c:394 !(bytesh/) $ cdup
+    [0x00] 2026-Feb-04 21:13:24 priv.c:1829 !(bytesh/) $ lsc
+    > total 3.5M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw  673 Feb  3 17:09 2025A.TXT
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > drwxrws--- 2 u0_a182 media_rw 3.4K Feb  3 21:26 N26
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  38K Feb  3 21:24 N26LATEST
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
 
-    [0x00] 2026-Jan-25 22:49:57 priv.c:396 !(bytesh/) $ lsc
-    > total 41K
-    > drwxrws--- 7 10182 1023 3.4K Jan 25 20:42 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:45 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > -rw-rw---- 1 10182 1023    0 Aug  9 15:08 core
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Jul 23  2025 qemu
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
+    [0x00] 2026-Feb-04 21:13:54 priv.c:1848 !(bytesh/) $ cnslutilh
 
-    [0x00] 2026-Jan-25 22:50:00 priv.c:409 !(bytesh/) $ bak$$ "core" $$
-
-    [0x00] 2026-Jan-25 22:50:08 priv.c:411 !(bytesh/) $ cd$$ "qemu" $$
-
-    [0x00] 2026-Jan-25 22:50:20 priv.c:413 !(bytesh/) $ lsc
-    > total 228K
-    > -rw-rw---- 1 10182 1023 193K Jul 23  2025 hda
-    > -rw-rw---- 1 10182 1023  28K Jul 21  2025 help.txt
-    > -rw-rw---- 1 10182 1023   61 Jul 21  2025 main.c
-
-    [0x00] 2026-Jan-25 22:50:52 priv.c:419 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:50:56 priv.c:421 !(bytesh/) $ pwd
-    > /storage/self/primary/prj
-
-    [0x00] 2026-Jan-25 22:51:06 priv.c:424 !(bytesh/) $ bak$$ "qemu" $$
-
-    [0x00] 2026-Jan-25 22:51:16 priv.c:426 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:51:19 priv.c:428 !(bytesh/) $ lsc
-    > total 38K
-    > drwxrws--- 8 10182 1023 3.4K Jan 25 20:51 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:51 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
-
-    [0x00] 2026-Jan-25 22:51:20 priv.c:439 !(bytesh/) $ cd$$ "test" $$
-
-    [0x00] 2026-Jan-25 22:51:31 priv.c:441 !(bytesh/) $ lsc
-    > total 4.0K
-    > -rw-rw---- 1 10182 1023   0 Jul 24  2025 core
-    > -rw-rw---- 1 10182 1023 945 Jul 25  2025 main.c
-
-    [0x00] 2026-Jan-25 22:51:33 priv.c:446 !(bytesh/) $ cat$$ "main.c" $$
-    > #include <stdio.h>
-    > #include <unistd.h>
-    > 
-    > #define DEL_LINE "\033[2K\033[T"
-    > 
-    > char *rootworkdir;
-    > int isfirstcmd;
-    > 
-    > int printwchartable (char const *src, int const n)
-    > {
-    >     char sz [strlen(src)] ;
-    >     strcpy(sz, src);
-    >     for (int i = 0; i < n; ++i)
-    >     {
-    >    		printf("%s%s - ", sz, sz);
-    >    		for (int i = 0; i < (int) strlen(sz); ++i)
-    >    			printf("%X", (int)sz[i]);
-    >    		printf("\n");
-    > 	    sz [strlen(sz) - 1] ++ ;
-    >    			
-    >     }
-    >     return 0;
-    > }
-    > 
-    > int main (void)
-    > {
-    > 	int const N = 10;
-    > 	char const *src = "𝐵";
-    > 	char sz [strlen(src)] ;
-    >     strcpy(sz, src);
-    >     
-    > 	while (1)
-    > 	{
-    > 		printwchartable (sz, N);
-    > 
-    > 		// ssize_t read(size_t count;
-    > 		//              int fd, void buf[count], size_t count);
-    > 		char buf[5];
-    > 		(void) read(STDIN_FILENO, buf, 1);
-    > 	    //if ( event == (int) 'j' )
-    > 	    //	src += 1;
-    > 		//if ( event == (int) 'k' )
-    > 		//	src -= 1;
-    > 		
-    >         sz [strlen(sz) - 1] ++ ;
-    > 			
-    > 		for (int i = 0; i < N + 1; ++i)
-    > 			printf ("%s", DEL_LINE);		
-    > 	}
-    > }
-
-    [0x00] 2026-Jan-25 22:51:46 priv.c:498 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:51:51 priv.c:500 !(bytesh/) $ lsc
-    > total 38K
-    > drwxrws--- 8 10182 1023 3.4K Jan 25 20:51 .bak
-    > -rw-rw---- 1 10182 1023  676 Jul 28 16:29 build.c
-    > drwxrws--- 9 10182 1023 3.4K Jan 25 20:51 bytesh
-    > drwxrws--- 4 10182 1023 3.4K Feb  4  2025 camera-app-master
-    > drwxrws--- 2 10182 1023 3.4K Jan 24 01:08 editself
-    > drwxrws--- 2 10182 1023 3.4K Jul 25  2025 test
-    > -rw-rw---- 1 10182 1023  705 Jun  4  2025 test.txt
-    > drwxrws--- 2 10182 1023  24K Jul 14  2025 textstreamanimate
-
-    [0x00] 2026-Jan-25 22:52:06 priv.c:511 !(bytesh/) $ bak$$ "test.txt" $$
-
-    [0x00] 2026-Jan-25 22:52:15 priv.c:513 !(bytesh/) $ cd$$ "textstreamanimate" $$
-
-    [0x00] 2026-Jan-25 22:52:52 priv.c:515 !(bytesh/) $ cdup
-
-    [0x00] 2026-Jan-25 22:52:56 priv.c:517 !(bytesh/) $ cd$$ "bytesh" $$
-
-    [0x00] 2026-Jan-25 22:53:01 priv.c:519 !(bytesh/) $ gitstatus
-    > On branch master2
-    > Your branch is ahead of 'origin/master2' by 1 commit.
-    >   (use "git push" to publish your local commits)
-    > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   .gitignore
-    > 	deleted:    cflags
-    > 	deleted:    cnslutil.h.bak
-    > 	deleted:    core
-    > 	deleted:    dir.h
-    > 	deleted:    main.c.bak
-    > 	deleted:    main.ppm
-    > 	modified:   run/cnslutil/diff.txt
-    > 	modified:   run/tmp.h
-    > 	modified:   run/tmp/log.last.txt
-    > 	deleted:    status.txt
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 
-    > no changes added to commit (use "git add" and/or "git commit -a")
-
-    [0x00] 2026-Jan-25 22:57:28 priv.c:546 !(bytesh/) $ gitupdate
-    > [master2 0e07977] untitled
-    >  1 file changed, 2 insertions(+), 25 deletions(-)
-
-    [0x00] 2026-Jan-25 22:58:15 priv.c:550 !(bytesh/) $ gitstatus
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
-    > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   .gitignore
-    > 	deleted:    cflags
-    > 	deleted:    cnslutil.h.bak
-    > 	deleted:    core
-    > 	deleted:    dir.h
-    > 	deleted:    main.c.bak
-    > 	deleted:    main.ppm
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	deleted:    status.txt
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 
-    > no changes added to commit (use "git add" and/or "git commit -a")
-
-    [0x00] 2026-Jan-25 22:58:34 priv.c:575 !(bytesh/) $ sh$$ "git add **/**" $$
-
-    [0x00] 2026-Jan-25 22:58:47 priv.c:577 !(bytesh/) $ gitstatus
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
-    > 
-    > Changes to be committed:
-    >   (use "git restore --staged <file>..." to unstage)
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   .gitignore
-    > 	deleted:    cflags
-    > 	deleted:    cnslutil.h.bak
-    > 	deleted:    core
-    > 	deleted:    dir.h
-    > 	deleted:    main.c.bak
-    > 	deleted:    main.ppm
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	deleted:    status.txt
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 
-
-    [0x00] 2026-Jan-25 22:59:05 priv.c:606 !(bytesh/) $ sh$$ "git add cflags" $$
-
-    [0x00] 2026-Jan-25 22:59:13 priv.c:608 !(bytesh/) $ gitstatus
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
-    > 
-    > Changes to be committed:
-    >   (use "git restore --staged <file>..." to unstage)
-    > 	deleted:    cflags
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   .gitignore
-    > 	deleted:    cnslutil.h.bak
-    > 	deleted:    core
-    > 	deleted:    dir.h
-    > 	deleted:    main.c.bak
-    > 	deleted:    main.ppm
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	deleted:    status.txt
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 
-
-    [0x00] 2026-Jan-25 22:59:20 priv.c:637 !(bytesh/) $ sh$$ "git add dir.h" $$
-
-    [0x00] 2026-Feb-03 00:12:44 priv.c:639 $ pwd
+    [0x00] 2026-Feb-04 22:07:52 priv.c:1850 !(bytesh/) $ pwd
     > /data/data/com.termux/files/home/prj/bytesh
 
-    [0x00] 2026-Feb-03 00:12:53 priv.c:642 $ gitupdate
+    [0x00] 2026-Feb-04 23:26:19 priv.c:1853 $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 22:26:24.991942829 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-04 22:26:35.415942822 +0100
+    > ***************
+    > *** 1,3 ****
+    >   nil readarrfile2(char const *filename);
+    > ! 
+    >   
+    > --- 1,3 ----
+    >   nil readarrfile2(char const *filename);
+    > ! #define readarrfile readarrfile2
+    >   
 
-    [0x00] 2026-Feb-03 00:13:13 priv.c:644 $ sh$$ "git status" $$
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
-    > 
-    > Changes to be committed:
-    >   (use "git restore --staged <file>..." to unstage)
-    > 	modified:   main.c
-    > 	renamed:    run/build.c.o -> run/.bak/build.c.o
-    > 	renamed:    run/cnslutil.c.o -> run/.bak/cnslutil.c.o
-    > 	renamed:    run/errno.c.o -> run/.bak/errno.c.o
-    > 	renamed:    run/htmlutil.c.o -> run/.bak/htmlutil.c.o
-    > 	new file:   run/.bak/mainstatic.c.o
-    > 	renamed:    run/mntc.c.o -> run/.bak/mntc.c.o
-    > 	renamed:    run/scanfs.c.o -> run/.bak/scanfs.c.o
-    > 	renamed:    run/stdioext.c.o -> run/.bak/stdioext.c.o
-    > 	renamed:    run/stdlibext.c.o -> run/.bak/stdlibext.c.o
-    > 	renamed:    run/stringext.c.o -> run/.bak/stringext.c.o
-    > 	renamed:    run/stringutil.c.o -> run/.bak/stringutil.c.o
-    > 	renamed:    run/trpg.c.o -> run/.bak/trpg.c.o
-    > 	renamed:    run/unistdext.c.o -> run/.bak/unistdext.c.o
-    > 	renamed:    run/userinterface.c.o -> run/.bak/userinterface.c.o
-    > 	new file:   run/build.o
-    > 	modified:   run/cnslutil.h
-    > 	new file:   run/cnslutil.o
-    > 	new file:   run/errno.o
-    > 	new file:   run/htmlutil.o
-    > 	modified:   run/main.h
-    > 	new file:   run/main.o
-    > 	modified:   run/mainstatic.c
-    > 	deleted:    run/mainstatic.c.o
-    > 	new file:   run/mainstatic.o
-    > 	new file:   run/mntc.o
-    > 	new file:   run/scanfs.o
-    > 	new file:   run/stdioext.o
-    > 	new file:   run/stdlibext.o
-    > 	new file:   run/stringext.o
-    > 	new file:   run/stringutil.o
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	new file:   run/trpg.o
-    > 	new file:   run/unistdext.o
-    > 	modified:   run/userinterface.c
-    > 	new file:   run/userinterface.o
-    > 
-    > Changes not staged for commit:
-    >   (use "git add <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
+    [0x00] 2026-Feb-04 23:30:59 priv.c:1866 $ cd$$ buerokrfin $$
+
+    [0x00] 2026-Feb-04 23:46:18 priv.c:1868 $ tmphadd
+    >    + # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
     > 
 
-    [0x00] 2026-Feb-03 00:16:41 priv.c:695 !(bytesh/) $ sh$$" git config --global user.email merlin.brandt@hotmail.de"$$
+    [0x00] 2026-Feb-04 23:47:50 priv.c:1872 !(bytesh/) $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-04 22:47:54.975941907 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-04 22:48:39.147941875 +0100
+    > ***************
+    > *** 1,27 ****
+    > --- 1,31 ----
+    >   #include "../bytesh/run/main.h"
+    >   
+    >   nil readarrfile2(char const *filename)
+    >   blk
+    > + stm breakpt;
+    >   int size;
+    >   chr *buf = mmap2(filename, &size);
+    >   nop
+    > + stm breakpt;
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    > + stm breakpt;
+    >   chr *linesbegin[lines];
+    >       int j = 0;
+    >       stm linesbegin[j++] = 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn blk linesbegin[j++] = buf + i + 1;
+    >           stm buf[i] = 0;
+    >   	end
+    >   nop
+    > + stm breakpt;
+    >   stm ed(lines);
+    >   for seqto(i, lines - 1)
+    >       stm printf("%s\n", linesbegin[i]);
+    >   stm return 0;
+    >   end
 
-    [0x00] 2026-Feb-03 00:16:54 priv.c:697 !(bytesh/) $ sh$$"git config --global user.name Brandt"$$
+    [0x00] 2026-Feb-04 23:49:50 priv.c:1910 $ stdlibextc
+
+    [0x00] 2026-Feb-04 23:58:13 priv.c:1912 $ arrfilec
+
+    [0x00] 2026-Feb-05 21:59:52 priv.c:1914 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 20:59:56.451849129 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 21:03:32.375848974 +0100
+    > ***************
+    > *** 218,228 ****
+    >       chr ccmd[1024];
+    >       stm snprintf(ccmd, 1020, "%s %s %s -o%s", "gcc", flags, CINPUTFILESRUN, ROOTC("/run/a.out"));
+    >       //stm es$ ccmd $ 
+    >      ;int compilestatus;
+    >           // :syntax keyword Statement stm
+    > !     stm if (!fork()) { execl("/bin/sh", "sh", "-c", ccmd, (char *) NULL); };
+    >       int lines = 0;
+    >       int ms, lastms = 0;
+    >       #   define animf(...) \
+    >           do { \
+    >               if (ctxt->interactive) \
+    > --- 218,228 ----
+    >       chr ccmd[1024];
+    >       stm snprintf(ccmd, 1020, "%s %s %s -o%s", "gcc", flags, CINPUTFILESRUN, ROOTC("/run/a.out"));
+    >       //stm es$ ccmd $ 
+    >      ;int compilestatus;
+    >           // :syntax keyword Statement stm
+    > !     stm if (!fork()) { execl("/bin/sh", "sh", "-c ", ccmd, (char *) NULL); };
+    >       int lines = 0;
+    >       int ms, lastms = 0;
+    >       #   define animf(...) \
+    >           do { \
+    >               if (ctxt->interactive) \
+
+    [0x00] 2026-Feb-05 22:03:33 priv.c:1943 $ printf("%s\n", "Hello");
+    > Hello
+
+    [0x00] 2026-Feb-05 22:04:02 priv.c:1946 $ compilerc
+
+    [0x00] 2026-Feb-05 22:06:43 priv.c:1948 $ cnslutilhadd
+    >    + # define which$$ sh$$ "which %s",
+    > 
+
+    [0x00] 2026-Feb-05 22:08:26 priv.c:1952 !(bytesh/) $ which$$ "gdb" $$
+    > /data/data/com.termux/files/usr/bin/gdb
+
+    [0x00] 2026-Feb-05 22:14:06 priv.c:1955 !(bytesh/) $ printf("hello\n")
+    > hello
+
+    [0x00] 2026-Feb-05 22:14:25 priv.c:1958 !(bytesh/) $ printf("hello\n")
+    > hello
+
+    [0x00] 2026-Feb-05 22:17:14 priv.c:1961 !(bytesh/) $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 21:17:18.415848383 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 21:17:38.155848369 +0100
+    > ***************
+    > *** 208,218 ****
+    >   
+    >       ign mainremoveunescnl(ctxt->line);
+    >       stm mainprintsubmainbegin(ctxt);
+    >       stm mainprintsubmainend(ctxt);    
+    >   
+    > !     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), QUIET, endsh;
+    >   
+    >   //EVALECHO(
+    >       chr flags[256];
+    >       stm snprintf(flags, 254, " %s %s", CFLAGS(defstrchrnul), cflags);
+    >       chr ccmd[1024];
+    > --- 208,218 ----
+    >   
+    >       ign mainremoveunescnl(ctxt->line);
+    >       stm mainprintsubmainbegin(ctxt);
+    >       stm mainprintsubmainend(ctxt);    
+    >   
+    > !     stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), ""/*QUIET*/, endsh;
+    >   
+    >   //EVALECHO(
+    >       chr flags[256];
+    >       stm snprintf(flags, 254, " %s %s", CFLAGS(defstrchrnul), cflags);
+    >       chr ccmd[1024];
+
+    [0x00] 2026-Feb-05 22:17:52 priv.c:1990 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 21:17:57.883848355 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 21:18:15.399848343 +0100
+    > ***************
+    > *** 208,217 ****
+    > --- 208,218 ----
+    >   
+    >       ign mainremoveunescnl(ctxt->line);
+    >       stm mainprintsubmainbegin(ctxt);
+    >       stm mainprintsubmainend(ctxt);    
+    >   
+    > +     stm printf("TEST222\n");
+    >       stm sh, "%s %s %s %s", "mv -f", ROOTC("/run/a.out"), ROOTC("/run/b.out"), ""/*QUIET*/, endsh;
+    >   
+    >   //EVALECHO(
+    >       chr flags[256];
+    >       stm snprintf(flags, 254, " %s %s", CFLAGS(defstrchrnul), cflags);
+
+    [0x00] 2026-Feb-06 00:14:13 priv.c:2008 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 23:14:19.867843361 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 23:14:55.363843336 +0100
+    > ***************
+    > *** 63,73 ****
+    >   //(
+    >   
+    >   int innermain(maincontext_t *ctxt)
+    >   blk 
+    >   int nextbackup = 10;
+    > !    
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    >   stm typedef int *intptr;
+    >   int defstrchrnul = 1; 
+    >   //f (decl int defstrchrnul),
+    > --- 63,74 ----
+    >   //(
+    >   
+    >   int innermain(maincontext_t *ctxt)
+    >   blk 
+    >   int nextbackup = 10;
+    > ! stm printf("%s\n", " (ok) ");
+    > ! 
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    >   stm typedef int *intptr;
+    >   int defstrchrnul = 1; 
+    >   //f (decl int defstrchrnul),
+
+    [0x00] 2026-Feb-06 00:15:19 priv.c:2038 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 23:15:21.199843317 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 23:16:22.063843274 +0100
+    > ***************
+    > *** 145,158 ****
+    >            && (ctxt->line += strlen(pattern), 1) \
+    >           thn
+    >   
+    >       stm ctxtmatchcmd("# exit")
+    >       blk
+    > !         sh$$ "gcc %s %s -o%s", 
+    > !             CFLAGS(defstrchrnul), CINPUTFILES,
+    > ! 	    ROOTC("/a.out") $$ 
+    > !         ;exit(0);
+    >       blk_end
+    >   
+    >       stm ctxtmatchcmd("# cmdlogexec")
+    >       blk stm FILE *f = fopen(ROOTC("/run/log.txt"), "r"); 
+    >           cen // if the last line of cmd log begins with [EXEC] $ ... cmd...
+    > --- 145,159 ----
+    >            && (ctxt->line += strlen(pattern), 1) \
+    >           thn
+    >   
+    >       stm ctxtmatchcmd("# exit")
+    >       blk
+    > !         stm printf("HELLO?\n");
+    > !         stm sh$$ "gcc %s %s -o%s", 
+    > !                 CFLAGS(defstrchrnul), CINPUTFILES,
+    > ! 	        ROOTC("/a.out") $$ 
+    > !         stm ;exit(0);
+    >       blk_end
+    >   
+    >       stm ctxtmatchcmd("# cmdlogexec")
+    >       blk stm FILE *f = fopen(ROOTC("/run/log.txt"), "r"); 
+    >           cen // if the last line of cmd log begins with [EXEC] $ ... cmd...
+
+    [0x00] 2026-Feb-06 00:30:16 priv.c:2074 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 23:30:22.055842673 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 23:30:35.455842664 +0100
+    > ***************
+    > *** 63,73 ****
+    >   //(
+    >   
+    >   int innermain(maincontext_t *ctxt)
+    >   blk 
+    >   int nextbackup = 10;
+    > ! 
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    >   stm typedef int *intptr;
+    >   int defstrchrnul = 1; 
+    >   //f (decl int defstrchrnul),
+    > --- 63,73 ----
+    >   //(
+    >   
+    >   int innermain(maincontext_t *ctxt)
+    >   blk 
+    >   int nextbackup = 10;
+    > ! stm printf("(ok)\n");
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    >   stm typedef int *intptr;
+    >   int defstrchrnul = 1; 
+    >   //f (decl int defstrchrnul),
+
+    [0x00] 2026-Feb-06 00:30:43 priv.c:2103 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 23:30:45.007842657 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 23:30:52.955842651 +0100
+    > ***************
+    > *** 63,73 ****
+    >   //(
+    >   
+    >   int innermain(maincontext_t *ctxt)
+    >   blk 
+    >   int nextbackup = 10;
+    > - stm printf("(ok)\n");
+    >   stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   
+    >   stm typedef int *intptr;
+    >   int defstrchrnul = 1; 
+    >   //f (decl int defstrchrnul),
+    > --- 63,72 ----
+
+    [0x00] 2026-Feb-06 00:30:54 priv.c:2121 $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/FINANZEN
+
+    [0x00] 2026-Feb-06 00:39:36 priv.c:2124 $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 23:39:38.675842275 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-05 23:40:33.299842236 +0100
+    > ***************
+    > *** 194,202 ****
+    >   void *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf);
+    >   iff size
+    > ! thn *size = statbuf.st_size - 1;
+    >   stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    >   end
+    >   
+    > --- 194,202 ----
+    >   void *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf);
+    >   iff size
+    > ! thn *size = (int) statbuf.st_size - 1;
+    >   stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    >   end
+    >   
+
+    [0x00] 2026-Feb-06 00:40:43 priv.c:2149 $ precompile
+
+    [0x00] 2026-Feb-06 01:30:33 priv.c:2151 $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 00:30:40.443840085 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-06 00:31:01.543840070 +0100
+    > ***************
+    > *** 191,200 ****
+    > --- 191,201 ----
+    >     return 0;
+    >   }
+    >   
+    >   void *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    > + stm breakpt;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf);
+    >   iff size
+    >   thn *size = (int) statbuf.st_size - 1;
+    >   stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+
+    [0x00] 2026-Feb-06 02:22:59 priv.c:2169 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 01:23:03.567837837 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-06 01:26:07.947837705 +0100
+    > ***************
+    > *** 192,202 ****
+    >     return 0;
+    >   }
+    >   
+    >   nil *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    > - stm breakpt;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf);
+    >   iff size
+    >   thn *size = (int) statbuf.st_size - 1;
+    >   stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > --- 192,201 ----
+
+    [0x00] 2026-Feb-06 03:02:13 priv.c:2187 !(bytesh/) $ readarrfile("N26LATEST")
+
+    [0x00] 2026-Feb-06 03:05:01 priv.c:2189 !(bytesh/) $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 02:05:07.787836031 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 02:12:26.943835717 +0100
+    > ***************
+    > *** 37,45 ****
+    > --- 37,60 ----
+    >   iff !strncmp(&linesbegin[i][instroff], cmppart("NAME"))
+    >   thn printf("%s\n", &linesbegin[i][argoff]);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   
+    > + int UNIQUENAMESMAX = 1024*16;
+    > + int uniquenamescount = 0;
+    > + chr *uniquenames[UNIQUENAMESMAX];
+    > + for seqto(i, lines - 1)
+    > + iff !strncmp(&linesbegin[i][instroff], cmpentire("NAME"))
+    > + thn blk chr isuniquename = 1;
+    > +         for seqto(j, uniquenamescount)
+    > +         iff !strncmp(uniquenames[j], &linesbegin[i][argoff])
+    > + 	thn isuniquename = 0;
+    > + 	iff isuniquename
+    > + 	thn uniquenames[i++] = &linesbegin[i][argoff];
+    > +     end
+    > + 
+    > + for seqto(i, uniquenamescount)
+    > + stm printf("%s\n", uniquenames[i]);
+    >   stm return 0;
+    >   end
+    >   
+    >   //)
+
+    [0x00] 2026-Feb-06 03:13:29 priv.c:2220 $ 
+
+    [0x00] 2026-Feb-06 03:14:58 priv.c:2222 $ readarrfile("N26LATEST")
+    > Coffeevibe
+    > CITY CARD SYSTEM
+    > ATB
+    > Kafe Alpaca Coffee
+    > GoodMorning
+    > Magazin Smmarket
+    > Maeander Quell GmbH 
+    > PIN AG
+    > SHOP ATB PR1124
+    > FOPZaharchukIrinaLvivn
+    > SILPO
+    > SIM 23
+    > Happy Bakery
+    > MAGAZYN 1124
+    > Bagels Cafe
+    > Magazin Karamelia
+    > sim23
+    > DIMKAVI
+    > Halereia
+    > KAFE TEATRALNE
+    > KIOSK PRODUKTY
+    > magazin Fokstrot
+    > Ljubimka
+    > LVIVSKI KRUASANY
+    > Merlin Brandt 
+    > ubiLearning Solutions GmbH
+    > GIPERMARKET TAM-TAM
+    > MAKDONALDZ 116
+    > Magazin Apetit
+    > PAYPAL *ruben.hummitzs
+    > CAFE STRIT
+    > RESTORAN AVOCADO
+    > MAHAZYN SHCHODNIA
+    > KavyarnyaParagraf
+    > MERCI CAFE
+    > TAM TAM MINI 2
+    > AntrekotFOPGoncharTaYi
+    > 1265
+    > PRODUKTi DOMAShNIi
+    > Kava Avenue KM
+    > 1255
+    > LIQPAY*TOV Bussystem
+    > KAFE LOFT
+    > #1105
+    > Wecoffee
+    > COFFEE L.E.M.M.
+    > Student
+    > Daily Dosn
+    > Kava Aveniu Vynnychenk
+    > Bar VIDENSKA KAVA
+    > Domashniy
+    > Magazin Simimarket
+    > KAPUChiNO
+    > MAGAZYN 1260
+    > GOODMORNING
+    > KIOSK 40
+    > 1202
+    > INFOBUS.EU
+    > Bistro Intaime
+    > Pekarnya"KAVKAZKAVIPIC
+    > TARHETMARKET
+    > Merlin Brandt
+    > POLMAR
+    > CIRCLE K NOWA DEBA
+    > PL SBX WARSZAWA ZODIAK
+    > ZABKA Z4989 K.1
+    > ZABKA Z5579 K.2
+    > CARREFOUR EXPRESS 3327
+    > PAYPAL *INFOBUSGLOB
+    > LUKAS Baecker Grieser
+    > MCDONALDS 01633
+    > 5elements Hostel
+    > REWE Peggy Engel oHG
+    > leipzig.5elementshoste
+    > ALDI NORD
+    > LOGHANDYTICKET LOGPAY
+    > KONSUM LEIPZIG EG
+    > Starbucks 53206 Leipzi
+    > Huwa GmbH
+    > MS* WOMBATSLEIPZIG
+    > REWE Mandy Bronser
+    > Netto Marken-Discount
+    > Lidl sagt Danke
+    > a&o Hotels and Hostels
+    > REWE Matthias Haerzsch
+    > MCDONALDS 00923
+    > Ristorante Don Giovann
+    > BERGMANN & SOHN GMBH
+    > Ditsch Erfurt Hauptbah
+    > Penny Weimar
+    > REWE Markt GmbH-ZwNL O
+    > MAeC GEIZ Handelsges.
+    > dean&david
+    > REWE Regiemarkt GmbH O
+    > PAYPAL *PAYPAL
+    > Starbucks 85315 Leipzi
+    > PAYPAL *HANDYTICKET
+    > SumUp *Gondals Feinba
+    > Starbucks 53165 Am Mon
+    > Frischem. Wandelhalle
+    > KAUFLAND HAMBURG ST GE
+    > NYA*A
+    > PAYPAL *AOHOSTELS
+    > Frischemarkt Altona
+    > KFC 691
+    > LS BEIGE LOUNGE
+    > REWE Christian Fri
+    > Feinbäckerei Thiele Fi
+    > REWE Stuttgart Kronens
+    > Back-Factory Stuttgart
+    > 93030144 Karlsruhe Bhf
+    > YORMAS AG
+    > KAMPS STUTTGART 504039
+    > Penny Auf der Mainzer
+    > 63210150 Frankfurt Mai
+    > Cash26
+    > N26
+    > REWE Niklas Gerlach oH
+    > LOG*HANDYTICKET LOGPAY
+    > SumUp *Cafe May
+    > U-Store 104
+    > TASK FORCE CONVENIENCE
+    > Rossmann 159
+    > Nur Hier GmbH
+    > Rossmann 3210
+    > BackWerk Hildesheim Hb
+    > M. NIEMEYER GMBH & CO.
+    > PayPal Europe S.a r.l. et Cie, S.C.A. 
+    > Aral Station 130622178
+    > Hotel at Booking.com
+    > MCDONALDS 01847
+    > 63240113 Bremen Hbf S
+    > DB Gepaeckschliessfach
+    > REWE Markt GmbH ZW
+    > PayPal (Europe) S.a r.l. et Cie, S.C.A.
+    > Starbucks 53106 Markts
+    > Handytronics
+    > SATURN ELECTRO-HANDELS
+    > REWE Florian Gerke oHG
+    > Edeka Tamme
+    > Backfactory 601
+    > MODEHAUS GEHLMANN
+    > Alnatura Produktions u
+    > Rossmann 1940
+    > YORMA S BREMEN
+    > Backwerk 427 Bremen HB
+    > DAK-Gesundheit 
+    > Penny Kiez
+    > Ditsch Hamburg Altona
+    > KRUSE DER LECKER BÄCKE
+    > Wurst & Durst
+    > LeCrobag Bremen Hbf Tu
+    > Dat Backhus
+    > H. von Allwoerden GmbH
+    > HBB BISTRO BERLINER TO
+    > Ditsch Hamburg Berline
+    > Cuccis Jungfernstieg
+    > SCHIETWETTER GMBH
+    > Penny Steindamm
+    > Back-Factory Bremen Ci
+    > 63240150 Bremen Hbf D
+    > Western Union International Bank
+    > Ditsch Hamburg Hammerb
+    > ServiceStore DB 3383
+    > a+o hostel and hotel
+    > Schmidtchen Huehnerpos
+    > Starbucks 53162 Neuer
+    > SumUp *Saba UG
+    > SCHUM EUROSHOP GMBH
+    > Pamukkale Back &amp; G
+    > U-Store 4728
+    > FLIXBUS.COM
+    > Espresso House 22028
+    > REWE Markt GmbH-ZW-NL
+    > Espresso House 22030
+    > Ali Ceylan
+    > CAFE STENZEL
+    > REWE Hamburg Ballindam
+    > Heinrich von Allwoerde
+    > STARBUCKS 53165 AM MON
+    > Nur Hier Fil. 3130
+    > SumUp *betahaus Hambu
+    > Budnikowsky
+    > WESTERN UNION
+    > N26 Ratenzahlung
+
+    [0x00] 2026-Feb-06 03:26:55 priv.c:2409 !(bytesh/) $ shdirect$$ "pkg search gpg" $$
+
+    [0x00] 2026-Feb-06 03:37:46 priv.c:2411 !(bytesh/) $ gpgencrypt$$ "repopw.txt" $$
+
+    [0x00] 2026-Feb-06 03:38:09 priv.c:2413 !(bytesh/) $ sh$$ "rm repopw.txt" $$
+
+    [0x00] 2026-Feb-06 03:38:24 priv.c:2415 !(bytesh/) $ mv$$ "repopw.txt.asc", "repopw.txt" $$
+
+    [0x00] 2026-Feb-06 03:38:37 priv.c:2417 !(bytesh/) $ cat$$ "repopw.txt" $$
+    > -----BEGIN PGP MESSAGE-----
+    > 
+    > jA0ECQMI7PwvUQNiS5Xs0mgBTlwzHH5xylQbVY8bzCuOnMc5n6ZhToLi/bV43O2I
+    > rCQGKFkX/pcIhDoqXfIKcxO1+CuojfPrWIuibMaQ8QwJKC1BI80th05th/XyJFBO
+    > ZxFXlkA/3mKSTNgXwxi7TprC8Yjp/FTb2w==
+    > =uF4/
+    > -----END PGP MESSAGE-----

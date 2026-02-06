@@ -3,6 +3,9 @@
 #ifndef STRINGEXTH
 #define STRINGEXTH
 
+#define cmpentire(sz) sz, strlen(sz) + 1
+#define cmppart(sz) sz, strlen(sz)
+
 char *memcmov(char *dst, char *src, int c, size_t n);
 
 char *strnmov(char *dst, char *src, size_t n);

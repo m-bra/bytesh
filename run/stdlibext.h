@@ -48,7 +48,7 @@ extern malloclist_t malloclistval;
 extern malloclist_t *malloclist;
 
 
-#define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, stdin());};
+#define breakpt ; {printf("breakpt at %s:%d", __FILE__, __LINE__);char c[8]; fgets(c, 8, getstdin());};
 
 #define in(a, f, b) f ( a , b )
 
@@ -89,6 +89,7 @@ extern int cen_line;
 #define stmh printf("STateMent\n#define stm\n");
 #define stm
 #define s
+#define nop
 
 #ifdef BETTER_BLK
     #define blkh printf("BLocK\n#define blk {");
@@ -105,6 +106,7 @@ extern int cen_line;
     #define blk {
     #define blk_endh printf("BLocK END\n#define blk_end }");
     #define blk_end }
+    #define end blk_end
     #define end_blkh printf("END BLocK\n#define end_blk }")
     #define end_blk }
 #endif
@@ -159,6 +161,10 @@ FILE *psh_(int ignored, char *fmt, ...);
 #define psh$$ psh_ ( 0 ,
 #define psh psh_ ( 0
 #define endsh "" )
+
+#define seqto(i, n) (int i = 0; i < n; ++i)
+
+nil *mmap2(char const *, int *);
 
 #endif
  

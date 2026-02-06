@@ -1165,4 +1165,416 @@
     > /storage/self/primary/prj/bytesh/run
 
     [0x00] 2026-Jan-24 01:59:59 priv.c:300 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:11:54 priv.c:1222 !(bytesh/) $ printf("%s\n", mf$$ "hello %d", 1 $$);
+
+
+    [0x00] 2026-Feb-03 18:12:40 priv.c:1225 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:16:01 priv.c:1256 !(bytesh/) $ edit$$ "statement-2025-09*.pdf" $$
+
+    [0x00] 2026-Feb-03 22:29:46 priv.c:1258 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:15:38 priv.c:1233 !(bytesh/) $ lsc
+    > total 3.8M
+    > drwxrws--- 3 u0_a182 media_rw 3.4K Feb  3 16:11 .bak
+    > -rw-rw---- 1 u0_a182 media_rw 2.7M Feb  3 00:52 2023A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw  50K Feb  3 00:13 2024A.ODT
+    > -rw-rw---- 1 u0_a182 media_rw 7.9K Feb  3 00:13 2024A.PDF
+    > -rw-rw---- 1 u0_a182 media_rw 8.4K Feb  3 00:13 2024B.CSV
+    > -rw-rw---- 1 u0_a182 media_rw 8.0K Feb  3 00:13 2024B.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 157K Feb  3 00:52 2024C.HTML
+    > -rw-rw---- 1 u0_a182 media_rw 143K Feb  3 00:52 2025-04-09-HASPA-STEUERNUMMER.JPG
+    > -rw-rw---- 1 u0_a182 media_rw  673 Feb  3 17:09 2025A.TXT
+    > -rw-rw---- 1 u0_a182 media_rw    0 Feb  3 01:16 2026-02-03-HAUSHALT.TXT
+    > -rw-rw---- 1 u0_a182 media_rw 108K Feb  3 00:13 AGREEMENT_OF_PURCHASE_XOMIK.ODT.odt
+    > -rw-rw---- 1 u0_a182 media_rw 296K Feb  3 00:52 DirectDebitMandatePayPal.pdf
+    > -rw-rw---- 1 u0_a182 media_rw  145 Feb  3 00:13 N26.TXT
+    > -rw-rw---- 1 u0_a182 media_rw  640 Feb  3 00:13 SCHUFA.TXT
+    > -rwxrwx--- 1 u0_a182 media_rw  89K Feb  3 17:00 statement-2025-09_050007.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  46K Feb  3 17:00 statement-2025-10_050043.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  45K Feb  3 17:01 statement-2025-11_050117.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  73K Feb  3 17:01 statement-2025-12_050150.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  57K Feb  3 17:02 statement-2026-01_050216.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  21K Feb  3 17:02 statement-2026-02_050238.pdf
+
+    [0x00] 2026-Feb-03 22:29:52 priv.c:1256 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:10:53 priv.c:1200 !(bytesh/) $ lsc
+    > total 4.8G
+    > -rwxrwx--- 1 u0_a182 media_rw  13M Jan 27 00:16 Magisk-v30.6.apk
+    > drwxrws--- 2 u0_a182 media_rw 3.4K Jan 26 23:48 TB328FU_S200157_250208_ROW_SVC
+    > -rwxrwx--- 1 u0_a182 media_rw 4.6G Jan 31 00:43 Windows 10 22H2 x64 en-us.iso
+    > -rwxrwx--- 1 u0_a182 media_rw 5.8M Feb  2 23:02 XRecorder_20260131_07 (pitch 0.00 - tempo 100)_110133.mp3
+    > -rwxrwx--- 1 u0_a182 media_rw 755K Jan 28 00:43 beat E 140-119 margin_124310.mp3
+    > -rwxrwx--- 1 u0_a182 media_rw 110M Jan 28 00:56 com.termux_1022.apk
+    > -rwxrwx--- 1 u0_a182 media_rw   63 Jan 30 22:17 hostname_101742
+    > -rwxrwx--- 1 u0_a182 media_rw  89K Feb  3 17:00 statement-2025-09_050007.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  46K Feb  3 17:00 statement-2025-10_050043.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  45K Feb  3 17:01 statement-2025-11_050117.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  73K Feb  3 17:01 statement-2025-12_050150.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  57K Feb  3 17:02 statement-2026-01_050216.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  21K Feb  3 17:02 statement-2026-02_050238.pdf
+    > -rwxrwx--- 1 u0_a182 media_rw  34M Jan 28 02:08 teamviewer_qs.tar.gz
+    > -rw-rw---- 1 u0_a182 media_rw  34M Jan 28 02:12 u0_a402@172.20.14.91
+
+    [0x00] 2026-Feb-03 22:30:32 priv.c:1218 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:10:48 priv.c:1198 !(bytesh/) $ cd$$ "Download" $$
+
+    [0x00] 2026-Feb-03 22:30:37 priv.c:1200 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 18:10:46 priv.c:1171 !(bytesh/) $ lsc
+    > total 84K
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug 10 12:34 .LenovoReaper
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug 10 12:29 .bak
+    > drwxrws--x  5 media_rw media_rw 3.4K Mar 15  2024 Android
+    > drwxrws---  5 u0_a182  media_rw 3.4K Jan 25 19:41 Books
+    > drwxrws---  4 u0_a182  media_rw 3.4K Dec  3 19:29 DCIM
+    > drwxrws---  3 u0_a182  media_rw 3.4K Feb  3 17:02 Download
+    > drwxrws---  2 u0_a182  media_rw 3.4K Dec  1 23:20 Fonts
+    > drwxrws--- 21 u0_a182  media_rw 3.4K Feb  3 00:49 MEGABUEROKRATIE
+    > drwxrws---  2 u0_a182  media_rw 3.4K Feb  3 00:11 MEGADOCUMENTS
+    > drwxrws---  8 u0_a182  media_rw 3.4K Oct  2 09:18 Movies
+    > drwxrws---  6 u0_a182  media_rw 3.4K Oct 15 00:15 Music
+    > drwxrws---  2 u0_a182  media_rw 3.4K Jul 22  2025 Notifications
+    > drwxrws---  6 u0_a182  media_rw 3.4K Jan 26 16:45 Pictures
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Podcasts
+    > drwxrws---  4 u0_a182  media_rw 3.4K Feb 28  2025 ReadEra
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Recordings
+    > drwxrws---  2 u0_a182  media_rw 3.4K Mar 15  2024 Ringtones
+    > drwxrws---  3 u0_a182  media_rw 3.4K Jan 14  2025 Termux_Downloader
+    > drwxrws---  3 u0_a182  media_rw 3.4K Aug 10 18:45 freelancer
+    > drwxrws---  2 u0_a182  media_rw 3.4K Aug  6 22:48 gl
+    > drwxrws---  3 u0_a182  media_rw 3.4K Aug 10 12:37 mbrandt
+    > drwxrws---  7 u0_a182  media_rw 3.4K Oct 22 13:38 mntc
+    > drwxrws---  2 u0_a182  media_rw 3.4K Jul 14  2025 opt
+    > drwxrws---  4 u0_a182  media_rw 3.4K Jan 25 22:01 prj
+
+    [0x00] 2026-Feb-03 22:30:44 priv.c:1198 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:07:25 priv.c:1432 !(bytesh/) $ sh$$ "echo 'abcx\\nabcd' | grep 'abc\\(x\\)\\{0\\}'" $$
+    > abcx
+    > abcd
+
+    [0x00] 2026-Feb-03 23:08:08 priv.c:1436 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:05:52 priv.c:1430 !(bytesh/) $ sh$$ "echo 'abcx\\nabcd' | grep 'abc\\(x\\){0}'" $$
+
+    [0x00] 2026-Feb-03 23:08:18 priv.c:1432 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:12:43 priv.c:1432 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-03 22:12:47.929445764 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-03 22:15:26.933445650 +0100
+    > ***************
+    > *** 530,534 ****
+    > --- 530,535 ----
+    >   #define cd$$ cd$$_ ( 0,
+    >   #define pinggoogle shdirect$$ "ping google.com | sed -r 's/.*time.([0-9]+).*$/\\1/g'" $$
+    >   # define open$$ sh$$ "termux-open %s", 
+    >   
+    >   #define findgrep$$ sh$$ "find %s | xargs grep %s ", 
+    > + 
+
+    [0x00] 2026-Feb-03 23:15:32 priv.c:1445 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:08:21 priv.c:1430 !(bytesh/) $ man$$ "grep" $$
+
+    [0x00] 2026-Feb-03 23:18:28 priv.c:1432 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:18:47 priv.c:1430 !(bytesh/) $ cd$$ "run" $$
+
+    [0x00] 2026-Feb-03 23:19:02 priv.c:1432 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:19:05 priv.c:1432 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-03 23:19:08 priv.c:1434 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:18:47 priv.c:1430 !(bytesh/) $ cd$$ "run" $$
+
+    [0x00] 2026-Feb-03 23:19:12 priv.c:1432 !(bytesh/) $ cltr
+[0x00] 2026-Feb-03 23:59:27 priv.c:1179 !(bytesh/) $ precompile
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c.o
+    > gcc -Wfatal-errors  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c.o
+
+    [0x00] 2026-Feb-03 23:59:36 priv.c:1195 !(bytesh/) $ cltr
+[0x00] 2026-Feb-04 17:33:53 priv.c:2064 $ srcfindword$$ "mf" $$
+    > main.c:            els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
+    > main.c:                mf("%s/%s/\n", isroot ? "" : cwd, (*pline)), 
+    > main.c:                ifn sh, "%s %s %s", "stat", mf("%s%s", ctxt->rootworkdir, ".err"), QUIET, endsh
+    > main.c:                thn printf("%s\n", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));
+    > main.c:                    stm iff mv, ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err"), endsh
+    > main.c:                    the iff cpr, mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
+    > main.c:            popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    > main.c:    stm cat, mf("%s >> %s", ROOTC("/run/tmp/log.next.txt"), ROOTC("/run/log.txt")), endsh;
+    > main.c:        stm rmr, mf("%s%s", ctxt->rootworkdir, ".bak"), 
+    > main.c:               /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh;
+    > main.c:        stm mv,  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
+    > main.c:                 mf("%s%s", ctxt->rootworkdir, ".bak"), endsh;
+    > main.c:        stm cpr, mf("%s%s", ctxt->rootworkdir, ""),
+    > main.c:                 mf("%s%s", ctxt->rootworkdir, ".tmp.bak"), endsh;
+    > main.c:thn perror(mf("%s:%d", __FILE__, __LINE__));
+    > main.c:chr *cwdinclude = mf( "%s/%s", ctxt->cwd, "/dir.h" );
+    > main.c:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > main.c:stm cwdinclude = mf( "%s/%s", ctxt->cwd, "/dirpost.h" );
+    > main.c:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > run/build.c:	chr *cmd = mf("gcc %s %s%s%s%s%s%s%s",
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	mkdirp, mf("%s/%s/%s", ROOT, "run", parent), endsh;
+    > run/cnslutil.c:    	mf(
+    > run/cnslutil.c:		fopen(mf("%s/%s/%s.%s", ROOT, "run", name, "h"), "a")	
+    > run/cnslutil.c:		mf(
+    > run/cnslutil.c:		fopen(mf("%s/run/%s", ROOT, "cnslutil.h"), "a")
+    > run/cnslutil.c:chr *cmd = mf("%sh", name);
+    > run/cnslutil.c:chr *filepath = mf("%s.h", namepath);
+    > run/cnslutil.c:    = mf("%s%sadd%s $ ", "    [....] ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    > run/cnslutil.c:chr *szdef = mgetline(mf("%s%%02d $ ", space));
+    > run/cnslutil.c:chr *path = ROOTC(mf("/run/%s", filepath));
+    > run/cnslutil.c:stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+    > run/cnslutil.c:	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+    > run/cnslutil.c:	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    > run/cnslutil.c:	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    > run/cnslutil.c:	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    > run/cnslutil.c:	stm char *filename = mf("%s%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt");
+    > run/cnslutil.c:             shdirect$$ mf( \
+    > run/htmlutil.c:thn { perror(mf("%s:%d", __FILE__, __LINE__)); return 0; }    
+    > run/htmlutil.c:    char *filenameaccept = mf("%s%s", filename, ".accept.txt");
+    > run/htmlutil.c:	char *filenamereject = mf("%s%s", filename, ".reject.txt");
+    > run/htmlutil.c:cen FILE *outreject = fopen(mf("%s%s", filename, ".reject.txt"), "w");
+    > run/htmlutil.c:cen FILE *outaccept = fopen(mf("%s%s", filename, ".accept.txt"), "w");
+    > run/htmlutil.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/main.c:srcfindword$$ "mf" $$
+    > run/mainstatic.c:stm perror(mf("%s:%d", __FILE__, cen_line));
+    > run/mainstatic.c://stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+    > run/mainstatic.c:chr *status = mf(
+    > run/mainstatic.c:    	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
+    > run/mainstatic.c:    	mf("%s%s", 
+    > run/mainstatic.c:stm perror(mf("%s:%d\n", __FILE__, cen_line));
+    > run/scanfs.c:		iff access(mf("%s%s", prefix, filename), F_OK) == 0
+    > run/stdlibext.c:chr *pre = mf("(%s) = ", name);
+    > run/stdlibext.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/stdlibext.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/cnslutil.h:#define ROOTLOG(name) mf("> /root/%s.log 2>&1", name)
+    > run/cnslutil.h:#define DISPLAYCONFIG mf("DISPLAY=:%d", DISPLAYN)
+    > run/cnslutil.h:#define LOGVNCSERVER ROOTLOG(mf("vncserver.%d", DISPLAYN))
+    > run/cnslutil.h:#define NBUFFERED_OUT(text, f) mf("%s", text)
+    > run/cnslutil.h:#define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    > run/cnslutil.h:#define lsraw(pipe) mf$ "ls %s", pipe $
+    > run/cnslutil.h:#define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+    > run/cnslutil.h:#define libreofficef sh, mf("%s libreoffice %%s %s %s", DISPLAYCONFIG, QUIET, BG)
+    > run/cnslutil.h:# define stdioexth edit, mf("%s/%s", ROOT, "/run/stdioext.h"), endsh
+    > run/cnslutil.h:# define stdlibexth edit, mf("%s/%s", ROOT, "/run/stdlibext.h"), endsh
+    > run/cnslutil.h:# define displaysh(...) sh, "%s %s %s %s", DISPLAYCONFIG, mf(__VA_ARGS__), QUIET, BG, endsh
+    > run/cnslutil.h:  edit, mf("%s/%s", ROOT, "../textstreamanimate/textstreamanimate.h"), endsh;
+    > run/cnslutil.h:    mf("%s=\"%s\"", "DBUS_SESSION_BUS_ADDRESS", dbus_session_bus_address)
+    > run/cnslutil.h://#define gitclone sh, mf("git clone %%s > %s 2>&1 & && %s" \
+    > run/mainsys.h:#define ROOTC(arg) mf("%s%s", ROOT, arg)
+    > run/stdlibext.h:#define mf mlinebufprintf
+    > run/stdlibext.h:#define mf$ mlinebufprintf INSERT_OPENING_PAREN
+    > run/tmp.h:#define directsh$ shdirectout(mf(
+    > run/tmp.h:#define TROOTC(path) mf("%s%s", "/data/data/com.termux/files/", path)
+
+    [0x00] 2026-Feb-04 17:34:53 priv.c:2142 !(bytesh/) $ cltr
+[0x00] 2026-Feb-04 17:33:53 priv.c:2064 $ srcfindword$$ "mf" $$
+    > main.c:            els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
+    > main.c:                mf("%s/%s/\n", isroot ? "" : cwd, (*pline)), 
+    > main.c:                ifn sh, "%s %s %s", "stat", mf("%s%s", ctxt->rootworkdir, ".err"), QUIET, endsh
+    > main.c:                thn printf("%s\n", mf("%s%s %s", ctxt->rootworkdir, ".err", "already exists"));
+    > main.c:                    stm iff mv, ctxt->rootworkdir, mf("%s%s", ctxt->rootworkdir, ".err"), endsh
+    > main.c:                    the iff cpr, mf("%s%s", ctxt->rootworkdir, ".bak"), ctxt->rootworkdir, endsh
+    > main.c:            popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    > main.c:    stm cat, mf("%s >> %s", ROOTC("/run/tmp/log.next.txt"), ROOTC("/run/log.txt")), endsh;
+    > main.c:        stm rmr, mf("%s%s", ctxt->rootworkdir, ".bak"), 
+    > main.c:               /*mf("%s%s", ctxt->rootworkdir, ".bak.bak"),*/ endsh;
+    > main.c:        stm mv,  mf("%s%s", ctxt->rootworkdir, ".tmp.bak"),
+    > main.c:                 mf("%s%s", ctxt->rootworkdir, ".bak"), endsh;
+    > main.c:        stm cpr, mf("%s%s", ctxt->rootworkdir, ""),
+    > main.c:                 mf("%s%s", ctxt->rootworkdir, ".tmp.bak"), endsh;
+    > main.c:thn perror(mf("%s:%d", __FILE__, __LINE__));
+    > main.c:chr *cwdinclude = mf( "%s/%s", ctxt->cwd, "/dir.h" );
+    > main.c:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > main.c:stm cwdinclude = mf( "%s/%s", ctxt->cwd, "/dirpost.h" );
+    > main.c:thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
+    > run/build.c:	chr *cmd = mf("gcc %s %s%s%s%s%s%s%s",
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	FILE *f = fopen(mf("%s/%s", rootworkdir, "/log.txt"), "r");
+    > run/cnslutil.c:	mkdirp, mf("%s/%s/%s", ROOT, "run", parent), endsh;
+    > run/cnslutil.c:    	mf(
+    > run/cnslutil.c:		fopen(mf("%s/%s/%s.%s", ROOT, "run", name, "h"), "a")	
+    > run/cnslutil.c:		mf(
+    > run/cnslutil.c:		fopen(mf("%s/run/%s", ROOT, "cnslutil.h"), "a")
+    > run/cnslutil.c:chr *cmd = mf("%sh", name);
+    > run/cnslutil.c:chr *filepath = mf("%s.h", namepath);
+    > run/cnslutil.c:    = mf("%s%sadd%s $ ", "    [....] ", cmd, fnct ? (preprocessor ? "def" : "fn") : "");
+    > run/cnslutil.c:chr *szdef = mgetline(mf("%s%%02d $ ", space));
+    > run/cnslutil.c:chr *path = ROOTC(mf("/run/%s", filepath));
+    > run/cnslutil.c:stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c", 
+    > run/cnslutil.c:	np&&fnct&&fputs(mf("void %s()%c", ident, *NLS), f);
+    > run/cnslutil.c:	np&&fnct&&fputs(   mf("{%c", *NLS),      f);
+    > run/cnslutil.c:	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    > run/cnslutil.c:	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    > run/cnslutil.c:	stm char *filename = mf("%s%s%s", ROOTC("/run/cnslutil/man/"), topic, ".txt");
+    > run/cnslutil.c:             shdirect$$ mf( \
+    > run/htmlutil.c:thn { perror(mf("%s:%d", __FILE__, __LINE__)); return 0; }    
+    > run/htmlutil.c:    char *filenameaccept = mf("%s%s", filename, ".accept.txt");
+    > run/htmlutil.c:	char *filenamereject = mf("%s%s", filename, ".reject.txt");
+    > run/htmlutil.c:cen FILE *outreject = fopen(mf("%s%s", filename, ".reject.txt"), "w");
+    > run/htmlutil.c:cen FILE *outaccept = fopen(mf("%s%s", filename, ".accept.txt"), "w");
+    > run/htmlutil.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/main.c:srcfindword$$ "mf" $$
+    > run/mainstatic.c:stm perror(mf("%s:%d", __FILE__, cen_line));
+    > run/mainstatic.c://stm FILE *datedatefile = popen(mf("date +%%Y-%%b-%%d\\ %%H:%%M:%%S --date='TZ=+04:00 %s'", szdate), "r");
+    > run/mainstatic.c:chr *status = mf(
+    > run/mainstatic.c:    	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
+    > run/mainstatic.c:    	mf("%s%s", 
+    > run/mainstatic.c:stm perror(mf("%s:%d\n", __FILE__, cen_line));
+    > run/scanfs.c:		iff access(mf("%s%s", prefix, filename), F_OK) == 0
+    > run/stdlibext.c:chr *pre = mf("(%s) = ", name);
+    > run/stdlibext.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/stdlibext.c:  perror(mf("%s:%d", __FILE__, __LINE__));
+    > run/cnslutil.h:#define ROOTLOG(name) mf("> /root/%s.log 2>&1", name)
+    > run/cnslutil.h:#define DISPLAYCONFIG mf("DISPLAY=:%d", DISPLAYN)
+    > run/cnslutil.h:#define LOGVNCSERVER ROOTLOG(mf("vncserver.%d", DISPLAYN))
+    > run/cnslutil.h:#define NBUFFERED_OUT(text, f) mf("%s", text)
+    > run/cnslutil.h:#define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
+    > run/cnslutil.h:#define lsraw(pipe) mf$ "ls %s", pipe $
+    > run/cnslutil.h:#define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+    > run/cnslutil.h:#define libreofficef sh, mf("%s libreoffice %%s %s %s", DISPLAYCONFIG, QUIET, BG)
+    > run/cnslutil.h:# define stdioexth edit, mf("%s/%s", ROOT, "/run/stdioext.h"), endsh
+    > run/cnslutil.h:# define stdlibexth edit, mf("%s/%s", ROOT, "/run/stdlibext.h"), endsh
+    > run/cnslutil.h:# define displaysh(...) sh, "%s %s %s %s", DISPLAYCONFIG, mf(__VA_ARGS__), QUIET, BG, endsh
+    > run/cnslutil.h:  edit, mf("%s/%s", ROOT, "../textstreamanimate/textstreamanimate.h"), endsh;
+    > run/cnslutil.h:    mf("%s=\"%s\"", "DBUS_SESSION_BUS_ADDRESS", dbus_session_bus_address)
+    > run/cnslutil.h://#define gitclone sh, mf("git clone %%s > %s 2>&1 & && %s" \
+    > run/mainsys.h:#define ROOTC(arg) mf("%s%s", ROOT, arg)
+    > run/stdlibext.h:#define mf mlinebufprintf
+    > run/stdlibext.h:#define mf$ mlinebufprintf INSERT_OPENING_PAREN
+    > run/tmp.h:#define directsh$ shdirectout(mf(
+    > run/tmp.h:#define TROOTC(path) mf("%s%s", "/data/data/com.termux/files/", path)
+
+    [0x00] 2026-Feb-04 17:35:03 priv.c:2142 !(bytesh/) $ cltr
+[0x00] 2026-Feb-04 18:30:57 priv.c:2338 $ edit$$ "" $$
+lsc
+    [0x00] 2026-Feb-04 18:31:48 priv.c:2340 $ cltr
+[0x00] 2026-Feb-04 18:06:02 priv.c:2312 $ # exit
+lsc    > total 747K
+    > drwx------  7 u0_a228 u0_a228 3.4K Feb  4 16:34 .git
+    > -rw-------  1 u0_a228 u0_a228   96 Feb  2 23:22 .gitignore
+    > drwx------  2 u0_a228 u0_a228 3.4K Feb  2 23:23 _.bak
+    > -rwx------  1 u0_a228 u0_a228  63K Feb  4 17:14 a.out
+    > -rw-------  1 u0_a228 u0_a228  183 Feb  4 00:03 cflags.h
+    > -rw-------  1 u0_a228 u0_a228  203 Feb  2 23:22 cnslutil.h.bak
+    > -rw-------  1 u0_a228 u0_a228  25M Feb  4 16:54 core
+    > -rw-------  1 u0_a228 u0_a228 1.1K Feb  4 15:15 dirpost.h
+    > -rw-------  1 u0_a228 u0_a228    0 Feb  4 17:06 insert.c
+    > drwx------  4 u0_a228 u0_a228 3.4K Feb  2 23:22 localsys-main
+    > -rw-------  1 u0_a228 u0_a228  15K Feb  4 17:14 main.c
+    > -rw-------  1 u0_a228 u0_a228  13K Feb  2 23:23 main.c.bak
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.c.orig
+    > -rw-------  1 u0_a228 u0_a228  946 Feb  2 23:23 main.c.rej
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.hiddencmd.c
+    > -rw-------  1 u0_a228 u0_a228  16K Feb  2 23:22 main.ppm
+    > -rw-------  1 u0_a228 u0_a228  232 Feb  2 23:23 repopw.txt
+    > drwx------ 12 u0_a228 u0_a228 8.0K Feb  4 17:14 run
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  4 15:26 run.bak
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  4 16:39 run.tmp.bak
+    > -rw-------  1 u0_a228 u0_a228   12 Feb  2 23:22 status.txt
+    > -rw-------  1 u0_a228 u0_a228  379 Feb  2 23:22 tmp.txt
+
+    [0x00] 2026-Feb-04 18:31:54 priv.c:2337 $ cltr
+[0x00] 2026-Feb-04 18:38:40 priv.c:1813 !(bytesh/) $ lsc
+    > total 751K
+    > drwx------  7 u0_a228 u0_a228 3.4K Feb  4 17:33 .git
+    > -rw-------  1 u0_a228 u0_a228   96 Feb  2 23:22 .gitignore
+    > drwx------  2 u0_a228 u0_a228 3.4K Feb  2 23:23 _.bak
+    > -rwx------  1 u0_a228 u0_a228  64K Feb  4 17:30 a.out
+    > -rw-------  1 u0_a228 u0_a228  574 Feb  4 17:38 arrfile.c
+    > -rw-------  1 u0_a228 u0_a228  183 Feb  4 00:03 cflags.h
+    > -rw-------  1 u0_a228 u0_a228  203 Feb  2 23:22 cnslutil.h.bak
+    > -rw-------  1 u0_a228 u0_a228  25M Feb  4 16:54 core
+    > -rw-------  1 u0_a228 u0_a228 1.1K Feb  4 15:15 dirpost.h
+    > -rw-------  1 u0_a228 u0_a228    0 Feb  4 17:38 insert.c
+    > drwx------  4 u0_a228 u0_a228 3.4K Feb  2 23:22 localsys-main
+    > -rw-------  1 u0_a228 u0_a228  15K Feb  4 17:30 main.c
+    > -rw-------  1 u0_a228 u0_a228  13K Feb  2 23:23 main.c.bak
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.c.orig
+    > -rw-------  1 u0_a228 u0_a228  946 Feb  2 23:23 main.c.rej
+    > -rw-------  1 u0_a228 u0_a228  14K Feb  2 23:23 main.hiddencmd.c
+    > -rw-------  1 u0_a228 u0_a228  16K Feb  2 23:22 main.ppm
+    > -rw-------  1 u0_a228 u0_a228  232 Feb  2 23:23 repopw.txt
+    > drwx------ 12 u0_a228 u0_a228 8.0K Feb  4 17:38 run
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  4 17:32 run.bak
+    > drwx------ 12 u0_a228 u0_a228 4.0K Feb  4 17:32 run.tmp.bak
+    > -rw-------  1 u0_a228 u0_a228   12 Feb  2 23:22 status.txt
+    > -rw-------  1 u0_a228 u0_a228  379 Feb  2 23:22 tmp.txt
+
+    [0x00] 2026-Feb-04 18:38:46 priv.c:1839 !(bytesh/) $ cltr
+[0x00] 2026-Feb-04 21:45:46 priv.c:1928 !(bytesh/) $ // 1
+
+    [0x00] 2026-Feb-04 21:45:48 priv.c:1930 !(bytesh/) $ for seqto(i, 2) cltr
+[0x00] 2026-Feb-04 21:45:41 priv.c:1924 !(bytesh/) $ // 3
+
+    [0x00] 2026-Feb-04 21:45:43 priv.c:1926 !(bytesh/) $ // 2
+[0x00] 2026-Feb-05 22:12:46 priv.c:1955 !(bytesh/) $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 21:12:48.699848576 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 21:13:14.771848558 +0100
+    > ***************
+    > *** 291,301 ****
+    >      
+    >       stm cmdlogfile = fopen(ROOTC("/run/tmp/log.next.txt"), "a");
+    >   
+    >       int stdoutfileno = dup(STDOUT_FILENO);
+    >       stm FILE *faout =
+    > !             popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/usr/bin/gdb /data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    >       int runstatus = 0xFF;
+    > --- 291,301 ----
+    >      
+    >       stm cmdlogfile = fopen(ROOTC("/run/tmp/log.next.txt"), "a");
+    >   
+    >       int stdoutfileno = dup(STDOUT_FILENO);
+    >       stm FILE *faout =
+    > !             popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    >       int runstatus = 0xFF;
+
+    [0x00] 2026-Feb-05 22:13:16 priv.c:1984 !(bytesh/) $ cltr
+[0x00] 2026-Feb-05 22:12:46 priv.c:1955 !(bytesh/) $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-05 21:12:48.699848576 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-05 21:13:14.771848558 +0100
+    > ***************
+    > *** 291,301 ****
+    >      
+    >       stm cmdlogfile = fopen(ROOTC("/run/tmp/log.next.txt"), "a");
+    >   
+    >       int stdoutfileno = dup(STDOUT_FILENO);
+    >       stm FILE *faout =
+    > !             popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/usr/bin/gdb /data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    >       int runstatus = 0xFF;
+    > --- 291,301 ----
+    >      
+    >       stm cmdlogfile = fopen(ROOTC("/run/tmp/log.next.txt"), "a");
+    >   
+    >       int stdoutfileno = dup(STDOUT_FILENO);
+    >       stm FILE *faout =
+    > !             popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    >       int runstatus = 0xFF;
+
+    [0x00] 2026-Feb-05 22:13:21 priv.c:1984 !(bytesh/) $ cltr
 

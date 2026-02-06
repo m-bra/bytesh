@@ -9,10 +9,10 @@ int echoflag()
 #include <signal.h>
 #include <errno.h>
 
+#include <unistd.h>
 #include "main.h"
 
 #include "userinterface.h"
-#include <unistd.h>
 
 struct termios uirestoreval;
 
@@ -108,7 +108,7 @@ thn blk
 iff c == '\t'
  && !strncmp(pagebuf, "us", 2)
 thn blk
-    nil tab_triggers()
+    //nil tab_triggers()
         blk
         for range(0, strlen(pagebuf))
 	    printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
@@ -116,7 +116,7 @@ thn blk
 	strcpy(pagebuf, sznew);
 	printf("%s", sznew); fflush(getstdout());
 	blk_end
-    tab_triggers();
+    //tab_triggers();
     blk_end
 
 iff c == c && !is_control_key
@@ -126,7 +126,7 @@ thn blk
 	the pagebuf[strlen(pagebuf) + 0] = c;
     stm pagebuf[strlen(pagebuf) + 1] = 0;
 
-    nil automatic_triggers()
+    //nil automatic_triggers()
         blk
 	iff !strncmp(pagebuf, "cd", 3)
 	thn ign 
@@ -135,7 +135,7 @@ thn blk
             stm printf("\x1B[1D\x1B[1D# cd"); fflush(getstdout());
 	    blk_end
         blk_end
-    stm automatic_triggers();        	
+    //stm automatic_triggers();        	
     blk_end
 
 iff c == '\n' && lastchar != '\\'

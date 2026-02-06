@@ -1,8 +1,8 @@
-#include "main.h"
 #include <unistd.h>
 #include <sys/wait.h>
+#include "main.h"
 
-void   scanfs (char const *prefix)
+void scanfs (char const *prefix)
 {
 	int nchars = 26 + 26 + 10 + 1;
 	char chars[nchars];\

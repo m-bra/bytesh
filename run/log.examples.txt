@@ -56,4 +56,142 @@
     > 96324254822 (Quelle: Meldebehoerde)
 
     [0x00] 2026-Jan-24 02:01:16 priv.c:168 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:21:54 priv.c:1351 !(bytesh/) $ shdirect$$ "pkg install poppler" $$
+
+    [0x00] 2026-Feb-03 22:28:50 priv.c:1353 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:21:07 priv.c:1338 !(bytesh/) $ sh$$ "pkg search poppler" $$
+    > No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+    > Checking availability of current mirror:
+    > [*] https://mirror.vern.cc/termux/termux-main: ok
+    > Sorting...
+    > Full Text Search...
+    > poppler/stable 24.05.0-5 aarch64
+    >   PDF rendering library
+    > 
+    > poppler-data/stable 0.4.12 all
+    >   Consists of encoding files for use with poppler
+    > 
+
+    [0x00] 2026-Feb-03 22:28:54 priv.c:1351 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:20:25 priv.c:1258 !(bytesh/) $ sh$$ "pkg install poppler-utils" $$
+    > No mirror or mirror group selected. You might want to select one by running 'termux-change-repo'
+    > Testing the available mirrors:
+    > [*] (10) https://packages-cf.termux.dev/apt/termux-main: ok
+    > [*] (1) https://mirror.textcord.xyz/termux/termux-main: bad
+    > [*] (1) https://mirror.nevacloud.com/applications/termux/termux-main: ok
+    > [*] (1) https://mirrors.nguyenhoang.cloud/termux/termux-main: ok
+    > [*] (1) https://mirror.twds.com.tw/termux/termux-main: ok
+    > [*] (1) https://linux.domainesia.com/applications/termux/termux-main: ok
+    > [*] (1) https://tmx.xvx.my.id/apt/termux-main: bad
+    > [*] (1) https://mirror.freedif.org/termux/termux-main: ok
+    > [*] (1) https://mirrors.cbrx.io/apt/termux/termux-main: ok
+    > [*] (1) https://mirrors.in.sahilister.net/termux/termux-main/: ok
+    > [*] (1) https://mirror.albony.in/termux/termux-main: ok
+    > [*] (1) https://mirror.bardia.tech/termux/termux-main: bad
+    > [*] (1) https://mirrors.sdu.edu.cn/termux/termux-main: ok
+    > [*] (1) https://mirrors.sau.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.nju.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.sustech.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.pku.edu.cn/termux/termux-main/: ok
+    > [*] (1) https://mirror.sjtu.edu.cn/termux/termux-main/: bad
+    > [*] (1) https://mirror.iscas.ac.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.ustc.edu.cn/termux/termux-main: ok
+    > [*] (1) https://mirrors.aliyun.com/termux/termux-main: ok
+    > [*] (1) https://mirrors.qvq.net.cn/termux/termux-main: bad
+    > [*] (1) https://mirrors.cqupt.edu.cn/termux/termux-main: bad
+    > [*] (1) https://mirrors.zju.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.hust.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.bfsu.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirror.nyist.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main: ok
+    > [*] (1) https://ftp.agdsn.de/termux/termux-main: ok
+    > [*] (4) https://grimler.se/termux/termux-main: ok
+    > [*] (1) https://ro.mirror.flokinet.net/termux/termux-main: ok
+    > [*] (1) https://mirrors.cfe.re/termux/termux-main: bad
+    > [*] (1) https://mirror.termux.dev/termux-main: bad
+    > [*] (1) https://termux.3san.dev/termux/termux-main: ok
+    > [*] (1) https://mirror.bouwhuis.network/termux/termux-main: ok
+    > [*] (1) https://mirror.accum.se/mirror/termux.dev/termux-main: ok
+    > [*] (1) https://termux.mentality.rip/termux-main: ok
+    > [*] (1) https://is.mirror.flokinet.net/termux/termux-main: ok
+    > [*] (1) https://md.mirrors.hacktegic.com/termux/termux-main: bad
+    > [*] (1) https://termux.astra.in.ua/apt/termux-main: bad
+    > [*] (1) https://mirror.mwt.me/termux/main: ok
+    > [*] (1) https://mirrors.medzik.dev/termux/termux-main: ok
+    > [*] (1) https://packages.termux.dev/apt/termux-main: ok
+    > [*] (1) https://mirror.sunred.org/termux/termux-main: ok
+    > [*] (1) https://mirrors.de.sahilister.net/termux/termux-main: ok
+    > [*] (1) https://mirror.leitecastro.com/termux/termux-main: bad
+    > [*] (1) https://termux.cdn.lumito.net/termux-main: ok
+    > [*] (1) https://nl.mirror.flokinet.net/termux/termux-main: bad
+    > [*] (1) https://ftp.fau.de/termux/termux-main: ok
+    > [*] (1) https://termux.librehat.com/apt/termux-main: ok
+    > [*] (1) https://mirror.autkin.net/termux/termux-main: ok
+    > [*] (1) https://mirror.polido.pt/termux/termux-main: bad
+    > [*] (1) https://dl.kcubeterm.com/termux-main: bad
+    > [*] (1) https://termux.danyael.xyz/termux/termux-main: ok
+    > [*] (1) https://mirror.mwt.me/termux/main: ok
+    > [*] (1) https://mirrors.utermux.dev/termux/termux-main: bad
+    > [*] (1) https://mirror.vern.cc/termux/termux-main: ok
+    > [*] (1) https://plug-mirror.rcac.purdue.edu/termux/termux-main: ok
+    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > [*] (1) https://mirror.fcix.net/termux/termux-main: ok
+    > [*] (1) https://mirror.csclub.uwaterloo.ca/termux/termux-main: ok
+    > [*] (1) https://mirror.endianness.com/termux/termux-main: bad
+    > [*] (1) https://mirrors.rda.run/termux/termux-main: bad
+    > [*] (1) https://repository.su/termux/termux-main/: ok
+    > [*] (1) http://mirror.mephi.ru/termux/termux-main: ok
+    > Picking mirror: (53) /data/data/com.termux/files/usr/etc/termux/mirrors/north_america/mirror.vern.cc
+    > Get:1 https://mirror.vern.cc/termux/termux-main stable InRelease [14.0 kB]
+    > Get:2 https://mirror.vern.cc/termux/termux-main stable/main aarch64 Packages [540 kB]
+    > Fetched 554 kB in 3s (181 kB/s)
+    > Reading package lists...
+    > Building dependency tree...
+    > Reading state information...
+    > 72 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    > Reading package lists...
+    > Building dependency tree...
+    > Reading state information...
+
+    [0x00] 2026-Feb-03 22:29:01 priv.c:1338 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:15:20 priv.c:1231 !(bytesh/) $ cd$$ mf("%s/%s", ssp, "MEGABUEROKRATIE/FINANZEN/") $$
+
+    [0x00] 2026-Feb-03 22:29:58 priv.c:1233 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:14:59 priv.c:1227 !(bytesh/) $ cd$$ ssp $$
+
+    [0x00] 2026-Feb-03 22:30:15 priv.c:1229 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:14:32 priv.c:1225 !(bytesh/) $ mv$$ "statement*", mf("%s/%s", ssp, "MEGABUEROKRATIE/FINANZEN/") $$
+
+    [0x00] 2026-Feb-03 22:30:18 priv.c:1227 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:12:51 priv.c:1222 !(bytesh/) $ mv$$ "statement*", mf$"%s/MEGABUEROKRATIE/FINANZEN", ssp$ $$
+
+
+    [0x00] 2026-Feb-03 22:30:23 priv.c:1225 !(bytesh/) $ clex
+[0x00] 2026-Feb-03 18:10:57 priv.c:1218 !(bytesh/) $ tmphadd
+    >    + # define ssp "/storage/self/primary/"
+    > 
+
+    [0x00] 2026-Feb-03 22:30:28 priv.c:1222 !(bytesh/) $ clex
+[0x00] 2026-Feb-05 22:34:18 priv.c:2021 !(bytesh/) $ sh$$ ROOTC("/run/b.out") $$
+    > World
+
+    [0x00] 2026-Feb-06 00:00:14 priv.c:2024 $ clex
+[0x00] 2026-Feb-05 22:34:05 priv.c:2018 !(bytesh/) $ printf("World\n");
+    > World
+
+    [0x00] 2026-Feb-06 00:00:22 priv.c:2021 $ clex
+[0x00] 2026-Feb-05 22:33:56 priv.c:2015 $ printf("Hello\n");
+    > Hello
+
+    [0x00] 2026-Feb-06 00:00:23 priv.c:2018 $ clex
+[0x00] 2026-Feb-05 22:33:50 priv.c:2013 $ ROOTC("/run/b.out");
+
+    [0x00] 2026-Feb-06 00:00:26 priv.c:2015 !(bytesh/) $ clex
+[0x00] 2026-Feb-05 22:33:36 priv.c:2011 $ ROOTC("/run/b.out");
+
+    [0x00] 2026-Feb-06 00:00:28 priv.c:2013 !(bytesh/) $ clex
+[0x00] 2026-Feb-05 22:33:30 priv.c:2008 $ printf("Hello\n");
+    > Hello
+
+    [0x00] 2026-Feb-06 00:00:31 priv.c:2011 !(bytesh/) $ clex
 

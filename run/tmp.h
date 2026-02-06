@@ -29,6 +29,8 @@
 
 #define stardict shdirect$$ "less %s", ROOTC("/run/tmp/stardict.txt") $$
 
+//char *mmap2(char const *filename, 
+
 /*void mmaptest() 
 {
     struct stat statbuf;
@@ -48,8 +50,27 @@
 
 #define cdbytesh cd$$ ROOTC(".") $$
 
-
 #define cdup cd$$ ".." $$
 
 # define gitstatus sh$$ "git status" $$
+
+# define less$$ shdirect$$ "less %s",
+
+# define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+
+# define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
+
+# define ssp "/storage/self/primary/"
+
+#define buildc edit$$ "run/build.c" $$
+
+# define arrfileh edit$$ ROOTC("/../arrfile/arrfile.h") $$
+
+# define test readarrfile("N26.TXT")
+
+#define buerokrfin "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN"
+
+
+
+# define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
 

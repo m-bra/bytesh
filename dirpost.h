@@ -1,6 +1,6 @@
 #undef find$$
-#define findgrep$$ sh$$ "find main.c run -not -type d | xargs grep %s ", 
-
+#define srcfindgrep$$ findgrep$$ "main.c run/*.c run/*.h -not -type d",
+#define srcfindword$$ findword$$ "main.c run/*.c run/*.h -not -type d",
 /*
     > -rw-rw----  1 10182 1023  85K Sep 25 16:50 a.out
     > drwxrws---  2 10182 1023 3.4K Sep 14 12:49 .bak

@@ -643,7 +643,6 @@
 #define fct2 (
 #define fbl_end )
 #define end_fbl )
-#define end end_
 #define end_ )
 
 inline
@@ -661,7 +660,7 @@ loctag
 stm STRUCTBODY(c, coords)
 fnc (pass PRARGLIST(c, coords)),
     stm x = y = 1;
-end
+end // warning this keyword changed in the meantime
 stm ed(x);
 */
 /*
@@ -679,7 +678,7 @@ fct FNV (decl, int defstrchrnul),
     iff !strncmp(answer, "n", 1)
     thn defstrchrnul = 1;
     stm defstrchrnul = 0;
-end
+end // warning this keyword changed in the meantime
 //*/
 
 )

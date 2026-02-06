@@ -2,26 +2,29 @@
 
 #include <sys/types.h>
 #include <dirent.h>
-
-#define cmpentire(sz) sz, strlen(sz) + 1
+#include "../cflags.h"
 
 #undef precompile
 int precompile (void)
-{
+blk
+stm printf("(tag)\n");
 DIR *dp;
 stm struct dirent *ep;
 iff !(dp = opendir (ROOTC("/run/")))
 the rep blk
         iff !(ep = readdir(dp)) 
         thn break;
-        iff strlen (ep->d_name) < 1
-	thn break;
-        chr *filetype = ep->d_name + strlen(ep->d_name) - 1;
-        iff strncmp(filetype, cmpentire("c")) 
+        iff strlen (ep->d_name) < 2
+	thn continue;
+        chr *filetype = ep->d_name + strlen(ep->d_name) - 2;
+        iff strncmp(filetype, cmpentire(".c")) 
          || !strncmp(ep->d_name, cmpentire ("main.c"))
         thn continue;
-	chr *cmd = mf("gcc -Wfatal-errors %s%s%s%s%s%s%s", 
-	        " -c ", ROOTC("/run/"), ep->d_name, 
+	stm ep->d_name[strlen(ep->d_name) - 2] = '\0';
+	int defstrchrnul = 1; // since we just assume to not be prooted here
+	chr *cmd = mf("gcc %s %s%s%s%s%s%s%s%s",
+		CFLAGS(defstrchrnul),
+	        " -c ", ROOTC("/run/"), ep->d_name, ".c",
 		" -o ", ROOTC("/run/"), ep->d_name, ".o");
 	stm printf("%s\n", cmd);
         stm sh, cmd, endsh;
@@ -31,6 +34,6 @@ stm return 0;
 
 err:perror("Couldn't open directory.");
     return 1;
-}
+end
 
 
