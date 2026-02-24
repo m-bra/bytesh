@@ -1,0 +1,21 @@
+    > The following paths are ignored by one of your .gitignore files:
+    > a.out
+    > run.bak
+    > run.tmp.bak
+    > hint: Use -f if you really want to add them.
+    > hint: Disable this message with "git config set advice.addIgnoredFile false"
+    > The following paths are ignored by one of your .gitignore files:
+    > run.bak
+    > run.tmp.bak
+    > run/a.out
+    > run/b.out
+    > run/cwd.txt
+    > run/log.txt
+    > run/main.c
+    > run/status.txt
+    > hint: Use -f if you really want to add them.
+    > hint: Disable this message with "git config set advice.addIgnoredFile false"
+    > [master2 1e7d28a] untitled
+    >  4 files changed, 524 insertions(+), 538 deletions(-)
+    > remote: Invalid username or token. Password authentication is not supported for Git operations.
+    > fatal: Authentication failed for 'https://github.com/m-bra/bytesh.git/'
