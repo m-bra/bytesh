@@ -5670,3 +5670,7 @@ ed(665.0*0.07)
 
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-24 02:28:38 priv.c:5753 !(bytesh/) $ gpgdecrypt$$ "repopw.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:29:31 priv.c:5756 !(bytesh/) $ cnslutilh
+

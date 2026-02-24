@@ -10097,4 +10097,35 @@ if (r == -1 && errno != ECHILD) goto err;
 
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-24 02:28:32 priv.c:5807 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 02:29:41 priv.c:5759 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:29:43.323450888 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-24 01:30:12.143450867 +0100
+    > ***************
+    > *** 301,311 ****
+    >   #undef gitupdate
+    >   void gitupdate() {
+    >       sh, "git add *", endsh;
+    >       sh, "git add */*", endsh;
+    >       sh, "git commit -m untitled", endsh;
+    > !     sh, "git push", endsh;
+    >     //sh, "git status", endsh;
+    >     //sh, "echo git status", endsh;
+    >     //echosys "git log" _
+    >   }
+    >   
+    > --- 301,311 ----
+    >   #undef gitupdate
+    >   void gitupdate() {
+    >       sh, "git add *", endsh;
+    >       sh, "git add */*", endsh;
+    >       sh, "git commit -m untitled", endsh;
+    > !     shdirect$$ "git push" $$;
+    >     //sh, "git status", endsh;
+    >     //sh, "echo git status", endsh;
+    >     //echosys "git log" _
+    >   }
+    >   
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:30:13 priv.c:5789 !(bytesh/) $ clbt
 

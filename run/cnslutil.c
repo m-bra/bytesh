@@ -303,7 +303,7 @@ void gitupdate() {
     sh, "git add *", endsh;
     sh, "git add */*", endsh;
     sh, "git commit -m untitled", endsh;
-    sh, "git push", endsh;
+    shdirect$$ "git push" $$;
   //sh, "git status", endsh;
   //sh, "echo git status", endsh;
   //echosys "git log" _
