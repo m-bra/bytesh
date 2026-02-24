@@ -5674,3 +5674,58 @@ ed(665.0*0.07)
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-24 02:29:31 priv.c:5756 !(bytesh/) $ cnslutilh
 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:30:53 priv.c:5760 !(bytesh/) $ gitupdate
+    > The following paths are ignored by one of your .gitignore files:
+    > a.out
+    > run.bak
+    > run.tmp.bak
+    > hint: Use -f if you really want to add them.
+    > hint: Disable this message with "git config set advice.addIgnoredFile false"
+    > The following paths are ignored by one of your .gitignore files:
+    > run.bak
+    > run.tmp.bak
+    > run/a.out
+    > run/b.out
+    > run/cwd.txt
+    > run/log.txt
+    > run/main.c
+    > run/status.txt
+    > hint: Use -f if you really want to add them.
+    > hint: Disable this message with "git config set advice.addIgnoredFile false"
+    > [master2 682a530] untitled
+    >  1 file changed, 2 insertions(+), 2 deletions(-)
+    > To https://github.com/m-bra/bytesh.git
+    >    3ccbdf3..682a530  master2 -> master2
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:34:41 priv.c:5784 !(bytesh/) $ gpgencrypt$$ "repopw.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:35:12 priv.c:5787 !(bytesh/) $ shdirect$$ "vim repopw.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:35:39 priv.c:5790 !(bytesh/) $ gpgencrypt$$ "repopw.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:36:02 priv.c:5793 !(bytesh/) $ mv$$ "repopw.txt.asc" , "repopw.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:36:33 priv.c:5796 !(bytesh/) $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is up to date with 'origin/master2'.
+    > 
+    > Changes not staged for commit:
+    >   (use "git add/rm <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   repopw.txt
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 	deleted:    tmp.txt
+    > 
+    > Untracked files:
+    >   (use "git add <file>..." to include in what will be committed)
+    > 	.bak/
+    > 
+    > no changes added to commit (use "git add" and/or "git commit -a")

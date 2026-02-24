@@ -1,4 +1,5 @@
 a.out
+.bak
 run.bak
 run.tmp.bak
 run/a.out
@@ -7,3 +8,6 @@ run/log.txt
 run/main.c
 run/status.txt
 run/cwd.txt
+run/tmp/log.last.txt
+run/tmp/log.next.txt.bak
+
