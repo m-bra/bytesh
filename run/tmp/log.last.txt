@@ -5659,3 +5659,14 @@ ed(665.0*0.07)
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-24 02:23:09 priv.c:5741 !(bytesh/) $ ed$ routine_gitupdaterequired(0, ".") $
     > (int) (routine_gitupdaterequired(0, ".")) = 1 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:23:57 priv.c:5745 !(bytesh/) $ gpgdecrypt$$ "repopw.txt" $$
+    > gpg: AES256.CFB encrypted data
+    > gpg: cancelled by user
+    > gpg: encrypted with 1 passphrase
+    > gpg: decryption failed: Bad session key
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:28:38 priv.c:5753 !(bytesh/) $ gpgdecrypt$$ "repopw.txt" $$

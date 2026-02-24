@@ -188,7 +188,7 @@ void man(int ignore, char *topic, char *ignore_) ;
 
 #define gpgencrypt sh, "gpg -a -c %s"
 #define gpgencrypt$$ gpgencrypt,
-#define gpgdecrypt shdirect$$ "gpg -a -d %s"
+#define gpgdecrypt sh, "gpg -a -d %s"
 #define gpgdecrypt$$ gpgdecrypt,
 
 #define date sh, "date", endsh
@@ -241,7 +241,7 @@ int pacmanr(int ignore, char *x, char *ignores);
 
 # define whoami sh, "whoami", endsh
 
-# define firefox sh, "%s firefox -P default-release %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+#define firefox sh, "%s firefox -P default-release %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 
 # define qutebrowser sh, "%s qutebrowser %s %s", DISPLAYCONFIG, QUIET, BG, endsh
 

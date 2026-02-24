@@ -10041,4 +10041,60 @@ if (r == -1 && errno != ECHILD) goto err;
 
     >@/data/data/com.termux/files/home/prj/m5
     [0x00] 2026-Feb-24 02:13:31 priv.c:5749 $ clbt
+[0x00] 2026-Feb-24 02:24:47 priv.c:5752 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:25:05.147451087 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-24 01:28:30.839450939 +0100
+    > ***************
+    > *** 186,196 ****
+    >   
+    >   #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
+    >   
+    >   #define gpgencrypt sh, "gpg -a -c %s"
+    >   #define gpgencrypt$$ gpgencrypt,
+    > ! #define gpgdecrypt sh, "gpg -a -d %s"
+    >   #define gpgdecrypt$$ gpgdecrypt,
+    >   
+    >   #define date sh, "date", endsh
+    >   
+    >   void du(char *, int depth, char *);
+    > --- 186,196 ----
+    >   
+    >   #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
+    >   
+    >   #define gpgencrypt sh, "gpg -a -c %s"
+    >   #define gpgencrypt$$ gpgencrypt,
+    > ! #define gpgdecrypt shdirect$$ "gpg -a -d %s"
+    >   #define gpgdecrypt$$ gpgdecrypt,
+    >   
+    >   #define date sh, "date", endsh
+    >   
+    >   void du(char *, int depth, char *);
+    > ***************
+    > *** 239,249 ****
+    >   
+    >   # define stat$$ sh, "stat %s",
+    >   
+    >   # define whoami sh, "whoami", endsh
+    >   
+    > ! #define firefox sh, "%s firefox -P default-release %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   # define qutebrowser sh, "%s qutebrowser %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   # define dynalist sh, "%s firefox -P dynalist --new-tab 'https://dynalist.io/' %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    > --- 239,249 ----
+    >   
+    >   # define stat$$ sh, "stat %s",
+    >   
+    >   # define whoami sh, "whoami", endsh
+    >   
+    > ! # define firefox sh, "%s firefox -P default-release %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   # define qutebrowser sh, "%s qutebrowser %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+    >   # define dynalist sh, "%s firefox -P dynalist --new-tab 'https://dynalist.io/' %s %s", DISPLAYCONFIG, QUIET, BG, endsh
+    >   
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:28:32 priv.c:5807 !(bytesh/) $ clbt
 
