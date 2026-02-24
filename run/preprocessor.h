@@ -637,7 +637,7 @@
 	}                                                 \
 	anonfn##identfrag args ;                          //
 
-#define fnc fctA FNV
+//#define fnc fctA FNV
 #define fctA fct1 fct2
 #define fct1 FNBLOCK2B
 #define fct2 (

@@ -43,11 +43,9 @@ stm linebuf_t *buf = &val;
 cen
 	
 stm int linen = -1;
-rep blk
-stm linen+= 1;
-iff !fgets(asstr buf, linebuf_tn, f)
-thn break;
-end_blk
+rep blk linen+= 1;
+    iff !fgets(asstr buf, linebuf_tn, f)
+    thn break; end;
 	
 stm fclose(f);
 stm return linen;
@@ -104,8 +102,9 @@ stm pclose (datefile);
 //stm pclose (datedatefile);
 
 chr *status = mf(
-    	mf("\n%s%s", "%s[0x%02X] ", PROMPT), 
-    	GLOBAL_INDENT, runstatus, 
+    	mf("\n%s%s", "%s>@%s\n%s[0x%02X] ", PROMPT), 
+        GLOBAL_INDENT, cwd,	
+	GLOBAL_INDENT, runstatus, 
     	
 	/* date */
 	szdate,
@@ -113,7 +112,7 @@ chr *status = mf(
     	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
     	mf("%s%s", 
     		(!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""),
-			routine_gitupdaterequired(++counter, "/storage/self/primary/prj/bytesh/") ? (" !(bytesh/)") : "" 
+			routine_gitupdaterequired(++counter, prjbytesh("./")) ? (" !(bytesh/)") : "" 
     	)
     );
     fprintf(first,  "%s", status);

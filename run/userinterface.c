@@ -86,9 +86,9 @@ thn blk
         thn continue;
 	iff strstr(buf, "$")
 	thn break;
-	blk_end
-    stm EVALECHO( es$ buf $; )
-    stm buf = strstr(buf, "$") + 1;
+	end
+    //s EVALECHO( es$ buf $; )
+    stm buf = strstr(buf, "$") + 2;
     iff strlen(buf) > 80
     thn buf[79] = '\0';
     //stm printf("Hello");ln;
@@ -111,15 +111,15 @@ thn blk
     //nil tab_triggers()
         blk
         for range(0, strlen(pagebuf))
-	    printf("%s %s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
-	char *sznew = "userinterfaceh";
-	strcpy(pagebuf, sznew);
-	printf("%s", sznew); fflush(getstdout());
-	blk_end
+        stm printf("%s%s", ESCSEQ_CURSOR_BACK, ESCSEQ_CURSOR_BACK); 
+	chr *sznew = "userinterfaceh";
+	stm strcpy(pagebuf, sznew);
+	stm printf("%s", sznew); fflush(getstdout());
+	end
     //tab_triggers();
-    blk_end
+    end
 
-iff c == c && !is_control_key
+iff /*c == c &&*/ !is_control_key
 thn blk
     stm putc(c, getstdout());
 	ifn strlen(pagebuf) + 1 < pagebuf_tn

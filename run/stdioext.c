@@ -1,4 +1,6 @@
 
+#include <sys/wait.h>
+
 struct SYSFILE;
 
 struct SYSFILE *stdoutmacro();
@@ -122,3 +124,25 @@ char *loads(char *filename)
 {
 	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
 }
+
+int waitpipe(pid_t senderpid, FILE *sender, FILE *receiver)
+blk int runstatus = 0xFF;
+    rep blk 
+        rep blk
+            chr line [linebuf_tn];
+            stm fflush(sender); 
+	    iff !fgets(line, linebuf_tn, sender)
+	    thn break;
+	    stm fprintf(receiver, "%s> %s", GLOBAL_INDENT, line);
+	    end
+        int wstatus;
+        int r = waitpid(senderpid, &wstatus, WNOHANG);
+        iff r == -1 && errno != ECHILD
+    the iff r && WIFEXITED(wstatus)
+        thn {runstatus = WEXITSTATUS(wstatus); break;}
+        end 
+    stm return runstatus;
+err:
+stm printf("Error from %s:%d\n", __FILE__, __LINE__);
+stm return 111;
+end

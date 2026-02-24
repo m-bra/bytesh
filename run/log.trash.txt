@@ -1577,4 +1577,811 @@ lsc    > total 747K
     >       int runstatus = 0xFF;
 
     [0x00] 2026-Feb-05 22:13:21 priv.c:1984 !(bytesh/) $ cltr
+[0x00] 2026-Feb-08 01:38:09 priv.c:3122 !(bytesh/) $ edit$$ ".cargo/config.toml" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-08 00:38:19.248710626 +0100
+    > --- .cargo/config.toml	2026-02-08 00:38:27.492710620 +0100
+    > ***************
+    > *** 1,3 ****
+    >   [build]
+    >   rustc = "$PREFIX/opt/rustc-nightly/bin/rustc"
+    > ! 
+    > --- 1,3 ----
+    >   [build]
+    >   rustc = "$PREFIX/opt/rustc-nightly/bin/rustc"
+    > ! # ok
+
+    [0x00] 2026-Feb-08 01:38:28 priv.c:3135 !(bytesh/) $ cltr
+[0x00] 2026-Feb-08 01:37:56 priv.c:3119 !(bytesh/) $ printf("%s\n", "Hello");
+    > Hello
+
+    [0x00] 2026-Feb-08 01:38:37 priv.c:3122 !(bytesh/) $ cltr
+[0x00] 2026-Feb-12 22:34:37 priv.c:3324 !(bytesh/) $ edit$$ ROOTC("/run/log.bytesh.tweak*") $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-12 21:34:53.953067934 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/log.bytesh.tweaks.txt	2026-02-12 21:35:03.217067927 +0100
+    > ***************
+    > *** 9132,9136 ****
+    > --- 9132,9186 ----
+    >       [0x00] 2026-Feb-12 22:32:55 priv.c:3696 !(bytesh/) $ clbt
+    >   [0x00] 2026-Feb-09 16:03:20 priv.c:3681 !(bytesh/) $ edit$$ "example.txt" $$
+    >   
+    >       [0x00] 2026-Feb-12 22:32:57 priv.c:3683 !(bytesh/) $ clbt
+    >   
+    > + [0x00] 2026-Feb-09 14:57:14 priv.c:3261 !(bytesh/) $ stdlibextc
+    > +     > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:06:45.471999311 +0100
+    > +     > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-09 14:14:34.459998975 +0100
+    > +     > ***************
+    > +     > *** 190,203 ****
+    > +     >   err:
+    > +     >     perror(mf("%s:%d", __FILE__, __LINE__));
+    > +     >     return 0;
+    > +     >   }
+    > +     >   
+    > +     > ! nil *mmap2(char const *filename, int *size)
+    > +     >   blk struct stat statbuf;
+    > +     >   int fd = open(filename, O_RDONLY);
+    > +     >   stm fstat(fd, &statbuf); 
+    > +     >   iff size
+    > +     >   thn *size = (int) statbuf.st_size - 1;
+    > +     > ! stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > +     >   end
+    > +     >   
+    > +     > --- 190,217 ----
+    > +     >   err:
+    > +     >     perror(mf("%s:%d", __FILE__, __LINE__));
+    > +     >     return 0;
+    > +     >   }
+    > +     >   
+    > +     > ! #define mmap2(f, s) mmapr(f, s)
+    > +     > ! 
+    > +     > ! nil *mmapr(char const *filename, int *size)
+    > +     >   blk struct stat statbuf;
+    > +     >   int fd = open(filename, O_RDONLY);
+    > +     >   stm fstat(fd, &statbuf); 
+    > +     >   iff size
+    > +     >   thn *size = (int) statbuf.st_size - 1;
+    > +     > ! nil *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > +     > ! stm close(fd);
+    > +     > ! stm return m;
+    > +     >   end
+    > +     >   
+    > +     > + nil *mmapw(char const *filename, int *size)
+    > +     > + blk struct stat statbuf; 
+    > +     > + int fd = open(filename, O_RDWR | O_CREAT, (mode_t)0600);
+    > +     > + stm fstat(fd, &statbuf);
+    > +     > + iff size
+    > +     > + thn *size = (int) statbuf.st_size - 1;
+    > +     > + chr *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    > +     > + stm close(fd)
+    > +     > + stm return m;
+    > +     > + 
+    > + 
+    > + 
+
+    [0x00] 2026-Feb-12 22:35:04 priv.c:3386 !(bytesh/) $ cltr
+[0x00] 2026-Feb-12 22:34:02 priv.c:3261 !(bytesh/) $ edit$$ ROOTC("/run/log.latest.txt") $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-12 21:34:15.213067962 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/log.latest.txt	2026-02-12 21:34:34.729067948 +0100
+    > ***************
+    > *** 5872,5927 ****
+    >       > + 
+    >       > + 
+    >       >   //)
+    >   
+    >       [0x00] 2026-Feb-12 22:33:52 priv.c:3390 !(bytesh/) $ cllt
+    > - [0x00] 2026-Feb-09 14:57:14 priv.c:3261 !(bytesh/) $ stdlibextc
+    > -     > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:06:45.471999311 +0100
+    > -     > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-09 14:14:34.459998975 +0100
+    > -     > ***************
+    > -     > *** 190,203 ****
+    > -     >   err:
+    > -     >     perror(mf("%s:%d", __FILE__, __LINE__));
+    > -     >     return 0;
+    > -     >   }
+    > -     >   
+    > -     > ! nil *mmap2(char const *filename, int *size)
+    > -     >   blk struct stat statbuf;
+    > -     >   int fd = open(filename, O_RDONLY);
+    > -     >   stm fstat(fd, &statbuf); 
+    > -     >   iff size
+    > -     >   thn *size = (int) statbuf.st_size - 1;
+    > -     > ! stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > -     >   end
+    > -     >   
+    > -     > --- 190,217 ----
+    > -     >   err:
+    > -     >     perror(mf("%s:%d", __FILE__, __LINE__));
+    > -     >     return 0;
+    > -     >   }
+    > -     >   
+    > -     > ! #define mmap2(f, s) mmapr(f, s)
+    > -     > ! 
+    > -     > ! nil *mmapr(char const *filename, int *size)
+    > -     >   blk struct stat statbuf;
+    > -     >   int fd = open(filename, O_RDONLY);
+    > -     >   stm fstat(fd, &statbuf); 
+    > -     >   iff size
+    > -     >   thn *size = (int) statbuf.st_size - 1;
+    > -     > ! nil *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > -     > ! stm close(fd);
+    > -     > ! stm return m;
+    > -     >   end
+    > -     >   
+    > -     > + nil *mmapw(char const *filename, int *size)
+    > -     > + blk struct stat statbuf; 
+    > -     > + int fd = open(filename, O_RDWR | O_CREAT, (mode_t)0600);
+    > -     > + stm fstat(fd, &statbuf);
+    > -     > + iff size
+    > -     > + thn *size = (int) statbuf.st_size - 1;
+    > -     > + chr *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    > -     > + stm close(fd)
+    > -     > + stm return m;
+    > -     > + 
+    > - 
+    >       [0x00] 2026-Feb-12 22:33:57 priv.c:3310 !(bytesh/) $ cllt
+    >   
+    > --- 5872,5878 ----
+
+    [0x00] 2026-Feb-12 22:35:08 priv.c:3324 !(bytesh/) $ cltr
+[0x00] 2026-Feb-17 21:33:16 priv.c:3406 !(bytesh/) $ int i = 0; i = i + 1; printf("Hello World %d", i);
+    > Hello World 1
+    [0x00] 2026-Feb-17 21:36:59 priv.c:3409 !(bytesh/) $ cltr
+[0x00] 2026-Feb-17 21:33:16 priv.c:3406 !(bytesh/) $ int i = 0; i = i + 1; printf("Hello World %d", i);
+    > Hello World 1
+    [0x00] 2026-Feb-17 21:37:12 priv.c:3409 !(bytesh/) $ cltr
+[0x00] 2026-Feb-17 21:33:09 priv.c:3365 !(bytesh/) $ lsc
+    > total 966K
+    > drwx------.  2 u0_a228 u0_a228 3.4K Feb  5 23:19 .bak
+    > drwx------.  7 u0_a228 u0_a228 3.4K Feb 17 20:32 .git
+    > -rw-------.  1 u0_a228 u0_a228   96 Feb  2 23:22 .gitignore
+    > -rw-------.  1 u0_a228 u0_a228  38K Feb  6 01:29 N26LATEST
+    > -rw-------.  1 u0_a228 u0_a228  38K Feb  7 01:21 N26LATEST.UPPER
+    > drwx------.  2 u0_a228 u0_a228 3.4K Feb  2 23:23 _.bak
+    > -rwx------.  1 u0_a228 u0_a228 104K Feb  7 23:40 a.out
+    > -rw-------.  1 u0_a228 u0_a228  462 Feb  5 19:50 cflags.h
+    > -rw-------.  1 u0_a228 u0_a228  203 Feb  2 23:22 cnslutil.h.bak
+    > -rw-------.  1 u0_a228 u0_a228 8.9M Feb  7 01:13 core
+    > -rw-------.  1 u0_a228 u0_a228 1.1K Feb  4 20:18 dirpost.h
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:33 insert.c
+    > drwx------.  4 u0_a228 u0_a228 3.4K Feb  2 23:22 localsys-main
+    > -rwx------.  1 u0_a228 u0_a228 100K Feb  5 23:25 m.out
+    > -rw-------.  1 u0_a228 u0_a228  15K Feb 11 23:28 main.c
+    > -rw-------.  1 u0_a228 u0_a228  13K Feb  2 23:23 main.c.bak
+    > -rw-------.  1 u0_a228 u0_a228  14K Feb  2 23:23 main.c.orig
+    > -rw-------.  1 u0_a228 u0_a228  946 Feb  2 23:23 main.c.rej
+    > -rw-------.  1 u0_a228 u0_a228  14K Feb  2 23:23 main.hiddencmd.c
+    > -rw-------.  1 u0_a228 u0_a228  16K Feb  2 23:22 main.ppm
+    > -rw-------.  1 u0_a228 u0_a228  228 Feb  6 02:38 repopw.txt
+    > drwx------. 12 u0_a228 u0_a228 8.0K Feb 17 20:33 run
+    > drwx------. 12 u0_a228 u0_a228 4.0K Feb 12 21:32 run.bak
+    > drwx------. 12 u0_a228 u0_a228 4.0K Feb 12 21:34 run.tmp.bak
+    > -rw-------.  1 u0_a228 u0_a228   12 Feb  2 23:22 status.txt
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:31 test--719267727Â
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb  4 21:08 test.h
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_0
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_1
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_10Â
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_2
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_3
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_4
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_5
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_6
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_7
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_9
+    > -rw-------.  1 u0_a228 u0_a228  379 Feb  2 23:22 tmp.txt
+
+    [0x00] 2026-Feb-17 21:37:15 priv.c:3406 !(bytesh/) $ cltr
+[0x00] 2026-Feb-17 21:32:41 priv.c:3363 !(bytesh/) $ mv$$ "test_8", "test_10Â" $$
+
+    [0x00] 2026-Feb-17 21:37:28 priv.c:3365 !(bytesh/) $ cltr
+[0x00] 2026-Feb-17 21:32:37 priv.c:3322 $ lsc
+    > total 966K
+    > drwx------.  2 u0_a228 u0_a228 3.4K Feb  5 23:19 .bak
+    > drwx------.  7 u0_a228 u0_a228 3.4K Feb  9 15:02 .git
+    > -rw-------.  1 u0_a228 u0_a228   96 Feb  2 23:22 .gitignore
+    > -rw-------.  1 u0_a228 u0_a228  38K Feb  6 01:29 N26LATEST
+    > -rw-------.  1 u0_a228 u0_a228  38K Feb  7 01:21 N26LATEST.UPPER
+    > drwx------.  2 u0_a228 u0_a228 3.4K Feb  2 23:23 _.bak
+    > -rwx------.  1 u0_a228 u0_a228 104K Feb  7 23:40 a.out
+    > -rw-------.  1 u0_a228 u0_a228  462 Feb  5 19:50 cflags.h
+    > -rw-------.  1 u0_a228 u0_a228  203 Feb  2 23:22 cnslutil.h.bak
+    > -rw-------.  1 u0_a228 u0_a228 8.9M Feb  7 01:13 core
+    > -rw-------.  1 u0_a228 u0_a228 1.1K Feb  4 20:18 dirpost.h
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 insert.c
+    > drwx------.  4 u0_a228 u0_a228 3.4K Feb  2 23:22 localsys-main
+    > -rwx------.  1 u0_a228 u0_a228 100K Feb  5 23:25 m.out
+    > -rw-------.  1 u0_a228 u0_a228  15K Feb 11 23:28 main.c
+    > -rw-------.  1 u0_a228 u0_a228  13K Feb  2 23:23 main.c.bak
+    > -rw-------.  1 u0_a228 u0_a228  14K Feb  2 23:23 main.c.orig
+    > -rw-------.  1 u0_a228 u0_a228  946 Feb  2 23:23 main.c.rej
+    > -rw-------.  1 u0_a228 u0_a228  14K Feb  2 23:23 main.hiddencmd.c
+    > -rw-------.  1 u0_a228 u0_a228  16K Feb  2 23:22 main.ppm
+    > -rw-------.  1 u0_a228 u0_a228  228 Feb  6 02:38 repopw.txt
+    > drwx------. 12 u0_a228 u0_a228 8.0K Feb 17 20:32 run
+    > drwx------. 12 u0_a228 u0_a228 4.0K Feb 12 21:32 run.bak
+    > drwx------. 12 u0_a228 u0_a228 4.0K Feb 12 21:34 run.tmp.bak
+    > -rw-------.  1 u0_a228 u0_a228   12 Feb  2 23:22 status.txt
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:31 test--719267727Â
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb  4 21:08 test.h
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_0
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_1
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_2
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_3
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_4
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_5
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_6
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_7
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_8
+    > -rw-------.  1 u0_a228 u0_a228    0 Feb 17 20:32 test_9
+    > -rw-------.  1 u0_a228 u0_a228  379 Feb  2 23:22 tmp.txt
+
+    [0x00] 2026-Feb-17 21:37:32 priv.c:3363 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 00:18:11 priv.c:3816 !(bytesh/) $ findgrep$$ ".", "m5" $$
+    > ./run/cnslutil/diff.txt:1:%: {::m5_load(init.m5.0.2)}
+    > ./run/.bak/log.last.txt:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run/.bak/log.last.txt:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run/.bak/log.last.txt:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run/.bak/log.last.txt:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run/.bak/log.last.txt:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run/.bak/log.last.txt:3018:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/.bak/log.last.txt:3362:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/.bak/log.last.txt:4382:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/.bak/log.last.txt:4563:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/.bak/log.last.txt.bak:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run/.bak/log.last.txt.bak:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run/.bak/log.last.txt.bak:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run/.bak/log.last.txt.bak:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run/.bak/log.last.txt.bak:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run/tmp.h:79:# define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/tmp.h:83:# define m5root ROOTC("../m5/")
+    > ./run/tmp/log.last.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run/tmp/log.last.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run/tmp/log.last.txt:2970:    > + #![crate_name="m5"]
+    > ./run/tmp/log.last.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run/tmp/log.last.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run/tmp/log.last.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run/tmp/log.last.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run/tmp/log.last.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run/tmp/log.last.txt:3073:    > ! name = "m5.bin"
+    > ./run/tmp/log.last.txt:3082:    > ! name = "m5"
+    > ./run/tmp/log.last.txt:3128:    > target=m5.bin
+    > ./run/tmp/log.last.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run/tmp/log.last.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run/tmp/log.last.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run/tmp/log.last.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run/tmp/log.last.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run/tmp/log.last.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run/tmp/log.last.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run/tmp/log.last.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run/tmp/log.last.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run/tmp/log.last.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run/tmp/log.last.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run/tmp/log.last.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run/tmp/log.last.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run/tmp/log.last.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/tmp/log.last.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/tmp/log.last.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/tmp/log.last.txt:3637:    [0x00] 2026-Feb-20 00:07:05 priv.c:3677 !(bytesh/) $ ls$$ "lib/m5/" $$
+    > ./run/tmp/log.last.txt:3639:    > -rwx------. 1 u0_a228 u0_a228 4.3K Feb  7 22:41 bash.m5
+    > ./run/tmp/log.last.txt:3642:    > -rwx------. 1 u0_a228 u0_a228   28 Feb  7 22:41 init.m5
+    > ./run/tmp/log.last.txt:3643:    > -rwx------. 1 u0_a228 u0_a228 2.2K Feb  7 22:41 init.m5.0.0
+    > ./run/tmp/log.last.txt:3644:    > -rwx------. 1 u0_a228 u0_a228 7.2K Feb  7 22:41 init.m5.0.1
+    > ./run/tmp/log.last.txt:3645:    > -rwx------. 1 u0_a228 u0_a228  128 Feb  7 22:41 init.m5.0.2
+    > ./run/tmp/log.last.txt:3646:    > -rwx------. 1 u0_a228 u0_a228 1.4K Feb  7 22:41 lean_comment.m5
+    > ./run/tmp/log.last.txt:3647:    > -rwx------. 1 u0_a228 u0_a228   31 Feb  7 22:41 lean_comments.m5
+    > ./run/tmp/log.last.txt:3648:    > -rwx------. 1 u0_a228 u0_a228 9.5K Feb  7 22:41 metatime.m5
+    > ./run/tmp/log.last.txt:3649:    > -rwx------. 1 u0_a228 u0_a228 7.5K Feb  7 22:41 structured.m5
+    > ./run/tmp/log.last.txt:3658:    > ! %: {::m5_load(init.0.2)}
+    > ./run/tmp/log.last.txt:3665:    > ! %: {::m5_load(init.0.2)}
+    > ./run/tmp/log.last.txt:3667:    > ! %: {::m5_load(init.m5.0.2)}
+    > ./run/tmp/log.last.txt:3675:    >   %: {::m5_load(init.m5.0.2)}
+    > ./run/tmp/log.last.txt:3700:    > target=m5.bin
+    > ./run/tmp/log.last.txt:3713:    > 	cat src/test.m5 | m5
+    > ./run/tmp/log.last.txt:3730:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run/tmp/log.last.txt:3732:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run/tmp/log.last.txt:3739:    >    + # define m5root ROOTC("../m5/")
+    > ./run/tmp/log.last.txt:3745:    [0x00] 2026-Feb-20 00:12:56 priv.c:3785 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5 %s/bin/m5", m5root, "$PREFIX" $$
+    > ./run/tmp/log.last.txt:3747:    [0x00] 2026-Feb-20 00:13:36 priv.c:3787 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5.bin %s/bin/m5.bin", m5root, "$PREFIX" $$
+    > ./run/tmp/log.last.txt:3749:    [0x00] 2026-Feb-20 00:14:05 priv.c:3789 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5cache %s/bin/m5cache", m5root, "$PREFIX" $$
+    > ./run/tmp/log.last.txt:3751:    [0x00] 2026-Feb-20 00:14:39 priv.c:3791 $ shdirect$$ "m5" $$
+    > ./run/tmp/log.last.txt:3772:    [0x00] 2026-Feb-20 00:14:52 priv.c:3812 $ shdirect$$ "m5 tmp.html" $$
+    > ./run/tmp/log.next.txt.bak:1:    > run/main.c:12:srcfindgrep$$ "m5" $$
+    > ./run/tmp/log.next.txt.bak:2:    > run/tmp.h:79:# define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/tmp/log.next.txt.bak:3:    > run/tmp.h:83:# define m5root ROOTC("../m5/")
+    > ./run/log.examples.txt:137:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run/log.latest.txt:5351:[0x00] 2026-Feb-09 19:58:02 priv.c:3927 !(bytesh/) $ edit$$ "m5" $$
+    > ./run/log.latest.txt:5353:    > --- m5	2026-02-09 18:59:39.522484590 +0100
+    > ./run/log.latest.txt:5358:    > ! m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run/log.latest.txt:5362:    > ! cat "$1" | m5.bin | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run/log.latest.txt:5400:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run/log.latest.txt:5403:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb 12 00:10 glVertexAttribPointer.js.m5
+    > ./run/log.latest.txt:5451:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run/log.latest.txt:5453:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb  7 22:41 glVertexAttribPointer.js.m5
+    > ./run/log.latest.txt:5467:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run/log.latest.txt:5468:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run/log.latest.txt:5469:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run/log.latest.txt:5470:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run/log.latest.txt:5494:[0x00] 2026-Feb-09 19:56:25 priv.c:3899 !(bytesh/) $ cd$$ "m5" $$
+    > ./run/log.mntc.txt:243:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run/log.mntc.txt:4745:[0x00] 2026-Feb-09 20:16:00 priv.c:4013 !(bytesh/) $ chmodx$$ "bin/m5" $$
+    > ./run/log.mntc.txt:4748:[0x00] 2026-Feb-09 20:15:06 priv.c:4011 !(bytesh/) $ edit$$ "bin/m5" $$
+    > ./run/log.mntc.txt:4751:[0x00] 2026-Feb-09 20:15:00 priv.c:4009 !(bytesh/) $ bak$$ "bin/m5" $$
+    > ./run/log.mntc.txt:4754:[0x00] 2026-Feb-09 20:13:41 priv.c:4007 !(bytesh/) $ bak$$ "bin/m5.d" $$
+    > ./run/log.mntc.txt:4757:[0x00] 2026-Feb-09 20:13:30 priv.c:3996 !(bytesh/) $ stat$$ "bin/m5.bin" $$
+    > ./run/log.mntc.txt:4758:    >   File: bin/m5.bin
+    > ./run/log.mntc.txt:4769:[0x00] 2026-Feb-09 20:13:13 priv.c:3994 !(bytesh/) $ cp$$ "target/release/m5", "bin/m5.bin" $$
+    > ./run/log.mntc.txt:4772:[0x00] 2026-Feb-09 20:12:36 priv.c:3947 !(bytesh/) $ stat$$ "bin/m5*" $$
+    > ./run/log.mntc.txt:4773:    >   File: bin/m5
+    > ./run/log.mntc.txt:4782:    >   File: bin/m5.bin
+    > ./run/log.mntc.txt:4791:    >   File: bin/m5.d
+    > ./run/log.mntc.txt:4800:    >   File: bin/m5bash
+    > ./run/log.mntc.txt:4809:    >   File: bin/m5cache.m5
+    > ./run/log.mntc.txt:4820:[0x00] 2026-Feb-09 20:11:26 priv.c:3945 !(bytesh/) $ cp$$ "target/release/m5*", "bin" $$
+    > ./run/log.old.txt:12179:cat, "asm.m5", endsh
+    > ./run/log.old.txt:16529:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run/log.old.txt:16532:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run/log.old.txt:16533:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run/log.old.txt:16540:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run/log.old.txt:16541:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run/log.old.txt:16829:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/log.old.txt:17173:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/log.old.txt:18193:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/log.old.txt:18374:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run/main.c:4:char *lastcmd = "srcfindgrep$$ \"m5\" $$\n";
+    > ./run/main.c:12:findgrep$$ ".", "m5" $$
+    > ./run/log.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run/log.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run/log.txt:2970:    > + #![crate_name="m5"]
+    > ./run/log.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run/log.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run/log.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run/log.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run/log.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run/log.txt:3073:    > ! name = "m5.bin"
+    > ./run/log.txt:3082:    > ! name = "m5"
+    > ./run/log.txt:3128:    > target=m5.bin
+    > ./run/log.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run/log.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run/log.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run/log.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run/log.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run/log.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run/log.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run/log.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run/log.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run/log.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run/log.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run/log.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run/log.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run/log.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/log.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/log.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run/log.txt:3637:    [0x00] 2026-Feb-20 00:07:05 priv.c:3677 !(bytesh/) $ ls$$ "lib/m5/" $$
+    > ./run/log.txt:3639:    > -rwx------. 1 u0_a228 u0_a228 4.3K Feb  7 22:41 bash.m5
+    > ./run/log.txt:3642:    > -rwx------. 1 u0_a228 u0_a228   28 Feb  7 22:41 init.m5
+    > ./run/log.txt:3643:    > -rwx------. 1 u0_a228 u0_a228 2.2K Feb  7 22:41 init.m5.0.0
+    > ./run/log.txt:3644:    > -rwx------. 1 u0_a228 u0_a228 7.2K Feb  7 22:41 init.m5.0.1
+    > ./run/log.txt:3645:    > -rwx------. 1 u0_a228 u0_a228  128 Feb  7 22:41 init.m5.0.2
+    > ./run/log.txt:3646:    > -rwx------. 1 u0_a228 u0_a228 1.4K Feb  7 22:41 lean_comment.m5
+    > ./run/log.txt:3647:    > -rwx------. 1 u0_a228 u0_a228   31 Feb  7 22:41 lean_comments.m5
+    > ./run/log.txt:3648:    > -rwx------. 1 u0_a228 u0_a228 9.5K Feb  7 22:41 metatime.m5
+    > ./run/log.txt:3649:    > -rwx------. 1 u0_a228 u0_a228 7.5K Feb  7 22:41 structured.m5
+    > ./run/log.txt:3658:    > ! %: {::m5_load(init.0.2)}
+    > ./run/log.txt:3665:    > ! %: {::m5_load(init.0.2)}
+    > ./run/log.txt:3667:    > ! %: {::m5_load(init.m5.0.2)}
+    > ./run/log.txt:3675:    >   %: {::m5_load(init.m5.0.2)}
+    > ./run/log.txt:3700:    > target=m5.bin
+    > ./run/log.txt:3713:    > 	cat src/test.m5 | m5
+    > ./run/log.txt:3730:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run/log.txt:3732:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run/log.txt:3739:    >    + # define m5root ROOTC("../m5/")
+    > ./run/log.txt:3745:    [0x00] 2026-Feb-20 00:12:56 priv.c:3785 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5 %s/bin/m5", m5root, "$PREFIX" $$
+    > ./run/log.txt:3747:    [0x00] 2026-Feb-20 00:13:36 priv.c:3787 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5.bin %s/bin/m5.bin", m5root, "$PREFIX" $$
+    > ./run/log.txt:3749:    [0x00] 2026-Feb-20 00:14:05 priv.c:3789 !(bytesh/) $ sh$$ "ln -sf %s/bin/m5cache %s/bin/m5cache", m5root, "$PREFIX" $$
+    > ./run/log.txt:3751:    [0x00] 2026-Feb-20 00:14:39 priv.c:3791 $ shdirect$$ "m5" $$
+    > ./run/log.txt:3772:    [0x00] 2026-Feb-20 00:14:52 priv.c:3812 $ shdirect$$ "m5 tmp.html" $$
+    > ./run/log.txt:3776:    [0x00] 2026-Feb-20 00:18:11 priv.c:3816 !(bytesh/) $ findgrep$$ ".", "m5" $$
+    > ./run.tmp.bak/cnslutil/diff.txt:1:%: {::m5_load(init.m5.0.2)}
+    > ./run.tmp.bak/.bak/log.last.txt:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/.bak/log.last.txt:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.tmp.bak/.bak/log.last.txt:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.tmp.bak/.bak/log.last.txt:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/.bak/log.last.txt:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/.bak/log.last.txt:3018:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/.bak/log.last.txt:3362:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/.bak/log.last.txt:4382:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/.bak/log.last.txt:4563:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/.bak/log.last.txt.bak:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/.bak/log.last.txt.bak:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.tmp.bak/.bak/log.last.txt.bak:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.tmp.bak/.bak/log.last.txt.bak:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/.bak/log.last.txt.bak:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/tmp.h:79:# define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/tmp.h:83:# define m5root ROOTC("../m5/")
+    > ./run.tmp.bak/tmp/log.last.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run.tmp.bak/tmp/log.last.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.tmp.bak/tmp/log.last.txt:2970:    > + #![crate_name="m5"]
+    > ./run.tmp.bak/tmp/log.last.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run.tmp.bak/tmp/log.last.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run.tmp.bak/tmp/log.last.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run.tmp.bak/tmp/log.last.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run.tmp.bak/tmp/log.last.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run.tmp.bak/tmp/log.last.txt:3073:    > ! name = "m5.bin"
+    > ./run.tmp.bak/tmp/log.last.txt:3082:    > ! name = "m5"
+    > ./run.tmp.bak/tmp/log.last.txt:3128:    > target=m5.bin
+    > ./run.tmp.bak/tmp/log.last.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run.tmp.bak/tmp/log.last.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.tmp.bak/tmp/log.last.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.tmp.bak/tmp/log.last.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run.tmp.bak/tmp/log.last.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run.tmp.bak/tmp/log.last.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run.tmp.bak/tmp/log.last.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run.tmp.bak/tmp/log.last.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.tmp.bak/tmp/log.last.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.tmp.bak/tmp/log.last.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.tmp.bak/tmp/log.last.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run.tmp.bak/tmp/log.last.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.tmp.bak/tmp/log.last.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/tmp/log.last.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/tmp/log.last.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/tmp/log.last.txt:3637:    [0x00] 2026-Feb-20 00:07:05 priv.c:3677 !(bytesh/) $ ls$$ "lib/m5/" $$
+    > ./run.tmp.bak/tmp/log.last.txt:3639:    > -rwx------. 1 u0_a228 u0_a228 4.3K Feb  7 22:41 bash.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3642:    > -rwx------. 1 u0_a228 u0_a228   28 Feb  7 22:41 init.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3643:    > -rwx------. 1 u0_a228 u0_a228 2.2K Feb  7 22:41 init.m5.0.0
+    > ./run.tmp.bak/tmp/log.last.txt:3644:    > -rwx------. 1 u0_a228 u0_a228 7.2K Feb  7 22:41 init.m5.0.1
+    > ./run.tmp.bak/tmp/log.last.txt:3645:    > -rwx------. 1 u0_a228 u0_a228  128 Feb  7 22:41 init.m5.0.2
+    > ./run.tmp.bak/tmp/log.last.txt:3646:    > -rwx------. 1 u0_a228 u0_a228 1.4K Feb  7 22:41 lean_comment.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3647:    > -rwx------. 1 u0_a228 u0_a228   31 Feb  7 22:41 lean_comments.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3648:    > -rwx------. 1 u0_a228 u0_a228 9.5K Feb  7 22:41 metatime.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3649:    > -rwx------. 1 u0_a228 u0_a228 7.5K Feb  7 22:41 structured.m5
+    > ./run.tmp.bak/tmp/log.last.txt:3658:    > ! %: {::m5_load(init.0.2)}
+    > ./run.tmp.bak/tmp/log.last.txt:3665:    > ! %: {::m5_load(init.0.2)}
+    > ./run.tmp.bak/tmp/log.last.txt:3667:    > ! %: {::m5_load(init.m5.0.2)}
+    > ./run.tmp.bak/tmp/log.last.txt:3675:    >   %: {::m5_load(init.m5.0.2)}
+    > ./run.tmp.bak/tmp/log.last.txt:3700:    > target=m5.bin
+    > ./run.tmp.bak/tmp/log.last.txt:3713:    > 	cat src/test.m5 | m5
+    > ./run.tmp.bak/tmp/log.last.txt:3730:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.tmp.bak/tmp/log.last.txt:3732:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.tmp.bak/tmp/log.last.txt:3739:    >    + # define m5root ROOTC("../m5/")
+    > ./run.tmp.bak/log.examples.txt:137:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run.tmp.bak/log.latest.txt:5351:[0x00] 2026-Feb-09 19:58:02 priv.c:3927 !(bytesh/) $ edit$$ "m5" $$
+    > ./run.tmp.bak/log.latest.txt:5353:    > --- m5	2026-02-09 18:59:39.522484590 +0100
+    > ./run.tmp.bak/log.latest.txt:5358:    > ! m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.tmp.bak/log.latest.txt:5362:    > ! cat "$1" | m5.bin | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.tmp.bak/log.latest.txt:5400:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run.tmp.bak/log.latest.txt:5403:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb 12 00:10 glVertexAttribPointer.js.m5
+    > ./run.tmp.bak/log.latest.txt:5451:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run.tmp.bak/log.latest.txt:5453:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb  7 22:41 glVertexAttribPointer.js.m5
+    > ./run.tmp.bak/log.latest.txt:5467:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.tmp.bak/log.latest.txt:5468:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.tmp.bak/log.latest.txt:5469:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.tmp.bak/log.latest.txt:5470:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.tmp.bak/log.latest.txt:5494:[0x00] 2026-Feb-09 19:56:25 priv.c:3899 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.tmp.bak/log.mntc.txt:243:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run.tmp.bak/log.mntc.txt:4745:[0x00] 2026-Feb-09 20:16:00 priv.c:4013 !(bytesh/) $ chmodx$$ "bin/m5" $$
+    > ./run.tmp.bak/log.mntc.txt:4748:[0x00] 2026-Feb-09 20:15:06 priv.c:4011 !(bytesh/) $ edit$$ "bin/m5" $$
+    > ./run.tmp.bak/log.mntc.txt:4751:[0x00] 2026-Feb-09 20:15:00 priv.c:4009 !(bytesh/) $ bak$$ "bin/m5" $$
+    > ./run.tmp.bak/log.mntc.txt:4754:[0x00] 2026-Feb-09 20:13:41 priv.c:4007 !(bytesh/) $ bak$$ "bin/m5.d" $$
+    > ./run.tmp.bak/log.mntc.txt:4757:[0x00] 2026-Feb-09 20:13:30 priv.c:3996 !(bytesh/) $ stat$$ "bin/m5.bin" $$
+    > ./run.tmp.bak/log.mntc.txt:4758:    >   File: bin/m5.bin
+    > ./run.tmp.bak/log.mntc.txt:4769:[0x00] 2026-Feb-09 20:13:13 priv.c:3994 !(bytesh/) $ cp$$ "target/release/m5", "bin/m5.bin" $$
+    > ./run.tmp.bak/log.mntc.txt:4772:[0x00] 2026-Feb-09 20:12:36 priv.c:3947 !(bytesh/) $ stat$$ "bin/m5*" $$
+    > ./run.tmp.bak/log.mntc.txt:4773:    >   File: bin/m5
+    > ./run.tmp.bak/log.mntc.txt:4782:    >   File: bin/m5.bin
+    > ./run.tmp.bak/log.mntc.txt:4791:    >   File: bin/m5.d
+    > ./run.tmp.bak/log.mntc.txt:4800:    >   File: bin/m5bash
+    > ./run.tmp.bak/log.mntc.txt:4809:    >   File: bin/m5cache.m5
+    > ./run.tmp.bak/log.mntc.txt:4820:[0x00] 2026-Feb-09 20:11:26 priv.c:3945 !(bytesh/) $ cp$$ "target/release/m5*", "bin" $$
+    > ./run.tmp.bak/log.old.txt:12179:cat, "asm.m5", endsh
+    > ./run.tmp.bak/log.old.txt:16529:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/log.old.txt:16532:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.tmp.bak/log.old.txt:16533:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.tmp.bak/log.old.txt:16540:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/log.old.txt:16541:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.tmp.bak/log.old.txt:16829:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/log.old.txt:17173:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/log.old.txt:18193:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/log.old.txt:18374:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.tmp.bak/cwd.txt:1:/data/data/com.termux/files/home/prj/bytesh//..//..//prj//m5/
+    > ./run.tmp.bak/log.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run.tmp.bak/log.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.tmp.bak/log.txt:2970:    > + #![crate_name="m5"]
+    > ./run.tmp.bak/log.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run.tmp.bak/log.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run.tmp.bak/log.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run.tmp.bak/log.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run.tmp.bak/log.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run.tmp.bak/log.txt:3073:    > ! name = "m5.bin"
+    > ./run.tmp.bak/log.txt:3082:    > ! name = "m5"
+    > ./run.tmp.bak/log.txt:3128:    > target=m5.bin
+    > ./run.tmp.bak/log.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run.tmp.bak/log.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.tmp.bak/log.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.tmp.bak/log.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run.tmp.bak/log.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run.tmp.bak/log.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run.tmp.bak/log.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run.tmp.bak/log.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.tmp.bak/log.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.tmp.bak/log.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.tmp.bak/log.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.tmp.bak/log.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run.tmp.bak/log.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.tmp.bak/log.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/log.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/log.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.tmp.bak/log.txt:3637:    [0x00] 2026-Feb-20 00:07:05 priv.c:3677 !(bytesh/) $ ls$$ "lib/m5/" $$
+    > ./run.tmp.bak/log.txt:3639:    > -rwx------. 1 u0_a228 u0_a228 4.3K Feb  7 22:41 bash.m5
+    > ./run.tmp.bak/log.txt:3642:    > -rwx------. 1 u0_a228 u0_a228   28 Feb  7 22:41 init.m5
+    > ./run.tmp.bak/log.txt:3643:    > -rwx------. 1 u0_a228 u0_a228 2.2K Feb  7 22:41 init.m5.0.0
+    > ./run.tmp.bak/log.txt:3644:    > -rwx------. 1 u0_a228 u0_a228 7.2K Feb  7 22:41 init.m5.0.1
+    > ./run.tmp.bak/log.txt:3645:    > -rwx------. 1 u0_a228 u0_a228  128 Feb  7 22:41 init.m5.0.2
+    > ./run.tmp.bak/log.txt:3646:    > -rwx------. 1 u0_a228 u0_a228 1.4K Feb  7 22:41 lean_comment.m5
+    > ./run.tmp.bak/log.txt:3647:    > -rwx------. 1 u0_a228 u0_a228   31 Feb  7 22:41 lean_comments.m5
+    > ./run.tmp.bak/log.txt:3648:    > -rwx------. 1 u0_a228 u0_a228 9.5K Feb  7 22:41 metatime.m5
+    > ./run.tmp.bak/log.txt:3649:    > -rwx------. 1 u0_a228 u0_a228 7.5K Feb  7 22:41 structured.m5
+    > ./run.tmp.bak/log.txt:3658:    > ! %: {::m5_load(init.0.2)}
+    > ./run.tmp.bak/log.txt:3665:    > ! %: {::m5_load(init.0.2)}
+    > ./run.tmp.bak/log.txt:3667:    > ! %: {::m5_load(init.m5.0.2)}
+    > ./run.tmp.bak/log.txt:3675:    >   %: {::m5_load(init.m5.0.2)}
+    > ./run.tmp.bak/log.txt:3700:    > target=m5.bin
+    > ./run.tmp.bak/log.txt:3713:    > 	cat src/test.m5 | m5
+    > ./run.tmp.bak/log.txt:3730:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.tmp.bak/log.txt:3732:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.tmp.bak/log.txt:3739:    >    + # define m5root ROOTC("../m5/")
+    > ./run.bak/.bak/log.last.txt:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.bak/.bak/log.last.txt:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.bak/.bak/log.last.txt:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.bak/.bak/log.last.txt:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.bak/.bak/log.last.txt:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.bak/.bak/log.last.txt:3018:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/.bak/log.last.txt:3362:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/.bak/log.last.txt:4382:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/.bak/log.last.txt:4563:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/.bak/log.last.txt.bak:2718:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.bak/.bak/log.last.txt.bak:2721:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.bak/.bak/log.last.txt.bak:2722:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.bak/.bak/log.last.txt.bak:2729:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.bak/.bak/log.last.txt.bak:2730:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.bak/tmp.h:79:# define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/tmp/log.last.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run.bak/tmp/log.last.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.bak/tmp/log.last.txt:2970:    > + #![crate_name="m5"]
+    > ./run.bak/tmp/log.last.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run.bak/tmp/log.last.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run.bak/tmp/log.last.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run.bak/tmp/log.last.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run.bak/tmp/log.last.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run.bak/tmp/log.last.txt:3073:    > ! name = "m5.bin"
+    > ./run.bak/tmp/log.last.txt:3082:    > ! name = "m5"
+    > ./run.bak/tmp/log.last.txt:3128:    > target=m5.bin
+    > ./run.bak/tmp/log.last.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run.bak/tmp/log.last.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.bak/tmp/log.last.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.bak/tmp/log.last.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run.bak/tmp/log.last.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run.bak/tmp/log.last.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run.bak/tmp/log.last.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run.bak/tmp/log.last.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.bak/tmp/log.last.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.bak/tmp/log.last.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.bak/tmp/log.last.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.bak/tmp/log.last.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run.bak/tmp/log.last.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.bak/tmp/log.last.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/tmp/log.last.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/tmp/log.last.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/tmp/log.next.txt.bak:3:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.bak/log.examples.txt:137:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run.bak/log.latest.txt:5351:[0x00] 2026-Feb-09 19:58:02 priv.c:3927 !(bytesh/) $ edit$$ "m5" $$
+    > ./run.bak/log.latest.txt:5353:    > --- m5	2026-02-09 18:59:39.522484590 +0100
+    > ./run.bak/log.latest.txt:5358:    > ! m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.bak/log.latest.txt:5362:    > ! cat "$1" | m5.bin | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.bak/log.latest.txt:5400:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run.bak/log.latest.txt:5403:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb 12 00:10 glVertexAttribPointer.js.m5
+    > ./run.bak/log.latest.txt:5451:    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > ./run.bak/log.latest.txt:5453:    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb  7 22:41 glVertexAttribPointer.js.m5
+    > ./run.bak/log.latest.txt:5467:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.bak/log.latest.txt:5468:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.bak/log.latest.txt:5469:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.bak/log.latest.txt:5470:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.bak/log.latest.txt:5494:[0x00] 2026-Feb-09 19:56:25 priv.c:3899 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.bak/log.mntc.txt:243:    > [*] (1) https://mirror.quantum5.ca/termux/termux-main: ok
+    > ./run.bak/log.mntc.txt:4745:[0x00] 2026-Feb-09 20:16:00 priv.c:4013 !(bytesh/) $ chmodx$$ "bin/m5" $$
+    > ./run.bak/log.mntc.txt:4748:[0x00] 2026-Feb-09 20:15:06 priv.c:4011 !(bytesh/) $ edit$$ "bin/m5" $$
+    > ./run.bak/log.mntc.txt:4751:[0x00] 2026-Feb-09 20:15:00 priv.c:4009 !(bytesh/) $ bak$$ "bin/m5" $$
+    > ./run.bak/log.mntc.txt:4754:[0x00] 2026-Feb-09 20:13:41 priv.c:4007 !(bytesh/) $ bak$$ "bin/m5.d" $$
+    > ./run.bak/log.mntc.txt:4757:[0x00] 2026-Feb-09 20:13:30 priv.c:3996 !(bytesh/) $ stat$$ "bin/m5.bin" $$
+    > ./run.bak/log.mntc.txt:4758:    >   File: bin/m5.bin
+    > ./run.bak/log.mntc.txt:4769:[0x00] 2026-Feb-09 20:13:13 priv.c:3994 !(bytesh/) $ cp$$ "target/release/m5", "bin/m5.bin" $$
+    > ./run.bak/log.mntc.txt:4772:[0x00] 2026-Feb-09 20:12:36 priv.c:3947 !(bytesh/) $ stat$$ "bin/m5*" $$
+    > ./run.bak/log.mntc.txt:4773:    >   File: bin/m5
+    > ./run.bak/log.mntc.txt:4782:    >   File: bin/m5.bin
+    > ./run.bak/log.mntc.txt:4791:    >   File: bin/m5.d
+    > ./run.bak/log.mntc.txt:4800:    >   File: bin/m5bash
+    > ./run.bak/log.mntc.txt:4809:    >   File: bin/m5cache.m5
+    > ./run.bak/log.mntc.txt:4820:[0x00] 2026-Feb-09 20:11:26 priv.c:3945 !(bytesh/) $ cp$$ "target/release/m5*", "bin" $$
+    > ./run.bak/log.old.txt:12179:cat, "asm.m5", endsh
+    > ./run.bak/log.old.txt:16529:    drwxrws--- 5 10182 1023 3.4K Aug  9 13:46 C-OpenGL-Wasm-m5-development
+    > ./run.bak/log.old.txt:16532:    drwxrws--- 4 10182 1023 3.4K Feb  4  2025 m5
+    > ./run.bak/log.old.txt:16533:    drwxrws--- 6 10182 1023 3.4K Feb  4  2025 m5.old
+    > ./run.bak/log.old.txt:16540:    [0x00] 2025-Aug-12 19:52:11 priv.c:2727 !(bytesh/) $ # cd C-OpenGL-Wasm-m5-development
+    > ./run.bak/log.old.txt:16541:    /storage/self/primary/prj/C-OpenGL-Wasm-m5-development
+    > ./run.bak/log.old.txt:16829:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/log.old.txt:17173:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/log.old.txt:18193:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/log.old.txt:18374:    -rwxrwx--- 1 10182 1023  146K Jan  4  2025 C-OpenGL-Wasm-m5-development.zip
+    > ./run.bak/main.c:11:cat$$ "bin/m5" $$
+    > ./run.bak/cwd.txt:1:/data/data/com.termux/files/home/prj/bytesh//..//..//prj//m5/
+    > ./run.bak/log.txt:2919:    [0x00] 2026-Feb-07 23:40:39 priv.c:2947 $ shdirect$$ "git clone https://github.com/Merlin-Brandt/m5.git" $$
+    > ./run.bak/log.txt:2921:    [0x00] 2026-Feb-07 23:41:50 priv.c:2949 !(bytesh/) $ cd$$ "m5" $$
+    > ./run.bak/log.txt:2970:    > + #![crate_name="m5"]
+    > ./run.bak/log.txt:2979:    >       rules.insert("m5_main".to_string(), {
+    > ./run.bak/log.txt:2980:    >           Rule::new("m5_main".to_string())
+    > ./run.bak/log.txt:2987:    >       rules.insert("m5_main".to_string(), {
+    > ./run.bak/log.txt:2988:    >           Rule::new("m5_main".to_string())
+    > ./run.bak/log.txt:3029:    > drwx------. 4 u0_a228 u0_a228 3.4K Feb  7 22:41 m5
+    > ./run.bak/log.txt:3073:    > ! name = "m5.bin"
+    > ./run.bak/log.txt:3082:    > ! name = "m5"
+    > ./run.bak/log.txt:3128:    > target=m5.bin
+    > ./run.bak/log.txt:3141:    > 	cat src/test.m5 | m5
+    > ./run.bak/log.txt:3158:    > 	ln -sf $(prj)/bin/m5 $(base)/bin/m5
+    > ./run.bak/log.txt:3160:    > 	ln -sf $(prj)/bin/m5cache $(base)/bin/m5cache
+    > ./run.bak/log.txt:3177:    [0x00] 2026-Feb-08 01:50:37 priv.c:3205 !(bytesh/) $ mv$$ "target/debug/m5.bin", "bin/m5.bin" $$
+    > ./run.bak/log.txt:3179:    [0x00] 2026-Feb-08 01:51:31 priv.c:3207 !(bytesh/) $ mv$$ "target/debug/m5", "bin/m5.bin" $$
+    > ./run.bak/log.txt:3181:    [0x00] 2026-Feb-08 01:51:40 priv.c:3209 !(bytesh/) $ cd$$ "bin/m5.bin" $$
+    > ./run.bak/log.txt:3183:    [0x00] 2026-Feb-08 01:51:51 priv.c:3211 !(bytesh/) $ cd$$ ROOTC("../m5/bin/") $$
+    > ./run.bak/log.txt:3187:    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > ./run.bak/log.txt:3188:    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > ./run.bak/log.txt:3189:    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > ./run.bak/log.txt:3190:    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+    > ./run.bak/log.txt:3192:    [0x00] 2026-Feb-08 01:52:06 priv.c:3220 !(bytesh/) $ cat$$ "m5" $$
+    > ./run.bak/log.txt:3195:    > m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > ./run.bak/log.txt:3198:    >    + # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/log.txt:3211:    > ! # define m5 sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    > ./run.bak/log.txt:3219:    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+
+    [0x00] 2026-Feb-20 00:18:56 priv.c:4242 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 19:55:12 priv.c:5568 $ 
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:30 priv.c:5572 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 19:55:11 priv.c:5565 $ 
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:37 priv.c:5569 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 19:55:04 priv.c:5562 $ 
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:38 priv.c:5566 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 20:00:26 priv.c:5503 $ ls$$ ".." $$
+    > total 63K
+    > -rwx------. 1 u0_a228 u0_a228 4.3K Feb  7 22:41 bash.m5
+    > drwx------. 3 u0_a228 u0_a228 3.4K Feb 20 19:00 experimental
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb 12 20:07 init
+    > -rwx------. 1 u0_a228 u0_a228   28 Feb  7 22:41 init.m5
+    > -rwx------. 1 u0_a228 u0_a228 2.2K Feb  7 22:41 init.m5.0.0
+    > -rwx------. 1 u0_a228 u0_a228 7.2K Feb  7 22:41 init.m5.0.1
+    > -rwx------. 1 u0_a228 u0_a228  128 Feb  7 22:41 init.m5.0.2
+    > -rwx------. 1 u0_a228 u0_a228 1.4K Feb  7 22:41 lean_comment.m5
+    > -rwx------. 1 u0_a228 u0_a228   31 Feb  7 22:41 lean_comments.m5
+    > -rwx------. 1 u0_a228 u0_a228 9.5K Feb 20 18:47 metatime.m5
+    > -rwx------. 1 u0_a228 u0_a228 7.5K Feb  7 22:41 structured.m5
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:01:22 priv.c:5519 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:00:37 priv.c:6327 $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:39 priv.c:6330 $ cltr
+[0x00] 2026-Feb-21 03:00:34 priv.c:6325 $ 
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:41 priv.c:6328 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:53:25 priv.c:6322 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:43 priv.c:6325 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:53:17 priv.c:6320 !(bytesh/) $     > hello
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:46 priv.c:6323 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:52:59 priv.c:6318 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:47 priv.c:6320 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:52:40 priv.c:6316 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:49 priv.c:6318 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:51:51 priv.c:6313 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:52 priv.c:6316 !(bytesh/) $ cltr
+[0x00] 2026-Feb-20 23:42:53 priv.c:6310 !(bytesh/) $ stdlibextc
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:00:54 priv.c:6314 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:11:12 priv.c:6348 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:11:49 priv.c:6350 $ cltr
+[0x00] 2026-Feb-21 03:11:06 priv.c:6346 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:11:53 priv.c:6348 $ cltr
+[0x00] 2026-Feb-21 03:10:56 priv.c:6344 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:11:55 priv.c:6346 $ cltr
+[0x00] 2026-Feb-21 03:09:57 priv.c:6341 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-21 03:11:56 priv.c:6344 $ cltr
+[0x00] 2026-Feb-23 01:18:41 priv.c:6564 !(bytesh/) $ cargobuildrel
+    > [1m[92m    Finished[0m `release` profile [optimized] target(s) in 1.06s
+    > warning: the feature `core_intrinsics` is internal to the compiler or standard library
+    >   --> src/main.rs:13:12
+    >    |
+    > 13 | #![feature(core_intrinsics)]
+    >    |            ^^^^^^^^^^^^^^^
+    >    |
+    >    = note: using it is strongly discouraged
+    >    = note: `#[warn(internal_features)]` on by default
+    > 
+    > [1m[33mwarning[0m: the following packages contain code that will be rejected by a future version of Rust: nom v1.2.4
+    > [1m[92mnote[0m: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:18:59 priv.c:6579 !(bytesh/) $ cltr
+[0x00] 2026-Feb-23 01:18:41 priv.c:6564 !(bytesh/) $ cargobuildrel
+    > [1m[92m    Finished[0m `release` profile [optimized] target(s) in 1.06s
+    > warning: the feature `core_intrinsics` is internal to the compiler or standard library
+    >   --> src/main.rs:13:12
+    >    |
+    > 13 | #![feature(core_intrinsics)]
+    >    |            ^^^^^^^^^^^^^^^
+    >    |
+    >    = note: using it is strongly discouraged
+    >    = note: `#[warn(internal_features)]` on by default
+    > 
+    > [1m[33mwarning[0m: the following packages contain code that will be rejected by a future version of Rust: nom v1.2.4
+    > [1m[92mnote[0m: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:19:05 priv.c:6579 !(bytesh/) $ cltr
+[0x00] 2026-Feb-23 01:18:33 priv.c:6561 $ cd$$ ROOTC("../m5") $$
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:19:14 priv.c:6565 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:55:10 priv.c:6408 !(bytesh/) $ cmdlogedit
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:19:48 priv.c:6412 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:29:22 priv.c:6349 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:27:42 priv.c:6352 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:29:17 priv.c:6347 !(bytesh/) $     > hello
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:27:54 priv.c:6350 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:29:00 priv.c:6345 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:27:57 priv.c:6347 !(bytesh/) $ cltr
+[0x00] 2026-Feb-21 03:28:51 priv.c:6342 !(bytesh/) $ 
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:27:59 priv.c:6345 !(bytesh/) $ cltr
 

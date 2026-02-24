@@ -60,17 +60,42 @@
 
 # define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
 
-# define ssp "/storage/self/primary/"
+# define ssp(p) mf$ "/storage/self/primary/%s", p $
 
 #define buildc edit$$ "run/build.c" $$
 
 # define arrfileh edit$$ ROOTC("/../arrfile/arrfile.h") $$
 
-# define test readarrfile("N26.TXT")
+# define test readarrfile("N26LATEST.UPPER")
 
-#define buerokrfin "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN"
+#define buerokrfin(p) mf$ "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN/%s", p $
 
 
 
 # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+
+
+
+# define m5$$ shdirect$$ "PATH=\"$PATH:%s/m5/bin/\" cat %s | m5", ROOTC("/../"),
+
+
+
+# define m5root ROOTC("../m5/")
+
+# define pkgi$$ sh$$ "pkg install %s",
+# define pkgs$$ sh$$ "pkg search %s",
+#
+
+# define termuxhome(p) mf$ "/data/data/com.termux/files/home/%s", p $
+
+# define touch$$ sh$$ "touch %s",
+# define cargobuildrel sh$$ "CARGO_MSG_LIMIT=1 cargo lbuild --release > cargo.out 2>&1 ; cat cargo.out ; cat cargo.out | chooseedit" $$
+
+# define echo$$ sh$$ "echo %s",
+
+# define vim$$ edit$$
+
+# define prjm5(p) termuxhome(mf( "prj/m5/%s", p ))
+
+# define prjbytesh(p) termuxhome(mf( "prj/bytesh/%s", p ))
 

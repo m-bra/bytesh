@@ -484,3 +484,9 @@ int cmdlogpop(char *ignore, char *file, char *ignend)
      	    "echo '' >> log.%s.txt", \
      	    ROOTC("/run/"), file, ROOTC("/run/log.txt"), ROOTC("/run/log.txt"), file ) $$; 
 }
+
+nil mkdirpcd(char *ignore, char *path, char *ignend)
+blk mkdirp$$ path $$;
+stm cd$$ path $$;
+ret 0;
+end

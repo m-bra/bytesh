@@ -88,6 +88,7 @@ void mkdir_(int ignore, char *path, char *ignore_);
 
 void mkdirp_(int ignore, char *path, char *ignore_);
 #define mkdirp mkdirp_ ( 0
+#define mkdirp$$ mkdirp, 
 
 int mv_(int ignore, char *from, char *to, char *ignore_);
 #define mv mv_ ( 0
@@ -179,8 +180,8 @@ void man(int ignore, char *topic, char *ignore_) ;
 
 #define storagepath "/storage/emulated/0/"
 
-
-#define psgrep printf("UID        PID  PPID  C STIME TTY          TIME CMD\n"), sh, "ps -ef --forest | grep %s"
+#define psgrep$$ psefgrep$$
+#define psefgrep$$ printf("UID        PID  PPID  C STIME TTY          TIME CMD\n"), sh, "ps -ef --forest | grep %s"
 #define ps sh, "ps -ef --forest", endsh
 
 #define termux11 (sh, "termux-x11 :1 -xstartup \"dbus-launch --exit-with-session xfce4-session\"", endsh)
@@ -448,7 +449,7 @@ void bak_(char *a, char *f, char *b);
 
 #define tarxvfh printf("%s", "Found in: $ cnslutilh\n")
 #define tarxvf sh, "tar xvf %s"
-
+#define tarxvf$$ tarxvf,
 
 #define pacmanyayssh printf("%s", "Found in: $ cnslutilh\n")
 
@@ -534,3 +535,7 @@ void cd$$_(char *ignore, char const *path, char *ignore2);
 #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
 # define which$$ sh$$ "which %s",
 
+# define cp$$ cp,
+# define chmodx$$ chmodx,
+nil mkdirpcd(char *, char *, char *);
+#define mkdirpcd$$ mkdirpcd("",

@@ -8779,4 +8779,1266 @@ if (r == -1 && errno != ECHILD) goto err;
     > --- 2,11 ----
 
     [0x00] 2026-Feb-06 02:58:26 priv.c:2262 $ clbt
+[0x00] 2026-Feb-07 02:05:51 priv.c:2510 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-07 01:05:54.074999952 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-07 01:06:45.954999914 +0100
+    > ***************
+    > *** 58,72 ****
+    >   	thn uniquenames[uniquenamescount++] = &linesbegin[i][argoff];
+    >       end
+    >   //s qsort(uniquenameskeymap);
+    >   //s bsearch("name...", uniquenameskeymap);
+    >   
+    >   for seqto(un, uniquenamescount)
+    >   for seqto(l, lines)
+    >   iff !strncmp(&linesbegin[l][instroff], cmpentire("NAME"))
+    >    && !strncmp(&linesbegin[l][argoff],   cmpentire(uniquenames[un]))
+    > ! thn printf("| %30s | %30s | %30s | %30s |\n",
+    >           &linesbegin[l][argoff], &linesbegin[l+1][argoff], 
+    >   	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+2][argoff] : "",
+    >   	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+3][argoff] : &linesbegin[l+2][argoff]); 
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > --- 58,73 ----
+    >   	thn uniquenames[uniquenamescount++] = &linesbegin[i][argoff];
+    >       end
+    >   //s qsort(uniquenameskeymap);
+    >   //s bsearch("name...", uniquenameskeymap);
+    >   
+    > + int c = 0;
+    >   for seqto(un, uniquenamescount)
+    >   for seqto(l, lines)
+    >   iff !strncmp(&linesbegin[l][instroff], cmpentire("NAME"))
+    >    && !strncmp(&linesbegin[l][argoff],   cmpentire(uniquenames[un]))
+    > ! thn printf("|%3d| %20s | %20s | %20s | %20s |\n", c++,
+    >           &linesbegin[l][argoff], &linesbegin[l+1][argoff], 
+    >   	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+2][argoff] : "",
+    >   	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+3][argoff] : &linesbegin[l+2][argoff]); 
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+
+    [0x00] 2026-Feb-07 02:06:47 priv.c:2548 $ clbt
+[0x00] 2026-Feb-07 23:27:40 priv.c:2812 !(bytesh/) $ userinterfacec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-07 22:27:48.644181728 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c	2026-02-07 22:28:04.000181717 +0100
+    > ***************
+    > *** 85,95 ****
+    >           iff buf[strspn(buf, " ")] == '>'
+    >           thn continue;
+    >   	iff strstr(buf, "$")
+    >   	thn break;
+    >   	blk_end
+    > !     stm EVALECHO( es$ buf $; )
+    >       stm buf = strstr(buf, "$") + 1;
+    >       iff strlen(buf) > 80
+    >       thn buf[79] = '\0';
+    >       //stm printf("Hello");ln;
+    >       for range(0, strlen(buf))
+    > --- 85,95 ----
+    >           iff buf[strspn(buf, " ")] == '>'
+    >           thn continue;
+    >   	iff strstr(buf, "$")
+    >   	thn break;
+    >   	blk_end
+    > !     //s EVALECHO( es$ buf $; )
+    >       stm buf = strstr(buf, "$") + 1;
+    >       iff strlen(buf) > 80
+    >       thn buf[79] = '\0';
+    >       //stm printf("Hello");ln;
+    >       for range(0, strlen(buf))
+
+    [0x00] 2026-Feb-07 23:28:07 priv.c:2841 !(bytesh/) $ clbt
+[0x00] 2026-Feb-07 23:28:32 priv.c:2838 !(bytesh/) $ mainh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-07 22:28:34.204181696 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/main.h	2026-02-07 22:28:52.712181682 +0100
+    > ***************
+    > *** 101,111 ****
+    > --- 101,113 ----
+    >   int execl(const char *path, const char *arg, ...);
+    >   int dup2(int oldfd, int newfd);
+    >   int chdir(const char *path);
+    >   int access(const char *path, int mode);
+    >   extern int F_OK_VAR;
+    > + #ifndef F_OK
+    >   #define F_OK F_OK_VAR
+    > + #endif
+    >   
+    >   #endif
+    >   
+    >   //#include <termios.h>
+    >   
+
+    [0x00] 2026-Feb-07 23:28:53 priv.c:2858 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 20:15:44 priv.c:4032 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 19:15:47.538483898 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-09 19:15:52.498483894 +0100
+    > ***************
+    > *** 533,538 ****
+    >   #define findgrep$$ sh$$ "find %s | xargs grep -n %s ", 
+    >   #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+    >   # define which$$ sh$$ "which %s",
+    >   
+    >   # define cp$$ cp,
+    > ! # define chmodx$$ chmod,
+    > --- 533,538 ----
+    >   #define findgrep$$ sh$$ "find %s | xargs grep -n %s ", 
+    >   #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+    >   # define which$$ sh$$ "which %s",
+    >   
+    >   # define cp$$ cp,
+    > ! # define chmodx$$ chmodx,
+
+    [0x00] 2026-Feb-09 20:15:53 priv.c:4051 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 20:15:30 priv.c:4013 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 19:15:32.602483908 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-09 19:15:42.914483901 +0100
+    > ***************
+    > *** 533,538 ****
+    >   #define findgrep$$ sh$$ "find %s | xargs grep -n %s ", 
+    >   #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+    >   # define which$$ sh$$ "which %s",
+    >   
+    >   # define cp$$ cp,
+    > ! 
+    > --- 533,538 ----
+    >   #define findgrep$$ sh$$ "find %s | xargs grep -n %s ", 
+    >   #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+    >   # define which$$ sh$$ "which %s",
+    >   
+    >   # define cp$$ cp,
+    > ! # define chmodx$$ chmod,
+
+    [0x00] 2026-Feb-09 20:15:57 priv.c:4032 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:54:38 priv.c:3875 !(bytesh/) $    edit$$ ROOTC("/run/stdioext.c") $$   
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:54:42.094484803 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c	2026-02-09 18:55:02.882484788 +0100
+    > ***************
+    > *** 140,147 ****
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+    >           thn {runstatus = WEXITSTATUS(wstatus); break;}
+    >           end 
+    > ! 
+    > !     stm if (sender) pclose(sender);
+    >   end
+    > --- 140,146 ----
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+    >           thn {runstatus = WEXITSTATUS(wstatus); break;}
+    >           end 
+    > !     return runstatus;
+    >   end
+
+    [0x00] 2026-Feb-12 22:31:56 priv.c:3897 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:54:13 priv.c:3860 !(bytesh/) $ stdioexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:54:16.826484821 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdioext.h	2026-02-09 18:54:37.766484806 +0100
+    > ***************
+    > *** 35,40 ****
+    > --- 35,42 ----
+    >   
+    >   void fputsclose(char *sz, FILE *f);
+    >   
+    >   char *loads(char *filename);
+    >   
+    > + int pipe(pid_t senderpid, FILE *sender, FILE *receiver);
+    > + 
+    >   #endif
+
+    [0x00] 2026-Feb-12 22:32:43 priv.c:3875 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:51:55 priv.c:3806 !(bytesh/) $   edit$$ ROOTC("/run/stdioext.c") $$  
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:53:28.562484855 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c	2026-02-09 18:54:11.662484825 +0100
+    > ***************
+    > *** 121,131 ****
+    >   char *loads(char *filename)
+    >   {
+    >   	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
+    >   }
+    >   
+    > ! int pipe(FILE *sender, FILE *receiver)
+    >   blk
+    >       int runstatus = 0xFF;
+    >       rep blk 
+    >   
+    >           rep blk
+    > --- 121,131 ----
+    >   char *loads(char *filename)
+    >   {
+    >   	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
+    >   }
+    >   
+    > ! int pipe(pid_t senderpid, FILE *sender, FILE *receiver)
+    >   blk
+    >       int runstatus = 0xFF;
+    >       rep blk 
+    >   
+    >           rep blk
+    > ***************
+    > *** 134,144 ****
+    >   	    thn break;
+    >   	    stm fprintf(receiver, "%s> %s", GLOBAL_INDENT, line);
+    >   	    end
+    >   
+    >           int wstatus;
+    > !         iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+    >           thn {runstatus = WEXITSTATUS(wstatus); break;}
+    >           end 
+    > --- 134,144 ----
+    >   	    thn break;
+    >   	    stm fprintf(receiver, "%s> %s", GLOBAL_INDENT, line);
+    >   	    end
+    >   
+    >           int wstatus;
+    > !         iff ({int r = waitpid(pid, &wstatus, WNOHANG);
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+    >           thn {runstatus = WEXITSTATUS(wstatus); break;}
+    >           end 
+
+    [0x00] 2026-Feb-12 22:32:46 priv.c:3860 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:47:37 priv.c:3764 !(bytesh/) $  edit$$ ROOTC("/run/stdioext.c") $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:47:40.482485104 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c	2026-02-09 18:50:50.002484969 +0100
+    > ***************
+    > *** 125,141 ****
+    >   
+    >   int pipe(FILE *sender, FILE *receiver)
+    >   blk
+    >       int runstatus = 0xFF;
+    >       rep blk 
+    >           rep blk
+    >               chr line [linebuf_tn];
+    >   	    iff ({fflush(sender); !fgets(line, linebuf_tn, sender);})
+    >   	    thn break;
+    > ! 	    stm if ( in) fprintf (receiver, "%s> %s", GLOBAL_INDENT, line);
+    > !             stm if (!in) printfflush ("%s", line); 
+    > ! 	    end 
+    >           int wstatus;
+    >           iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+    > --- 125,142 ----
+    >   
+    >   int pipe(FILE *sender, FILE *receiver)
+    >   blk
+    >       int runstatus = 0xFF;
+    >       rep blk 
+    > + 
+    >           rep blk
+    >               chr line [linebuf_tn];
+    >   	    iff ({fflush(sender); !fgets(line, linebuf_tn, sender);})
+    >   	    thn break;
+    > ! 	    stm fprintf(receiver, "%s> %s", GLOBAL_INDENT, line);
+    > ! 	    end
+    > ! 
+    >           int wstatus;
+    >           iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+    >                 if (r == -1 && errno != ECHILD) goto err;
+    >                 r;}) 
+    >            && WIFEXITED(wstatus)
+
+    [0x00] 2026-Feb-12 22:32:48 priv.c:3806 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:41:43 priv.c:3730 $ edit$$ ROOTC("/run/stdioext.c") $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:41:59.474485348 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c	2026-02-09 18:47:19.470485119 +0100
+    > ***************
+    > *** 120,124 ****
+    > --- 120,146 ----
+    >   
+    >   char *loads(char *filename)
+    >   {
+    >   	return fgetsclose(malloc(LOADBUFN), LOADBUFN, fopen(filename, "r"));
+    >   }
+    > + 
+    > + int pipe(FILE *sender, FILE *receiver)
+    > + blk
+    > +     int runstatus = 0xFF;
+    > +     rep blk 
+    > +         rep blk
+    > +             chr line [linebuf_tn];
+    > + 	    iff ({fflush(sender); !fgets(line, linebuf_tn, sender);})
+    > + 	    thn break;
+    > + 	    stm if ( in) fprintf (receiver, "%s> %s", GLOBAL_INDENT, line);
+    > +             stm if (!in) printfflush ("%s", line); 
+    > + 	    end 
+    > +         int wstatus;
+    > +         iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+    > +               if (r == -1 && errno != ECHILD) goto err;
+    > +               r;}) 
+    > +          && WIFEXITED(wstatus)
+    > +         thn {runstatus = WEXITSTATUS(wstatus); break;}
+    > +         end 
+    > + 
+    > +     stm if (sender) pclose(sender);
+    > + end
+
+    [0x00] 2026-Feb-12 22:32:50 priv.c:3764 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 19:31:50 priv.c:3696 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:31:56.750485779 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-02-09 18:41:21.706485375 +0100
+    > ***************
+    > *** 295,306 ****
+    >               popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    >       int runstatus = 0xFF;
+    > !     rep blk
+    >           rep blk
+    >               chr line [linebuf_tn];
+    >   	    iff ({fflush(faout); !fgets(line, linebuf_tn, faout);})
+    >   	    thn break;
+    >   	    stm if ( in) printfflush ("%s> %s", GLOBAL_INDENT, line);
+    > --- 295,309 ----
+    >               popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+    >       //s sh, "/data/data/com.termux/files/home/a.out", endsh;
+    >   
+    >       int in = ctxt->interactive;
+    >   
+    > + #undef áª
+    > + #define áª(...)
+    > + 
+    >       int runstatus = 0xFF;
+    > !     rep blk áª(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
+    >           rep blk
+    >               chr line [linebuf_tn];
+    >   	    iff ({fflush(faout); !fgets(line, linebuf_tn, faout);})
+    >   	    thn break;
+    >   	    stm if ( in) printfflush ("%s> %s", GLOBAL_INDENT, line);
+
+    [0x00] 2026-Feb-12 22:32:52 priv.c:3730 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 16:05:47 priv.c:3683 !(bytesh/) $ arrfileh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 15:05:50.007996776 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//../arrfile/arrfile.h	2026-02-09 15:06:00.327996768 +0100
+    > ***************
+    > *** 1,3 ****
+    >   nil readarrfile2(char const *filename);
+    >   #define readarrfile readarrfile2
+    > ! 
+    > --- 1,3 ----
+    >   nil readarrfile2(char const *filename);
+    >   #define readarrfile readarrfile2
+    > ! nil processfnc(char const *filename);
+
+    [0x00] 2026-Feb-12 22:32:55 priv.c:3696 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 16:03:20 priv.c:3681 !(bytesh/) $ edit$$ "example.txt" $$
+
+    [0x00] 2026-Feb-12 22:32:57 priv.c:3683 !(bytesh/) $ clbt
+
+[0x00] 2026-Feb-09 14:57:14 priv.c:3261 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:06:45.471999311 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-09 14:14:34.459998975 +0100
+    > ***************
+    > *** 190,203 ****
+    >   err:
+    >     perror(mf("%s:%d", __FILE__, __LINE__));
+    >     return 0;
+    >   }
+    >   
+    > ! nil *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf); 
+    >   iff size
+    >   thn *size = (int) statbuf.st_size - 1;
+    > ! stm return mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    >   end
+    >   
+    > --- 190,217 ----
+    >   err:
+    >     perror(mf("%s:%d", __FILE__, __LINE__));
+    >     return 0;
+    >   }
+    >   
+    > ! #define mmap2(f, s) mmapr(f, s)
+    > ! 
+    > ! nil *mmapr(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    >   int fd = open(filename, O_RDONLY);
+    >   stm fstat(fd, &statbuf); 
+    >   iff size
+    >   thn *size = (int) statbuf.st_size - 1;
+    > ! nil *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ, MAP_SHARED, fd, /*offset*/ 0);
+    > ! stm close(fd);
+    > ! stm return m;
+    >   end
+    >   
+    > + nil *mmapw(char const *filename, int *size)
+    > + blk struct stat statbuf; 
+    > + int fd = open(filename, O_RDWR | O_CREAT, (mode_t)0600);
+    > + stm fstat(fd, &statbuf);
+    > + iff size
+    > + thn *size = (int) statbuf.st_size - 1;
+    > + chr *m = mmap(/*addr*/ 0, /*len*/ statbuf.st_size - 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    > + stm close(fd)
+    > + stm return m;
+    > + 
+
+[0x00] 2026-Feb-09 14:56:10 priv.c:3259 !(bytesh/) $ edit$$ "run/preprocessor.h +640" $$
+
+    [0x00] 2026-Feb-12 22:35:11 priv.c:3261 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 14:55:36 priv.c:3252 $ srcfindword$$ "fnc" $$
+    > main.c:186:    //f fnc (pass ppchar pline, pass pchar linebuf, pass pchar cwd, pass pchar rootworkdir),
+    > run/main.c:12:srcfindword$$ "fnc" $$
+    > run/preprocessor.h:640:#define fnc fctA FNV
+    > run/preprocessor.h:661:fnc (pass PRARGLIST(c, coords)),
+    > run/readconf.h:9://fnc 
+
+    [0x00] 2026-Feb-12 22:35:21 priv.c:3259 !(bytesh/) $ clbt
+[0x00] 2026-Feb-09 14:55:30 priv.c:3250 $ cd$$ "../../bytesh" $$
+
+    [0x00] 2026-Feb-12 22:35:25 priv.c:3252 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 19:55:39 priv.c:5571 !(bytesh/) $ mainstaticc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 18:55:42.052999058 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c	2026-02-20 18:55:51.928999051 +0100
+    > ***************
+    > *** 100,110 ****
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s@%s\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+    > --- 100,110 ----
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s>%s\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:24 priv.c:5603 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 19:53:30 priv.c:5532 !(bytesh/) $ mainstaticc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 18:53:33.076999151 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c	2026-02-20 18:54:43.972999100 +0100
+    > ***************
+    > *** 100,110 ****
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s[%s]\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+    > --- 100,110 ----
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s@%s\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:40 priv.c:5563 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 20:18:02 priv.c:5510 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:18:03.912998099 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-20 19:18:29.100998081 +0100
+    > ***************
+    > *** 74,84 ****
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    >   
+    >   
+    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" m5 %s", ROOTC("/../"),
+    >   
+    >   
+    >   
+    >   # define m5root ROOTC("../m5/")
+    >   
+    > --- 74,84 ----
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    >   
+    >   
+    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" cat %s | m5", ROOTC("/../"),
+    >   
+    >   
+    >   
+    >   # define m5root ROOTC("../m5/")
+    >   
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:18:30 priv.c:5540 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 20:25:14 priv.c:5447 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:25:21.684997785 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-20 19:25:30.848997779 +0100
+    > ***************
+    > *** 74,84 ****
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    >   
+    >   
+    > ! # define m5$$ sh$$ "PATH=\"$PATH:%s/m5/bin/\" cat %s | m5", ROOTC("/../"),
+    >   
+    >   
+    >   
+    >   # define m5root ROOTC("../m5/")
+    >   
+    > --- 74,84 ----
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    >   
+    >   
+    > ! # define m5$$ shdirect$$ "PATH=\"$PATH:%s/m5/bin/\" cat %s | m5", ROOTC("/../"),
+    >   
+    >   
+    >   
+    >   # define m5root ROOTC("../m5/")
+    >   
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:25:31 priv.c:5477 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 20:51:32 priv.c:5969 $ mainstaticc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:51:39.164996657 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c	2026-02-20 19:51:42.488996655 +0100
+    > ***************
+    > *** 100,110 ****
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s>%s\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+    > --- 100,110 ----
+    >   //stm fgets(szdatedate, 254, datedatefile);
+    >   //stm szdatedate[strlen(szdatedate) - 1] = '\0';
+    >   //stm pclose (datedatefile);
+    >   
+    >   chr *status = mf(
+    > !     	mf("\n%s%s", "%s>@%s\n%s[0x%02X] ", PROMPT), 
+    >           GLOBAL_INDENT, cwd,	
+    >   	GLOBAL_INDENT, runstatus, 
+    >       	
+    >   	/* date */
+    >   	szdate,
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:51:43 priv.c:5999 $ clbt
+[0x00] 2026-Feb-20 20:54:27 priv.c:5970 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:54:36 priv.c:5999 !(bytesh/) $ clbt
+[0x00] 2026-Feb-21 03:55:39 priv.c:6411 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-21 02:55:43.533961463 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-21 02:56:17.909961438 +0100
+    > ***************
+    > *** 87,96 ****
+    >   #
+    >   
+    >   # define termuxhome "/data/data/com.termux/files/home/"
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    > ! # define cargobuildrel sh$$ "cargo build --release" $$
+    > ! # define cargobuilddebug sh$$ "cargo build --debug" $$
+    > ! # define cargobuilddbg cargobuilddebug$$
+    >   # define echo$$ sh$$ "echo %s",
+    >   
+    > --- 87,95 ----
+    >   #
+    >   
+    >   # define termuxhome "/data/data/com.termux/files/home/"
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    > ! # define cargobuildrel sh$$ "CARGO_MSG_LIMIT=1 cargo lbuild --release > cargo.out 2>&1 ; cat cargo.out ; cat cargo.out | chooseedit" $$
+    > ! 
+    >   # define echo$$ sh$$ "echo %s",
+    >   
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:19:44 priv.c:6439 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 23:39:44 priv.c:6287 !(bytesh/) $ tmphadd
+    >    + # define echo$$ sh$$ "echo %s",
+    > 
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:28:22 priv.c:6293 !(bytesh/) $ clbt
+[0x00] 2026-Feb-20 23:07:25 priv.c:6206 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 22:07:29.168990828 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-20 22:08:33.876990782 +0100
+    > ***************
+    > *** 87,92 ****
+    >   #
+    >   
+    >   # define termuxhome "/data/data/com.termux/files/home/"
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    > ! 
+    > --- 87,94 ----
+    >   #
+    >   
+    >   # define termuxhome "/data/data/com.termux/files/home/"
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    > ! # define cargobuildrel sh$$ "cargo build --release" $$
+    > ! # define cargobuilddebug sh$$ "cargo build --debug" $$
+    > ! # define cargobuilddbg cargobuilddebug$$
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-23 01:29:14 priv.c:6229 !(bytesh/) $ clbt
+[0x00] 2026-Feb-23 22:26:49 priv.c:5712 $ stdlibextc 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 21:26:52.032690509 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-23 21:29:35.208690392 +0100
+    > ***************
+    > *** 87,108 ****
+    >   blk stm close(fd[1]);
+    >       iff action == á³(wait, 'w') 
+    >       thn blk
+    >           int wstatus;
+    >           stm wait(&wstatus);
+    > !         stm return BOOLTOSYS(WIFEXITED(wstatus))
+    >           	|| WEXITSTATUS(wstatus);
+    >           end
+    >       iff action == á³(redirect, 'r')
+    > !     thn return fd[0];
+    >       stm printf("Warning: Error at %s:%d\n", 
+    >   	       __FILE__, __LINE__);
+    >   end
+    > ! stm return 1;
+    >   
+    >   err:perror(mf$ "%s:%d", __FILE__, __LINE__));
+    > ! stm return 0;
+    >   end
+    >   
+    >   int sh_(int ignored, char *fmt, ...) 
+    >   {
+    >   // === shgeneral(á³(action = wait, 'w'), fmt, ...)
+    > --- 87,108 ----
+    >   blk stm close(fd[1]);
+    >       iff action == á³(wait, 'w') 
+    >       thn blk
+    >           int wstatus;
+    >           stm wait(&wstatus);
+    > !         ret BOOLTOSYS(WIFEXITED(wstatus))
+    >           	|| WEXITSTATUS(wstatus);
+    >           end
+    >       iff action == á³(redirect, 'r')
+    > !     thn ret fd[0];
+    >       stm printf("Warning: Error at %s:%d\n", 
+    >   	       __FILE__, __LINE__);
+    >   end
+    > ! ret 1;
+    >   
+    >   err:perror(mf$ "%s:%d", __FILE__, __LINE__));
+    > ! ret 0;
+    >   end
+    >   
+    >   int sh_(int ignored, char *fmt, ...) 
+    >   {
+    >   // === shgeneral(á³(action = wait, 'w'), fmt, ...)
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 22:29:45 priv.c:5764 $ clbt
+[0x00] 2026-Feb-23 22:26:19 priv.c:5693 !(bytesh/) $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 21:26:23.208690530 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-02-23 21:26:41.380690517 +0100
+    > ***************
+    > *** 84,93 ****
+    > --- 84,94 ----
+    >   #define cen if (geterrno() != 0) {cen_line = __LINE__; goto err;}
+    >   #define cefh printf("Catch EoF (before instr) (paired with thn/the)\n#define cef if (EOF ==\n");
+    >   #define cef if (EOF == (
+    >   #define theh printf("THen Err\n#define the thn goto err;\n");
+    >   #define the thn goto err;
+    > + #define ret return
+    >   #define stmh printf("STateMent\n#define stm\n");
+    >   #define stm
+    >   #define s
+    >   #define nop
+    >   
+
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 22:29:47 priv.c:5713 $ clbt
+[0x00] 2026-Feb-23 15:52:43 priv.c:5500 $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 14:52:55.165947510 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-23 21:26:18.548690533 +0100
+    > ***************
+    > *** 54,73 ****
+    >   	vsnprintf(mallocadd(linebuf_tn * 6), linebuf_tn * 6, fmt, args);
+    >   	va_end(args);
+    >   	return lastmalloc;
+    >   }
+    >   
+    > ! int sh_(int ignored, char *fmt, ...) 
+    > ! {
+    > !   va_list args;
+    > !   va_start(args, fmt);
+    > !   linebuf_t buf[6];
+    > ! 
+    > !   vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args);
+    >   
+    > !   va_end(args);
+    >   
+    >     int fd[2];
+    >     pid_t fr = fork(); 
+    >     if (!fr) 
+    >     {
+    >       execl("/bin/sh", "sh", "-c", &buf[0], (char *) NULL);	
+    > --- 54,114 ----
+    >   	vsnprintf(mallocadd(linebuf_tn * 6), linebuf_tn * 6, fmt, args);
+    >   	va_end(args);
+    >   	return lastmalloc;
+    >   }
+    >   
+    > ! #define initfromvalist \
+    > !     ; \
+    > !     va_list args; \
+    > !     va_start(args, fmt); \
+    > !     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    > !     va_end(args);
+    >   
+    > ! int shgeneral(char action, char *fmt, ...)
+    > ! blk linebuf_t buf[6] initfromvalist;
+    > ! stm shgeneral_frombuf(action, &buf[0]);
+    > ! end
+    > ! 
+    > ! int shgeneral_frombuf(char action, char *buf)
+    > ! blk 
+    > ! int fd[2];
+    > ! stm pipe(fd);
+    > ! stm pid_t fr = fork();
+    > ! iff !fr
+    > ! thn
+    > ! blk
+    > ! stm close(fd[0]);
+    > ! iff action == á³(redirect, 'r') 
+    > ! thn dup2(fd[1], STDOUT_FILENO);
+    > ! stm close(fd[1]);
+    > ! stm execl("/bin/sh", "sh", "-c", &buf[0], (char *) NULL);
+    > ! stm _exit(1);
+    > ! end
+    > ! els
+    > ! blk stm close(fd[1]);
+    > !     iff action == á³(wait, 'w') 
+    > !     thn blk
+    > !         int wstatus;
+    > !         stm wait(&wstatus);
+    > !         stm return BOOLTOSYS(WIFEXITED(wstatus))
+    > !         	|| WEXITSTATUS(wstatus);
+    > !         end
+    > !     iff action == á³(redirect, 'r')
+    > !     thn return fd[0];
+    > !     stm printf("Warning: Error at %s:%d\n", 
+    > ! 	       __FILE__, __LINE__);
+    > ! end
+    > ! stm return 1;
+    > ! 
+    > ! err:perror(mf$ "%s:%d", __FILE__, __LINE__));
+    > ! stm return 0;
+    > ! end
+    >   
+    > + int sh_(int ignored, char *fmt, ...) 
+    > + {
+    > + // === shgeneral(á³(action = wait, 'w'), fmt, ...)
+    > +   linebuf_t buf[6] initfromvalist;
+    >     int fd[2];
+    >     pid_t fr = fork(); 
+    >     if (!fr) 
+    >     {
+    >       execl("/bin/sh", "sh", "-c", &buf[0], (char *) NULL);	
+    > ***************
+    > *** 110,121 ****
+    > --- 151,165 ----
+    >   	for (int i = 0; i < malloclist->nptrs; ++i)
+    >   		free(malloclist->ptrs[i]);
+    >   	malloclist->nptrs = 0;
+    >   }
+    >   
+    > + #define á³(tag, expr) expr
+    > + 
+    >   int shfd_(int ignored, char *fmt, ...) 
+    >   {
+    > + // === shgeneral(fmt, á³(action = redirect, 'r'))
+    >     va_list args;
+    >     va_start(args, fmt);
+    >     linebuf_t buf;
+    >   
+    >     vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+    > ***************
+    > *** 141,198 ****
+    >     return -1;
+    >   }
+    >   
+    >   FILE *psh_(int ignored, char *fmt, ...)
+    >   {
+    > !     va_list args;
+    > !     va_start(args, fmt);
+    > !     linebuf_t buf;
+    > ! 
+    > !     vsnprintf(buf, sizeof(linebuf_t), fmt, args);
+    > ! 
+    > !     va_end(args);
+    > ! 
+    >       FILE *f = popen(buf, "r");
+    >       return f;
+    >   }
+    >   
+    >   int shdirectout(char *ignore, char *fmt, ...)
+    > ! {
+    > !   int current_stdout_fileno = dup(STDOUT_FILENO);
+    > !   dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    > !     
+    > !   va_list args;
+    > !   va_start(args, fmt);
+    > !   char buf[linebuf_tn * 6];
+    > ! 
+    > !   vsnprintf(buf, linebuf_tn * 6, fmt, args);
+    > ! 
+    > !   va_end(args);
+    > ! 
+    > !   int result;
+    > ! 
+    > !   int fd[2];
+    > !   pid_t fr = fork();
+    > !   result = 1;
+    > !   if (!fr) 
+    > !   {
+    > !       execl("/bin/sh", "sh", "-c", buf, (char *) NULL);	
+    > !   }
+    > !   else
+    > !   {
+    > !       int wstatus;
+    > !       wait(&wstatus);
+    > !       result = BOOLTOSYS(WIFEXITED(wstatus)) || WEXITSTATUS(wstatus);
+    > !   }
+    > ! 
+    > !   dup2(current_stdout_fileno, STDOUT_FILENO);
+    > !   return result;
+    > !   
+    > ! err:
+    > !   perror(mf("%s:%d", __FILE__, __LINE__));
+    > !   return 0;
+    > ! }
+    >   
+    >   #define mmapr(f, s) mmap2(f, s)
+    >   
+    >   nil *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+    > --- 185,209 ----
+    >     return -1;
+    >   }
+    >   
+    >   FILE *psh_(int ignored, char *fmt, ...)
+    >   {
+    > !     linebuf_t buf[6] initfromvalist;
+    >       FILE *f = popen(buf, "r");
+    >       return f;
+    >   }
+    >   
+    >   int shdirectout(char *ignore, char *fmt, ...)
+    > ! blk int current_stdout_fileno = dup(STDOUT_FILENO);
+    > !     stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    > !     stm linebuf_t buf[6] initfromvalist;
+    > !     stm shgeneral_frombuf(á³(action = wait, 'w'), buf);
+    > !     stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > !     ret result;
+    > ! err:perror(mf("%s:%d", __FILE__, __LINE__));
+    > !     ret 0;
+    > ! end
+    >   
+    >   #define mmapr(f, s) mmap2(f, s)
+    >   
+    >   nil *mmap2(char const *filename, int *size)
+    >   blk struct stat statbuf;
+
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 22:29:50 priv.c:5694 $ clbt
+[0x00] 2026-Feb-24 00:44:54 priv.c:5677 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 23:44:59.035455382 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-23 23:45:21.187455367 +0100
+    > ***************
+    > *** 86,95 ****
+    > --- 86,96 ----
+    >   //#define mkdir mkdir_
+    >   #define mkdir$$ mkdir_(0,
+    >   
+    >   void mkdirp_(int ignore, char *path, char *ignore_);
+    >   #define mkdirp mkdirp_ ( 0
+    > + #define mkdirp$$ mkdirp, 
+    >   
+    >   int mv_(int ignore, char *from, char *to, char *ignore_);
+    >   #define mv mv_ ( 0
+    >   #define mv$$ mv,
+    >   #define mvpostfix_(path, postfix) mv, path, mf("%s%s", path, postfix), endsh
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 00:45:22 priv.c:5696 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 00:48:44 priv.c:5687 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 23:48:48.915455218 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-23 23:49:06.467455205 +0100
+    > ***************
+    > *** 447,457 ****
+    >   #define TERMUX_HOME "/data/data/com.termux/files/home/"
+    >   
+    >   
+    >   #define tarxvfh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define tarxvf sh, "tar xvf %s"
+    > ! 
+    >   
+    >   #define pacmanyayssh printf("%s", "Found in: $ cnslutilh\n")
+    >   
+    >   int pacmanyayss(char *ignore, char *pkg, char *ignore2);
+    >   
+    > --- 447,457 ----
+    >   #define TERMUX_HOME "/data/data/com.termux/files/home/"
+    >   
+    >   
+    >   #define tarxvfh printf("%s", "Found in: $ cnslutilh\n")
+    >   #define tarxvf sh, "tar xvf %s"
+    > ! #define tarxvf$$ tarxvf,
+    >   
+    >   #define pacmanyayssh printf("%s", "Found in: $ cnslutilh\n")
+    >   
+    >   int pacmanyayss(char *ignore, char *pkg, char *ignore2);
+    >   
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 00:49:07 priv.c:5717 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 00:49:09 priv.c:5688 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 23:51:35.763455099 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-23 23:53:07.223455033 +0100
+    > ***************
+    > *** 58,76 ****
+    >   
+    >   # define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+    >   
+    >   # define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
+    >   
+    > ! # define ssp "/storage/self/primary/"
+    >   
+    >   #define buildc edit$$ "run/build.c" $$
+    >   
+    >   # define arrfileh edit$$ ROOTC("/../arrfile/arrfile.h") $$
+    >   
+    >   # define test readarrfile("N26LATEST.UPPER")
+    >   
+    > ! #define buerokrfin "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN"
+    >   
+    >   
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    > --- 58,76 ----
+    >   
+    >   # define ccolors edit$$ "~/.vim/after/syntax/c.vim" $$
+    >   
+    >   # define addckeyword$$ sh$$ "echo 'syntax keyword Keyword %s' >> ~/.vim/after/syntax/c.vim",
+    >   
+    > ! # define ssp(p) mf$ "/storage/self/primary/%s", p $
+    >   
+    >   #define buildc edit$$ "run/build.c" $$
+    >   
+    >   # define arrfileh edit$$ ROOTC("/../arrfile/arrfile.h") $$
+    >   
+    >   # define test readarrfile("N26LATEST.UPPER")
+    >   
+    > ! #define buerokrfin(p) mf$ "/storage/emulated/0/MEGABUEROKRATIE/FINANZEN/%s", p $
+    >   
+    >   
+    >   
+    >   # define arrfilec edit$$ ROOTC("../arrfile/arrfile.c") $$
+    >   
+    > ***************
+    > *** 84,94 ****
+    >   
+    >   # define pkgi$$ sh$$ "pkg install %s",
+    >   # define pkgs$$ sh$$ "pkg search %s",
+    >   #
+    >   
+    > ! # define termuxhome "/data/data/com.termux/files/home/"
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    >   # define cargobuildrel sh$$ "CARGO_MSG_LIMIT=1 cargo lbuild --release > cargo.out 2>&1 ; cat cargo.out ; cat cargo.out | chooseedit" $$
+    >   
+    >   # define echo$$ sh$$ "echo %s",
+    > --- 84,94 ----
+    >   
+    >   # define pkgi$$ sh$$ "pkg install %s",
+    >   # define pkgs$$ sh$$ "pkg search %s",
+    >   #
+    >   
+    > ! # define termuxhome(p) mf$ "/data/data/com.termux/files/home/%s", p $
+    >   
+    >   # define touch$$ sh$$ "touch %s",
+    >   # define cargobuildrel sh$$ "CARGO_MSG_LIMIT=1 cargo lbuild --release > cargo.out 2>&1 ; cat cargo.out ; cat cargo.out | chooseedit" $$
+    >   
+    >   # define echo$$ sh$$ "echo %s",
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 00:53:08 priv.c:5759 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 00:55:28 priv.c:5710 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 23:55:31.519454930 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-23 23:55:56.515454912 +0100
+    > ***************
+    > *** 535,539 ****
+    > --- 535,541 ----
+    >   #define findword$$ sh$$ "find %s | xargs grep -n '\\<%s\\>'",
+    >   # define which$$ sh$$ "which %s",
+    >   
+    >   # define cp$$ cp,
+    >   # define chmodx$$ chmodx,
+    > + nil mkdirpcd(char *, char *, char *);
+    > + #define mkdirpcd$$ mkdirpcd("",
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 00:55:57 priv.c:5725 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 00:54:22 priv.c:5692 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-23 23:54:28.199454975 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-23 23:55:27.435454933 +0100
+    > ***************
+    > *** 482,486 ****
+    > --- 482,491 ----
+    >        	         "%s" " && " \
+    >                    "vim -c 'normal Gdddd' -cwq %s" " && " \
+    >        	    "echo '' >> log.%s.txt", \
+    >        	    ROOTC("/run/"), file, ROOTC("/run/log.txt"), ROOTC("/run/log.txt"), file ) $$; 
+    >   }
+    > + 
+    > + nil mkdirpcd(char *ignore, char *path, char *ignend)
+    > + stm mkdirp$$ path $$;
+    > + stm cd$$ path $$;
+    > + ret 0;
+
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 00:55:59 priv.c:5711 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 01:21:38 priv.c:5703 !(bytesh/) $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 00:21:41.223453807 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-02-24 00:21:58.747453795 +0100
+    > ***************
+    > *** 93,101 ****
+    >   
+    >   # define echo$$ sh$$ "echo %s",
+    >   
+    >   # define vim$$ edit$$
+    >   
+    > ! # define prjm5(p) termuxhome(mf$ "prj/m5/%s", p $)
+    >   
+    > ! # define prjbytesh(p) termuxhome(mf$ "prj/bytesh/%s", p $)
+    >   
+    > --- 93,101 ----
+    >   
+    >   # define echo$$ sh$$ "echo %s",
+    >   
+    >   # define vim$$ edit$$
+    >   
+    > ! # define prjm5(p) termuxhome(mf( "prj/m5/%s", p ))
+    >   
+    > ! # define prjbytesh(p) termuxhome(mf( "prj/bytesh/%s", p ))
+    >   
+
+    >@/data/data/com.termux/files/home/tmp.bird
+    [0x00] 2026-Feb-24 01:21:59 priv.c:5729 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 01:59:46 priv.c:5736 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 00:59:48.419452171 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-24 01:04:36.207451966 +0100
+    > ***************
+    > *** 80,89 ****
+    > --- 80,90 ----
+    >   thn
+    >   blk
+    >   stm close(fd[0]);
+    >   iff action == á³(redirect, 'r') 
+    >   thn dup2(fd[1], STDOUT_FILENO);
+    > + stm dup2(STDOUT_FILENO, STDERR_FILENO);
+    >   stm close(fd[1]);
+    >   stm execl("/bin/sh", "sh", "-c", &buf[0], (char *) NULL);
+    >   stm _exit(1);
+    >   end
+    >   els
+    > ***************
+    > *** 159,171 ****
+    >   #define á³(tag, expr) expr
+    >   
+    >   int shfd_(int ignored, char *fmt, ...) 
+    >   blk
+    >   chr buf[sizeof(linebuf_t)*6] initfromvalist;
+    > ! 
+    > ! shgeneral_frombuf(á³(action = redirect, 'r'), 
+    > ! return shgeneral(fmt, );
+    >   end
+    >   
+    >   int disabled(int ignored, char *fmt, ...)
+    >   {
+    >   // === shgeneral(fmt, á³(action = redirect, 'r'))
+    > --- 160,171 ----
+    >   #define á³(tag, expr) expr
+    >   
+    >   int shfd_(int ignored, char *fmt, ...) 
+    >   blk
+    >   chr buf[sizeof(linebuf_t)*6] initfromvalist;
+    > ! int shgeneral_frombuf(chr *, chr); 
+    > ! return shgeneral(buf, á³(action = redirect, 'r'));
+    >   end
+    >   
+    >   int disabled(int ignored, char *fmt, ...)
+    >   {
+    >   // === shgeneral(fmt, á³(action = redirect, 'r'))
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-24 02:04:38 priv.c:5783 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 01:59:26 priv.c:5733 !(bytesh/) $ stdlibexth
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-24 02:04:41 priv.c:5737 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 01:22:36 priv.c:5707 !(bytesh/) $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 00:22:38.791453766 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-24 00:59:23.879452189 +0100
+    > ***************
+    > *** 157,166 ****
+    > --- 157,174 ----
+    >   }
+    >   
+    >   #define á³(tag, expr) expr
+    >   
+    >   int shfd_(int ignored, char *fmt, ...) 
+    > + blk
+    > + chr buf[sizeof(linebuf_t)*6] initfromvalist;
+    > + 
+    > + shgeneral_frombuf(á³(action = redirect, 'r'), 
+    > + return shgeneral(fmt, );
+    > + end
+    > + 
+    > + int disabled(int ignored, char *fmt, ...)
+    >   {
+    >   // === shgeneral(fmt, á³(action = redirect, 'r'))
+    >     va_list args;
+    >     va_start(args, fmt);
+    >     linebuf_t buf;
+
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-24 02:04:48 priv.c:5734 !(bytesh/) $ clbt
+[0x00] 2026-Feb-24 02:08:44 priv.c:5714 $ stdlibextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:08:46.691451786 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c	2026-02-24 01:10:31.431451711 +0100
+    > ***************
+    > *** 105,117 ****
+    >   
+    >   err:perror("Error at stdlibext.c\n");
+    >   ret 0;
+    >   end
+    >   
+    > ! int sh_(int ignored, char *fmt, ...) 
+    >   {
+    > ! // === shgeneral(á³(action = wait, 'w'), fmt, ...)
+    >     linebuf_t buf[6] initfromvalist;
+    >     int fd[2];
+    >     pid_t fr = fork(); 
+    >     if (!fr) 
+    >     {
+    > --- 105,121 ----
+    >   
+    >   err:perror("Error at stdlibext.c\n");
+    >   ret 0;
+    >   end
+    >   
+    > ! int sh_(int ignored, char *fmt, ...)
+    > ! blk return shgeneral(á³(action = wait, 'w'), fmt, ...);
+    > ! end
+    > ! 
+    > ! int disabled2(int ignored, char *fmt, ...) 
+    >   {
+    > ! // === shgeneral(
+    >     linebuf_t buf[6] initfromvalist;
+    >     int fd[2];
+    >     pid_t fr = fork(); 
+    >     if (!fr) 
+    >     {
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-24 02:10:32 priv.c:5752 $ clbt
+[0x00] 2026-Feb-24 02:12:15 priv.c:5719 $ mainstaticc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:12:34.175451624 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c	2026-02-24 01:13:21.495451590 +0100
+    > ***************
+    > *** 110,120 ****
+    >   	szdate,
+    >       	cmdlogn(),
+    >       	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
+    >       	mf("%s%s", 
+    >       		(!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""),
+    > ! 			routine_gitupdaterequired(++counter, "/storage/self/primary/prj/bytesh/") ? (" !(bytesh/)") : "" 
+    >       	)
+    >       );
+    >       fprintf(first,  "%s", status);
+    >       fprintf(second, "%s", status);
+    >       fflush(first);
+    > --- 110,120 ----
+    >   	szdate,
+    >       	cmdlogn(),
+    >       	//(gitupdaterequired(ROOTC(".")) ? "(.../bytesh/) " : ""),
+    >       	mf("%s%s", 
+    >       		(!(sh, "stat %s%s %s", rootworkdir, ".err", quiet, endsh) ? " (ERRFIX)" : ""),
+    > ! 			routine_gitupdaterequired(++counter, prjbytesh("./")) ? (" !(bytesh/)") : "" 
+    >       	)
+    >       );
+    >       fprintf(first,  "%s", status);
+    >       fprintf(second, "%s", status);
+    >       fflush(first);
+
+    >@/data/data/com.termux/files/home/prj/m5
+    [0x00] 2026-Feb-24 02:13:31 priv.c:5749 $ clbt
 

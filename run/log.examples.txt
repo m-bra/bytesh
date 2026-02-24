@@ -195,3 +195,23 @@
 
     [0x00] 2026-Feb-06 00:00:31 priv.c:2011 !(bytesh/) $ clex
 
+[0x00] 2026-Feb-20 19:48:22 priv.c:5497 !(bytesh/) $ ls$$ mf("%s/%s", termuxhome, ".termux") $$
+    > total 8.0K
+    > -rw-------. 1 u0_a228 u0_a228 5.7K Feb  3 16:33 termux.properties
+
+[0x00] 2026-Feb-23 02:16:52 priv.c:5492 $ for seqto(i, 111) mv$$ mf("%d", i+1), mf("txt.%d", i+1) $$
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 02:17:48 priv.c:5495 $ clex
+[0x00] 2026-Feb-23 15:51:58 priv.c:5497 $ for seqto(i, 111) mv$$ mf$ "txt.%d", i+1 $, mf$ "txt.%03d", i+1 $ $$
+
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 22:29:53 priv.c:5501 $ clex
+[0x00] 2026-Feb-23 15:51:12 priv.c:5493 $ es$ mf$ "%03d", 2 $ $
+    > (mlinebufprintf ( "%03d", 2 )) = "002"
+
+
+    >@/data/data/com.termux/files/home/prj/m5/m5dump
+    [0x00] 2026-Feb-23 22:29:57 priv.c:5498 !(bytesh/) $ clex
+

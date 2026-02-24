@@ -297,8 +297,11 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     int in = ctxt->interactive;
 
+#undef ᛪ
+#define ᛪ(...)
+
     int runstatus = 0xFF;
-    rep blk
+    rep blk ᛪ(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
         rep blk
             chr line [linebuf_tn];
 	    iff ({fflush(faout); !fgets(line, linebuf_tn, faout);})

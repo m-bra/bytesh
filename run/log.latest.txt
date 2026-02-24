@@ -5301,4 +5301,815 @@
 [0x00] 2026-Feb-06 02:26:59 priv.c:2187 !(bytesh/) $ edit$$ "-b N26LATEST" $$
 
     [0x00] 2026-Feb-06 03:02:07 priv.c:2189 !(bytesh/) $ cllt
+[0x00] 2026-Feb-06 21:36:45 priv.c:2455 !(bytesh/) $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 20:36:48.870066924 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 20:37:50.730066880 +0100
+    > ***************
+    > *** 7,17 ****
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    >   //EVALECHO(
+    >   
+    >   int size;
+    > ! chr *readbuf = mmap2(filename, &size);
+    >   chr *buf = malloc(size); memcpy(buf, readbuf, size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    > --- 7,17 ----
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    >   //EVALECHO(
+    >   
+    >   int size;
+    > ! chr *readbuf = (char *)  mmap2(filename, &size);
+    >   chr *buf = malloc(size); memcpy(buf, readbuf, size);
+    >   nop
+    >   int lines = 0;
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+
+    [0x00] 2026-Feb-06 21:37:51 priv.c:2484 !(bytesh/) $ cllt
+[0x00] 2026-Feb-06 21:38:01 priv.c:2455 !(bytesh/) $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-06 20:38:04.214066870 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-06 20:38:16.498066861 +0100
+    > ***************
+    > *** 50,57 ****
+    > --- 50,58 ----
+    >   	thn isuniquename = 0;
+    >   	iff isuniquename
+    >   	thn uniquenames[uniquenamescount++] = &linesbegin[i][argoff];
+    >       end
+    >   
+    > + stm return 0;
+    >   end
+    >   
+    >   //)
+
+    [0x00] 2026-Feb-06 21:38:17 priv.c:2471 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:58:02 priv.c:3927 !(bytesh/) $ edit$$ "m5" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 18:58:40.410484632 +0100
+    > --- m5	2026-02-09 18:59:39.522484590 +0100
+    > ***************
+    > *** 1,3 ****
+    >   #!/bin/bash
+    >   
+    > ! m5.bin $@ | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+    > --- 1,3 ----
+    >   #!/bin/bash
+    >   
+    > ! cat "$1" | m5.bin | tr --squeeze-repeats ' \n' | sed -rz 's/\n(\s\n)*\s?/\n/g' 
+
+    [0x00] 2026-Feb-09 19:59:40 priv.c:3940 !(bytesh/) $ cllt
+[0x00] 2026-Feb-12 22:21:14 priv.c:4013 !(bytesh/) $ mv$$ "tmp", "2026.DE.LEBENSLAUF.DOCX" $$
+
+    [0x00] 2026-Feb-12 22:21:26 priv.c:4015 !(bytesh/) $ cllt
+[0x00] 2026-Feb-12 22:21:00 priv.c:4011 !(bytesh/) $ mv$$ "2026.DE.L*", "tmp" $$
+
+    [0x00] 2026-Feb-12 22:27:42 priv.c:4013 !(bytesh/) $ cllt
+[0x00] 2026-Feb-12 22:14:53 priv.c:4009 !(bytesh/) $ cp$$ "2025.DE.ALLEDETAILS.DOCX", "2026.DE.ALLEDETAILS.DOCX" $$
+
+    [0x00] 2026-Feb-12 22:27:57 priv.c:4011 !(bytesh/) $ for seqto(i, 2) cllt;
+[0x00] 2026-Feb-12 22:00:17 priv.c:4005 !(bytesh/) $ bak$$ "2025.ALLEDETAILS.ODT" $$
+
+    [0x00] 2026-Feb-12 22:13:58 priv.c:4007 !(bytesh/) $ mv$$ "2025.DE.ALLEDETAILS.ODT.odt.docx", "2025.DE.ALLEDETAILS.DOCX" $$
+[0x00] 2026-Feb-12 21:56:21 priv.c:4030 !(bytesh/) $ cmdlogedit
+
+    [0x00] 2026-Feb-12 22:28:11 priv.c:4005 !(bytesh/) $ cllt
+[0x00] 2026-Feb-12 21:56:15 priv.c:3994 !(bytesh/) $ lsc
+    > output edited through $ cmdlogedit 
+    > -rw-rw----. 1 u0_a182 media_rw 208K Feb  3 00:54 2025.DE.ALLEDETAILS.ODT[.odt]
+    > -rw-rw----. 1 u0_a182 media_rw  16K Feb  3 00:54 2025.DE.CROP.LEHRER.DOCX
+    > -rw-rw----. 1 u0_a182 media_rw 207K Feb  3 00:55 2025.DE.EINZELHANDEL.ODT.odt
+    > -rw-rw----. 1 u0_a182 media_rw 204K Feb  3 00:55 2025.DE.HIFIJOURNAL.ODT.odt
+    > -rw-rw----. 1 u0_a182 media_rw 206K Feb  3 00:54 2025.DE.KUNDENSERVICE.ODT
+    > -rw-rw----. 1 u0_a182 media_rw  25K Feb  3 00:54 2025.DE.TECHNISCH.ODT.odt
+
+    [0x00] 2026-Feb-12 22:29:00 priv.c:4003 !(bytesh/) $ cllt
+[0x00] 2026-Feb-12 21:56:06 priv.c:3992 !(bytesh/) $ cd$$ "LEBENSLAUF" $$
+
+    [0x00] 2026-Feb-12 22:29:41 priv.c:3994 !(bytesh/) $ for seqto(i, 2) cllt
+[0x00] 2026-Feb-12 21:55:32 priv.c:3989 !(bytesh/) $ pwd
+    > /storage/emulated/0/MEGABUEROKRATIE/ARBEITSSTELLE/BEWERBUNG
+[0x00] 2026-Feb-12 21:53:33 priv.c:3987 !(bytesh/) $ cd$$ "BEWERBUNG" $$
+
+    [0x00] 2026-Feb-12 22:29:52 priv.c:3989 !(bytesh/) $ for seqto(i, 2) cllt
+[0x00] 2026-Feb-12 02:12:38 priv.c:3978 $ lsc
+    > total 596K
+    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > -rw-------. 1 u0_a228 u0_a228 9.5M Feb  9 19:02 core
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  7 22:41 error
+    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb 12 00:10 glVertexAttribPointer.js.m5
+
+    [0x00] 2026-Feb-12 21:51:28 priv.c:3985 $ cd$$ buerokrfin $$
+[0x00] 2026-Feb-12 02:12:23 priv.c:3976 $ cd$$ "examples" $$
+
+    [0x00] 2026-Feb-12 22:30:09 priv.c:3978 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:22:39 priv.c:3943 $ userinterfacec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 19:22:43.222483600 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c	2026-02-09 19:24:49.234483510 +0100
+    > ***************
+    > *** 84,96 ****
+    >       rep blk cmdlogat(cmdlogline--, &mem);
+    >           iff buf[strspn(buf, " ")] == '>'
+    >           thn continue;
+    >   	iff strstr(buf, "$")
+    >   	thn break;
+    > ! 	blk_end
+    >       //s EVALECHO( es$ buf $; )
+    > !     stm buf = strstr(buf, "$") + 1;
+    >       iff strlen(buf) > 80
+    >       thn buf[79] = '\0';
+    >       //stm printf("Hello");ln;
+    >       for range(0, strlen(buf))
+    >       iff buf[i] == '\n'
+    > --- 84,96 ----
+    >       rep blk cmdlogat(cmdlogline--, &mem);
+    >           iff buf[strspn(buf, " ")] == '>'
+    >           thn continue;
+    >   	iff strstr(buf, "$")
+    >   	thn break;
+    > ! 	end
+    >       //s EVALECHO( es$ buf $; )
+    > !     stm buf = strstr(buf, "$") + 2;
+    >       iff strlen(buf) > 80
+    >       thn buf[79] = '\0';
+    >       //stm printf("Hello");ln;
+    >       for range(0, strlen(buf))
+    >       iff buf[i] == '\n'
+
+    [0x00] 2026-Feb-12 22:30:46 priv.c:3976 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:19:20 priv.c:3941 !(bytesh/) $ cd$$ "examples" $$
+
+    [0x00] 2026-Feb-12 22:31:27 priv.c:3943 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:02:41 priv.c:3939 !(bytesh/) $ shdirect$$ "cargo build --release" $$
+
+    [0x00] 2026-Feb-12 22:31:31 priv.c:3941 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:00:55 priv.c:3933 !(bytesh/) $ lsc
+    > total 12K
+    > -rwx------. 1 u0_a228 u0_a228  459 Feb  7 22:41 asm.m5
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  7 22:41 error
+    > -rwx------. 1 u0_a228 u0_a228 3.2K Feb  7 22:41 glVertexAttribPointer.js.m5
+
+    [0x00] 2026-Feb-12 22:31:33 priv.c:3939 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:00:49 priv.c:3931 !(bytesh/) $ cd$$ "examples" $$
+
+    [0x00] 2026-Feb-12 22:31:38 priv.c:3933 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:00:26 priv.c:3929 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-12 22:31:41 priv.c:3931 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 20:00:03 priv.c:3927 !(bytesh/) $ tmph
+
+    [0x00] 2026-Feb-12 22:31:43 priv.c:3929 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:56:39 priv.c:3920 !(bytesh/) $ lsc
+    > total 16M
+    > -rwx------. 1 u0_a228 u0_a228  85 Feb  7 22:41 m5
+    > -rwx------. 1 u0_a228 u0_a228 16M Feb  8 00:46 m5.bin
+    > -rwx------. 1 u0_a228 u0_a228 114 Feb  7 22:41 m5bash
+    > -rwx------. 1 u0_a228 u0_a228 365 Feb  7 22:41 m5cache.m5
+
+    [0x00] 2026-Feb-12 22:31:45 priv.c:3927 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:56:34 priv.c:3918 !(bytesh/) $ cd$$ "bin" $$
+
+    [0x00] 2026-Feb-12 22:31:48 priv.c:3920 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:56:30 priv.c:3901 !(bytesh/) $ lsc
+    > total 65K
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  8 00:43 .cargo
+    > drwx------. 7 u0_a228 u0_a228 3.4K Feb  8 00:56 .git
+    > -rw-------. 1 u0_a228 u0_a228   19 Feb  7 22:41 .gitignore
+    > -rw-------. 1 u0_a228 u0_a228    0 Feb  7 22:41 .gitorderfile
+    > -rw-------. 1 u0_a228 u0_a228  16K Feb  7 23:01 Cargo.lock
+    > -rwx------. 1 u0_a228 u0_a228  378 Feb  7 23:41 Cargo.toml
+    > -rwx------. 1 u0_a228 u0_a228  670 Feb  7 22:41 Makefile
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  8 00:51 bin
+    > drwx------. 3 u0_a228 u0_a228 3.4K Feb  7 22:41 examples
+    > -rwx------. 1 u0_a228 u0_a228 7.8K Feb  7 22:41 icon.png
+    > drwx------. 3 u0_a228 u0_a228 3.4K Feb  7 22:41 lib
+    > -rwx------. 1 u0_a228 u0_a228  438 Feb  7 22:41 readme.txt
+    > drwx------. 5 u0_a228 u0_a228 3.4K Feb  7 23:05 src
+    > drwx------. 3 u0_a228 u0_a228 3.4K Feb  8 00:46 target
+
+    [0x00] 2026-Feb-12 22:31:50 priv.c:3918 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:56:25 priv.c:3899 !(bytesh/) $ cd$$ "m5" $$
+
+    [0x00] 2026-Feb-12 22:31:52 priv.c:3901 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 19:56:22 priv.c:3897 !(bytesh/) $ cdup
+
+    [0x00] 2026-Feb-12 22:31:55 priv.c:3899 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 16:02:25 priv.c:3652 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 15:02:29.399996919 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-09 15:02:38.307996913 +0100
+    > ***************
+    > *** 133,143 ****
+    >   	    int sectionsize = linesbegin[j+3] - linesbegin[i];
+    >   	    chr *section = malloc(sectionsize); memcpy(section, linesbegin[i], sectionsize);
+    >   	    stm memset(wbuf + (linesbegin[i] - buf), sectionsize, ' ');
+    >               stm munmap(wbuf);
+    >   	    stm FILE *f = fopen(filename, "w");
+    > ! 	    stm fprintf("\n%s", section);
+    >   	    stm fclose(f);
+    >   	    stm free(section);
+    >   	    stm break;
+    >   	    end
+    >       stm break;
+    > --- 133,143 ----
+    >   	    int sectionsize = linesbegin[j+3] - linesbegin[i];
+    >   	    chr *section = malloc(sectionsize); memcpy(section, linesbegin[i], sectionsize);
+    >   	    stm memset(wbuf + (linesbegin[i] - buf), sectionsize, ' ');
+    >               stm munmap(wbuf);
+    >   	    stm FILE *f = fopen(filename, "w");
+    > ! 	    stm fprintf(f, "\n%s", section);
+    >   	    stm fclose(f);
+    >   	    stm free(section);
+    >   	    stm break;
+    >   	    end
+    >       stm break;
+
+    [0x00] 2026-Feb-12 22:33:20 priv.c:3681 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 15:51:42 priv.c:3576 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:51:45.219997380 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-09 14:58:55.027997072 +0100
+    > ***************
+    > *** 77,92 ****
+    >   stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    > ! nil processfnc(chr *wbuf, int size)
+    >   blk
+    >   stm breakpt;
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    >   chr *buf = malloc(size); memcpy(buf, wbuf, size);
+    >   
+    >   //EVALECHO(
+    >   
+    >   int áª(buf, size) lines = 0; 
+    > --- 77,94 ----
+    >   stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    > ! nil processfnc(char *filename)
+    >   blk
+    >   stm breakpt;
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    > + int size;
+    > + chr *wbuf = mmapw(filename, &size);
+    >   chr *buf = malloc(size); memcpy(buf, wbuf, size);
+    >   
+    >   //EVALECHO(
+    >   
+    >   int áª(buf, size) lines = 0; 
+    > ***************
+    > *** 128,140 ****
+    >   	thn ++scope;
+    >   	iff !scope
+    >   	thn blk
+    >   	    int sectionsize = &linesbegin[j+3] - &linesbegin[i];
+    >   	    chr *section = malloc(sectionsize); memcpy(section, &linesbegin[i], sectionsize);
+    > ! 	    
+    >   	    stm free(section);
+    >   	    end
+    >   end end 
+    >   
+    >   fin:
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   stm free(buf);
+    > --- 130,148 ----
+    >   	thn ++scope;
+    >   	iff !scope
+    >   	thn blk
+    >   	    int sectionsize = &linesbegin[j+3] - &linesbegin[i];
+    >   	    chr *section = malloc(sectionsize); memcpy(section, &linesbegin[i], sectionsize);
+    > ! 	    stm memset(wbuf + (&linesbegin[i] - buf), sectionsize, ' ');
+    > !             stm munmap(wbuf);
+    > ! 	    stm FILE *f = fopen(filename, "w");
+    > ! 	    stm fprintf("\n%s", section);
+    > ! 	    stm fclose(f);
+    >   	    stm free(section);
+    > + 	    stm break;
+    >   	    end
+    > +     stm break;
+    >   end end 
+    >   
+    >   fin:
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   stm free(buf);
+
+    [0x00] 2026-Feb-12 22:33:28 priv.c:3652 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 15:28:58 priv.c:3451 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:29:00.731998356 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-09 14:50:12.455997446 +0100
+    > ***************
+    > *** 77,122 ****
+    >   stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    > ! nil processfnc(chr *buf, int size)
+    >   blk
+    >   stm breakpt;
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    >   //EVALECHO(
+    >   
+    >   int áª(buf, size) lines = 0; 
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    >   int instroff = 0;
+    > ! int argoff = 5;
+    >   chr *áª(buf, size) linesbegin[lines]; 
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk 
+    >         ; iff buf[i] == '\n'
+    >           thn blk 
+    > ! 	    stm linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    >   	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    > ! 	    iff linelen > 4 
+    > ! 	    thn linesbegin[j-2][4] = '\0';
+    >       end	    end     
+    >   
+    >   
+    > ! stm breakpt;
+    > ! 
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > - stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    >   
+    >   //)
+    > --- 77,148 ----
+    >   stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    > ! nil processfnc(chr *wbuf, int size)
+    >   blk
+    >   stm breakpt;
+    >   int current_stdout_fileno = dup(STDOUT_FILENO);
+    >   stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    >   
+    > + chr *buf = malloc(size); memcpy(buf, wbuf, size);
+    > + 
+    >   //EVALECHO(
+    >   
+    >   int áª(buf, size) lines = 0; 
+    >       int ignore_last_newline = 1;
+    >       for seqto(i, size - ignore_last_newline)
+    >       iff buf[i] == '\n'
+    >       thn ++lines;
+    >       nop
+    >   int instroff = 0;
+    > ! int argoff = 4;
+    > ! int áª(buf, size) linesindent[lines];
+    >   chr *áª(buf, size) linesbegin[lines]; 
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk 
+    >         ; iff buf[i] == '\n'
+    >           thn blk 
+    > ! 	    int wh = strspn(&buf[i+1], " \t");
+    > ! 	    stm linesindent[j++] = wh;
+    > ! 	    stm linesbegin[j] = &buf[i+1] + wh;
+    >               stm buf[i] = 0;
+    >   	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    > ! 	    iff linelen > 3 
+    > ! 	    thn linesbegin[j-2][3] = '\0';
+    >       end	    end     
+    >   
+    > + for seqto(i, lines)
+    > + iff !strncmp(&linesbegin[i], cmpentire("fnc"))
+    > + thn 
+    > + blk int scope = 1; 
+    > +     for (int j = i + 1; j < lines; ++j)
+    > +     blk iff linesindent[j+1] < linesindent[i]
+    > +     the iff !strncmp(&linesbegin[j], "end")
+    > +         thn --scope;
+    > + 	iff !strncmp(&linesbegin[j], "blk")
+    > + 	thn ++scope;
+    > + 	iff !strncmp(&linesbegin[j], "fnc")
+    > + 	thn ++scope;
+    > + 	iff !scope
+    > + 	thn blk
+    > + 	    chr *sectionsize = &linesbegin[j+3] - &linesbegin[i];
+    > + 	    chr *section = malloc(sectionsize); memcpy(section, &linesbegin[i], sectionsize);
+    > + 	    
+    > + 	    stm free(section);
+    > + 	    end
+    > + end end 
+    >   
+    > ! fin:
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   stm free(buf);
+    >   stm return 0;
+    > + 
+    > + err:printf("Error from %s:%d", __FILE__, __LINE__);
+    > + stm goto fin;
+    >   end
+    >   
+    >   
+    >   //)
+
+    [0x00] 2026-Feb-12 22:33:34 priv.c:3576 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 15:28:08 priv.c:3449 $   arrfilec  
+
+    [0x00] 2026-Feb-12 22:33:46 priv.c:3451 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 15:25:31 priv.c:3390 $  arrfilec 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:25:42.111998498 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-09 14:27:34.063998418 +0100
+    > ***************
+    > *** 99,132 ****
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk 
+    >         ; iff buf[i] == '\n'
+    > !         thn blk linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    >   	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    >   	    iff linelen > 4 
+    >   	    thn linesbegin[j-2][4] = '\0';
+    >       end	    end     
+    >   
+    > - int áª(linesbegin, ...) entriescount = 0;
+    > - int UNIQUENAMESMAX = 1024*16;
+    > - int uniquenamescount = 0;
+    > - chr *áª(linesbegin, ...) uniquenames[UNIQUENAMESMAX];
+    > - for seqto(i, lines - 1)
+    > - iff !strncmp(&linesbegin[i][instroff], cmpentire("NAME"))
+    > - thn blk stm entriescount++; 
+    > -         chr isuniquename = 1;
+    > -         for seqto(j, uniquenamescount)
+    > -         iff !strncmp(uniquenames[j], cmpentire(&linesbegin[i][argoff]))
+    > - 	thn isuniquename = 0;
+    > - 	iff isuniquename
+    > - 	thn uniquenames[uniquenamescount++] = &linesbegin[i][argoff];
+    > -     end
+    > - stm void qsort(void *, size_t, size_t, int (*)(void const *, void const *));
+    > - stm qsort(uniquenames, uniquenamescount, sizeof(char*), pstrcmp);
+    > - //s bsearch("name...", uniquenameskeymap);
+    >   
+    >   stm breakpt;
+    >   
+    >   int c = 0;
+    >   for seqto(un, uniquenamescount)
+    > --- 99,116 ----
+    >       int j = 0;
+    >       stm linesbegin[j++] = buf + 0;
+    >       for seqto(i, size - ignore_last_newline)
+    >       blk 
+    >         ; iff buf[i] == '\n'
+    > !         thn blk 
+    > ! 	    stm linesbegin[j++] = buf + i + 1;
+    >               stm buf[i] = 0;
+    >   	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    >   	    iff linelen > 4 
+    >   	    thn linesbegin[j-2][4] = '\0';
+    >       end	    end     
+    >   
+    >   
+    >   stm breakpt;
+    >   
+    >   int c = 0;
+    >   for seqto(un, uniquenamescount)
+
+    [0x00] 2026-Feb-12 22:33:48 priv.c:3449 !(bytesh/) $ cllt
+[0x00] 2026-Feb-09 15:17:38 priv.c:3310 $ arrfilec
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-09 14:19:53.511998747 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/../arrfile/arrfile.c	2026-02-09 14:23:21.715998598 +0100
+    > ***************
+    > *** 77,82 ****
+    > --- 77,149 ----
+    >   stm munmap(buf);
+    >   stm free(buf);
+    >   stm return 0;
+    >   end
+    >   
+    > + nil processfnc(chr *buf, int size)
+    > + blk
+    > + stm breakpt;
+    > + int current_stdout_fileno = dup(STDOUT_FILENO);
+    > + stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO);
+    > + 
+    > + //EVALECHO(
+    > + 
+    > + int áª(buf, size) lines = 0; 
+    > +     int ignore_last_newline = 1;
+    > +     for seqto(i, size - ignore_last_newline)
+    > +     iff buf[i] == '\n'
+    > +     thn ++lines;
+    > +     nop
+    > + int instroff = 0;
+    > + int argoff = 5;
+    > + chr *áª(buf, size) linesbegin[lines]; 
+    > +     int j = 0;
+    > +     stm linesbegin[j++] = buf + 0;
+    > +     for seqto(i, size - ignore_last_newline)
+    > +     blk 
+    > +       ; iff buf[i] == '\n'
+    > +         thn blk linesbegin[j++] = buf + i + 1;
+    > +             stm buf[i] = 0;
+    > + 	    int linelen = linesbegin[j-1] - linesbegin[j-2];
+    > + 	    iff linelen > 4 
+    > + 	    thn linesbegin[j-2][4] = '\0';
+    > +     end	    end     
+    > + 
+    > + int áª(linesbegin, ...) entriescount = 0;
+    > + int UNIQUENAMESMAX = 1024*16;
+    > + int uniquenamescount = 0;
+    > + chr *áª(linesbegin, ...) uniquenames[UNIQUENAMESMAX];
+    > + for seqto(i, lines - 1)
+    > + iff !strncmp(&linesbegin[i][instroff], cmpentire("NAME"))
+    > + thn blk stm entriescount++; 
+    > +         chr isuniquename = 1;
+    > +         for seqto(j, uniquenamescount)
+    > +         iff !strncmp(uniquenames[j], cmpentire(&linesbegin[i][argoff]))
+    > + 	thn isuniquename = 0;
+    > + 	iff isuniquename
+    > + 	thn uniquenames[uniquenamescount++] = &linesbegin[i][argoff];
+    > +     end
+    > + stm void qsort(void *, size_t, size_t, int (*)(void const *, void const *));
+    > + stm qsort(uniquenames, uniquenamescount, sizeof(char*), pstrcmp);
+    > + //s bsearch("name...", uniquenameskeymap);
+    > + 
+    > + stm breakpt;
+    > + 
+    > + int c = 0;
+    > + for seqto(un, uniquenamescount)
+    > + for seqto(l, lines)
+    > + iff !strncmp(&linesbegin[l][instroff], cmpentire("NAME"))
+    > +  && !strncmp(&linesbegin[l][argoff],   cmpentire(uniquenames[un]))
+    > + thn printf("|%3d| %30s | %16.16s | %20s | %18s |\n", c++,
+    > +         &linesbegin[l][argoff], &linesbegin[l+1][argoff], 
+    > + 	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+2][argoff] : "",
+    > + 	strlen(&linesbegin[l+3][0]) > 2 ? &linesbegin[l+3][argoff] : &linesbegin[l+2][argoff]); 
+    > + stm printf("\n%d entries read from input\n", entriescount);
+    > + 
+    > + stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    > + stm munmap(buf);
+    > + stm free(buf);
+    > + stm return 0;
+    > + end
+    > + 
+    > + 
+    >   //)
+
+    [0x00] 2026-Feb-12 22:33:52 priv.c:3390 !(bytesh/) $ cllt
+    [0x00] 2026-Feb-12 22:33:57 priv.c:3310 !(bytesh/) $ cllt
+[0x00] 2026-Feb-18 02:51:02 priv.c:3648 !(bytesh/) $ edit$$ "BUCHHALTUNG.AUTO.TXT" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-18 01:51:13.178727008 +0100
+    > --- BUCHHALTUNG.AUTO.TXT	2026-02-18 01:53:24.658726914 +0100
+    > ***************
+    > *** 12,20 ****
+    >   | 24. Nov | Xiaomi  11T | Gabe    | Paul (Kirchberg)
+    >   | 22. Nov | Vollpension | Gabe    | Paul (Kirchberg)
+    >   | 23. Nov | Vollpension | Gabe    | Paul (Kirchberg)
+    >   | --2026--
+    >   | 17. Jan | Bibeltisch  | Gabe    | Fam. Runde/Skraem (Wert 35â¬)
+    > ! | 09. Feb | 4,4EUR  | Steuer    |  Beherbergungs-
+    >   
+    >   
+    > !  * So wie mit finanziellen Gewohnheiten geht es auch mit der leiblichen Zucht. Einzelne Momente mÃ¶gen gut gehen, aber die langfristige Gewohnheit hat sich JEDES EINZELNE MAL nach schmerzlicher Erfahrung Schlecht erwiesen. Dazu wird nun gefastet.
+    > \ No newline at end of file
+    > --- 12,27 ----
+    >   | 24. Nov | Xiaomi  11T | Gabe    | Paul (Kirchberg)
+    >   | 22. Nov | Vollpension | Gabe    | Paul (Kirchberg)
+    >   | 23. Nov | Vollpension | Gabe    | Paul (Kirchberg)
+    >   | --2026--
+    >   | 17. Jan | Bibeltisch  | Gabe    | Fam. Runde/Skraem (Wert 35â¬)
+    > ! | 09. Feb | 4,4EUR  | Steuer    |  Beherbergungsst. Brutto 40 EUR
+    >   
+    >   
+    > !  *  Bei ungewÃ¶hnlichen Steuern muss immer auch die Bruttomenge angegeben werden
+    > ! 
+    > ! Brutto 02,44 Steuer: 0,46
+    > ! Brutto 12,99 Steuer: 2,07
+    > ! Brutto 03,23 Steuer: 0,52
+    > ! 
+    > ! 
+    > !  * So wie mit finanziellen Gewohnheiten geht es auch mit der leiblichen Zucht. Einzelne Momente mÃ¶gen gut gehen, aber die langfristige Gewohnheit hat sich JEDES EINZELNE MAL nach schmerzlicher Erfahrung Schlecht erwiesen. Dazu wird nun gefastet.
+
+    [0x00] 2026-Feb-18 02:53:25 priv.c:3681 !(bytesh/) $ cllt
+[/data/data/com.termux/files/home/prj/m5/lib/m5/experimental]
+    [0x00] 2026-Feb-20 19:50:18 priv.c:5532 !(bytesh/) $ cllt
+[/data/data/com.termux/files/home/prj/m5/lib/m5/experimental]
+    [0x00] 2026-Feb-20 19:50:22 priv.c:5532 !(bytesh/) $ cllt
+[/data/data/com.termux/files/home/prj/m5/lib/m5/experimental]
+    [0x00] 2026-Feb-20 19:50:25 priv.c:5532 !(bytesh/) $ cllt
+[/data/data/com.termux/files/home/prj/m5/lib/m5/experimental]
+    [0x00] 2026-Feb-20 19:50:28 priv.c:5532 !(bytesh/) $ cllt
+@/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:55:13 priv.c:5571 !(bytesh/) $ cllt
+@/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:55:16 priv.c:5571 !(bytesh/) $ cllt
+@/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:55:19 priv.c:5571 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:56:27 priv.c:5607 !(bytesh/) $ 
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:56:29 priv.c:5610 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:56:26 priv.c:5604 $ 
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:56:33 priv.c:5608 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:56:23 priv.c:5601 $ 
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:56:37 priv.c:5605 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:56:40 priv.c:5602 !(bytesh/) $ cmdlogedit
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 19:58:21 priv.c:5605 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:20:41 priv.c:5544 $ edit$$ "test.1.m5" $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:20:52.252997978 +0100
+    > --- test.1.m5	2026-02-20 19:20:55.964997976 +0100
+    > ***************
+    > *** 133,140 ****
+    >   %: {::expect(::test_balanced_comments(//* hello //* world *////* ! *// *//))}
+    >   %: {::expect(::test_balanced_comments(//**//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello world *////* ! *// *//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello //* world *////* ! *// *// *//))}
+    >   
+    > - %: {::anychar}%end.
+    >   
+    >   }/remove_comments/
+    > --- 133,139 ----
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:20:56 priv.c:5560 $ cllt
+[0x00] 2026-Feb-20 20:20:04 priv.c:5539 $ m5$$ "test.1.m5" $$
+    > 
+    > %end.
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:00 priv.c:5545 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:19:06 priv.c:5515 $ edit$$ "test.1.m5" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:19:44.664998027 +0100
+    > --- test.1.m5	2026-02-20 19:20:03.516998013 +0100
+    > ***************
+    > *** 133,139 ****
+    >   %: {::expect(::test_balanced_comments(//* hello //* world *////* ! *// *//))}
+    >   %: {::expect(::test_balanced_comments(//**//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello world *////* ! *// *//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello //* world *////* ! *// *// *//))}
+    >   
+    >   
+    > ! }/remove_comments/
+    > \ No newline at end of file
+    > --- 133,140 ----
+    >   %: {::expect(::test_balanced_comments(//* hello //* world *////* ! *// *//))}
+    >   %: {::expect(::test_balanced_comments(//**//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello world *////* ! *// *//))}
+    >   %: {::expect_not(::test_balanced_comments(//* hello //* world *////* ! *// *// *//))}
+    >   
+    > + %: {::anychar}%end.
+    >   
+    > ! }/remove_comments/
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:34 priv.c:5540 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:18:52 priv.c:5511 $ m5$$ "test.m5" $$
+    > end.
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:40 priv.c:5516 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:17:01 priv.c:5490 !(bytesh/) $ edit$$ "test.m5" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 19:17:06.252998140 +0100
+    > --- test.m5	2026-02-20 19:17:26.504998125 +0100
+    > ***************
+    > *** 34,39 ****
+    >   
+    >   %: m5_quote (predefined) {::throw_predefined_rule}
+    >   %: anychar (any) {}
+    >   %: (not) nochar {::anychar}
+    >   
+    > ! 
+    > --- 34,39 ----
+    >   
+    >   %: m5_quote (predefined) {::throw_predefined_rule}
+    >   %: anychar (any) {}
+    >   %: (not) nochar {::anychar}
+    >   
+    > ! %: {::anychar} -> {}%end.
+
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:43 priv.c:5512 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:16:22 priv.c:5487 !(bytesh/) $ shdirect$$ "PATH=$PATH:../bin cat test.m5 | m5" $$
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:46 priv.c:5491 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:15:00 priv.c:5474 !(bytesh/) $ lsc
+    > total 47K
+    > -rwx------. 1 u0_a228 u0_a228 5.0K Feb  7 22:41 error.rs
+    > -rwx------. 1 u0_a228 u0_a228 5.2K Feb  7 22:41 example_input.rs
+    > -rwx------. 1 u0_a228 u0_a228 9.0K Feb 12 19:43 main.rs
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb 12 20:13 mmatch
+    > -rwx------. 1 u0_a228 u0_a228 3.9K Feb  7 22:41 test.1.m5
+    > -rw-------. 1 u0_a228 u0_a228 3.1K Feb 12 20:08 test.m5
+    > -rw-------. 1 u0_a228 u0_a228    0 Feb 12 20:29 test.m5.out
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  7 22:41 types
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  7 22:41 util
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:51 priv.c:5488 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:14:35 priv.c:5471 !(bytesh/) $ cdup
+
+
+    >/data/data/com.termux/files/home/prj/m5/src
+    [0x00] 2026-Feb-20 20:21:55 priv.c:5475 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:22:03 priv.c:5472 !(bytesh/) $ cd$$ "../lib/m5/experimental" $$
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:22:25 priv.c:5475 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 20:04:02 priv.c:5468 !(bytesh/) $ edit$$ "../metatime.m5" $$ 
+
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:22:29 priv.c:5473 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:45:13 priv.c:5445 !(bytesh/) $ edit$$ "../metatime.m5" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 18:45:18.312999505 +0100
+    > --- ../metatime.m5	2026-02-20 18:47:51.956999395 +0100
+    > ***************
+    > *** 323,328 ****
+    >      assert namespace init exists or throw could_not_create_namespace_init.
+    >   
+    >      syntax balanced_parens = balanced {(} ... {)}.
+    >   }
+    >   
+    > ! }/remove_comments/
+    > \ No newline at end of file
+    > --- 323,328 ----
+    >      assert namespace init exists or throw could_not_create_namespace_init.
+    >   
+    >      syntax balanced_parens = balanced {(} ... {)}.
+    >   }
+    >   
+    > ! }/remove_comments/
+
+
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:22:30 priv.c:5469 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 19:38:44 priv.c:5442 !(bytesh/) $ cd$$ "lib/m5/experimental" $$
+
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 20:22:43 priv.c:5446 !(bytesh/) $ cllt
+[0x00] 2026-Feb-20 22:18:16 priv.c:5980 !(bytesh/) $ edit$$ "c.m5.in.debug" $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-20 21:18:18.188992939 +0100
+    > --- c.m5.in.debug	2026-02-20 21:18:56.552992911 +0100
+    > ***************
+    > *** 2,11 ****
+    >   
+    >   %: {::define_whitespace_handler('replace everywhere in header with ::nwh`)}
+    >   
+    >   %; compile m5_c_quote = { ::c_quote }
+    >   
+    > ! %: {::metatime_eval(
+    > !     m5_c_quote = { ::c_quote }
+    > ! }
+    >   
+    >   %: compile translation_unit = ({::external_declaration} or {::pragma})*
+    > --- 2,9 ----
+    >   
+    >   %: {::define_whitespace_handler('replace everywhere in header with ::nwh`)}
+    >   
+    >   %; compile m5_c_quote = { ::c_quote }
+    >   
+    > ! %: m5_c_quote = { ::c_quote }
+    >   
+    >   %: compile translation_unit = ({::external_declaration} or {::pragma})*
+
+    >/data/data/com.termux/files/home/prj/m5/lib/m5/experimental
+    [0x00] 2026-Feb-20 22:18:57 priv.c:6006 !(bytesh/) $ cllt
 

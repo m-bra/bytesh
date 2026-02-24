@@ -103,7 +103,9 @@ int dup2(int oldfd, int newfd);
 int chdir(const char *path);
 int access(const char *path, int mode);
 extern int F_OK_VAR;
+#ifndef F_OK
 #define F_OK F_OK_VAR
+#endif
 
 #endif
 

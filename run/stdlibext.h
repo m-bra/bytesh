@@ -86,6 +86,7 @@ extern int cen_line;
 #define cef if (EOF == (
 #define theh printf("THen Err\n#define the thn goto err;\n");
 #define the thn goto err;
+#define ret return
 #define stmh printf("STateMent\n#define stm\n");
 #define stm
 #define s
@@ -164,7 +165,8 @@ FILE *psh_(int ignored, char *fmt, ...);
 
 #define seqto(i, n) (int i = 0; i < n; ++i)
 
-nil *mmap2(char const *, int *);
+nil *mmap2(char const *filename, int *size);
+nil *mmapw(char const *filename, int *size);
 
 #endif
  

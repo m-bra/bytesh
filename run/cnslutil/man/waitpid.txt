@@ -1,0 +1,64 @@
+WAITPID(1)			 User Commands			    WAITPID(1)
+
+NAME
+       waitpid - utility to wait for arbitrary processes
+
+SYNOPSIS
+       waitpid [-v] [--timeout|-t seconds] pid...
+
+DESCRIPTION
+       waitpid is a simple command to wait for arbitrary non-child processes.
+
+       It exits after all processes whose PIDs have been passed as arguments
+       have exited.
+
+OPTIONS
+       -v, --verbose
+	   Be more verbose.
+
+       -t, --timeout seconds
+	   Maximum wait time.
+
+       -e, --exited
+	   Don't error on already exited PIDs.
+
+       -c, --count count
+	   Number of process exits to wait for.
+
+       -h, --help
+	   Display help text and exit.
+
+       -V, --version
+	   Display version and exit.
+
+EXIT STATUS
+       waitpid has the following exit status values:
+
+       0
+	   success
+
+       1
+	   unspecified failure
+
+       2
+	   system does not provide necessary functionality
+
+       3
+	   timeout expired
+
+AUTHORS
+       Thomas Weissschuh <thomas@t-8ch.de>
+
+SEE ALSO
+       waitpid(2) wait(1P)
+
+REPORTING BUGS
+       For bug reports, use the issue tracker
+       <https://github.com/util-linux/util-linux/issues>.
+
+AVAILABILITY
+       The waitpid command is part of the util-linux package which can be
+       downloaded from Linux Kernel Archive
+       <https://www.kernel.org/pub/linux/utils/util-linux/>.
+
+util-linux 2.41.2		  2025-09-09			    WAITPID(1)

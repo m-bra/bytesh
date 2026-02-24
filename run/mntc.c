@@ -5,16 +5,16 @@ int lastresult = 0;
 
 SECTION TEXT
 
-FUNCTION int routine_gitupdaterequired(int counter, char *dir) 
+FUNCTION 
 
-def 
+int routine_gitupdaterequired(int counter, char *dir) 
+blk
 iff counter % 20
-thn return lastresult;
+thn ret lastresult;
 
-    sh, "cd %s", dir, endsh;
-
-	sh, "git status > %s",ROOTC("/gitstatus.tmp"), endsh;
-	FILE *f = fopen(ROOTC("/gitstatus.tmp"), "r");\
+stm cd$$ dir $$;
+stm sh$$ "git status > %s", ROOTC("/gitstatus.tmp") $$;
+stm FILE *f = fopen(ROOTC("/gitstatus.tmp"), "r");
 
 chr lastline[linebuf_tn];
 
@@ -24,20 +24,19 @@ chr line[linebuf_tn];
 chr *r = fgets(line, linebuf_tn, f); 
 	
 iff !r 
-thn blk
-  	iff !strlen(lastline)
+thn blk iff !strlen(lastline)
     thn break;
         chr *cmpwith = "nothing to commit, working tree clean";
     iff 0 == strncmp(lastline, cmpwith, strlen(cmpwith))
-    thn return lastresult = 0;   
+    thn ret lastresult = 0;   
     	break;
-    blk_end
+    end
     
-    strncpy(lastline, line, linebuf_tn);
-end_blk
+    stm strncpy(lastline, line, linebuf_tn);
+    end
 
-	rm, ROOTC("/gitstatus.tmp"), endsh;
-	return lastresult = 1;	
+stm rm$$ ROOTC("/gitstatus.tmp") $$;
+ret lastresult = 1;	
 
 
 SECTION DATA

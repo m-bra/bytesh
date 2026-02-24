@@ -37,4 +37,6 @@ void fputsclose(char *sz, FILE *f);
 
 char *loads(char *filename);
 
+int waitpipe(pid_t senderpid, FILE *sender, FILE *receiver);
+
 #endif
