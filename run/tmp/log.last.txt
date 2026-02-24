@@ -5722,10 +5722,146 @@ ed(665.0*0.07)
     > 	modified:   repopw.txt
     > 	modified:   run/tmp/log.last.txt
     > 	modified:   run/tmp/log.next.txt.bak
-    > 	deleted:    tmp.txt
+    >	deleted:    tmp.txt
     > 
     > Untracked files:
     >   (use "git add <file>..." to include in what will be committed)
     > 	.bak/
     > 
     > no changes added to commit (use "git add" and/or "git commit -a")
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:37:00 priv.c:5815 !(bytesh/) $ sh$$ "git add repopw.txt run/tmp tmp.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:37:18 priv.c:5818 !(bytesh/) $ edit$$ ".gitignore" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:37:23.103450559 +0100
+    > --- .gitignore	2026-02-24 01:37:28.943450555 +0100
+    > ***************
+    > *** 1,6 ****
+    > --- 1,7 ----
+    >   a.out
+    > + .bak
+    >   run.bak
+    >   run.tmp.bak
+    >   run/a.out
+    >   run/b.out
+    >   run/log.txt
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:37:29 priv.c:5833 !(bytesh/) $ edit$$ ".gitignore" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:38:05.295450529 +0100
+    > --- .gitignore	2026-02-24 01:38:22.975450516 +0100
+    > ***************
+    > *** 6,10 ****
+    > --- 6,11 ----
+    >   run/b.out
+    >   run/log.txt
+    >   run/main.c
+    >   run/status.txt
+    >   run/cwd.txt
+    > + 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:38:24 priv.c:5847 !(bytesh/) $ cmdlogedit
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:39:21 priv.c:5850 !(bytesh/) $ edit$$ ".gitignore" $$ 
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:40:01.479450445 +0100
+    > --- .gitignore	2026-02-24 01:40:20.411450432 +0100
+    > ***************
+    > *** 6,11 ****
+    > --- 6,13 ----
+    >   run/b.out
+    >   run/log.txt
+    >   run/main.c
+    >   run/status.txt
+    >   run/cwd.txt
+    > + run/tmp/log.last.txt
+    > + run/tmp/log.next.txt.bak
+    >   
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:40:21 priv.c:5866 !(bytesh/) $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is up to date with 'origin/master2'.
+    > 
+    > Changes to be committed:
+    >   (use "git restore --staged <file>..." to unstage)
+    > 	modified:   repopw.txt
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 	deleted:    tmp.txt
+    > 
+    > Changes not staged for commit:
+    >   (use "git add <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   .gitignore
+    > 	modified:   run/cnslutil/diff.txt
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:40:26 priv.c:5887 !(bytesh/) $ sh$$ "git add repopw.txt .gitignore run/cnslutil/diff.txt" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:40:50 priv.c:5890 !(bytesh/) $ sh$$ "git commit -m ''" $$
+    > Aborting commit due to empty commit message.
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:41:04 priv.c:5894 !(bytesh/) $ sh$$ "git commit -m '.'" $$
+    > [master2 a7ce1ae] .
+    >  6 files changed, 90 insertions(+), 535 deletions(-)
+    >  delete mode 100644 tmp.txt
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:41:13 priv.c:5900 !(bytesh/) $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is ahead of 'origin/master2' by 1 commit.
+    >   (use "git push" to publish your local commits)
+    > 
+    > Changes not staged for commit:
+    >   (use "git add <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 
+    > no changes added to commit (use "git add" and/or "git commit -a")
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:41:27 priv.c:5914 !(bytesh/) $ sh$$ "git add run/tmp" $$
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:41:35 priv.c:5917 !(bytesh/) $ sh$$ "git status" $$
+    > On branch master2
+    > Your branch is ahead of 'origin/master2' by 1 commit.
+    >   (use "git push" to publish your local commits)
+    > 
+    > Changes to be committed:
+    >   (use "git restore --staged <file>..." to unstage)
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 
+    > Changes not staged for commit:
+    >   (use "git add <file>..." to update what will be committed)
+    >   (use "git restore <file>..." to discard changes in working directory)
+    > 	modified:   run/tmp/log.last.txt
+    > 	modified:   run/tmp/log.next.txt.bak
+    > 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:42:06 priv.c:5935 !(bytesh/) $ cat$$ ".gitignore" $$
+    > a.out
+    > .bak
+    > run.bak
+    > run.tmp.bak
+    > run/a.out
+    > run/b.out
+    > run/log.txt
+    > run/main.c
+    > run/status.txt
+    > run/cwd.txt
+    > run/tmp/log.last.txt
+    > run/tmp/log.next.txt.bak
+    > 

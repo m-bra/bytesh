@@ -1,16 +1,13 @@
-    > On branch master2
-    > Your branch is up to date with 'origin/master2'.
+    > a.out
+    > .bak
+    > run.bak
+    > run.tmp.bak
+    > run/a.out
+    > run/b.out
+    > run/log.txt
+    > run/main.c
+    > run/status.txt
+    > run/cwd.txt
+    > run/tmp/log.last.txt
+    > run/tmp/log.next.txt.bak
     > 
-    > Changes not staged for commit:
-    >   (use "git add/rm <file>..." to update what will be committed)
-    >   (use "git restore <file>..." to discard changes in working directory)
-    > 	modified:   repopw.txt
-    > 	modified:   run/tmp/log.last.txt
-    > 	modified:   run/tmp/log.next.txt.bak
-    > 	deleted:    tmp.txt
-    > 
-    > Untracked files:
-    >   (use "git add <file>..." to include in what will be committed)
-    > 	.bak/
-    > 
-    > no changes added to commit (use "git add" and/or "git commit -a")
