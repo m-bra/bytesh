@@ -5865,3 +5865,6 @@ ed(665.0*0.07)
     > run/tmp/log.last.txt
     > run/tmp/log.next.txt.bak
     > 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-24 02:43:09 priv.c:5951 !(bytesh/) $ gpgdecrypt$$ "repopw.txt" $$
