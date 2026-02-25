@@ -10128,4 +10128,135 @@ if (r == -1 && errno != ECHILD) goto err;
 
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-24 02:30:13 priv.c:5789 !(bytesh/) $ clbt
+[0x00] 2026-Feb-25 23:06:14 priv.c:6026 $ precompile
+    > /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c:283:1: warning: non-void function does not return a value [-Wreturn-type]
+    >   283 | end
+    >       | ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:110:17: note: expanded from macro 'end'
+    >   110 |     #define end blk_end
+    >       |                 ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:109:21: note: expanded from macro 'blk_end'
+    >   109 |     #define blk_end }
+    >       |                     ^
+    > 1 warning generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:67:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    67 | blk linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:69:31: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    69 | ret shgeneral_frombuf(action, &buf[0]);
+    >       |                               ^~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:68:35: note: passing argument to parameter here
+    >    68 | int shgeneral_frombuf(char, char *);
+    >       |                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:119:20: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   119 |   linebuf_t buf[6] initfromvalist;
+    >       |                    ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:207:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   207 |     linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:208:21: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'const char * _Nonnull' [-Wincompatible-pointer-types]
+    >   208 |     FILE *f = popen(buf, "r");
+    >       |                     ^~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:313:56: note: passing argument to parameter '__command' here
+    >   313 | __nodiscard FILE* _Nullable popen(const char* _Nonnull __command, const char* _Nonnull __mode);
+    >       |                                                        ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:215:26: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   215 |     stm linebuf_t buf[6] initfromvalist;
+    >       |                          ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:216:58: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   216 |     int res = shgeneral_frombuf(á³(action = wait, 'w'), buf);
+    >       |                                                        ^~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:74:42: note: passing argument to parameter 'buf' here
+    >    74 | int shgeneral_frombuf(char action, char *buf)
+    >       |                                          ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:244:12: warning: incompatible pointer types returning 'char *' from a function with result type 'int *' [-Wincompatible-pointer-types]
+    >   244 | stm return m;
+    >       |            ^
+    > 8 warnings generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/trpg.c:48:1: warning: non-void function does not return a value [-Wreturn-type]
+    >    48 | }
+    >       | ^
+    > 1 warning generated.
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-25 23:07:56 priv.c:6127 $ clbt
+[0x00] 2026-Feb-24 02:47:54 priv.c:6010 !(bytesh/) $ cnslutilh
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:47:58.515450104 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.h	2026-02-24 01:48:17.551450091 +0100
+    > ***************
+    > *** 537,541 ****
+    > --- 537,544 ----
+    >   
+    >   # define cp$$ cp,
+    >   # define chmodx$$ chmodx,
+    >   nil mkdirpcd(char *, char *, char *);
+    >   #define mkdirpcd$$ mkdirpcd("",
+    > + 
+    > + nil gituntrack(chr*,chr*,chr*);
+    > + #define gituntrack$$ gituntrack("",
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-25 23:08:00 priv.c:6027 $ clbt
+[0x00] 2026-Feb-24 02:46:24 priv.c:5991 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-02-24 01:46:30.339450167 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-02-24 01:47:39.363450118 +0100
+    > ***************
+    > *** 488,492 ****
+    > --- 488,498 ----
+    >   nil mkdirpcd(char *ignore, char *path, char *ignend)
+    >   blk mkdirp$$ path $$;
+    >   stm cd$$ path $$;
+    >   ret 0;
+    >   end
+    > + 
+    > + nil gituntrack(char *ignore, char *path, char *ignend)
+    > + blk sh$$ "git rm --cached %s", path $$;
+    > + stm sh$$ "git commit -m 'untrack %s'", path $$;
+    > + stm sh$$ "git push" $$;
+    > + ret 0;
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Feb-25 23:08:02 priv.c:6011 $ clbt
 

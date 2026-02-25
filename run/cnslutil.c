@@ -490,3 +490,10 @@ blk mkdirp$$ path $$;
 stm cd$$ path $$;
 ret 0;
 end
+
+nil gituntrack(char *ignore, char *path, char *ignend)
+blk sh$$ "git rm --cached %s", path $$;
+stm sh$$ "git commit -m 'untrack %s'", path $$;
+stm sh$$ "git push" $$;
+ret 0;
+end

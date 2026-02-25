@@ -539,3 +539,6 @@ void cd$$_(char *ignore, char const *path, char *ignore2);
 # define chmodx$$ chmodx,
 nil mkdirpcd(char *, char *, char *);
 #define mkdirpcd$$ mkdirpcd("",
+
+nil gituntrack(chr*,chr*,chr*);
+#define gituntrack$$ gituntrack("",

@@ -35,7 +35,7 @@ thn blk iff !strlen(lastline)
     stm strncpy(lastline, line, linebuf_tn);
     end
 
-stm rm$$ ROOTC("/gitstatus.tmp") $$;
+stm sh$$ "rm %s", ROOTC("/gitstatus.tmp") $$;
 ret lastresult = 1;	
 
 

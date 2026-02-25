@@ -86,7 +86,7 @@
 # define pkgs$$ sh$$ "pkg search %s",
 #
 
-# define termuxhome(p) mf$ "/data/data/com.termux/files/home/%s", p $
+# define termuxhome(p) mf( "/data/data/com.termux/files/home/%s", p )
 
 # define touch$$ sh$$ "touch %s",
 # define cargobuildrel sh$$ "CARGO_MSG_LIMIT=1 cargo lbuild --release > cargo.out 2>&1 ; cat cargo.out ; cat cargo.out | chooseedit" $$
@@ -98,4 +98,6 @@
 # define prjm5(p) termuxhome(mf( "prj/m5/%s", p ))
 
 # define prjbytesh(p) termuxhome(mf( "prj/bytesh/%s", p ))
+
+
 
