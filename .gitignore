@@ -11,3 +11,4 @@ run/cwd.txt
 run/tmp/log.last.txt
 run/tmp/log.next.txt.bak
 
+run/tmp/log.next.txt
