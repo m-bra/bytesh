@@ -214,4 +214,13 @@
 
     >@/data/data/com.termux/files/home/prj/m5/m5dump
     [0x00] 2026-Feb-23 22:29:57 priv.c:5498 !(bytesh/) $ clex
+[0x00] 2026-Mar-08 20:31:50 priv.c:7171 $ lsgrep$$ "run", "tmp" $$
+    > drwx------. 2 u0_a228 u0_a228 3.4K Mar  8 19:32 tmp
+    > -rw-------. 1 u0_a228 u0_a228  760 Mar  8 19:31 tmp.c
+    > -rw-------. 1 u0_a228 u0_a228 4.2K Mar  8 19:31 tmp.h
+    > drwx------. 2 u0_a228 u0_a228 3.4K Feb  2 23:22 tmpsub.bak
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 20:32:58 priv.c:7179 !(bytesh/) $ clex
 

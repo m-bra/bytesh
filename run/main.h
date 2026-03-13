@@ -13,6 +13,7 @@ void free(void *ptr);
 /* string.h */
 #ifndef NOSTRINGH
 char *strstr(char const *, char const *);
+char *strrchr(const char *s, int c); 
 char *strcpy(char *, char const *);
 char *strcat(char *, char const *);
 char *strncat(char *, char const *, size_t);
@@ -36,7 +37,6 @@ void *memcpy(
 #endif
 
 /* stdio.h */
-
 #ifndef NOSTDIOH
 
 struct FILE;
@@ -61,6 +61,8 @@ void rewind(FILE *);
 FILE *popen(char const *, char const *);
 int pclose(FILE *);
 
+/* fileno: Converts FILE pointer to integer file descriptor */
+int fileno(FILE *stream);
 
 size_t fread(       void *ptr,
                     size_t size, size_t n,
@@ -95,6 +97,13 @@ int geterrno();
 #define STDOUT_FILENO 1
 #define STDERR_FILENO 2
 int dup(int oldfd);
+
+ssize_t read(int fd, void *buf, size_t count);
+
+/* fsync: Flushes kernel-level buffers for a file descriptor to disk */
+int fsync(int fd);
+
+unsigned int sleep(unsigned int seconds);
 
 char *getcwd(char *buf, size_t size);
 pid_t fork();

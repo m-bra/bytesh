@@ -99,5 +99,68 @@
 
 # define prjbytesh(p) termuxhome(mf( "prj/bytesh/%s", p ))
 
+/*# define llamareqc$$ sh$$ \
+    "curl -sS "\
+	"http://localhost:8080/v1/messages"\
+	"--header 'Content-Type: application/json'"\
+	"--data '{"\
+	    "\"system\": \"You are a coding assistant. Print nothing before or after your generated C code.\","\
+	    "\"max_tokens\": 128,"\
+	    "\"messages\": [{\"role\": \"user\", \"content\": \"%s\"}]"\
+	"}' | jq -r '.content[0].text' | sed 's/\\\\n/\\n/g'", 
+*/
+/*curl http://localhost:8080/v1/messages   -H "Content-Type: application/json"   -d '{
+    "max_tokens": 256,
+    "system": "You are a helpful assistant.",
+    "messages": [
+      {"role": "user", "content": "Write the longest piece of arbitrary C code you can using the stdio library. Write nothingn else than just the code. No other phrases."}
+    ]                                                                                                                    }' | jq -r '.content[0].text'*/
 
+void llamacomplete(char *msg);
+
+# define llamacomplete$$ sh$$ \
+    "curl -sS --request POST "\
+        "--url http://localhost:8080/completion "\
+        "--header \"Content-Type: application/json\" "\
+        "--data '{\"prompt\": \"%s\", \"n_predict\": %d}' | jq -r '.content'",
+
+# define llamamsg$$ sh$$ \
+  "curl -sS http://localhost:8080/v1/messages   -H \"Content-Type: application/json\"   -d '{"\
+  "\"max_tokens\": 64,"\
+  "\"system\": \"\","\
+  "\"messages\": ["\
+  "   {\"role\": \"user\", \"content\": \"%s\"}"\
+  " ] "\
+  "}' | jq -r '.content[0].text'",
+
+# define llamamsgc$$ sh$$ \
+  "curl -sS http://localhost:8080/v1/messages   -H \"Content-Type: application/json\"   -d '{"\
+  "\"max_tokens\": 64,"\
+  "\"system\": \"You are a coding assistant. Generate C code only.\","\
+  "\"messages\": ["\
+  "   {\"role\": \"user\", \"content\": \"%s (In your response, do not give any explanation or commentary whatsoever.)\"}"\
+  " ] "\
+  "}' | jq -r '.content[0].text'",
+
+#define _IOFBF 0  /* Full buffering */
+#define _IOLBF 1  /* Line buffering */
+#define _IONBF 2  /* No buffering */
+
+// test
+
+# define test444 \
+    int setvbuf(FILE *stream, char *buf, int mode, size_t size);\
+    setvbuf(getstdout(), 0, _IONBF, 0);\
+    for seqto(i, 5) {\
+        printf("hello, ");\
+        fsync(fileno(getstdout()));\
+        sleep(1);\
+    }
+# define tmpc vim$$ ROOTC("/run/tmp.c") $$
+
+# define test564 llamacomplete("int a = 0; int b = a + /*fibonacci*/ ")
+
+# define stdioextc vim$$ ROOTC("/run/stdioext.c") $$
+
+# define llamacomplete2(x) using_original_stdout(llamacomplete(x))
 

@@ -26,25 +26,35 @@ char *es_(char *name, char *sz);
 #define es$ es___ INSERT_OPENING_PAREN
 #endif
 
-#define MALLOCLISTMAXPTRS 2048000
+#define MALLOCLISTMAXPTRS (1024) 
 typedef struct
 {
-	void *ptrs[MALLOCLISTMAXPTRS];
+	void **ptrs;
 	int nptrs;
 } malloclist_t;
+
 #define lastmalloc (malloclist->ptrs[malloclist->nptrs - 1])
+#define mtop lastmalloc
+
+#define minit \
+  malloclist_t malloclistobj; \
+  malloclistobj.ptrs = malloc(sizeof(void *) * MALLOCLISTMAXPTRS); \
+  malloclistobj.nptrs = 0; \
+  malloclist = &malloclistobj;
 
 #define mdecl \
   malloclist_t malloclistobj;\
+  malloclistobj.ptrs = malloc(sizeof(void*) * MALLOCLISTMAXPTRS); \
+  malloclistobj.nptrs = 0; \
   malloclist_t *malloclist = &malloclistobj;
 
 void *mallocadd_(malloclist_t *pmalloclist, int size);
-#define mallocadd(size) mallocadd_(malloclist, size)
+#define mallocadd(size) (mallocadd_(malloclist, size)) 
+#define mpush(size) mallocadd(size)
 
 void mfree_(malloclist_t *malloclist);
-#define mfree mfree_(malloclist)
+#define mfree do { mfree_(malloclist); } while (0)
 
-extern malloclist_t malloclistval;
 extern malloclist_t *malloclist;
 
 
@@ -87,8 +97,8 @@ extern int cen_line;
 #define theh printf("THen Err\n#define the thn goto err;\n");
 #define the thn goto err;
 #define ret return
-#define stmh printf("STateMent\n#define stm\n");
-#define stm
+#define stmh printf("STateMent\n#define stm \n");
+#define stm 
 #define s
 #define nop
 
@@ -131,13 +141,21 @@ extern int cen_line;
 
 #include <stdarg.h>
 
-char *mlinebufprintf_(malloclist_t *malloclist, char *fmt, ...);
-#define mlinebufprintf(...) mlinebufprintf_(malloclist, __VA_ARGS__)
+char *mprintf_(malloclist_t *malloclist, size_t size, char *fmt, ...);
+#define mlinebufprintf(...) mprintf_(malloclist, linebuf_tn * 6, __VA_ARGS__)
 #define malloclinebufprintf mlinebufprintf
 #define mf mlinebufprintf
 #define mf$ mlinebufprintf INSERT_OPENING_PAREN
 
 char *es_(char *name, char *sz);
+
+#define using_original_stdout(code) \
+    do { \
+        int current_stdout_fileno = dup(STDOUT_FILENO); \
+        stm dup2(ORIGINAL_STDOUT_FILENO, STDOUT_FILENO); \
+        stm code; \
+        stm dup2(current_stdout_fileno, STDOUT_FILENO); \
+    } while (0)
 
 #define BOOLTOSYS(b) (!(b))
 #define SYSTOBOOL(b) (!(b))
@@ -167,6 +185,15 @@ FILE *psh_(int ignored, char *fmt, ...);
 
 nil *mmap2(char const *filename, int *size);
 nil *mmapw(char const *filename, int *size);
+
+/**
+ * popencollect
+ * @command: The shell command to execute
+ * @buffer:  The char array to fill with output
+ * @buf_size: The capacity of the buffer
+ */
+int popenrcollect(const char *command, char *buffer, size_t buf_size); 
+
 
 #endif
  

@@ -1,0 +1,50 @@
+struct MemoryBlock {
+    char *data;
+    size_t size;
+};
+
+// This function is called as soon as data arrives
+size_t write_callback(void *contents, size_t size, size_t nmemb, void *userp) {
+    size_t realsize = size * nmemb;
+    struct MemoryBlock *mem = (struct MemoryBlock *)userp;
+
+    // Append new data to our buffer
+    char *pptr = realloc(mem->data, mem->size + realsize + 1);
+    if (!pptr) return 0; // Out of memory, aborts transfer
+
+    mem->data = pptr;
+    memcpy(&(mem->data[mem->size]), contents, realsize);
+    mem->size += realsize;
+    mem->data[mem->size] = 0;
+
+
+    char *key_pos = strstr(mem->data, "\"content\":");
+    if (key_pos) {
+    // Find the opening quote of the value string
+    char *open_quote = strchr(key_pos + 10, '\"');
+    if (open_quote) {
+        char *pptr2 = open_quote + 1;
+
+        // Iterate through the data to find the TRUE closing quote
+        while (*pptr2 != '\0') {
+            if (*pptr2 == '\"') {
+                int backslashes = 0;
+                char *back_ptr = pptr2 - 1;
+
+                // Count consecutive backslashes immediately preceding this quote
+                while (back_ptr >= open_quote + 1 && *back_ptr == '\\') {
+                    backslashes++;
+                    back_ptr--;
+                }
+
+                // If backslashes are even (0, 2, 4...), the quote is NOT escaped.
+                if (backslashes % 2 == 0) {
+                    // This is the real closing quote.
+                    // Tell libcurl to kill the connection NOW.
+                    return 0;
+                }
+                // If odd, it's an escaped quote (\"), so we keep looping.
+            }
+            pptr2++;
+        }
+    }

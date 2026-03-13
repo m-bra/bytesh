@@ -39,4 +39,6 @@ char *loads(char *filename);
 
 int waitpipe(pid_t senderpid, FILE *sender, FILE *receiver);
 
+char *fgetsnonl(char *str, int size, FILE *stream); 
+
 #endif

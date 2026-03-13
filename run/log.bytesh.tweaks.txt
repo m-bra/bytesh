@@ -10259,4 +10259,806 @@ if (r == -1 && errno != ECHILD) goto err;
 
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Feb-25 23:08:02 priv.c:6011 $ clbt
+[0x00] 2026-Mar-08 20:10:26 priv.c:7032 $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 19:10:31.716716587 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-03-08 19:12:40.420716495 +0100
+    > ***************
+    > *** 172,209 ****
+    >    * popencollect
+    >    * @command: The shell command to execute
+    >    * @buffer:  The char array to fill with output
+    >    * @buf_size: The capacity of the buffer
+    >    */
+    > ! inline int popencollect(const char *command, char *buffer, size_t buf_size) 
+    > ! {
+    > !     FILE *fp;
+    > !     char combined_cmd[1024];
+    > !     char line[256];
+    > ! 
+    > !     // Redirect stderr to stdout using "2>&1" so we capture everything
+    > !     snprintf(combined_cmd, sizeof(combined_cmd), "%s 2>&1", command);
+    > ! 
+    > !     fp = popen(combined_cmd, "r");
+    > !     if (fp == NULL) {
+    > !         return -1;
+    > !     }
+    > ! 
+    > !     // Initialize buffer as empty string
+    > !     buffer[0] = '\0';
+    > ! 
+    > !     // Read output line by line and append to the buffer
+    > !     while (fgets(line, sizeof(line), fp) != NULL) {
+    > !         if (strlen(buffer) + strlen(line) < buf_size - 1) {
+    > !             strcat(buffer, line);
+    > !         } else {
+    > !             // Buffer full - handle overflow if necessary
+    > !             break;
+    > !         }
+    > !     }
+    > ! 
+    > !     return pclose(fp);
+    > ! }
+    >   
+    >   
+    >   #endif
+    >    
+    > --- 172,181 ----
+    >    * popencollect
+    >    * @command: The shell command to execute
+    >    * @buffer:  The char array to fill with output
+    >    * @buf_size: The capacity of the buffer
+    >    */
+    > ! int popenrcollect(const char *command, char *buffer, size_t buf_size); 
+    >   
+    >   
+    >   #endif
+    >    
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 20:14:23 priv.c:7088 $ clbt
+[0x00] 2026-Mar-08 20:09:16 priv.c:7002 $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 19:09:21.332716637 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-03-08 19:09:38.108716625 +0100
+    > ***************
+    > *** 172,182 ****
+    >    * popencollect
+    >    * @command: The shell command to execute
+    >    * @buffer:  The char array to fill with output
+    >    * @buf_size: The capacity of the buffer
+    >    */
+    > ! inline int popencollect(const char *command, char *buffer, size_t buf_size) 
+    >   {
+    >       FILE *fp;
+    >       char combined_cmd[1024];
+    >       char line[256];
+    >   
+    > --- 172,182 ----
+    >    * popencollect
+    >    * @command: The shell command to execute
+    >    * @buffer:  The char array to fill with output
+    >    * @buf_size: The capacity of the buffer
+    >    */
+    > ! int popencollect(const char *command, char *buffer, size_t buf_size) 
+    >   {
+    >       FILE *fp;
+    >       char combined_cmd[1024];
+    >       char line[256];
+    >   
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 20:14:26 priv.c:7033 $ clbt
+[0x00] 2026-Mar-08 19:48:11 priv.c:6946 $ stdlibexth
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 18:58:59.592717082 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh///run/stdlibext.h	2026-03-08 19:07:29.284716717 +0100
+    > ***************
+    > *** 166,172 ****
+    > --- 166,213 ----
+    >   #define seqto(i, n) (int i = 0; i < n; ++i)
+    >   
+    >   nil *mmap2(char const *filename, int *size);
+    >   nil *mmapw(char const *filename, int *size);
+    >   
+    > + #include <stdio.h>
+    > + #include <stdlib.h>
+    > + #include <string.h>
+    > + 
+    > + /**
+    > +  * popencollect
+    > +  * @command: The shell command to execute
+    > +  * @buffer:  The char array to fill with output
+    > +  * @buf_size: The capacity of the buffer
+    > +  */
+    > + int popencollect(const char *command, char *buffer, size_t buf_size) 
+    > + {
+    > +     FILE *fp;
+    > +     char combined_cmd[1024];
+    > +     char line[256];
+    > + 
+    > +     // Redirect stderr to stdout using "2>&1" so we capture everything
+    > +     snprintf(combined_cmd, sizeof(combined_cmd), "%s 2>&1", command);
+    > + 
+    > +     fp = popen(combined_cmd, "r");
+    > +     if (fp == NULL) {
+    > +         return -1;
+    > +     }
+    > + 
+    > +     // Initialize buffer as empty string
+    > +     buffer[0] = '\0';
+    > + 
+    > +     // Read output line by line and append to the buffer
+    > +     while (fgets(line, sizeof(line), fp) != NULL) {
+    > +         if (strlen(buffer) + strlen(line) < buf_size - 1) {
+    > +             strcat(buffer, line);
+    > +         } else {
+    > +             // Buffer full - handle overflow if necessary
+    > +             break;
+    > +         }
+    > +     }
+    > + 
+    > +     return pclose(fp);
+    > + }
+    > + 
+    > + 
+    >   #endif
+    >    
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 20:14:28 priv.c:7003 $ clbt
+[0x00] 2026-Mar-08 20:32:11 priv.c:7178 $ precompile
+    > /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c:283:1: warning: non-void function does not return a value [-Wreturn-type]
+    >   283 | end
+    >       | ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:110:17: note: expanded from macro 'end'
+    >   110 |     #define end blk_end
+    >       |                 ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:109:21: note: expanded from macro 'blk_end'
+    >   109 |     #define blk_end }
+    >       |                     ^
+    > 1 warning generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:67:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    67 | blk linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:69:31: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    69 | ret shgeneral_frombuf(action, &buf[0]);
+    >       |                               ^~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:68:35: note: passing argument to parameter here
+    >    68 | int shgeneral_frombuf(char, char *);
+    >       |                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:119:20: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   119 |   linebuf_t buf[6] initfromvalist;
+    >       |                    ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:207:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   207 |     linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:208:21: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'const char * _Nonnull' [-Wincompatible-pointer-types]
+    >   208 |     FILE *f = popen(buf, "r");
+    >       |                     ^~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:313:56: note: passing argument to parameter '__command' here
+    >   313 | __nodiscard FILE* _Nullable popen(const char* _Nonnull __command, const char* _Nonnull __mode);
+    >       |                                                        ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:215:26: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   215 |     stm linebuf_t buf[6] initfromvalist;
+    >       |                          ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:216:58: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   216 |     int res = shgeneral_frombuf(á³(action = wait, 'w'), buf);
+    >       |                                                        ^~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:74:42: note: passing argument to parameter 'buf' here
+    >    74 | int shgeneral_frombuf(char action, char *buf)
+    >       |                                          ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:244:12: warning: incompatible pointer types returning 'char *' from a function with result type 'int *' [-Wincompatible-pointer-types]
+    >   244 | stm return m;
+    >       |            ^
+    > 8 warnings generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/trpg.c:48:1: warning: non-void function does not return a value [-Wreturn-type]
+    >    48 | }
+    >       | ^
+    > 1 warning generated.
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 20:32:42 priv.c:7280 $ clbt
+[0x00] 2026-Mar-08 21:09:01 priv.c:7544 !(bytesh/) $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:11 priv.c:7574 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:08:38 priv.c:7528 !(bytesh/) $ vim$$ "run/trpg.c" $$
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 20:08:41.988714090 +0100
+    > --- run/trpg.c	2026-03-08 20:09:00.504714077 +0100
+    > ***************
+    > *** 43,49 ****
+    > --- 43,50 ----
+    >   iff outofbounds
+    >   thn {}
+    >   iff outofbounds
+    >   thn printf ("Page not found.\n");
+    >   els printf ("%d\n", pg);
+    > + ret 0;
+    >   }
+    >   
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:13 priv.c:7545 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:07:51 priv.c:7523 !(bytesh/) $ vim$$ "run/stdlibext.c +244" $$
+    > diff: extra operand â+244â
+    > diff: Try 'diff --help' for more information.
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:15 priv.c:7529 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:06:33 priv.c:7518 !(bytesh/) $ vim$$ "run/stdlibext.c +216" $$
+    > diff: extra operand â+216â
+    > diff: Try 'diff --help' for more information.
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:18 priv.c:7524 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:06:19 priv.c:7513 !(bytesh/) $ vim$$ "run/stdlibext.c +208" $$
+    > diff: extra operand â+208â
+    > diff: Try 'diff --help' for more information.
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:21 priv.c:7519 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:06:00 priv.c:7463 !(bytesh/) $ precompile
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:208:21: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'const char * _Nonnull' [-Wincompatible-pointer-types]
+    >   208 |     FILE *f = popen(buf, "r");
+    >       |                     ^~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:313:56: note: passing argument to parameter '__command' here
+    >   313 | __nodiscard FILE* _Nullable popen(const char* _Nonnull __command, const char* _Nonnull __mode);
+    >       |                                                        ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:216:58: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   216 |     int res = shgeneral_frombuf(á³(action = wait, 'w'), buf);
+    >       |                                                        ^~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:74:42: note: passing argument to parameter 'buf' here
+    >    74 | int shgeneral_frombuf(char action, char *buf)
+    >       |                                          ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:244:12: warning: incompatible pointer types returning 'char *' from a function with result type 'int *' [-Wincompatible-pointer-types]
+    >   244 | stm return m;
+    >       |            ^
+    > 3 warnings generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/trpg.c:48:1: warning: non-void function does not return a value [-Wreturn-type]
+    >    48 | }
+    >       | ^
+    > 1 warning generated.
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:23 priv.c:7514 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:04:57 priv.c:7458 !(bytesh/) $ vim$$ "run/stdlibext.c +69" $$
+    > diff: extra operand â+69â
+    > diff: Try 'diff --help' for more information.
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:26 priv.c:7464 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:04:16 priv.c:7453 !(bytesh/) $ vim$$ "run/stdlibext.c +63" $$
+    > diff: extra operand â+63â
+    > diff: Try 'diff --help' for more information.
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:28 priv.c:7459 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:03:14 priv.c:7434 !(bytesh/) $ cnslutilc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 20:03:28.524714315 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/run/cnslutil.c	2026-03-08 20:04:15.432714281 +0100
+    > ***************
+    > *** 278,287 ****
+    > --- 278,288 ----
+    >   	np&&fnct&&fputs(   mf("}%c", *NLS),      f);
+    >   	pp&&fnct&&fputs(mf("#define %s %s%c", ident, szdefb, *NLS), f);
+    >   
+    >   stm dup2(current_stdout_fileno, STDOUT_FILENO);
+    >   stm printf("%s%s", promptarr[1], szdefb);
+    > + ret 0;
+    >   end
+    >   
+    >   #undef programm
+    >   void programm()
+    >   {
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:30 priv.c:7454 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:02:53 priv.c:7332 !(bytesh/) $ precompile
+    > /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c:283:1: warning: non-void function does not return a value [-Wreturn-type]
+    >   283 | end
+    >       | ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:110:17: note: expanded from macro 'end'
+    >   110 |     #define end blk_end
+    >       |                 ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.h:109:21: note: expanded from macro 'blk_end'
+    >   109 |     #define blk_end }
+    >       |                     ^
+    > 1 warning generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:67:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    67 | blk linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:69:31: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >    69 | ret shgeneral_frombuf(action, &buf[0]);
+    >       |                               ^~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:68:35: note: passing argument to parameter here
+    >    68 | int shgeneral_frombuf(char, char *);
+    >       |                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:119:20: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   119 |   linebuf_t buf[6] initfromvalist;
+    >       |                    ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:207:22: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   207 |     linebuf_t buf[6] initfromvalist;
+    >       |                      ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:208:21: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'const char * _Nonnull' [-Wincompatible-pointer-types]
+    >   208 |     FILE *f = popen(buf, "r");
+    >       |                     ^~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:313:56: note: passing argument to parameter '__command' here
+    >   313 | __nodiscard FILE* _Nullable popen(const char* _Nonnull __command, const char* _Nonnull __mode);
+    >       |                                                        ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:215:26: warning: incompatible pointer types passing 'linebuf_t *' (aka 'char (*)[256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   215 |     stm linebuf_t buf[6] initfromvalist;
+    >       |                          ^~~~~~~~~~~~~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:63:15: note: expanded from macro 'initfromvalist'
+    >    63 |     vsnprintf(&buf[0], sizeof(linebuf_t) * 6, fmt, args); \
+    >       |               ^~~~~~~
+    > /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:292:51: note: passing argument to parameter '__buf' here
+    >   292 | int vsnprintf(char* __BIONIC_COMPLICATED_NULLNESS __buf, size_t __size, const char* _Nonnull __fmt, va_list __args) __printflike(3, 0);
+    >       |                                                   ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:216:58: warning: incompatible pointer types passing 'linebuf_t[6]' (aka 'char[6][256]') to parameter of type 'char *' [-Wincompatible-pointer-types]
+    >   216 |     int res = shgeneral_frombuf(á³(action = wait, 'w'), buf);
+    >       |                                                        ^~~
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:74:42: note: passing argument to parameter 'buf' here
+    >    74 | int shgeneral_frombuf(char action, char *buf)
+    >       |                                          ^
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:244:12: warning: incompatible pointer types returning 'char *' from a function with result type 'int *' [-Wincompatible-pointer-types]
+    >   244 | stm return m;
+    >       |            ^
+    > 8 warnings generated.
+    > /data/data/com.termux/files/home/prj/bytesh//run/trpg.c:48:1: warning: non-void function does not return a value [-Wreturn-type]
+    >    48 | }
+    >       | ^
+    > 1 warning generated.
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:09:48 priv.c:7435 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:12:31 priv.c:7350 !(bytesh/) $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:12:43 priv.c:7380 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:18:36 priv.c:7477 !(bytesh/) $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:18:44 priv.c:7507 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 21:23:02 priv.c:7527 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:23:08 priv.c:7557 $ clbt
+[0x00] 2026-Mar-08 21:32:18 priv.c:7615 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil.    > o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte    > rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 21:32:35 priv.c:7645 $ clbt
+[0x00] 2026-Mar-08 23:04:58 priv.c:8827 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:03 priv.c:8857 $ clbt
+[0x00] 2026-Mar-08 23:03:53 priv.c:8797 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:06 priv.c:8828 $ clbt
+[0x00] 2026-Mar-08 23:02:27 priv.c:8778 $ tmph
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 22:02:29.028709207 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.h	2026-03-08 22:02:36.436709202 +0100
+    > ***************
+    > *** 144,153 ****
+    > --- 144,155 ----
+    >   
+    >   #define _IOFBF 0  /* Full buffering */
+    >   #define _IOLBF 1  /* Line buffering */
+    >   #define _IONBF 2  /* No buffering */
+    >   
+    > + // test
+    > + 
+    >   # define test444 \
+    >       int setvbuf(FILE *stream, char *buf, int mode, size_t size);\
+    >       setvbuf(getstdout(), 0, _IONBF, 0);\
+    >       for seqto(i, 5) {\
+    >           printf("hello, ");\
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:08 priv.c:8798 $ clbt
+[0x00] 2026-Mar-08 23:02:19 priv.c:8774 $ test444
+    > hello,  hello,  hello,  hello,  hello, 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:13 priv.c:8778 $ clbt
+[0x00] 2026-Mar-08 23:01:53 priv.c:8742 $ compilerc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-08 22:01:55.272709231 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh/main.c	2026-03-08 22:02:13.224709219 +0100
+    > ***************
+    > *** 346,357 ****
+    >       int in = ctxt->interactive;
+    >   
+    >   #undef áª
+    >   #define áª(...)
+    >   
+    > !     //int faoutflags = fcntl(fileno(faout), F_GETFL, 0);
+    > !     //fcntl(fileno(faout), F_SETFL, faoutflags | O_NONBLOCK);
+    >   
+    >       int runstatus = 0xFF;
+    >       int dolineprefix = 1; 
+    >       rep blk áª(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
+    >               # define dlp dolineprefix 
+    > --- 346,357 ----
+    >       int in = ctxt->interactive;
+    >   
+    >   #undef áª
+    >   #define áª(...)
+    >   
+    > !     int faoutflags = fcntl(fileno(faout), F_GETFL, 0);
+    > !     fcntl(fileno(faout), F_SETFL, faoutflags | O_NONBLOCK);
+    >   
+    >       int runstatus = 0xFF;
+    >       int dolineprefix = 1; 
+    >       rep blk áª(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
+    >               # define dlp dolineprefix 
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:18 priv.c:8775 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 23:01:09 priv.c:8737 $ printf("A\nB\nC\n");
+    > A
+    > B
+    > C
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:20 priv.c:8743 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 23:00:58 priv.c:8733 $ test444
+    > hello, hello, hello, hello, hello, 
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:22 priv.c:8737 !(bytesh/) $ clbt
+return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:05:24 priv.c:8734 !(bytesh/) $ clbt
+[0x00] 2026-Mar-08 23:23:27 priv.c:9149 $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:23:35 priv.c:9179 $ clbt
+[0x00] 2026-Mar-08 23:20:47 priv.c:9115 !(bytesh/) $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c:282:52: fatal error: use of undeclared label 'err'
+    >   282 |               if (r == -1 && errno != ECHILD) goto err;
+    >       |                                                    ^
+    > 1  error generated.
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-08 23:23:37 priv.c:9150 !(bytesh/) $ clbt
+[0x00] 2026-Mar-09 04:06:05 priv.c:10265 !(bytesh/) $ precompile
+    > (tag)
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com.termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com.termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/data/com.termux/files/home/prj/bytesh//run/mainstatic. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com.termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/com.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/data/com.termux/files/home/prj/bytesh//run/stringutil. o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com.termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data/com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/data/com.termux/files/home/prj/bytesh//run/userinte rface.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.termux/files/home/prj/bytesh//run/tmp.o
+    > gcc -g -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/com.termux/files/home/prj/bytesh//run/example.o
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-09 04:06:10 priv.c:10295 !(bytesh/) $ clbt
+[0x00] 2026-Mar-13 18:48:41 priv.c:17998 $ tmpc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-13 17:48:44.848121666 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/tmp.c	2026-03-13 17:48:59.756121655 +0100
+    > ***************
+    > *** 265,275 ****
+    >       struct pollfd pfd = {0, POLLIN, 0}; 
+    >       rep 
+    >       {
+    >           char *newtext = llamacompleteone(text);
+    >   
+    > !         /*
+    >       char *src = newtext;
+    >       char unescnewtext[strlen(text) + 1];
+    >       memcpy(unescnewtext, src, strlen(newtext) + 1);
+    >       char *dst = unescnewtext;
+    >   
+    > --- 265,275 ----
+    >       struct pollfd pfd = {0, POLLIN, 0}; 
+    >       rep 
+    >       {
+    >           char *newtext = llamacompleteone(text);
+    >   
+    > !         / *
+    >       char *src = newtext;
+    >       char unescnewtext[strlen(text) + 1];
+    >       memcpy(unescnewtext, src, strlen(newtext) + 1);
+    >       char *dst = unescnewtext;
+    >   
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-13 18:49:02 priv.c:18028 $ clbt
+[0x00] 2026-Mar-13 18:48:31 priv.c:17958 $ precompile
+    > (tag)
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/build.c -o /data/data/com .termux/files/home/prj/bytesh//run/build.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/cnslutil.c -o /data/data/ com.termux/files/home/prj/bytesh//run/cnslutil.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/errno.c -o /data/data/com .termux/files/home/prj/bytesh//run/errno.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/htmlutil.c -o /data/data/ com.termux/files/home/prj/bytesh//run/htmlutil.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mainstatic.c -o /data/dat a/com.termux/files/home/prj/bytesh//run/mainstatic.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/mntc.c -o /data/data/com. termux/files/home/prj/bytesh//run/mntc.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c -o /data/data/ com.termux/files/home/prj/bytesh//run/stdioext.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/scanfs.c -o /data/data/co m.termux/files/home/prj/bytesh//run/scanfs.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stdlibext.c -o /data/data /com.termux/files/home/prj/bytesh//run/stdlibext.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringext.c -o /data/data /com.termux/files/home/prj/bytesh//run/stringext.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/stringutil.c -o /data/dat a/com.termux/files/home/prj/bytesh//run/stringutil.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/trpg.c -o /data/data/com. termux/files/home/prj/bytesh//run/trpg.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/unistdext.c -o /data/data /com.termux/files/home/prj/bytesh//run/unistdext.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/userinterface.c -o /data/ data/com.termux/files/home/prj/bytesh//run/userinterface.o
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/tmp.c -o /data/data/com.t ermux/files/home/prj/bytesh//run/tmp.o
+    > /data/data/com.termux/files/home/prj/bytesh//run/tmp.c:270:9: warning: '/*' within block comment [-Wcomment]
+    >   270 |         /*
+    >       |         ^
+    > 1 warning generated.
+    > gcc -g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors -DBYTESH_DISABLE_OPTIMIZATION -I/data/data/com.termux/files/home/prj/bytesh//../arrfile/ -DDEFSTRCHRNUL  -c /data/data/com.termux/files/home/prj/bytesh//run/example.c -o /data/data/c om.termux/files/home/prj/bytesh//run/example.o
+
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-13 18:49:05 priv.c:17999 $ clbt
 

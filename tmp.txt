@@ -1,0 +1,20 @@
+ rep blk ᛪ(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
+            # define dlp dolineprefix 
+        rep blk
+            chr line [linebuf_tn];
+	        iff ({fflush(faout); !fgetsnonl(line, linebuf_tn, faout);})
+	        thn break;
+	        stm if ( in) printfflush ("%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
+	        stm if ( in) fprintf (cmdlogfile, "%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
+            stm if (!in) printfflush ("%s", line); 
+            stm dolineprefix = line[strlen(line)-1] == '\n';
+            end 
+        int wstatus;
+        iff ({int r = waitpid(-1, &wstatus, WNOHANG);
+              if (r == -1 && errno != ECHILD) goto err;
+              r;}) 
+         && WIFEXITED(wstatus)
+        thn {runstatus = WEXITSTATUS(wstatus); break;}
+        end
+
+

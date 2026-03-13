@@ -45,5 +45,6 @@ thn {}
 iff outofbounds
 thn printf ("Page not found.\n");
 els printf ("%d\n", pg);
+ret 0;
 }
 

@@ -13,6 +13,7 @@
 #include <sys/types.h>
 #include <time.h>
 //#include <termios.h>
+#include <poll.h>
 
 typedef char **ppchar;
 typedef char *pchar;
@@ -104,7 +105,8 @@ stm FILE *cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
 	while (0) \
 
 rep
-blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
+blk stm mdecl; 
+    stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     stm ctxt->linebuf[0] = 0;
 
     stm pchar cctxt = (pchar) ctxt;
@@ -283,7 +285,10 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     iff SYSTOBOOL(compilestatus) 
     thn 
     blk
-    stm cp, ctxtmwf("a.out"), "/data/data/com.termux/files/home/a.out", endsh;
+
+    stm //ed$ malloclist->nptrs $
+   
+   ;stm cp, ctxtmwf("a.out"), "/data/data/com.termux/files/home/a.out", endsh;
     stm chmodx, "/data/data/com.termux/files/home/a.out", endsh;
 
     stm fclose(cmdlogfile);
@@ -292,7 +297,7 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 
     int stdoutfileno = dup(STDOUT_FILENO);
     stm FILE *faout =
-            popen (mf("%s %s %d", runopt, "/data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
+            popen (mf("%s %s %d", runopt, "stdbuf -o0 /data/data/com.termux/files/home/a.out", stdoutfileno), "r"); 
     //s sh, "/data/data/com.termux/files/home/a.out", endsh;
 
     int in = ctxt->interactive;
@@ -300,23 +305,34 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
 #undef ᛪ
 #define ᛪ(...)
 
+    int faoutflags = fcntl(fileno(faout), F_GETFL, 0);
+    fcntl(fileno(faout), F_SETFL, faoutflags | O_NONBLOCK);
+
+    struct pollfd pfd;
+    pfd.fd = fileno(faout);
+    pfd.events = POLLIN;
+
     int runstatus = 0xFF;
+    int dolineprefix = 1; 
     rep blk ᛪ(faout, cmdlogfile, stdout, /*pid*/-1, runstatus)
+            # define dlp dolineprefix 
         rep blk
             chr line [linebuf_tn];
-	    iff ({fflush(faout); !fgets(line, linebuf_tn, faout);})
-	    thn break;
-	    stm if ( in) printfflush ("%s> %s", GLOBAL_INDENT, line);
-	    stm if ( in) fprintf (cmdlogfile, "%s> %s", GLOBAL_INDENT, line);
+	        iff ({fflush(faout); poll(&pfd, 1, 100) <= 0 || !fgetsnonl(line, linebuf_tn, faout);})
+	        thn break;
+	        stm if ( in) printfflush ("%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
+	        stm if ( in) fprintf (cmdlogfile, "%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
             stm if (!in) printfflush ("%s", line); 
-	    end 
+            stm dolineprefix = line[strlen(line)-1] == '\n';
+            end 
         int wstatus;
         iff ({int r = waitpid(-1, &wstatus, WNOHANG);
               if (r == -1 && errno != ECHILD) goto err;
               r;}) 
          && WIFEXITED(wstatus)
         thn {runstatus = WEXITSTATUS(wstatus); break;}
-        end 
+        stm sleep(1);
+        end
 
     stm if (faout) pclose(faout);
 
@@ -351,9 +367,9 @@ blk stm loadcwd(ctxt->rootworkdir); getcwd(ctxt->cwd, linebuf_tn);
     iff !ctxt->interactive
     thn break;
 
-    stm strcpy(ctxt->lastline, ctxt->linebuf);
+   ;stm strcpy(ctxt->lastline, ctxt->linebuf);
     stm ctxt->isfirstcmd = 0;
-
+    stm mfree;
 blk_end
 
     return 0; 
@@ -365,10 +381,13 @@ els printf("Error at %s:%d\n", __FILE__, __LINE__);
     return 1;
 end
 
+malloclist_t *malloclist;
+
 int main(int iargc, char **iargv) 
 blk
 //s uiunbuffered();
 
+stm minit;
 chr *cmd = NULL;
 
 iff 2 < iargc
@@ -462,9 +481,11 @@ thn fprintf(ctxt->srcfile, "%s", mf("#include \"%s\"\n", cwdinclude));
     fprintf(ctxt->srcfile, "int main_interactive = %d;", ctxt->interactive);
     fprintf(ctxt->srcfile, "int syssh = %d;\n", ctxt->syssh);
     fprintf(ctxt->srcfile, "char *rootworkdir = \"%s\";", ctxt->rootworkdir);
+    fprintf(ctxt->srcfile, "malloclist_t *malloclist;");
     fprintf(ctxt->srcfile, "int isfirstcmd = %d;", ctxt->isfirstcmd);
     fprintf(ctxt->srcfile, "\n");
     fprintf(ctxt->srcfile, "int main(int argc, char **argv) {\n");
+    fprintf(ctxt->srcfile,     "minit;");
     fprintf(ctxt->srcfile,     "MAIN_BEGIN\n");    
     fprintf(ctxt->srcfile,     "#ifdef BYTESH_DISABLE_OPTIMIZATION\n");
     fprintf(ctxt->srcfile,     "EVALECHO (\n");

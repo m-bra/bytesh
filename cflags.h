@@ -1,7 +1,7 @@
 #define CFLAGS(defstrchrnul) defstrchrnul == -1 ? CFLAGS_(1) : CFLAGS_(defstrchrnul) 
 
 #define CFLAGS_(defstrchrnul) \
-    mf( "-g -Wfatal-errors " \
+    mf( "-g -lcurl -ljansson -Wno-unused-command-line-argument -Wfatal-errors " \
         "-DBYTESH_DISABLE_OPTIMIZATION " \
 	"-I%s/../arrfile/ " \
 	"%s", ROOT, defstrchrnul ? "-DDEFSTRCHRNUL" : "" )

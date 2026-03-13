@@ -146,3 +146,53 @@ err:
 stm printf("Error from %s:%d\n", __FILE__, __LINE__);
 stm return 111;
 end
+
+/**
+ * fgetsnonl - Similar to fgets, but returns as soon as data is available.
+ * @str: Buffer to store the output.
+ * @size: Maximum number of characters to read (including null terminator).
+ * @stream: The FILE stream to read from (e.g., faout).
+ * * Returns: str on success, NULL on EOF or error.
+ */
+/*char *fgetsnonl(char *str, int size, FILE *stream) {
+    if (size <= 1) return NULL;
+
+    int fd = fileno(stream);
+    
+    // read() is a "blocking" call by default, but it returns 
+    // as soon as ANY amount of data hits the pipe.
+    ssize_t n = read(fd, str, size - 1);
+
+    if (n <= 0) {
+        return NULL; // EOF or Error
+    }
+
+    str[n] = '\0'; // Manually null-terminate
+    return str;
+}*/
+char *fgetsnonl(char *str, int size, FILE *stream) {
+    if (size <= 1) return NULL;
+
+    int fd = fileno(stream);
+    int i = 0;
+    char c;
+
+    // Read char-by-char until buffer is full or newline is hit
+    while (i < size - 1) {
+        ssize_t n = read(fd, &c, 1);
+
+        if (n <= 0) {
+            if (i == 0) return NULL; // EOF/Error on first char
+            break;                   // EOF/Error after some data
+        }
+
+        str[i++] = c;
+
+        if (c == '\n') break; // Found newline, stop reading
+    }
+
+    str[i] = '\0';
+    return str;
+}
+
+

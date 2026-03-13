@@ -280,6 +280,7 @@ stm fnct&&fputs(mf("#define %sh printf(%c%%s%c, %cFound in: $ %s%cn%c)%c",
 
 stm dup2(current_stdout_fileno, STDOUT_FILENO);
 stm printf("%s%s", promptarr[1], szdefb);
+ret 0;
 end
 
 #undef programm

@@ -154,7 +154,7 @@ void *mallocadd_(malloclist_t *pmalloclist, int size)
 
 void mfree_(malloclist_t *malloclist)
 {
-	MALLOCLISTDEBUG printf("mfree "); // ed(malloclist->nptrs);
+	MALLOCLISTDEBUG printf("mfree "); ed(malloclist->nptrs);
 	
 	for (int i = 0; i < malloclist->nptrs; ++i)
 		free(malloclist->ptrs[i]);
