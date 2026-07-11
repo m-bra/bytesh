@@ -11061,4 +11061,37 @@ return mlinebufprintf("%s/%s", ctxt->rootworkdir, path);
 
     >@/data/data/com.termux/files/home/prj/bytesh
     [0x00] 2026-Mar-13 18:49:05 priv.c:17999 $ clbt
+[0x00] 2026-Mar-13 23:01:37 priv.c:18934 !(bytesh/) $ stdioextc
+    > *** /data/data/com.termux/files/home/prj/bytesh//run/cnslutil/diff.txt	2026-03-13 22:01:39.760097061 +0100
+    > --- /data/data/com.termux/files/home/prj/bytesh//run/stdioext.c	2026-03-13 22:02:32.504097023 +0100
+    > ***************
+    > *** 89,100 ****
+    >   }
+    >   
+    >   char *fgetm_(malloclist_t *malloclist, int n, FILE *f)
+    >   {
+    >   	mallocadd(n);
+    > ! 	char *r = fgets(lastmalloc, n, f);
+    > ! 	return r ? lastmalloc : 0;	
+    >   }
+    >   
+    >   char *fgetmclose_(malloclist_t *malloclist, int n, FILE *f)
+    >   {
+    >   	char *result = fgetm(n, f);
+    > --- 89,100 ----
+    >   }
+    >   
+    >   char *fgetm_(malloclist_t *malloclist, int n, FILE *f)
+    >   {
+    >   	mallocadd(n);
+    > ! 	char *r = fgets(mtop, n, f);
+    > ! 	return r ? mtop : 0;	
+    >   }
+    >   
+    >   char *fgetmclose_(malloclist_t *malloclist, int n, FILE *f)
+    >   {
+    >   	char *result = fgetm(n, f);
+
+    >@/data/data/com.termux/files/home/prj/bytesh
+    [0x00] 2026-Mar-13 23:02:40 priv.c:18966 !(bytesh/) $ clbt
 

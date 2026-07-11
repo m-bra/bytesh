@@ -26,7 +26,7 @@ char *es_(char *name, char *sz);
 #define es$ es___ INSERT_OPENING_PAREN
 #endif
 
-#define MALLOCLISTMAXPTRS (1024) 
+#define MALLOCLISTMAXPTRS (10240) 
 typedef struct
 {
 	void **ptrs;
@@ -186,12 +186,6 @@ FILE *psh_(int ignored, char *fmt, ...);
 nil *mmap2(char const *filename, int *size);
 nil *mmapw(char const *filename, int *size);
 
-/**
- * popencollect
- * @command: The shell command to execute
- * @buffer:  The char array to fill with output
- * @buf_size: The capacity of the buffer
- */
 int popenrcollect(const char *command, char *buffer, size_t buf_size); 
 
 

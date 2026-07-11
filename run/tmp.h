@@ -118,13 +118,13 @@
 
 void llamacomplete(char *msg);
 
-# define llamacomplete$$ sh$$ \
+//# define llamacomplete$$ sh$$ \
     "curl -sS --request POST "\
         "--url http://localhost:8080/completion "\
         "--header \"Content-Type: application/json\" "\
         "--data '{\"prompt\": \"%s\", \"n_predict\": %d}' | jq -r '.content'",
 
-# define llamamsg$$ sh$$ \
+//# define llamamsg$$ sh$$ \
   "curl -sS http://localhost:8080/v1/messages   -H \"Content-Type: application/json\"   -d '{"\
   "\"max_tokens\": 64,"\
   "\"system\": \"\","\
@@ -163,4 +163,3 @@ void llamacomplete(char *msg);
 # define stdioextc vim$$ ROOTC("/run/stdioext.c") $$
 
 # define llamacomplete2(x) using_original_stdout(llamacomplete(x))
-

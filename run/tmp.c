@@ -435,6 +435,23 @@ void llamacomplete(char *rawmsg) {
 }
 
 
+// unimplemented
+int cmdloglastresult() {
+chr *whitespace = " ";
+stm FILE *file = popen("tail -n 4096 example.txt", "r");
+ifn file
+the while (fgetm(linebuf_tn, file)) {
+    iff (asstr mtop)[strspn(asstr mtop, " ")]  == '>'
+    thn printf("%s", asstr mtop);
+    }
+    
+stm pclose(file);
+ret 0;
+err:
+stm printf("Error at %s:%d\n", __FILE__, __LINE__);
+ret 1;
+}
+
 __attribute__((noinline, used))
 void llamacompleteold(char *msg)
 {

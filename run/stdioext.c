@@ -91,8 +91,8 @@ char *fgetsclose(char *sz, int n, FILE *f)
 char *fgetm_(malloclist_t *malloclist, int n, FILE *f)
 {
 	mallocadd(n);
-	char *r = fgets(lastmalloc, n, f);
-	return r ? lastmalloc : 0;	
+	char *r = fgets(mtop, n, f);
+	return r ? mtop : 0;	
 }
 
 char *fgetmclose_(malloclist_t *malloclist, int n, FILE *f)
@@ -109,10 +109,10 @@ char *fgetallmclose_(malloclist_t *malloclist, int n, FILE *f)
 }
 
 int readm_(malloclist_t *malloclist, int fd, size_t size)
-{
-	mallocadd(size);
-	return read(fd, lastmalloc, size);
-}
+blk
+stm mpush (size);
+ret read(fd, mtop, size);
+end
 
 void fputsclose(char *sz, FILE *f)
 {
