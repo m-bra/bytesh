@@ -172,6 +172,7 @@ int shdirectout(char *, char *fmt, ...);
 int shfd_(int ignored, char *fmt, ...);
 FILE *psh_(int ignored, char *fmt, ...);
 
+#define shdr$$ shdirect$$
 #define shdirect$$ shdirectout ( 0,
 #define sh$$ sh_ ( 0 ,
 #define sh sh_ ( 0

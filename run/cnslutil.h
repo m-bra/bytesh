@@ -24,7 +24,8 @@
 #define NBUFFERED_OUT(text, f) mf("%s", text)
 #define BUFFERED_OUT(text, f) mf("%s > %s ; micro %s", text, f, f)
 
-#define lsraw(pipe) mf$ "ls %s", pipe $
+#define lsraw(pipe) mf$ "ls %s | %s", pipe, \
+                        "sed 's/.u0_a228//g'" $
 #ifndef lsrawdef
 #define lswrap(...) __VA_ARGS__
 #endif 
@@ -542,3 +543,5 @@ nil mkdirpcd(char *, char *, char *);
 
 nil gituntrack(chr*,chr*,chr*);
 #define gituntrack$$ gituntrack("",
+# define diff$$ sh$$ "diff %s %s",
+

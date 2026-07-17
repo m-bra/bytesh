@@ -102,7 +102,7 @@ stm pclose (datefile);
 //stm pclose (datedatefile);
 
 chr *status = mf(
-    	mf("\n%s%s", "%s>@%s\n%s[0x%02X] ", PROMPT), 
+    	mf("\n%s%s", "%s>@%s\n%s[0x%02X] ", mf(PROMPT, GLOBAL_INDENT)), 
         GLOBAL_INDENT, cwd,	
 	GLOBAL_INDENT, runstatus, 
     	

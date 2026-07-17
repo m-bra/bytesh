@@ -2384,4 +2384,12 @@ lsc    > total 747K
 
     >@/data/data/com.termux/files/home/prj/m5
     [0x00] 2026-Feb-23 01:27:59 priv.c:6345 !(bytesh/) $ cltr
+[0x00] 2026-Jul-15 13:41:03 priv.c:21656 !(bytesh/) 
+    $ cltr
+[0x00] 2026-Jul-15 13:42:45 priv.c:21657 !(bytesh/) 
+    $ cltr
+[0x00] 2026-Jul-15 13:42:48 priv.c:21658 !(bytesh/) 
+    $ cltr
+[0x00] 2026-Jul-15 14:17:12 priv.c:21685 
+    $ cltr
 

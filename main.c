@@ -121,7 +121,7 @@ blk stm mdecl;
             stm fputsclose("", fopen(ROOTC("/insert.c"), "w"));
             iff strlen(cmd)
             thn printf("<insert.c>\n\n");
-            els cmd = mgetline(mf("%s%%02d $ ", whitestatus()));
+            els cmd = mgetline(mf("%s# %%02d $ ", GLOBAL_INDENT));
             blk_end
         iff ctxt->setemptyline
            thn blk
@@ -320,8 +320,8 @@ blk stm mdecl;
             chr line [linebuf_tn];
 	        iff ({fflush(faout); poll(&pfd, 1, 100) <= 0 || !fgetsnonl(line, linebuf_tn, faout);})
 	        thn break;
-	        stm if ( in) printfflush ("%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
-	        stm if ( in) fprintf (cmdlogfile, "%s%s %s", dlp ? GLOBAL_INDENT : "", dlp ? ">" : "", line);
+	        stm if ( in) printfflush ("%s%s%s", dlp ? GLOBAL_INDENT : "", dlp ? "> " : "", line);
+	        stm if ( in) fprintf (cmdlogfile, "%s%s%s", dlp ? GLOBAL_INDENT : "", dlp ? "> " : "", line);
             stm if (!in) printfflush ("%s", line); 
             stm dolineprefix = line[strlen(line)-1] == '\n';
             end 
@@ -423,7 +423,7 @@ end
 
 chr *whitestatus() 
 blk
-chr *status = mallocaddlinebuf;
+chr *status mpushlinebuf;
 stm FILE *statusfile = fopen(ROOTC("/run/status.txt"), "r");
 rep ifn fgets(status, linebuf_tn, statusfile)
     thn break;

@@ -8,7 +8,7 @@
 #define userinterfacehaddfn(ident) haddfn("userinterface", ident)
 #define userinterfacehadddef(ident) hadditem("userinterface", ident, 1)
 
-#define clear sh, "clear", endsh
+//#define clear sh, "clear", endsh
 
 #define ARROW_CONTROL_KEYh printf("%s", "Found in: $ userinterfaceh\n")
 #define ARROW_CONTROL_KEY 27

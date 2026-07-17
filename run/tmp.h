@@ -83,7 +83,7 @@
 # define m5root ROOTC("../m5/")
 
 # define pkgi$$ sh$$ "pkg install %s",
-# define pkgs$$ sh$$ "pkg search %s",
+# define pkgs$$ shdr$$ "pkg search %s",
 #
 
 # define termuxhome(p) mf( "/data/data/com.termux/files/home/%s", p )
@@ -163,3 +163,18 @@ void llamacomplete(char *msg);
 # define stdioextc vim$$ ROOTC("/run/stdioext.c") $$
 
 # define llamacomplete2(x) using_original_stdout(llamacomplete(x))
+
+# define adbpairconnecth printf("adbpairconnect(ipaddr, port1, port2, paircode)\n");
+# define adbpairconnect(ipaddr, port1, port2, paircode) \
+        sh$$ "adb pair %s:%d %d", ipaddr, port2, paircode $$; \
+        sh$$ "adb connect %s:%d", ipaddr, port1 $$;
+
+# define adbps(sortfield, length) sh$$ "adb shell ps -o CMDLINE,COMM,TIME,READ,WRITE,DREAD,DWRITE -k %s | head -n %d", sortfield, length $$
+
+# define adbtop shdr$$ "adb shell top -m 20 -d 0.5 -o PID,VIRT,RES,shR,%%CPU,TIME+,COMM,CMDLINE -s 6" $$
+
+# define gitclone$$ sh$$ "git clone %s", 
+
+# define adbsh sh$$ "adb shell" $$
+
+# define make sh$$ "make" $$

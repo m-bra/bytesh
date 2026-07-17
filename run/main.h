@@ -139,7 +139,7 @@ void sighandle(int);
 
 txt
 
-#define GLOBAL_INDENT "    "
+#define GLOBAL_INDENT ""
 //#define GLOBAL_INDENT "                           "
 
 #define loctag
@@ -169,7 +169,7 @@ void cmdlogat(int, linebuf_t *);
 
 #include ".//userinterface.h"
 
-#define PROMPT "%s priv.c:%d%s $ "
+#define PROMPT "%%s priv.c:%%d%%s \n%s$ "
 
 stm int cmdlogn();
 
