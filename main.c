@@ -344,7 +344,7 @@ blk stm mdecl;
         int answer = unbufreadc(STDIN_FILENO); 
         iff answer != 'k' 
         thn mv, ROOTC("/run/tmp/log.last.txt"), ROOTC("/run/log.txt"), endsh; 
-        stm {clear; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;}
+        stm {sh, "clear", endsh; sh, "tail --lines=240 %s", ROOTC("/run/log.txt"), endsh;}
         end 
     stm cmdlogfile = fopen(ROOTC("/run/log.txt"), "a");
 
